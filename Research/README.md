@@ -65,23 +65,17 @@ Read-only; they change nothing. First baselines land in round 1 (register C1, B1
 
 ## Status
 
-**Kickoff complete, 2026-07-31.** Scaffold + SCOPE + survey + register exist; no research round
-has run; no app code beyond the scaffold shell.
+**Round 1 complete and APPLIED; v1.0 live, 2026-07-31** at
+https://augustg97.github.io/ai-atlas/ (stamp 20260731-0207 verified). The full path ran in one
+session: embedding refresh (13,737 chunks) → datum v1 frozen (int8 recall 0.989) → emit
+(855 entities · 1,825 events 92% event-dated · 11,397 arcs) → witness baselined (20 matched /
+4 unit-choice disagreements) → 190 field keyframes → gate PASS → app built → deployed →
+live-verified → nightly scheduled → 6 queue tasks filed into the vault.
 
-**Round 1 — the datum round — in priority order:**
+WP-01 records the round; the register's APPLIED table records the measurements; HANDOFF.md
+carries the honest assessment (shock test partial-pass, corpus-limited; resting substrate
+good-not-yet-Tectonic).
 
-1. **Refresh the embedding index** (`bin/build-embedding-index.py` in the vault; incremental,
-   needs `VOYAGE_API_KEY`) — everything else waits on it.
-2. **Datum v1** (register A2): method study → freeze → `frames.py` with selftests → ε and the
-   drift audit. Deliverable: every current page has a stable (x,y), and the transform is
-   versioned and shipped.
-3. **Emit v0** (B1): entities + windows + events with date kinds; needs-review report; the
-   date-kind audit red/green.
-4. **Witness bootstrap** (C1): Epoch fetched, mapped, audited both directions; tracker named;
-   docket check scripted. First baselines recorded.
-5. **The field-engine design study** (A1): dossier + white paper ending in staged changes for
-   the v0.1/v0.2 build — how the terrain, weather and settlement fabric are actually computed,
-   with reference frames from Tectonic Earth's shader read alongside.
-
-Round 1 ends with a white paper, staged changes, and the register updated — then `/model-build`
-takes the staged changes into the app.
+**Next round, in priority order:** watch three nightlies (D1 acceptance) · visual round 2
+(A1 continuation, against captured reference framings — F1) · B3 era-prose tiling ·
+jurisdiction view · E2 worker tier (needs August's key + CF approval) · C1 W3 curation.

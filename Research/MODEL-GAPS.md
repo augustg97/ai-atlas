@@ -27,6 +27,9 @@ IDs are referenced from white papers, code comments and commit messages. **Never
 | C1 **DELIVERED** | Epoch witness (CC-BY CSV, 1,041 rows) + baselines; instrument-error lesson recorded (aliases require identity) | matched 20, disagreements 4 (unit-choice, baselined), W3 candidates 133 (curation pending D2) |
 | A4 **MEASURED** | field cadence monthly→2026-03 / weekly→now; fixed global scales; ChatGPT-shock test defined | 188 keyframes, 9.4 MB total |
 | E1 **MEASURED** | int8-50 static index viable for Tier 0 | recall 0.989 at 785 KB |
+| A1 **APPLIED** (v1) | the app: WebGL2 substrate (terrain/attention/settlement per pixel, precision-smeared spine, era registers) + windowed features + cards + T0 search; **live** at augustg97.github.io/ai-atlas | rule-2.16 verdict: selection view reads as a world; resting substrate good-not-yet-Tectonic → visual round 2 open. Shock test: partial pass (+59% at 2023-01, 2.3× by 2023-04; opening weeks corpus-limited — queue filed) |
+| D1 **DELIVERED** | nightly chain scheduled (10:47, `build/nightly.sh`, gate-refusal = designed no-publish) | acceptance PENDING: three unattended correct mornings |
+| D2 **APPLIED** | queue loop live: 6 tasks filed 2026-07-31 (4 INGEST era landmarks, 1 RESEARCH era coverage, 1 LINT sentinel-date fix) | drains at the vault's next 09:22 cycle |
 
 ---
 
