@@ -257,10 +257,52 @@ def _selftest():
     return 1
 
 
+def place_new_pages():
+    """--place-new: project pages that postdate the frozen datum INTO it
+    (SCOPE §5) — existing positions are never touched, so the drift audit
+    stays meaningful and the frame stays frozen. Nightly-safe."""
+    import frames
+    datum_p = os.path.join(STAGED, "datum.json")
+    anch_p = os.path.join(STAGED, "anchors50.json")
+    datum = json.load(open(datum_p))
+    anch = json.load(open(anch_p))
+    pages, protos, _ = load_page_vectors()
+    missing = [p for p in pages if p not in datum["positions"]]
+    if not missing:
+        return {"placed": 0}
+    mean = np.asarray(anch["pca_mean"], dtype=np.float32)
+    comps = np.asarray(anch["pca_comps"], dtype=np.float32)
+    scale = anch["scale"]
+    anchor_vecs = {k: [x * scale for x in v["v"]]
+                   for k, v in anch["pages"].items()}
+    anchor_pos = {k: tuple(v["pos"]) for k, v in anch["pages"].items()}
+    pnames = sorted(protos.keys())
+    PV = np.stack([protos[s] for s in pnames])
+    PVn = PV / (np.linalg.norm(PV, axis=1, keepdims=True) + 1e-9)
+    placed = 0
+    for pid in missing:
+        v50 = ((pages[pid] - mean) @ comps.T).tolist()
+        pos = frames.place_new(v50, anchor_vecs, anchor_pos, k=8)
+        if pos is None:
+            continue
+        datum["positions"][pid] = [round(pos[0], 4), round(pos[1], 4)]
+        vn = pages[pid] / (np.linalg.norm(pages[pid]) + 1e-9)
+        datum["territory_of"][pid] = pnames[int(np.argmax(vn @ PVn.T))]
+        anch["pages"][pid] = {"v": [int(round(x / scale)) for x in v50],
+                              "pos": datum["positions"][pid]}
+        placed += 1
+    json.dump(datum, open(datum_p, "w"), separators=(",", ":"))
+    json.dump(anch, open(anch_p, "w"), separators=(",", ":"))
+    return {"placed": placed, "missing_unplaceable": len(missing) - placed}
+
+
 if __name__ == "__main__":
     _selftest()
     print("datum_build selftest passed (clusters separate, deterministic)")
     if "--selftest" in sys.argv:
+        sys.exit(0)
+    if "--place-new" in sys.argv:
+        print(json.dumps(place_new_pages()))
         sys.exit(0)
     stats = build()
     print(json.dumps(stats, indent=1))

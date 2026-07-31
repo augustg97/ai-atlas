@@ -5,7 +5,19 @@
 # 3 push/verify failed.
 set -u
 ROOT="/Users/augustgweon/AI Atlas"
+VAULT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/August's Vault"
 cd "$ROOT/Research/modeling" || exit 2
+
+# incremental embedding refresh (checksum-gated; seconds for a normal day),
+# then project any new pages INTO the frozen datum — never a re-layout
+K=$(grep '^export VOYAGE_API_KEY=' ~/.zshrc | tail -1 | cut -d= -f2- | tr -d '"'"'"'')
+if [ -n "$K" ]; then
+  (cd "$VAULT" && VOYAGE_API_KEY="$K" python3 bin/build-embedding-index.py) \
+    || echo "embed refresh failed — continuing with existing index"
+  python3 datum_build.py --place-new || echo "place-new failed — gate will say"
+else
+  echo "no VOYAGE key found — skipping embed refresh (gate will flag unpositioned pages)"
+fi
 
 python3 emit.py || exit 2
 python3 witness_epoch.py || exit 2
