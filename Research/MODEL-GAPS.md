@@ -90,12 +90,27 @@ per-file verification found zero gap files at the rendered-item unit.
 
 ---
 
-**Count: 16 items — 6 delivered/measured in round 1, 1 P1 open (A1, staged for the build).**
-The ones that would move the model furthest, in order:
+## T. The v2 pivot — Timelines (2026-07-31, after v1 shipped)
 
-1. **A1** — build the app on WP-01's design (staged; the rule-2.16 screenshot + ChatGPT-shock
-   test are the acceptance).
-2. **D1/D2** — the nightly chain + queue loop (wired at ship).
-3. **B3** — era-prose tiling per entity (largest open card-quality item).
-4. **E2** — Ask the Atlas worker tier (needs key + CF approval).
-5. **C1-curation** — file a curated W3 subset into the wiki queue.
+**User verdict on v1:** "pretty, but too abstract and not visually useful" — reassess the
+whole approach; keep the spirit (an AI atlas from the vault); the new subject is **branching
+future timelines** (the next decade and longer), our own creative work grounded in the wiki
+and the scenario literature (AI 2027, Plan A, Europe 2031, Situational Awareness, …),
+documenting how society's layers change under frontier capabilities. The AI 2027 and Plan A
+sites are the named visual inspiration. **Aztec Conquest is retired as a reference model.**
+Proposal: claude.ai artifact 33657b8d-2c49-4129-8afe-0ec977e6b5c3 (decision pending).
+
+| # | P | item | touches | from |
+|---|---|---|---|---|
+| T1 | **P1** | Author the eight-lane timeline corpus (waypoints, quantitative tracks, branch points, provenance, epistemic status) from the vault's scenario sources; per-lane selftests; scenario-claims extraction for the scoreboard | new `Research/timelines/` + emit | proposal §2, §6 |
+| T2 | **P1** | The Trajectories stage: capability-ladder chart, trunk from v1 emit, lane forking, scrubbing, narrative panel, branch-point cards | web/index.html rebuild | proposal §3 |
+| T3 | P2 | The instrument rail in AI 2027's grammar (capability pills, compute donut, copies grid, stat strip — the vault holds the 54 reference figures), compare mode, society-layer filtering | app | proposal §3 |
+| T4 | P2 | The live scoreboard: nightly waypoint grading vs the trunk; lane divergence; gate extended with lane audits | emit, audit_all, nightly | proposal §1 |
+| T5 | P3 | SCOPE amendment v2 (subject; §9 forecasting non-goal becomes curates-and-scores; layer table) once August picks the portfolio | SCOPE.md | pending decision |
+
+**v1 items on hold pending the pivot:** visual round 2 (superseded by T2/T3), B3,
+jurisdiction view. **Still live regardless:** the nightly chain (the trunk keeps growing),
+the queue loop, E2, C1-curation. The datum/terrain code stays in-repo; its fate on the main
+stage is the proposal's open question 4.
+
+**Count: 21 items — 2 at P1 (T1, T2), both awaiting August's portfolio decision.**

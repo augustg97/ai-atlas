@@ -69,6 +69,16 @@ from the AI policy wiki in August's Vault and rendered as living semantic terrai
 - The pane can render the live site letterboxed — a browser-pane artifact, not the app;
   verify layout on localhost before chasing it.
 
+## ⚠️ PIVOT IN PROGRESS (2026-07-31, read first)
+
+After v1 shipped, August's verdict: "pretty, but too abstract and not visually useful" — the
+project pivots to **branching future timelines** (see `Research/MODEL-GAPS.md` §T and the
+proposal artifact 33657b8d-2c49-4129-8afe-0ec977e6b5c3; decision on the portfolio pending).
+The trunk pipeline, gate, nightly chain and queue loop all carry over; the semantic terrain
+retires from the main stage. Aztec Conquest is retired as a reference model everywhere;
+AI 2027's site grammar (the vault holds its 54 figures) is the new legibility bar. Do not
+start T-work before August answers the proposal's four open questions.
+
 ## The work queue (= register order)
 
 1. **Watch the first three nightlies** (D1 acceptance); expect the queue-filed ingests to
