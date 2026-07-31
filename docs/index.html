@@ -340,7 +340,7 @@ void main(){
    state → render(state); no hidden clocks. Substrate: WebGL2 quad composing
    terrain + interpolated heat keyframes. Features: SVG, windowed by t.
    ======================================================================== */
-const DATA_V = "20260731-0203";
+const DATA_V = "20260731-0207";
 const EPOCH = Date.UTC(2012,0,1);
 const DAY = 86400000;
 const HORIZON_T = (Date.UTC(2026,3,13)-EPOCH)/DAY;
@@ -601,15 +601,19 @@ function toWorld(x,y){
 
 /* ---------- features (SVG) ---------- */
 const NS = "http://www.w3.org/2000/svg";
+const HEDGE = /target|talks|seek|offer|weigh|rumor|project|potential|reported|near \$|as soon as|up to/i;
 function usdAt(id, t, groupRe){
   /* one metric at a time: a $5B compute-commitment row must never roll
-     forward over a $1T Valuation row (it did, on first render) */
+     forward over a $1T Valuation row (it did, on first render). And a
+     HEDGED row — "$1.75T (SpaceX IPO target)" — never feeds a derived
+     headline number (rule 2.15): it stays on the card, verbatim, where
+     its qualifier travels with it. */
   const re = groupRe || /valuation/i;
   const s = D.seriesBy.get(id); if(!s) return 0;
   let v=0;
   for (const r of s){
     if (r.t>t) break;
-    if (r.v && re.test(r.g||"")) v=r.v;
+    if (r.v && re.test(r.g||"") && !HEDGE.test(r.txt||"")) v=r.v;
   }
   return v;
 }
