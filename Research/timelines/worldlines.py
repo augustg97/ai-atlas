@@ -54,7 +54,16 @@ def capability_path(wl):
     pause 2035→2040 then resumes; A1 truncates ascent at takeover (the
     index stays — the world changes owner, not capability)."""
     knots = list(TEMPO_KNOTS[wl["T"]])
-    if wl["C"] == "C3" and wl["T"] in ("T2", "T3"):
+    if wl["C"] == "C5":
+        # moratorium: the ladder freezes where the halt catches it (~2029),
+        # below the researcher line — their Plan S, scored and rejected but
+        # on the table (sources/ai-2040-plan-a)
+        held = [(y, v) for (y, v) in knots if y <= 2029.0 and v < 4.0]
+        if not held:
+            held = [knots[0]]
+        cap = min(3.2, held[-1][1] + 0.3)
+        knots = held + [(2031.0, cap)]
+    elif wl["C"] == "C3" and wl["T"] in ("T2", "T3"):
         held = [(y, v) for (y, v) in knots if v <= 4.0]
         held += [(2040.0, 4.0)]
         resume = [(y + 7.5, v) for (y, v) in knots if v > 4.0]
@@ -96,10 +105,15 @@ def cap_at(knots, year):
 # ---------------------------------------------------------------------------
 
 COMPUTE_G = {"S1": 1.42, "S2": 1.50, "S3": 1.24}      # near-term GW growth/yr
-E_DAMP = {"E1": 1.00, "E2": 0.90, "E3": 0.72}          # capex path damping
+E_DAMP = {"E1": 1.00, "E2": 0.90, "E3": 0.72,
+          "E4": 0.80}                                  # demand crisis damps
+# D1 shock rate −2.6 pp/yr calibrated to the Citrini memo's path (≈4% →
+# 10.2% unemployment across ~2 years under full shock) —
+# sources/2028-global-intelligence-crisis; capability-gated as before
 REV_G = {"D1": 1.85, "D2": 1.55, "D3": 1.28}           # revenue growth by
-JOBS_RATE = {"D1": -1.6, "D2": -0.55, "D3": -0.18}     #   diffusion; jobs
-LAWS_RATE = {"C1": 14, "C2": 8, "C3": 6, "C4": 22}     #   %pts/yr; laws/yr
+JOBS_RATE = {"D1": -2.6, "D2": -0.55, "D3": -0.18}     #   diffusion; jobs
+LAWS_RATE = {"C1": 14, "C2": 8, "C3": 6, "C4": 22,
+             "C5": 4}                                   # halt ≠ many laws
 APPROVAL0 = {"P1": 34, "P2": 47, "P3": 40}
 
 
@@ -256,6 +270,72 @@ TEMPLATES = [
   "text": "The coordinated unpause: scaling resumes past the human range "
           "under joint verification, {year}.",
   "cites": ["sources/ai-2040-plan-a"]},
+ # the 2028 Intelligence Crisis family (Citrini/Shah) + AI 2040 plan family
+ {"id": "displacement-spiral", "w": (2027.5, 2032), "req": {"D": ["D1"],
+  "E": ["E4"]}, "layer": "economy", "p": 1.0,
+  "text": "The intelligence displacement spiral takes hold: layoffs fund "
+          "more AI as opex substitution, wages compress, demand contracts, "
+          "and the loop has no natural brake.",
+  "cites": ["sources/2028-global-intelligence-crisis"]},
+ {"id": "ghost-gdp", "w": (2028, 2035), "req": {"E": ["E4"]},
+  "layer": "economy", "p": 0.8,
+  "text": "'Ghost GDP' enters the lexicon: output that appears in national "
+          "accounts but never circulates, because machines do not spend.",
+  "cites": ["sources/2028-global-intelligence-crisis",
+            "concepts/ai-and-productivity"]},
+ {"id": "fiscal-undershoot", "w": (2028, 2034), "req": {"D": ["D1"],
+  "E": ["E4"]}, "layer": "politics", "p": 0.85,
+  "text": "Federal receipts undershoot projections by double digits — the "
+          "tax base was built on human labor; emergency fiscal redesign "
+          "begins.",
+  "cites": ["sources/2028-global-intelligence-crisis"]},
+ {"id": "prosperity-fund", "w": (2028.5, 2036), "req": {"D": ["D1", "D2"],
+  "P": ["P1", "P3"]}, "layer": "politics", "p": 0.6,
+  "text": "A Shared-AI-Prosperity-style sovereign fund, financed by an "
+          "inference-compute tax, moves from white paper to bill in {year}.",
+  "cites": ["sources/2028-global-intelligence-crisis"]},
+ {"id": "private-credit-contagion", "w": (2027.5, 2031), "req": {"E": ["E4"]},
+  "layer": "economy", "p": 0.75,
+  "text": "AI displacement marks down SaaS-heavy private credit; the "
+          "insurance-PE nexus turns a sector repricing into a household "
+          "balance-sheet event.",
+  "cites": ["sources/2028-global-intelligence-crisis"]},
+ {"id": "distillation-wave", "w": (2026.7, 2030), "req": {"C": ["C1", "C2"]},
+  "layer": "security", "p": 0.6,
+  "text": "Distillation attacks on frontier APIs become the cheap path to "
+          "parity; providers deploy detection and rate-hardening.",
+  "cites": ["sources/anthropic-2028-ai-leadership"]},
+ {"id": "lead-lock", "w": (2027.5, 2030), "req": {"C": ["C2"]},
+  "layer": "geopolitics", "p": 0.7,
+  "text": "Export-loophole closure and distillation deterrence lock in a "
+          "12-24 month democratic capability lead, per the four-fronts "
+          "playbook.",
+  "cites": ["sources/anthropic-2028-ai-leadership"]},
+ {"id": "sabotage-cyber", "w": (2027.5, 2032), "req": {"C": ["C2"],
+  "A": ["A1", "A2"]}, "layer": "geopolitics", "p": 0.35,
+  "text": "A Plan-B-cyber turn: operations against rival training "
+          "infrastructure buy lead time and poison the deal space.",
+  "cites": ["sources/ai-2040-plan-a"]},
+ {"id": "gpu-arms-control", "w": (2028, 2033), "req": {"C": ["C3", "C4"]},
+  "layer": "geopolitics", "p": 0.5,
+  "text": "GPU-accounting talks begin — the arms-control track that treats "
+          "compute like fissile material.",
+  "cites": ["sources/ai-2040-plan-a", "concepts/compute-governance"]},
+ {"id": "cern-for-ai", "w": (2029, 2036), "req": {"C": ["C3"]},
+  "layer": "geopolitics", "p": 0.4,
+  "text": "A CERN-for-AI consortium takes shape inside the transparency "
+          "regime: frontier scaling as a jointly-audited public project.",
+  "cites": ["sources/ai-2040-plan-a"]},
+ {"id": "moratorium-holds", "w": (2029, 2040), "req": {"C": ["C5"]},
+  "layer": "capability", "p": 1.0,
+  "text": "The halt holds: frontier training stops below the researcher "
+          "line; enforcement politics dominate the decade.",
+  "cites": ["sources/ai-2040-plan-a"]},
+ {"id": "india-it-shock", "w": (2027, 2031), "req": {"D": ["D1"]},
+  "layer": "economy", "p": 0.7,
+  "text": "The IT-services export model breaks as coding agents undercut "
+          "cost arbitrage; a $200B sector restructures in {year}.",
+  "cites": ["sources/2028-global-intelligence-crisis"]},
  # far field (2050-2100) — the strange futures, at honest width
  {"id": "space-industrial", "w": (2045, 2085), "req": {"T": ["T1", "T2", "T3"],
   "A": ["A2", "A3"]}, "layer": "far", "p": 0.6,

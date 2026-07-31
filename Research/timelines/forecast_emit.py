@@ -92,7 +92,13 @@ def widened_registry(weights, widen):
     reg = copy.deepcopy(axes.REGISTRY)
     for a in reg["axes"]:
         k = a["key"]
-        w = dict(weights["axes"].get(k, {p[0]: p[2] for p in a["positions"]}))
+        # registry may have GROWN since weights were stored (it is designed
+        # to): new positions enter at their seed prior, stored positions
+        # keep their evolved weight, then renormalize
+        w = {p[0]: p[2] for p in a["positions"]}
+        for pos, v in (weights["axes"].get(k) or {}).items():
+            if pos in w:
+                w[pos] = v
         temp = widen.get(k, 1.0)
         if temp > 1.0:
             w = {pos: v ** (1.0 / temp) for pos, v in w.items()}
@@ -176,6 +182,77 @@ def emit():
                          "APPROVAL0": worldlines.APPROVAL0},
         "templates": worldlines.TEMPLATES,
         "y0": worldlines.Y0, "y1": worldlines.Y1,
+        # authored explainer cards for the interactive layer — every hover/
+        # click reveal cites its grounding (decision of record 2026-07-31:
+        # "hovering and clicking … should reveal more information,
+        # explanatory cards")
+        "explainers": {
+            "milestones": [
+                {"k": 1, "t": "Unreliable agent", "b": "Computer-using "
+                 "assistants that impress and fail — scoring ~65% OSWorld in "
+                 "the literature's 2025 readings. The trunk's 2025 record.",
+                 "cites": ["sources/ai-2027"]},
+                {"k": 2, "t": "Reliable agent", "b": "Agents trusted with "
+                 "real tasks end-to-end; specialized coding/research agents "
+                 "transform their professions first.",
+                 "cites": ["sources/ai-2027", "concepts/agi-timelines"]},
+                {"k": 3, "t": "Superhuman coder", "b": "AI outperforms the "
+                 "best human engineers at software itself — the literature's "
+                 "hinge milestone, because it compounds AI R&D.",
+                 "cites": ["sources/ai-2027", "sources/ai-2040-plan-a"]},
+                {"k": 4, "t": "Superhuman AI researcher", "b": "AI research "
+                 "is automated end to end. Plan A's schedule pauses HERE "
+                 "(top-expert level, 2035-2040) to keep humans in control.",
+                 "cites": ["sources/ai-2040-plan-a"]},
+                {"k": 5, "t": "Generally superintelligent", "b": "Beyond "
+                 "expert range across domains; the takeoff-length debate "
+                 "(6 years under the deal vs ~1 year racing) is about the "
+                 "climb from 4 to here.",
+                 "cites": ["sources/ai-2040-plan-a", "sources/ai-2027"]},
+                {"k": 6, "t": "Wildly superintelligent", "b": "The ladder's "
+                 "ceiling — everything above is off-scale. Most sampled "
+                 "futures saturate here by the 2040s; the T4 fraction never "
+                 "arrives.", "cites": ["sources/ai-2027",
+                 "sources/ai-as-normal-technology"]},
+            ],
+            "instruments": {
+                "pills": {"t": "Capability domains", "b": "Which domains the "
+                 "active world-line's capability index has crossed at this "
+                 "date (illustrative thresholds on the ladder, modelled — "
+                 "the AI 2027 dashboard's grammar, generalized).",
+                 "cites": ["sources/ai-2027"]},
+                "donut": {"t": "Compute shares", "b": "US/CN/EU shares of "
+                 "modelled global AI compute under the active world-line — "
+                 "drift mechanisms per coordination position; the EU share "
+                 "is Europe 2031's GW-gap arithmetic.",
+                 "cites": ["sources/europe-2031",
+                           "concepts/compute-governance"]},
+                "copies": {"t": "Agent copies × speed", "b": "The AI 2027 "
+                 "copies-counter: how many frontier-agent copies run, at "
+                 "what multiple of human speed — derived from the capability "
+                 "index and compute track (22K@13× in their Apr-2026 frame; "
+                 "10M@600× in their Race ending).",
+                 "cites": ["sources/ai-2027"]},
+                "stats": {"t": "The stat strip", "b": "AI revenue (trunk "
+                 "run-rates grown by diffusion×capability, saturating), "
+                 "jobs delta (displacement-vs-augmentation, shock rate "
+                 "calibrated to the 2028 crisis memo's ~10% path), laws in "
+                 "force (state-wave velocity by coordination), approval "
+                 "(backlash dynamics).",
+                 "cites": ["sources/2028-global-intelligence-crisis",
+                           "concepts/ai-labor-disruption",
+                           "concepts/ai-backlash"]},
+            },
+            "axes_note": {"t": "What an axis probability is", "b": "The "
+             "model's current weight on each position — seeded priors with "
+             "provenance, moved by the tiered evidence methodology every "
+             "morning, spread wider where wiki grounding is thin. Not a "
+             "measurement; graded in public.", "cites": []},
+            "world_note": {"t": "The World view", "b": "The active "
+             "world-line's state on real geography: regime tint strength ∝ "
+             "modelled compute share; site glow ∝ modelled GW at authored "
+             "locations from the trunk's own reporting.", "cites": []},
+        },
         # authored compute-site table for the World view (locations from the
         # trunk's own reporting; capacities are shares of the modelled GW
         # track, labelled modelled)

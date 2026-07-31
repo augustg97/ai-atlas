@@ -136,6 +136,28 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
 #crisisCard .body{font-size:11.5px;color:var(--ink-dim);line-height:1.5;margin-top:6px}
 #crisisCard .x{float:right;cursor:pointer;color:var(--ink-faint)}
 
+#tip{position:absolute;z-index:35;pointer-events:none;display:none;
+  background:var(--panel-solid);border:1px solid var(--line);border-radius:6px;
+  padding:6px 9px;font-size:10.5px;max-width:240px;line-height:1.45;
+  box-shadow:0 4px 14px #000a}
+#tip .tt{font-weight:700;color:var(--gold);font-size:10px}
+#tip .tc{color:var(--ink-faint);font-family:var(--mono);font-size:8.5px;margin-top:3px}
+#infoCard{position:absolute;z-index:32;right:280px;top:64px;
+  width:min(360px,42vw);background:var(--panel-solid);border:1px solid var(--gold);
+  border-radius:10px;padding:13px 15px;display:none;max-height:70vh;overflow-y:auto}
+#infoCard h2{margin:0 0 6px;font-family:var(--serif);font-size:16px}
+#infoCard .eyebrow{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-faint)}
+#infoCard .body{font-size:11.5px;color:var(--ink-dim);line-height:1.55}
+#infoCard .cites{margin-top:8px;border-top:1px solid var(--line);padding-top:6px;
+  font-family:var(--mono);font-size:9px;color:var(--blue);line-height:1.7}
+#infoCard .x{float:right;cursor:pointer;color:var(--ink-faint);font-size:15px}
+#infoCard .posrow{display:flex;justify-content:space-between;font-size:10.5px;
+  padding:2.5px 0;border-bottom:1px solid #ffffff0d}
+#infoCard .posrow .pv{font-family:var(--mono);color:var(--gold)}
+.clicky{cursor:pointer}
+.clicky:hover{filter:brightness(1.25)}
+
 #splash{position:absolute;inset:0;z-index:50;background:var(--bg);display:flex;
   flex-direction:column;align-items:center;justify-content:center;gap:14px}
 #splash .t{font-weight:800;letter-spacing:.34em;font-size:22px}
@@ -193,6 +215,10 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
 
 <div id="crisisCard"><span class="x" id="ccX">×</span><h2 id="ccQ">—</h2>
   <div class="p" id="ccP">—</div><div class="body" id="ccB">—</div></div>
+<div id="tip"></div>
+<div id="infoCard"><span class="x" id="icX">×</span>
+  <div class="eyebrow" id="icE">—</div><h2 id="icT">—</h2>
+  <div class="body" id="icB">—</div><div class="cites" id="icC"></div></div>
 
 <div id="about"><div class="x" id="aboutX">×</div><div class="inner" id="aboutBody"></div></div>
 <div id="splash"><div class="t">AI ATLAS</div><div class="s" id="splashS">reading the forecast…</div></div>
@@ -204,7 +230,7 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
    Engine CONSTANTS come from data/forecast/engine.json (single source of
    truth with the python engine); this file implements only functions.
    ========================================================================= */
-const DATA_V = "20260731-0510";
+const DATA_V = "20260731-0801";
 const NOW_Y = 2026.58;
 const LADDER_SHORT = ["","unreliable agent","reliable agent","superhuman coder",
   "superhuman AI researcher","generally superintelligent","wildly superintelligent"];
@@ -216,7 +242,86 @@ const PILLS = [["CODE",3.0],["HACK",3.1],["FCAST",3.3],["BIO",4.1],
 const S = { yr: NOW_Y, view: "main", pin: {}, obs: false };
 const D = {};
 let condCache = null;      /* {lines, marginals, bands, main, tracks, events} */
+const HIT = { crisis: [], ladder: [], sites: [] };   /* canvas hit-zones */
 const $ = id => document.getElementById(id);
+
+/* ---------- tooltip + info card (the interactive layer) ---------- */
+function showTip(x, y, html){
+  const t = $("tip");
+  t.innerHTML = html;
+  t.style.display = "block";
+  const W = innerWidth, tw = t.offsetWidth, th = t.offsetHeight;
+  t.style.left = Math.min(W - tw - 8, x + 14) + "px";
+  t.style.top = Math.max(6, y - th - 10) + "px";
+}
+function hideTip(){ $("tip").style.display = "none"; }
+function wikiLinks(cites){
+  return (cites || []).map(c =>
+    /^https?:/.test(c)
+      ? "<a href=\"" + esc(c) + "\" target=_blank rel=noopener style=\"color:var(--blue)\">" + esc(c.replace(/^https?:\/\//, "").slice(0, 44)) + "</a>"
+      : esc(c)).join("<br>");
+}
+function showCard(eyebrow, title, bodyHTML, cites){
+  $("icE").textContent = eyebrow;
+  $("icT").textContent = title;
+  $("icB").innerHTML = bodyHTML;
+  $("icC").innerHTML = cites && cites.length
+    ? "GROUNDING<br>" + wikiLinks(cites) : "";
+  $("infoCard").style.display = "block";
+}
+function axisCard(k){
+  const a = D.network.axes.find(x => x.key === k);
+  if (!a) return;
+  const marg = activeMarginals()[k] || {};
+  const note = D.engine.explainers.axes_note;
+  let rows = a.positions.map(p =>
+    "<div class=posrow><span>" + esc(p[1]) + "</span><span class=pv>" +
+    ((marg[p[0]] || 0) * 100).toFixed(1) + "%</span></div>").join("");
+  let sub = (a.subaxes && a.subaxes.length)
+    ? "<div style=\"margin-top:6px;color:var(--ink-faint);font-size:10px\">sub-axes: " +
+      a.subaxes.map(s => esc(s.name || s.key)).join(" · ") + "</div>" : "";
+  showCard("axis " + a.key, a.name,
+    rows + sub + "<div style=\"margin-top:8px;font-size:10px;color:var(--ink-faint)\">" +
+    esc(note.b) + "</div>",
+    (a.cites || []).concat(a.positions.flatMap(p => p[3] || [])).slice(0, 10));
+}
+function instrumentCard(which){
+  const e = D.engine.explainers.instruments[which];
+  if (e) showCard("instrument", e.t, esc(e.b), e.cites);
+}
+function milestoneCard(k){
+  const m = D.engine.explainers.milestones.find(x => x.k === k);
+  if (m) showCard("capability milestone " + k + " of 6", m.t, esc(m.b), m.cites);
+}
+function waypointCard(ev){
+  const wl = activeMain();
+  showCard(ev.layer + " · " + Math.floor(ev.year),
+    "Waypoint, " + Math.floor(ev.year),
+    esc(ev.text) + "<div style=\"margin-top:8px;font-size:10px;color:var(--ink-faint)\">" +
+    "Instantiated on the active world-line (" +
+    ["T","A","C","D","S","P","E"].map(q => wl[q]).join("·") +
+    ") from a cited template; composed narratives re-instantiate live.</div>",
+    ev.cites);
+}
+function deltaCard(e){
+  showCard("evidence application · " + (e.date || ""),
+    e.rule,
+    "<div class=posrow><span>impact class</span><span class=pv>" +
+    esc(e.impact_class) + "</span></div>" +
+    "<div class=posrow><span>magnitude</span><span class=pv>×" +
+    (e.magnitude || 0).toFixed(4) + "</span></div>" +
+    "<div class=posrow><span>corroborating sources</span><span class=pv>" +
+    (e.sources || 1) + "</span></div>" +
+    "<div class=posrow><span>novelty decay k</span><span class=pv>" +
+    (e.repeat_k || 0) + "</span></div>" +
+    "<div style=\"margin-top:6px\">applied: " +
+    esc(Object.entries(e.applied || {}).map(([k, v]) =>
+      k + " " + (v >= 0 ? "+" : "") + (v * 100).toFixed(2) + "pp").join(" · ")) +
+    "</div>" +
+    (e.driver ? "<div style=\"margin-top:6px;color:var(--ink-dim)\">driver: " +
+      esc(e.driver) + "</div>" : ""),
+    (e.cites || []).concat(e.driver_urls || []));
+}
 
 /* piecewise time scale: the near field earns the width (2012-2040 → 66%,
    2040-2100 → 34%) — the far field is real but saturated, and the action
@@ -456,12 +561,14 @@ function drawMain(){
     g.fillStyle="#5c6b76"; g.globalAlpha=.6;
     g.fillText(z[2], X(z[0])+4, T+10); g.globalAlpha=1;
   });
-  /* ladder */
+  /* ladder (labels are clickable — HIT.ladder) */
+  HIT.ladder = [];
   for (let i=1;i<=6;i++){
     g.strokeStyle="#26333f"; g.lineWidth=.7;
     g.beginPath(); g.moveTo(L,Y(i)); g.lineTo(R,Y(i)); g.stroke();
     g.fillStyle="#5c6b76";
     g.fillText(LADDER_SHORT[i], L+4, Y(i)-3);
+    HIT.ladder.push({x0:L+2, x1:L+150, y0:Y(i)-13, y1:Y(i)+2, k:i});
   }
   /* year ticks */
   g.fillStyle="#5c6b76";
@@ -532,7 +639,8 @@ function drawMain(){
   const CRY={"deal-window":2030,"explosive-takeoff":2028,"no-sc-window":2036,
     "alignment-fails":2031,"hard-deflate":2028.5,"researcher-by-2035":2035};
   const marg=activeMarginals();
-  for (const c of D.crisis.crises){
+  HIT.crisis = [];
+  D.crisis.crises.forEach((c, ci)=>{
     const y=CRY[c.id]||2032;
     let p=c.p;
     if (c.kind==="axis" && marg[c.axis]) p=marg[c.axis][c.pos]||0;
@@ -542,7 +650,8 @@ function drawMain(){
     g.lineTo(x-5,yy); g.closePath(); g.fill();
     g.fillStyle="#8fa0ac"; g.font="8.5px "+getComputedStyle(document.body).getPropertyValue("--sans");
     g.fillText((p*100).toFixed(0)+"%", x+7, yy-3);
-  }
+    HIT.crisis.push({x, y:yy, i:ci, p});
+  });
   /* cursor */
   g.strokeStyle="#d9a441"; g.lineWidth=1.4;
   g.beginPath(); g.moveTo(X(S.yr),T); g.lineTo(X(S.yr),B); g.stroke();
@@ -623,13 +732,15 @@ function drawWorld(){
     g.fillStyle=fill; g.fill(); g.globalAlpha=1;
     g.strokeStyle="#26333f"; g.lineWidth=.5; g.stroke();
   }
-  /* compute sites */
+  /* compute sites (hoverable/clickable — HIT.sites) */
   const gwNow=tr.gw[yi];
+  HIT.sites = [];
   for (const s of D.engine.sites){
     const share = s.r==="row"? 0.12 : shares[s.r]||0.1;
     const gwSite = gwNow*share*s.w;
     const rad = 2+Math.log10(1+gwSite)*4.2;
     const x=X(s.lon), y=Y(s.lat);
+    HIT.sites.push({x, y, s, gwSite});
     const grd=g.createRadialGradient(x,y,0,x,y,rad*2.4);
     grd.addColorStop(0,"rgba(233,166,80,0.85)");
     grd.addColorStop(1,"rgba(233,166,80,0)");
@@ -669,21 +780,25 @@ function refreshRail(){
     if (!top) continue;
     const posLab=(a.positions.find(p=>p[0]===top[0])||[])[1]||top[0];
     const dr=condCache? null : drift30(a.key, top[0]);
-    h+="<div class=axrow><div class=lab><span>"+esc(a.name)+": "+
+    h+="<div class=\"axrow clicky\" data-ax=\""+a.key+"\"><div class=lab><span>"+esc(a.name)+": "+
       esc(posLab.split(" (")[0])+"</span><span class=drift style=\"color:"+
       (dr===null?"#5c6b76":(dr>=0?"#5fae7d":"#c25b5b"))+"\">"+
       (dr===null?"—":((dr>=0?"+":"")+dr.toFixed(1)+"pp"))+"</span></div>"+
       "<div class=bar><i style=\"width:"+(top[1]*100).toFixed(0)+"%\"></i></div></div>";
   }
   $("axBars").innerHTML=h;
+  $("axBars").querySelectorAll(".axrow").forEach(el=>
+    el.addEventListener("click",()=>axisCard(el.dataset.ax)));
   /* deltas */
   const ent=D.delta.entries.slice(-4).reverse();
-  $("deltas").innerHTML = ent.length? ent.map(e=>
-    "<div class=delta><span class=mag>"+esc(e.rule)+" · "+e.impact_class+
+  $("deltas").innerHTML = ent.length? ent.map((e,i)=>
+    "<div class=\"delta clicky\" data-i="+i+"><span class=mag>"+esc(e.rule)+" · "+e.impact_class+
     " ×"+(e.magnitude||0).toFixed(3)+"</span><br><span class=drv>"+
     esc((e.driver||"awaiting the first live morning").slice(0,90))+"</span></div>").join("") :
     "<div class=delta><span class=drv>no evidence applications yet — the "+
     "first live morning writes this panel</span></div>";
+  $("deltas").querySelectorAll(".delta[data-i]").forEach(el=>
+    el.addEventListener("click",()=>deltaCard(ent[+el.dataset.i])));
   /* instruments */
   const tr=activeTracks();
   const yi=Math.max(0,Math.min(tr.year.length-1,Math.floor(S.yr)-D.engine.y0));
@@ -728,12 +843,14 @@ function refreshNarr(){
   const evs=activeEvents().filter(e=>Math.abs(e.year-S.yr)<=6)
     .sort((a,b)=>Math.abs(a.year-S.yr)-Math.abs(b.year-S.yr)).slice(0,7)
     .sort((a,b)=>a.year-b.year);
-  $("narr").innerHTML = evs.map(e=>
-    "<div class=wcard><span class=yr>"+Math.floor(e.year)+"</span>"+
+  $("narr").innerHTML = evs.map((e,i)=>
+    "<div class=\"wcard clicky\" data-i="+i+"><span class=yr>"+Math.floor(e.year)+"</span>"+
     "<span class=ly>"+esc(e.layer)+"</span><br>"+esc(e.text)+
     "<div class=cite>"+e.cites.map(esc).join(" · ")+"</div></div>").join("") ||
     "<div class=wcard><span class=drv>no waypoints near this date on the "+
     "active line</span></div>";
+  $("narr").querySelectorAll(".wcard[data-i]").forEach(el=>
+    el.addEventListener("click",()=>waypointCard(evs[+el.dataset.i])));
 }
 
 /* ---------- composer ---------- */
@@ -916,14 +1033,107 @@ function wire(){
     if (e.key==="ArrowRight"){ S.yr=Math.min(2100,S.yr+(e.shiftKey?5:0.5));
       $("slider").value=S.yr; writeHash(); refreshAll(); }
     if (e.key==="Escape"){ $("about").style.display="none";
-      $("crisisCard").style.display="none"; }
+      $("crisisCard").style.display="none";
+      $("infoCard").style.display="none"; hideTip(); }
   });
+  /* instrument sub-panels reveal their explainers */
+  $("pills").classList.add("clicky");
+  $("pills").addEventListener("click",()=>instrumentCard("pills"));
+  $("donutRow").classList.add("clicky");
+  $("donutRow").addEventListener("click",()=>instrumentCard("donut"));
+  $("copies").classList.add("clicky");
+  $("copiesLab").classList.add("clicky");
+  $("copies").addEventListener("click",()=>instrumentCard("copies"));
+  $("copiesLab").addEventListener("click",()=>instrumentCard("copies"));
+  $("stats").classList.add("clicky");
+  $("stats").addEventListener("click",()=>instrumentCard("stats"));
   $("stage").addEventListener("click",e=>{
+    /* priority: crisis diamond → ladder label → seek */
+    for (const h of HIT.crisis)
+      if (Math.hypot(e.clientX-h.x, e.clientY-h.y) < 11){
+        const c = D.crisis.crises[h.i];
+        showCard("crisis point", c.q,
+          "<div class=posrow><span>current probability</span>"+
+          "<span class=pv>"+(h.p*100).toFixed(1)+"%</span></div>"+
+          "<div style=\"margin-top:6px\">Moved by evidence rules touching "+
+          (c.kind==="axis"? c.axis+"."+c.pos : "the capability band")+
+          "; every morning's applications appear in the delta panel with "+
+          "their drivers.</div>", c.cites);
+        return;
+      }
+    for (const z of HIT.ladder)
+      if (e.clientX>=z.x0 && e.clientX<=z.x1 && e.clientY>=z.y0 &&
+          e.clientY<=z.y1){ milestoneCard(z.k); return; }
     const W=$("stage").clientWidth, L=286, R=W-270;
     if (e.clientX<L||e.clientX>R) return;
     S.yr=Math.max(2012,Math.min(2100,xinv(e.clientX,L,R)));
     $("slider").value=S.yr; writeHash(); refreshAll();
   });
+  $("stage").addEventListener("mousemove",e=>{
+    for (const h of HIT.crisis)
+      if (Math.hypot(e.clientX-h.x, e.clientY-h.y) < 11){
+        const c = D.crisis.crises[h.i];
+        $("stage").style.cursor="pointer";
+        showTip(e.clientX, e.clientY, "<span class=tt>"+esc(c.q)+
+          "</span><br>"+(h.p*100).toFixed(1)+"% — click for the card");
+        return;
+      }
+    for (const z of HIT.ladder)
+      if (e.clientX>=z.x0 && e.clientX<=z.x1 && e.clientY>=z.y0 &&
+          e.clientY<=z.y1){
+        $("stage").style.cursor="pointer";
+        showTip(e.clientX, e.clientY, "<span class=tt>"+
+          esc(LADDER_SHORT[z.k])+"</span><br>click for the milestone card");
+        return;
+      }
+    const W=$("stage").clientWidth, L=286, R=W-270, T=56, B=innerHeight-150;
+    if (e.clientX>=L && e.clientX<=R && e.clientY>=T && e.clientY<=B){
+      const yr = xinv(e.clientX, L, R);
+      if (yr > NOW_Y){
+        const b = condCache?condCache.bands:D.bands.annual;
+        const i = Math.max(0, Math.min(b.year.length-1,
+          Math.round(yr)-b.year[0]));
+        $("stage").style.cursor="crosshair";
+        showTip(e.clientX, e.clientY,
+          "<span class=tt>"+Math.round(yr)+"</span><br>"+
+          "p90 "+b.p90[i].toFixed(1)+" · p50 "+b.p50[i].toFixed(1)+
+          " · p10 "+b.p10[i].toFixed(1)+
+          "<div class=tc>capability index — click to seek</div>");
+        return;
+      }
+    }
+    $("stage").style.cursor="default"; hideTip();
+  });
+  $("stage").addEventListener("mouseleave",hideTip);
+  $("world").addEventListener("mousemove",e=>{
+    for (const h of HIT.sites)
+      if (Math.hypot(e.clientX-h.x, e.clientY-h.y) < 13){
+        $("world").style.cursor="pointer";
+        showTip(e.clientX, e.clientY, "<span class=tt>"+esc(h.s.n)+
+          "</span><br>~"+h.gwSite.toFixed(1)+" GW (modelled share)"+
+          "<div class=tc>click for provenance</div>");
+        return;
+      }
+    $("world").style.cursor="default"; hideTip();
+  });
+  $("world").addEventListener("mouseleave",hideTip);
+  $("world").addEventListener("click",e=>{
+    for (const h of HIT.sites)
+      if (Math.hypot(e.clientX-h.x, e.clientY-h.y) < 13){
+        const wn = D.engine.explainers.world_note;
+        showCard("compute site · "+h.s.r.toUpperCase(), h.s.n,
+          "<div class=posrow><span>modelled capacity now</span>"+
+          "<span class=pv>~"+h.gwSite.toFixed(1)+" GW</span></div>"+
+          "<div class=posrow><span>regional share weight</span>"+
+          "<span class=pv>"+h.s.w+"</span></div>"+
+          "<div style=\"margin-top:6px\">"+esc(wn.b)+
+          " Locations are authored from the trunk's own reporting; "+
+          "capacities are modelled shares of the active world-line's "+
+          "compute track, and say so here.</div>", []);
+        return;
+      }
+  });
+  $("icX").addEventListener("click",()=>$("infoCard").style.display="none");
   addEventListener("resize",refreshAll);
 }
 

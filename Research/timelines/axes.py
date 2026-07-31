@@ -83,11 +83,17 @@ REGISTRY = {
      "cites": ["analysis/coordinated-slowdown-proposals",
                "analysis/eu-vs-us-ai-regulation", "concepts/compute-governance"],
      "positions": [
-       ("C1", "none / race", 0.42, ["analysis/us-china-ai-competition"]),
-       ("C2", "US securitization", 0.27,
-        ["sources/aschenbrenner-situational-awareness"]),
+       ("C1", "none / race", 0.41, ["analysis/us-china-ai-competition"]),
+       ("C2", "US securitization", 0.265,
+        ["sources/aschenbrenner-situational-awareness",
+         "sources/anthropic-2028-ai-leadership"]),
+       # C3 prior ~0.09 independently cross-checked: the AI 2040 authors'
+       # own implementation odds run 3-15% (median ~5-8%) —
+       # ai-2040.com/supplements/comparing-possible-plans
        ("C3", "US-CN transparency deal", 0.09, ["sources/ai-2040-plan-a"]),
        ("C4", "fragmented blocs", 0.22, ["analysis/eu-vs-us-ai-regulation"]),
+       ("C5", "moratorium / shutdown", 0.015,
+        ["sources/ai-2040-plan-a"]),          # their Plan S, scored & rejected
      ],
      "subaxes": [
        {"key": "C.us-cn", "name": "US-China axis",
@@ -127,26 +133,42 @@ REGISTRY = {
     {"key": "E", "name": "Economy",
      "cites": ["concepts/ai-bubble-debate", "analysis/ai-bubble-vs-buildout"],
      "positions": [
-       ("E1", "boom sustained", 0.30, ["analysis/ai-bubble-vs-buildout"]),
-       ("E2", "bubble corrects, build-out survives", 0.48,
+       ("E1", "boom sustained", 0.28, ["analysis/ai-bubble-vs-buildout"]),
+       ("E2", "bubble corrects, build-out survives", 0.45,
         ["concepts/ai-bubble-debate"]),
-       ("E3", "deflates hard", 0.22, ["concepts/ai-bubble-debate"]),
+       ("E3", "deflates hard (capex-led)", 0.19,
+        ["concepts/ai-bubble-debate"]),
+       # the Citrini "intelligence displacement spiral": a demand-side
+       # crisis originating in labor, not capex — distinct failure mode
+       ("E4", "displacement-led demand crisis", 0.08,
+        ["sources/2028-global-intelligence-crisis",
+         "concepts/ai-labor-disruption"]),
      ]},
   ],
   # Conditionals: child axis → {parent-position: multiplicative tilts on the
   # child's positions}. Applied in axis order (acyclic by construction).
   # Each entry cites the mechanism it encodes.
   "conditionals": {
+    # A-given-C tilts encode the AI 2040 comparison table's p(alignment)
+    # spread — 72% under the deal's 100B-H100e-yr safety compute vs 25%
+    # racing (ai-2040.com/supplements/comparing-possible-plans; cited on
+    # sources/ai-2040-plan-a until the supplement is ingested)
     "A": {"T4": {"A4": 3.0, "A1": 0.2},          # no SC window → untested
           "T1": {"A4": 0.1, "A1": 2.2, "A2": 1.6}},
     "C": {"T1": {"C3": 0.4, "C2": 1.5},          # explosive tempo squeezes
           "T4": {"C2": 0.5, "C4": 1.6},          #   the deal window
           "A1": {"C3": 0.5}},
     "S": {"C2": {"S1": 1.8}, "C3": {"S2": 1.7},
-          "E3": {"S3": 1.6}},                     # capex crunch constrains
-    "P": {"D1": {"P1": 1.9}},                     # shock feeds backlash
-    "E": {"T4": {"E3": 1.5, "E1": 0.6}},
+          "E3": {"S3": 1.6}, "E4": {"S3": 1.4}},  # demand crunch constrains
+    "P": {"D1": {"P1": 1.9}, "E4": {"P1": 1.7}},  # shock+crisis feed backlash
+    "E": {"T4": {"E3": 1.5, "E1": 0.6},
+          "D1": {"E4": 2.6},                      # the spiral needs the shock
+          "D3": {"E4": 0.3}},
   },
+  # position-conditioned A-tilts applied AFTER C is drawn would need a
+  # reordering; instead the same evidence enters as A-priors' provenance and
+  # the takeoff-length cross-check in worldlines (C3 pause ≈ their 6-year
+  # takeoff; race lines ≈ their 1.0-1.1 years) — recorded, not double-counted.
   "changelog": [
     {"version": REGISTRY_VERSION, "date": "2026-07-31",
      "change": "seed registry: 7 axes, 24 positions, 3 sub-axes, "
@@ -191,6 +213,36 @@ EVIDENCE_RULES = [
              "section": "Frontier Models & Capabilities"},
    "nudge": {("T", "T1"): +2, ("T", "T2"): +1, ("T", "T4"): -2},
    "cites": ["sources/ai-2027", "models/gpt-56"]},
+  {"id": "ev-unemployment-spike", "impact": "major",
+   "match": {"text_any": ["unemployment rose", "jobless rate", "layoffs "
+             "exceeded", "white-collar layoffs"],
+             "section": "Labor, Society & Democratic Institutions"},
+   "nudge": {("D", "D1"): +2, ("E", "E4"): +2, ("D", "D3"): -1},
+   "cites": ["sources/2028-global-intelligence-crisis",
+             "concepts/ai-labor-disruption"]},
+  {"id": "ev-inference-tax-proposal", "impact": "notable",
+   "match": {"text_any": ["compute tax", "inference tax", "AI dividend",
+             "sovereign wealth fund"],
+             "section": "Federal AI Policy & Agency Action"},
+   "nudge": {("D", "D1"): +1, ("P", "P1"): +1},
+   "cites": ["sources/2028-global-intelligence-crisis"]},
+  {"id": "ev-distillation-attack", "impact": "notable",
+   "match": {"text_any": ["distillation attack", "model extraction",
+             "distilled from"],
+             "section": "National Security & Geopolitics"},
+   "nudge": {("C", "C2"): +2, ("S", "S3"): +1},
+   "cites": ["sources/anthropic-2028-ai-leadership"]},
+  {"id": "ev-sabotage-ops", "impact": "major",
+   "match": {"text_any": ["cyberattack on datacenter", "sabotage",
+             "cyber operation against"],
+             "section": "National Security & Geopolitics"},
+   "nudge": {("C", "C2"): +2, ("C", "C3"): -2, ("S", "S1"): +1},
+   "cites": ["sources/ai-2040-plan-a"]},
+  {"id": "ev-moratorium-movement", "impact": "notable",
+   "match": {"text_any": ["moratorium", "halt AI development", "pause all"],
+             "section": "International AI Regulation"},
+   "nudge": {("C", "C5"): +2, ("P", "P1"): +1},
+   "cites": ["sources/ai-2040-plan-a", "concepts/ai-backlash"]},
 ]
 
 
