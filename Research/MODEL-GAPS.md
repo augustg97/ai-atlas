@@ -21,7 +21,12 @@ IDs are referenced from white papers, code comments and commit messages. **Never
 
 | item | what shipped | measured |
 |---|---|---|
-| — | nothing yet; the scaffold is the only artefact | — |
+| A2 **DELIVERED** | datum v1 frozen (`datum_build.py`, seed 20260731): PCA-50 → seeded kNN layout, numpy-only; 1,700 pages positioned; drift audit live at ε=0.005 | int8 top-8 recall **0.989**; datum 194 KB, anchors 785 KB; selftest separates planted clusters ≥2.5× |
+| A3 **DELIVERED** | territories = tf-idf-weighted event-target prototypes per dev-log section (first mechanism — single-header chunks — CLOSED, negative result: 12/13 sections starved) | 13/13 sections live, 22–136 distinct targets each |
+| B1 **DELIVERED** | emit v0 with date kinds + the date-kind audit in the gate | 1,825 events, **92% explicit event dates**, 80% entity-targeted; datekinds bad = 0 |
+| C1 **DELIVERED** | Epoch witness (CC-BY CSV, 1,041 rows) + baselines; instrument-error lesson recorded (aliases require identity) | matched 20, disagreements 4 (unit-choice, baselined), W3 candidates 133 (curation pending D2) |
+| A4 **MEASURED** | field cadence monthly→2026-03 / weekly→now; fixed global scales; ChatGPT-shock test defined | 188 keyframes, 9.4 MB total |
+| E1 **MEASURED** | int8-50 static index viable for Tier 0 | recall 0.989 at 785 KB |
 
 ---
 
@@ -75,15 +80,19 @@ IDs are referenced from white papers, code comments and commit messages. **Never
 
 ---
 
-**What the audits did NOT find:** nothing yet — no audits have run. First baselines land with C1
-and B1.
+**What the audits did NOT find** (first gate run, 2026-07-31): windows bad **0** · cards bad
+**0** · datekinds bad **0** · eras bad **0** · unpositioned features **0** · unterritoried
+**0**. The dev-log "undercount" was NOT a parser loss — frontmatter counts sub-developments;
+per-file verification found zero gap files at the rendered-item unit.
 
 ---
 
-**Count: 16 items — 4 at P1.** The ones that would move the model furthest, in order:
+**Count: 16 items — 6 delivered/measured in round 1, 1 P1 open (A1, staged for the build).**
+The ones that would move the model furthest, in order:
 
-1. **A1** — the visual bar: the field-engine design study (the user's named worry).
-2. **A2** — datum v1: until it lands, nothing has a position.
-3. **B1** — the dated spine with date kinds audited: until it lands, nothing has a time.
-4. **C1** — the witnesses: the instrument every later dispute is settled with.
-5. **D1** — the nightly chain: the "ongoing basis" the project exists for.
+1. **A1** — build the app on WP-01's design (staged; the rule-2.16 screenshot + ChatGPT-shock
+   test are the acceptance).
+2. **D1/D2** — the nightly chain + queue loop (wired at ship).
+3. **B3** — era-prose tiling per entity (largest open card-quality item).
+4. **E2** — Ask the Atlas worker tier (needs key + CF approval).
+5. **C1-curation** — file a curated W3 subset into the wiki queue.

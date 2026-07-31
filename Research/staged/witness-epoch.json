@@ -1,0 +1,182 @@
+{
+ "wiki_models": 56,
+ "epoch_rows": 1041,
+ "matched": 20,
+ "unmatched_wiki": 36,
+ "unmatched_wiki_slugs": [
+  "alphagenome",
+  "amazon-nova",
+  "apple-foundation-models",
+  "claude-3-5-haiku",
+  "claude-mythos-preview",
+  "claude-opus-46",
+  "claude-sonnet-46",
+  "claude-sonnet-5",
+  "deepseek-v4",
+  "doubao",
+  "ernie-4",
+  "gemma",
+  "genie-3",
+  "glm-4",
+  "glm-5",
+  "glm-5-2",
+  "gpt-4-family",
+  "gpt-5-family",
+  "gpt-54-thinking",
+  "gpt-56"
+ ],
+ "date_disagreements": [
+  {
+   "slug": "alphafold",
+   "wiki": "2020-11-30",
+   "epoch": "2020-01-15",
+   "delta_days": 320
+  },
+  {
+   "slug": "deepseek-r1",
+   "wiki": "2025-01-22",
+   "epoch": "2025-05-28",
+   "delta_days": -126
+  },
+  {
+   "slug": "deepseek-v3",
+   "wiki": "2024-12-01",
+   "epoch": "2025-03-24",
+   "delta_days": -113
+  },
+  {
+   "slug": "gemini-2-5-pro",
+   "wiki": "2025-03-25",
+   "epoch": "2025-06-05",
+   "delta_days": -72
+  }
+ ],
+ "epoch_frontier_gaps": [
+  {
+   "name": "Solar Open2 250B",
+   "org": "Upstage",
+   "date": "2026-06-28"
+  },
+  {
+   "name": "EXAONE 4.5",
+   "org": "LG AI Research",
+   "date": "2026-04-09"
+  },
+  {
+   "name": "Gemini 3.0 Flash-lite",
+   "org": "Google DeepMind",
+   "date": "2026-03-03"
+  },
+  {
+   "name": "Gemini 3.1 Pro",
+   "org": "Google DeepMind",
+   "date": "2026-02-19"
+  },
+  {
+   "name": "Solar Open 100B",
+   "org": "Upstage",
+   "date": "2025-12-31"
+  },
+  {
+   "name": "K-EXAONE",
+   "org": "LG AI Research",
+   "date": "2025-12-31"
+  },
+  {
+   "name": "VAETKI",
+   "org": "NC AI",
+   "date": "2025-12-30"
+  },
+  {
+   "name": "A.X K1",
+   "org": "SK Telecom",
+   "date": "2025-12-30"
+  },
+  {
+   "name": "HyperCLOVA X SEED 32B Think",
+   "org": "NAVER",
+   "date": "2025-12-29"
+  },
+  {
+   "name": "GPT-5.2 Codex",
+   "org": "OpenAI",
+   "date": "2025-12-18"
+  },
+  {
+   "name": "GPT-5.2",
+   "org": "OpenAI",
+   "date": "2025-12-11"
+  },
+  {
+   "name": "Gemini 3 Pro Image (Nano Banana Pro)",
+   "org": "Google DeepMind",
+   "date": "2025-11-20"
+  },
+  {
+   "name": "GPT-5.1-Codex-Max",
+   "org": "OpenAI",
+   "date": "2025-11-19"
+  },
+  {
+   "name": "GPT-5.1 Instant",
+   "org": "OpenAI",
+   "date": "2025-11-13"
+  },
+  {
+   "name": "GPT-5.1",
+   "org": "OpenAI",
+   "date": "2025-11-13"
+  },
+  {
+   "name": "GPT-5.1-Codex",
+   "org": "OpenAI",
+   "date": "2025-11-12"
+  },
+  {
+   "name": "Meta's Generative Ads Model (GEM)",
+   "org": "Meta AI",
+   "date": "2025-11-10"
+  },
+  {
+   "name": "GPT-5 Pro",
+   "org": "OpenAI",
+   "date": "2025-10-07"
+  },
+  {
+   "name": "Sora 2.0",
+   "org": "OpenAI",
+   "date": "2025-09-30"
+  },
+  {
+   "name": "GPT-5 nano",
+   "org": "OpenAI",
+   "date": "2025-08-07"
+  },
+  {
+   "name": "GPT-5 mini",
+   "org": "OpenAI",
+   "date": "2025-08-07"
+  },
+  {
+   "name": "Claude Opus 4.1",
+   "org": "Anthropic",
+   "date": "2025-08-05"
+  },
+  {
+   "name": "EXAONE 4.0 (32B)",
+   "org": "LG AI Research",
+   "date": "2025-07-15"
+  },
+  {
+   "name": "Imagen 4",
+   "org": "Google",
+   "date": "2025-05-20"
+  },
+  {
+   "name": "gpt-image-1",
+   "org": "OpenAI",
+   "date": "2025-04-23"
+  }
+ ],
+ "epoch_frontier_gap_count": 133
+}
