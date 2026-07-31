@@ -112,13 +112,23 @@ scenarios become PINNED COMPOSITIONS (calibration anchors reproducing their own 
 scoreboard grades PER-AXIS positions against the trunk. Psychohistory as stated-loose
 metaphor: no probabilities, assumption bookkeeping only.
 
+**Rev 3 (same day), all five answers received — the design of record:** a **living
+probabilistic world-model**. Probabilities ARE the product; the mainline of our timeline is
+the focus; the ensemble updates daily from the wiki's record with bounded deltas and an
+attributed "what moved today" panel; the axis registry is living (sub-axes; weekly schema
+review proposes additions from unexplained-residue clusters, approved via the queue);
+**no pinned compositions** — the literature is deconstructed into cited building blocks;
+horizon **2100** with the strange far futures rendered at honest width; a World view on real
+geography satisfies Studio §13b; a public calibration page grades the model on itself; v1's
+terrain retires completely at T2. SCOPE §11b records the decisions verbatim.
+
 | # | P | item | touches | from |
 |---|---|---|---|---|
-| T1 | **P1** | Build the space: axis/position schema with citations, compatibility rules (coherent-count computed), dynamics parameters, ~40 event-template families, the eight pinned compositions with reproduce-the-source selftests, scenario-claims extraction | new `Research/timelines/` + emit | proposal rev 2 §2, §6 |
-| T2 | **P1** | The stage + Composer: trajectories chart (trunk, pinned curves, variant cloud), scrubbing, narrative, branch cards, axis rack with rule-explaining blocks, shareable world-line URLs | web/index.html rebuild | proposal rev 2 §3 |
-| T3 | P2 | The instrument rail (capability pills, compute donut, copies grid, stat strip, EU GW-gap tracker, always-visible axis chips — vault holds the 54 AI 2027 reference figures), compare mode, layer filtering | app | proposal rev 2 §3 |
-| T4 | P2 | The live scoreboard: per-axis position grading + pinned-line grades, nightly; gate extended | emit, audit_all, nightly | proposal rev 2 §1 |
-| T5 | P3 | SCOPE amendment v2 once August answers rev-2 open questions (axis set, composer freedom, probabilities-no, horizon, terrain fate) | SCOPE.md | pending decision |
+| T1 | **P1** | The engine core: full axis registry (axes+sub-axes, priors w/ provenance), conditional network with BOTH intervention (do) and observational (rejection) conditioning, evidence-rule library, event templates incl. far-field to 2100, dynamics parameters, deep-wiki pass (>400 pages cited; coverage audit + thin-grounding→wider-bands rule), registry changelog + weekly schema review. **Prototype r0 DELIVERED** (`Research/timelines/axes.py`): 7 axes/24 positions/3 sub-axes, seeded 10k sampler, 7 selftest groups green, bounded updates (≤2pp/day), approval-gated growth, 32 pages cited | Research/timelines/ + emit | rev 3 §1-§2 |
+| T2 | **P1** | The Mainline + rail: probability river to 2100 (percentile bands, median mainline, crisis cards, resolution coarsening monthly→decadal), delta panel, axis bars + 30-day drift, narrative, composer-as-conditioning, forecast-history scrubbing; **v1 terrain removed** | web/index.html rebuild | rev 3 §3 |
+| T3 | P2 | The World view: real-Earth surface per date/world-line (compute sites glowing, regime coloring, adoption, flashpoints) at the full Studio visual bar (§13a-c) | app | rev 3 §3 |
+| T4 | P2 | The daily machine + calibration: nightly classify→update→re-sample→publish→archive; public Brier/log record; gate extended (probability conservation, delta attribution, coverage ratchet) | emit, audit_all, nightly | rev 3 §1, §5 |
+| T5 | P3 | SCOPE v2 full rewrite in the Studio's new 11-section shape (substrate §3 = the World view) at T1's close | SCOPE.md | Studio update |
 
 **v1 items on hold pending the pivot:** visual round 2 (superseded by T2/T3), B3,
 jurisdiction view. **Still live regardless:** the nightly chain (the trunk keeps growing),

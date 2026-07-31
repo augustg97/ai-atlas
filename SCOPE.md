@@ -211,6 +211,29 @@ Plus two charter-level requirements from the same message:
   breathing surface. The Tectonic Earth is much better… We need to aim for that quality, and
   focus on visualization."* → the visual-fidelity bar in §7, and subject rule 6 in README §2.
 
+## 11b. Decisions of record — the v2 pivot (August, 2026-07-31, verbatim)
+
+After v1 shipped: *"pretty, but too abstract and not visually useful … reassess our entire
+approach while maintaining the spirit and goals"* → the subject becomes **timelines of AI
+futures**, informed by the vault's scenario literature and the whole wiki. Then, on rev 2:
+*"the model should also actively update all of its timelines in light of ongoing
+developments — the future we are predicting is happening every day … with each day of new
+developments, we should see how the timelines change and alter slightly, probabilistically"*
+· axes *"should not be set in stone — we likely should be actively adding new axes AND
+adding sub-axes to existing ones over time"* · the composer is *"an important subfunction";
+the main purpose is "to show probabilities in our timeline and potential likely and unlikely
+futures"* · *"I don't think we should have pinned compositions — … we are deconstructing
+them and using their building blocks in a more expansive system"* · *"We are doing
+probabilities — this is the main utility"* · horizon *"ultimately, to 2100, with very
+strange potential futures on the table. See Plan A's far horizon"* · v1's abstract terrain:
+*"we can retire completely."* Also: *"more wiki pages should be referenced and used"*;
+inspiration *"loosely, from the fictional science of 'psychohistory'."*
+
+Design of record: the proposal artifact (rev 3, "The living forecast"). The full SCOPE v2
+rewrite in the Studio's new 11-section shape is register item T5, executed at T1's close.
+§9's "no forecasting" non-goal is REPEALED by these decisions: the atlas now produces its
+own documented, calibrated probabilities. §12 (Ask the Atlas) carries forward unchanged.
+
 ## 12. Ask the Atlas (the chatbot, in scope)
 
 Why the existing one went unused: it lives in a terminal (`bin/ask.py`) and its index went stale
