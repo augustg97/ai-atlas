@@ -6,114 +6,103 @@ Paste this whole file as the first message of a new session.
 
 ## What you are working on
 
-**AI Atlas** — an interactive time-model of the AI world, 2012 → today (advancing daily), built
-from the AI policy wiki in August's Vault and rendered as living semantic terrain.
+**AI Atlas v2 — the living forecast**: a probabilistic world-model of the AI transition,
+2012 → 2100, built from the AI policy wiki in August's Vault and re-sampled every morning as
+the wiki records what actually happened. Probabilities are the product (decision of record,
+SCOPE §11b); the composer is the instrument for asking *what if*.
 
 - Repo: `/Users/augustgweon/AI Atlas` · GitHub `augustg97/ai-atlas` (Pages serves `main:/docs`)
-- **Live: https://augustg97.github.io/ai-atlas/** — v1.0 shipped 2026-07-31,
-  last verified stamp `20260731-0207`
-- **Read `README.md` first** (goals incl. the visual bar §1; working rules incl. the six
-  subject-specific §2; traps §7; limits §9), then `SCOPE.md` (the contract; §11 = the user's
-  decisions verbatim; §12 = Ask-the-Atlas design), then `Research/MODEL-GAPS.md`.
-- Protocol: `/Users/augustgweon/Modeling Studio` — `/model-research`, `/model-build`,
-  `/model-verify`, `/model-ship` apply here.
+- **Live: https://augustg97.github.io/ai-atlas/** — v2 shipped 2026-07-31, stamp
+  `20260731-0510` verified; v1's semantic terrain is retired completely.
+- **Read `README.md` §1-§2** (visual bar + rules), **`SCOPE.md`** (§11/§11b = August's
+  decisions verbatim; the full v2 SCOPE rewrite is open item T5), **`Research/MODEL-GAPS.md`**
+  (the register — T-round outcomes + 27 open items), and the proposal artifact rev 3
+  (33657b8d-2c49-4129-8afe-0ec977e6b5c3).
+
+## The system, in one paragraph
+
+`Research/timelines/` is the engine: `axes.py` (7-axis belief network; tiered impact
+methodology — minor/notable/major/structural × corroboration × novelty with a weekly soft
+squash; do-pinning AND observational conditioning; registry grows autonomously with an origin
+log, never silently), `worldlines.py` (capability paths incl. Plan A's C3 pause shelf; annual
+tracks 2026-2100; 26 cited event templates incl. the strange far field; exact-argmax
+mainline), `wiki_grounding.py` (1,221 direct + 479 corpus pages; thin axes widen priors),
+`forecast_emit.py` (staged/forecast/*: engine.json is the SINGLE SOURCE of constants the app's
+JS implements functions against), `nightly_update.py` (classify → tiered updates with drivers
+→ residue → Monday schema review that can auto-add sub-axes, logged for August's post-hoc
+review). The app (`web/index.html`) renders the probability river on a piecewise time scale,
+the composer (client-side resampling; the mode chip names do vs observe), the instrument rail
+(axis bars + 30-day drift, delta panel, pills/donut/copies/stats), narrative waypoint cards
+with citations, and the World view (real Earth, regime tints ∝ compute share, 16 authored
+sites glowing by modelled GW). The gate (`Research/modeling/audit_all.py`) now also checks the
+forecast surface and ratchets grounding.
 
 ## State right now
 
-- **Shipped and live-verified**: the WebGL2 field substrate (terrain/attention/settlement
-  composed per pixel from 190 baked keyframes), 855 windowed feature entities + 270 person
-  cards, 1,825 dated events (92% explicit event dates), 11,397 typed arcs, growth footprints
-  from 421 Snapshot rows, era-registered readout, chapters, territories, layers, Ask-the-Atlas
-  Tier 0 (find + int8 semantic neighbours), About with the honesty essays, in-app update log.
-- **The gate** (`Research/modeling/audit_all.py`): PASS at ship; baselines in
-  `baselines.json` — review 224 (tightened from 223 when the spine path added a reporting
-  surface), witness matched 20 / disagreements 4, datum drift ε 0.005, datum v1-2026-07-31.
-- **The daily machine**: scheduled task `ai-atlas-nightly` (10:47 local, after the vault's
-  09:22 cycle) runs `build/nightly.sh` → emit → witness → bake → gate → stamp → push →
-  live-stamp verify; on gate refusal it publishes nothing and reports (yesterday's data
-  serving is the designed failure mode). Reports land in `Research/nightly-reports/`.
-  **D1 acceptance (three unattended correct mornings) is PENDING — watch the first three.**
-- **The queue loop is live**: six tasks filed into the vault's `Wiki/_meta/queue/`
-  (2026-07-31): four INGESTs (ChatGPT launch, AlexNet, GPT-4 report, AlphaGo), one RESEARCH
-  (2022–23 era coverage), one LINT (the Mori 1970 sentinel). The vault's next ingest cycle
-  drains them; the atlas inherits the improvements at its next emit.
+- Live and verified; the nightly task `ai-atlas-nightly` (10:47 local) runs
+  `build/nightly.sh`: trunk emit → witness → nightly_update → grounding → forecast_emit →
+  gate → stamp → push → live verify. Its prompt (in `~/.claude/scheduled-tasks/`) requires
+  attributed deltas, verbatim SCHEMA ADDITIONS blocks, claim-resolution notes, and forbids
+  SKIP_AUDIT. **Acceptance (T4/D1): three unattended correct mornings — WATCH THEM.**
+- weights.json (Research/timelines/) is the evolving state; the seed priors live in
+  axes.REGISTRY. delta panel reads the evidence log; marginals history accrues daily.
+- The queue loop remains live (6 tasks filed earlier drain with the vault's cycles).
 
-## Honest assessment vs SCOPE (what is and is not there)
+## Honest limits, recorded
 
-- **Rule-2.16 screenshot verdict:** the selection view (entity + arc fan + card) reads as a
-  rendered world; the resting substrate reads as a dark luminous map — good, not yet at
-  Tectonic's terrain register. Next visual round: stronger relief/contours, settlement fabric
-  at zoom, glyph refinement.
-- **ChatGPT-shock test: partial pass, measured.** The shock reads as a sustained regime change
-  (+59% attention at 2023-01, 2.3× by 2023-04, never returns to 2022 baseline) — but its
-  opening weeks are corpus-limited (the wiki holds 7 sources Oct–Dec 2022). Filed to the
-  queue; re-measure after the wiki ingests the era.
-- **Jurisdiction view: not built** (deferred at STAGED-CHANGES; world-atlas TopoJSON is
-  already fetched at `data/witness/countries-110m.json`, ISC). B3 era-prose tiling not built
-  (cards show description + dated series + status). E2 worker synthesis not built (needs
-  August's key + CF deploy approval).
-- Pre-horizon eras render sparse and dimmer BY DESIGN (labelled "reconstructed from the
-  record"); the 2012–2020 era will stay thin until the queue-filed landmarks are ingested.
+- World view is features-on-real-geography, not per-pixel lit terrain — T8 is the §13a round.
+- Six evidence rules are a floor (T9); residue will dominate mornings until the library grows.
+- exemplars.json ships unused (T6); calibration claims register exists but the Brier scorer
+  is T7; sub-axes are registered but do not yet drive tracks (T10).
+- Priors are the model's opening judgments with provenance — August may adjust; the About
+  page says all of this in public.
 
-## Traps that have cost time IN THIS PROJECT (beyond README §7)
+## Traps (beyond README §7)
 
-- The scaffold's `.gitignore` pattern `data/` swallowed `web/data` and `docs/data` — the
-  first deploy served a stamped app with **no JSON payload** (splash hang). Now `/data/`.
-- **Cross-metric and hedged Snapshot rows**: a $5B compute row rolled over the $1T valuation
-  row, then a "$1.75T (SpaceX IPO target)" hedge became a headline fact. `usdAt` is
-  group-filtered and hedge-filtered; cards still show every row verbatim.
-- **Year-precision dates spike as July-1 phantoms** in any KDE — precision-smear them
-  (`fields_bake.py` does; the unsmeared version's top-6 "burst" frames were all artifacts).
-- A ternary is not an assignment target in JS (`(a?x:y)=v` parses nowhere); the whole app
-  died silently on it once. `node --check` the extracted script before serving.
-- The pane can render the live site letterboxed — a browser-pane artifact, not the app;
-  verify layout on localhost before chasing it.
+- `style.display=""` restores the STYLESHEET value — for #world that meant `none`; the world
+  drew perfectly on an invisible canvas. Use explicit "block"/"none".
+- The app implements FUNCTIONS against engine.json CONSTANTS — never mirror a literal into
+  JS; extend engine.json instead (single source of truth).
+- Percentile bands saturate at the ladder ceiling by the 2040s in most sampled futures —
+  that is the model speaking, not a bug; the piecewise x-scale exists so the action keeps
+  its pixels.
+- The gate self-extends its baseline on first new-check runs (recorded in stdout) — read the
+  output, don't assume refusal.
 
-## ⚠️ PIVOT IN PROGRESS (2026-07-31, read first)
+## The work queue (register order)
 
-After v1 shipped, August's verdict: "pretty, but too abstract and not visually useful" — the
-project pivots to **branching future timelines** (see `Research/MODEL-GAPS.md` §T and the
-proposal artifact 33657b8d-2c49-4129-8afe-0ec977e6b5c3; decision on the portfolio pending).
-The trunk pipeline, gate, nightly chain and queue loop all carry over; the semantic terrain
-retires from the main stage. Aztec Conquest is retired as a reference model everywhere;
-AI 2027's site grammar (the vault holds its 54 figures) is the new legibility bar. Do not
-start T-work before August answers the proposal's four open questions.
-
-## The work queue (= register order)
-
-1. **Watch the first three nightlies** (D1 acceptance); expect the queue-filed ingests to
-   enrich the shock era within days — re-run the shock measurement after.
-2. **Visual round 2 (A1 continuation):** relief/contour strength, settlement fabric at zoom,
-   pre-horizon register polish — against five captured reference framings (F1, still to
-   capture into `reference/`).
-3. **B3** era-prose tiling per entity (the largest card-quality item).
-4. **Jurisdiction view** (TopoJSON in hand).
-5. **E2** Ask-the-Atlas worker tier (key + CF approval from August first).
-6. **C1 curation**: the 133 Epoch W3 candidates → a curated queue filing.
+1. Watch three mornings (T4/D1 acceptance); expect residue-heavy first reports.
+2. **T7** calibration scorer (first claim deadlines: 2026-12-31).
+3. **T8** World view to the full visual bar.
+4. **T9** evidence-rule library expansion (target ~40 rules with citations).
+5. T6 variance narrative · T10 sub-axis dynamics · T5 SCOPE v2 rewrite · then B3/E2/C1-cur.
 
 ## Commands
 
 ```bash
-# run locally (or: preview_start name="ai-atlas") — serve repo root, open /web/
+# app locally (or preview_start name="ai-atlas"): serve repo root, open /web/
 python3 -m http.server 8143 --directory "/Users/augustgweon/AI Atlas"
 
-# research loop
-cd "/Users/augustgweon/AI Atlas/Research/modeling" && \
-  python3 frames.py && python3 emit.py && python3 witness_epoch.py && \
-  python3 fields_bake.py && python3 audit_all.py
+# engine loop
+cd "/Users/augustgweon/AI Atlas/Research/timelines" && \
+  python3 axes.py && python3 worldlines.py && python3 nightly_update.py && \
+  python3 wiki_grounding.py && python3 forecast_emit.py
+cd ../modeling && python3 audit_all.py
 
-# deploy (only route; the gate lives inside)
+# deploy (only route; gate inside)
 python3 build/build_site.py && git add -A && git commit && git push
-# then verify the live stamp (build prints the curl line)
+# then verify the live DATA_V stamp (build prints the curl)
 
-# the nightly chain, manually
+# the whole morning, manually
 bash build/nightly.sh
 ```
 
 ## How the user wants this done
 
-README §2, especially: **the surface is the argument** (2.16 — assess a full-frame screenshot
-honestly every round; Tectonic Earth is the register) · **visually verify** · **fix the
-system, not the instance** · **measure before tuning** · **the vault is read-only except the
-queue** · **nothing the record disputes or hedges is stated flatly** (2.15 — the xAI target
-lesson) · **address every item raised, and say so when one cannot be done.**
+README §2 + SCOPE §11b, distilled: **probabilities are the product** — documented, cited,
+bounded-on-average but concomitant with big events, graded in public · **the registry lives**
+— add axes/sub-axes autonomously with a clear log for review, never silently · **deep wiki**
+— more pages informing the model every round, coverage ratcheted · **visually rich and
+legible** — Tectonic Earth craft, AI 2027 legibility, real-world surfaces · **honesty
+everywhere** — do vs observe named on screen, hedges never flattened, thin grounding rendered
+as width, the About page owes every mechanism.

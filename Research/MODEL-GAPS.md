@@ -135,4 +135,21 @@ jurisdiction view. **Still live regardless:** the nightly chain (the trunk keeps
 the queue loop, E2, C1-curation. The datum/terrain code stays in-repo; its fate on the main
 stage is the proposal's open question 4.
 
-**Count: 21 items — 2 at P1 (T1, T2), both awaiting August's portfolio decision.**
+**T-round outcomes (2026-07-31, v2 live at stamp 20260731-0510):**
+
+| item | what shipped | measured |
+|---|---|---|
+| T1 **APPLIED** | the engine core: `axes.py` (tiered impacts minor 0.3pp→structural 9pp × corroboration × novelty, weekly soft squash at 10pp; observe(); origin-logged auto-growth), `worldlines.py` (paths w/ C3 pause shelf + A2 delay, tracks, 26 cited templates to 2100, exact-argmax mainline), `wiki_grounding.py`, `forecast_emit.py`, `nightly_update.py` | 20 selftest groups green across 5 modules; grounding **1,221 direct + 479 corpus = 1,700/1,700 pages**, two honest tiers; observe verified (P(T4given A4) > 1.5× prior); mainline = T3·A3·C1·D2·S2·P3·E2, p50 crosses coder ~2032, researcher ~2035 (80% crisis reading), p10 stays sub-researcher into the 2050s |
+| T2 **APPLIED** | Mainline stage + composer: probability river (piecewise scale, 66% width to 2040), trunk, crisis diamonds, do/observe conditioning with client resampling against shipped engine.json constants, shareable pins | pinning C3 renders Plan A's pause as a visible shelf; mode chip names the semantics; JS constants single-sourced from engine.json |
+| T3 **APPLIED (v1 level)** | instrument rail (pills/donut/copies/stat strip, drift arrows, delta panel) + World view: real Earth, regime tints ∝ compute share, 16 authored sites glowing by modelled GW | honest limit RECORDED: World view is features-on-real-geography, not yet per-pixel lit terrain — §13a full treatment = T8 |
+| T4 **APPLIED (partial)** | nightly chain wired end-to-end (update → grounding → emit → gate → deploy), morning forecast reports, claims register (4 claims), gate extended (forecast surface + grounding ratchet) | acceptance PENDING three unattended mornings; Brier scorer = T7 open |
+
+**Open after the T-round:** T6 exemplars-driven variance narrative (exemplars.json ships,
+unused) · **T7 the calibration scorer** (claims resolve → Brier record in-app) · **T8 World
+view to the full visual bar** (per-pixel relief/light; §13a) · T9 evidence-rule library
+expansion (6 seeded rules is a floor, not a library) · T10 sub-axis dynamics (registered,
+not yet driving tracks) · T5 SCOPE v2 full rewrite (11-section shape) · plus standing: B3,
+E2, C1-curation, D1-acceptance-watch.
+
+**Count: 27 items — 0 at P1 blocked; the machine runs nightly. Watch three mornings (D1+T4),
+then T7/T8 lead the next round.**
