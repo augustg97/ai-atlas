@@ -102,11 +102,23 @@ Proposal: claude.ai artifact 33657b8d-2c49-4129-8afe-0ec977e6b5c3 (decision pend
 
 | # | P | item | touches | from |
 |---|---|---|---|---|
-| T1 | **P1** | Author the eight-lane timeline corpus (waypoints, quantitative tracks, branch points, provenance, epistemic status) from the vault's scenario sources; per-lane selftests; scenario-claims extraction for the scoreboard | new `Research/timelines/` + emit | proposal §2, §6 |
-| T2 | **P1** | The Trajectories stage: capability-ladder chart, trunk from v1 emit, lane forking, scrubbing, narrative panel, branch-point cards | web/index.html rebuild | proposal §3 |
-| T3 | P2 | The instrument rail in AI 2027's grammar (capability pills, compute donut, copies grid, stat strip — the vault holds the 54 reference figures), compare mode, society-layer filtering | app | proposal §3 |
-| T4 | P2 | The live scoreboard: nightly waypoint grading vs the trunk; lane divergence; gate extended with lane audits | emit, audit_all, nightly | proposal §1 |
-| T5 | P3 | SCOPE amendment v2 (subject; §9 forecasting non-goal becomes curates-and-scores; layer table) once August picks the portfolio | SCOPE.md | pending decision |
+**Rev 2 (same day), after August's composability note:** not eight static lanes but a
+**composable scenario space** — 7 axes (capability tempo T, alignment A, coordination C,
+diffusion/labor D, compute/supply S, public response P, economy E) × positions + regional
+strands (EU-sidelined/EU-agenda, China-internal, US-states) + authored compatibility rules +
+an event-template library citing the wiki's concepts/analysis/industries pages. Published
+scenarios become PINNED COMPOSITIONS (calibration anchors reproducing their own numbers);
+~300 coherent world-lines composable; a Composer UI with shareable composition strings;
+scoreboard grades PER-AXIS positions against the trunk. Psychohistory as stated-loose
+metaphor: no probabilities, assumption bookkeeping only.
+
+| # | P | item | touches | from |
+|---|---|---|---|---|
+| T1 | **P1** | Build the space: axis/position schema with citations, compatibility rules (coherent-count computed), dynamics parameters, ~40 event-template families, the eight pinned compositions with reproduce-the-source selftests, scenario-claims extraction | new `Research/timelines/` + emit | proposal rev 2 §2, §6 |
+| T2 | **P1** | The stage + Composer: trajectories chart (trunk, pinned curves, variant cloud), scrubbing, narrative, branch cards, axis rack with rule-explaining blocks, shareable world-line URLs | web/index.html rebuild | proposal rev 2 §3 |
+| T3 | P2 | The instrument rail (capability pills, compute donut, copies grid, stat strip, EU GW-gap tracker, always-visible axis chips — vault holds the 54 AI 2027 reference figures), compare mode, layer filtering | app | proposal rev 2 §3 |
+| T4 | P2 | The live scoreboard: per-axis position grading + pinned-line grades, nightly; gate extended | emit, audit_all, nightly | proposal rev 2 §1 |
+| T5 | P3 | SCOPE amendment v2 once August answers rev-2 open questions (axis set, composer freedom, probabilities-no, horizon, terrain fate) | SCOPE.md | pending decision |
 
 **v1 items on hold pending the pivot:** visual round 2 (superseded by T2/T3), B3,
 jurisdiction view. **Still live regardless:** the nightly chain (the trunk keeps growing),
