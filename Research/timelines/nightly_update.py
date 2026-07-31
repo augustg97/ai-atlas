@@ -206,13 +206,19 @@ def _selftest():
     r = [x for x in axes.EVIDENCE_RULES if x["id"] == "ev-export-retaliation"][0]
     assert rule_matches(r, ev)
     assert not rule_matches(r, dict(ev, section="AI Industry & Markets"))
-    # weights round-trip preserves normalization
-    import forecast_emit
-    w = {"axes": {"C": {"C1": 0.4, "C2": 0.3, "C3": 0.1, "C4": 0.2}},
+    # weights round-trip preserves normalization, on EVERY axis. The fixture
+    # is derived from the registry, never hardcoded: the registry is designed
+    # to grow (C5 by hand, sub-axes by the Monday review), and a literal
+    # position list here goes stale the moment it does — which is exactly how
+    # this selftest broke the 2026-07-31 chain with KeyError: 'C5'.
+    w = {"axes": {a["key"]: {p[0]: 1.0 + i
+                             for i, p in enumerate(a["positions"])}
+                  for a in axes.REGISTRY["axes"]},
          "evidence_log": []}
     reg = weights_to_reg(w)
     reg_to_weights(reg, w)
-    assert abs(sum(w["axes"]["C"].values()) - 1.0) < 1e-9
+    for _k, _v in w["axes"].items():
+        assert abs(sum(_v.values()) - 1.0) < 1e-9, _k
     # schema review triggers only on clustered sustained residue
     wt = {"residue": [{"date": "2026-07-29", "section":
                        "Agentic AI & Coding", "text": "x"}] * 15}
