@@ -1,5 +1,5 @@
 # large source datasets — never committed
-data/
+/data/
 *.tif
 *.tiff
 *.nc
