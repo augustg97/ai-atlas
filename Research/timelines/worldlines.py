@@ -117,6 +117,185 @@ LAWS_RATE = {"C1": 14, "C2": 8, "C3": 6, "C4": 22,
 APPROVAL0 = {"P1": 34, "P2": 47, "P3": 40}
 
 
+# Capability domains ("explain each of our capability domains in detail") —
+# AI 2027's six + R&D and science; thresholds on the ladder, illustrative
+# and labelled modelled. Shipped via engine.json; the app renders per-pill
+# cards from THIS, never from literals.
+DOMAINS = [
+ {"k": "CODE", "th": 3.0, "n": "Coding & software engineering",
+  "d": "The hinge domain: once AI outperforms the best human engineers, AI "
+       "R&D itself compounds. The trunk's benchmark record (SWE-bench-class "
+       "→ agentic engineering) is the ladder's best-instrumented rung.",
+  "cites": ["sources/ai-2027", "concepts/scaling-laws"]},
+ {"k": "HACK", "th": 3.1, "n": "Cyber operations",
+  "d": "Finding and chaining vulnerabilities at machine speed. The first "
+       "domain where offense-defense balance becomes a state concern — the "
+       "Europe-2031 ransomware wave and Glasswing politics live here.",
+  "cites": ["sources/europe-2031", "sources/anthropic-2028-ai-leadership"]},
+ {"k": "FCAST", "th": 3.3, "n": "Forecasting & strategy",
+  "d": "Superhuman prediction and planning — the quiet domain that makes "
+       "AI advisors indispensable to governments and firms before anything "
+       "dramatic happens in public.",
+  "cites": ["sources/ai-2027"]},
+ {"k": "R&D", "th": 4.0, "n": "AI research itself",
+  "d": "Full automation of the research loop — the superhuman-AI-researcher "
+       "line. Where takeoff-length arguments (6 years under the deal vs "
+       "~1 racing) are decided.",
+  "cites": ["sources/ai-2040-plan-a", "sources/ai-2027"]},
+ {"k": "BIO", "th": 4.1, "n": "Biosciences",
+  "d": "Design-grade biology: the compressed-century upside (cures at "
+       "decade-compression) and the misuse floor that drives system-card "
+       "gatekeeping in the trunk's record.",
+  "cites": ["sources/machines-of-loving-grace", "models/gpt-56"]},
+ {"k": "POLIT", "th": 4.3, "n": "Persuasion & politics",
+  "d": "Superhuman modeling of people: negotiation, coalition-building, "
+       "opinion. The Race ending's decisive domain — 'superhuman "
+       "politicking' — and the reason oversight design matters early.",
+  "cites": ["sources/ai-2027"]},
+ {"k": "ROBOT", "th": 4.5, "n": "Robotics & the physical economy",
+  "d": "The lag domain: capability arrives years after cognition because "
+       "atoms are slow. Gates the robot-economy templates and the "
+       "special-economic-zone growth pattern.",
+  "cites": ["sources/ai-2027", "sources/europe-2031"]},
+ {"k": "SCI", "th": 4.6, "n": "Novel science",
+  "d": "Research beyond human frontier across physics, materials, "
+       "mathematics — the domain the far field's strange futures assume.",
+  "cites": ["sources/machines-of-loving-grace", "sources/ai-2040-plan-a"]},
+]
+
+# The outcome matrix ("how the economy, institutions, climate, etc. change
+# and evolve") — per layer, condition-matched state descriptions the app
+# renders as the Outcomes panel. Conditions match on any listed position;
+# {} matches always. Years are anchors, adjusted per tempo at render.
+LAYER_MATRIX = {
+ "economy": [
+  ({"E": ["E1"]}, 2030, "Boom economics: AI revenue compounds toward the "
+   "trillions, capex validated, market leadership concentrated in the "
+   "frontier complex.", ["analysis/ai-bubble-vs-buildout"]),
+  ({"E": ["E2"]}, 2030, "Post-correction: valuations reset, weak credit "
+   "cleared, the physical build-out running — growth resumes on sounder "
+   "footing.", ["concepts/ai-bubble-debate"]),
+  ({"E": ["E3"]}, 2030, "Stalled build-out: stranded capex, cheap "
+   "second-hand compute, innovation continuing on efficiency rather than "
+   "scale.", ["concepts/ai-bubble-debate"]),
+  ({"E": ["E4"]}, 2030, "Demand crisis: the displacement spiral in force — "
+   "ghost GDP, fiscal undershoot, private-credit stress, emergency "
+   "redistribution politics.", ["sources/2028-global-intelligence-crisis"]),
+  ({}, 2045, "Whatever the 2020s broke or built, mid-century output is "
+   "dominated by AI-run production; the argument is allocation.",
+   ["sources/ai-2040-plan-a"]),
+ ],
+ "labor": [
+  ({"D": ["D1"]}, 2030, "Shock: white-collar displacement at recession "
+   "speed without the recession's end; wage compression up the ladder; "
+   "the social contract visibly failing first in services.",
+   ["concepts/ai-labor-disruption",
+    "sources/2028-global-intelligence-crisis"]),
+  ({"D": ["D2"]}, 2030, "Split labor market: augmented professions pull "
+   "ahead, exposed ones hollow; geography and sector decide who feels "
+   "which future.", ["concepts/ai-displacement-vs-augmentation"]),
+  ({"D": ["D3"]}, 2030, "Absorption: displacement inside historical "
+   "automation rates; the story is productivity, not unemployment.",
+   ["sources/ai-as-normal-technology"]),
+  ({}, 2050, "Work as identity loosens: dividend schemes, contribution "
+   "economies, and the post-work constitution debates.",
+   ["concepts/ai-labor-disruption"]),
+ ],
+ "law": [
+  ({"C": ["C4", "C1"]}, 2030, "Patchwork doctrine: state laws multiply, "
+   "preemption contested, copyright settled into licensing, liability "
+   "migrating from disclosure to outcomes.",
+   ["analysis/ai-copyright-litigation", "analysis/eu-vs-us-ai-regulation"]),
+  ({"C": ["C2"]}, 2030, "Security law: classification regimes, export "
+   "criminalization, cleared-personnel rules — administrative law bends "
+   "around the national program.",
+   ["sources/aschenbrenner-situational-awareness"]),
+  ({"C": ["C3"]}, 2032, "Treaty law: verification protocols, audit "
+   "rights, compute accounting — arms-control jurisprudence reborn for "
+   "GPUs.", ["sources/ai-2040-plan-a"]),
+  ({}, 2045, "Personhood at the bar: digital minds, AI counsel, and "
+   "liability for autonomous systems define the mid-century docket.",
+   ["sources/ai-2040-plan-a"]),
+ ],
+ "geopolitics": [
+  ({"C": ["C1"]}, 2030, "The race entrenches: compute blocs, chip "
+   "chokepoints, Taiwan premium; every summit is about AI even when it "
+   "isn't.", ["analysis/us-china-ai-competition"]),
+  ({"C": ["C2"]}, 2030, "Lead-lock politics: the four-fronts doctrine "
+   "governs alliances; allies choose stacks, not sides.",
+   ["sources/anthropic-2028-ai-leadership"]),
+  ({"C": ["C3"]}, 2032, "The deal holds (so far): mutual inspection, "
+   "shared frontier consortium, defection scares as the new crisis "
+   "grammar.", ["sources/ai-2040-plan-a"]),
+  ({"C": ["C5"]}, 2032, "Enforcement world: the halt's police problem — "
+   "covert-training intelligence, GPU interdiction, moratorium politics.",
+   ["sources/ai-2040-plan-a"]),
+  ({}, 2050, "Power follows compute and its energy; the map of "
+   "capability is the map of leverage.", ["concepts/compute-governance"]),
+ ],
+ "public": [
+  ({"P": ["P1"]}, 2030, "Backlash governs: anti-AI coalitions win real "
+   "elections; siting, schooling and surveillance fights set the tone.",
+   ["concepts/ai-backlash"]),
+  ({"P": ["P2"]}, 2030, "Quiet adoption: daily-use majorities, "
+   "companion-app normalcy, opposition organized but outnumbered.",
+   ["concepts/ai-diffusion"]),
+  ({"P": ["P3"]}, 2030, "Fracture: pro- and anti-AI identities cut "
+   "across parties; the Europe-2031 pattern of publics splitting "
+   "within countries.", ["sources/europe-2031"]),
+  ({}, 2050, "A generation raised with minds-on-tap; the meaning "
+   "politics the far field keeps on the table.",
+   ["sources/machines-of-loving-grace"]),
+ ],
+ "science": [
+  ({"A": ["A2", "A3"], "T": ["T1", "T2", "T3"]}, 2035, "The compressed "
+   "century opens: AI-driven biology clears disease families ahead of "
+   "trend; materials and climate tech follow.",
+   ["sources/machines-of-loving-grace"]),
+  ({"T": ["T4"]}, 2035, "Steady instruments: AI as superb lab tooling "
+   "inside human-paced science.", ["sources/ai-as-normal-technology"]),
+  ({"A": ["A1"]}, 2035, "Science continues — under new management, for "
+   "its own ends.", ["sources/ai-2027"]),
+  ({}, 2060, "The frontier is nonhuman: discovery outpaces "
+   "comprehension, and translation becomes its own discipline.",
+   ["sources/ai-2040-plan-a"]),
+ ],
+ "climate": [
+  ({"S": ["S1", "S2"], "E": ["E1", "E2"]}, 2030, "The power bill arrives: "
+   "AI load grows toward hundreds of TWh; gas bridges, nuclear "
+   "restarts, and grid politics decide the emissions path.",
+   ["industries/energy", "concepts/compute-governance"]),
+  ({"S": ["S3"]}, 2030, "Constraint as climate policy: scarce compute "
+   "keeps AI load flat while efficiency work compounds.",
+   ["concepts/compute-governance"]),
+  ({"A": ["A2", "A3"], "T": ["T1", "T2", "T3"]}, 2042, "The payback "
+   "test: AI-designed energy tech (fusion bets, grid optimization, "
+   "materials) begins repaying the build-out's carbon debt.",
+   ["sources/machines-of-loving-grace", "industries/energy"]),
+  ({}, 2060, "Climate outcomes track governance more than compute: the "
+   "decisive variable was always deployment speed of what the science "
+   "found.", ["industries/energy"]),
+ ],
+}
+
+
+def layer_states(wl, knots):
+    """The Outcomes panel's data: per layer, the condition-matched state
+    entries for this world-line, tempo-adjusted (fast worlds pull anchor
+    years earlier, slow push later)."""
+    shift = {"T1": -3, "T2": -1, "T3": 0, "T4": +6}[wl["T"]]
+    out = {}
+    for layer, entries in LAYER_MATRIX.items():
+        rows = []
+        for cond, yr, text, cites in entries:
+            if all(wl.get(ax) in poss for ax, poss in cond.items()):
+                rows.append({"year": max(2028, yr + shift), "text": text,
+                             "cites": cites})
+        rows.sort(key=lambda r: r["year"])
+        out[layer] = rows
+    return out
+
+
 def tracks(wl, knots):
     """Annual series dict. Growth saturates (logistic toward ceilings) so a
     75-year horizon cannot compound into absurdity; capability multiplies
@@ -130,7 +309,14 @@ def tracks(wl, knots):
     appr = APPROVAL0[wl["P"]]
     out = {"year": yrs, "cap": [], "gw": [], "us": [], "cn": [], "eu": [],
            "rev": [], "jobs": [], "laws": [], "appr": [], "copies": [],
-           "speed": []}
+           "speed": [], "twh": [], "co2": []}
+    # climate coupling: AI electricity ≈ GW × 8.76 TWh/GW-yr × utilization;
+    # grid intensity declines faster where build-out is coordinated/clean
+    # (industries/energy, concepts/compute-governance); floor 40 g/kWh
+    intensity = 350.0
+    int_decline = {"S1": 0.955, "S2": 0.94, "S3": 0.95}[wl["S"]]
+    if wl["C"] == "C3":
+        int_decline -= 0.005
     for y in yrs:
         c = cap_at(knots, y)
         # compute: growth decays toward a build-out ceiling; E damps
@@ -164,6 +350,10 @@ def tracks(wl, knots):
         out["jobs"].append(round(jobs, 1)); out["laws"].append(int(laws))
         out["appr"].append(round(appr, 1)); out["copies"].append(int(copies))
         out["speed"].append(int(speed))
+        twh = gw * 8.76 * 0.85
+        intensity = max(40.0, intensity * int_decline)
+        out["twh"].append(round(twh, 1))
+        out["co2"].append(round(twh * intensity / 1000.0, 1))
     return out
 
 
@@ -492,6 +682,14 @@ def _selftest():
     assert 0 < max(tr["rev"]) <= 30.0
     assert all(8 <= a <= 72 for a in tr["appr"])
     assert len(tr["year"]) == Y1 - Y0 + 1
+    assert len(tr["co2"]) == len(tr["year"]) and min(tr["co2"]) > 0
+    # outcome matrix: every world-line gets ≥1 entry per layer, sorted
+    ls = layer_states(wl, capability_path(wl))
+    assert set(ls.keys()) == set(LAYER_MATRIX.keys())
+    for rows in ls.values():
+        assert rows and all(rows[i]["year"] <= rows[i+1]["year"]
+                            for i in range(len(rows)-1))
+    assert all(d["cites"] for d in DOMAINS)
     # templates: every one cited; instantiate honors prereqs + determinism
     assert all(t["cites"] for t in TEMPLATES)
     ev1 = instantiate(wl, capability_path(wl), 7)

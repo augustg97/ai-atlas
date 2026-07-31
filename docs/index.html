@@ -185,7 +185,17 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
     <div style="margin-top:6px"><button class="btn" id="resetPins">Reset to mainline</button></div>
   </div>
   <div class="panel"><h3>Crisis points</h3><div id="crisisList"></div></div>
+  <div class="panel"><h3>Outcomes · <span id="outYear">—</span></h3>
+    <div id="outcomes"></div></div>
+  <div class="panel"><h3>Alternative futures</h3>
+    <div id="altNote" style="font-size:9.5px;color:var(--ink-faint)">across
+    the probability curve — click one to walk its world</div>
+    <div id="altList"></div>
+    <div style="margin-top:5px"><button class="btn" id="altBack"
+      style="display:none">Back to the mainline</button></div></div>
 </div>
+<div id="whyChip" class="btn" style="position:absolute;left:300px;top:58px;
+  z-index:11;font-size:10px">Why this shape?</div>
 
 <div id="rail">
   <div class="panel">
@@ -230,7 +240,7 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
    Engine CONSTANTS come from data/forecast/engine.json (single source of
    truth with the python engine); this file implements only functions.
    ========================================================================= */
-const DATA_V = "20260731-0801";
+const DATA_V = "20260731-0819";
 const NOW_Y = 2026.58;
 const LADDER_SHORT = ["","unreliable agent","reliable agent","superhuman coder",
   "superhuman AI researcher","generally superintelligent","wildly superintelligent"];
@@ -239,7 +249,7 @@ const TRUNK = [[2012,0.15],[2016,0.45],[2019,0.8],[2022,1.1],[2022.92,1.5],
 const PILLS = [["CODE",3.0],["HACK",3.1],["FCAST",3.3],["BIO",4.1],
   ["POLIT",4.3],["ROBOT",4.5],["R&D",4.0],["SCI",4.6]];
 
-const S = { yr: NOW_Y, view: "main", pin: {}, obs: false };
+const S = { yr: NOW_Y, view: "main", pin: {}, obs: false, alt: null };
 const D = {};
 let condCache = null;      /* {lines, marginals, bands, main, tracks, events} */
 const HIT = { crisis: [], ladder: [], sites: [] };   /* canvas hit-zones */
@@ -274,16 +284,166 @@ function axisCard(k){
   if (!a) return;
   const marg = activeMarginals()[k] || {};
   const note = D.engine.explainers.axes_note;
-  let rows = a.positions.map(p =>
-    "<div class=posrow><span>" + esc(p[1]) + "</span><span class=pv>" +
-    ((marg[p[0]] || 0) * 100).toFixed(1) + "%</span></div>").join("");
+  let rows = a.positions.map((p, i) =>
+    "<div class=\"posrow clicky axpos\" data-i=" + i + "><span>▸ " + esc(p[1]) +
+    "</span><span class=pv>" + ((marg[p[0]] || 0) * 100).toFixed(1) +
+    "%</span></div><div class=posstory style=\"display:none;font-size:10.5px;" +
+    "color:var(--ink-dim);padding:4px 0 7px 10px;line-height:1.5\">" +
+    esc(p[4] || "") + "</div>").join("");
+  /* how this axis interacts: conditionals where k is child or parent */
+  const inter = [];
+  for (const key in D.network.cond_stories){
+    const [child, par] = key.split("|");
+    if (child === k)
+      inter.push("← given " + par + ": " + D.network.cond_stories[key]);
+    else if (par[0] === k || (a.positions.some(p => p[0] === par)))
+      inter.push("→ shapes " + child + ": " + D.network.cond_stories[key]);
+  }
+  const interHtml = inter.length ?
+    "<div style=\"margin-top:8px\"><b style=\"font-size:9.5px;letter-spacing:.1em;" +
+    "color:var(--ink-faint)\">HOW THIS AXIS INTERACTS</b>" +
+    inter.map(s => "<div style=\"font-size:10px;color:var(--ink-dim);" +
+      "margin-top:4px;line-height:1.45\">" + esc(s) + "</div>").join("") +
+    "</div>" : "";
   let sub = (a.subaxes && a.subaxes.length)
     ? "<div style=\"margin-top:6px;color:var(--ink-faint);font-size:10px\">sub-axes: " +
       a.subaxes.map(s => esc(s.name || s.key)).join(" · ") + "</div>" : "";
   showCard("axis " + a.key, a.name,
-    rows + sub + "<div style=\"margin-top:8px;font-size:10px;color:var(--ink-faint)\">" +
+    "<div style=\"font-size:11px;color:var(--ink-dim);margin-bottom:7px;" +
+    "line-height:1.5\">" + esc(a.desc || "") + "</div>" +
+    rows + interHtml + sub +
+    "<div style=\"margin-top:8px;font-size:10px;color:var(--ink-faint)\">" +
     esc(note.b) + "</div>",
     (a.cites || []).concat(a.positions.flatMap(p => p[3] || [])).slice(0, 10));
+  document.querySelectorAll("#infoCard .axpos").forEach(el =>
+    el.addEventListener("click", () => {
+      const st = el.nextElementSibling;
+      st.style.display = st.style.display === "none" ? "block" : "none";
+    }));
+}
+function domainCard(d){
+  const cap = currentCap();
+  showCard("capability domain · threshold " + d.th + " on the ladder",
+    d.n,
+    esc(d.d) + "<div class=posrow style=\"margin-top:8px\"><span>on the " +
+    "active line, now</span><span class=pv>" +
+    (cap >= d.th ? "crossed" : "not yet — index " + cap.toFixed(1) + " of " +
+     d.th) + "</span></div>" +
+    "<div style=\"margin-top:5px;font-size:9.5px;color:var(--ink-faint)\">" +
+    "thresholds are illustrative and modelled — the AI 2027 dashboard's " +
+    "grammar, generalized</div>", d.cites);
+}
+function currentCap(){
+  const tr = activeTracks();
+  const yi = Math.max(0, Math.min(tr.year.length-1,
+    Math.floor(S.yr) - D.engine.y0));
+  return S.yr < NOW_Y ? capAt(TRUNK.map(p=>p), S.yr) : tr.cap[yi];
+}
+function regionCard(r, name, share){
+  const wl = activeMain();
+  const rel = [];
+  for (const key in D.network.cond_stories){
+    const [child, par] = key.split("|");
+    if (child === "S" && par === wl.C)
+      rel.push(D.network.cond_stories[key]);
+  }
+  showCard("compute region", name,
+    "<div class=posrow><span>share of modelled AI compute</span>" +
+    "<span class=pv>" + (share*100).toFixed(0) + "%</span></div>" +
+    "<div style=\"margin-top:6px;font-size:10.5px;color:var(--ink-dim)\">" +
+    "Drift mechanisms on the active line: coordination " + wl.C +
+    " and supply " + wl.S + " set the path. " + esc(rel.join(" ")) +
+    "</div>", ["concepts/compute-governance", "sources/europe-2031"]);
+}
+function statCard(which){
+  const e = (D.engine.explainers.stats_each||{})[which];
+  if (e) showCard("statistic", e.t, esc(e.b), e.cites);
+}
+const LAYER_ICON = {economy:"◆",labor:"✦",law:"§",geopolitics:"⬢",
+  public:"◉",science:"∴",climate:"≈"};
+function refreshOutcomes(){
+  $("outYear").textContent = Math.floor(S.yr);
+  const L = activeLayers();
+  let h = "";
+  for (const layer in L){
+    const rows = L[layer];
+    let cur = rows[0];
+    for (const r of rows) if (r.year <= S.yr + 2) cur = r;
+    h += "<div class=\"terr clicky\" data-l=\"" + layer + "\" " +
+      "style=\"align-items:flex-start\"><span style=\"flex:none;width:12px;" +
+      "color:var(--gold)\">" + (LAYER_ICON[layer]||"·") + "</span>" +
+      "<span style=\"font-size:10px;line-height:1.4\"><b style=\"" +
+      "text-transform:uppercase;font-size:8.5px;letter-spacing:.08em\">" +
+      layer + "</b><br><span style=\"color:var(--ink-dim)\">" +
+      esc(cur.text.slice(0, 92)) + "…</span></span></div>";
+  }
+  $("outcomes").innerHTML = h;
+  $("outcomes").querySelectorAll(".terr").forEach(el =>
+    el.addEventListener("click", () => layerCard(el.dataset.l)));
+}
+function layerCard(layer){
+  const rows = activeLayers()[layer] || [];
+  const tr = activeTracks();
+  const yi = Math.max(0, Math.min(tr.year.length-1,
+    Math.floor(S.yr)-D.engine.y0));
+  const extra = layer==="climate" ?
+    "<div class=posrow><span>AI load now</span><span class=pv>" +
+    tr.twh[yi].toFixed(0) + " TWh/yr</span></div>" +
+    "<div class=posrow><span>AI emissions now</span><span class=pv>" +
+    tr.co2[yi].toFixed(0) + " Mt/yr</span></div>" :
+    layer==="economy" ?
+    "<div class=posrow><span>AI revenue now</span><span class=pv>$" +
+    tr.rev[yi].toFixed(1) + "T/yr</span></div>" : "";
+  showCard("outcome layer · co-evolving with capability", layer,
+    extra + rows.map(r =>
+      "<div style=\"margin-top:7px\"><b class=pv>" + r.year + "</b> " +
+      "<span style=\"font-size:11px;color:var(--ink-dim);line-height:1.5\">" +
+      esc(r.text) + "</span></div>").join(""),
+    rows.flatMap(r => r.cites).slice(0, 8));
+}
+function altPhrase(e){
+  const ml = D.mainline.wl;
+  const diffs = Object.keys(ml).filter(k => e.wl[k] !== ml[k]);
+  if (!diffs.length) return "the mainline composition itself";
+  const k = diffs[0];
+  const a = D.network.axes.find(x => x.key === k);
+  const p = a.positions.find(q => q[0] === e.wl[k]);
+  return a.name.toLowerCase() + " goes '" + p[1].split(" (")[0] + "'" +
+    (diffs.length > 1 ? " (+" + (diffs.length-1) + " more)" : "");
+}
+function refreshAlts(){
+  if (!D.exemplars){ $("altList").innerHTML =
+    "<div style=\"font-size:9.5px;color:var(--ink-faint)\">loading the " +
+    "ensemble…</div>"; return; }
+  const scored = D.exemplars.lines.map((e, i) => {
+    const kn = capPath(e.wl);
+    return {i, c40: capAt(kn, 2040)};
+  }).sort((a, b) => a.c40 - b.c40);
+  const n = scored.length;
+  const buckets = [["slow futures (p<25)", scored.slice(0, n>>2)],
+    ["the central mass", scored.slice(n>>2, (3*n)>>2)],
+    ["fast futures (p>75)", scored.slice((3*n)>>2)]];
+  let h = "";
+  for (const [label, arr] of buckets){
+    h += "<div style=\"font-size:8.5px;letter-spacing:.1em;color:var(--ink-faint);" +
+      "text-transform:uppercase;margin-top:6px\">" + label + "</div>";
+    const picks = [arr[0], arr[arr.length>>1], arr[arr.length-1]]
+      .filter((v,ix,s) => v && s.indexOf(v)===ix);
+    for (const p of picks){
+      const e = D.exemplars.lines[p.i];
+      h += "<div class=\"terr clicky\" data-i=" + p.i + ">" +
+        "<span style=\"font-family:var(--mono);font-size:9px;color:var(--gold)\">" +
+        ["T","A","C","D","S","P","E"].map(k=>e.wl[k]).join("·") + "</span>" +
+        "<span class=n>" + esc(altPhrase(e)) + "</span></div>";
+    }
+  }
+  $("altList").innerHTML = h;
+  $("altList").querySelectorAll(".terr").forEach(el =>
+    el.addEventListener("click", () => {
+      S.alt = +el.dataset.i; S.pin = {}; condCache = null;
+      $("altBack").style.display = "";
+      refreshAll();
+    }));
 }
 function instrumentCard(which){
   const e = D.engine.explainers.instruments[which];
@@ -494,6 +654,7 @@ function baseWeights(){
   return w;
 }
 function recondition(){
+  S.alt = null; $("altBack").style.display = "none";
   const pins=Object.keys(S.pin);
   if (!pins.length){ condCache=null; refreshAll(); return; }
   const w=baseWeights();
@@ -513,10 +674,35 @@ function recondition(){
              main:ml, tracks:tracksJS(ml), events:instantiateJS(ml,20260731)};
   refreshAll();
 }
-function activeMain(){ return condCache?condCache.main:D.mainline.wl; }
-function activeTracks(){ return condCache?condCache.tracks:D.mainline.tracks; }
-function activeEvents(){ return condCache?condCache.events:D.mainline.events; }
+function altLine(){ return (S.alt!==null && D.exemplars)?
+  D.exemplars.lines[S.alt] : null; }
+function activeMain(){ const a=altLine(); return a?a.wl:
+  (condCache?condCache.main:D.mainline.wl); }
+function activeTracks(){ const a=altLine(); return a?a.tracks:
+  (condCache?condCache.tracks:D.mainline.tracks); }
+function activeEvents(){ const a=altLine(); return a?a.events:
+  (condCache?condCache.events:D.mainline.events); }
+function activeLayers(){ const a=altLine(); if(a&&a.layers) return a.layers;
+  if(condCache) return layersJS(condCache.main);
+  return D.mainline.layers||{}; }
 function activeMarginals(){ return condCache?condCache.marginals:D.marginals.today; }
+/* client-side outcome matrix for composed lines: engine ships the matrix
+   implicitly through mainline/exemplars; composed lines reuse the nearest
+   shipped source — the mainline's matrix filtered is wrong, so we ship a
+   minimal JS mirror of the matching rule against engine data when needed */
+function layersJS(wl){
+  /* exemplars carry precomputed layers; composed lines borrow the closest
+     exemplar (same T and C when possible) — labelled in the panel */
+  if (!D.exemplars) return D.mainline.layers||{};
+  let best=null, bs=-1;
+  for (const e of D.exemplars.lines){
+    let s=0; for (const k in wl) if (e.wl[k]===wl[k]) s++;
+    if (e.wl.T===wl.T) s+=2;
+    if (e.wl.C===wl.C) s+=2;
+    if (s>bs){bs=s;best=e;}
+  }
+  return best?best.layers:(D.mainline.layers||{});
+}
 
 /* ---------- data ---------- */
 const J = n => fetch("data/forecast/"+n+"?v="+DATA_V).then(r=>{
@@ -617,7 +803,14 @@ function drawMain(){
     i? g.lineTo(x,Y(med[i])) : g.moveTo(x,Y(med[i])); });
   g.stroke();
   /* active line capability path (gold, when pinned differs from median) */
-  if (condCache){
+  if (S.alt!==null && altLine()){
+    const kn=capPath(altLine().wl);
+    g.strokeStyle="#d9a441"; g.lineWidth=1.8; g.setLineDash([5,3]);
+    g.beginPath();
+    for (let y=NOW_Y;y<=2100;y+=1){ const x=X(y);
+      y===NOW_Y? g.moveTo(x,Y(capAt(kn,y))) : g.lineTo(x,Y(capAt(kn,y))); }
+    g.stroke(); g.setLineDash([]);
+  } else if (condCache){
     const kn=capPath(condCache.main);
     g.strokeStyle="#d9a441"; g.lineWidth=1.6; g.setLineDash([5,3]);
     g.beginPath();
@@ -769,9 +962,13 @@ function refreshRail(){
   $("dateChip").textContent = fmtYr(S.yr);
   const wl=activeMain();
   $("lineChip").textContent = ["T","A","C","D","S","P","E"]
-    .map(k=>wl[k]).join("·") + (Object.keys(S.pin).length?" (composed)":" (mainline)");
-  $("modeChip").textContent = condCache? condCache.mode :
-    "unconditioned · argmax of today's network";
+    .map(k=>wl[k]).join("·") +
+    (S.alt!==null?" (alternative)":
+     Object.keys(S.pin).length?" (composed)":" (mainline)");
+  $("modeChip").textContent = S.alt!==null?
+    ("exemplar world-line — one sampled future from the ensemble; " +
+     altPhrase(altLine())) :
+    (condCache? condCache.mode : "unconditioned · argmax of today's network");
   /* axis bars */
   const marg=activeMarginals();
   let h="";
@@ -804,8 +1001,12 @@ function refreshRail(){
   const yi=Math.max(0,Math.min(tr.year.length-1,Math.floor(S.yr)-D.engine.y0));
   $("instYear").textContent = S.yr<NOW_Y? "pre-fork (trunk)" : tr.year[yi];
   const cap=S.yr<NOW_Y? capAt(TRUNK.map(p=>p),S.yr) : tr.cap[yi];
-  $("pills").innerHTML = PILLS.map(([n,th])=>
-    "<div class=\"cpill"+(cap>=th?" on":"")+"\">"+n+"</div>").join("");
+  $("pills").innerHTML = D.engine.domains.map((d,i)=>
+    "<div class=\"cpill clicky"+(cap>=d.th?" on":"")+"\" data-i="+i+
+    " title=\""+esc(d.n)+"\">"+d.k+"</div>").join("");
+  $("pills").querySelectorAll(".cpill").forEach(el=>
+    el.addEventListener("click",e2=>{ e2.stopPropagation();
+      domainCard(D.engine.domains[+el.dataset.i]); }));
   drawDonut(tr,yi);
   const cp=tr.copies[yi];
   $("copiesLab").innerHTML = cp>0 ?
@@ -813,12 +1014,19 @@ function refreshRail(){
     "agent collectives: below threshold";
   $("copies").innerHTML = "<i></i>".repeat(Math.min(200,
     cp>0? Math.max(4,Math.round(Math.log10(cp+1)*25)) : 0));
+  const st=(k,txt)=>"<span class=\"clicky\" data-st=\""+k+"\">"+txt+"</span>";
   $("stats").innerHTML =
-    "AI revenue <b>$"+(tr.rev[yi]>=1?tr.rev[yi].toFixed(1)+"T":
-      (tr.rev[yi]*1000).toFixed(0)+"B")+"/yr</b><br>"+
-    "jobs Δ <b>"+tr.jobs[yi].toFixed(1)+"%</b> · laws <b>"+tr.laws[yi]+
-    "</b><br>approval <b>"+tr.appr[yi].toFixed(0)+"%</b> · compute <b>"+
-    fmtNum(tr.gw[yi])+" GW</b>";
+    st("rev","AI revenue <b>$"+(tr.rev[yi]>=1?tr.rev[yi].toFixed(1)+"T":
+      (tr.rev[yi]*1000).toFixed(0)+"B")+"/yr</b>")+"<br>"+
+    st("jobs","jobs Δ <b>"+tr.jobs[yi].toFixed(1)+"%</b>")+" · "+
+    st("laws","laws <b>"+tr.laws[yi]+"</b>")+"<br>"+
+    st("appr","approval <b>"+tr.appr[yi].toFixed(0)+"%</b>")+" · "+
+    st("gw","compute <b>"+fmtNum(tr.gw[yi])+" GW</b>")+"<br>"+
+    st("co2","AI emissions <b>"+tr.co2[yi].toFixed(0)+" Mt/yr</b>");
+  $("stats").querySelectorAll("[data-st]").forEach(el=>
+    el.addEventListener("click",e2=>{ e2.stopPropagation();
+      statCard(el.dataset.st); }));
+  refreshOutcomes();
 }
 function drawDonut(tr,yi){
   const cv=$("donut"), g=cv.getContext("2d");
@@ -1134,6 +1342,43 @@ function wire(){
       }
   });
   $("icX").addEventListener("click",()=>$("infoCard").style.display="none");
+  $("whyChip").addEventListener("click",()=>{
+    const w=D.engine.explainers.why_shape;
+    const m=activeMarginals();
+    const body=w.b.replace("{t1}",((m.T.T1||0)*100).toFixed(0))
+      .replace("{t2}",((m.T.T2||0)*100).toFixed(0))
+      .replace("{t3}",((m.T.T3||0)*100).toFixed(0))
+      .replace("{t4}",((m.T.T4||0)*100).toFixed(0));
+    showCard("the chart, explained", w.t, esc(body), w.cites);
+  });
+  $("altBack").addEventListener("click",()=>{
+    S.alt=null; $("altBack").style.display="none"; refreshAll();
+  });
+  /* donut segments: click resolves which region by angle */
+  $("donut").classList.add("clicky");
+  $("donut").addEventListener("click",e2=>{
+    e2.stopPropagation();
+    const r=$("donut").getBoundingClientRect();
+    const dx=e2.clientX-(r.left+r.width/2), dy=e2.clientY-(r.top+r.height/2);
+    let ang=Math.atan2(dy,dx)+Math.PI/2; if(ang<0) ang+=Math.PI*2;
+    const tr=activeTracks();
+    const yi=Math.max(0,Math.min(tr.year.length-1,
+      Math.floor(S.yr)-D.engine.y0));
+    const segs=[["United States",tr.us[yi]],["China",tr.cn[yi]],
+      ["European Union",tr.eu[yi]],
+      ["Rest of world",Math.max(0,1-tr.us[yi]-tr.cn[yi]-tr.eu[yi])]];
+    let acc=0;
+    for (const [name,share] of segs){
+      acc+=share*Math.PI*2;
+      if (ang<=acc){ regionCard(name.slice(0,2).toLowerCase(),name,share);
+        return; }
+    }
+  });
+  /* alternatives: lazy-load the exemplar ensemble */
+  J("exemplars.json").then(d=>{ D.exemplars=d; refreshAlts(); })
+    .catch(()=>{ $("altList").innerHTML=
+      "<div style=\"font-size:9.5px;color:var(--ink-faint)\">ensemble "+
+      "unavailable</div>"; });
   addEventListener("resize",refreshAll);
 }
 

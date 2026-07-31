@@ -144,8 +144,12 @@ def emit():
     kn = worldlines.capability_path(ml)
     mainline_out = {"wl": ml, "p": p_ml,
                     "tracks": worldlines.tracks(ml, kn),
-                    "events": worldlines.instantiate(ml, kn, SEED)}
+                    "events": worldlines.instantiate(ml, kn, SEED),
+                    "layers": worldlines.layer_states(ml, kn)}
     ex, _ = worldlines.exemplars(reg, k=120, seed=SEED)
+    for e in ex:
+        e["layers"] = worldlines.layer_states(
+            e["wl"], worldlines.capability_path(e["wl"]))
     ens = axes.ensemble(reg, 2000, SEED + 7)
     b_year = worldlines.bands(reg, n=8000, seed=SEED)
     b_month = monthly_bands(reg)
@@ -181,6 +185,7 @@ def emit():
                          "LAWS_RATE": worldlines.LAWS_RATE,
                          "APPROVAL0": worldlines.APPROVAL0},
         "templates": worldlines.TEMPLATES,
+        "domains": worldlines.DOMAINS,
         "y0": worldlines.Y0, "y1": worldlines.Y1,
         # authored explainer cards for the interactive layer — every hover/
         # click reveal cites its grounding (decision of record 2026-07-31:
@@ -252,6 +257,52 @@ def emit():
              "world-line's state on real geography: regime tint strength ∝ "
              "modelled compute share; site glow ∝ modelled GW at authored "
              "locations from the trunk's own reporting.", "cites": []},
+            "why_shape": {"t": "Why the river has this shape",
+             "b": "The forecast is a MIXTURE of tempos, not one path. The "
+             "wide 2027-2040 fan is the tempo axis itself: a {t1}% "
+             "explosive tail pulls the p90 edge to the ceiling by the early "
+             "2030s, the {t2}% fast and {t3}% gradual mass carries the "
+             "median through superhuman-coder around 2032 and "
+             "researcher-level mid-decade, and the {t4}% no-SC floor is why "
+             "p10 stays below the researcher line into the 2050s. The "
+             "ceiling plateau past 2045 is saturation — most sampled "
+             "futures max the ladder; what still differs there is "
+             "OUTCOMES, which is what the Outcomes panel and the far-field "
+             "waypoints track. Shelves inside the band are policy, not "
+             "physics: the C3 deal pause holds lines at expert level "
+             "2035-2040, the C5 tail freezes below the researcher line. "
+             "Every number here re-derives each morning from the network "
+             "the axis cards document.", "cites":
+             ["concepts/agi-timelines", "sources/ai-2040-plan-a",
+              "sources/ai-as-normal-technology"]},
+            "stats_each": {
+              "rev": {"t": "AI revenue", "b": "Trunk run-rates grown by "
+               "diffusion × capability lift, saturating against world "
+               "output; bands come from the ensemble.",
+               "cites": ["analysis/ai-bubble-vs-buildout"]},
+              "jobs": {"t": "Jobs delta", "b": "Cumulative employment "
+               "impact; the shock rate (−2.6pp/yr under D1) is calibrated "
+               "to the 2028 crisis memo's ~10% path, capability-gated.",
+               "cites": ["sources/2028-global-intelligence-crisis",
+                         "concepts/ai-labor-disruption"]},
+              "laws": {"t": "Laws in force", "b": "Tracked-statute count "
+               "growing at the coordination position's velocity — the "
+               "fragmented-blocs world legislates fastest.",
+               "cites": ["analysis/eu-vs-us-ai-regulation"]},
+              "appr": {"t": "Public approval", "b": "Backlash dynamics by "
+               "public-response position; shocks depress, the deal's "
+               "stability recovers.", "cites": ["concepts/ai-backlash"]},
+              "gw": {"t": "Compute", "b": "Global AI power draw; growth by "
+               "supply position, damped by the economy path, saturating "
+               "against build-out ceilings.",
+               "cites": ["concepts/compute-governance"]},
+              "co2": {"t": "AI emissions", "b": "Load (GW × utilization) × "
+               "grid intensity, which declines faster under coordinated or "
+               "diversified build-outs; the mid-century question is "
+               "whether AI-designed energy repays the carbon debt.",
+               "cites": ["industries/energy",
+                         "concepts/compute-governance"]},
+            },
         },
         # authored compute-site table for the World view (locations from the
         # trunk's own reporting; capacities are shares of the modelled GW
@@ -279,12 +330,17 @@ def emit():
         "engine.json": engine,
         "network.json": {"version": weights["version"], "date": today,
                          "axes": [{"key": a["key"], "name": a["name"],
+                                   "desc": a.get("desc", ""),
                                    "cites": a.get("cites", []),
                                    "positions": [[p[0], p[1],
-                                                  round(p[2], 5), p[3]]
+                                                  round(p[2], 5), p[3],
+                                                  axes.POSITION_STORIES
+                                                  .get(p[0], "")]
                                                  for p in a["positions"]],
                                    "subaxes": a.get("subaxes", [])}
                                   for a in reg["axes"]],
+                         "cond_stories": {"%s|%s" % k: v for k, v in
+                                          axes.CONDITIONAL_STORIES.items()},
                          "conditionals": {k: {pp: t for pp, t in v.items()}
                                           for k, v in
                                           reg["conditionals"].items()},

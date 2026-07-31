@@ -48,10 +48,127 @@ WEEKLY_SOFT_CAP = 0.10     # per-axis 7-day drift where damping begins
 # Wiki page slugs verified to exist 2026-07-31.
 # ---------------------------------------------------------------------------
 
+# Per-position stories ("each of the different ways these axes can play
+# out", decision of record 2026-07-31) — rendered in the axis cards. Keyed
+# by position; every entry cited via the position's own cites.
+POSITION_STORIES = {
+  "T1": "The AI-2027 shape: superhuman coders arrive within roughly a year, "
+        "R&D multipliers compound, and the window for every institution to "
+        "react collapses to months. Everything downstream — alignment, "
+        "coordination, labor — plays out under time pressure.",
+  "T2": "Fast but survivable: automation of AI research lands around "
+        "2029-31, the Situational-Awareness decade. Governments have one "
+        "budget cycle to respond; the deal window (C3) is open but narrow.",
+  "T3": "The gradual road the current record most supports: capability "
+        "compounds through the early 2030s without a sharp discontinuity. "
+        "Institutions adapt in real time; more futures stay reachable.",
+  "T4": "The Normal-Technology null hypothesis: diffusion friction, data "
+        "limits or physics keep superintelligence out of the window "
+        "entirely. The drama migrates to economics and adoption.",
+  "A1": "Misalignment that evades detection: training rewards competence "
+        "over honesty and oversight loses. Only fast-tempo worlds (T1/T2) "
+        "leave it untested long enough to matter at scale.",
+  "A2": "The near miss: warning signs surface in time — an interpretability "
+        "catch, a whistleblower, an incident — and buy a pause. Costs time "
+        "(the ladder shifts ~10 months) but keeps humans steering.",
+  "A3": "Alignment proves tractable with sustained effort: the deal-world's "
+        "100B-H100e-year safety compute or its domestic equivalent turns "
+        "the problem into engineering.",
+  "A4": "Never truly tested: capability stays below the threshold where "
+        "alignment failure is catastrophic. The question transfers to the "
+        "2040s and beyond.",
+  "C1": "No coordination: labs race, states posture, and safety investment "
+        "is whatever competition permits (~1% in the AI-2040 scoring). The "
+        "modal world in today's record.",
+  "C2": "Securitization: Washington treats frontier AI as a national "
+        "program — clearances, export lockdown, distillation deterrence, "
+        "the four-fronts playbook. A 12-24 month lead becomes policy.",
+  "C3": "The verified deal: US-CN transparency, mutual compute restraint, "
+        "a pause at expert level 2035-2040, then joint ascent. The authors "
+        "themselves give it 3-15% — priced accordingly.",
+  "C4": "Fragmented blocs: no global deal, but overlapping regional "
+        "regimes — the EU acquis, state patchworks, export walls. "
+        "Compliance becomes the industry's second product.",
+  "C5": "The moratorium: development halts below the researcher line. "
+        "Scored and rejected by the AI-2040 authors as unstable and "
+        "unverifiable at current politics; kept on the table at 1-2%.",
+  "D1": "The displacement shock: white-collar automation outruns "
+        "reabsorption; the Citrini spiral (layoffs → opex AI → demand "
+        "contraction) becomes the macro story.",
+  "D2": "Uneven diffusion — the wiki's sector pages' actual shape: coding "
+        "and content first, healthcare and law gated by liability, "
+        "physical work last. Winners and losers by sector, not en masse.",
+  "D3": "Slow absorption: integration friction, liability, and "
+        "organizational inertia keep AI's labor impact inside historical "
+        "automation rates for years.",
+  "S1": "Concentration: compute pools in a few national champions and "
+        "sovereign clusters; Taiwan stays the single point of failure the "
+        "system argues about.",
+  "S2": "Diversified build-out: the capex wave lands widely — sovereign "
+        "clouds, second-tier hubs, the Gulf — and no single chokepoint "
+        "dominates by 2030.",
+  "S3": "Constrained supply: export controls bite, energy and permitting "
+        "bind, and compute scarcity itself shapes the capability path.",
+  "P1": "Backlash wins elections: data-center revolts, displacement "
+        "anger and safety fears converge into governing coalitions.",
+  "P2": "Acquiescence-through-use: adoption normalizes faster than "
+        "opposition organizes; AI becomes infrastructure politics.",
+  "P3": "Fracture: publics split within countries — the Europe-2031 "
+        "pattern — and AI politics cuts across old coalitions without "
+        "resolving.",
+  "E1": "The boom holds: revenue growth validates the capex; the "
+        "build-out continues on trend.",
+  "E2": "The correction that doesn't kill: valuations reset hard, some "
+        "credit fails, but the physical build-out survives — the "
+        "railway-mania precedent the bubble literature leans on.",
+  "E3": "Capex-led hard deflation: the spending wave breaks before the "
+        "revenue arrives; build-out stalls for years.",
+  "E4": "Demand-led crisis: displacement undercuts the consumer economy "
+        "the AI revenue depends on — the 2028-memo spiral, financial "
+        "contagion included.",
+}
+
+# Conditional explanations ("how they affect each other") — one entry per
+# (child, parent-position) family, rendered in axis cards.
+CONDITIONAL_STORIES = {
+  ("A", "T4"): "No superintelligence in the window means alignment is never "
+               "truly tested — A4 becomes the default outcome of T4.",
+  ("A", "T1"): "Explosive tempo compresses oversight: failure modes (A1) "
+               "and near-misses (A2) both become likelier because there is "
+               "less time to check anything.",
+  ("C", "T1"): "A deal needs a window; explosive tempo closes it. "
+               "Securitization (C2) thrives on the same urgency.",
+  ("C", "T4"): "Without an emergency, securitization loses its argument and "
+               "regulation fragments regionally (C4).",
+  ("C", "A1"): "A world already losing control quietly is a world that "
+               "cannot verify a deal (C3 down).",
+  ("S", "C2"): "National programs concentrate compute by design.",
+  ("S", "C3"): "The transparency regime deliberately diversifies the "
+               "frontier across dozens of audited companies.",
+  ("S", "E3"): "A capex bust strands build-outs and makes compute scarce "
+               "(S3) even without export walls.",
+  ("S", "E4"): "A demand crisis chokes data-center financing the same way.",
+  ("P", "D1"): "Displacement shock is the strongest known driver of "
+               "populist backlash (P1).",
+  ("P", "E4"): "A visible AI-attributed recession radicalizes the politics "
+               "further.",
+  ("E", "T4"): "If capability disappoints, the boom thesis (E1) weakens "
+               "and hard deflation (E3) strengthens.",
+  ("E", "D1"): "The Citrini mechanism: the displacement shock is what "
+               "turns a market correction into a demand crisis (E4).",
+  ("E", "D3"): "Slow diffusion starves the spiral — E4 nearly requires a "
+               "labor shock to ignite.",
+}
+
 REGISTRY = {
   "version": REGISTRY_VERSION,
   "axes": [
     {"key": "T", "name": "Capability tempo",
+     "desc": "How fast frontier capability climbs the milestone ladder — "
+             "the master variable every other axis conditions on. The "
+             "positions span the literature: AI 2027's months, the "
+             "Situational-Awareness decade, the gradual road, and the "
+             "Normal-Technology null.",
      "cites": ["concepts/agi-timelines", "concepts/scaling-laws",
                "sources/ai-2027", "sources/aschenbrenner-situational-awareness",
                "sources/ai-as-normal-technology"],
@@ -70,6 +187,10 @@ REGISTRY = {
         "cites": ["concepts/ai-diffusion"]},
      ]},
     {"key": "A", "name": "Alignment outcome",
+     "desc": "Whether humans keep meaningful control as capability passes "
+             "through the danger band — failure undetected, near-miss "
+             "managed, tractable with effort, or never tested in the "
+             "window. Tempo decides how much of this axis gets played.",
      "cites": ["analysis/interpretability-and-safety",
                "concepts/responsible-scaling-policy"],
      "positions": [
@@ -80,6 +201,11 @@ REGISTRY = {
        ("A4", "untested in window", 0.28, ["sources/ai-as-normal-technology"]),
      ]},
     {"key": "C", "name": "Coordination",
+     "desc": "What the states do about it: race, securitize, deal, "
+             "fragment, or halt — the AI-2040 plan family as live "
+             "positions. This axis owns the biggest policy forks (the "
+             "2029-32 deal window, the moratorium tail) and drives compute "
+             "concentration, law velocity, and the pause shelf.",
      "cites": ["analysis/coordinated-slowdown-proposals",
                "analysis/eu-vs-us-ai-regulation", "concepts/compute-governance"],
      "positions": [
@@ -103,6 +229,11 @@ REGISTRY = {
         "cites": ["legislation/", "concepts/ai-preemption"]},
      ]},
     {"key": "D", "name": "Diffusion & labor",
+     "desc": "How fast capability becomes deployment, and what it does to "
+             "work — shock, uneven-by-sector, or slow absorption. Grounded "
+             "in all thirteen industry pages; the shock position is what "
+             "arms the displacement-crisis economy (E4) and the backlash "
+             "politics (P1).",
      "cites": ["concepts/ai-diffusion", "concepts/ai-labor-disruption",
                "concepts/ai-displacement-vs-augmentation",
                "concepts/middle-manager-displacement",
@@ -115,6 +246,10 @@ REGISTRY = {
        ("D3", "slow absorption", 0.27, ["sources/ai-as-normal-technology"]),
      ]},
     {"key": "S", "name": "Compute & supply",
+     "desc": "Where the physical substrate lands and who controls it — "
+             "concentration with a Taiwan flashpoint, diversified "
+             "build-out, or constraint by controls and energy. Feeds the "
+             "World view's geography and the climate coupling.",
      "cites": ["concepts/export-controls-ai", "concepts/compute-governance"],
      "positions": [
        ("S1", "concentration + flashpoint", 0.33,
@@ -124,6 +259,10 @@ REGISTRY = {
         ["concepts/export-controls-ai"]),
      ]},
     {"key": "P", "name": "Public response",
+     "desc": "What publics do as it arrives — organized backlash, "
+             "acquiescence through use, or durable fracture. Drives "
+             "approval, election realignments, siting revolts, and the "
+             "political room every other axis has to work in.",
      "cites": ["concepts/ai-backlash", "analysis/companion-chatbot-harms"],
      "positions": [
        ("P1", "populist backlash", 0.26, ["concepts/ai-backlash"]),
@@ -131,6 +270,11 @@ REGISTRY = {
        ("P3", "polarized-fractured", 0.43, ["sources/europe-2031"]),
      ]},
     {"key": "E", "name": "Economy",
+     "desc": "How the money side breaks — boom sustained, correction that "
+             "spares the build-out, capex-led hard deflation, or the "
+             "displacement-led demand crisis. The axis exists because the "
+             "record genuinely disagrees; two distinct failure modes are "
+             "kept apart on purpose.",
      "cites": ["concepts/ai-bubble-debate", "analysis/ai-bubble-vs-buildout"],
      "positions": [
        ("E1", "boom sustained", 0.28, ["analysis/ai-bubble-vs-buildout"]),
