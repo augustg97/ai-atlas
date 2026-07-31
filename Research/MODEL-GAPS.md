@@ -170,5 +170,21 @@ E2, C1-curation, D1-acceptance-watch.
 - New open: T11 — an in-app "plans overlay" tracing each named strategy's path once the
   supplement is wiki-ingested; T12 — Economic Growth Explorer-style track charts on click.
 
-**Count: 29 items — the machine runs nightly. Watch three mornings (D1+T4); then T7 scorer,
+
+**Round T+2 (2026-07-31, stamp 20260731-0819): the teaching round APPLIED.**
+Decision of record: instruments individually interactive; the interface teaches — axes,
+positions, and their interactions explained in cards; capability domains explained; the
+timeline explains WHY it has its shape; outcomes beyond the superintelligence path; economy/
+institutions/climate co-evolving; alternatives browsable with explanations, not just band
+regions. Shipped: 26 position stories · 7 axis descs · 14 interaction stories · 8 domain
+cards (per-pill) · per-stat + donut-segment cards · climate tracks (TWh/CO2, intensity by
+S/C) · the 7-layer outcome matrix (condition-matched, tempo-shifted, on mainline + 120
+exemplars) · OUTCOMES panel + layer cards · ALTERNATIVES browser (T6 CLOSED — exemplars
+bucketed p<25/central/p>75, divergence phrases, activate-and-walk) · 'Why this shape?' card
+with live tempo mix. Honest note: composed (pinned) lines borrow the nearest exemplar's
+outcome matrix (labelled); exact client-side matrix = small open item T13. Climate load
+reaches ~9% of world electricity by 2033 under fast build-outs — aggressive but inside the
+record's projection range; parameters cited and one edit away.
+
+**Count: 30 items — the machine runs nightly. Watch three mornings (D1+T4); then T7 scorer,
 T8 World bar, T9 rule library.**
