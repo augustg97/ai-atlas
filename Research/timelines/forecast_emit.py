@@ -1,0 +1,254 @@
+#!/usr/bin/env python3
+"""forecast_emit.py — today's distribution → the app's data surface.
+
+Reads weights.json (the evolving state; seeded from the registry priors on
+first run) + grounding.json (thin-axis widening), then writes
+Research/staged/forecast/:
+
+  network.json    axes with TODAY's weights + provenance, conditionals,
+                  impact classes, registry changelog
+  bands.json      capability percentile envelopes: annual 2026-2100 +
+                  monthly 2026-2032 (the near field deserves月 resolution)
+  marginals.json  today's per-axis marginals + 45-day history
+  mainline.json   exact argmax line + tracks + waypoints + joint p
+  exemplars.json  120 sampled lines (tracks + waypoints) for narrative
+  ensemble2k.json 2,000 world-lines for client-side observational filtering
+  crisis.json     the named branch questions with current probabilities
+  delta.json      the latest evidence applications (attributed)
+  claims.json     resolvable near-term claims register (calibration)
+
+Widening: thin grounding spreads an axis's weights toward uniform by
+temperature (w^(1/widen), renormalized) — uncertainty inherited, never
+hidden. Deterministic per (weights, seed).
+"""
+
+from __future__ import annotations
+
+import datetime as _dt
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import axes
+import worldlines
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+STAGED_F = os.path.join(HERE, "..", "staged", "forecast")
+WEIGHTS = os.path.join(HERE, "weights.json")
+SEED = 20260731
+
+CRISES = [
+    {"id": "deal-window", "q": "US-China transparency deal by 2032",
+     "kind": "axis", "axis": "C", "pos": "C3",
+     "cites": ["sources/ai-2040-plan-a"]},
+    {"id": "explosive-takeoff", "q": "Explosive tempo (SC by 2028)",
+     "kind": "axis", "axis": "T", "pos": "T1", "cites": ["sources/ai-2027"]},
+    {"id": "no-sc-window", "q": "No superintelligence this window",
+     "kind": "axis", "axis": "T", "pos": "T4",
+     "cites": ["sources/ai-as-normal-technology"]},
+    {"id": "alignment-fails", "q": "Alignment fails undetected",
+     "kind": "axis", "axis": "A", "pos": "A1", "cites": ["sources/ai-2027"]},
+    {"id": "hard-deflate", "q": "The bubble deflates hard",
+     "kind": "axis", "axis": "E", "pos": "E3",
+     "cites": ["concepts/ai-bubble-debate"]},
+    {"id": "researcher-by-2035", "q": "Superhuman AI researcher by 2035",
+     "kind": "band", "year": 2035, "level": 4.0, "cites":
+     ["concepts/agi-timelines"]},
+]
+
+CLAIMS = [
+    {"id": "cl-sc-2027", "text": "superhuman-coder milestone crossed",
+     "by": "2027-12-31", "axis_support": {"T": ["T1"]},
+     "cites": ["sources/ai-2027"]},
+    {"id": "cl-deal-2029", "text": "US-CN AI agreement concluded",
+     "by": "2029-12-31", "axis_support": {"C": ["C3"]},
+     "cites": ["sources/ai-2040-plan-a"]},
+    {"id": "cl-correction-2027", "text": "major AI capex correction",
+     "by": "2027-12-31", "axis_support": {"E": ["E2", "E3"]},
+     "cites": ["analysis/ai-bubble-vs-buildout"]},
+    {"id": "cl-state-laws-2026", "text": "state AI-law count exceeds 90",
+     "by": "2026-12-31", "axis_support": {"C": ["C4"]},
+     "cites": ["analysis/eu-vs-us-ai-regulation"]},
+]
+
+
+def load_weights():
+    if os.path.isfile(WEIGHTS):
+        return json.load(open(WEIGHTS))
+    w = {"version": axes.REGISTRY["version"],
+         "date": _dt.date.today().isoformat(),
+         "axes": {a["key"]: {p[0]: p[2] for p in a["positions"]}
+                  for a in axes.REGISTRY["axes"]},
+         "history": [], "evidence_log": [], "residue": []}
+    json.dump(w, open(WEIGHTS, "w"), indent=1)
+    return w
+
+
+def widened_registry(weights, widen):
+    """Registry copy carrying today's weights, spread by thin-axis
+    temperature."""
+    import copy
+    reg = copy.deepcopy(axes.REGISTRY)
+    for a in reg["axes"]:
+        k = a["key"]
+        w = dict(weights["axes"].get(k, {p[0]: p[2] for p in a["positions"]}))
+        temp = widen.get(k, 1.0)
+        if temp > 1.0:
+            w = {pos: v ** (1.0 / temp) for pos, v in w.items()}
+        w = axes.normalized(w)
+        a["positions"] = [(p[0], p[1], w[p[0]], p[3]) for p in a["positions"]]
+    return reg
+
+
+def monthly_bands(reg, n=6000, seed=SEED):
+    lines = axes.ensemble(reg, n, seed)
+    months = [2026 + 7 / 12.0 + i / 12.0 for i in range(int((2032 - 2026.58) * 12))]
+    paths = []
+    for wl in lines:
+        k = worldlines.capability_path(wl)
+        paths.append([worldlines.cap_at(k, m) for m in months])
+    out = {"month": [round(m, 3) for m in months]}
+    for p in (10, 25, 50, 75, 90):
+        out["p%d" % p] = []
+    for col in range(len(months)):
+        vals = sorted(pth[col] for pth in paths)
+        for p in (10, 25, 50, 75, 90):
+            out["p%d" % p].append(round(vals[int(len(vals) * p / 100)], 3))
+    return out
+
+
+def emit():
+    os.makedirs(STAGED_F, exist_ok=True)
+    weights = load_weights()
+    grounding = json.load(open(os.path.join(STAGED_F, "grounding.json"))) \
+        if os.path.isfile(os.path.join(STAGED_F, "grounding.json")) else \
+        {"widen": {}, "counts": {"direct": 0, "corpus": 0}}
+    reg = widened_registry(weights, grounding.get("widen", {}))
+    today = _dt.date.today().isoformat()
+
+    marg = axes.marginals(reg)
+    hist = weights.get("history", [])
+    if not hist or hist[-1]["date"] != today:
+        hist.append({"date": today, "marginals": marg})
+        weights["history"] = hist[-60:]
+        json.dump(weights, open(WEIGHTS, "w"), indent=1)
+
+    ml, p_ml = worldlines.mainline(reg)
+    kn = worldlines.capability_path(ml)
+    mainline_out = {"wl": ml, "p": p_ml,
+                    "tracks": worldlines.tracks(ml, kn),
+                    "events": worldlines.instantiate(ml, kn, SEED)}
+    ex, _ = worldlines.exemplars(reg, k=120, seed=SEED)
+    ens = axes.ensemble(reg, 2000, SEED + 7)
+    b_year = worldlines.bands(reg, n=8000, seed=SEED)
+    b_month = monthly_bands(reg)
+
+    crises = []
+    for c in CRISES:
+        if c["kind"] == "axis":
+            p = marg[c["axis"]].get(c["pos"], 0.0)
+        else:
+            yi = b_year["year"].index(c["year"])
+            n_hit = 0
+            lines = axes.ensemble(reg, 3000, SEED + 11)
+            for wl in lines:
+                k2 = worldlines.capability_path(wl)
+                if worldlines.cap_at(k2, c["year"]) >= c["level"]:
+                    n_hit += 1
+            p = n_hit / 3000.0
+        crises.append(dict(c, p=round(p, 3)))
+
+    claims = []
+    for cl in CLAIMS:
+        claims.append(dict(cl, status="open", registered=today))
+
+    # engine constants as data — the client implements functions against
+    # THIS, never mirrored literals (single source of truth)
+    engine = {
+        "ladder": worldlines.LADDER,
+        "tempo_knots": worldlines.TEMPO_KNOTS,
+        "track_params": {"COMPUTE_G": worldlines.COMPUTE_G,
+                         "E_DAMP": worldlines.E_DAMP,
+                         "REV_G": worldlines.REV_G,
+                         "JOBS_RATE": worldlines.JOBS_RATE,
+                         "LAWS_RATE": worldlines.LAWS_RATE,
+                         "APPROVAL0": worldlines.APPROVAL0},
+        "templates": worldlines.TEMPLATES,
+        "y0": worldlines.Y0, "y1": worldlines.Y1,
+        # authored compute-site table for the World view (locations from the
+        # trunk's own reporting; capacities are shares of the modelled GW
+        # track, labelled modelled)
+        "sites": [
+            {"n": "N. Virginia cluster", "lat": 39.0, "lon": -77.5, "r": "us", "w": 0.16},
+            {"n": "Columbus corridor", "lat": 40.0, "lon": -83.0, "r": "us", "w": 0.07},
+            {"n": "Abilene (Stargate)", "lat": 32.4, "lon": -99.7, "r": "us", "w": 0.13},
+            {"n": "Memphis (Colossus)", "lat": 35.1, "lon": -90.0, "r": "us", "w": 0.10},
+            {"n": "Phoenix fabs+DCs", "lat": 33.4, "lon": -112.1, "r": "us", "w": 0.08},
+            {"n": "Pacific NW hydro", "lat": 45.8, "lon": -119.7, "r": "us", "w": 0.06},
+            {"n": "Texas Gulf build-out", "lat": 29.8, "lon": -95.4, "r": "us", "w": 0.06},
+            {"n": "Tianwan CDZ", "lat": 34.7, "lon": 119.5, "r": "cn", "w": 0.30},
+            {"n": "Beijing-Tianjin", "lat": 39.9, "lon": 116.4, "r": "cn", "w": 0.22},
+            {"n": "Guizhou DC zone", "lat": 26.6, "lon": 106.6, "r": "cn", "w": 0.18},
+            {"n": "Shanghai corridor", "lat": 31.2, "lon": 121.5, "r": "cn", "w": 0.15},
+            {"n": "Paris/Nordics grid", "lat": 48.9, "lon": 2.3, "r": "eu", "w": 0.35},
+            {"n": "Nordic hydro belt", "lat": 60.2, "lon": 10.7, "r": "eu", "w": 0.30},
+            {"n": "Netherlands hub", "lat": 52.3, "lon": 4.8, "r": "eu", "w": 0.20},
+            {"n": "Gulf sovereign DCs", "lat": 24.5, "lon": 54.4, "r": "row", "w": 0.5},
+            {"n": "Japan-Korea build", "lat": 35.8, "lon": 137.0, "r": "row", "w": 0.5},
+        ],
+    }
+    outputs = {
+        "engine.json": engine,
+        "network.json": {"version": weights["version"], "date": today,
+                         "axes": [{"key": a["key"], "name": a["name"],
+                                   "cites": a.get("cites", []),
+                                   "positions": [[p[0], p[1],
+                                                  round(p[2], 5), p[3]]
+                                                 for p in a["positions"]],
+                                   "subaxes": a.get("subaxes", [])}
+                                  for a in reg["axes"]],
+                         "conditionals": {k: {pp: t for pp, t in v.items()}
+                                          for k, v in
+                                          reg["conditionals"].items()},
+                         "impact_classes": axes.IMPACT_CLASS,
+                         "changelog": reg["changelog"]},
+        "bands.json": {"annual": b_year, "monthly": b_month},
+        "marginals.json": {"today": marg, "history": weights["history"]},
+        "mainline.json": mainline_out,
+        "exemplars.json": {"lines": ex},
+        "ensemble2k.json": {"lines": ens},
+        "crisis.json": {"crises": crises},
+        "delta.json": {"date": today,
+                       "entries": weights.get("evidence_log", [])[-40:]},
+        "claims.json": {"claims": claims},
+    }
+    for name, data in outputs.items():
+        with open(os.path.join(STAGED_F, name), "w") as f:
+            json.dump(data, f, separators=(",", ":"))
+    sizes = {n: os.path.getsize(os.path.join(STAGED_F, n)) // 1024
+             for n in outputs}
+    return {"date": today, "kb": sizes, "mainline": ml,
+            "grounding": grounding["counts"]}
+
+
+def _selftest():
+    import copy, tempfile
+    # widening spreads toward uniform and preserves normalization
+    w = {"axes": {"T": {"T1": 0.6, "T2": 0.3, "T3": 0.08, "T4": 0.02}}}
+    reg = widened_registry({"axes": w["axes"], "version": "x"},
+                          {"T": 1.25})
+    pri = {p[0]: p[2] for p in axes.axis(reg, "T")["positions"]}
+    assert abs(sum(pri.values()) - 1.0) < 1e-9
+    assert pri["T1"] < 0.6 and pri["T4"] > 0.02
+    # unmentioned axes keep seed priors
+    priC = {p[0]: p[2] for p in axes.axis(reg, "C")["positions"]}
+    assert abs(sum(priC.values()) - 1.0) < 1e-6
+    return 1
+
+
+if __name__ == "__main__":
+    n = _selftest()
+    print("forecast_emit selftest: %d groups passed" % n)
+    out = emit()
+    print(json.dumps(out, indent=1))

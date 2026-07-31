@@ -158,6 +158,47 @@ def check_witness():
             "gaps": w["epoch_frontier_gap_count"]}
 
 
+def check_forecast():
+    """The v2 forecast surface: bands ordered, marginals normalized, deltas
+    attributed, grounding ratchet, templates cited. A missing file FAILS —
+    the forecast is now the product."""
+    F = os.path.join(STAGED, "forecast")
+    need = ["engine.json", "network.json", "bands.json", "marginals.json",
+            "mainline.json", "crisis.json", "delta.json", "grounding.json"]
+    missing = [n for n in need if not os.path.isfile(os.path.join(F, n))]
+    if missing:
+        return {"present": 0, "missing": missing, "bad": 999}
+    bad = 0
+    ex = []
+    bands = json.load(open(os.path.join(F, "bands.json")))
+    for grid in ("annual", "monthly"):
+        b = bands[grid]
+        n = len(b.get("year", b.get("month", [])))
+        for i in range(n):
+            if not (b["p10"][i] <= b["p25"][i] <= b["p50"][i]
+                    <= b["p75"][i] <= b["p90"][i]):
+                bad += 1
+                if len(ex) < 3:
+                    ex.append((grid, i, "band order"))
+    marg = json.load(open(os.path.join(F, "marginals.json")))["today"]
+    for k, v in marg.items():
+        if abs(sum(v.values()) - 1.0) > 1e-6:
+            bad += 1
+            ex.append((k, "marginal sum", sum(v.values())))
+    for e in json.load(open(os.path.join(F, "delta.json")))["entries"]:
+        if not e.get("cites") or "magnitude" not in e:
+            bad += 1
+            ex.append((e.get("rule"), "unattributed delta"))
+    eng = json.load(open(os.path.join(F, "engine.json")))
+    for t in eng["templates"]:
+        if not t.get("cites"):
+            bad += 1
+            ex.append((t["id"], "uncited template"))
+    g = json.load(open(os.path.join(F, "grounding.json")))["counts"]
+    return {"present": 1, "bad": bad, "examples": ex,
+            "grounded_direct": g["direct"], "grounded_total": g["total"]}
+
+
 def run():
     if os.environ.get("SKIP_AUDIT") == "1":
         print("SKIP_AUDIT=1 — validators skipped. Say so out loud, and say why.")
@@ -178,6 +219,7 @@ def run():
         "events": check_events(S),
         "datum": check_datum(S),
         "witness_epoch": check_witness(),
+        "forecast": check_forecast(),
         "review": {"n": meta["counts"]["needs_review"]},
     }
 
@@ -220,6 +262,23 @@ def run():
                       b["witness_epoch"]["disagreements"])
         if r["review"]["n"] > b["review"]["n"]:
             worse("review.n", r["review"]["n"], b["review"]["n"])
+        if "forecast" not in b:
+            # first run since the v2 gate landed: extend the baseline in
+            # place (recorded, not silent)
+            b["forecast"] = r["forecast"]
+            json.dump(baselines, open(BASE, "w"))
+            print("note: forecast baseline recorded (first v2 gate run)")
+        else:
+            if r["forecast"]["present"] < b["forecast"]["present"]:
+                worse("forecast.present", r["forecast"]["present"], 1, "≥")
+            if r["forecast"]["bad"] > b["forecast"].get("bad", 0):
+                worse("forecast.bad", r["forecast"]["bad"],
+                      b["forecast"].get("bad", 0))
+            if r["forecast"].get("grounded_direct", 0) < \
+                    b["forecast"].get("grounded_direct", 0):
+                worse("forecast.grounded_direct",
+                      r["forecast"].get("grounded_direct"),
+                      b["forecast"].get("grounded_direct"), "≥")
 
     print(json.dumps(results, indent=1, default=str))
     datum = load("datum.json")

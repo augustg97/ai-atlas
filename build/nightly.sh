@@ -21,7 +21,14 @@ fi
 
 python3 emit.py || exit 2
 python3 witness_epoch.py || exit 2
-python3 fields_bake.py || exit 2
+
+# v2: the forecast breathes — classify the day's record, update the weights
+# (tiered impacts, attributed), re-ground, re-emit the distribution
+cd "$ROOT/Research/timelines" || exit 2
+python3 nightly_update.py || exit 2
+python3 wiki_grounding.py || exit 2
+python3 forecast_emit.py || exit 2
+cd "$ROOT/Research/modeling" || exit 2
 
 cd "$ROOT" || exit 2
 python3 build/build_site.py || exit 1          # the gate lives in here

@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Atlas — the AI world, 2012 → today</title>
+<title>AI Atlas — the living forecast, 2012 → 2100</title>
 <style>
 :root{
   --bg:#0b1015; --panel:#121a22cc; --panel-solid:#131b23; --line:#26333f;
   --ink:#d8e2e8; --ink-dim:#8fa0ac; --ink-faint:#5c6b76;
-  --gold:#d9a441; --hot:#e8734a; --blue:#6f9fd8; --red:#c25b5b;
+  --gold:#d9a441; --hot:#e8734a; --blue:#6f9fd8; --red:#c25b5b; --green:#5fae7d;
   --mono:ui-monospace,"SF Mono",Menlo,monospace;
   --sans:"Avenir Next",Seravek,system-ui,sans-serif;
   --serif:"Iowan Old Style",Palatino,Georgia,serif;
@@ -16,1330 +16,924 @@
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
   font-family:var(--sans);overflow:hidden}
-#gl,#overlay{position:absolute;inset:0;width:100%;height:100%}
-#overlay{pointer-events:none}
-#overlay .hit{pointer-events:auto;cursor:pointer}
-#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.tlabel{position:absolute;transform:translate(-50%,-50%);
-  font-family:var(--sans);font-weight:700;letter-spacing:.22em;
-  text-transform:uppercase;color:#ffffff2e;pointer-events:none;
-  text-shadow:0 1px 6px #000a;white-space:nowrap}
-.elabel{position:absolute;transform:translate(-50%,-130%);font-size:10.5px;
-  font-weight:600;color:var(--ink);text-shadow:0 1px 4px #000d,0 0 10px #0008;
-  pointer-events:none;white-space:nowrap;letter-spacing:.02em}
-.elabel .sub{color:var(--ink-dim);font-weight:500}
+#stage,#world{position:absolute;inset:0;width:100%;height:100%}
+#world{display:none}
 
-#title{position:absolute;top:14px;left:16px;z-index:10}
-#title h1{margin:0;font-family:var(--sans);font-weight:800;font-size:19px;
-  letter-spacing:.28em}
+#title{position:absolute;top:12px;left:16px;z-index:10}
+#title h1{margin:0;font-weight:800;font-size:19px;letter-spacing:.28em}
 #title .sub{font-size:11.5px;color:var(--ink-dim);margin-top:2px}
 #title .sub b{color:var(--gold);font-weight:600}
 #aboutBtn{cursor:pointer;color:var(--ink-dim);border:1px solid var(--line);
   border-radius:50%;display:inline-block;width:17px;height:17px;line-height:16px;
   text-align:center;font-size:11px;margin-left:6px;vertical-align:2px}
 #aboutBtn:hover{color:var(--gold);border-color:var(--gold)}
+#viewSeg{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:11;
+  display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+#viewSeg div{padding:6px 18px;font-size:11.5px;font-weight:600;cursor:pointer;
+  background:var(--panel);letter-spacing:.06em}
+#viewSeg div.on{background:var(--gold);color:#0b1015}
 
-#readout{position:absolute;top:14px;right:16px;text-align:right;z-index:10;
-  background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--line);
-  border-radius:8px;padding:10px 14px;min-width:210px}
-#dateBig{font-family:var(--mono);font-size:24px;font-weight:700;letter-spacing:.02em}
-#eraName{color:var(--gold);font-size:12px;font-weight:600;margin:1px 0 6px}
-#eraReg{font-size:9.5px;color:var(--ink-faint);letter-spacing:.08em;
-  text-transform:uppercase;margin-bottom:6px}
-#stats{font-size:11px;color:var(--ink-dim);line-height:1.65;font-variant-numeric:tabular-nums}
-#stats b{color:var(--ink);font-weight:600}
-
-#leftrail{position:absolute;top:64px;left:16px;width:228px;z-index:10;
-  display:flex;flex-direction:column;gap:10px;max-height:calc(100% - 170px);
-  overflow-y:auto;scrollbar-width:thin}
+#rail{position:absolute;top:60px;right:14px;width:250px;z-index:10;
+  max-height:calc(100% - 200px);overflow-y:auto;scrollbar-width:thin;
+  display:flex;flex-direction:column;gap:9px}
 .panel{background:var(--panel);backdrop-filter:blur(10px);
   border:1px solid var(--line);border-radius:8px;padding:9px 11px}
-.panel h3{margin:0 0 6px;font-size:10px;letter-spacing:.18em;color:var(--ink-dim);
-  font-weight:700;cursor:pointer;user-select:none}
-.panel h3 .chev{float:right;transition:transform .2s}
-.panel.closed .body{display:none}
-.panel.closed h3 .chev{transform:rotate(-90deg)}
-.chapter{padding:4px 6px;border-radius:5px;cursor:pointer;font-size:11.5px;
-  display:flex;justify-content:space-between;gap:6px}
-.chapter:hover{background:#ffffff10}
-.chapter .yr{color:var(--ink-faint);font-family:var(--mono);font-size:10px}
-.terr{display:flex;align-items:center;gap:7px;padding:2.5px 4px;font-size:11px;
-  border-radius:4px;cursor:pointer}
-.terr:hover{background:#ffffff10}
-.terr .sw{width:9px;height:9px;border-radius:2px;flex:none}
-.terr .n{color:var(--ink-faint);margin-left:auto;font-family:var(--mono);font-size:9.5px}
-.lrow{display:flex;align-items:center;justify-content:space-between;
-  font-size:11.5px;padding:2.5px 0;cursor:pointer}
-.sw2{width:26px;height:14px;background:#2a3742;border-radius:8px;position:relative;
-  transition:background .15s}
+.panel h3{margin:0 0 6px;font-size:9.5px;letter-spacing:.16em;color:var(--ink-faint);
+  font-weight:700;text-transform:uppercase;line-height:1.5}
+.panel h3 span{font-size:8px;font-weight:600}
+#dateChip{font-family:var(--mono);font-size:20px;font-weight:700}
+#lineChip{font-family:var(--mono);font-size:10px;color:var(--gold);margin-top:2px;
+  word-break:break-all}
+#modeChip{font-size:9.5px;color:var(--ink-faint);margin-top:3px}
+.axrow{margin:5px 0}
+.axrow .lab{display:flex;justify-content:space-between;font-size:10.5px}
+.axrow .lab .drift{font-family:var(--mono);font-size:9px}
+.axrow .bar{height:5px;background:#2a3742;border-radius:3px;margin-top:2px;position:relative}
+.axrow .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--blue);border-radius:3px}
+.delta{font-size:10.5px;line-height:1.45;border-left:2px solid var(--hot);
+  padding-left:7px;margin:6px 0}
+.delta .mag{font-family:var(--mono);color:var(--hot);font-size:9px}
+.delta .drv{color:var(--ink-dim)}
+.pillgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px}
+.cpill{font-size:8.5px;font-weight:700;letter-spacing:.06em;padding:3px 6px;
+  border-radius:3px;background:#2a3742;color:var(--ink-faint);text-align:center}
+.cpill.on{background:var(--gold);color:#0b1015}
+#donutRow{display:flex;align-items:center;gap:10px;margin-top:6px}
+#donut{width:64px;height:64px;flex:none}
+#donutLeg{font-size:9.5px;color:var(--ink-dim);line-height:1.6}
+#copiesLab{font-size:10px;margin-top:7px}
+#copies{display:grid;grid-template-columns:repeat(20,1fr);gap:1.5px;margin-top:3px}
+#copies i{aspect-ratio:1;background:var(--gold);border-radius:1px;opacity:.85}
+#stats{font-family:var(--mono);font-size:10.5px;line-height:1.7;margin-top:7px;
+  color:var(--ink-dim)}
+#stats b{color:var(--ink)}
+
+#composer{position:absolute;left:16px;top:60px;width:238px;z-index:10;
+  display:flex;flex-direction:column;gap:9px;max-height:calc(100% - 200px);
+  overflow-y:auto;scrollbar-width:thin}
+.axchip{display:flex;align-items:center;justify-content:space-between;
+  padding:4px 6px;border-radius:5px;cursor:pointer;font-size:11px}
+.axchip:hover{background:#ffffff10}
+.axchip .k{font-family:var(--mono);font-weight:700}
+.axchip .v{color:var(--ink-dim);font-size:10px;text-align:right}
+.axchip.pinned{background:#d9a44122}
+.axchip.pinned .v{color:var(--gold)}
+.obsrow{display:flex;align-items:center;justify-content:space-between;
+  font-size:10.5px;padding:3px 2px}
+.sw2{width:26px;height:14px;background:#2a3742;border-radius:8px;position:relative;cursor:pointer}
 .sw2:after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;
   background:#8fa0ac;top:2px;left:2px;transition:all .15s}
-.lrow.on .sw2{background:var(--gold)}
-.lrow.on .sw2:after{left:14px;background:#0b1015}
+.obsrow.on .sw2{background:var(--gold)}
+.obsrow.on .sw2:after{left:14px;background:#0b1015}
+#condNote{font-size:9.5px;color:var(--ink-faint);line-height:1.5}
+.btn{background:#1a242e;border:1px solid var(--line);color:var(--ink);
+  border-radius:6px;padding:4px 10px;cursor:pointer;font:11px var(--sans)}
+.btn:hover{border-color:var(--gold);color:var(--gold)}
+#crisisList .cr{padding:4px 6px;border-radius:5px;cursor:pointer;font-size:10.5px;
+  display:flex;justify-content:space-between;gap:6px}
+#crisisList .cr:hover{background:#ffffff10}
+#crisisList .p{font-family:var(--mono);color:var(--hot)}
 
-#search{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:11;width:min(430px,44vw)}
-#q{width:100%;background:var(--panel);backdrop-filter:blur(10px);
-  border:1px solid var(--line);border-radius:8px;color:var(--ink);
-  font:12.5px var(--sans);padding:8px 12px;outline:none}
-#q:focus{border-color:var(--gold)}
-#hits{background:var(--panel-solid);border:1px solid var(--line);border-radius:8px;
-  margin-top:4px;max-height:300px;overflow-y:auto;display:none}
-.hit-row{padding:7px 11px;cursor:pointer;font-size:12px;display:flex;gap:8px;align-items:baseline}
-.hit-row:hover,.hit-row.act{background:#ffffff12}
-.hit-row .eyebrow{font-size:9px;letter-spacing:.12em;color:var(--ink-faint);
-  text-transform:uppercase;flex:none;width:74px}
+#narr{position:absolute;left:16px;right:280px;bottom:64px;z-index:9;
+  display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding-bottom:4px}
+.wcard{flex:none;width:230px;background:var(--panel);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:10.5px;
+  line-height:1.45}
+.wcard .yr{font-family:var(--mono);font-weight:700;color:var(--gold);font-size:11px}
+.wcard .ly{font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);margin-left:6px}
+.wcard .cite{color:var(--ink-faint);font-size:9px;margin-top:4px;font-family:var(--mono)}
 
-#info{position:absolute;right:16px;top:150px;width:308px;max-height:calc(100% - 260px);
-  overflow-y:auto;z-index:10;background:var(--panel);backdrop-filter:blur(12px);
-  border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:none;
-  scrollbar-width:thin}
-#info .eyebrow{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-faint);display:flex;justify-content:space-between}
-#info h2{margin:3px 0 7px;font-family:var(--serif);font-size:19px;font-weight:600;
-  line-height:1.2}
-#info .close{cursor:pointer;color:var(--ink-faint)}
-#info .close:hover{color:var(--ink)}
-.frow{display:flex;gap:8px;font-size:11.5px;padding:2.5px 0;border-bottom:1px solid #ffffff0d}
-.frow .k{color:var(--ink-faint);flex:none;width:86px}
-.frow .v{color:var(--ink)}
-#info .prose{font-size:12px;line-height:1.55;color:var(--ink-dim);margin:8px 0}
-.badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.08em;
-  padding:2px 7px;border-radius:9px;text-transform:uppercase}
-.b-high{background:#2e5f3e;color:#a9dfb9}.b-medium{background:#5d5426;color:#e7d78a}
-.b-low{background:#5d3a26;color:#e7b08a}.b-contested{background:#5d2626;color:#e78a8a}
-.b-stale{background:#333d46;color:#9fb2bf}
-.posrow{font-size:10px;color:var(--ink-faint);margin-top:8px;font-style:italic}
-.cite{font-size:10.5px;color:var(--ink-faint);margin-top:8px;border-top:1px solid var(--line);
-  padding-top:7px;line-height:1.5}
-.cite a{color:var(--blue);text-decoration:none;word-break:break-all}
-.rel-list{font-size:11.5px}
-.rel-list .r{padding:2px 0;cursor:pointer;color:var(--blue)}
-.rel-list .r:hover{text-decoration:underline}
-.rel-list .rt{color:var(--ink-faint);font-size:9.5px;letter-spacing:.06em;margin-right:5px;
-  text-transform:uppercase}
-#spark{width:100%;height:44px;margin-top:4px}
-
-#timeline{position:absolute;left:0;right:0;bottom:0;z-index:12;
-  background:linear-gradient(#0000,#0b1015ee 26%);padding:6px 18px 12px}
-#tstrip{width:100%;height:34px;display:block;cursor:crosshair}
-#slider{width:100%;margin:2px 0 6px;-webkit-appearance:none;background:none;height:14px}
+#timebar{position:absolute;left:0;right:0;bottom:0;z-index:12;
+  background:linear-gradient(#0000,#0b1015ee 30%);padding:4px 18px 10px}
+#slider{width:100%;-webkit-appearance:none;background:none;height:16px}
 #slider::-webkit-slider-runnable-track{height:3px;background:#2a3742;border-radius:2px}
 #slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;
-  border-radius:50%;background:var(--gold);margin-top:-5.5px;border:2px solid #0b1015;
-  box-shadow:0 0 8px #d9a44188}
-#controls{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--ink-dim)}
-.btn{background:#1a242e;border:1px solid var(--line);color:var(--ink);
-  border-radius:6px;padding:4px 10px;cursor:pointer;font:11.5px var(--sans)}
-.btn:hover{border-color:var(--gold);color:var(--gold)}
-.btn.primary{background:var(--gold);color:#0b1015;border-color:var(--gold);font-weight:700}
-select{background:#1a242e;border:1px solid var(--line);color:var(--ink);
-  border-radius:6px;padding:3px 6px;font:11px var(--sans)}
+  border-radius:50%;background:var(--gold);margin-top:-5.5px;border:2px solid #0b1015}
+#tlab{display:flex;justify-content:space-between;font-family:var(--mono);
+  font-size:9.5px;color:var(--ink-faint)}
 
-#about{position:absolute;inset:0;z-index:40;background:#0b1015f2;display:none;
-  overflow-y:auto;padding:7vh 0}
-#about .inner{max-width:680px;margin:0 auto;padding:0 28px;
+#about{position:absolute;inset:0;z-index:40;background:#0b1015f4;display:none;
+  overflow-y:auto;padding:6vh 0}
+#about .inner{max-width:700px;margin:0 auto;padding:0 28px;
   font-family:var(--serif);font-size:14.5px;line-height:1.65;color:var(--ink-dim)}
 #about h1{font-family:var(--sans);letter-spacing:.24em;font-size:22px;color:var(--ink)}
-#about h2{font-family:var(--sans);font-size:13px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--gold);margin:26px 0 8px}
+#about h2{font-family:var(--sans);font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);margin:24px 0 8px}
 #about .x{position:fixed;top:20px;right:28px;font-size:26px;cursor:pointer;
   color:var(--ink-dim)}
 #about .x:hover{color:var(--ink)}
 #about code{font-family:var(--mono);font-size:.85em;background:#1a242e;
   padding:1px 5px;border-radius:3px}
-#about .ul{margin-top:24px;border-top:1px solid var(--line);padding-top:12px;
-  font-size:12px;font-family:var(--sans)}
+#about table{border-collapse:collapse;font-family:var(--sans);font-size:12px;width:100%}
+#about td,#about th{border-bottom:1px solid var(--line);padding:4px 8px 4px 0;text-align:left}
+
+#crisisCard{position:absolute;z-index:30;left:50%;top:24%;transform:translateX(-50%);
+  width:min(430px,90vw);background:var(--panel-solid);border:1px solid var(--gold);
+  border-radius:10px;padding:14px 16px;display:none}
+#crisisCard h2{margin:0 0 4px;font-family:var(--serif);font-size:17px}
+#crisisCard .p{font-family:var(--mono);color:var(--hot);font-size:13px}
+#crisisCard .body{font-size:11.5px;color:var(--ink-dim);line-height:1.5;margin-top:6px}
+#crisisCard .x{float:right;cursor:pointer;color:var(--ink-faint)}
 
 #splash{position:absolute;inset:0;z-index:50;background:var(--bg);display:flex;
   flex-direction:column;align-items:center;justify-content:center;gap:14px}
-#splash .t{font-family:var(--sans);font-weight:800;letter-spacing:.34em;font-size:22px}
+#splash .t{font-weight:800;letter-spacing:.34em;font-size:22px}
 #splash .s{color:var(--ink-faint);font-size:11.5px;font-family:var(--mono)}
-#bar{width:210px;height:2px;background:#1a242e}#bar i{display:block;height:100%;
-  background:var(--gold);width:0%;transition:width .2s}
-
-@media (max-width:860px){#leftrail{display:none}#info{width:270px;right:8px}
-#search{width:56vw}}
+@media (max-width:900px){#composer{display:none}#rail{width:210px}}
 </style>
-
-<script id="vs" type="x-shader/x-vertex">#version 300 es
-in vec2 p; out vec2 uv;
-void main(){ uv = p*0.5+0.5; gl_Position = vec4(p,0.0,1.0); }
-</script>
-
-<script id="fs" type="x-shader/x-fragment">#version 300 es
-precision highp float;
-in vec2 uv; out vec4 frag;
-uniform sampler2D uTerrain, uHeatA, uHeatB;
-uniform float uMix, uTimeS, uAspect, uHorizon, uZoom;
-uniform vec2 uCenter;
-uniform vec3 uEraTint;
-uniform vec4 uLay;               /* x terrain, y attention, z horizonGhost, w unused */
-uniform vec3 uPal[13];
-const float NT = 13.0;
-
-float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)))*43758.5453); }
-float vnoise(vec2 p){
-  vec2 i = floor(p), f = fract(p);
-  vec2 u = f*f*(3.0-2.0*f);
-  return mix(mix(hash(i), hash(i+vec2(1,0)), u.x),
-             mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), u.x), u.y);
-}
-float fbm(vec2 p){
-  float v = 0.0, a = 0.5;
-  for(int k=0;k<4;k++){ v += a*vnoise(p); p *= 2.03; a *= 0.5; }
-  return v;
-}
-/* decode sqrt-encoded channel, then mix — decode-then-mix, never the reverse */
-float dec(float v){ return v*v; }
-
-vec3 terrAt(vec2 w){ return texture(uTerrain, w).rgb; }
-float elevAt(vec2 w, vec3 heat){
-  float bed = dec(texture(uTerrain, w).r);
-  return 0.42*bed + 0.95*heat.g;
-}
-
-void main(){
-  /* world coords: pan/zoom about centre, aspect-corrected */
-  vec2 w = (uv - 0.5)*vec2(uAspect,1.0)/uZoom + uCenter;
-  if(w.x<0.0||w.x>1.0||w.y<0.0||w.y>1.0){
-    float d = max(max(-w.x, w.x-1.0), max(-w.y, w.y-1.0));
-    vec3 edge = vec3(0.028,0.037,0.048)*(1.0-clamp(d*2.2,0.0,0.6));
-    frag = vec4(edge,1.0); return;
-  }
-  vec3 T = terrAt(w);
-  vec3 hA = texture(uHeatA, w).rgb, hB = texture(uHeatB, w).rgb;
-  vec3 heat = vec3(mix(dec(hA.r),dec(hB.r),uMix), mix(dec(hA.g),dec(hB.g),uMix),
-                   mix(dec(hA.b),dec(hB.b),uMix));
-
-  int tid = int(clamp(floor(T.g*255.0/19.0 + 0.5), 0.0, NT-1.0));
-  vec3 hue = uPal[tid];
-
-  /* ground: abyssal ink where the corpus is silent, rising parchment-dark
-     land where it is dense (frozen datum = stable material coordinate) */
-  float grain = fbm(w*340.0 + float(tid)*7.31)*0.5 + fbm(w*90.0)*0.5;
-  vec3 abyss = vec3(0.030,0.042,0.058) + (grain-0.5)*0.012;
-  float bedv = dec(T.r);
-  float landmass = smoothstep(0.008, 0.30, bedv);
-  vec3 ground = vec3(0.125,0.130,0.135) + hue*0.24 + (grain-0.5)*0.045;
-  vec3 col = mix(abyss, ground, landmass);
-  /* coastline: a brightened shore where land meets the abyss */
-  float shore = smoothstep(0.008,0.06,bedv)*(1.0-smoothstep(0.06,0.22,bedv));
-  col += vec3(0.10,0.11,0.12)*shore*0.5;
-
-  /* settlement raises and saturates the land — the world builds over time */
-  float land = clamp(heat.g*1.25, 0.0, 1.0);
-  col = mix(col, hue*0.50 + vec3(0.055,0.058,0.062), land*0.66);
-
-  /* hillshade from composite elevation, light from NW */
-  float e  = elevAt(w, heat);
-  vec2 px = vec2(1.0/512.0);
-  float ex = elevAt(w+vec2(px.x,0.0), vec3(0,heat.g,0)) - elevAt(w-vec2(px.x,0.0), vec3(0,heat.g,0));
-  float ey = elevAt(w+vec2(0.0,px.y), vec3(0,heat.g,0)) - elevAt(w-vec2(0.0,px.y), vec3(0,heat.g,0));
-  vec3 n = normalize(vec3(-ex*34.0, -ey*34.0, 1.0));
-  float lit = clamp(dot(n, normalize(vec3(-0.55,0.62,0.75))), 0.0, 1.0);
-  col *= 0.76 + 0.50*lit;
-
-  /* slope-gated micro relief so zoom reveals structure, not blur */
-  float slope = clamp(length(vec2(ex,ey))*40.0, 0.0, 1.0);
-  float micro = fbm(w*(900.0+uZoom*140.0) + float(tid)*3.7);
-  col *= 1.0 + (micro-0.5)*0.14*(0.25+slope);
-
-  /* contours on elevation, fading when flat */
-  float lev = fract(e*14.0);
-  float cw = fwidth(e*14.0)*1.4;
-  float cont = 1.0 - smoothstep(0.0, cw, min(lev, 1.0-lev));
-  col *= 1.0 - cont*0.10*(0.3+0.7*slope);
-
-  /* territory borders from the margin channel */
-  float border = 1.0 - smoothstep(0.015, 0.10, T.b);
-  col = mix(col, vec3(0.020,0.026,0.034), border*0.55*clamp(bedv*2.0,0.2,1.0));
-  col += hue*border*0.05;
-
-  /* attention: warm luminance + slow heat-shimmer whose amplitude IS the value */
-  if(uLay.y > 0.5){
-    float A = heat.r;
-    float shim = vnoise(w*260.0 + vec2(0.0, uTimeS*0.05))*0.35 + 0.65;
-    vec3 glow = vec3(1.00,0.62,0.28)*A*shim*0.42 + vec3(1.0,0.85,0.55)*A*A*0.34;
-    col += glow;
-    col += vec3(1.0,0.35,0.18)*heat.b*0.50;    /* freshness: today's strikes */
-  }
-
-  /* era ambient light, subtle */
-  col *= mix(vec3(1.0), uEraTint, 0.16);
-
-  /* pre-horizon register: reconstructed eras render dimmer and cooler */
-  col = mix(col, col*vec3(0.72,0.78,0.86)+vec3(0.004), uHorizon*0.55);
-
-  /* graticule + vignette */
-  vec2 g = abs(fract(w*10.0)-0.5);
-  float grid = 1.0 - smoothstep(0.0, 0.012, min(g.x,g.y)*0.1/max(uZoom,1.0));
-  col += vec3(0.5,0.6,0.7)*grid*0.016;
-  vec2 vd = uv-0.5; col *= 1.0 - dot(vd,vd)*0.38;
-
-  frag = vec4(col, 1.0);
-}
-</script>
 </head>
 <body>
 
-<canvas id="gl"></canvas>
-<svg id="overlay"></svg>
-<div id="labels"></div>
+<canvas id="stage"></canvas>
+<canvas id="world"></canvas>
 
 <div id="title">
   <h1>AI ATLAS<span id="aboutBtn" title="About this model">i</span></h1>
-  <div class="sub">The AI world, 2012 → today, from <b>August's Vault</b> · every mark cited</div>
+  <div class="sub">The living forecast · 2012 → 2100 · from <b>August's Vault</b>, updated every morning</div>
 </div>
 
-<div id="search">
-  <input id="q" placeholder="Find anything — a company, a model, a law, a case, an idea…" autocomplete="off">
-  <div id="hits"></div>
+<div id="viewSeg"><div id="vMain" class="on">MAINLINE</div><div id="vWorld">WORLD</div></div>
+
+<div id="composer">
+  <div class="panel"><h3>Compose a world-line</h3>
+    <div id="axRack"></div>
+    <div class="obsrow" id="obsRow"><span>Observational mode</span><span class="sw2"></span></div>
+    <div id="condNote"></div>
+    <div style="margin-top:6px"><button class="btn" id="resetPins">Reset to mainline</button></div>
+  </div>
+  <div class="panel"><h3>Crisis points</h3><div id="crisisList"></div></div>
 </div>
 
-<div id="readout">
-  <div id="dateBig">—</div>
-  <div id="eraName">—</div>
-  <div id="eraReg">—</div>
-  <div id="stats"></div>
-</div>
-
-<div id="leftrail">
-  <div class="panel" id="p-ch"><h3>Chapters <span class="chev">▾</span></h3><div class="body" id="chapters"></div></div>
-  <div class="panel" id="p-te"><h3>Territories <span class="chev">▾</span></h3><div class="body" id="terrs"></div></div>
-  <div class="panel" id="p-la"><h3>Layers <span class="chev">▾</span></h3><div class="body" id="layers"></div></div>
-</div>
-
-<div id="info"></div>
-
-<div id="timeline">
-  <canvas id="tstrip"></canvas>
-  <input id="slider" type="range" min="0" max="1" value="0" step="1">
-  <div id="controls">
-    <button class="btn primary" id="play">▶</button>
-    <button class="btn" id="stepB" title="back one month">‹</button>
-    <button class="btn" id="stepF" title="forward one month">›</button>
-    <select id="speed">
-      <option value="30">1 mo/s</option>
-      <option value="90" selected>3 mo/s</option>
-      <option value="365">1 yr/s</option>
-      <option value="7">1 wk/s</option>
-    </select>
-    <button class="btn" id="today">Today</button>
-    <span id="loadnote" style="margin-left:auto;color:var(--ink-faint);font-family:var(--mono);font-size:10px"></span>
+<div id="rail">
+  <div class="panel">
+    <div id="dateChip">—</div>
+    <div id="lineChip">—</div>
+    <div id="modeChip">—</div>
+  </div>
+  <div class="panel"><h3>Today's axis probabilities <span style="float:right" id="drift30">30-day drift</span></h3>
+    <div id="axBars"></div>
+  </div>
+  <div class="panel"><h3>What moved this morning</h3><div id="deltas"></div></div>
+  <div class="panel"><h3>Instruments · <span id="instYear">—</span></h3>
+    <div class="pillgrid" id="pills"></div>
+    <div id="donutRow"><canvas id="donut" width="128" height="128"></canvas>
+      <div id="donutLeg"></div></div>
+    <div id="copiesLab"></div><div id="copies"></div>
+    <div id="stats"></div>
   </div>
 </div>
 
-<div id="about"><div class="x" id="aboutX">×</div><div class="inner" id="aboutBody"></div></div>
+<div id="narr"></div>
 
-<div id="splash"><div class="t">AI ATLAS</div><div id="bar"><i></i></div><div class="s" id="splashS">reading the vault…</div></div>
+<div id="timebar">
+  <input id="slider" type="range" min="2012" max="2100" step="0.05" value="2026.58">
+  <div id="tlab"><span>2012</span><span>2030</span><span>2050</span><span>2075</span><span>2100</span></div>
+</div>
+
+<div id="crisisCard"><span class="x" id="ccX">×</span><h2 id="ccQ">—</h2>
+  <div class="p" id="ccP">—</div><div class="body" id="ccB">—</div></div>
+
+<div id="about"><div class="x" id="aboutX">×</div><div class="inner" id="aboutBody"></div></div>
+<div id="splash"><div class="t">AI ATLAS</div><div class="s" id="splashS">reading the forecast…</div></div>
 
 <script>
 "use strict";
-/* ========================================================================
-   AI Atlas — engine. One scalar t (days since 2012-01-01) drives everything.
-   state → render(state); no hidden clocks. Substrate: WebGL2 quad composing
-   terrain + interpolated heat keyframes. Features: SVG, windowed by t.
-   ======================================================================== */
-const DATA_V = "20260731-0207";
-const EPOCH = Date.UTC(2012,0,1);
-const DAY = 86400000;
-const HORIZON_T = (Date.UTC(2026,3,13)-EPOCH)/DAY;
-const TODAY_T = Math.floor((Date.now()-EPOCH)/DAY);
+/* =========================================================================
+   AI Atlas v2 — the living forecast. One cursor year drives everything.
+   Engine CONSTANTS come from data/forecast/engine.json (single source of
+   truth with the python engine); this file implements only functions.
+   ========================================================================= */
+const DATA_V = "20260731-0510";
+const NOW_Y = 2026.58;
+const LADDER_SHORT = ["","unreliable agent","reliable agent","superhuman coder",
+  "superhuman AI researcher","generally superintelligent","wildly superintelligent"];
+const TRUNK = [[2012,0.15],[2016,0.45],[2019,0.8],[2022,1.1],[2022.92,1.5],
+  [2024,1.9],[2025.5,2.3],[NOW_Y,2.6]];   /* authored trunk reading (About) */
+const PILLS = [["CODE",3.0],["HACK",3.1],["FCAST",3.3],["BIO",4.1],
+  ["POLIT",4.3],["ROBOT",4.5],["R&D",4.0],["SCI",4.6]];
 
-const PAL = {  /* order = sorted territory names (frames discipline: shipped in territories.json) */
-  "AI Adoption by Industry":            [0.66,0.63,0.35],
-  "AI Industry & Markets":              [0.83,0.64,0.31],
-  "AI Litigation, Liability & Enforcement":[0.76,0.36,0.36],
-  "AI Safety, Alignment & Interpretability":[0.49,0.67,0.42],
-  "AI Standards & Safety Frameworks":   [0.50,0.61,0.71],
-  "Agentic AI & Coding":                [0.32,0.66,0.83],
-  "Compute, Chips & Infrastructure":    [0.25,0.68,0.62],
-  "Federal AI Policy & Agency Action":  [0.36,0.51,0.79],
-  "Frontier Models & Capabilities":     [0.62,0.48,0.85],
-  "International AI Regulation":        [0.44,0.45,0.79],
-  "Labor, Society & Democratic Institutions":[0.75,0.48,0.60],
-  "National Security & Geopolitics":    [0.54,0.59,0.66],
-  "U.S. State AI Legislation":          [0.79,0.47,0.31],
-};
-const GLYPH = {companies:"c", models:"m", legislation:"l", litigation:"x",
-  entities:"e", concepts:"o", government:"g", industries:"i", standards:"s",
-  analysis:"a"};
-const state = {
-  t: 0, cx: 0.5, cy: 0.5, zoom: 1.0, playing: false, speed: 90,
-  sel: null, layers: {terrain:1, attention:1, entities:1, arcs:0, strikes:1,
-                      labels:1, horizon:0},
-  terrFocus: null,
-};
-const D = {};            /* data */
-let gl, prog, uni = {}, texCache = new Map(), quad;
-let arcsLoaded = null, anchors = null;
+const S = { yr: NOW_Y, view: "main", pin: {}, obs: false };
+const D = {};
+let condCache = null;      /* {lines, marginals, bands, main, tracks, events} */
 const $ = id => document.getElementById(id);
 
-/* ---------- time helpers ---------- */
-const isoOf = t => new Date(EPOCH + t*DAY).toISOString().slice(0,10);
-const tOf = iso => {
-  const p = iso.split("-").map(Number);
-  if (p.length === 3) return (Date.UTC(p[0],p[1]-1,p[2])-EPOCH)/DAY;
-  if (p.length === 2) return (Date.UTC(p[0],p[1]-1,15)-EPOCH)/DAY;
-  return (Date.UTC(p[0],6,1)-EPOCH)/DAY;
-};
-const fmtDate = t => new Date(EPOCH+t*DAY).toLocaleDateString("en-US",
-  {year:"numeric",month:"long",day:"numeric",timeZone:"UTC"});
-
-/* ---------- boot ---------- */
-const files = ["meta","eras","entities","series","wikitime"];
-let loaded = 0;
-function note(s){ $("splashS").textContent = s; }
-function prog_(){ loaded++; $("bar").firstElementChild.style.width =
-  (100*loaded/(files.length+4))+"%"; }
-const J = n => fetch("data/"+n+".json?v="+DATA_V).then(r=>{
-  if(!r.ok) throw new Error(n); return r.json();}).then(d=>{prog_();return d;});
-
-async function boot(){
-  note("reading the vault…");
-  const [meta, eras, ents, series, wikitime, territories] = await Promise.all([
-    J("meta"), J("eras"), J("entities"), J("series"), J("wikitime"),
-    J("territories")]);
-  D.meta = meta; D.eras = eras.eras; D.series = series.series;
-  D.ents = ents.entities; D.people = ents.people; D.terr = territories;
-  D.byId = new Map(D.ents.map(e=>[e.id,e]));
-  D.people.forEach(p=>D.byId.set(p.id,p));
-  /* per-entity series, sorted */
-  D.seriesBy = new Map();
-  for (const r of D.series){
-    if(!D.seriesBy.has(r.entity)) D.seriesBy.set(r.entity, []);
-    D.seriesBy.get(r.entity).push({t:tOf(r.date.iso), v:r.usd_b, txt:r.text,
-      g:r.group, iso:r.date.iso});
-  }
-  for (const a of D.seriesBy.values()) a.sort((x,y)=>x.t-y.t);
-  /* wiki-time: first-known date per page */
-  D.firstKnown = new Map();
-  for (const op of wikitime.ops){
-    if(!op.date) continue;
-    const t = tOf(op.date.iso);
-    for (const p of (op.created||[]).concat(op.updated||[]))
-      if(!D.firstKnown.has(p) || t < D.firstKnown.get(p)) D.firstKnown.set(p,t);
-  }
-  D.wikiCum = [...D.firstKnown.values()].sort((a,b)=>a-b);
-  /* entity windows in t */
-  for (const e of D.ents){
-    e.t0 = e.window ? tOf(e.window.iso) : null;
-    e.sz = 1 + Math.log1p(e.indeg||0)*0.9;
-  }
-  note("reading the fields…");
-  D.manifest = await fetch("fields/manifest.json?v="+DATA_V).then(r=>r.json());
-  prog_();
-  D.frames = D.manifest.keyframes.map(k=>({t:tOf(k.date), file:k.file}));
-  note("composing the surface…");
-  initGL(); prog_();
-  state.t = TODAY_T;
-  readHash();
-  await ensureFrames(state.t, true); prog_();
-  buildRail(); buildTimeline(); wireUI(); layoutTerrLabels();
-  /* events + arcs arrive behind the first frame */
-  J("events").then(d=>{ D.events = d.events;
-    for (const ev of D.events) ev.t = tOf(ev.date.iso);
-    D.events.sort((a,b)=>a.t-b.t);
-    D.evT = D.events.map(e=>e.t);
-    drawTimeline(); renderSVG(); });
-  requestAnimationFrame(loop);
-  $("splash").style.display = "none";
+/* piecewise time scale: the near field earns the width (2012-2040 → 66%,
+   2040-2100 → 34%) — the far field is real but saturated, and the action
+   deserves the pixels */
+function xmap(y,L,R){
+  const w=R-L, split=L+w*0.66;
+  return y<=2040 ? L+(y-2012)/(2040-2012)*(split-L)
+                 : split+(y-2040)/(2100-2040)*(R-split);
+}
+function xinv(x,L,R){
+  const w=R-L, split=L+w*0.66;
+  return x<=split ? 2012+(x-L)/(split-L)*(2040-2012)
+                  : 2040+(x-split)/(R-split)*(2100-2040);
 }
 
-/* ---------- fields: lazy two-keyframe loader with re-centring prefetch ----- */
-function frameAt(t){
-  const f = D.frames;
-  if (t <= f[0].t) return {i:0,j:0,mix:0};
-  if (t >= f[f.length-1].t) return {i:f.length-1,j:f.length-1,mix:0};
-  let lo=0, hi=f.length-1;
-  while(hi-lo>1){ const m=(lo+hi)>>1; if (f[m].t<=t) lo=m; else hi=m; }
-  return {i:lo, j:hi, mix:(t-f[lo].t)/(f[hi].t-f[lo].t)};
-}
-let inflight = 0, wantT = 0;
-function texOf(idx){
-  const f = D.frames[idx];
-  if (!f) return null;
-  const c = texCache.get(f.file);
-  if (c){ c.at = performance.now(); return c.tex==="pending"?null:c.tex; }
-  if (inflight >= 3) return null;
-  inflight++;
-  texCache.set(f.file, {tex:"pending", at:performance.now()});
-  const img = new Image();
-  img.onload = ()=>{ inflight--;
-    const tex = gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D, tex);
-    gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,img);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
-    texCache.set(f.file,{tex,at:performance.now()});
-    if (texCache.size > 22) evict();
-    pump();
-  };
-  img.onerror = ()=>{ inflight--; texCache.set(f.file,{tex:null,at:0}); pump(); };
-  img.src = "fields/"+f.file+"?v="+DATA_V;
-  return null;
-}
-function evict(){
-  let oldest=null, ok=null;
-  for (const [k,v] of texCache) if(v.tex && v.tex!=="pending" &&
-    (!oldest || v.at<ok)) { oldest=k; ok=v.at; }
-  if (oldest){ gl.deleteTexture(texCache.get(oldest).tex); texCache.delete(oldest); }
-}
-function pump(){       /* re-centres on every completion: nearest to NOW wins */
-  const {i,j} = frameAt(wantT);
-  const order = [];
-  for (let d=0; d<7; d++){ if(i-d>=0) order.push(i-d); if(j+d<D.frames.length) order.push(j+d); }
-  for (const idx of order){
-    if (inflight >= 3) break;
-    const f = D.frames[idx];
-    if (!texCache.has(f.file)) texOf(idx);
-  }
-}
-async function ensureFrames(t, block){
-  wantT = t;
-  const {i,j} = frameAt(t);
-  texOf(i); texOf(j); pump();
-  if (block){
-    await new Promise(res=>{
-      const chk=()=>{ const a=texCache.get(D.frames[i].file),
-        b=texCache.get(D.frames[j].file);
-        if(a&&a.tex&&a.tex!=="pending"&&b&&b.tex&&b.tex!=="pending") res();
-        else setTimeout(chk,40); };
-      chk();
-    });
-  }
-}
+/* ---------- deterministic PRNG (client instantiation) ---------- */
+function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0;
+  let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t;
+  return ((t^t>>>14)>>>0)/4294967296; }; }
 
-/* ---------- WebGL ---------- */
-function initGL(){
-  const cv = $("gl");
-  gl = cv.getContext("webgl2",{antialias:false});
-  const sh = (t,src)=>{ const s=gl.createShader(t); gl.shaderSource(s,src);
-    gl.compileShader(s);
-    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))
-      throw new Error(gl.getShaderInfoLog(s));
-    return s; };
-  prog = gl.createProgram();
-  gl.attachShader(prog, sh(gl.VERTEX_SHADER, $("vs").textContent.trim()));
-  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, $("fs").textContent.trim()));
-  gl.linkProgram(prog);
-  if(!gl.getProgramParameter(prog,gl.LINK_STATUS))
-    throw new Error(gl.getProgramInfoLog(prog));
-  gl.useProgram(prog);
-  quad = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, quad);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,3,-1,-1,3]), gl.STATIC_DRAW);
-  const loc = gl.getAttribLocation(prog,"p");
-  gl.enableVertexAttribArray(loc);
-  gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
-  for (const n of ["uTerrain","uHeatA","uHeatB","uMix","uTimeS","uAspect",
-    "uCenter","uZoom","uEraTint","uHorizon","uLay","uPal"])
-    uni[n] = gl.getUniformLocation(prog,n);
-  /* static terrain */
-  const img = new Image();
-  img.onload = ()=>{ const tex=gl.createTexture();
-    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,tex);
-    gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,img);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE); };
-  img.src = "fields/terrain.png?v="+DATA_V;
-  const pal = new Float32Array(39);
-  D.terr.names.forEach((n,i)=>{ const c = PAL[n]||[0.5,0.5,0.5];
-    pal[i*3]=c[0]; pal[i*3+1]=c[1]; pal[i*3+2]=c[2]; });
-  gl.uniform3fv(uni.uPal, pal);
-  gl.uniform1i(gl.getUniformLocation(prog,"uTerrain"),0);
-  gl.uniform1i(gl.getUniformLocation(prog,"uHeatA"),1);
-  gl.uniform1i(gl.getUniformLocation(prog,"uHeatB"),2);
-}
-function eraAt(t){
-  for (const e of D.eras){
-    const a=tOf(e.from), b=e.to?tOf(e.to):TODAY_T;
-    if (t>=a && t<=b+0.5) return e;
+/* ---------- engine functions against shipped constants ---------- */
+function capPath(wl){
+  const kn = D.engine.tempo_knots[wl.T].map(k=>k.slice());
+  let knots = kn;
+  if (wl.C==="C3" && (wl.T==="T2"||wl.T==="T3")){
+    const held = knots.filter(k=>k[1]<=4.0);
+    held.push([2040.0,4.0]);
+    const resume = knots.filter(k=>k[1]>4.0).map(k=>[k[0]+7.5,k[1]]);
+    knots = held.concat(resume.filter(k=>k[0]>2040.0));
+  } else if (wl.A==="A2" && (wl.T==="T1"||wl.T==="T2")){
+    knots = knots.map(k=> k[1]>=4.0 ? [k[0]+0.8,k[1]] : k);
   }
-  return D.eras[D.eras.length-1];
+  if (knots[knots.length-1][0] < D.engine.y1)
+    knots.push([D.engine.y1, knots[knots.length-1][1]]);
+  return knots;
 }
-const ERA_TINT = {["deep-learning"]:[0.85,0.92,1.06],transformer:[0.92,0.96,1.05],
-  scaling:[0.97,0.99,1.03],["chatgpt-shock"]:[1.10,1.00,0.92],
-  ["regulatory-response"]:[1.02,0.99,1.00],agentic:[1.00,1.02,1.03],
-  convergence:[1.06,1.02,0.97]};
-function renderGL(now){
-  const cv = $("gl"), dpr = Math.min(devicePixelRatio||1, 2);
-  const W = cv.clientWidth*dpr|0, H = cv.clientHeight*dpr|0;
-  if (cv.width!==W||cv.height!==H){ cv.width=W; cv.height=H; gl.viewport(0,0,W,H); }
-  const {i,j,mix} = frameAt(state.t);
-  wantT = state.t;
-  const a = texOf(i), b = texOf(j);
-  if (a){ gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D,a); }
-  if (b||a){ gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D,b||a); }
-  gl.uniform1f(uni.uMix, b?mix:0);
-  gl.uniform1f(uni.uTimeS, now/1000);
-  gl.uniform1f(uni.uAspect, cv.clientWidth/cv.clientHeight);
-  gl.uniform2f(uni.uCenter, state.cx, state.cy);
-  gl.uniform1f(uni.uZoom, state.zoom);
-  gl.uniform1f(uni.uHorizon, state.t < HORIZON_T ? 1:0);
-  gl.uniform4f(uni.uLay, state.layers.terrain, state.layers.attention, 0, 0);
-  const tint = ERA_TINT[eraAt(state.t).id]||[1,1,1];
-  gl.uniform3f(uni.uEraTint, tint[0],tint[1],tint[2]);
-  gl.drawArrays(gl.TRIANGLES,0,3);
+function capAt(knots,y){
+  if (y<=knots[0][0]) return knots[0][1];
+  if (y>=knots[knots.length-1][0]) return knots[knots.length-1][1];
+  let i=1; while(knots[i][0]<y) i++;
+  const [y0,v0]=knots[i-1],[y1,v1]=knots[i];
+  return v0+(v1-v0)*(y-y0)/(y1-y0);
 }
-
-/* ---------- projection ---------- */
-function toScreen(p){
-  const cv = $("gl"), W=cv.clientWidth, H=cv.clientHeight, asp=W/H;
-  return [ (((p[0]-state.cx)*state.zoom)/asp + 0.5)*W,
-           (1-(((p[1]-state.cy)*state.zoom) + 0.5))*H ];
-}
-function toWorld(x,y){
-  const cv = $("gl"), W=cv.clientWidth, H=cv.clientHeight, asp=W/H;
-  return [ (x/W-0.5)*asp/state.zoom + state.cx,
-           (0.5-(y/H))/state.zoom + state.cy ];
-}
-
-/* ---------- features (SVG) ---------- */
-const NS = "http://www.w3.org/2000/svg";
-const HEDGE = /target|talks|seek|offer|weigh|rumor|project|potential|reported|near \$|as soon as|up to/i;
-function usdAt(id, t, groupRe){
-  /* one metric at a time: a $5B compute-commitment row must never roll
-     forward over a $1T Valuation row (it did, on first render). And a
-     HEDGED row — "$1.75T (SpaceX IPO target)" — never feeds a derived
-     headline number (rule 2.15): it stays on the card, verbatim, where
-     its qualifier travels with it. */
-  const re = groupRe || /valuation/i;
-  const s = D.seriesBy.get(id); if(!s) return 0;
-  let v=0;
-  for (const r of s){
-    if (r.t>t) break;
-    if (r.v && re.test(r.g||"") && !HEDGE.test(r.txt||"")) v=r.v;
-  }
-  return v;
-}
-function visibleEnts(t){
-  const out = [];
-  for (const e of D.ents){
-    if (!e.pos) continue;
-    if (state.terrFocus && e.territory!==state.terrFocus) continue;
-    let alpha, bg=false;
-    if (e.t0===null){ alpha=0.35; bg=true; }
-    else if (e.t0<=t){ alpha=Math.min(1,(t-e.t0)/90*0.7+0.3); }
-    else continue;
-    if (state.layers.horizon){
-      const fk = D.firstKnown.get(e.id);
-      if (fk===undefined || fk>t) alpha *= 0.15;
-    }
-    out.push({e, alpha, bg});
+function tracksJS(wl){
+  const P = D.engine.track_params;
+  const kn = capPath(wl);
+  let gw=62.0, us=0.58, cn=0.22, eu=0.05, rev=0.14, jobs=0.0,
+      laws=61, appr=P.APPROVAL0[wl.P];
+  const out={year:[],cap:[],gw:[],us:[],cn:[],eu:[],rev:[],jobs:[],laws:[],
+             appr:[],copies:[],speed:[]};
+  for (let y=D.engine.y0; y<=D.engine.y1; y++){
+    const c=capAt(kn,y);
+    let g=P.COMPUTE_G[wl.S]*P.E_DAMP[wl.E];
+    g=1.0+(g-1.0)*(1.0/(1.0+Math.max(0,gw/8000.0)));
+    gw=Math.min(60000.0,gw*g);
+    if (wl.C==="C2") us=Math.min(0.72,us+0.004);
+    if (wl.C==="C3"){ us=Math.max(0.44,us-0.003); cn=Math.min(0.30,cn+0.002); }
+    if (wl.C==="C4") eu=Math.min(0.16,eu+0.0025);
+    cn=Math.min(0.34,cn+(wl.S!=="S3"?0.003:0.000));
+    const lift=1.0+0.10*Math.max(0,c-2.6);
+    const rg=1.0+(P.REV_G[wl.D]-1.0)*lift;
+    rev=Math.min(30.0,rev*(1.0+(rg-1.0)/(1.0+rev/6.0)));
+    jobs=Math.max(-35.0,jobs+P.JOBS_RATE[wl.D]*Math.min(2.5,Math.max(0.3,c-2.0)));
+    laws=laws+P.LAWS_RATE[wl.C];
+    appr+=(wl.D==="D1"?-1.2:-0.3)+(wl.C==="C3"?0.8:0.0);
+    appr=Math.max(8,Math.min(72,appr));
+    const copies=c<3.0?0:Math.min(5e7,2.2e4*Math.pow(10,1.1*(c-3.0)));
+    const speed=c<3.0?1:Math.min(1000,Math.floor(13*Math.pow(5.5,c-3.0)));
+    out.year.push(y); out.cap.push(c); out.gw.push(gw);
+    out.us.push(us); out.cn.push(cn); out.eu.push(eu);
+    out.rev.push(rev); out.jobs.push(jobs); out.laws.push(laws|0);
+    out.appr.push(appr); out.copies.push(copies|0); out.speed.push(speed|0);
   }
   return out;
 }
-function glyphPath(folder, r){
-  switch(GLYPH[folder]){
-    case "m": return "M0 "+(-r*1.25)+" L"+(r*1.1)+" "+(r*0.9)+" L"+(-r*1.1)+" "+(r*0.9)+" Z";
-    case "l": return "M"+(-r*0.8)+" "+(-r)+" h"+(r*1.6)+" v"+(2*r)+" h"+(-r*1.6)+" Z";
-    case "x": return "M0 "+(-r*1.2)+" L"+(r*1.2)+" 0 L0 "+(r*1.2)+" L"+(-r*1.2)+" 0 Z";
-    case "s": return "M"+(-r*0.7)+" "+(-r*0.7)+" h"+(r*1.4)+" v"+(r*1.4)+" h"+(-r*1.4)+" Z";
-    case "g": return "M0 "+(-r*1.2)+" L"+(r*1.15)+" "+(-r*0.35)+" L"+(r*0.7)+" "+(r*1.05)+" L"+(-r*0.7)+" "+(r*1.05)+" L"+(-r*1.15)+" "+(-r*0.35)+" Z";
-    default: return null;              /* circle */
+function instantiateJS(wl, seed){
+  const rng = mulberry32(seed);
+  const kn = capPath(wl);
+  const evs=[];
+  for (const t of D.engine.templates){
+    let ok=true;
+    for (const ax in t.req) if (!t.req[ax].includes(wl[ax])) ok=false;
+    if (!ok || rng() > t.p) continue;
+    let year = t.w[0] + (t.w[1]-t.w[0])*Math.pow(rng(),1.3);
+    if (t.tie==="cap>=3"){ const k=kn.find(k=>k[1]>=3.0); year=k?k[0]:null; }
+    if (t.tie==="cap>=4"){ const k=kn.find(k=>k[1]>=4.0); year=k?k[0]:null; }
+    if (year===null || year>D.engine.y1) continue;
+    let txt = t.text.replace("{year}", String(Math.floor(year)))
+                    .replace("{survives}", wl.E==="E2"?"survives":"stalls");
+    evs.push({year:Math.round(year*10)/10, layer:t.layer, text:txt,
+              cites:t.cites});
   }
+  evs.sort((a,b)=>a.year-b.year);
+  return evs;
 }
-let svgDirty = true;
-function renderSVG(){
-  svgDirty = false;
-  const svg = $("overlay");
-  while (svg.firstChild) svg.removeChild(svg.firstChild);
-  const t = state.t;
-  const W = svg.clientWidth, H = svg.clientHeight;
-
-  /* strikes: events in the trailing 21 days */
-  if (state.layers.strikes && D.events){
-    let lo = bisect(D.evT, t-10), hi = bisect(D.evT, t+0.001);
-    const g = document.createElementNS(NS,"g");
-    for (let k=lo;k<hi;k++){
-      const ev = D.events[k];
-      if (!ev.pos) continue;
-      const [x,y] = toScreen(ev.pos);
-      if (x<-40||y<-40||x>W+40||y>H+40) continue;
-      const age = t - ev.t;
-      const r = 3 + age*1.1, al = Math.max(0, 0.6*(1-age/10));
-      const c = document.createElementNS(NS,"circle");
-      c.setAttribute("cx",x); c.setAttribute("cy",y); c.setAttribute("r",r);
-      c.setAttribute("fill","none");
-      c.setAttribute("stroke", ev.update?"#d9a441":"#e8734a");
-      c.setAttribute("stroke-width", age<2?1.6:0.9);
-      c.setAttribute("opacity", al);
-      c.setAttribute("class","hit");
-      c.addEventListener("click",()=>showEvent(ev));
-      g.appendChild(c);
-    }
-    svg.appendChild(g);
+/* ancestral sampler with conditionals; pins = do-semantics */
+function sampleOne(rng, weights, pinned){
+  const wl={};
+  for (const a of D.network.axes){
+    const k=a.key;
+    if (pinned[k]){ wl[k]=pinned[k]; continue; }
+    const w={};
+    for (const p of a.positions) w[p[0]] = weights[k][p[0]];
+    const cond = D.network.conditionals[k]||{};
+    for (const par in cond)
+      if (Object.values(wl).includes(par))
+        for (const pos in cond[par]) if (w[pos]!==undefined) w[pos]*=cond[par][pos];
+    const tot=Object.values(w).reduce((x,y)=>x+y,0);
+    let r=rng()*tot, chosen=null;
+    for (const pos in w){ r-=w[pos]; if(r<=0){ chosen=pos; break; } }
+    wl[k]=chosen||Object.keys(w)[0];
   }
-
-  /* entities */
-  if (state.layers.entities){
-    const vis = visibleEnts(t);
-    const g = document.createElementNS(NS,"g");
-    for (const {e,alpha,bg} of vis){
-      const [x,y] = toScreen(e.pos);
-      if (x<-30||y<-30||x>W+30||y>H+30) continue;
-      const grow = e.folder==="companies" ? Math.log1p(usdAt(e.id,t))*0.55 : 0;
-      const r = (e.sz + grow) * Math.min(1.6, 0.75+state.zoom*0.28);
-      const hue = PAL[e.territory]||[0.6,0.6,0.6];
-      const col = "rgb("+((hue[0]*255+40)|0)+","+((hue[1]*255+40)|0)+","+((hue[2]*255+40)|0)+")";
-      const path = glyphPath(e.folder, r);
-      let el;
-      if (path){ el = document.createElementNS(NS,"path");
-        el.setAttribute("d", path);
-        el.setAttribute("transform","translate("+x+" "+y+")");
-      } else { el = document.createElementNS(NS,"circle");
-        el.setAttribute("cx",x); el.setAttribute("cy",y);
-        el.setAttribute("r", e.folder==="concepts"?r*0.62:r);
-      }
-      el.setAttribute("fill", e.folder==="concepts"||bg ? "none" : col);
-      el.setAttribute("stroke", col);
-      el.setAttribute("stroke-width", bg?0.7:1.1);
-      el.setAttribute("opacity", alpha*(e.folder==="concepts"?0.7:0.92));
-      el.setAttribute("class","hit");
-      el.addEventListener("click",(evc)=>{ evc.stopPropagation(); select(e.id); });
-      g.appendChild(el);
-      if (e.folder==="companies" && grow>0.8){
-        const ring = document.createElementNS(NS,"circle");
-        ring.setAttribute("cx",x); ring.setAttribute("cy",y);
-        ring.setAttribute("r", r+2.4);
-        ring.setAttribute("fill","none"); ring.setAttribute("stroke",col);
-        ring.setAttribute("stroke-width",0.6);
-        ring.setAttribute("opacity",alpha*0.5);
-        g.appendChild(ring);
-      }
-    }
-    svg.appendChild(g);
+  return wl;
+}
+function jointP(wl, weights){
+  let p=1.0; const chosen={};
+  for (const a of D.network.axes){
+    const k=a.key, w={};
+    for (const q of a.positions) w[q[0]]=weights[k][q[0]];
+    const cond=D.network.conditionals[k]||{};
+    for (const par in cond)
+      if (Object.values(chosen).includes(par))
+        for (const pos in cond[par]) if(w[pos]!==undefined) w[pos]*=cond[par][pos];
+    const tot=Object.values(w).reduce((x,y)=>x+y,0);
+    p*=w[wl[k]]/tot; chosen[k]=wl[k];
   }
-
-  /* arcs: selection always; global when layer on and zoomed */
-  if (D.arcs && (state.sel || (state.layers.arcs && state.zoom>1.8))){
-    const g = document.createElementNS(NS,"g");
-    let list = [];
-    if (state.sel) list = D.arcs.filter(a=>a.src===state.sel||a.dst===state.sel);
-    else list = D.arcs.filter((a,i)=> i%7===0 );
-    let n=0;
-    for (const a of list){
-      if (n>240) break;
-      const s = D.byId.get(a.src), d2 = D.byId.get(a.dst);
-      if (!s||!d2||!s.pos||!d2.pos) continue;
-      if (s.t0 && s.t0>t) continue;
-      if (d2.t0 && d2.t0>t) continue;
-      const A = toScreen(s.pos), B = toScreen(d2.pos);
-      const mx=(A[0]+B[0])/2, my=(A[1]+B[1])/2 - Math.min(60, Math.hypot(B[0]-A[0],B[1]-A[1])*0.22);
-      const p = document.createElementNS(NS,"path");
-      p.setAttribute("d","M"+A[0]+" "+A[1]+" Q"+mx+" "+my+" "+B[0]+" "+B[1]);
-      p.setAttribute("fill","none");
-      const contra = a.type==="contradicts";
-      p.setAttribute("stroke", contra?"#c25b5b":"#6f9fd8");
-      if (contra) p.setAttribute("stroke-dasharray","4 3");
-      p.setAttribute("stroke-width", state.sel?1.1:0.5);
-      p.setAttribute("opacity", state.sel?0.65:0.16);
-      g.appendChild(p); n++;
-    }
-    svg.appendChild(g);
-  }
-
-  /* selection ring */
-  if (state.sel){
-    const e = D.byId.get(state.sel);
-    if (e && e.pos){
-      const [x,y] = toScreen(e.pos);
-      const c = document.createElementNS(NS,"circle");
-      c.setAttribute("cx",x); c.setAttribute("cy",y); c.setAttribute("r",13);
-      c.setAttribute("fill","none"); c.setAttribute("stroke","#fff");
-      c.setAttribute("stroke-width",1.2); c.setAttribute("opacity",0.85);
-      c.setAttribute("stroke-dasharray","3 3");
-      svg.appendChild(c);
-    }
-  }
-  layoutEntLabels();
+  return p;
 }
-function bisect(arr, x){
-  let lo=0, hi=arr.length;
-  while(lo<hi){ const m=(lo+hi)>>1; if(arr[m]<x) lo=m+1; else hi=m; }
-  return lo;
-}
-
-/* ---------- labels ---------- */
-function layoutTerrLabels(){
-  for (const el of document.querySelectorAll(".tlabel")) el.remove();
-  const box = $("labels");
-  for (const n of D.terr.names){
-    const c = D.terr.centroids[n]; if(!c) continue;
-    const el = document.createElement("div");
-    el.className="tlabel"; el.dataset.n = n;
-    el.textContent = n.replace("AI ","").replace(" & ","  ·  ").toUpperCase();
-    box.appendChild(el);
-  }
-  posTerrLabels();
-}
-function posTerrLabels(){
-  const W = innerWidth, H = innerHeight;
-  const taken = [];
-  for (const el of document.querySelectorAll(".tlabel")){
-    const c = D.terr.centroids[el.dataset.n];
-    const [x,y] = toScreen(c);
-    el.style.left = x+"px"; el.style.top = y+"px";
-    el.style.fontSize = Math.min(15, 8+state.zoom*3.2)+"px";
-    let show = !(x<-150||y<-40||x>W+150||y>H+40);
-    if (show){                       /* collision-cull, drop not overdraw */
-      const w = el.textContent.length*7.5;
-      if (taken.some(r=>Math.abs(r[0]-x)<(r[2]+w)/2 && Math.abs(r[1]-y)<20))
-        show = false;
-      else taken.push([x,y,w]);
-    }
-    el.style.display = show?"":"none";
-  }
-}
-let entLabelTimer = 0;
-function layoutEntLabels(){
-  const now = performance.now();
-  if (now - entLabelTimer < 140) return;
-  entLabelTimer = now;
-  for (const el of document.querySelectorAll(".elabel")) el.remove();
-  if (!state.layers.labels || state.zoom < 1.5) return;
-  const t = state.t, W=innerWidth, H=innerHeight;
-  const vis = visibleEnts(t)
-    .map(v=>({...v, s: v.e.sz + (v.e.folder==="companies"?Math.log1p(usdAt(v.e.id,t)):0)}))
-    .sort((a,b)=>b.s-a.s).slice(0, 8+state.zoom*14|0);
-  const taken = [];
-  const box = $("labels");
-  for (const {e} of vis){
-    const [x,y] = toScreen(e.pos);
-    if (x<0||y<30||x>W||y>H-90) continue;
-    const w = e.title.length*5.6+10;
-    if (taken.some(r=>Math.abs(r[0]-x)<(r[2]+w)/2 && Math.abs(r[1]-y)<16)) continue;
-    taken.push([x,y,w]);
-    const el = document.createElement("div");
-    el.className = "elabel";
-    el.style.left=x+"px"; el.style.top=y+"px";
-    el.textContent = e.title.length>34 ? e.title.slice(0,32)+"…" : e.title;
-    box.appendChild(el);
-  }
-}
-
-/* ---------- cards ---------- */
-const FACTS = {
-  companies: [["company_type","Type"],["founded","Founded"],["hq_country","HQ"]],
-  models: [["developer","Developer"],["release_date","Released"],
-           ["parameters","Parameters"],["open_weights","Open weights"]],
-  litigation: [["court","Court"],["filed","Filed"],["last_status_check","Status checked"]],
-  entities: [["entity_type","Type"]],
-  legislation: [], concepts: [], government: [["entity_type","Type"]],
-  industries: [], standards: [], analysis: [],
-};
-function decayState(e){
-  if (!e.updated) return null;
-  const age = (TODAY_T - tOf(e.updated))/30.4;
-  return age > e.decay_months ? "stale ("+Math.round(age)+" mo)" : null;
-}
-function select(id){
-  state.sel = id; svgDirty = true;
-  const e = D.byId.get(id);
-  if (!e){ $("info").style.display="none"; return; }
-  if (!D.arcs) lazyArcs();
-  const box = $("info");
-  const conf = e.confidence||"medium";
-  const stale = decayState(e);
-  let h = "<div class=eyebrow><span>"+e.folder+
-    (e.territory?" · "+esc(e.territory):"")+
-    "</span><span class=close onclick=\"APP.close()\">×</span></div>"+
-    "<h2>"+esc(e.title)+"</h2>"+
-    "<div style=\"display:flex;gap:6px;flex-wrap:wrap\">"+
-    "<span class=\"badge b-"+conf+"\">"+conf+"</span>"+
-    (stale?"<span class=\"badge b-stale\">"+stale+"</span>":"")+
-    (e.status && e.status!=="active"?"<span class=\"badge b-stale\">"+esc(e.status)+"</span>":"")+
-    "</div>";
-  const rows = (FACTS[e.folder]||[]).map(([k,lab])=>
-    e.fact && e.fact[k]!==undefined ?
-    "<div class=frow><span class=k>"+lab+"</span><span class=v>"+esc(String(e.fact[k]))+"</span></div>" : "").join("");
-  h += rows;
-  if (e.window) h += "<div class=frow><span class=k>Since</span><span class=v>"+
-    e.window.iso+" <span style=\"color:var(--ink-faint)\">("+e.window.kind+
-    (e.window.precision!=="day"?", "+e.window.precision:"")+")</span></span></div>";
-  h += "<div class=prose>"+esc(e.desc||"")+"</div>";
-  const s = D.seriesBy.get(id);
-  if (s && s.length){
-    const rows2 = s.filter(r=>r.t<=state.t).slice(-3).reverse();
-    if (rows2.length){
-      h += "<div style=\"font-size:10px;letter-spacing:.14em;color:var(--ink-faint);margin-top:6px\">FROM THE RECORD AT THIS DATE</div>";
-      for (const r of rows2)
-        h += "<div class=frow><span class=k>"+r.iso+"</span><span class=v>"+esc(r.txt.slice(0,90))+"</span></div>";
-      h += "<canvas id=spark></canvas>";
-    }
-  }
-  h += "<div id=relbox class=rel-list></div>";
-  h += "<div class=posrow>Position placed by the model · datum "+
-       (D.meta.datum_version||"v1")+" · adjacency is corpus language, not alliance</div>";
-  h += "<div class=cite>Source: AI Policy Wiki — <span style=\"font-family:var(--mono)\">"+
-       esc(id)+"</span>"+(e.fact&&e.fact.source_type?" ("+esc(e.fact.source_type)+")":"")+
-       " · confidence and citations live on the wiki page; decay window "+
-       e.decay_months+" mo</div>";
-  box.innerHTML = h;
-  box.style.display = "block";
-  drawSpark(id);
-  fillRelated(id);
-  writeHash();
-}
-function drawSpark(id){
-  const cv = $("spark"); if(!cv) return;
-  const all = (D.seriesBy.get(id)||[]).filter(r=>r.v);
-  let s = all.filter(r=>/valuation/i.test(r.g||""));
-  if (s.length<2) s = all.filter(r=>/revenue|arr/i.test(r.g||""));
-  if (s.length<2){ cv.remove(); return; }
-  const g = cv.getContext("2d"), W=cv.width=cv.clientWidth*2, H=cv.height=88;
-  const t0=s[0].t, t1=s[s.length-1].t, vmax=Math.max(...s.map(r=>r.v));
-  g.strokeStyle="#d9a441"; g.lineWidth=2; g.beginPath();
-  s.forEach((r,i)=>{ const x=(r.t-t0)/(t1-t0||1)*(W-8)+4,
-    y=H-6-(r.v/vmax)*(H-14);
-    i?g.lineTo(x,y):g.moveTo(x,y); });
-  g.stroke();
-  const tx=(Math.min(state.t,t1)-t0)/(t1-t0||1)*(W-8)+4;
-  g.strokeStyle="#ffffff55"; g.lineWidth=1;
-  g.beginPath(); g.moveTo(tx,4); g.lineTo(tx,H-4); g.stroke();
-}
-async function fillRelated(id){
-  const box = $("relbox"); if(!box) return;
-  let h = "";
-  if (D.arcs){
-    const mine = D.arcs.filter(a=>a.src===id||a.dst===id).slice(0,7);
-    if (mine.length){
-      h += "<div style=\"font-size:10px;letter-spacing:.14em;color:var(--ink-faint);margin:8px 0 3px\">RELATIONSHIPS (FROM THE WIKI)</div>";
-      for (const a of mine){
-        const other = a.src===id?a.dst:a.src;
-        const o = D.byId.get(other);
-        if (!o) continue;
-        h += "<div class=r data-id=\""+esc(other)+"\"><span class=rt>"+esc(a.type)+
-          "</span>"+esc(o.title)+"</div>";
-      }
-    }
-  }
-  const nb = await neighbors(id);
-  if (nb.length){
-    h += "<div style=\"font-size:10px;letter-spacing:.14em;color:var(--ink-faint);margin:8px 0 3px\">NEAREST ON THE MAP (SEMANTIC)</div>";
-    for (const n of nb) h += "<div class=r data-id=\""+esc(n)+"\">"+
-      esc((D.byId.get(n)||{title:n}).title)+"</div>";
-  }
-  box.innerHTML = h;
-  box.querySelectorAll(".r").forEach(el=>el.addEventListener("click",()=>{
-    const e = D.byId.get(el.dataset.id);
-    if (e && e.pos) flyTo(e.pos, Math.max(state.zoom,2.2));
-    select(el.dataset.id);
-  }));
-}
-function showEvent(ev){
-  const box = $("info");
-  let h = "<div class=eyebrow><span>development · "+esc(ev.section)+
-    "</span><span class=close onclick=\"APP.close()\">×</span></div>"+
-    "<h2 style=\"font-size:15px\">"+fmtDate(ev.t)+"</h2>"+
-    "<div style=\"display:flex;gap:6px\"><span class=\"badge "+
-    (ev.fell_back?"b-stale":"b-high")+"\">"+ev.date.kind+" date</span>"+
-    (ev.update?"<span class=\"badge b-medium\">update</span>":"")+"</div>"+
-    "<div class=prose>"+esc(ev.text)+"</div>";
-  if (ev.targets && ev.targets.length){
-    h += "<div class=rel-list>";
-    for (const t of ev.targets){ const e=D.byId.get(t); if(!e) continue;
-      h += "<div class=r data-id=\""+esc(t)+"\">"+esc(e.title)+"</div>"; }
-    h += "</div>";
-  }
-  if (ev.urls && ev.urls.length){
-    h += "<div class=cite>Sources: " + ev.urls.map((u,i)=>
-      "<a href=\""+esc(u)+"\" target=_blank rel=noopener>["+(i+1)+"]</a>").join(" ")+"</div>";
-  }
-  h += "<div class=posrow>Position: "+(ev.position_mode==="entity"?
-    "at its subject entity":"at its territory centroid")+" · placed by the model</div>";
-  box.innerHTML = h;
-  box.style.display="block";
-  box.querySelectorAll(".r").forEach(el=>el.addEventListener("click",()=>select(el.dataset.id)));
-}
-function esc(s){ return String(s).replace(/[&<>"]/g,
-  c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
-
-/* ---------- lazy data ---------- */
-function lazyArcs(){
-  if (arcsLoaded) return arcsLoaded;
-  arcsLoaded = J("arcs").then(d=>{ D.arcs=d.arcs; svgDirty=true;
-    if(state.sel) fillRelated(state.sel); });
-  return arcsLoaded;
-}
-let anchorsP = null;
-function lazyAnchors(){
-  if (anchorsP) return anchorsP;
-  anchorsP = J("anchors50").then(d=>{ anchors = d; });
-  return anchorsP;
-}
-async function neighbors(id){
-  await lazyAnchors();
-  const me = anchors.pages[id];
-  if (!me) return [];
-  const out = [];
-  for (const [k,v] of Object.entries(anchors.pages)){
-    if (k===id || !D.byId.has(k)) continue;
-    let dot=0, na=0, nb=0;
-    for (let i=0;i<50;i++){ dot+=me.v[i]*v.v[i]; na+=me.v[i]*me.v[i]; nb+=v.v[i]*v.v[i]; }
-    out.push([dot/Math.sqrt(na*nb||1), k]);
-  }
-  out.sort((a,b)=>b[0]-a[0]);
-  return out.slice(0,6).map(x=>x[1]);
-}
-
-/* ---------- search (Ask the Atlas, Tier 0) ---------- */
-function wireSearch(){
-  const q = $("q"), hits = $("hits");
-  let idx = null;
-  const build = ()=> idx = D.ents.concat(D.people).map(e=>({
-    e, hay: (e.title+" "+(e.tags||[]).join(" ")).toLowerCase()}));
-  q.addEventListener("input", ()=>{
-    if (!idx) build();
-    const s = q.value.trim().toLowerCase();
-    if (s.length<2){ hits.style.display="none"; return; }
-    const res = [];
-    for (const r of idx){
-      const i = r.hay.indexOf(s);
-      if (i>=0) res.push([ (r.hay.startsWith(s)?0:1)*10 + (r.e.pos?0:2) + i*0.001 - (r.e.indeg||0)*0.01, r.e]);
-    }
-    res.sort((a,b)=>a[0]-b[0]);
-    hits.innerHTML = res.slice(0,8).map(([_,e])=>
-      "<div class=hit-row data-id=\""+esc(e.id)+"\"><span class=eyebrow>"+e.folder+
-      "</span><span>"+esc(e.title)+"</span></div>").join("") ||
-      "<div class=hit-row><span class=eyebrow>—</span><span>nothing in the atlas; the wiki may still know it</span></div>";
-    hits.style.display="block";
-    hits.querySelectorAll(".hit-row[data-id]").forEach(el=>
-      el.addEventListener("click",()=>{ hits.style.display="none"; q.blur();
-        const e = D.byId.get(el.dataset.id);
-        if (e && e.pos) flyTo(e.pos, Math.max(state.zoom, 2.4));
-        select(el.dataset.id); }));
-  });
-  q.addEventListener("keydown",e=>{ if(e.key==="Escape"){hits.style.display="none";q.blur();}
-    if(e.key==="Enter"){ const first=hits.querySelector(".hit-row[data-id]");
-      if(first) first.click(); }});
-  document.addEventListener("click",e=>{
-    if(!$("search").contains(e.target)) hits.style.display="none";});
-}
-
-/* ---------- camera ---------- */
-let flyAnim = null;
-function flyTo(p, zoom){
-  const from = {cx:state.cx, cy:state.cy, z:state.zoom};
-  const to = {cx:p[0], cy:p[1], z:zoom||state.zoom};
-  const t0 = performance.now();
-  flyAnim = (now)=>{
-    const u = Math.min(1,(now-t0)/650), e = u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
-    state.cx = from.cx+(to.cx-from.cx)*e;
-    state.cy = from.cy+(to.cy-from.cy)*e;
-    state.zoom = from.z+(to.z-from.z)*e;
-    svgDirty = true;
-    if (u>=1) flyAnim=null;
+function argmaxLine(weights, pinned){
+  const keys=D.network.axes.map(a=>a.key);
+  const posl=D.network.axes.map(a=>a.positions.map(p=>p[0]));
+  let best=null,bp=-1;
+  const rec=(i,wl)=>{
+    if (i===keys.length){ const p=jointP(wl,weights);
+      if(p>bp){bp=p;best={...wl};} return; }
+    const k=keys[i];
+    const opts=pinned[k]?[pinned[k]]:posl[i];
+    for (const o of opts){ wl[k]=o; rec(i+1,wl); }
   };
+  rec(0,{});
+  return [best,bp];
 }
-function wireCamera(){
-  const cv = $("gl");
-  let drag=null;
-  cv.addEventListener("pointerdown",e=>{ drag={x:e.clientX,y:e.clientY,
-    cx:state.cx,cy:state.cy,moved:false}; cv.setPointerCapture(e.pointerId); });
-  cv.addEventListener("pointermove",e=>{
-    if(!drag) return;
-    const dx=e.clientX-drag.x, dy=e.clientY-drag.y;
-    if (Math.abs(dx)+Math.abs(dy)>3) drag.moved=true;
-    const asp=cv.clientWidth/cv.clientHeight;
-    state.cx = drag.cx - dx/cv.clientWidth*asp/state.zoom;
-    state.cy = drag.cy + dy/cv.clientHeight/state.zoom;
-    clampView(); svgDirty=true;
+function marginalsOf(lines){
+  const m={};
+  for (const wl of lines) for (const k in wl){
+    m[k]=m[k]||{}; m[k][wl[k]]=(m[k][wl[k]]||0)+1; }
+  for (const k in m){ const n=Object.values(m[k]).reduce((a,b)=>a+b,0);
+    for (const p in m[k]) m[k][p]/=n; }
+  return m;
+}
+function bandsOf(lines){
+  const yrs=[]; for(let y=D.engine.y0;y<=D.engine.y1;y++) yrs.push(y);
+  const paths=lines.map(wl=>{ const k=capPath(wl);
+    return yrs.map(y=>capAt(k,y)); });
+  const out={year:yrs};
+  for (const p of [10,25,50,75,90]) out["p"+p]=[];
+  for (let c=0;c<yrs.length;c++){
+    const vals=paths.map(pt=>pt[c]).sort((a,b)=>a-b);
+    for (const p of [10,25,50,75,90])
+      out["p"+p].push(vals[Math.floor(vals.length*p/100)]);
+  }
+  return out;
+}
+
+/* ---------- conditioning ---------- */
+function baseWeights(){
+  const w={};
+  for (const a of D.network.axes){ w[a.key]={};
+    for (const p of a.positions) w[a.key][p[0]]=p[2]; }
+  return w;
+}
+function recondition(){
+  const pins=Object.keys(S.pin);
+  if (!pins.length){ condCache=null; refreshAll(); return; }
+  const w=baseWeights();
+  let lines, mode;
+  if (S.obs && D.ens2k){
+    const filt=D.ens2k.lines.filter(wl=>pins.every(k=>wl[k]===S.pin[k]));
+    if (filt.length>=40){ lines=filt; mode="observed "+filt.length+" of 2000 lines"; }
+  }
+  if (!lines){
+    const rng=mulberry32(4242);
+    lines=[]; for(let i=0;i<3000;i++) lines.push(sampleOne(rng,w,S.pin));
+    mode=(S.obs?"observation unavailable (too few matching lines) — ":"")+
+         "do-mode · 3000 resampled";
+  }
+  const [ml]=argmaxLine(w,S.pin);
+  condCache={lines, mode, marginals:marginalsOf(lines), bands:bandsOf(lines),
+             main:ml, tracks:tracksJS(ml), events:instantiateJS(ml,20260731)};
+  refreshAll();
+}
+function activeMain(){ return condCache?condCache.main:D.mainline.wl; }
+function activeTracks(){ return condCache?condCache.tracks:D.mainline.tracks; }
+function activeEvents(){ return condCache?condCache.events:D.mainline.events; }
+function activeMarginals(){ return condCache?condCache.marginals:D.marginals.today; }
+
+/* ---------- data ---------- */
+const J = n => fetch("data/forecast/"+n+"?v="+DATA_V).then(r=>{
+  if(!r.ok) throw new Error(n); return r.json(); });
+async function boot(){
+  $("splashS").textContent="reading the forecast…";
+  [D.engine, D.network, D.bands, D.marginals, D.mainline, D.crisis,
+   D.delta, D.claims, D.grounding] = await Promise.all([
+    J("engine.json"), J("network.json"), J("bands.json"),
+    J("marginals.json"), J("mainline.json"), J("crisis.json"),
+    J("delta.json"), J("claims.json"), J("grounding.json")]);
+  buildComposer(); buildCrisis(); wire();
+  readHash();
+  refreshAll();
+  $("splash").style.display="none";
+  J("ensemble2k.json").then(d=>{ D.ens2k=d; if(S.obs) recondition(); })
+    .catch(()=>{});
+  fetch("data/events.json?v="+DATA_V).then(r=>r.ok?r.json():null)
+    .then(d=>{ if(d){ D.evDensity=d.events.map(e=>e.date.iso.slice(0,7));
+      drawMain(); }}).catch(()=>{});
+  fetch("data/countries-110m.json?v="+DATA_V).then(r=>r.ok?r.json():null)
+    .then(d=>{ D.topo=d; if(S.view==="world") drawWorld(); }).catch(()=>{});
+}
+
+/* ---------- Mainline stage ---------- */
+function drawMain(){
+  const cv=$("stage"), dpr=Math.min(devicePixelRatio||1,2);
+  const W=cv.clientWidth,H=cv.clientHeight;
+  cv.width=W*dpr; cv.height=H*dpr;
+  const g=cv.getContext("2d"); g.setTransform(dpr,0,0,dpr,0,0);
+  g.clearRect(0,0,W,H);
+  const L=286, R=W-270, T=56, B=H-150;
+  const X=y=>xmap(y,L,R);
+  const Y=v=>B-(Math.min(v,6.4)/6.4)*(B-T);
+  /* resolution zones */
+  const zones=[[2012,NOW_Y,"observed"],[NOW_Y,2032,"monthly"],
+    [2032,2040,"quarterly"],[2040,2060,"yearly"],[2060,2100,"decadal"]];
+  g.font="9px "+getComputedStyle(document.body).getPropertyValue("--sans");
+  zones.forEach((z,i)=>{
+    g.fillStyle=i%2? "#ffffff05":"#ffffff02";
+    g.fillRect(X(z[0]),T,X(z[1])-X(z[0]),B-T);
+    g.fillStyle="#5c6b76"; g.globalAlpha=.6;
+    g.fillText(z[2], X(z[0])+4, T+10); g.globalAlpha=1;
   });
-  cv.addEventListener("pointerup",e=>{
-    if(drag && !drag.moved){
-      /* click empty ground: nearest entity within 14px else deselect */
-      const t=state.t;
-      let best=null,bd=14;
-      for (const {e:en} of visibleEnts(t)){
-        const [x,y]=toScreen(en.pos);
-        const d=Math.hypot(x-e.clientX,y-e.clientY);
-        if(d<bd){bd=d;best=en.id;}
-      }
-      if (best) select(best); else APP.close();
+  /* ladder */
+  for (let i=1;i<=6;i++){
+    g.strokeStyle="#26333f"; g.lineWidth=.7;
+    g.beginPath(); g.moveTo(L,Y(i)); g.lineTo(R,Y(i)); g.stroke();
+    g.fillStyle="#5c6b76";
+    g.fillText(LADDER_SHORT[i], L+4, Y(i)-3);
+  }
+  /* year ticks */
+  g.fillStyle="#5c6b76";
+  for (const y of [2015,2020,2025,2030,2040,2050,2060,2075,2090,2100]){
+    g.fillRect(X(y),B,1,4); g.fillText(y, X(y)-10, B+14);
+  }
+  /* event-density strip from the trunk */
+  if (D.evDensity){
+    const bins={};
+    for (const m of D.evDensity) bins[m]=(bins[m]||0)+1;
+    const mx=Math.max(...Object.values(bins));
+    g.fillStyle="#e8734a";
+    for (const m in bins){
+      const y=+m.slice(0,4)+ (+m.slice(5,7)-0.5)/12;
+      const h=Math.sqrt(bins[m]/mx)*16;
+      g.globalAlpha=.7; g.fillRect(X(y),B-h,Math.max(1.5,(R-L)/1060),h);
     }
-    drag=null;
-  });
-  cv.addEventListener("wheel",e=>{
-    e.preventDefault();
-    const w0 = toWorld(e.clientX,e.clientY);
-    state.zoom = Math.max(0.85, Math.min(9, state.zoom*Math.exp(-e.deltaY*0.0016)));
-    const w1 = toWorld(e.clientX,e.clientY);
-    state.cx += w0[0]-w1[0]; state.cy += w0[1]-w1[1];
-    clampView(); svgDirty=true;
-  },{passive:false});
+    g.globalAlpha=1;
+  }
+  /* bands: shipped annual when unpinned (+monthly blend near), client when pinned */
+  const bands = condCache?condCache.bands:D.bands.annual;
+  function bandPath(lo,hi,col,alpha){
+    g.fillStyle=col; g.globalAlpha=alpha; g.beginPath();
+    const yrs=bands.year;
+    yrs.forEach((y,i)=>{ const x=X(Math.max(y,NOW_Y));
+      i? g.lineTo(x,Y(bands[hi][i])) : g.moveTo(x,Y(bands[hi][i])); });
+    for (let i=yrs.length-1;i>=0;i--)
+      g.lineTo(X(Math.max(yrs[i],NOW_Y)), Y(bands[lo][i]));
+    g.closePath(); g.fill(); g.globalAlpha=1;
+  }
+  bandPath("p10","p90","#6f9fd8",.10);
+  bandPath("p25","p75","#6f9fd8",.16);
+  /* monthly near-field refinement (unpinned only) */
+  if (!condCache && D.bands.monthly){
+    const m=D.bands.monthly;
+    g.fillStyle="#6f9fd8"; g.globalAlpha=.14; g.beginPath();
+    m.month.forEach((mm,i)=>{ const x=X(mm);
+      i? g.lineTo(x,Y(m.p75[i])) : g.moveTo(x,Y(m.p75[i])); });
+    for (let i=m.month.length-1;i>=0;i--) g.lineTo(X(m.month[i]),Y(m.p25[i]));
+    g.closePath(); g.fill(); g.globalAlpha=1;
+  }
+  /* median mainline */
+  const med = bands.p50;
+  g.strokeStyle="#5fae7d"; g.lineWidth=2.4; g.beginPath();
+  bands.year.forEach((y,i)=>{ const x=X(Math.max(y,NOW_Y));
+    i? g.lineTo(x,Y(med[i])) : g.moveTo(x,Y(med[i])); });
+  g.stroke();
+  /* active line capability path (gold, when pinned differs from median) */
+  if (condCache){
+    const kn=capPath(condCache.main);
+    g.strokeStyle="#d9a441"; g.lineWidth=1.6; g.setLineDash([5,3]);
+    g.beginPath();
+    for (let y=NOW_Y;y<=2100;y+=1){ const x=X(y);
+      y===NOW_Y? g.moveTo(x,Y(capAt(kn,y))) : g.lineTo(x,Y(capAt(kn,y))); }
+    g.stroke(); g.setLineDash([]);
+  }
+  /* trunk */
+  g.strokeStyle="#d8e2e8"; g.lineWidth=2.6; g.beginPath();
+  TRUNK.forEach((p,i)=>{ i? g.lineTo(X(p[0]),Y(p[1])) : g.moveTo(X(p[0]),Y(p[1])); });
+  g.stroke();
+  /* today */
+  g.strokeStyle="#d8e2e8"; g.setLineDash([4,3]); g.lineWidth=1.1;
+  g.beginPath(); g.moveTo(X(NOW_Y),T); g.lineTo(X(NOW_Y),B); g.stroke();
+  g.setLineDash([]);
+  g.fillStyle="#d8e2e8"; g.font="bold 9.5px "+getComputedStyle(document.body).getPropertyValue("--sans");
+  g.fillText("TODAY", X(NOW_Y)+4, T+22);
+  /* crisis diamonds */
+  const CRY={"deal-window":2030,"explosive-takeoff":2028,"no-sc-window":2036,
+    "alignment-fails":2031,"hard-deflate":2028.5,"researcher-by-2035":2035};
+  const marg=activeMarginals();
+  for (const c of D.crisis.crises){
+    const y=CRY[c.id]||2032;
+    let p=c.p;
+    if (c.kind==="axis" && marg[c.axis]) p=marg[c.axis][c.pos]||0;
+    const x=X(y), yy=Y(capAt(capPath(activeMain()),y));
+    g.fillStyle="#e8734a";
+    g.beginPath(); g.moveTo(x,yy-5); g.lineTo(x+5,yy); g.lineTo(x,yy+5);
+    g.lineTo(x-5,yy); g.closePath(); g.fill();
+    g.fillStyle="#8fa0ac"; g.font="8.5px "+getComputedStyle(document.body).getPropertyValue("--sans");
+    g.fillText((p*100).toFixed(0)+"%", x+7, yy-3);
+  }
+  /* cursor */
+  g.strokeStyle="#d9a441"; g.lineWidth=1.4;
+  g.beginPath(); g.moveTo(X(S.yr),T); g.lineTo(X(S.yr),B); g.stroke();
 }
-function clampView(){
-  const m = 0.5/state.zoom;
-  state.cx = Math.max(0.5-m*1.4, Math.min(0.5+m*1.4, state.cx));
-  state.cy = Math.max(0.5-m*1.2, Math.min(0.5+m*1.2, state.cy));
+
+/* ---------- World stage ---------- */
+function topoToPaths(topo){
+  if (D._paths) return D._paths;
+  const o=topo.objects.countries, arcs=topo.arcs,
+        sc=topo.transform.scale, tr=topo.transform.translate;
+  function decodeArc(a){
+    let x=0,y=0; const pts=[];
+    for (const [dx,dy] of a){ x+=dx; y+=dy;
+      pts.push([x*sc[0]+tr[0], y*sc[1]+tr[1]]); }
+    return pts;
+  }
+  const dec=arcs.map(decodeArc);
+  const out=[];
+  for (const geom of o.geometries){
+    const polys = geom.type==="Polygon"? [geom.arcs] :
+                  geom.type==="MultiPolygon"? geom.arcs : [];
+    const paths=[];
+    for (const poly of polys) for (const ring of poly){
+      const pts=[];
+      for (const ai of ring){
+        const rev=ai<0, idx=rev? ~ai : ai;
+        const seg=rev? dec[idx].slice().reverse() : dec[idx];
+        for (const p of seg) pts.push(p);
+      }
+      paths.push(pts);
+    }
+    out.push({id:geom.id, name:(geom.properties||{}).name||"", paths});
+  }
+  D._paths=out;
+  return out;
+}
+const REGION_IDS={us:["840"],cn:["156"],eu:["276","250","380","724","528","616",
+  "056","040","203","208","246","300","348","372","440","428","442","470","620",
+  "703","705","752","233","196","191","100","642","826","756","578"]};
+function drawWorld(){
+  const cv=$("world"), dpr=Math.min(devicePixelRatio||1,2);
+  const W=cv.clientWidth,H=cv.clientHeight;
+  cv.width=W*dpr; cv.height=H*dpr;
+  const g=cv.getContext("2d"); g.setTransform(dpr,0,0,dpr,0,0);
+  g.fillStyle="#0b1015"; g.fillRect(0,0,W,H);
+  if (!D.topo){ g.fillStyle="#5c6b76";
+    g.fillText("loading geography…", W/2-40, H/2); return; }
+  const T=56,B=H-150,L=286,R=W-270;
+  const X=lon=>L+(lon+180)/360*(R-L);
+  const Y=lat=>T+(90-lat)/180*(B-T)*1.28-((B-T)*.14);
+  const wl=activeMain(), tr=activeTracks();
+  const yi=Math.max(0,Math.min(tr.year.length-1,Math.floor(S.yr)-D.engine.y0));
+  const shares={us:tr.us[yi],cn:tr.cn[yi],eu:tr.eu[yi]};
+  const tint={us:"#6f9fd8",cn:"#c25b5b",eu:"#5fae7d"};
+  /* graticule */
+  g.strokeStyle="#1a242e"; g.lineWidth=.6;
+  for (let lon=-180;lon<=180;lon+=30){ g.beginPath();
+    g.moveTo(X(lon),Y(85)); g.lineTo(X(lon),Y(-60)); g.stroke(); }
+  for (let lat=-60;lat<=80;lat+=20){ g.beginPath();
+    g.moveTo(X(-180),Y(lat)); g.lineTo(X(180),Y(lat)); g.stroke(); }
+  /* countries */
+  for (const c of topoToPaths(D.topo)){
+    let fill="#182028";
+    for (const r in REGION_IDS)
+      if (REGION_IDS[r].includes(String(c.id).padStart(3,"0")))
+        fill=tint[r];
+    g.beginPath();
+    for (const ring of c.paths){
+      ring.forEach((p,i)=>{ const x=X(p[0]),y=Y(p[1]);
+        i? g.lineTo(x,y) : g.moveTo(x,y); });
+      g.closePath();
+    }
+    if (fill!=="#182028"){
+      const r2=Object.keys(REGION_IDS).find(r=>REGION_IDS[r]
+        .includes(String(c.id).padStart(3,"0")));
+      g.globalAlpha=0.10+0.5*Math.min(0.6,shares[r2]||0);
+    } else g.globalAlpha=0.9;
+    g.fillStyle=fill; g.fill(); g.globalAlpha=1;
+    g.strokeStyle="#26333f"; g.lineWidth=.5; g.stroke();
+  }
+  /* compute sites */
+  const gwNow=tr.gw[yi];
+  for (const s of D.engine.sites){
+    const share = s.r==="row"? 0.12 : shares[s.r]||0.1;
+    const gwSite = gwNow*share*s.w;
+    const rad = 2+Math.log10(1+gwSite)*4.2;
+    const x=X(s.lon), y=Y(s.lat);
+    const grd=g.createRadialGradient(x,y,0,x,y,rad*2.4);
+    grd.addColorStop(0,"rgba(233,166,80,0.85)");
+    grd.addColorStop(1,"rgba(233,166,80,0)");
+    g.fillStyle=grd;
+    g.beginPath(); g.arc(x,y,rad*2.4,0,7); g.fill();
+    g.fillStyle="#ffd9a0";
+    g.beginPath(); g.arc(x,y,Math.max(1.2,rad*0.34),0,7); g.fill();
+  }
+  g.fillStyle="#8fa0ac"; g.font="9px "+getComputedStyle(document.body).getPropertyValue("--sans");
+  g.fillText("compute build-out under the active world-line · site glow ∝ modelled GW share · regime tint strength ∝ compute share",
+             L, B+16);
+  /* top site labels */
+  g.fillStyle="#c8d4dc";
+  for (const s of D.engine.sites.slice(0,4).concat(D.engine.sites.slice(7,9)))
+    g.fillText(s.n, X(s.lon)+6, Y(s.lat)-4);
 }
 
 /* ---------- rail ---------- */
-function buildRail(){
-  const ch = $("chapters");
-  ch.innerHTML = D.eras.map(e=>
-    "<div class=chapter data-t=\""+tOf(e.from)+"\"><span>"+esc(e.name)+
-    "</span><span class=yr>"+e.from.slice(0,4)+"</span></div>").join("");
-  ch.querySelectorAll(".chapter").forEach(el=>el.addEventListener("click",()=>{
-    setT(+el.dataset.t + 10); }));
-  const counts = {};
-  for (const e of D.ents) counts[e.territory]=(counts[e.territory]||0)+1;
-  $("terrs").innerHTML = D.terr.names.map(n=>{
-    const c = PAL[n]||[0.5,0.5,0.5];
-    return "<div class=terr data-n=\""+esc(n)+"\"><span class=sw style=\"background:rgb("+
-      (c[0]*255|0)+","+(c[1]*255|0)+","+(c[2]*255|0)+")\"></span><span>"+
-      esc(n.replace("AI ",""))+"</span><span class=n>"+(counts[n]||0)+"</span></div>";
-  }).join("");
-  $("terrs").querySelectorAll(".terr").forEach(el=>el.addEventListener("click",()=>{
-    const n = el.dataset.n;
-    state.terrFocus = state.terrFocus===n?null:n;
-    el.style.background = state.terrFocus===n?"#ffffff18":"";
-    if (state.terrFocus) flyTo(D.terr.centroids[n], 2.6);
-    svgDirty=true;
-  }));
-  const L = [["terrain","Terrain"],["attention","Attention weather"],
-    ["entities","Entities"],["arcs","Relationships"],["strikes","Event strikes"],
-    ["labels","Labels"],["horizon","Knowledge horizon"]];
-  $("layers").innerHTML = L.map(([k,lab])=>
-    "<div class=\"lrow"+(state.layers[k]?" on":"")+"\" data-k="+k+"><span>"+lab+
-    "</span><span class=sw2></span></div>").join("");
-  $("layers").querySelectorAll(".lrow").forEach(el=>el.addEventListener("click",()=>{
-    const k = el.dataset.k;
-    state.layers[k]^=1; el.classList.toggle("on");
-    if (k==="arcs" && state.layers.arcs) lazyArcs();
-    if (k==="horizon" && state.layers.horizon && state.t<HORIZON_T)
-      $("loadnote").textContent = "the wiki was born 2026-04-13 — before that, nothing is known-to-the-wiki";
-    svgDirty=true;
-  }));
-  document.querySelectorAll(".panel h3").forEach(h=>h.addEventListener("click",
-    ()=>h.parentElement.classList.toggle("closed")));
+function drift30(k,pos){
+  const h=D.marginals.history;
+  if (h.length<2) return 0;
+  const past=h[Math.max(0,h.length-31)].marginals;
+  return ((activeMarginals()[k][pos]||0)-((past[k]||{})[pos]||0))*100;
 }
-
-/* ---------- timeline ---------- */
-function buildTimeline(){
-  const s = $("slider");
-  s.min = 0; s.max = TODAY_T; s.value = state.t;
-  s.addEventListener("input", ()=> setT(+s.value, true));
-  $("play").addEventListener("click", ()=>{ state.playing=!state.playing;
-    $("play").textContent = state.playing?"❚❚":"▶"; });
-  $("speed").addEventListener("change", e=> state.speed=+e.target.value);
-  $("stepB").addEventListener("click", ()=>setT(state.t-30.44));
-  $("stepF").addEventListener("click", ()=>setT(state.t+30.44));
-  $("today").addEventListener("click", ()=>setT(TODAY_T));
-  $("tstrip").addEventListener("click", e=>{
-    const r = e.target.getBoundingClientRect();
-    setT((e.clientX-r.left)/r.width*TODAY_T);
-  });
-  drawTimeline();
-}
-function drawTimeline(){
-  const cv = $("tstrip"), g = cv.getContext("2d");
-  const W = cv.width = cv.clientWidth*2, H = cv.height = 68;
-  g.clearRect(0,0,W,H);
-  /* era bands */
-  for (const e of D.eras){
-    const a = tOf(e.from)/TODAY_T*W, b = (e.to?tOf(e.to):TODAY_T)/TODAY_T*W;
-    const tint = ERA_TINT[e.id]||[1,1,1];
-    g.fillStyle = "rgba("+(tint[0]*80|0)+","+(tint[1]*70|0)+","+(tint[2]*90|0)+",0.55)";
-    g.fillRect(a, H-14, b-a, 10);
+function refreshRail(){
+  $("dateChip").textContent = fmtYr(S.yr);
+  const wl=activeMain();
+  $("lineChip").textContent = ["T","A","C","D","S","P","E"]
+    .map(k=>wl[k]).join("·") + (Object.keys(S.pin).length?" (composed)":" (mainline)");
+  $("modeChip").textContent = condCache? condCache.mode :
+    "unconditioned · argmax of today's network";
+  /* axis bars */
+  const marg=activeMarginals();
+  let h="";
+  for (const a of D.network.axes){
+    const top=Object.entries(marg[a.key]||{}).sort((x,y)=>y[1]-x[1])[0];
+    if (!top) continue;
+    const posLab=(a.positions.find(p=>p[0]===top[0])||[])[1]||top[0];
+    const dr=condCache? null : drift30(a.key, top[0]);
+    h+="<div class=axrow><div class=lab><span>"+esc(a.name)+": "+
+      esc(posLab.split(" (")[0])+"</span><span class=drift style=\"color:"+
+      (dr===null?"#5c6b76":(dr>=0?"#5fae7d":"#c25b5b"))+"\">"+
+      (dr===null?"—":((dr>=0?"+":"")+dr.toFixed(1)+"pp"))+"</span></div>"+
+      "<div class=bar><i style=\"width:"+(top[1]*100).toFixed(0)+"%\"></i></div></div>";
   }
-  /* event density per fortnight */
-  if (D.events){
-    const bins = new Float32Array(Math.ceil(TODAY_T/14)+1);
-    for (const ev of D.events) bins[ev.t/14|0]++;
-    const mx = Math.max(...bins)||1;
-    g.fillStyle = "#e8734a";
-    for (let i=0;i<bins.length;i++){
-      const h = Math.pow(bins[i]/mx, 0.5)*(H-22);
-      if (h>0.5) g.fillRect(i*14/TODAY_T*W, H-16-h, Math.max(1.5,14/TODAY_T*W), h);
-    }
-  }
-  /* horizon marker */
-  g.strokeStyle="#d9a44188"; g.setLineDash([4,3]); g.lineWidth=2;
-  g.beginPath(); g.moveTo(HORIZON_T/TODAY_T*W, 2); g.lineTo(HORIZON_T/TODAY_T*W, H-4);
-  g.stroke(); g.setLineDash([]);
-  /* year ticks */
-  g.fillStyle="#5c6b76"; g.font="16px "+getComputedStyle(document.body)
-    .getPropertyValue("--mono");
-  for (let y=2012; y<=2026; y+=2){
-    const x = tOf(y+"-01-01")/TODAY_T*W;
-    g.fillRect(x, H-20, 1, 6);
-    g.fillText(String(y), x+3, H-24);
-  }
-  /* cursor */
-  const x = state.t/TODAY_T*W;
-  g.fillStyle="#d9a441"; g.fillRect(x-1,0,2,H-2);
-}
-function setT(t, fromSlider){
-  state.t = Math.max(0, Math.min(TODAY_T, t));
-  if (!fromSlider) $("slider").value = state.t;
-  svgDirty = true;
-  ensureFrames(state.t);
-  writeHash();
-}
-
-/* ---------- readout ---------- */
-function updateReadout(){
-  $("dateBig").textContent = fmtDate(state.t);
-  const era = eraAt(state.t);
-  $("eraName").textContent = era.name;
-  $("eraReg").textContent = state.t < HORIZON_T ?
-    "reconstructed from the record" : "observed daily by the wiki";
-  const t = state.t;
-  const models = D.ents.filter(e=>e.folder==="models"&&e.t0!==null&&e.t0<=t).length;
-  const cases_ = D.ents.filter(e=>e.folder==="litigation"&&e.t0!==null&&e.t0<=t).length;
-  let ev7 = 0;
-  if (D.events){ ev7 = bisect(D.evT,t+0.01)-bisect(D.evT,t-7); }
-  let topV = 0, topN = "";
-  for (const [id,s] of D.seriesBy){
-    const e = D.byId.get(id);
-    /* frontier labs only: Apple's $4.8T market cap lives on a companies/
-       page too, and it is context, not the lab-valuation statistic */
-    if (!e || e.folder!=="companies" ||
-        (e.fact||{}).company_type!=="frontier-lab") continue;
-    const v = usdAt(id,t);
-    if (v>topV){ topV=v; topN=e.title; }
-  }
-  const known = bisect(D.wikiCum, t+0.01);
+  $("axBars").innerHTML=h;
+  /* deltas */
+  const ent=D.delta.entries.slice(-4).reverse();
+  $("deltas").innerHTML = ent.length? ent.map(e=>
+    "<div class=delta><span class=mag>"+esc(e.rule)+" · "+e.impact_class+
+    " ×"+(e.magnitude||0).toFixed(3)+"</span><br><span class=drv>"+
+    esc((e.driver||"awaiting the first live morning").slice(0,90))+"</span></div>").join("") :
+    "<div class=delta><span class=drv>no evidence applications yet — the "+
+    "first live morning writes this panel</span></div>";
+  /* instruments */
+  const tr=activeTracks();
+  const yi=Math.max(0,Math.min(tr.year.length-1,Math.floor(S.yr)-D.engine.y0));
+  $("instYear").textContent = S.yr<NOW_Y? "pre-fork (trunk)" : tr.year[yi];
+  const cap=S.yr<NOW_Y? capAt(TRUNK.map(p=>p),S.yr) : tr.cap[yi];
+  $("pills").innerHTML = PILLS.map(([n,th])=>
+    "<div class=\"cpill"+(cap>=th?" on":"")+"\">"+n+"</div>").join("");
+  drawDonut(tr,yi);
+  const cp=tr.copies[yi];
+  $("copiesLab").innerHTML = cp>0 ?
+    "<b>"+fmtNum(cp)+"</b> copies · <b>"+tr.speed[yi]+"×</b> human speed" :
+    "agent collectives: below threshold";
+  $("copies").innerHTML = "<i></i>".repeat(Math.min(200,
+    cp>0? Math.max(4,Math.round(Math.log10(cp+1)*25)) : 0));
   $("stats").innerHTML =
-    "<b>"+models+"</b> tracked models released · <b>"+cases_+"</b> cases filed<br>"+
-    (ev7?("<b>"+ev7+"</b> developments this week<br>"):"")+
-    (topV?("top lab valuation <b>$"+(topV>=1000?(topV/1000).toFixed(1)+"T":topV.toFixed(0)+"B")+
-      "</b> <span style=\"color:var(--ink-faint)\">"+esc(topN.slice(0,14))+"</span><br>"):"")+
-    (known?("<b>"+known+"</b> pages known to the wiki"):
-     "<span style=\"color:var(--ink-faint)\">wiki coverage begins 2026-04</span>");
+    "AI revenue <b>$"+(tr.rev[yi]>=1?tr.rev[yi].toFixed(1)+"T":
+      (tr.rev[yi]*1000).toFixed(0)+"B")+"/yr</b><br>"+
+    "jobs Δ <b>"+tr.jobs[yi].toFixed(1)+"%</b> · laws <b>"+tr.laws[yi]+
+    "</b><br>approval <b>"+tr.appr[yi].toFixed(0)+"%</b> · compute <b>"+
+    fmtNum(tr.gw[yi])+" GW</b>";
+}
+function drawDonut(tr,yi){
+  const cv=$("donut"), g=cv.getContext("2d");
+  g.clearRect(0,0,128,128);
+  const shares=[[tr.us[yi],"#6f9fd8"],[tr.cn[yi],"#c25b5b"],
+                [tr.eu[yi],"#5fae7d"],
+                [Math.max(0,1-tr.us[yi]-tr.cn[yi]-tr.eu[yi]),"#3a4652"]];
+  let a0=-Math.PI/2;
+  for (const [v,c] of shares){
+    g.beginPath(); g.strokeStyle=c; g.lineWidth=16;
+    g.arc(64,64,44,a0,a0+v*Math.PI*2); g.stroke();
+    a0+=v*Math.PI*2;
+  }
+  $("donutLeg").innerHTML =
+    "<span style=\"color:#6f9fd8\">■</span> US "+(tr.us[yi]*100|0)+"%<br>"+
+    "<span style=\"color:#c25b5b\">■</span> CN "+(tr.cn[yi]*100|0)+"%<br>"+
+    "<span style=\"color:#5fae7d\">■</span> EU "+(tr.eu[yi]*100|0)+"%";
 }
 
-/* ---------- hash ---------- */
-function writeHash(){
-  const h = "#d="+isoOf(state.t)+
-    (state.sel?"&sel="+encodeURIComponent(state.sel):"")+
-    "&v="+state.cx.toFixed(3)+","+state.cy.toFixed(3)+","+state.zoom.toFixed(2);
-  history.replaceState(null,"",h);
+/* ---------- narrative ---------- */
+function refreshNarr(){
+  const evs=activeEvents().filter(e=>Math.abs(e.year-S.yr)<=6)
+    .sort((a,b)=>Math.abs(a.year-S.yr)-Math.abs(b.year-S.yr)).slice(0,7)
+    .sort((a,b)=>a.year-b.year);
+  $("narr").innerHTML = evs.map(e=>
+    "<div class=wcard><span class=yr>"+Math.floor(e.year)+"</span>"+
+    "<span class=ly>"+esc(e.layer)+"</span><br>"+esc(e.text)+
+    "<div class=cite>"+e.cites.map(esc).join(" · ")+"</div></div>").join("") ||
+    "<div class=wcard><span class=drv>no waypoints near this date on the "+
+    "active line</span></div>";
 }
-function readHash(){
-  const m = location.hash.match(/d=(\d{4}-\d{2}-\d{2})/);
-  if (m) state.t = tOf(m[1]);
-  const v = location.hash.match(/v=([\d.]+),([\d.]+),([\d.]+)/);
-  if (v){ state.cx=+v[1]; state.cy=+v[2]; state.zoom=+v[3]; }
-  const s = location.hash.match(/sel=([^&]+)/);
-  if (s) setTimeout(()=>select(decodeURIComponent(s[1])), 400);
+
+/* ---------- composer ---------- */
+function buildComposer(){
+  const rack=$("axRack");
+  rack.innerHTML="";
+  for (const a of D.network.axes){
+    const div=document.createElement("div");
+    div.className="axchip"; div.dataset.k=a.key;
+    div.innerHTML="<span class=k>"+a.key+"</span><span class=v></span>";
+    div.addEventListener("click",()=>{
+      const poss=a.positions.map(p=>p[0]);
+      const cur=S.pin[a.key];
+      const idx=cur? poss.indexOf(cur)+1 : 0;
+      if (idx>=poss.length) delete S.pin[a.key];
+      else S.pin[a.key]=poss[idx];
+      writeHash(); recondition();
+    });
+    rack.appendChild(div);
+  }
+  $("obsRow").addEventListener("click",()=>{
+    S.obs=!S.obs; $("obsRow").classList.toggle("on",S.obs);
+    writeHash(); recondition();
+  });
+  $("resetPins").addEventListener("click",()=>{
+    S.pin={}; writeHash(); recondition();
+  });
+}
+function refreshComposer(){
+  for (const div of document.querySelectorAll(".axchip")){
+    const k=div.dataset.k, a=D.network.axes.find(x=>x.key===k);
+    const pin=S.pin[k];
+    div.classList.toggle("pinned",!!pin);
+    div.querySelector(".v").textContent = pin?
+      (a.positions.find(p=>p[0]===pin)||[])[1].split(" (")[0] : "free";
+  }
+  $("condNote").textContent = Object.keys(S.pin).length?
+    (S.obs? "Observation: belief propagates backward through the network.":
+     "Do-mode: pins are interventions; parents keep their priors.") :
+    "Click an axis to pin a position; click through to unpin.";
+}
+function buildCrisis(){
+  $("crisisList").innerHTML = D.crisis.crises.map((c,i)=>
+    "<div class=cr data-i="+i+"><span>"+esc(c.q)+"</span>"+
+    "<span class=p>"+(c.p*100).toFixed(0)+"%</span></div>").join("");
+  document.querySelectorAll("#crisisList .cr").forEach(el=>
+    el.addEventListener("click",()=>{
+      const c=D.crisis.crises[+el.dataset.i];
+      const marg=activeMarginals();
+      const p=c.kind==="axis"? (marg[c.axis]||{})[c.pos]||c.p : c.p;
+      $("ccQ").textContent=c.q;
+      $("ccP").textContent="current probability "+(p*100).toFixed(1)+"% "+
+        (condCache?"(conditioned)":"(mainline network)");
+      $("ccB").innerHTML="Grounding: "+c.cites.map(esc).join(" · ")+
+        "<br>Moved by evidence rules touching "+(c.kind==="axis"?
+        c.axis+"."+c.pos:"the capability band")+
+        " — every morning's applications appear in the delta panel with "+
+        "their drivers.";
+      $("crisisCard").style.display="block";
+    }));
+  $("ccX").addEventListener("click",()=>$("crisisCard").style.display="none");
 }
 
 /* ---------- about ---------- */
 function aboutHTML(){
-  const m = D.meta;
-  return "<h1>AI ATLAS</h1>"+
-  "<p>An interactive model of the AI world, 2012 to today, built nightly from the "+
-  "AI Policy Wiki in August's Vault — "+m.counts.entities+" entities, "+
-  m.counts.events+" dated developments, "+m.counts.arcs+" typed relationships, "+
-  "every one carrying its citation and its confidence.</p>"+
-  "<h2>What this map is</h2>"+
-  "<p>The ground is the wiki's own language: every page is embedded (voyage-3-large), "+
-  "projected once into a frozen two-dimensional datum ("+ (m.datum_version||"v1") +"), "+
-  "and never re-fitted overnight. Territories are the wiki's thirteen daily-brief "+
-  "sections, drawn where their subject matter actually lives. Relief is corpus density "+
-  "plus the settlement of entities over time; the warm glow is attention — the day's "+
-  "developments, kernel-smoothed; contour lines follow the terrain. The land builds as "+
-  "the field grows.</p>"+
-  "<h2>What distance on this map is, and is not</h2>"+
-  "<p>Adjacency means the wiki's language places two things in the same conversation. "+
-  "It does not mean alliance, similarity of view, or causation. Two opposed advocacy "+
-  "groups debating one topic sit close together — correctly, for this map. Every card "+
-  "says <em>placed by the model</em> because the position is computed, not observed.</p>"+
-  "<h2>Dates carry kinds</h2>"+
-  "<p>Every date is one of: <code>event</code> (when the thing happened, from the "+
-  "text), <code>published</code> (when a source said it), <code>ingested</code> (when "+
-  "the wiki learned it), <code>checked</code> (when a status was verified). 92% of "+
-  "developments carry explicit event dates; the rest are labelled as published dates "+
-  "and never upgraded. The gate fails if the two are ever conflated.</p>"+
-  "<h2>Where the record stops</h2>"+
-  "<p>The wiki's dense, twice-daily record begins <b>2026-04-13</b> (the dashed line "+
-  "on the timeline). Before it, the map runs on the deep spine — model releases, case "+
-  "filings, foundings, source publication dates — and renders dimmer, labelled "+
-  "<em>reconstructed from the record</em>. The right edge is today; nothing renders "+
-  "past it. The <em>knowledge horizon</em> layer shows what the wiki had not yet "+
-  "learned at any date.</p>"+
-  "<h2>People</h2><p>People are cards, never map marks — by decision of record. "+
-  "Person cards carry only documented, cited facts.</p>"+
-  "<h2>Witnesses</h2>"+
-  "<p>The model is audited against Epoch AI's notable-models dataset (CC-BY 4.0 — "+
-  "thank you), public court dockets, and state-law trackers; baselines are recorded "+
-  "and the build refuses to publish if any check moves backwards. Four date "+
-  "disagreements with Epoch are open, all unit-choice disputes, recorded rather than "+
-  "resolved.</p>"+
-  (D.updatelog && D.updatelog.entries ?
-   "<h2>Update log</h2><p style=\"font-family:var(--mono);font-size:12px\">"+
-   D.updatelog.entries.slice(0,6).map(e=>e.stamp+" — "+esc(e.line))
-     .join("<br>")+"</p>" : "")+
-  "<div class=ul><b>Data version "+DATA_V+"</b> · generated "+m.generated+
-  " · "+m.counts.needs_review+" values quarantined in needs-review rather than "+
-  "guessed · engine: one WebGL2 pass over three shipped fields; features windowed "+
-  "by one scalar t; nothing pre-rendered.</div>";
+  const g=D.grounding.counts, ch=D.network.changelog||[];
+  return "<h1>AI ATLAS — THE LIVING FORECAST</h1>"+
+  "<p>A probabilistic world-model of the AI transition, 2012 → 2100, built from "+
+  "the AI Policy Wiki in August's Vault and re-sampled every morning as the "+
+  "wiki records what actually happened. The observed trunk is real; everything "+
+  "past today is a distribution over futures — likely, unlikely, and strange.</p>"+
+  "<h2>Where these probabilities come from</h2>"+
+  "<p>They are the model's structured judgments, not measurements: a documented "+
+  "belief network ("+D.network.axes.length+" axes with sub-axes, priors with "+
+  "stated provenance, cited conditionals), sampled into an ensemble of "+
+  "world-lines. Every prior, rule and template cites wiki pages — currently "+
+  "<b>"+g.direct+"</b> pages ground the engine directly and <b>"+g.corpus+
+  "</b> more feed the trunk. Thin axes get widened priors: uncertainty is "+
+  "inherited, never hidden.</p>"+
+  "<h2>The daily update</h2>"+
+  "<p>Each morning the day's developments are classified against evidence "+
+  "rules under a tiered impact methodology — minor / notable / major / "+
+  "structural ("+Object.entries(D.network.impact_classes).map(([k,v])=>
+    k+" "+(v*100).toFixed(1)+"pp").join(" · ")+"), scaled by corroboration "+
+  "and novelty, softly damped when an axis has already drifted this week. "+
+  "Deltas are small on average by construction, but a structural event jumps "+
+  "— concomitant, not proportional. Every application logs its arithmetic "+
+  "and its driver; the panel on the right shows the latest.</p>"+
+  "<h2>Do vs observe</h2>"+
+  "<p>Pinning an axis in the composer is an <i>intervention</i>: parents keep "+
+  "their priors (\"suppose the deal happens\"). Observational mode filters "+
+  "the ensemble instead, so belief propagates backward (\"we learned the deal "+
+  "happened\"). The mode chip always says which you are seeing.</p>"+
+  "<h2>The far field</h2>"+
+  "<p>Past 2050 the resolution coarsens to decades and the bands widen "+
+  "honestly. The strange futures — space industrialization, digital persons, "+
+  "treated aging, long stagnations, successor systems — enter as cited "+
+  "template families from the literature's own far horizons, never as "+
+  "assertions.</p>"+
+  "<h2>The trunk, and what is authored</h2>"+
+  "<p>The trunk's capability reading (2012 → today) is authored from the "+
+  "wiki's model record; the event-density strip under the chart is the "+
+  "wiki's real dated record. Track parameters (compute, revenue, jobs, laws, "+
+  "approval) are modelled with cited growth mechanisms and rendered with "+
+  "their bands. The compute-site map is authored from the trunk's own "+
+  "reporting; site glow is a modelled share, and says so on screen.</p>"+
+  "<h2>Calibration</h2>"+
+  "<p>"+D.claims.claims.length+" resolvable claims are registered ("+
+  D.claims.claims.map(c=>esc(c.text)+" by "+c.by).join("; ")+"). As they "+
+  "resolve, the model's Brier record accumulates here — graded in public.</p>"+
+  "<h2>Registry changelog</h2><table><tr><th>version</th><th>change</th>"+
+  "<th>origin</th></tr>"+ch.map(c=>"<tr><td>"+esc(c.version)+"</td><td>"+
+  esc(c.change)+"</td><td>"+esc(c.approved||"")+"</td></tr>").join("")+
+  "</table>"+
+  "<h2>Lineage</h2><p>v1 (the semantic terrain) is retired per the decision "+
+  "of record; its pipeline survives as the trunk emitter. Scenario "+
+  "literature — AI 2027, AI 2040: Plan A, Situational Awareness, Europe "+
+  "2031, Machines of Loving Grace, AI as Normal Technology — is deconstructed "+
+  "into this engine's building blocks and cited throughout, never pinned as "+
+  "lanes. Loosely after psychohistory: no laws of history claimed, only "+
+  "bookkeeping honest enough to be wrong in public, one day at a time.</p>"+
+  "<div style=\"font-family:var(--mono);font-size:11px;margin:18px 0\">"+
+  "data "+DATA_V+" · network "+esc(D.network.version)+" · "+
+  esc(D.network.date)+"</div>";
 }
 
-/* ---------- loop ---------- */
-let lastNow = 0, lastReadout = 0;
-function loop(now){
-  requestAnimationFrame(loop);
-  const dt = Math.min(0.1,(now-lastNow)/1000); lastNow = now;
-  if (flyAnim) flyAnim(now);
-  if (state.playing){
-    state.t += state.speed*dt;
-    if (state.t >= TODAY_T){ state.t = TODAY_T; state.playing=false;
-      $("play").textContent="▶"; }
-    $("slider").value = state.t;
-    svgDirty = true;
-    ensureFrames(state.t);
+/* ---------- utils/wiring ---------- */
+function esc(s){ return String(s).replace(/[&<>"]/g,
+  c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+function fmtNum(n){ return n>=1e6? (n/1e6).toFixed(1)+"M" :
+  n>=1e3? (n/1e3).toFixed(0)+"K" : String(Math.round(n)); }
+function fmtYr(y){ const yr=Math.floor(y);
+  if (y<NOW_Y+0.05 && y>NOW_Y-0.05) return "Jul 2026 — today";
+  if (yr>=2032) return String(yr);
+  const m=Math.floor((y-yr)*12);
+  return ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov",
+          "Dec"][m]+" "+yr; }
+function refreshAll(){ refreshComposer(); refreshRail(); refreshNarr();
+  if (S.view==="main") drawMain(); else drawWorld(); }
+function writeHash(){
+  const pins=Object.entries(S.pin).map(([k,v])=>v).join(".");
+  history.replaceState(null,"","#y="+S.yr.toFixed(2)+
+    (pins?"&pin="+pins:"")+(S.obs?"&obs=1":"")+
+    (S.view!=="main"?"&view="+S.view:""));
+}
+function readHash(){
+  const m=location.hash.match(/y=([\d.]+)/);
+  if (m) S.yr=Math.max(2012,Math.min(2100,+m[1]));
+  $("slider").value=S.yr;
+  const p=location.hash.match(/pin=([A-Z0-9.]+)/);
+  if (p) for (const pos of p[1].split(".")){
+    const ax=D.network.axes.find(a=>a.positions.some(q=>q[0]===pos));
+    if (ax) S.pin[ax.key]=pos;
   }
-  renderGL(now);
-  if (svgDirty){ renderSVG(); posTerrLabels(); drawTimeline(); }
-  if (now-lastReadout>120){ updateReadout(); lastReadout=now; }
+  S.obs=/obs=1/.test(location.hash);
+  $("obsRow").classList.toggle("on",S.obs);
+  if (/view=world/.test(location.hash)) setView("world");
+  if (Object.keys(S.pin).length) recondition();
 }
-
-/* ---------- UI wiring ---------- */
-function wireUI(){
-  wireCamera(); wireSearch();
+function setView(v){
+  S.view=v;
+  $("vMain").classList.toggle("on",v==="main");
+  $("vWorld").classList.toggle("on",v==="world");
+  $("stage").style.display=v==="main"?"block":"none";
+  $("world").style.display=v==="world"?"block":"none";
+  writeHash(); refreshAll();
+}
+function wire(){
+  $("slider").addEventListener("input",e=>{
+    S.yr=+e.target.value; writeHash(); refreshAll(); });
+  $("vMain").addEventListener("click",()=>setView("main"));
+  $("vWorld").addEventListener("click",()=>setView("world"));
   $("aboutBtn").addEventListener("click",()=>{
-    const show = ()=>{ $("aboutBody").innerHTML = aboutHTML();
-      $("about").style.display="block"; };
-    if (D.updatelog===undefined){
-      fetch("data/updatelog.json?v="+DATA_V).then(r=>r.ok?r.json():null)
-        .then(d=>{ D.updatelog=d; show(); }).catch(()=>{D.updatelog=null;show();});
-    } else show(); });
+    $("aboutBody").innerHTML=aboutHTML(); $("about").style.display="block"; });
   $("aboutX").addEventListener("click",()=>$("about").style.display="none");
   document.addEventListener("keydown",e=>{
-    if (e.target.tagName==="INPUT" && e.target.type!=="range") return;
-    if (e.key===" "){ e.preventDefault(); $("play").click(); }
-    if (e.key==="ArrowLeft") setT(state.t-(e.shiftKey?365:30.44));
-    if (e.key==="ArrowRight") setT(state.t+(e.shiftKey?365:30.44));
-    if (e.key==="Escape"){ $("about").style.display="none"; APP.close(); }
+    if (e.target.tagName==="INPUT") return;
+    if (e.key==="ArrowLeft"){ S.yr=Math.max(2012,S.yr-(e.shiftKey?5:0.5));
+      $("slider").value=S.yr; writeHash(); refreshAll(); }
+    if (e.key==="ArrowRight"){ S.yr=Math.min(2100,S.yr+(e.shiftKey?5:0.5));
+      $("slider").value=S.yr; writeHash(); refreshAll(); }
+    if (e.key==="Escape"){ $("about").style.display="none";
+      $("crisisCard").style.display="none"; }
   });
-  addEventListener("resize", ()=>{ svgDirty=true; });
-  addEventListener("hashchange", readHash);
+  $("stage").addEventListener("click",e=>{
+    const W=$("stage").clientWidth, L=286, R=W-270;
+    if (e.clientX<L||e.clientX>R) return;
+    S.yr=Math.max(2012,Math.min(2100,xinv(e.clientX,L,R)));
+    $("slider").value=S.yr; writeHash(); refreshAll();
+  });
+  addEventListener("resize",refreshAll);
 }
 
-/* ---------- verification harness ---------- */
-window.APP = {
-  state, D,
-  setDate(iso){ setT(tOf(iso)); },
-  select, close(){ state.sel=null; $("info").style.display="none";
-    svgDirty=true; writeHash(); },
-  probe(x,y){ const px=new Uint8Array(4);
-    const cv=$("gl"), dpr=Math.min(devicePixelRatio||1,2);
-    gl.readPixels(x*dpr|0,(cv.clientHeight-y)*dpr|0,1,1,gl.RGBA,gl.UNSIGNED_BYTE,px);
-    return [...px]; },
-  snap(){ renderGL(performance.now()); return $("gl").toDataURL("image/png"); },
-  flyTo, frameAt: ()=>frameAt(state.t),
+window.APP = { S, D,
+  setYear(y){ S.yr=y; $("slider").value=y; refreshAll(); },
+  pinAxis(k,p){ if(p) S.pin[k]=p; else delete S.pin[k]; recondition(); },
+  marginals: activeMarginals, mainline: activeMain,
 };
-
-boot().catch(e=>{ note("failed: "+e.message); console.error(e); });
+boot().catch(e=>{ $("splashS").textContent="failed: "+e.message;
+  console.error(e); });
 </script>
 </body>
 </html>

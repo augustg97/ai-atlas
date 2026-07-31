@@ -28,7 +28,19 @@ import os
 import random
 
 REGISTRY_VERSION = "r0-2026-07-31"
-MAX_DAILY_DELTA = 0.02          # bounded updating: ≤2pp per axis per day
+
+# The tiered impact methodology (decision of record 2026-07-31: deltas small
+# ON AVERAGE, not an iron rule — "very significant events should also have
+# some concomitant (but not necessarily proportional) impact"). An event's
+# magnitude = class base × corroboration × novelty decay; a week of piling
+# onto one axis engages a soft logistic squash, never a wall.
+IMPACT_CLASS = {
+    "minor": 0.003,        # routine reporting, incremental funding
+    "notable": 0.008,      # enacted state law, notable release, ruling
+    "major": 0.030,        # frontier capability jump, national policy turn
+    "structural": 0.090,   # treaty, AI-attributed catastrophe, autonomous
+}                          #   R&D demonstrated — rare by definition
+WEEKLY_SOFT_CAP = 0.10     # per-axis 7-day drift where damping begins
 
 # ---------------------------------------------------------------------------
 # The seed registry. Every position: (key, label, prior, provenance[]).
@@ -145,26 +157,40 @@ REGISTRY = {
 
 # Evidence rules r0: development-class → bounded weight nudges (per source).
 # Applied by the nightly chain; every application logged with its driver.
+# nudge values are DIRECTIONS (sign + relative share); magnitude comes from
+# the impact class via impact_magnitude().
 EVIDENCE_RULES = [
-  {"id": "ev-state-law-enacted",
+  {"id": "ev-state-law-enacted", "impact": "notable",
    "match": {"section": "U.S. State AI Legislation", "kind": "event"},
-   "nudge": {("C", "C4"): +0.004, ("C", "C3"): -0.001},
+   "nudge": {("C", "C4"): +2, ("C", "C3"): -1},
    "cites": ["analysis/eu-vs-us-ai-regulation"]},
-  {"id": "ev-export-retaliation",
+  {"id": "ev-export-retaliation", "impact": "notable",
    "match": {"text_any": ["retaliat", "export control", "MOFCOM"],
              "section": "National Security & Geopolitics"},
-   "nudge": {("C", "C1"): +0.006, ("S", "S3"): +0.005, ("C", "C3"): -0.003},
+   "nudge": {("C", "C1"): +2, ("S", "S3"): +2, ("C", "C3"): -1},
    "cites": ["concepts/export-controls-ai"]},
-  {"id": "ev-frontier-release-gov-coordinated",
+  {"id": "ev-frontier-release-gov-coordinated", "impact": "notable",
    "match": {"text_any": ["government-coordinated", "limited preview"],
              "section": "Frontier Models & Capabilities"},
-   "nudge": {("C", "C2"): +0.006, ("T", "T2"): +0.004},
+   "nudge": {("C", "C2"): +2, ("T", "T2"): +1},
    "cites": ["models/gpt-56"]},
-  {"id": "ev-big-correction",
-   "match": {"text_any": ["writedown", "correction", "bubble"],
+  {"id": "ev-big-correction", "impact": "major",
+   "match": {"text_any": ["writedown", "correction", "bubble bursts"],
              "section": "AI Industry & Markets"},
-   "nudge": {("E", "E2"): +0.005, ("E", "E1"): -0.004},
+   "nudge": {("E", "E2"): +2, ("E", "E1"): -2},
    "cites": ["analysis/ai-bubble-vs-buildout"]},
+  {"id": "ev-us-cn-agreement", "impact": "structural",
+   "match": {"text_any": ["bilateral AI agreement", "AI treaty",
+                          "joint verification"],
+             "section": "International AI Regulation"},
+   "nudge": {("C", "C3"): +3, ("C", "C1"): -2},
+   "cites": ["sources/ai-2040-plan-a",
+             "analysis/coordinated-slowdown-proposals"]},
+  {"id": "ev-autonomous-rd-demonstrated", "impact": "structural",
+   "match": {"text_any": ["autonomous AI R&D", "fully automated research"],
+             "section": "Frontier Models & Capabilities"},
+   "nudge": {("T", "T1"): +2, ("T", "T2"): +1, ("T", "T4"): -2},
+   "cites": ["sources/ai-2027", "models/gpt-56"]},
 ]
 
 
@@ -231,12 +257,38 @@ def ensemble_marginals(lines):
     return {k: {p: c / n for p, c in v.items()} for k, v in out.items()}
 
 
-def apply_evidence(reg, rule, log):
-    """Bounded nightly nudge; returns the delta actually applied. The cap is
-    structural: a single day moves points, never tens of points."""
+def impact_magnitude(rule, sources=1, repeat_k=0):
+    """Class base × corroboration (independent sources, capped ×1.5) ×
+    novelty decay (k-th repeat of the same class halves). Stepwise by
+    design — concomitant, not proportional."""
+    base = IMPACT_CLASS[rule.get("impact", "notable")]
+    corro = 1.0 + 0.25 * min(2, max(0, sources - 1))
+    novelty = 0.5 ** repeat_k
+    return base * corro * novelty
+
+
+def soft_squash(cum, delta, cap=WEEKLY_SOFT_CAP):
+    """Damp the marginal effect on an axis that has already drifted `cum`
+    this week — logistic taper past the soft cap, never a hard wall, so a
+    structural event still lands."""
+    if abs(cum) < cap:
+        return delta
+    over = (abs(cum) - cap) / cap
+    return delta / (1.0 + 2.0 * over)
+
+
+def apply_evidence(reg, rule, log, sources=1, repeat_k=0, weekly_cum=None):
+    """Apply one evidence rule under the tiered methodology. rule["nudge"]
+    values are DIRECTIONS (+1/-1 scaled by their relative share); the
+    magnitude comes from impact_magnitude. Every application logs its
+    arithmetic — the delta is auditable end to end."""
+    weekly_cum = weekly_cum if weekly_cum is not None else {}
+    mag = impact_magnitude(rule, sources, repeat_k)
+    total_share = sum(abs(v) for v in rule["nudge"].values()) or 1.0
     applied = {}
-    for (ax_key, pos), d in rule["nudge"].items():
-        d = max(-MAX_DAILY_DELTA, min(MAX_DAILY_DELTA, d))
+    for (ax_key, pos), direction in rule["nudge"].items():
+        d = mag * (direction / total_share) * len(rule["nudge"])
+        d = soft_squash(weekly_cum.get(ax_key, 0.0), d)
         a = axis(reg, ax_key)
         pri = {p[0]: p[2] for p in a["positions"]}
         pri[pos] = max(0.005, pri[pos] + d)
@@ -244,15 +296,34 @@ def apply_evidence(reg, rule, log):
         a["positions"] = [(p[0], p[1], pri[p[0]], p[3])
                           for p in a["positions"]]
         applied[(ax_key, pos)] = d
-    log.append({"rule": rule["id"], "applied": {f"{k[0]}.{k[1]}": v
-               for k, v in applied.items()}, "cites": rule["cites"]})
+        weekly_cum[ax_key] = weekly_cum.get(ax_key, 0.0) + abs(d)
+    log.append({"rule": rule["id"],
+                "impact_class": rule.get("impact", "notable"),
+                "magnitude": round(mag, 5), "sources": sources,
+                "repeat_k": repeat_k,
+                "applied": {"%s.%s" % k: round(v, 5)
+                            for k, v in applied.items()},
+                "cites": rule["cites"]})
     return applied
 
 
+def observe(lines, condition):
+    """OBSERVATIONAL conditioning — filter the ensemble on what was learned,
+    so belief propagates backward through the network (P(parents|child)).
+    Distinct from the composer's do-semantics pinning, which severs the
+    child from its parents. Both ship; the UI names which one it is using."""
+    return [wl for wl in lines
+            if all(wl.get(k) == v for k, v in condition.items())]
+
+
 def add_axis(reg, axis_def, approved_by):
-    """Registry growth path — never silent: bumps version, logs, requires an
-    approval string (the queue supplies it in production)."""
-    assert approved_by, "registry additions require recorded approval"
+    """Registry growth path — never silent: bumps version and logs. Per the
+    decision of record (2026-07-31), additions do NOT wait for pre-approval:
+    the schema review applies them autonomously and the changelog + review
+    report exist for August's post-hoc review. `approved_by` records the
+    ORIGIN of the addition (e.g. "auto: weekly schema review 2026-08-04"),
+    and stays mandatory so no addition is ever unattributed."""
+    assert approved_by, "registry additions require recorded origin"
     assert axis_def["key"] not in [a["key"] for a in reg["axes"]]
     reg["axes"].append(axis_def)
     old = reg["version"]
@@ -303,26 +374,49 @@ def _selftest():
     # conditioning pins exactly
     for wl in ensemble(reg, 200, 5, {"C": "C3"}):
         assert wl["C"] == "C3"
-    # bounded evidence: a big nudge is capped, distribution stays normalized
+    # tiered impact: structural ≫ notable ≫ minor; corroboration amplifies;
+    # repeats decay; normalization holds after application
+    m_minor = impact_magnitude({"impact": "minor"})
+    m_note = impact_magnitude({"impact": "notable"})
+    m_struct = impact_magnitude({"impact": "structural"})
+    assert m_struct > 3 * m_note > 3 * m_minor
+    assert impact_magnitude({"impact": "notable"}, sources=3) > m_note
+    assert impact_magnitude({"impact": "notable"}, repeat_k=2) < m_note / 3
     log = []
-    big = {"id": "test", "nudge": {("C", "C1"): +0.5}, "cites": []}
-    applied = apply_evidence(reg, big, log)
-    assert abs(applied[("C", "C1")]) <= MAX_DAILY_DELTA
+    struct_rule = {"id": "test-struct", "impact": "structural",
+                   "nudge": {("C", "C3"): +1}, "cites": ["x"]}
+    before = dict((p[0], p[2]) for p in axis(reg, "C")["positions"])
+    applied = apply_evidence(reg, struct_rule, log)
+    moved = applied[("C", "C3")]
+    assert moved > IMPACT_CLASS["notable"], "a structural event must jump"
     assert abs(sum(p[2] for p in axis(reg, "C")["positions"]) - 1.0) < 1e-6
-    assert log and log[0]["rule"] == "test"
-    # registry growth: version bumps, changelog records, approval required
+    assert log[0]["impact_class"] == "structural" and log[0]["magnitude"] > 0
+    # soft squash: the same rule against a saturated week moves less
+    wc = {"C": 0.30}
+    applied2 = apply_evidence(reg, struct_rule, log, weekly_cum=wc)
+    assert abs(applied2[("C", "C3")]) < abs(moved)
+    # observational conditioning propagates BACKWARD (unlike do-pinning):
+    # T4 is likelier among lines where A4 was observed than in the prior
+    lines = ensemble(reg, 8000, 17)
+    obs = observe(lines, {"A": "A4"})
+    assert len(obs) > 200
+    pT4_obs = sum(1 for w in obs if w["T"] == "T4") / len(obs)
+    pT4_prior = sum(1 for w in lines if w["T"] == "T4") / len(lines)
+    assert pT4_obs > 1.5 * pT4_prior, (pT4_obs, pT4_prior)
+    # registry growth: version bumps, changelog records origin; unattributed
+    # additions still fail (autonomy ≠ anonymity)
     add_axis(reg, {"key": "X", "name": "test axis", "cites": [],
                    "positions": [("X1", "a", 0.5, []), ("X2", "b", 0.5, [])]},
-             approved_by="selftest")
+             approved_by="auto: schema review selftest")
     assert reg["version"].startswith("r1-")
-    assert reg["changelog"][-1]["approved"] == "selftest"
+    assert "schema review" in reg["changelog"][-1]["approved"]
     try:
         add_axis(reg, {"key": "Y", "name": "y", "cites": [],
                        "positions": [("Y1", "a", 1.0, [])]}, approved_by="")
-        assert False, "unapproved addition must fail"
+        assert False, "unattributed addition must fail"
     except AssertionError as ex:
-        assert "approval" in str(ex)
-    return 7
+        assert "origin" in str(ex)
+    return 8
 
 
 if __name__ == "__main__":

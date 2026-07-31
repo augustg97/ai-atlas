@@ -27,8 +27,8 @@ WEB = os.path.join(ROOT, "web")
 DOCS = os.path.join(ROOT, "docs")
 MODELING = os.path.join(ROOT, "Research", "modeling")
 
-DATA_FILES = ["entities.json", "events.json", "arcs.json", "series.json",
-              "eras.json", "wikitime.json", "meta.json", "anchors50.json"]
+DATA_FILES = ["events.json", "meta.json"]      # v2: trunk strip + counts
+FORECAST_DIR = os.path.join(STAGED, "forecast")
 
 
 def assemble():
@@ -38,20 +38,30 @@ def assemble():
         if not os.path.isfile(src):
             sys.exit("missing staged file: %s — run emit.py first" % n)
         shutil.copy2(src, os.path.join(WEB, "data", n))
-    datum = json.load(open(os.path.join(STAGED, "datum.json")))
-    names = sorted(datum["territory_centroids"].keys())
-    json.dump({"version": datum["version"], "names": names,
-               "centroids": datum["territory_centroids"]},
-              open(os.path.join(WEB, "data", "territories.json"), "w"))
-    fields_src = os.path.join(STAGED, "fields")
+    # v2: the forecast surface is the product
+    if not os.path.isdir(FORECAST_DIR):
+        sys.exit("missing staged/forecast — run forecast_emit.py first")
+    fdst = os.path.join(WEB, "data", "forecast")
+    os.makedirs(fdst, exist_ok=True)
+    for n in os.listdir(FORECAST_DIR):
+        shutil.copy2(os.path.join(FORECAST_DIR, n), os.path.join(fdst, n))
+    # world-view geometry (ISC-licensed world-atlas; root data/ is gitignored
+    # so the shipped copy lives in web/data)
+    topo = os.path.join(ROOT, "data", "witness", "countries-110m.json")
+    if os.path.isfile(topo):
+        shutil.copy2(topo, os.path.join(WEB, "data", "countries-110m.json"))
+    # v1 terrain retired (decision of record): drop stale v1 payloads
+    for stale in ["arcs.json", "anchors50.json", "entities.json",
+                  "series.json", "eras.json", "wikitime.json",
+                  "territories.json"]:
+        p = os.path.join(WEB, "data", stale)
+        if os.path.isfile(p) and stale not in DATA_FILES:
+            os.remove(p)
     fields_dst = os.path.join(WEB, "fields")
-    if not os.path.isdir(fields_src):
-        sys.exit("missing staged/fields — run fields_bake.py first")
-    os.makedirs(fields_dst, exist_ok=True)
-    for n in os.listdir(fields_src):
-        shutil.copy2(os.path.join(fields_src, n), os.path.join(fields_dst, n))
-    print("assembled web/data (%d files) + web/fields (%d files)"
-          % (len(DATA_FILES) + 1, len(os.listdir(fields_dst))))
+    if os.path.isdir(fields_dst):
+        shutil.rmtree(fields_dst)
+    print("assembled web/data (%d trunk files + forecast/%d + topo)"
+          % (len(DATA_FILES), len(os.listdir(fdst))))
 
 
 def main():
