@@ -151,5 +151,24 @@ expansion (6 seeded rules is a floor, not a library) · T10 sub-axis dynamics (r
 not yet driving tracks) · T5 SCOPE v2 full rewrite (11-section shape) · plus standing: B3,
 E2, C1-curation, D1-acceptance-watch.
 
-**Count: 27 items — 0 at P1 blocked; the machine runs nightly. Watch three mornings (D1+T4),
-then T7/T8 lead the next round.**
+**Round T+1 (2026-07-31, stamp 20260731-0801): sources + interactivity APPLIED.**
+- **Scenario intake:** the 2028 Global Intelligence Crisis (Citrini/Shah — E4
+  displacement-crisis position, D1 jobs-rate recalibrated to the memo's ~10% path, 5 crisis
+  templates + 2 rules), Anthropic's 2028 Two Scenarios (C2 four-fronts enrichment,
+  distillation-wave + lead-lock templates + rule), and the FULL AI 2040 plan family fetched
+  from ai-2040.com/supplements/comparing-possible-plans (C5 moratorium position; Plan-B-cyber,
+  GPU-arms-control, CERN-for-AI templates; C3 prior cross-checked vs the authors' own 3-15%
+  implementation odds; takeoff-length table vs our knots recorded as a consistency check).
+  Registry: 26 positions, 38 templates, 12 rules; grounding 1,222 direct + 480 corpus.
+  **Supplement INGEST filed to the wiki queue** (engine cites the URL until it lands).
+- **Interactivity (decision of record):** hover + click explanatory cards with grounding
+  links across crisis diamonds, ladder milestones, band crosshair (p10/50/90), axis bars
+  (full position table + live weights), delta entries (impact arithmetic: class × sources ×
+  novelty), instrument panels, narrative waypoints, and World sites (GW + provenance).
+- **Fixed:** registry-growth weight migration (new positions enter at seed priors — C5/E4
+  broke the first emit; now structural).
+- New open: T11 — an in-app "plans overlay" tracing each named strategy's path once the
+  supplement is wiki-ingested; T12 — Economic Growth Explorer-style track charts on click.
+
+**Count: 29 items — the machine runs nightly. Watch three mornings (D1+T4); then T7 scorer,
+T8 World bar, T9 rule library.**
