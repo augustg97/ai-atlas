@@ -169,6 +169,7 @@ def parse_snapshot(body, src, review):
 
 def load_pages(idx):
     entities, arcs, series, review = [], [], [], []
+    spine_sources = []
     links = collections.Counter()
     indeg = collections.Counter()
     for folder in FOLDERS:
@@ -200,7 +201,12 @@ def load_pages(idx):
             for r in snap:
                 series.append(dict(r, entity=pid))
             if folder == "sources":
-                continue                       # citation layer, not entities
+                # citation layer, not a feature — but its publication date is
+                # part of the dated spine the attention field derives from
+                w = window_from(folder, fm, review)
+                if w:
+                    spine_sources.append({"id": pid, "date": w})
+                continue
             juris = None
             if folder in ("companies",):
                 juris, jerr = jurisdiction(fm.get("hq_country"))
@@ -236,7 +242,7 @@ def load_pages(idx):
     for e in entities:
         e["outdeg"] = links.get(e["id"], 0)
         e["indeg"] = indeg.get(e["id"], 0)
-    return entities, arcs, series, review
+    return entities, arcs, series, spine_sources, review
 
 
 # ---------------------------------------------------------------------------
@@ -398,7 +404,7 @@ def _globdir(d):
 def emit():
     os.makedirs(STAGED, exist_ok=True)
     idx = SlugIndex()
-    entities, arcs, series, review = load_pages(idx)
+    entities, arcs, series, spine_sources, review = load_pages(idx)
     feat = [e for e in entities if e["folder"] in FEATURE_FOLDERS
             and not (e["folder"] == "entities"
                      and e["fact"].get("entity_type") == "person")]
@@ -438,9 +444,16 @@ def emit():
             ev["pos"] = p
 
     stamp = _dt.datetime.now().strftime("%Y%m%d-%H%M")
+    # attach datum positions to the source spine too (sources are positioned
+    # pages; they feed the attention field, not the feature layer)
+    if datum_version:
+        pos = json.load(open(datum_path)).get("positions", {})
+        for s in spine_sources:
+            s["pos"] = pos.get(s["id"])
     out = {
         "entities.json": {"entities": feat, "people": people},
         "events.json": {"events": events},
+        "spine.json": {"sources": spine_sources},
         "arcs.json": {"arcs": arcs},
         "series.json": {"series": [dict(r) for r in series]},
         "wikitime.json": {"ops": wikitime},

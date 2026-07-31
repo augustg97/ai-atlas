@@ -123,9 +123,22 @@ def bake():
     img[..., 2] = np.clip(margin * 255, 0, 255)
     Image.fromarray(img).save(os.path.join(FIELDS, "terrain.png"))
 
-    # ---- prepare dated inputs ----
-    ev_pts = [(e["pos"], _date_of(e["date"]["iso"])) for e in evs
-              if e.get("pos")]
+    # ---- prepare dated inputs: the WHOLE dated record feeds attention ----
+    # (dev-log items · entity window-starts · source publications — one
+    #  mechanism, stated in About; dev-log coverage alone would render the
+    #  pre-horizon era dark and fail the ChatGPT-shock test, and did)
+    ev_pts = [(e["pos"], _date_of(e["date"]["iso"]), 1.0,
+               e["date"].get("precision", "day")) for e in evs if e.get("pos")]
+    spine = json.load(open(os.path.join(STAGED, "spine.json")))["sources"]
+    for s in spine:
+        if s.get("pos") and s.get("date"):
+            ev_pts.append((s["pos"], _date_of(s["date"]["iso"]), 0.55,
+                           s["date"].get("precision", "day")))
+    for e in ents:
+        p = pos.get(e["id"])
+        if p and e.get("window"):
+            ev_pts.append((p, _date_of(e["window"]["iso"]), 2.2,
+                           e["window"].get("precision", "day")))
     usd_rows = {}
     for r in series:
         if r.get("usd_b"):
@@ -143,12 +156,28 @@ def bake():
     # fixed global scales measured at the busiest frame (the last weekly one)
     def frame_arrays(kd):
         att_pts, att_w = [], []
-        for p, d in ev_pts:
-            dd = (kd - d).days
-            if 0 <= dd <= 14:
-                att_pts.append(p)
-                att_w.append(1.0 - dd / 15.0)
-        fresh_pts = [p for p, d in ev_pts if 0 <= (kd - d).days <= 3]
+        # attention window widens pre-horizon (monthly cadence, sparser
+        # record): 45 days before, 14 after — matching keyframe spacing
+        span = 14 if kd >= HORIZON else 45
+        for p, d, w0, prec in ev_pts:
+            if prec == "day":
+                dd = (kd - d).days
+                if 0 <= dd <= span:
+                    att_pts.append(p)
+                    att_w.append(w0 * (1.0 - dd / (span + 1.0)))
+            elif prec == "month":
+                # "sometime that month": flat, diluted across ~2 keyframes
+                if 0 <= (kd - d).days <= max(span, 31):
+                    att_pts.append(p)
+                    att_w.append(w0 * 0.45)
+            else:
+                # "sometime that year": a smear, never a July-1 spike —
+                # unsmeared year-dates were the top-6 phantom bursts
+                if d.year == kd.year:
+                    att_pts.append(p)
+                    att_w.append(w0 * 0.10)
+        fresh_pts = [p for p, d, w0, prec in ev_pts
+                     if prec == "day" and 0 <= (kd - d).days <= 3]
         usd_at = {}
         for eid, rows in usd_rows.items():
             best = 0.0
