@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ai-atlas",
+      "runtimeExecutable": "/usr/bin/python3",
+      "runtimeArgs": ["-m", "http.server", "8143",
+                      "--directory", "/Users/augustgweon/AI Atlas"],
+      "port": 8143
+    }
+  ]
+}
