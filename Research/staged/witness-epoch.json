@@ -1,12 +1,14 @@
 {
- "wiki_models": 56,
+ "wiki_models": 61,
  "epoch_rows": 1041,
  "matched": 20,
- "unmatched_wiki": 36,
+ "unmatched_wiki": 41,
  "unmatched_wiki_slugs": [
   "alphagenome",
   "amazon-nova",
   "apple-foundation-models",
+  "bard",
+  "claude-1",
   "claude-3-5-haiku",
   "claude-mythos-preview",
   "claude-opus-46",
@@ -15,15 +17,13 @@
   "deepseek-v4",
   "doubao",
   "ernie-4",
+  "gemini-robotics-2",
   "gemma",
   "genie-3",
   "glm-4",
   "glm-5",
   "glm-5-2",
-  "gpt-4-family",
-  "gpt-5-family",
-  "gpt-54-thinking",
-  "gpt-56"
+  "gpt-4-family"
  ],
  "date_disagreements": [
   {
