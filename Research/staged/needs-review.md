@@ -1,6 +1,6 @@
-# Emit needs-review — 20260801-1048
+# Emit needs-review — 20260802-1049
 
-224 items. Unparseable values are reported here, never guessed.
+221 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -24,7 +24,6 @@
 - sources/clover-new-arms-race-computing-power: dangling relationship target 'concepts/quantum-computing-ai-implications'
 - sources/clover-new-arms-race-computing-power: dangling relationship target 'concepts/policy-essays-on-compute-sovereignty'
 - sources/conscious-ai-as-safety-issue-jarovsky: dangling relationship target 'concepts/ai-personhood-and-rights'
-- sources/conscious-ai-as-safety-issue-jarovsky: dangling relationship target 'entities/anil-seth'
 - sources/epri-scaling-intelligence-power-needs: dangling relationship target 'entities/electric-power-research-institute'
 - sources/farahany-adv-class-08-3-what-the-law-is-trying-to-do: dangling relationship target 'legislation/coppa'
 - sources/farahany-adv-class-08-3-what-the-law-is-trying-to-do: dangling relationship target 'legislation/california-delete-act'
@@ -152,7 +151,6 @@
 - entities/jonas-andrulis: dangling relationship target 'entities/reto-spoerri'
 - entities/kevin-feng: dangling relationship target 'entities/uw'
 - entities/knight-first-amendment-institute: dangling relationship target 'entities/columbia-university'
-- entities/lila-shroff: dangling relationship target 'entities/roge-karma'
 - entities/marc-andreessen: dangling relationship target 'entities/peter-thiel'
 - entities/nextera: inline comment stripped from 'nonprofit  # placeholder — NextEra is a '
 - entities/nita-farahany: dangling relationship target 'concepts/incriminating-thoughts-spectrum'
@@ -210,7 +208,6 @@
 - concepts/normative-competence: dangling relationship target 'concepts/ai-and-rule-of-law'
 - concepts/regulatory-managerialism: dangling relationship target 'concepts/ai-risk-management'
 - concepts/strategic-compute-reserve: dangling relationship target 'entities/los-alamos-national-laboratory'
-- concepts/three-privacy-problems-ai: dangling relationship target 'concepts/inference-explosion'
 - concepts/world-models: dangling relationship target 'concepts/agi-paths'
 - analysis/source-recommendations-2026-04-14: dangling relationship target 'overview'
 - analysis/wiki-synthesis-2026-04-14: dangling relationship target 'overview'

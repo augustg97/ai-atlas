@@ -1,6 +1,6 @@
 {
  "version": "r0-2026-07-31",
- "date": "2026-08-01",
+ "date": "2026-08-02",
  "axes": {
   "T": {
    "T1": 0.1,
@@ -15,11 +15,11 @@
    "A4": 0.28
   },
   "C": {
-   "C1": 0.41379310344827586,
-   "C2": 0.26600985221674883,
-   "C3": 0.08866995073891626,
-   "C4": 0.21674876847290642,
-   "C5": 0.014778325123152707
+   "C1": 0.41379310344827575,
+   "C2": 0.2660098522167488,
+   "C3": 0.08866995073891625,
+   "C4": 0.21674876847290636,
+   "C5": 0.014778325123152703
   },
   "D": {
    "D1": 0.18,
@@ -37,10 +37,10 @@
    "P3": 0.43
   },
   "E": {
-   "E1": 0.27777777777777773,
-   "E2": 0.44444444444444436,
-   "E3": 0.20370370370370366,
-   "E4": 0.07407407407407407
+   "E1": 0.2777777777777778,
+   "E2": 0.4444444444444444,
+   "E3": 0.2037037037037037,
+   "E4": 0.07407407407407408
   }
  },
  "history": [
@@ -131,6 +131,51 @@
      "E4": 0.08020598205292012
     }
    }
+  },
+  {
+   "date": "2026-08-02",
+   "marginals": {
+    "T": {
+     "T1": 0.1,
+     "T2": 0.3,
+     "T3": 0.38,
+     "T4": 0.22
+    },
+    "A": {
+     "A1": 0.12,
+     "A2": 0.26,
+     "A3": 0.34,
+     "A4": 0.28
+    },
+    "C": {
+     "C1": 0.41379310344827575,
+     "C2": 0.2660098522167488,
+     "C3": 0.08866995073891625,
+     "C4": 0.21674876847290636,
+     "C5": 0.014778325123152703
+    },
+    "D": {
+     "D1": 0.19072261365219884,
+     "D2": 0.532423405001424,
+     "D3": 0.276853981346377
+    },
+    "S": {
+     "S1": 0.33,
+     "S2": 0.41,
+     "S3": 0.26
+    },
+    "P": {
+     "P1": 0.26117821643055666,
+     "P2": 0.3104905616688223,
+     "P3": 0.42833122190062095
+    },
+    "E": {
+     "E1": 0.27843629437888956,
+     "E2": 0.43344023059384457,
+     "E3": 0.20791749297434584,
+     "E4": 0.08020598205292012
+    }
+   }
   }
  ],
  "evidence_log": [],
@@ -144,6 +189,36 @@
    "date": "2026-08-01",
    "section": "Frontier Models & Capabilities",
    "text": "OpenAI is preparing to release a model family tentatively named \"Astra,\" with improved ability to complete long-running "
+  },
+  {
+   "date": "2026-08-02",
+   "section": "International AI Regulation",
+   "text": "The EU AI Act's Article 50 transparency obligations become enforceable on August 2, 2026 \u2014 covering disclosure when user"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "International AI Regulation",
+   "text": "The EU AI Act's transparency rules take effect on August 2, 2026, requiring synthetic text, images, video and audio desi"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "International AI Regulation",
+   "text": "Update on the EU AI Act transparency deadline covered on August 1: enforcement began on August 2, 2026, and Luiza Jarovs"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Frontier Models & Capabilities",
+   "text": "In an open-model review published August 2, 2026, Florian Brand and Nathan Lambert catalogued releases including Tencent"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Kimi K3: the terms of its licence were set out in the same August 2, 2026 review. Moonshot AI released the mod"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Meituan's LongCat-2.0 became public on or before August 2, 2026: a 1.6-trillion-parameter mixture-of-experts model train"
   }
  ]
 }
