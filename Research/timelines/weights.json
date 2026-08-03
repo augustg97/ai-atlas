@@ -1,6 +1,6 @@
 {
  "version": "r0-2026-07-31",
- "date": "2026-08-02",
+ "date": "2026-08-03",
  "axes": {
   "T": {
    "T1": 0.1,
@@ -15,11 +15,11 @@
    "A4": 0.28
   },
   "C": {
-   "C1": 0.41379310344827575,
-   "C2": 0.2660098522167488,
-   "C3": 0.08866995073891625,
-   "C4": 0.21674876847290636,
-   "C5": 0.014778325123152703
+   "C1": 0.41379310344827586,
+   "C2": 0.26600985221674883,
+   "C3": 0.08866995073891626,
+   "C4": 0.21674876847290642,
+   "C5": 0.014778325123152707
   },
   "D": {
    "D1": 0.18,
@@ -176,6 +176,51 @@
      "E4": 0.08020598205292012
     }
    }
+  },
+  {
+   "date": "2026-08-03",
+   "marginals": {
+    "T": {
+     "T1": 0.1,
+     "T2": 0.3,
+     "T3": 0.38,
+     "T4": 0.22
+    },
+    "A": {
+     "A1": 0.12,
+     "A2": 0.26,
+     "A3": 0.34,
+     "A4": 0.28
+    },
+    "C": {
+     "C1": 0.41379310344827586,
+     "C2": 0.26600985221674883,
+     "C3": 0.08866995073891626,
+     "C4": 0.21674876847290642,
+     "C5": 0.014778325123152707
+    },
+    "D": {
+     "D1": 0.19072261365219884,
+     "D2": 0.532423405001424,
+     "D3": 0.276853981346377
+    },
+    "S": {
+     "S1": 0.33,
+     "S2": 0.41,
+     "S3": 0.26
+    },
+    "P": {
+     "P1": 0.26117821643055666,
+     "P2": 0.3104905616688223,
+     "P3": 0.42833122190062095
+    },
+    "E": {
+     "E1": 0.27843629437888956,
+     "E2": 0.43344023059384457,
+     "E3": 0.20791749297434584,
+     "E4": 0.08020598205292012
+    }
+   }
   }
  ],
  "evidence_log": [],
@@ -219,6 +264,36 @@
    "date": "2026-08-02",
    "section": "Compute, Chips & Infrastructure",
    "text": "Meituan's LongCat-2.0 became public on or before August 2, 2026: a 1.6-trillion-parameter mixture-of-experts model train"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "OpenAI argued on August 3, 2026 that the United States needs national AI standards enacted by Congress, and that action "
+  },
+  {
+   "date": "2026-08-03",
+   "section": "U.S. State AI Legislation",
+   "text": "The California Privacy Protection Agency opened its first formal compliance audit, targeting whether gig economy platfor"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Researchers at the University of Toronto, the Vector Institute, the University of Cambridge and ServiceNow published a p"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Alibaba's Qwen3.8-Max, previewed on July 19 and covered on July 20\u201321: Alibaba made the model generally availa"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Industry & Markets",
+   "text": "Update on Lilian Weng's departure from Thinking Machines Lab, covered on August 1: her return to OpenAI, to work on recu"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Industry & Markets",
+   "text": "Jasjeet Sekhon, chief strategy officer at Google DeepMind, said over the weekend of August 1\u20132, 2026 that recursive self"
   }
  ]
 }

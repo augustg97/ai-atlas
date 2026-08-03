@@ -1,6 +1,6 @@
-# Emit needs-review — 20260802-1049
+# Emit needs-review — 20260803-1049
 
-221 items. Unparseable values are reported here, never guessed.
+222 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -173,6 +173,7 @@
 - companies/sierra: unparseable date 'unknown' (founded)
 - companies/snowflake: dangling relationship target 'concepts/enterprise-ai'
 - companies/sunday-robotics: unparseable date 'unknown' (founded)
+- models/astra: unparseable date 'unreleased' (release_date)
 - legislation/create-ai-act: dangling relationship target 'entities/todd-young|Sen. Todd Young (R-IN)'
 - legislation/ct-sb-4: dangling relationship target 'concepts/data-broker-regulation'
 - legislation/ct-sb-4: dangling relationship target 'concepts/data-broker-regulation'
