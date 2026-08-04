@@ -9,17 +9,17 @@
    "T4": 0.21329186503298866
   },
   "A": {
-   "A1": 0.11594086774804933,
-   "A2": 0.2590626919009926,
-   "A3": 0.34600584907296605,
-   "A4": 0.27899059127799214
+   "A1": 0.1156618417453432,
+   "A2": 0.25899797478204395,
+   "A3": 0.3464192875534886,
+   "A4": 0.27892089591912433
   },
   "C": {
-   "C1": 0.40618222435014967,
-   "C2": 0.26603966401475804,
-   "C3": 0.07934299590731006,
-   "C4": 0.2338218025603092,
-   "C5": 0.014613313167473049
+   "C1": 0.4054791874959954,
+   "C2": 0.2659068435464066,
+   "C3": 0.07930338386706845,
+   "C4": 0.23470456762877862,
+   "C5": 0.014606017461750902
   },
   "D": {
    "D1": 0.176990085382572,
@@ -37,10 +37,10 @@
    "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.28293522298131335,
-   "E2": 0.4431186387875259,
-   "E3": 0.20009303176657298,
-   "E4": 0.07385310646458768
+   "E1": 0.28379346814397544,
+   "E2": 0.44289741153046636,
+   "E3": 0.19949288507048027,
+   "E4": 0.07381623525507777
   }
  },
  "history": [
@@ -593,6 +593,66 @@
    "driver_urls": [
     "https://broadbandbreakfast.com/ftc-inquiry-into-ai-ideological-bias-draws-first-amendment-objections/"
    ]
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.00075,
+   "sources": 1,
+   "repeat_k": 2,
+   "applied": {
+    "C.C4": 0.001,
+    "C.C1": -0.0005
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "date": "2026-08-04",
+   "driver": "Apple sought a preliminary injunction against OpenAI and requested expedited discovery in its trade-secrets case, in a filing that became pu",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.00075,
+   "sources": 1,
+   "repeat_k": 2,
+   "applied": {
+    "E.E1": 0.001,
+    "E.E3": -0.0005
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-04",
+   "driver": "Volta Infra, a seven-month-old AI infrastructure startup, said on August 4, 2026 that it had raised funds at a $2.4 billion valuation and la",
+   "driver_urls": [
+    "https://www.reuters.com/business/ai-cloud-startup-volta-valued-24-billion-announces-10-billion-ai-partnership-2026-08-04/"
+   ]
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.00038,
+   "sources": 1,
+   "repeat_k": 3,
+   "applied": {
+    "A.A3": 0.0005,
+    "A.A1": -0.00025
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "date": "2026-08-04",
+   "driver": "Update on the OpenAI and Anthropic containment-escape disclosures covered in the 08:12 file of August 3: the Center for AI Safety published ",
+   "driver_urls": [
+    "https://newsletter.safe.ai/p/aisn-78-internal-models-escape-openai"
+   ]
   }
  ],
  "residue": [
@@ -877,6 +937,24 @@
    "section": "Frontier Models & Capabilities",
    "text": "Update on Alibaba's Qwen3.8-Max, whose general availability was covered in the 08:12 file: in making the model widely av",
    "fp": "59d26e990e230b73"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the White House frontier-model evaluation framework, reported complete on August 3 and covered in the 22:14 fi",
+   "fp": "cc5b1dbf45be0ca1"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the Senate frontier AI legislation split covered in the 22:14 file: Senate Commerce Committee ranking member M",
+   "fp": "2dacb0ef4366e004"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "National Security & Geopolitics",
+   "text": "The Federal Communications Commission is drafting a measure to bar US imports of new models of Chinese optical transceiv",
+   "fp": "54d9577f3fe52b69"
   }
  ],
  "seen": [
@@ -942,7 +1020,13 @@
   "4f9e123863ad63a1",
   "6074dd19dfa30341",
   "24140a740c79743c",
-  "59d26e990e230b73"
+  "59d26e990e230b73",
+  "cc5b1dbf45be0ca1",
+  "2dacb0ef4366e004",
+  "54d9577f3fe52b69",
+  "74743ef5eb7f26d7",
+  "8ce83f0d784bd31a",
+  "d67242c2638eeff0"
  ],
  "residue_r0": [
   {
