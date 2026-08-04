@@ -40,20 +40,55 @@ forecast surface and ratchets grounding.
 ## State right now
 
 - Live and verified; the nightly task `ai-atlas-nightly` (10:47 local) runs
-  `build/nightly.sh`: trunk emit → witness → nightly_update → grounding → forecast_emit →
-  gate → stamp → push → live verify. Its prompt (in `~/.claude/scheduled-tasks/`) requires
-  attributed deltas, verbatim SCHEMA ADDITIONS blocks, claim-resolution notes, and forbids
-  SKIP_AUDIT. **Acceptance (T4/D1): three unattended correct mornings — WATCH THEM.**
-- weights.json (Research/timelines/) is the evolving state; the seed priors live in
-  axes.REGISTRY. delta panel reads the evidence log; marginals history accrues daily.
-- The queue loop remains live (6 tasks filed earlier drain with the vault's cycles).
+  `build/nightly.sh`: trunk emit → witness (epoch + **statelaw**) → nightly_update →
+  grounding → forecast_emit → gate → stamp → push → live verify. Its prompt (in
+  `~/.claude/scheduled-tasks/`) requires attributed deltas, verbatim SCHEMA ADDITIONS blocks,
+  claim-resolution notes, and forbids SKIP_AUDIT.
+- **D1/T4 acceptance PASSED 2026-08-02** (three unattended mornings, gate PASS each). Mornings
+  1–4 then produced the machine's central finding: **the forecast never moved on evidence** —
+  14 fresh events, 14 residue, `evidence_log` empty, and by morning 4 the distribution was
+  static to 2.4e-16.
+- **Evidence layer r1 shipped 2026-08-04 (`09ff4fc`, stamp `20260804-0129`)** — August's
+  "fix all of the issues flagged" round. Registry `r0-2026-07-31` → `r1-2026-08-03`. Six
+  repairs, in the order they matter:
+  1. **Day boundary** — the watermark selector dropped 84% of events (41 of 49 on settled
+     days), including the only item that ever satisfied a rule. Now a **seen-ledger** on a
+     collision-free fingerprint, 14-day lookback, floored at the nightly epoch.
+  2. **Matcher** — whole-word terms with explicit `*` stems, section aliases onto the
+     canonical 13 (matching only), `text_all` / `text_none` / `section_any` / `kind_any` /
+     `min_sources` / `update`.
+  3. **Rule set** — `ev-state-law-enacted` had no content gate (fired on section+kind alone);
+     and `IMPACT_CLASS`'s **`minor` tier had no rules at all**, so nothing watched the
+     mainline. 15 mainline rules added, most sections read both ways. Coverage 3.55% → 30.4%.
+  4. **Claim registration** — no longer stamped `today` nightly; held in weights.json,
+     back-filled to the true 2026-07-31.
+  5. **State-law counter** — `witness_statelaw.py`, 8 laws / 7 states, a declared **lower
+     bound** that the gate fails if it ever claims it can refute.
+  6. **Gate** — DRIFT report vs the previous run + ratchet-forward on improvement;
+     `review.n` → `review.pct`.
+  Effect: 55 events considered vs 6, **16 applications vs 0**, total L1 0.100. Mainline path
+  unchanged (T3·A3·C1·D2·S2·P3·E2).
+- weights.json (Research/timelines/) is the evolving state; it now also carries `seen`,
+  `schema_log`, `claims_registered`, and `residue_r0` (the pre-r1 residue, archived not
+  deleted). The seed priors live in axes.REGISTRY.
+- The queue loop remains live; `INGEST-ncsl-state-ai-legislation-tracker` filed 2026-08-04.
 
 ## Honest limits, recorded
 
 - World view is features-on-real-geography, not per-pixel lit terrain — T8 is the §13a round.
-- Six evidence rules are a floor (T9); residue will dominate mornings until the library grows.
-- exemplars.json ships unused (T6); calibration claims register exists but the Brier scorer
-  is T7; sub-axes are registered but do not yet drive tracks (T10).
+- exemplars.json ships unused (T6); sub-axes are registered but do not yet drive tracks (T10).
+- **`cl-state-laws-2026` still cannot be scored.** Three different universes sit under it: 8
+  observed enactments (wiki lower bound), a *projected* `laws` track seeded at a hardcoded
+  **61** whose provenance is a code comment, and a threshold of 90. The queue task asks for
+  NCSL; the right outcome may be to **reword the claim** rather than score it.
+- **Duplicate reports still count separately.** Illinois SB 315 was reported by four digests
+  and fires the rule four times; novelty decay damps it (0.008 → 0.015 total, not 0.032) but
+  entity resolution would be the real fix.
+- The r1 rule set is **cited but not calibrated** — directions are argued from the axis
+  stories, never fitted. Nothing has been scored against outcomes yet; that is the Brier
+  round (T7), for which registration dates are now finally usable.
+- `apply_schema_log` is exercised by selftest and a dry run but **has not yet fired in
+  production** — the next Monday review is 2026-08-10.
 - Priors are the model's opening judgments with provenance — August may adjust; the About
   page says all of this in public.
 
@@ -67,7 +102,16 @@ forecast surface and ratchets grounding.
   that is the model speaking, not a bug; the piecewise x-scale exists so the action keeps
   its pixels.
 - The gate self-extends its baseline on first new-check runs (recorded in stdout) — read the
-  output, don't assume refusal.
+  output, don't assume refusal. Since r1 it ALSO ratchets forward on improvement and prints a
+  DRIFT block vs the previous run; both are stdout-only, so read them.
+- **`nightly.sh` runs `git add -A`.** Any uncommitted working-tree change is swept into a
+  commit messaged "Nightly emit YYYY-MM-DD". The r1 source changes landed that way in
+  `cb15cd9` before being documented in `09ff4fc`. Commit your work before running the chain.
+- A trailing `*` in a rule term means STEM; without it the term is a whole word. Writing
+  "invest" where you meant "invest*" silently matches nothing, and the rule looks alive.
+- `text` in the trunk is truncated near 300 chars. Anything the matcher or a witness needs to
+  read must be in the opening prose — Tennessee's enactment is cut off mid-sentence and is
+  therefore, correctly, not counted.
 
 ## The work queue (register order)
 
