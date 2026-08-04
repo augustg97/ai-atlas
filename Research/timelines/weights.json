@@ -1,46 +1,46 @@
 {
- "version": "r0-2026-07-31",
- "date": "2026-08-03",
+ "version": "r1-2026-08-03",
+ "date": "2026-08-04",
  "axes": {
   "T": {
-   "T1": 0.1,
-   "T2": 0.3,
-   "T3": 0.38,
-   "T4": 0.22
+   "T1": 0.09945440179975053,
+   "T2": 0.3013542592379784,
+   "T3": 0.3858994739292825,
+   "T4": 0.21329186503298866
   },
   "A": {
-   "A1": 0.12,
-   "A2": 0.26,
-   "A3": 0.34,
-   "A4": 0.28
+   "A1": 0.11594086774804933,
+   "A2": 0.2590626919009926,
+   "A3": 0.34600584907296605,
+   "A4": 0.27899059127799214
   },
   "C": {
-   "C1": 0.41379310344827586,
-   "C2": 0.26600985221674883,
-   "C3": 0.08866995073891626,
-   "C4": 0.21674876847290642,
-   "C5": 0.014778325123152707
+   "C1": 0.40618222435014967,
+   "C2": 0.26603966401475804,
+   "C3": 0.07934299590731006,
+   "C4": 0.2338218025603092,
+   "C5": 0.014613313167473049
   },
   "D": {
-   "D1": 0.18,
-   "D2": 0.55,
-   "D3": 0.27
+   "D1": 0.176990085382572,
+   "D2": 0.5561529084502644,
+   "D3": 0.2668570061671637
   },
   "S": {
-   "S1": 0.33,
-   "S2": 0.41,
-   "S3": 0.26
+   "S1": 0.3290188657423563,
+   "S2": 0.4147631762085461,
+   "S3": 0.2562179580490976
   },
   "P": {
-   "P1": 0.26,
-   "P2": 0.31,
-   "P3": 0.43
+   "P1": 0.2594163132950861,
+   "P2": 0.311549014716887,
+   "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.2777777777777778,
-   "E2": 0.4444444444444444,
-   "E3": 0.2037037037037037,
-   "E4": 0.07407407407407408
+   "E1": 0.28293522298131335,
+   "E2": 0.4431186387875259,
+   "E3": 0.20009303176657298,
+   "E4": 0.07385310646458768
   }
  },
  "history": [
@@ -221,10 +221,730 @@
      "E4": 0.08020598205292012
     }
    }
+  },
+  {
+   "date": "2026-08-04",
+   "marginals": {
+    "T": {
+     "T1": 0.09945440179975053,
+     "T2": 0.3013542592379784,
+     "T3": 0.3858994739292825,
+     "T4": 0.21329186503298866
+    },
+    "A": {
+     "A1": 0.1159408677480493,
+     "A2": 0.25906269190099257,
+     "A3": 0.346005849072966,
+     "A4": 0.2789905912779921
+    },
+    "C": {
+     "C1": 0.4061785687101305,
+     "C2": 0.2630372696577819,
+     "C3": 0.0793422818203469,
+     "C4": 0.23682869816408617,
+     "C5": 0.014613181647654542
+    },
+    "D": {
+     "D1": 0.1878691467991281,
+     "D2": 0.5381240093259649,
+     "D3": 0.274006843874907
+    },
+    "S": {
+     "S1": 0.3290188657423563,
+     "S2": 0.4147631762085461,
+     "S3": 0.2562179580490976
+    },
+    "P": {
+     "P1": 0.2606007885914388,
+     "P2": 0.3120149688359598,
+     "P3": 0.42738424257260144
+    },
+    "E": {
+     "E1": 0.28331561384655773,
+     "E2": 0.43224410559578863,
+     "E3": 0.20445563555043322,
+     "E4": 0.07998464500722025
+    }
+   }
   }
  ],
- "evidence_log": [],
+ "evidence_log": [
+  {
+   "rule": "ev-regulatory-implementation",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "C.C4": 0.004,
+    "C.C3": -0.002
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "sources/europe-2031"
+   ],
+   "date": "2026-08-04",
+   "driver": "The EU AI Act's Article 50 transparency obligations become enforceable on August 2, 2026 \u2014 covering disclosure when users interact with AI s",
+   "driver_urls": [
+    "https://www.luizasnewsletter.com/p/ai-transparency-deadline-approaching"
+   ]
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "C.C4": 0.004,
+    "C.C1": -0.002
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "date": "2026-08-04",
+   "driver": "The Munich regional court ruled on July 31, 2026 that Suno lacked the right to process songs by artists represented by GEMA, Germany's state",
+   "driver_urls": [
+    "https://www.reuters.com/world/german-court-rules-ai-music-firm-suno-broke-copyright-rules-2026-07-31/"
+   ]
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.00375,
+   "sources": 2,
+   "repeat_k": 0,
+   "applied": {
+    "T.T3": 0.005,
+    "T.T4": -0.0025
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "date": "2026-08-04",
+   "driver": "DeepSeek released the official DeepSeek-V4-Flash API in public beta on July 31, 2026, reporting Terminal Bench 2.1 82.7, NL2Repo 54.2, Cyber",
+   "driver_urls": [
+    "https://api-docs.deepseek.com/updates/",
+    "https://www.bloomberg.com/news/articles/2026-07-31/deepseek-unveils-public-beta-api-for-flagship-ai-model"
+   ]
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "T.T2": 0.003,
+    "T.T3": 0.003,
+    "T.T4": -0.003
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "date": "2026-08-04",
+   "driver": "Epoch AI announced an expansion of its FrontierMath benchmark, FrontierMath: Open Problems, drawn from unsolved mathematics problems, in its",
+   "driver_urls": [
+    "https://epochai.substack.com/p/the-epoch-brief-july-31-2026"
+   ]
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "A.A3": 0.004,
+    "A.A1": -0.002
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "date": "2026-08-04",
+   "driver": "Gary Marcus published a response to the same report on July 31, 2026, writing that \"the supposed leaders in AI and AI safety are clearly in ",
+   "driver_urls": [
+    "https://garymarcus.substack.com/p/three-reactions-to-anthropicss-latest"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "E.E1": 0.004,
+    "E.E3": -0.002
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-04",
+   "driver": "MediaTek's board approved a discretionary financing budget of $5 billion, the company said on July 31, 2026, and raised its estimate of the ",
+   "driver_urls": [
+    "https://www.reuters.com/business/media-telecom/mediatek-plans-5-billion-financing-ai-data-center-chips-2026-07-31/"
+   ]
+  },
+  {
+   "rule": "ev-state-law-enacted",
+   "impact_class": "notable",
+   "magnitude": 0.008,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "C.C4": 0.01067,
+    "C.C3": -0.00533
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "date": "2026-08-04",
+   "driver": "Illinois Gov. JB Pritzker signed House Bill 5511, the Children's Social Media Safety Act, on July 31, 2026. The law, effective in 2028, bars",
+   "driver_urls": [
+    "https://capitolnewsillinois.com/news/pritzker-signs-law-regulating-how-social-media-platforms-interact-with-children/"
+   ]
+  },
+  {
+   "rule": "ev-enterprise-adoption",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "D.D2": 0.0045,
+    "D.D1": -0.00225,
+    "P.P2": 0.00225
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/ai-displacement-vs-augmentation"
+   ],
+   "date": "2026-08-04",
+   "driver": "Nikhil Suresh of the consultancy Hermit Tech published an essay, \"AI Mania Is Eviscerating Global Decisionmaking,\" which became public on or",
+   "driver_urls": [
+    "https://pluralistic.net/2026/08/01/dare-snot/"
+   ]
+  },
+  {
+   "rule": "ev-regulatory-implementation",
+   "impact_class": "minor",
+   "magnitude": 0.0015,
+   "sources": 1,
+   "repeat_k": 1,
+   "applied": {
+    "C.C4": 0.002,
+    "C.C3": -0.001
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "sources/europe-2031"
+   ],
+   "date": "2026-08-04",
+   "driver": "Update on the EU AI Act transparency deadline covered on August 1: enforcement began on August 2, 2026, and Luiza Jarovsky set out how it is",
+   "driver_urls": [
+    "https://www.luizasnewsletter.com/p/enforcement-of-the-ai-act-starts"
+   ]
+  },
+  {
+   "rule": "ev-agentic-deployment",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "D.D2": 0.004,
+    "D.D3": -0.002
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/professional-services-ai-adoption"
+   ],
+   "date": "2026-08-04",
+   "driver": "NVIDIA's NeMo team released Molt, a PyTorch-native agentic reinforcement-learning framework, under Apache 2.0 on August 1, 2026, with the te",
+   "driver_urls": [
+    "https://www.marktechpost.com/2026/08/01/nvidia-ai-releases-molt-a-pytorch-native-agentic-reinforcement-learning-framework/"
+   ]
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0045,
+   "sources": 3,
+   "repeat_k": 0,
+   "applied": {
+    "S.S2": 0.006,
+    "S.S3": -0.003
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "date": "2026-08-04",
+   "driver": "Governors and legislatures in U.S. states that had welcomed data centers moved to repeal sales tax breaks in changes reported on August 2, 2",
+   "driver_urls": [
+    "https://www.theinformation.com/newsletters/ai-infrastructure/exclusive-data-center-costs-set-rise-u-s-states-move-repeal-tax-breaks",
+    "https://www.governor.ny.gov/news/finger-lakes-region-governor-hochul-highlights-first-statewide-moratorium-new-hyperscale-data",
+    "https://communityimpact.com/central-austin/texas-legislature/texas-spends-billions-on-tax-breaks-for-data-centers-theres-a-bipartisan-legislative-push-to-repeal-them/"
+   ]
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0015,
+   "sources": 1,
+   "repeat_k": 1,
+   "applied": {
+    "A.A3": 0.002,
+    "A.A1": -0.001
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "date": "2026-08-04",
+   "driver": "Update on the OpenAI and Anthropic cybersecurity-evaluation incidents covered on July 28 and July 31: Zvi Mowshowitz published an assessment",
+   "driver_urls": [
+    "https://thezvi.substack.com/p/further-developments-about-internal"
+   ]
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0015,
+   "sources": 1,
+   "repeat_k": 1,
+   "applied": {
+    "C.C4": 0.002,
+    "C.C1": -0.001
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "date": "2026-08-04",
+   "driver": "The California Privacy Protection Agency opened its first formal compliance audit, targeting whether gig economy platforms let consumers and",
+   "driver_urls": [
+    "https://thealgorithmicupdate.substack.com/p/august-2026-state-regulators-seize"
+   ]
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.00094,
+   "sources": 2,
+   "repeat_k": 2,
+   "applied": {
+    "A.A3": 0.00125,
+    "A.A1": -0.00062
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "date": "2026-08-04",
+   "driver": "Researchers at the University of Toronto, the Vector Institute, the University of Cambridge and ServiceNow published a proof-of-concept worm",
+   "driver_urls": [
+    "https://importai.substack.com/p/import-ai-467-self-sustaining-ai",
+    "https://arxiv.org/abs/2606.03811v1"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0015,
+   "sources": 1,
+   "repeat_k": 1,
+   "applied": {
+    "E.E1": 0.002,
+    "E.E3": -0.001
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-04",
+   "driver": "Amazon completed its $50 billion investment in OpenAI, contributing the remaining $35 billion in two stages over what the source describes a",
+   "driver_urls": [
+    "https://www.theinformation.com/briefings/amazon-completes-additional-35-billion-investment-openai"
+   ]
+  },
+  {
+   "rule": "ev-federal-preemption-push",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0,
+   "applied": {
+    "C.C2": 0.003,
+    "C.C4": -0.003
+   },
+   "cites": [
+    "concepts/ai-preemption",
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "date": "2026-08-04",
+   "driver": "The Federal Trade Commission's proposed policy statement treating certain AI outputs as potentially deceptive under consumer protection law ",
+   "driver_urls": [
+    "https://broadbandbreakfast.com/ftc-inquiry-into-ai-ideological-bias-draws-first-amendment-objections/"
+   ]
+  }
+ ],
  "residue": [
+  {
+   "date": "2026-07-31",
+   "section": "International AI Regulation",
+   "text": "The European Commission said on July 31, 2026 that it is in talks with OpenAI and Anthropic over the recent hacking inci",
+   "fp": "42f5e7116ddfbcf0"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "National Security & Geopolitics",
+   "text": "A Reuters review of more than 80 Chinese academic papers and patents, published July 31, 2026, found military and securi",
+   "fp": "91e2b077c4fae495"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "National Security & Geopolitics",
+   "text": "Defense Innovation Unit Director Owen West's decision to narrow DIU's focus to three portfolio areas from seven became p",
+   "fp": "ae0e0b793d907752"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "U.S. District Court Judge Rita Lin's suggestion that federal agencies' own use of Anthropic's cyber-focused Mythos model",
+   "fp": "a7d83e453b983353"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the July 30 Senate Commerce telecommunications subcommittee hearing: ranking member Maria Cantwell (D-WA) pres",
+   "fp": "fd8b8bb046ca4ba8"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Frontier Models & Capabilities",
+   "text": "MiniMax released its H3 video-generation model on July 31, 2026, generating clips of up to 15 seconds at 2K resolution w",
+   "fp": "ec1f23fb03738925"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Alexa Pan of Redwood Research argued on July 31, 2026 that state-of-the-art alignment assessments do not strongly update",
+   "fp": "5f830839d399f08d"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Google paused the Nano Banana 2 image-generation feature in Google Earth on Friday, July 31, 2026, less than 48 hours af",
+   "fp": "6de75d5a43097ab4"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "AI Industry & Markets",
+   "text": "Update on OpenAI's GPT-5.6 price reductions: OpenAI specified on July 31, 2026 that the cuts are 80% for Luna and 20% fo",
+   "fp": "137ac85be35f719c"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "AI Industry & Markets",
+   "text": "Alex Kantrowitz argued on July 31, 2026 that AI laboratories may stop selling their most capable models through metered ",
+   "fp": "29e5ff1519fc8ca4"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI has found additional instances in which autonomous agents escaped containment, two people familiar with the matte",
+   "fp": "01c9cabee903bc69"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "U.S. District Judge Paul Engelmayer of the Southern District of New York rejected most of Perplexity AI's motion to dism",
+   "fp": "e2603fe40935743c"
+  },
+  {
+   "date": "2026-08-01",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Lauren Yu, a fellow with the ACLU's Speech, Privacy & Technology Project, said on August 1, 2026 that U.S. liability for",
+   "fp": "f37d9327d7fb495c"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "International AI Regulation",
+   "text": "The EU AI Act's transparency rules take effect on August 2, 2026, requiring synthetic text, images, video and audio desi",
+   "fp": "5c6bc11fa8b43d5c"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on the DeepSeek V4-Flash release: Artificial Analysis scored DeepSeek V4 Flash 0731 at 50 on its Intelligence Ind",
+   "fp": "12d8d9d718a3d590"
+  },
+  {
+   "date": "2026-08-01",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI is preparing to release a model family tentatively named \"Astra,\" with improved ability to complete long-running ",
+   "fp": "45488f686d37c3de"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "AI Industry & Markets",
+   "text": "Update on OpenAI's price cuts: OpenAI said on July 31, 2026 that it has more than one billion active users and two milli",
+   "fp": "f647de4655e207db"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update on Kimi K3: Moonshot's computing-power agreement with Alibaba Group Holding for the use of around 20,000 Nvidia c",
+   "fp": "c14f796b4b79c404"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "The Federal Trade Commission cleared IonQ's $1.8 billion acquisition of SkyWater Technology on July 31, 2026 after Chair",
+   "fp": "588303d5c671600f"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Snap said on July 31, 2026 that it has adjusted Snapchat's recommendation systems so that only videos created by real pe",
+   "fp": "6c759df2a1b35f8d"
+  },
+  {
+   "date": "2026-08-01",
+   "section": "AI Industry & Markets",
+   "text": "Update on Situational Awareness: Azeem Azhar wrote on August 1, 2026 that the fund peaked at $45 billion and ran the AGI",
+   "fp": "72a63558cea9406c"
+  },
+  {
+   "date": "2026-08-01",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Kimi K3: Moonshot AI's technical paper and Hugging Face release describe a 2.8-trillion-parameter open-weight ",
+   "fp": "b32f7bb5307a3912"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Frontier Models & Capabilities",
+   "text": "Thinking Machines released Inkling-Small on July 31, 2026 under an Apache 2.0 licence, two weeks after its 975-billion-p",
+   "fp": "92db045f93511c37"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Frontier Models & Capabilities",
+   "text": "Google DeepMind introduced Gemini Robotics 2 on July 31, 2026, adding what the company called \"intelligent whole-body co",
+   "fp": "b27b673a6f8c2b3a"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on the Anthropic containment incident: Anthropic's fuller account became public on July 31, 2026 and names the th",
+   "fp": "7e9140d4dc92be08"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Frontier Models & Capabilities",
+   "text": "In an open-model review published August 2, 2026, Florian Brand and Nathan Lambert catalogued releases including Tencent",
+   "fp": "102c118770169f9e"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Kimi K3: the terms of its licence were set out in the same August 2, 2026 review. Moonshot AI released the mod",
+   "fp": "c843fd1d734f66a3"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on DeepSeek V4-Flash, covered on August 1 via its Artificial Analysis score: DeepSeek published DeepSeek-V4-Flash",
+   "fp": "540eed2fcd0cf62e"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Frontier Models & Capabilities",
+   "text": "MiniMax launched MiniMax H3 on July 31, 2026, a model that takes text, images, video and audio as one context and return",
+   "fp": "843a8fb11f790bfd"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Meituan's LongCat-2.0 became public on or before August 2, 2026: a 1.6-trillion-parameter mixture-of-experts model train",
+   "fp": "0910b44036dd0191"
+  },
+  {
+   "date": "2026-08-01",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on OpenAI's Astra, covered on August 1 as an unreleased model family previewed to policymakers in Washington: Ope",
+   "fp": "bf2de1cbff7b96f3"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Frontier Models & Capabilities",
+   "text": "Levent Alpoge, an Anthropic engineer, said on X in a post that became public on August 2, 2026 that he had obtained five",
+   "fp": "bef720c379683b83"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Frontier Models & Capabilities",
+   "text": "Gary Marcus argued on August 2, 2026 that the results are being read through a fallacy of composition \u2014 that competence ",
+   "fp": "681137bf777fbf7d"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "AI Industry & Markets",
+   "text": "Matt Stoller argued on August 2, 2026 that the financial reporting of the largest AI spenders cannot be checked from pub",
+   "fp": "e2bb23e6a46a0052"
+  },
+  {
+   "date": "2026-08-02",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Geoffrey Hinton told state legislators at the National Conference of State Legislatures' Legislative Summit in Chicago, ",
+   "fp": "d5ee7e5c353a8817"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "OpenAI argued on August 3, 2026 that the United States needs national AI standards enacted by Congress, and that action ",
+   "fp": "3c4820954dca1833"
+  },
+  {
+   "date": "2026-07-31",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "House Committee on Homeland Security Chairman Andrew Garbarino (R-NY) and House Select Committee on China Chairman John ",
+   "fp": "63b4c2cac99d1247"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Alibaba's Qwen3.8-Max, previewed on July 19 and covered on July 20\u201321: Alibaba made the model generally availa",
+   "fp": "84fbba911dcc431b"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Industry & Markets",
+   "text": "Update on Lilian Weng's departure from Thinking Machines Lab, covered on August 1: her return to OpenAI, to work on recu",
+   "fp": "d91ec2c56dc2333b"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Industry & Markets",
+   "text": "Jasjeet Sekhon, chief strategy officer at Google DeepMind, said over the weekend of August 1\u20132, 2026 that recursive self",
+   "fp": "ee281e0b06657026"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The White House said on August 3, 2026 that it had met the deadline set by the June 2 executive order for a voluntary fr",
+   "fp": "978efd02dbcfc105"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Senate Majority Leader John Thune (R-South Dakota) and Sen. Amy Klobuchar (D-Minnesota) are developing frontier AI legis",
+   "fp": "7a9480a9c809e966"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Industry & Markets",
+   "text": "Palantir reported second-quarter results after the close on August 3, 2026: revenue of $1.94 billion against an LSEG con",
+   "fp": "83f6dd11ab583724"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Industry & Markets",
+   "text": "Amazon's market capitalization passed $3 trillion for the first time on August 3, 2026, with shares closing 4.58% higher",
+   "fp": "4f9e123863ad63a1"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "National Security & Geopolitics",
+   "text": "Hugging Face CEO Cl\u00e9ment Delangue said on August 3, 2026 that Chinese developers are \"clearly dominating on open models ",
+   "fp": "6074dd19dfa30341"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on OpenAI's ten Astra mathematics results, announced by Sebastien Bubeck on August 2 and covered as prior-cycle m",
+   "fp": "24140a740c79743c"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Alibaba's Qwen3.8-Max, whose general availability was covered in the 08:12 file: in making the model widely av",
+   "fp": "59d26e990e230b73"
+  }
+ ],
+ "seen": [
+  "09b86c014c94a0c7",
+  "cba7836489a77bd6",
+  "42f5e7116ddfbcf0",
+  "91e2b077c4fae495",
+  "ae0e0b793d907752",
+  "a7d83e453b983353",
+  "fd8b8bb046ca4ba8",
+  "ec1f23fb03738925",
+  "c54129e8911167d4",
+  "0b08b655d238fd13",
+  "10c033c16cefd51c",
+  "5f830839d399f08d",
+  "6de75d5a43097ab4",
+  "137ac85be35f719c",
+  "29e5ff1519fc8ca4",
+  "01c9cabee903bc69",
+  "e2603fe40935743c",
+  "f37d9327d7fb495c",
+  "5c6bc11fa8b43d5c",
+  "12d8d9d718a3d590",
+  "45488f686d37c3de",
+  "f647de4655e207db",
+  "a6cf7f2612123154",
+  "c14f796b4b79c404",
+  "588303d5c671600f",
+  "55aeb21e0c3fe5e0",
+  "6c759df2a1b35f8d",
+  "72a63558cea9406c",
+  "b32f7bb5307a3912",
+  "92db045f93511c37",
+  "b27b673a6f8c2b3a",
+  "7e9140d4dc92be08",
+  "a3291bc2e59dcc5b",
+  "8587c62c1b102db1",
+  "102c118770169f9e",
+  "c843fd1d734f66a3",
+  "540eed2fcd0cf62e",
+  "843a8fb11f790bfd",
+  "0910b44036dd0191",
+  "41d93cb83e41fafa",
+  "bf2de1cbff7b96f3",
+  "bef720c379683b83",
+  "681137bf777fbf7d",
+  "4159ffe48be5e2fa",
+  "e2bb23e6a46a0052",
+  "0b763a00fa2a906e",
+  "d5ee7e5c353a8817",
+  "3c4820954dca1833",
+  "63b4c2cac99d1247",
+  "cbf1c689043d9ea0",
+  "98f16af0a7c3be75",
+  "84fbba911dcc431b",
+  "ed336d5c9ebb45d2",
+  "d91ec2c56dc2333b",
+  "ee281e0b06657026",
+  "978efd02dbcfc105",
+  "7a9480a9c809e966",
+  "ea49cc7d2dc4f9d5",
+  "83f6dd11ab583724",
+  "4f9e123863ad63a1",
+  "6074dd19dfa30341",
+  "24140a740c79743c",
+  "59d26e990e230b73"
+ ],
+ "residue_r0": [
   {
    "date": "2026-08-01",
    "section": "AI Litigation, Liability & Enforcement",
@@ -295,5 +1015,17 @@
    "section": "AI Industry & Markets",
    "text": "Jasjeet Sekhon, chief strategy officer at Google DeepMind, said over the weekend of August 1\u20132, 2026 that recursive self"
   }
- ]
+ ],
+ "migration": {
+  "date": "2026-08-04",
+  "from": "watermark selector + r0 substring matcher",
+  "to": "seen-ledger selector + r1 structured matcher",
+  "archived_residue": 14
+ },
+ "claims_registered": {
+  "cl-sc-2027": "2026-07-31",
+  "cl-deal-2029": "2026-07-31",
+  "cl-correction-2027": "2026-07-31",
+  "cl-state-laws-2026": "2026-07-31"
+ }
 }

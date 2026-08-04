@@ -1,0 +1,186 @@
+{
+ "observed_count": 8,
+ "distinct_states": 7,
+ "laws": [
+  {
+   "key": "Idaho|y2026",
+   "state": "Idaho",
+   "bill": "y2026",
+   "first_seen": "2026-04-30",
+   "urls": [
+    "https://www.washingtonpost.com/technology/2026/04/30/states-rushing-regulate-ai-health-care-white-house-block/"
+   ],
+   "text": "At least 43 states have introduced laws governing healthcare and AI, with 12 states enacting such legislation since January 2026, per the National Conference of State Legislatures "
+  },
+  {
+   "key": "Maryland|#895",
+   "state": "Maryland",
+   "bill": "#895",
+   "first_seen": "2026-05-04",
+   "urls": [
+    "https://fortune.com/2026/05/04/maryland-surveillance-pricing-ban-grocery-stores"
+   ],
+   "text": "Maryland Gov. Wes Moore signed the Protection from Predatory Pricing Act (HB 895) reported May 4, 2026, becoming the first U.S. state to ban AI-driven \"surveillance pricing\" in gro"
+  },
+  {
+   "key": "Montana|y2026",
+   "state": "Montana",
+   "bill": "y2026",
+   "first_seen": "2026-05-11",
+   "urls": [
+    "https://www.route-fifty.com/artificial-intelligence/2026/05/more-states-look-preempt-local-ai-laws-report-finds/413449/"
+   ],
+   "text": "The Local Solutions Support Center reported on May 11, 2026 that nine states are considering 12 bills to preempt local AI regulation, including \"right to compute\" bills in New Hamp"
+  },
+  {
+   "key": "Colorado|#189",
+   "state": "Colorado",
+   "bill": "#189",
+   "first_seen": "2026-05-14",
+   "urls": [
+    "https://www.cbsnews.com/colorado/news/ai-regulation-colorado-governor-signs-law/",
+    "https://www.transformernews.ai/p/is-openai-changing-its-tune-on-ai-laws-illinois-regulation"
+   ],
+   "text": "Colorado Governor Jared Polis signed SB 189 on May 14, 2026, replacing the state's 2024 AI Act with a disclosure-and-transparency framework, shifting the law's focus away from risk"
+  },
+  {
+   "key": "Nebraska|#525",
+   "state": "Nebraska",
+   "bill": "#525",
+   "first_seen": "2026-06-10",
+   "urls": [
+    "https://broadbandbreakfast.com/inside-the-race-to-protect-children-from-ai/"
+   ],
+   "text": "The New York State Senate passed a five-year moratorium on the sale of AI chatbot toys for young children on June 10, 2026, sponsored by State Senator Andrew Gounardes, pausing sal"
+  },
+  {
+   "key": "New Jersey|y2026",
+   "state": "New Jersey",
+   "bill": "y2026",
+   "first_seen": "2026-06-30",
+   "urls": [
+    "https://news.bloomberglaw.com/privacy-and-data-security/new-jersey-reins-in-data-brokers-advances-other-privacy-bills",
+    "https://newsletter.safe.ai/p/aisn-77-new-model-releases-from-openai",
+    "https://www.nj.gov/governor/news/2026/20260720a.shtml",
+    "https://www.palegis.us/legislation/bills/2025/HB2705",
+    "https://truthonthemarket.com/2026/07/23/new-jerseys-war-on-pricing-software-wont-build-more-apartments/"
+   ],
+   "text": "New Jersey enacted a data broker law on June 30, 2026, becoming the latest state to require commercial data brokers that collect and sell consumer data to register (with an annual "
+  },
+  {
+   "key": "Illinois|#315",
+   "state": "Illinois",
+   "bill": "#315",
+   "first_seen": "2026-07-06",
+   "urls": [
+    "https://www.govtech.com/artificial-intelligence/illinois-governor-signs-bipartisan-ai-oversight-bill-into-law",
+    "https://gov-pritzker-newsroom.prezly.com/gov-pritzker-signs-nation-leading-artificial-intelligence-safety-law",
+    "https://capitolnewsillinois.com/news/pritzker-signs-landmark-ai-regulation-bill-that-aims-to-mitigate-risks/",
+    "https://newsletter.safe.ai/p/aisn-77-new-model-releases-from-openai",
+    "https://www.nj.gov/governor/news/2026/20260720a.shtml",
+    "https://www.palegis.us/legislation/bills/2025/HB2705"
+   ],
+   "text": "Illinois Gov. JB Pritzker signed SB 315 into law on July 6, 2026 \u2014 the first state law mandating annual independent third-party audits of frontier AI developers' safety practices \u2014"
+  },
+  {
+   "key": "Illinois|#5511",
+   "state": "Illinois",
+   "bill": "#5511",
+   "first_seen": "2026-07-31",
+   "urls": [
+    "https://capitolnewsillinois.com/news/pritzker-signs-law-regulating-how-social-media-platforms-interact-with-children/"
+   ],
+   "text": "Illinois Gov. JB Pritzker signed House Bill 5511, the Children's Social Media Safety Act, on July 31, 2026. The law, effective in 2028, bars platforms from using a minor's viewing "
+  }
+ ],
+ "series": [
+  {
+   "date": {
+    "iso": "2026-04-30",
+    "kind": "event"
+   },
+   "count": 1,
+   "state": "Idaho",
+   "bill": "y2026"
+  },
+  {
+   "date": {
+    "iso": "2026-05-04",
+    "kind": "event"
+   },
+   "count": 2,
+   "state": "Maryland",
+   "bill": "#895"
+  },
+  {
+   "date": {
+    "iso": "2026-05-11",
+    "kind": "event"
+   },
+   "count": 3,
+   "state": "Montana",
+   "bill": "y2026"
+  },
+  {
+   "date": {
+    "iso": "2026-05-14",
+    "kind": "event"
+   },
+   "count": 4,
+   "state": "Colorado",
+   "bill": "#189"
+  },
+  {
+   "date": {
+    "iso": "2026-06-10",
+    "kind": "event"
+   },
+   "count": 5,
+   "state": "Nebraska",
+   "bill": "#525"
+  },
+  {
+   "date": {
+    "iso": "2026-06-30",
+    "kind": "event"
+   },
+   "count": 6,
+   "state": "New Jersey",
+   "bill": "y2026"
+  },
+  {
+   "date": {
+    "iso": "2026-07-06",
+    "kind": "event"
+   },
+   "count": 7,
+   "state": "Illinois",
+   "bill": "#315"
+  },
+  {
+   "date": {
+    "iso": "2026-07-31",
+    "kind": "event"
+   },
+   "count": 8,
+   "state": "Illinois",
+   "bill": "#5511"
+  }
+ ],
+ "bound": "lower",
+ "basis": "wiki-observed enactments matched by ev-state-law-enacted",
+ "claim": {
+  "id": "cl-state-laws-2026",
+  "threshold": 90,
+  "observed": 8,
+  "resolves_claim": false,
+  "can_refute": false,
+  "why": "The wiki tracks policy-notable developments, not the full legislative output of fifty states, so this count is a lower bound on the claim's universe. It can confirm the claim if it alone passes the threshold; it can never refute it. Resolving the claim needs NCSL (or an equivalent named tracker) ingested as a witness.",
+  "context_only": {
+   "date": "2026-04-30",
+   "figure": "12 states enacting healthcare-and-AI legislation since January 2026, per NCSL",
+   "comparable": false,
+   "why": "domain-scoped to healthcare; the claim is not"
+  }
+ }
+}

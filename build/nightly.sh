@@ -21,6 +21,7 @@ fi
 
 python3 emit.py || exit 2
 python3 witness_epoch.py || exit 2
+python3 witness_statelaw.py || exit 2   # T7: the state-law counter
 
 # v2: the forecast breathes — classify the day's record, update the weights
 # (tiered impacts, attributed), re-ground, re-emit the distribution

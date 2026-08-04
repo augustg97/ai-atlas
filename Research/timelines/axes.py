@@ -26,8 +26,9 @@ import json
 import math
 import os
 import random
+import re
 
-REGISTRY_VERSION = "r0-2026-07-31"
+REGISTRY_VERSION = "r1-2026-08-03"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -314,24 +315,159 @@ REGISTRY = {
   # the takeoff-length cross-check in worldlines (C3 pause ≈ their 6-year
   # takeoff; race lines ≈ their 1.0-1.1 years) — recorded, not double-counted.
   "changelog": [
-    {"version": REGISTRY_VERSION, "date": "2026-07-31",
+    {"version": "r0-2026-07-31", "date": "2026-07-31",
      "change": "seed registry: 7 axes, 24 positions, 3 sub-axes, "
                "5 conditional families",
      "approved": "August (design of record, rev 3)"},
+    {"version": REGISTRY_VERSION, "date": "2026-08-03",
+     "change": "evidence layer r1: structured matcher (section aliases, "
+               "word-boundary terms, text_all/text_none, min_sources); "
+               "ev-state-law-enacted given the content gate it never had; "
+               "15 MAINLINE rules added at the `minor` tier — the tier the "
+               "seed methodology defined and no rule used, which is why the "
+               "forecast never moved on ordinary evidence. All 13 canonical "
+               "sections now watched, most from both directions.",
+     "approved": "August (2026-08-03: 'can we please fix all of the issues "
+                 "flagged above') — morning-4 report §8"},
   ],
 }
 
-# Evidence rules r0: development-class → bounded weight nudges (per source).
+# ---------------------------------------------------------------------------
+# The matcher (r1). Matching used to be naive substring containment against a
+# single exact section string, which failed in three separate ways at once:
+#   1. "correction" matched inside "corrections"/"correctional"; no term could
+#      be anchored. Terms are now word-boundary-anchored at the START only, so
+#      deliberate stems ("retaliat") still catch "retaliation/retaliatory"
+#      while mid-word collisions stop.
+#   2. The wiki's section names are not stable — the trunk holds "AI Markets",
+#      "State Legislation & Regulation", "International Governance" and six
+#      more one-off variants. An exact-string section gate silently skips them.
+#      SECTION_ALIASES folds the variants onto the 13 canonical sections.
+#      THIS IS MATCHING-ONLY: the territory taxonomy in emit.py is untouched.
+#   3. A rule could only ever say "one of these strings appears". Rules can now
+#      require every term (text_all), forbid terms (text_none), accept several
+#      sections (section_any) or kinds (kind_any), and demand corroboration
+#      (min_sources) — which is what lets a rule be specific instead of either
+#      unfireable or content-blind.
+# ---------------------------------------------------------------------------
+
+SECTION_ALIASES = {
+    "U.S. State AI Legislation & Litigation": "U.S. State AI Legislation",
+    "State Legislation & Regulation": "U.S. State AI Legislation",
+    "AI Markets": "AI Industry & Markets",
+    "International Governance": "International AI Regulation",
+    "International AI Regulation & Geopolitics": "International AI Regulation",
+    "AI Adoption & Biometric Identity": "AI Adoption by Industry",
+    "AI Safety, Liability & Security": "AI Safety, Alignment & Interpretability",
+    "U.S. Federal Policy & Geopolitics": "Federal AI Policy & Agency Action",
+    "Social Media Governance": "Labor, Society & Democratic Institutions",
+}
+
+
+def canon_section(s):
+    """Fold a wiki section name onto its canonical form. Matching only."""
+    s = " ".join((s or "").split())
+    return SECTION_ALIASES.get(s, s)
+
+
+def _compile(patterns):
+    """Terms are WHOLE WORDS by default; a trailing `*` marks a deliberate
+    stem. So "correction" no longer hides inside "correctional", while
+    "retaliat*" still reaches retaliation/retaliatory. Interior spaces
+    tolerate hyphens and line-wrapped whitespace, so one term covers both
+    "red team" and "red-team"."""
+    out = []
+    for p in patterns:
+        stem = p.endswith("*")
+        body = r"[\s\-]+".join(re.escape(w) for w in p[:-1 if stem else None]
+                               .lower().split())
+        out.append(re.compile(r"\b" + body + ("" if stem else r"\b")))
+    return out
+
+
+def match_event(rule, ev):
+    """Structured match of one event against one rule. Pure; no side effects
+    beyond memoising compiled patterns onto the rule."""
+    m = rule["match"]
+    want = m.get("section_any") or (
+        [m["section"]] if "section" in m else None)
+    if want is not None and canon_section(ev.get("section")) not in want:
+        return False
+    kinds = m.get("kind_any") or ([m["kind"]] if "kind" in m else None)
+    if kinds is not None and (ev.get("date") or {}).get("kind") not in kinds:
+        return False
+    if len(ev.get("urls") or []) < m.get("min_sources", 0):
+        return False
+    # the trunk already marks follow-up items (`update: true`, 131 of 1894).
+    # A rule that counts first occurrences says so rather than re-counting
+    # the same development every time the wiki revisits it.
+    if "update" in m and bool(ev.get("update")) != m["update"]:
+        return False
+    txt = " ".join((ev.get("text") or "").lower().split())
+    cache = rule.setdefault("_re", {})
+    for key, mode in (("text_any", "any"), ("text_all", "all"),
+                      ("text_none", "none")):
+        pats = m.get(key)
+        if not pats:
+            continue
+        if key not in cache:
+            cache[key] = _compile(pats)
+        hits = [p.search(txt) is not None for p in cache[key]]
+        if mode == "any" and not any(hits):
+            return False
+        if mode == "all" and not all(hits):
+            return False
+        if mode == "none" and any(hits):
+            return False
+    return True
+
+
+# Evidence rules r1: development-class → bounded weight nudges (per source).
 # Applied by the nightly chain; every application logged with its driver.
 # nudge values are DIRECTIONS (sign + relative share); magnitude comes from
 # the impact class via impact_magnitude().
+#
+# TWO LAYERS, and the second one is new:
+#
+#   TAIL rules (notable/major/structural) fire on the dramatic, rare thing —
+#   a treaty, a demonstrated autonomous R&D run, a hard correction. These are
+#   the eleven seed rules. They match ~3.6% of the trunk by design.
+#
+#   MAINLINE rules (`minor`, 0.003) fire on the ordinary drumbeat: a model
+#   ships, a datacenter breaks ground, a safety paper lands, a regulator
+#   opens a file. The seed methodology DEFINED this tier ("routine reporting,
+#   incremental funding") and then no rule ever used it — which is the whole
+#   reason the forecast could not move on an ordinary day. It is safe to watch
+#   the drumbeat because novelty decay is already 0.5**k over a 30-day window:
+#   a rule that fires daily contributes 0.003, then 0.0015, then 0.00075 …
+#   summing to under 0.006 no matter how long the drumbeat runs. So a STEADY
+#   rate moves almost nothing and only a BURST (many corroborated sources at
+#   once) or a DROUGHT-then-return carries weight. The decay is the
+#   rate-deviation mechanism; it was already built, just never exercised.
+#
+# Wherever a section can speak both ways, it gets a rule in each direction, so
+# the mainline layer cannot drift monotonically: buildout vs constraint,
+# safety progress vs safety incident, capital in vs capital out.
 EVIDENCE_RULES = [
+  # --- tail rules (seed r0, gates repaired) -------------------------------
   {"id": "ev-state-law-enacted", "impact": "notable",
-   "match": {"section": "U.S. State AI Legislation", "kind": "event"},
+   # r1: this rule had NO text gate at all — section + kind alone, so every
+   # event-kind item in the section fired a "state law enacted" nudge
+   # regardless of content (52 candidates across the trunk). It is now gated
+   # on enactment language. The 2026-08-03 CPPA compliance-audit item, which
+   # would have fired the ungated rule had its date carried kind `event`, is
+   # correctly excluded: opening an audit under an existing statute is not an
+   # enactment. Illinois HB 5511 (Pritzker signing, 2026-07-31) still fires.
+   "match": {"section": "U.S. State AI Legislation", "kind": "event",
+             "text_any": ["signed into law", "signed house bill",
+                          "signed senate bill", "signed hb", "signed sb",
+                          "signed the", "enacted", "was enacted",
+                          "became law", "takes effect", "took effect",
+                          "passed the legislature", "overrode"]},
    "nudge": {("C", "C4"): +2, ("C", "C3"): -1},
    "cites": ["analysis/eu-vs-us-ai-regulation"]},
   {"id": "ev-export-retaliation", "impact": "notable",
-   "match": {"text_any": ["retaliat", "export control", "MOFCOM"],
+   "match": {"text_any": ["retaliat*", "export control*", "MOFCOM"],
              "section": "National Security & Geopolitics"},
    "nudge": {("C", "C1"): +2, ("S", "S3"): +2, ("C", "C3"): -1},
    "cites": ["concepts/export-controls-ai"]},
@@ -341,7 +477,7 @@ EVIDENCE_RULES = [
    "nudge": {("C", "C2"): +2, ("T", "T2"): +1},
    "cites": ["models/gpt-56"]},
   {"id": "ev-big-correction", "impact": "major",
-   "match": {"text_any": ["writedown", "correction", "bubble bursts"],
+   "match": {"text_any": ["writedown*", "correction", "bubble bursts"],
              "section": "AI Industry & Markets"},
    "nudge": {("E", "E2"): +2, ("E", "E1"): -2},
    "cites": ["analysis/ai-bubble-vs-buildout"]},
@@ -387,6 +523,171 @@ EVIDENCE_RULES = [
              "section": "International AI Regulation"},
    "nudge": {("C", "C5"): +2, ("P", "P1"): +1},
    "cites": ["sources/ai-2040-plan-a", "concepts/ai-backlash"]},
+
+  # --- mainline rules (r1, `minor` tier) ----------------------------------
+  # T — capability tempo. An ordinary release is evidence that capability
+  # keeps compounding, NOT that it is accelerating; it therefore supports the
+  # gradual road and cuts against the no-SC-in-window null, and leaves the
+  # explosive positions to the tail rules that actually detect discontinuity.
+  {"id": "ev-frontier-release", "impact": "minor",
+   # measured at 63.9% of its section before the gates below: nearly every
+   # item in Frontier Models mentions a release somewhere in its prose. The
+   # rule is meant to register a model ACTUALLY SHIPPING, so it now excludes
+   # follow-up items (the trunk's own `update` flag) and forward-looking
+   # announcements, and requires two sources.
+   "match": {"section": "Frontier Models & Capabilities", "update": False,
+             "min_sources": 2,
+             "text_any": ["releas*", "launch*", "unveil*", "generally "
+                          "available", "open-sourc*", "open-weight",
+                          "now available", "shipped", "in preview"],
+             "text_none": ["plans to", "expected to", "is preparing",
+                           "will release", "reportedly", "rumored",
+                           "tentatively named"]},
+   "nudge": {("T", "T3"): +2, ("T", "T4"): -1},
+   "cites": ["concepts/scaling-laws", "concepts/agi-timelines"]},
+  {"id": "ev-benchmark-progress", "impact": "minor",
+   "match": {"section_any": ["Frontier Models & Capabilities",
+                             "Agentic AI & Coding"],
+             "text_any": ["benchmark*", "state of the art", "swe-bench",
+                          "outperform*", "surpass*", "record score",
+                          "frontier of"],
+             "text_none": ["failed to", "no better than", "plateau*"]},
+   "nudge": {("T", "T2"): +1, ("T", "T3"): +1, ("T", "T4"): -1},
+   "cites": ["concepts/agi-timelines", "sources/ai-2027"]},
+
+  # S — compute & supply, watched from both sides so buildout news and
+  # constraint news cannot both push the same way.
+  {"id": "ev-compute-buildout", "impact": "minor",
+   "match": {"section": "Compute, Chips & Infrastructure",
+             "text_any": ["datacenter*", "data center*", "gigawatt*",
+                          "megawatt*", "fab", "fabs", "fabrication",
+                          "foundry", "foundries", "capacity expansion",
+                          "broke ground", "capex", "supply agreement"],
+             "text_none": ["shortage*", "export control*", "denied",
+                           "halted"]},
+   "nudge": {("S", "S2"): +2, ("S", "S3"): -1},
+   "cites": ["concepts/compute-governance", "analysis/ai-bubble-vs-buildout"]},
+  {"id": "ev-compute-constraint", "impact": "minor",
+   "match": {"section_any": ["Compute, Chips & Infrastructure",
+                             "National Security & Geopolitics"],
+             "text_any": ["shortage*", "export control*", "licence denied",
+                          "license denied", "grid constraint*", "power "
+                          "constraint*", "interconnection queue",
+                          "moratorium on datacenter*", "rationing"]},
+   "nudge": {("S", "S3"): +2, ("S", "S2"): -1},
+   "cites": ["concepts/export-controls-ai", "concepts/compute-governance"]},
+
+  # A — alignment. Research output is weak evidence the problem is tractable
+  # and that failures get SEEN; a demonstrated failure mode is weak evidence
+  # the danger band is real and partly unmonitored.
+  {"id": "ev-safety-research", "impact": "minor",
+   "match": {"section_any": ["AI Safety, Alignment & Interpretability",
+                             "AI Standards & Safety Frameworks"],
+             "text_any": ["published", "paper*", "interpretability",
+                          "evaluation*", "eval suite", "red team",
+                          "safety case", "model card"],
+             "text_none": ["exfiltrat*", "jailbreak*", "scheming"]},
+   "nudge": {("A", "A3"): +2, ("A", "A1"): -1},
+   "cites": ["analysis/interpretability-and-safety",
+             "concepts/responsible-scaling-policy"]},
+  {"id": "ev-safety-incident", "impact": "minor",
+   "match": {"section_any": ["AI Safety, Alignment & Interpretability",
+                             "Agentic AI & Coding"],
+             "text_any": ["jailbreak*", "exfiltrat*", "deceptive", "scheming",
+                          "misaligned", "reward hacking", "autonomous "
+                          "replication", "worm", "worms", "prompt injection",
+                          "sandbagging"]},
+   "nudge": {("A", "A1"): +1, ("A", "A2"): +2, ("A", "A4"): -1},
+   "cites": ["sources/ai-2027", "analysis/interpretability-and-safety"]},
+
+  # C — coordination. Four mainline readings, pulling apart rather than
+  # together: courts and regulators acting without a federal statute is the
+  # fragmented road; a preemption push is the argument against it.
+  {"id": "ev-enforcement-action", "impact": "minor",
+   "match": {"section_any": ["AI Litigation, Liability & Enforcement",
+                             "U.S. State AI Legislation"],
+             "text_any": ["lawsuit*", "sued", "settlement*", "ruling*",
+                          "injunction*", "consent decree*", "penalt*",
+                          "fined", "investigation*", "subpoena*",
+                          "compliance audit*", "cease and desist",
+                          "class action"]},
+   "nudge": {("C", "C4"): +2, ("C", "C1"): -1},
+   "cites": ["analysis/eu-vs-us-ai-regulation", "concepts/ai-preemption"]},
+  {"id": "ev-federal-preemption-push", "impact": "minor",
+   "match": {"section": "Federal AI Policy & Agency Action",
+             "text_any": ["national standard*", "preempt*",
+                          "federal framework", "single national",
+                          "patchwork", "uniform federal"]},
+   "nudge": {("C", "C2"): +2, ("C", "C4"): -2},
+   "cites": ["concepts/ai-preemption", "analysis/eu-vs-us-ai-regulation"]},
+  {"id": "ev-regulatory-implementation", "impact": "minor",
+   # the EU AI Act Art. 50 enforcement of 2026-08-02 — three corroborating
+   # sources — passed through the r0 rule set untouched. It fires here.
+   "match": {"section": "International AI Regulation",
+             "text_any": ["enforceable", "takes effect", "took effect",
+                          "obligation*", "guidance", "code of practice",
+                          "implementing act*", "transparency requirement*",
+                          "came into force", "deadline*"]},
+   "nudge": {("C", "C4"): +2, ("C", "C3"): -1},
+   "cites": ["analysis/eu-vs-us-ai-regulation", "sources/europe-2031"]},
+  {"id": "ev-state-bill-activity", "impact": "minor",
+   "match": {"section": "U.S. State AI Legislation",
+             "text_any": ["introduced", "advanced", "committee", "passed the "
+                          "house", "passed the senate", "vetoed", "filed",
+                          "ballot measure*"],
+             "text_none": ["signed into law", "enacted"]},
+   "nudge": {("C", "C4"): +2, ("C", "C1"): -1},
+   "cites": ["analysis/eu-vs-us-ai-regulation", "concepts/ai-preemption"]},
+  {"id": "ev-natsec-posture", "impact": "minor",
+   "match": {"section": "National Security & Geopolitics",
+             "text_any": ["allied", "alliance*", "chip control*", "entity "
+                          "list", "screening", "procurement", "defense "
+                          "contract*", "classified", "security review*"]},
+   "nudge": {("C", "C2"): +2, ("C", "C3"): -1},
+   "cites": ["analysis/us-china-ai-competition", "concepts/export-controls-ai"]},
+  {"id": "ev-standards-published", "impact": "minor",
+   "match": {"section": "AI Standards & Safety Frameworks",
+             "text_any": ["framework*", "standard*", "nist", "iso",
+                          "guideline*", "commitment*", "voluntary",
+                          "assurance"]},
+   "nudge": {("C", "C4"): +1, ("C", "C5"): -1, ("A", "A3"): +1},
+   "cites": ["concepts/responsible-scaling-policy",
+             "analysis/eu-vs-us-ai-regulation"]},
+
+  # D — diffusion & labor. Deployment reporting is the uneven-by-sector road
+  # by construction: it is sector-by-sector news, neither a shock nor a
+  # standstill. The shock reading stays with the major-tier tail rule.
+  {"id": "ev-agentic-deployment", "impact": "minor",
+   "match": {"section": "Agentic AI & Coding",
+             "text_any": ["deploy*", "in production", "rollout*", "agentic",
+                          "autonomous workflow*", "coding assistant*",
+                          "enterprise customer*", "adoption"]},
+   "nudge": {("D", "D2"): +2, ("D", "D3"): -1},
+   "cites": ["concepts/ai-diffusion",
+             "concepts/professional-services-ai-adoption"]},
+  {"id": "ev-enterprise-adoption", "impact": "minor",
+   "match": {"section_any": ["AI Adoption by Industry",
+                             "Labor, Society & Democratic Institutions"],
+             "text_any": ["adoption", "rollout*", "pilot*", "deploy*",
+                          "seats", "enterprise", "productivity",
+                          "reskilling", "hiring", "job posting*"],
+             "text_none": ["layoffs exceeded", "unemployment rose"]},
+   "nudge": {("D", "D2"): +2, ("D", "D1"): -1, ("P", "P2"): +1},
+   "cites": ["concepts/ai-diffusion",
+             "concepts/ai-displacement-vs-augmentation"]},
+
+  # E — economy. The mainline counterweight to ev-big-correction: capital
+  # still arriving is evidence the boom has not broken yet.
+  {"id": "ev-capital-commitment", "impact": "minor",
+   "match": {"section_any": ["AI Industry & Markets",
+                             "Compute, Chips & Infrastructure"],
+             "text_any": ["raised", "funding round*", "valuation*", "invest*",
+                          "commitment*", "backlog", "revenue run-rate",
+                          "annualized revenue", "ipo"],
+             "text_none": ["writedown*", "wrote down", "bubble bursts",
+                           "impairment*"]},
+   "nudge": {("E", "E1"): +2, ("E", "E3"): -1},
+   "cites": ["analysis/ai-bubble-vs-buildout", "concepts/ai-bubble-debate"]},
 ]
 
 
@@ -530,6 +831,31 @@ def add_axis(reg, axis_def, approved_by):
                              "approved": approved_by})
 
 
+def apply_schema_log(reg, schema_log):
+    """Re-apply auto-added sub-axes onto a freshly built registry.
+
+    The weekly schema review appended its additions to the module-level
+    REGISTRY inside the nightly_update process and recorded them in
+    weights["schema_log"]. But every stage of the chain is a separate
+    process, so the mutation died at exit and forecast_emit — which is what
+    actually publishes `subaxes` — never saw it. The review logged growth it
+    never performed. Rebuilding from the log makes the addition real, which
+    is what "autonomy with attribution" was supposed to mean."""
+    existing = {s["key"] for a in reg["axes"] for s in a.get("subaxes", [])}
+    added = 0
+    for entry in schema_log or []:
+        sub = entry["subaxis"]
+        if sub["key"] in existing:
+            continue
+        for a in reg["axes"]:
+            if a["key"] == entry["axis"]:
+                a.setdefault("subaxes", []).append(sub)
+                existing.add(sub["key"])
+                added += 1
+                break
+    return added
+
+
 def coverage(reg):
     pages = set()
     for a in reg["axes"]:
@@ -601,10 +927,14 @@ def _selftest():
     assert pT4_obs > 1.5 * pT4_prior, (pT4_obs, pT4_prior)
     # registry growth: version bumps, changelog records origin; unattributed
     # additions still fail (autonomy ≠ anonymity)
+    # version-agnostic: derive the expected bump from whatever the registry
+    # is on now. A literal "r1-" here goes stale the moment the registry
+    # legitimately grows — the same failure mode that broke the 07-31 chain.
+    _n_before = int(reg["version"].split("-")[0][1:])
     add_axis(reg, {"key": "X", "name": "test axis", "cites": [],
                    "positions": [("X1", "a", 0.5, []), ("X2", "b", 0.5, [])]},
              approved_by="auto: schema review selftest")
-    assert reg["version"].startswith("r1-")
+    assert reg["version"].startswith("r%d-" % (_n_before + 1)), reg["version"]
     assert "schema review" in reg["changelog"][-1]["approved"]
     try:
         add_axis(reg, {"key": "Y", "name": "y", "cites": [],
@@ -612,7 +942,73 @@ def _selftest():
         assert False, "unattributed addition must fail"
     except AssertionError as ex:
         assert "origin" in str(ex)
-    return 8
+
+    # --- matcher (r1) ----------------------------------------------------
+    def _ev(sec, text, kind="event", urls=1):
+        return {"section": sec, "text": text,
+                "date": {"kind": kind, "iso": "2026-08-03"},
+                "urls": ["u%d" % i for i in range(urls)]}
+
+    # word-boundary anchoring: the seed matcher fired "correction" inside
+    # "correctional", which is the class of false positive that made every
+    # text gate untrustworthy.
+    corr = [r for r in EVIDENCE_RULES if r["id"] == "ev-big-correction"][0]
+    assert match_event(corr, _ev("AI Industry & Markets",
+                                 "A sharp correction hit AI equities."))
+    assert not match_event(corr, _ev("AI Industry & Markets",
+                                     "The correctional facility bought GPUs."))
+    # stems still reach their inflections
+    ret = [r for r in EVIDENCE_RULES if r["id"] == "ev-export-retaliation"][0]
+    assert match_event(ret, _ev("National Security & Geopolitics",
+                                "Beijing promised retaliatory measures."))
+    # section aliases fold onto the canonical 13
+    assert canon_section("AI Markets") == "AI Industry & Markets"
+    assert canon_section("State Legislation & Regulation") == \
+        "U.S. State AI Legislation"
+    assert match_event(corr, _ev("AI Markets", "A correction is under way."))
+    # ev-state-law-enacted: the gate it never had. An enactment fires; an
+    # enforcement action under an existing statute does not.
+    law = [r for r in EVIDENCE_RULES if r["id"] == "ev-state-law-enacted"][0]
+    assert match_event(law, _ev(
+        "U.S. State AI Legislation",
+        "Illinois Gov. JB Pritzker signed House Bill 5511, the Children's "
+        "Social Media Safety Act, on July 31, 2026."))
+    assert not match_event(law, _ev(
+        "U.S. State AI Legislation",
+        "The California Privacy Protection Agency opened its first formal "
+        "compliance audit targeting gig economy platforms."))
+    # kind gate still holds
+    assert not match_event(law, _ev(
+        "U.S. State AI Legislation", "The governor signed the bill.",
+        kind="published"))
+    # text_none excludes; text_all requires; min_sources demands corroboration
+    probe = {"id": "probe", "impact": "minor",
+             "match": {"section": "AI Industry & Markets",
+                       "text_all": ["revenue", "growth"],
+                       "text_none": ["writedown"], "min_sources": 2},
+             "nudge": {("E", "E1"): +1}, "cites": []}
+    assert match_event(probe, _ev("AI Industry & Markets",
+                                  "revenue growth continued", urls=2))
+    assert not match_event(probe, _ev("AI Industry & Markets",
+                                      "revenue growth continued", urls=1))
+    assert not match_event(probe, _ev("AI Industry & Markets",
+                                      "revenue only", urls=2))
+    assert not match_event(probe, _ev("AI Industry & Markets",
+                                      "revenue growth, then a writedown",
+                                      urls=2))
+    # every rule is well-formed and every mainline rule is `minor`
+    keys = {a["key"] for a in REGISTRY["axes"]}
+    for r in EVIDENCE_RULES:
+        assert r["impact"] in IMPACT_CLASS, r["id"]
+        assert r["cites"], r["id"]
+        assert r["nudge"], r["id"]
+        for (ax, pos) in r["nudge"]:
+            assert ax in keys, (r["id"], ax)
+            assert pos in {p[0] for p in axis(REGISTRY, ax)["positions"]}, \
+                (r["id"], pos)
+    # the `minor` tier is no longer empty — that emptiness was the defect
+    assert any(r["impact"] == "minor" for r in EVIDENCE_RULES)
+    return 9
 
 
 if __name__ == "__main__":

@@ -199,6 +199,30 @@ def check_forecast():
             "grounded_direct": g["direct"], "grounded_total": g["total"]}
 
 
+def check_statelaw():
+    """The state-legislation counter (T7). Present, and honest about what it
+    cannot do — a lower-bound counter that ever claims it can refute its
+    claim is a worse failure than having no counter at all."""
+    p = os.path.join(STAGED, "witness-statelaw.json")
+    if not os.path.isfile(p):
+        return {"present": 0, "observed": 0, "bad": 1,
+                "examples": ["witness-statelaw.json missing"]}
+    w = json.load(open(p))
+    bad, ex = 0, []
+    if w.get("bound") != "lower":
+        bad += 1
+        ex.append("counter must declare itself a lower bound")
+    if w["claim"].get("can_refute"):
+        bad += 1
+        ex.append("lower-bound counter claims it can refute its claim")
+    if w["claim"].get("resolves_claim") and \
+            w["claim"]["observed"] <= w["claim"]["threshold"]:
+        bad += 1
+        ex.append("claim marked resolved below its own threshold")
+    return {"present": 1, "observed": w["observed_count"],
+            "states": w["distinct_states"], "bad": bad, "examples": ex}
+
+
 def run():
     if os.environ.get("SKIP_AUDIT") == "1":
         print("SKIP_AUDIT=1 — validators skipped. Say so out loud, and say why.")
@@ -220,7 +244,14 @@ def run():
         "datum": check_datum(S),
         "witness_epoch": check_witness(),
         "forecast": check_forecast(),
-        "review": {"n": meta["counts"]["needs_review"]},
+        # `n` alone is the wrong metric: the trunk grows every night, so a
+        # rising absolute count can mean nothing worse is happening. The RATE
+        # is what must not erode — 224/1825 (12.27%) → 222/1894 (11.72%) is
+        # an improvement that the absolute count reported as a regression.
+        "statelaw": check_statelaw(),
+        "review": {"n": meta["counts"]["needs_review"],
+                   "pct": round(100.0 * meta["counts"]["needs_review"]
+                                / max(1, len(S["events"]["events"])), 3)},
     }
 
     baselines = json.load(open(BASE)) if os.path.isfile(BASE) else None
@@ -260,8 +291,24 @@ def run():
                 worse("witness.disagreements",
                       r["witness_epoch"]["disagreements"],
                       b["witness_epoch"]["disagreements"])
-        if r["review"]["n"] > b["review"]["n"]:
+        if "pct" in b.get("review", {}):
+            if r["review"]["pct"] > b["review"]["pct"] + 0.5:
+                worse("review.pct", r["review"]["pct"], b["review"]["pct"])
+        elif r["review"]["n"] > b["review"]["n"]:
             worse("review.n", r["review"]["n"], b["review"]["n"])
+        if "statelaw" not in b:
+            b["statelaw"] = r["statelaw"]
+            json.dump(baselines, open(BASE, "w"))
+            print("note: statelaw baseline recorded (first T7 gate run)")
+        else:
+            if r["statelaw"]["bad"] > b["statelaw"].get("bad", 0):
+                worse("statelaw.bad", r["statelaw"]["bad"],
+                      b["statelaw"].get("bad", 0))
+            # an enumeration may not shrink: the record only ever gains laws,
+            # so a fall means the matcher regressed, not that a law repealed
+            if r["statelaw"]["observed"] < b["statelaw"].get("observed", 0):
+                worse("statelaw.observed", r["statelaw"]["observed"],
+                      b["statelaw"].get("observed"), "≥")
         if "forecast" not in b:
             # first run since the v2 gate landed: extend the baseline in
             # place (recorded, not silent)
@@ -281,6 +328,36 @@ def run():
                       b["forecast"].get("grounded_direct"), "≥")
 
     print(json.dumps(results, indent=1, default=str))
+
+    # --- day-over-day drift (added 2026-08-03) ---------------------------
+    # The ratchet only ever compared against the FROZEN baseline, so a metric
+    # could erode night after night and pass silently as long as it stayed
+    # inside the tolerance. needs-review went 224 → 221 → 222 and explicit_pct
+    # 91.8 → 91.7 without a word. Erosion inside the slack is now printed, and
+    # improvements move the baseline so the slack cannot be re-spent.
+    drift = []
+    if baselines and baselines.get("last_run"):
+        lr = baselines["last_run"]
+        for path, better in (("events.explicit_pct", "up"),
+                             ("events.target_pct", "up"),
+                             ("review.pct", "down"),
+                             ("forecast.grounded_direct", "up"),
+                             ("witness_epoch.matched", "up"),
+                             ("witness_epoch.disagreements", "down")):
+            grp, key = path.split(".")
+            now = results.get(grp, {}).get(key)
+            was = lr.get("checks", {}).get(grp, {}).get(key)
+            if now is None or was is None or now == was:
+                continue
+            worsened = (now < was) if better == "up" else (now > was)
+            drift.append("%s %s %s → %s%s"
+                         % ("↓" if worsened else "↑", path, was, now,
+                            "   ERODED" if worsened else ""))
+    if drift:
+        print("\nDRIFT vs %s:" % baselines["last_run"].get("date", "last run"))
+        for d in drift:
+            print("  " + d)
+
     datum = load("datum.json")
     if failures:
         print("\nGATE: FAIL")
@@ -289,6 +366,7 @@ def run():
         return 1
     if baselines is None:
         json.dump({"recorded": TODAY, "checks": results,
+                   "last_run": {"date": TODAY, "checks": results},
                    "datum_positions": datum["positions"] if datum else None},
                   open(BASE, "w"))
         print("\nGATE: first run — baselines recorded to baselines.json")
@@ -298,7 +376,30 @@ def run():
     if datum and bj["checks"]["datum"].get("version") != datum["version"]:
         bj["checks"]["datum"]["version"] = datum["version"]
         bj["datum_positions"] = datum["positions"]
-        json.dump(bj, open(BASE, "w"))
+
+    # ratchet forward: a metric that improved becomes the new floor, so the
+    # tolerance band is spent once and never handed back.
+    ratcheted = []
+    for path, better in (("events.explicit_pct", "up"),
+                         ("events.target_pct", "up"),
+                         ("review.pct", "down"),
+                         ("forecast.grounded_direct", "up"),
+                         ("witness_epoch.matched", "up"),
+                         ("witness_epoch.disagreements", "down")):
+        grp, key = path.split(".")
+        now = results.get(grp, {}).get(key)
+        was = bj["checks"].get(grp, {}).get(key)
+        if now is None:
+            continue
+        if was is None or (now > was if better == "up" else now < was):
+            bj["checks"].setdefault(grp, {})[key] = now
+            ratcheted.append("%s %s → %s" % (path, was, now))
+    bj["last_run"] = {"date": TODAY, "checks": results}
+    json.dump(bj, open(BASE, "w"))
+    if ratcheted:
+        print("\nRATCHET (baseline tightened on improvement):")
+        for x in ratcheted:
+            print("  " + x)
     print("\nGATE: PASS (baselines hold)")
     return 0
 

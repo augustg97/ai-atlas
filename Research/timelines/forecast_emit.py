@@ -90,6 +90,10 @@ def widened_registry(weights, widen):
     temperature."""
     import copy
     reg = copy.deepcopy(axes.REGISTRY)
+    # sub-axes added autonomously by the Monday schema review live in
+    # weights["schema_log"]; replay them so the addition actually reaches
+    # what gets published (it never did before 2026-08-03).
+    axes.apply_schema_log(reg, weights.get("schema_log"))
     for a in reg["axes"]:
         k = a["key"]
         # registry may have GROWN since weights were stored (it is designed
@@ -169,9 +173,24 @@ def emit():
             p = n_hit / 3000.0
         crises.append(dict(c, p=round(p, 3)))
 
+    # Registration dates are the spine of a Brier score: a claim registered
+    # long before it resolves is worth more than one registered yesterday.
+    # This used to stamp `registered=today` on every claim every night, so
+    # the artefact always said each claim was minted that morning. The true
+    # dates survived only in git. They are now held in weights.json, written
+    # once on first sight and never overwritten — and back-filled from the
+    # first nightly commit so nothing is invented.
+    reg_dates = weights.setdefault("claims_registered", {})
+    BACKFILL = {"cl-sc-2027": "2026-07-31", "cl-deal-2029": "2026-07-31",
+                "cl-correction-2027": "2026-07-31",
+                "cl-state-laws-2026": "2026-07-31"}
     claims = []
     for cl in CLAIMS:
-        claims.append(dict(cl, status="open", registered=today))
+        if cl["id"] not in reg_dates:
+            reg_dates[cl["id"]] = BACKFILL.get(cl["id"], today)
+        claims.append(dict(cl, status="open",
+                           registered=reg_dates[cl["id"]]))
+    json.dump(weights, open(WEIGHTS, "w"), indent=1)
 
     # engine constants as data — the client implements functions against
     # THIS, never mirrored literals (single source of truth)

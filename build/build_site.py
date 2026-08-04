@@ -27,7 +27,10 @@ WEB = os.path.join(ROOT, "web")
 DOCS = os.path.join(ROOT, "docs")
 MODELING = os.path.join(ROOT, "Research", "modeling")
 
-DATA_FILES = ["events.json", "meta.json"]      # v2: trunk strip + counts
+# v2: trunk strip + counts, plus the T7 state-law counter that
+# cl-state-laws-2026 is scored against (shipped so the claim's evidence
+# travels with the claim; rendering it in the app is still open)
+DATA_FILES = ["events.json", "meta.json", "witness-statelaw.json"]
 FORECAST_DIR = os.path.join(STAGED, "forecast")
 
 
