@@ -1,25 +1,25 @@
 {
  "version": "r1-2026-08-03",
- "date": "2026-08-04",
+ "date": "2026-08-05",
  "axes": {
   "T": {
-   "T1": 0.09945440179975053,
-   "T2": 0.3013542592379784,
-   "T3": 0.3858994739292825,
-   "T4": 0.21329186503298866
+   "T1": 0.09930566707204999,
+   "T2": 0.30240133865361446,
+   "T3": 0.38682236204205944,
+   "T4": 0.21147063223227613
   },
   "A": {
-   "A1": 0.1156618417453432,
-   "A2": 0.25899797478204395,
-   "A3": 0.3464192875534886,
-   "A4": 0.27892089591912433
+   "A1": 0.11538291383888637,
+   "A2": 0.2589332586636818,
+   "A3": 0.34683262585962066,
+   "A4": 0.2788512016378112
   },
   "C": {
-   "C1": 0.4054791874959954,
-   "C2": 0.2659068435464066,
-   "C3": 0.07930338386706845,
-   "C4": 0.23470456762877862,
-   "C5": 0.014606017461750902
+   "C1": 0.4050399962940278,
+   "C2": 0.26582382551964767,
+   "C3": 0.07927862478093083,
+   "C4": 0.23525609604722014,
+   "C5": 0.014601457358173616
   },
   "D": {
    "D1": 0.176990085382572,
@@ -27,9 +27,9 @@
    "D3": 0.2668570061671637
   },
   "S": {
-   "S1": 0.3290188657423563,
-   "S2": 0.4147631762085461,
-   "S3": 0.2562179580490976
+   "S1": 0.3286908322917292,
+   "S2": 0.41634766124262595,
+   "S3": 0.2549615064656449
   },
   "P": {
    "P1": 0.2594163132950861,
@@ -37,10 +37,10 @@
    "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.28379346814397544,
-   "E2": 0.44289741153046636,
-   "E3": 0.19949288507048027,
-   "E4": 0.07381623525507777
+   "E1": 0.28443690233562774,
+   "E2": 0.44273144259129976,
+   "E3": 0.19904308130785575,
+   "E4": 0.07378857376521668
   }
  },
  "history": [
@@ -264,6 +264,51 @@
      "E2": 0.43224410559578863,
      "E3": 0.20445563555043322,
      "E4": 0.07998464500722025
+    }
+   }
+  },
+  {
+   "date": "2026-08-05",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11538291383888637,
+     "A2": 0.2589332586636818,
+     "A3": 0.34683262585962066,
+     "A4": 0.2788512016378112
+    },
+    "C": {
+     "C1": 0.40503999629402776,
+     "C2": 0.26582382551964767,
+     "C3": 0.07927862478093083,
+     "C4": 0.23525609604722011,
+     "C5": 0.014601457358173614
+    },
+    "D": {
+     "D1": 0.1883303436155434,
+     "D2": 0.5373696245542726,
+     "D3": 0.274300031830184
+    },
+    "S": {
+     "S1": 0.3286908322917292,
+     "S2": 0.41634766124262595,
+     "S3": 0.2549615064656449
+    },
+    "P": {
+     "P1": 0.26100993908738757,
+     "P2": 0.31217498542791866,
+     "P3": 0.4268150754846937
+    },
+    "E": {
+     "E1": 0.2847359013424305,
+     "E2": 0.4318954217738912,
+     "E3": 0.20344855410210136,
+     "E4": 0.079920122781577
     }
    }
   }
@@ -653,6 +698,150 @@
    "driver_urls": [
     "https://newsletter.safe.ai/p/aisn-78-internal-models-escape-openai"
    ]
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.00028,
+   "sources": 3,
+   "repeat_k": 4,
+   "applied": {
+    "A.A3": 0.00038,
+    "A.A1": -0.00019
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "date": "2026-08-05",
+   "driver": "Update on the OpenAI and Anthropic containment disclosures covered in the 08:11 file: Britain's AI Security Institute reported on August 4, ",
+   "driver_urls": [
+    "https://www.reuters.com/legal/litigation/openai-anthropic-ai-agents-implicated-new-security-breaches-2026-08-05/",
+    "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+    "https://cyberscoop.com/aisi-openai-report-unsanctioned-ai-model-hacks/"
+   ]
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.00047,
+   "sources": 2,
+   "repeat_k": 3,
+   "applied": {
+    "C.C4": 0.00062,
+    "C.C1": -0.00031
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "date": "2026-08-05",
+   "driver": "Fifteen state attorneys general wrote to OpenAI CEO Sam Altman on August 3, 2026 demanding that the company preserve records related to the ",
+   "driver_urls": [
+    "https://www.iowaattorneygeneral.gov/media/cms/08_5392C9E17791C.pdf",
+    "https://insideaipolicy.com/ai-daily-news/state-ags-ask-openai-preserve-potential-evidence-review-hugging-face-breach"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.00038,
+   "sources": 1,
+   "repeat_k": 3,
+   "applied": {
+    "E.E1": 0.0005,
+    "E.E3": -0.00025
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-05",
+   "driver": "Elon Musk told investors during SpaceX's first-ever earnings call that the company will build its AI services exclusively on Nvidia systems,",
+   "driver_urls": [
+    "https://finance.yahoo.com/technology/article/elon-musk-says-spacex-will-build-exclusively-with-nvidia-touts-space-based-ai-servers-211803293.html"
+   ]
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0015,
+   "sources": 1,
+   "repeat_k": 1,
+   "applied": {
+    "S.S2": 0.002,
+    "S.S3": -0.001
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "date": "2026-08-05",
+   "driver": "Texas Governor Greg Abbott announced a moratorium on data center approvals on Monday, August 3, 2026, directing the Public Utility Commissio",
+   "driver_urls": [
+    "https://www.texastribune.org/2026/08/03/texas-data-center-project-audit-greg-abbott/"
+   ]
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.0015,
+   "sources": 1,
+   "repeat_k": 1,
+   "applied": {
+    "T.T2": 0.0015,
+    "T.T3": 0.0015,
+    "T.T4": -0.0015
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "date": "2026-08-05",
+   "driver": "Alibaba Group Holding released Qwen3.8-Max on August 3, 2026, its largest model to date, built on 2.4 trillion parameters. Alibaba shared re",
+   "driver_urls": [
+    "https://www.straitstimes.com/world/alibaba-releases-ai-model-qwen-to-challenge-us-rival-anthropics-fable"
+   ]
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 9e-05,
+   "sources": 1,
+   "repeat_k": 5,
+   "applied": {
+    "A.A3": 0.00013,
+    "A.A1": -6e-05
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "date": "2026-08-05",
+   "driver": "Sayash Kapoor and Arvind Narayanan published findings on August 5, 2026 from what they call shadow evaluations, in which frontier AI agents ",
+   "driver_urls": [
+    "https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.00019,
+   "sources": 1,
+   "repeat_k": 4,
+   "applied": {
+    "E.E1": 0.00025,
+    "E.E3": -0.00013
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-05",
+   "driver": "Blackstone has held early talks with investors to assess their appetite for a second debt package to finance Anthropic's use of chips from A",
+   "driver_urls": [
+    "https://seekingalpha.com/news/4624885-blackstone-has-pitched-a-mega-debt-package-for-anthropic-chip-deal---report"
+   ]
   }
  ],
  "residue": [
@@ -955,6 +1144,42 @@
    "section": "National Security & Geopolitics",
    "text": "The Federal Communications Commission is drafting a measure to bar US imports of new models of Chinese optical transceiv",
    "fp": "54d9577f3fe52b69"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the frontier-model evaluation framework covered in the 08:11 file: under the framework administration official",
+   "fp": "b6b3dfd1c96c7d4a"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sens. Kirsten Gillibrand (D-New York) and Mark Warner (D-Virginia), the Intelligence Committee's ranking member, sent se",
+   "fp": "9345f23b5f47d548"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Update on Apple's trade-secrets case covered in the 08:11 file: OpenAI published a post titled \"Apple is getting this wr",
+   "fp": "301aad2799b48df5"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "An Anthropic spokesperson confirmed on August 5, 2026 that the company is building an in-house silicon team to design cu",
+   "fp": "4da8ec1ec7b1b2d2"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Frontier Models & Capabilities",
+   "text": "ByteDance founder Zhang Yiming told employees during a meeting in July 2026 that the company will not resort to distilla",
+   "fp": "8aedc3ddb6a53038"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Agentic AI & Coding",
+   "text": "Meta Platforms is asking thousands of engineers to use its in-house AI coding agent, MetaCode, in their day-to-day work ",
+   "fp": "072650776cd2a581"
   }
  ],
  "seen": [
@@ -1026,7 +1251,20 @@
   "54d9577f3fe52b69",
   "74743ef5eb7f26d7",
   "8ce83f0d784bd31a",
-  "d67242c2638eeff0"
+  "d67242c2638eeff0",
+  "b6b3dfd1c96c7d4a",
+  "9345f23b5f47d548",
+  "bad520d2fe80b075",
+  "8c1f588862d44d60",
+  "301aad2799b48df5",
+  "4da8ec1ec7b1b2d2",
+  "111a741ed688d742",
+  "04ba87619af8e289",
+  "12e16e194edce752",
+  "8aedc3ddb6a53038",
+  "174f31491d0931ac",
+  "072650776cd2a581",
+  "545d5d118b5afd77"
  ],
  "residue_r0": [
   {
