@@ -68,9 +68,37 @@ forecast surface and ratchets grounding.
      `review.n` → `review.pct`.
   Effect: 55 events considered vs 6, **16 applications vs 0**, total L1 0.100. Mainline path
   unchanged (T3·A3·C1·D2·S2·P3·E2).
+- **Evidence layer r2 shipped 2026-08-06 (`7e8d36b`, stamp `20260806-1248`)** — August's "give
+  repeat_k a floor and fix the decay window … teach the difference between multiple reports of
+  one event and three unrelated events of one kind" round. Registry `r1-2026-08-03` →
+  `r2-2026-08-06`. Provoked by morning 7: on the largest input day yet the forecast moved least,
+  because five applications sat at k=4–7 and were together worth 2.9% of their unrepeated value.
+  1. **Novelty floor** — `novelty(k) = 0.15 + 0.85·0.5^k`. The r1 note's own stated intent was a
+     bound on the CUMULATIVE contribution of a drumbeat; r1 delivered it by making each event
+     worthless. The bound now comes from `soft_squash` (per-axis weekly, cap 0.10 — which had
+     **never damped anything**, being 300× away) and sqrt aggregation.
+  2. **Recency-weighted k** — `Σ 0.5^(age/7)` over prior incidents, not a count in a 30-day box.
+     No cliff, and a drought-then-return recovers weight, which the design asked for.
+  3. **Incidents, not reports** — `resolve_incidents()`: IDF-weighted similarity (rarity, not
+     overlap — two write-ups of one signing share only 0.30 of tokens), digest-URL filtering
+     (one newsletter link chained **28** unrelated developments), frozen cluster anchors (no
+     transitivity). Same-class incidents in a night get EQUAL weight; n together carry √n.
+  4. **Specificity matching** — `classify()` replaces first-match-wins and records `contested`
+     (damped ×0.5, named in the data) when a matching rule disagrees. 0 flips, 6 contested over
+     319 events.
+  5. **Vocabulary**, each measured over all 1,942 events: buildout gained chip-manufacturing
+     acts and shed **seven** restriction items it had read as build-out; safety-incident gained
+     the incident vocabulary and fired for the first time ever; `invest*` → enumerated (it was
+     reaching INVESTIGATION).
+  Effect on the same day's record: 6 applications on 4 rules vs 5 on 2; magnitudes 0.00677 vs
+  0.00044; A/C/E/S moved on evidence vs C/E. Also closed: `history` records the LAST run of a
+  day; the panel counts today's applications, formats to 2 s.f. and draws requested-vs-realised;
+  `delta.json` carries the evidence-vs-grounding split; `nightly.sh` tells a failed deploy from
+  a slow one.
 - weights.json (Research/timelines/) is the evolving state; it now also carries `seen`,
   `schema_log`, `claims_registered`, and `residue_r0` (the pre-r1 residue, archived not
-  deleted). The seed priors live in axes.REGISTRY.
+  deleted). `history` entries now carry `raw` (unwidened marginals) as well as `marginals`.
+  The seed priors live in axes.REGISTRY.
 - The queue loop remains live; `INGEST-ncsl-state-ai-legislation-tracker` filed 2026-08-04.
 
 ## Honest limits, recorded
@@ -81,12 +109,22 @@ forecast surface and ratchets grounding.
   observed enactments (wiki lower bound), a *projected* `laws` track seeded at a hardcoded
   **61** whose provenance is a code comment, and a threshold of 90. The queue task asks for
   NCSL; the right outcome may be to **reword the claim** rather than score it.
-- **Duplicate reports still count separately.** Illinois SB 315 was reported by four digests
-  and fires the rule four times; novelty decay damps it (0.008 → 0.015 total, not 0.032) but
-  entity resolution would be the real fix.
-- The r1 rule set is **cited but not calibrated** — directions are argued from the axis
-  stories, never fitted. Nothing has been scored against outcomes yet; that is the Brier
-  round (T7), for which registration dates are now finally usable.
+- **The incident resolver UNDER-merges, deliberately and on measurement.** Two independent
+  write-ups of the Pritzker signing score 0.269; an Alphabet chip story and an Alphabet
+  share-price story score 0.257. Three hundred characters do not separate those and a threshold
+  that split them would be fitted to two examples. Labelled cases: three unrelated commitments
+  stay three (PASS); three reports of one signing collapse to two, not one (PARTIAL). Collapse
+  rate 2.8% over the recent trunk. Under-merging costs a little double-count, which the floor
+  absorbs; over-merging silently deletes evidence. Every collapse is reported each morning.
+- **The r2 rule set is still cited but not calibrated** — directions AND axis assignments are
+  argued from the axis stories, never fitted. Nothing has been scored against outcomes yet;
+  that is the Brier round (T7), for which registration dates are now finally usable.
+- **One day is not a calibration.** r2's first day moved the distribution 11× further than r1's,
+  mostly from one first-of-kind safety incident at full novelty. That is the floor-and-burst
+  design working as intended, not evidence the constants are right. The thing to watch: whether
+  `soft_squash`'s weekly cap ever engages. It never has.
+- The evidence-vs-grounding split in `delta.json` ships `attributable: false` until a history
+  entry carries yesterday's `raw`; first real numbers arrive the morning of 2026-08-07.
 - `apply_schema_log` is exercised by selftest and a dry run but **has not yet fired in
   production** — the next Monday review is 2026-08-10.
 - Priors are the model's opening judgments with provenance — August may adjust; the About
@@ -109,6 +147,15 @@ forecast surface and ratchets grounding.
   `cb15cd9` before being documented in `09ff4fc`. Commit your work before running the chain.
 - A trailing `*` in a rule term means STEM; without it the term is a whole word. Writing
   "invest" where you meant "invest*" silently matches nothing, and the rule looks alive.
+  **The reverse bites too**: `invest*` reached INVESTIGATION, and `fab*` would still not reach
+  "Terafab" because `\bfab\w*` needs a word boundary that a compound proper noun does not have.
+  Always run the term against the trunk before believing it.
+- **Never add a bare stem where you mean an act.** `manufactur*` looked right and fired on "DRAM
+  manufacturing" in a demand forecast, "manufacturability" in a delay notice and "pilot
+  manufacturing" in a Series B. Rules want act-phrases plus `text_none` for commentary framings.
+- **A shared URL is not identity.** Newsletters and digests cite many stories; one AISN issue is
+  linked by five unrelated events. Any similarity graph over the trunk must filter by URL
+  document-frequency and must not be transitive, or it chains a month of news into one incident.
 - `text` in the trunk is truncated near 300 chars. Anything the matcher or a witness needs to
   read must be in the opening prose — Tennessee's enactment is cut off mid-sentence and is
   therefore, correctly, not counted.
@@ -116,7 +163,8 @@ forecast surface and ratchets grounding.
 ## The work queue (register order)
 
 1. Watch three mornings (T4/D1 acceptance); expect residue-heavy first reports.
-2. **T7** calibration scorer (first claim deadlines: 2026-12-31).
+2. **T7** calibration scorer (first claim deadlines: 2026-12-31). r2 made this the top item:
+   nothing yet scores a DIRECTION or an AXIS ASSIGNMENT against outcomes.
 3. **T8** World view to the full visual bar.
 4. **T9** evidence-rule library expansion (target ~40 rules with citations).
 5. T6 variance narrative · T10 sub-axis dynamics · T5 SCOPE v2 rewrite · then B3/E2/C1-cur.
