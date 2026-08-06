@@ -1,6 +1,6 @@
 {
  "version": "r1-2026-08-03",
- "date": "2026-08-05",
+ "date": "2026-08-06",
  "axes": {
   "T": {
    "T1": 0.09930566707204999,
@@ -15,11 +15,11 @@
    "A4": 0.2788512016378112
   },
   "C": {
-   "C1": 0.4050399962940278,
-   "C2": 0.26582382551964767,
-   "C3": 0.07927862478093083,
-   "C4": 0.23525609604722014,
-   "C5": 0.014601457358173616
+   "C1": 0.40477656646424603,
+   "C2": 0.2657740012006387,
+   "C3": 0.07926376530216155,
+   "C4": 0.23558694647863135,
+   "C5": 0.014598720554322464
   },
   "D": {
    "D1": 0.176990085382572,
@@ -37,10 +37,10 @@
    "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.28443690233562774,
-   "E2": 0.44273144259129976,
-   "E3": 0.19904308130785575,
-   "E4": 0.07378857376521668
+   "E1": 0.2846245303086578,
+   "E2": 0.4426830271615939,
+   "E3": 0.1989119380028159,
+   "E4": 0.07378050452693238
   }
  },
  "history": [
@@ -309,6 +309,51 @@
      "E2": 0.4318954217738912,
      "E3": 0.20344855410210136,
      "E4": 0.079920122781577
+    }
+   }
+  },
+  {
+   "date": "2026-08-06",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11538291383888637,
+     "A2": 0.2589332586636818,
+     "A3": 0.34683262585962066,
+     "A4": 0.2788512016378112
+    },
+    "C": {
+     "C1": 0.40477656646424603,
+     "C2": 0.2657740012006387,
+     "C3": 0.07926376530216155,
+     "C4": 0.23558694647863135,
+     "C5": 0.014598720554322464
+    },
+    "D": {
+     "D1": 0.18844521790451693,
+     "D2": 0.5371818465616512,
+     "D3": 0.2743729355338318
+    },
+    "S": {
+     "S1": 0.3286908322917292,
+     "S2": 0.41634766124262595,
+     "S3": 0.2549615064656449
+    },
+    "P": {
+     "P1": 0.26094206330702113,
+     "P2": 0.3121484728054444,
+     "P3": 0.4269094638875344
+    },
+    "E": {
+     "E1": 0.28491584302567163,
+     "E2": 0.431686694895499,
+     "E3": 0.20338907743631454,
+     "E4": 0.08000838464251478
     }
    }
   }
@@ -842,6 +887,106 @@
    "driver_urls": [
     "https://seekingalpha.com/news/4624885-blackstone-has-pitched-a-mega-debt-package-for-anthropic-chip-deal---report"
    ]
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.00019,
+   "sources": 1,
+   "repeat_k": 4,
+   "applied": {
+    "C.C4": 0.00025,
+    "C.C1": -0.00013
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "date": "2026-08-06",
+   "driver": "A settlement between the Justice Department's Civil Rights Division and OpenAI and Statsig became public on August 5, 2026, requiring the tw",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/05/trumps-doj-gains-oversight-of-openais-green-card-employee-sponsorships/"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 9e-05,
+   "sources": 1,
+   "repeat_k": 5,
+   "applied": {
+    "E.E1": 0.00013,
+    "E.E3": -6e-05
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-06",
+   "driver": "SpaceX said on August 6, 2026 that it and Tesla will initially invest $16.8 billion to build Terafab, Elon Musk's planned advanced AI chip m",
+   "driver_urls": [
+    "https://www.reuters.com/business/media-telecom/spacex-says-terafab-be-built-texas-with-initial-investment-168-billion-2026-08-06/"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 5e-05,
+   "sources": 1,
+   "repeat_k": 6,
+   "applied": {
+    "E.E1": 6e-05,
+    "E.E3": -3e-05
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-06",
+   "driver": "Mirendil signed a multi-year Google Cloud partnership worth more than $100 million to source compute for its self-improving AI research, dis",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/06/exclusive-mirendil-inks-100m-google-cloud-deal-to-scale-self-improving-ai/"
+   ]
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 2e-05,
+   "sources": 1,
+   "repeat_k": 7,
+   "applied": {
+    "E.E1": 3e-05,
+    "E.E3": -2e-05
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "date": "2026-08-06",
+   "driver": "Update on the Discovery Loop founding covered in the August 5 22:12 file: Khosla Ventures and Radical Ventures invested alongside Alphabet, ",
+   "driver_urls": [
+    "https://www.implicator.ai/google-deepmind-hassabis-steps-aside-jeff-dean-exit/"
+   ]
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 9e-05,
+   "sources": 1,
+   "repeat_k": 5,
+   "applied": {
+    "C.C4": 0.00013,
+    "C.C1": -6e-05
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "date": "2026-08-06",
+   "driver": "Update on Apple's trade-secrets case against OpenAI covered in the August 4 files: OpenAI asked a federal judge on Wednesday, August 5, 2026",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/06/openai-apple-motion-to-dismiss"
+   ]
   }
  ],
  "residue": [
@@ -1180,6 +1325,84 @@
    "section": "Agentic AI & Coding",
    "text": "Meta Platforms is asking thousands of engineers to use its in-house AI coding agent, MetaCode, in their day-to-day work ",
    "fp": "072650776cd2a581"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "AI Industry & Markets",
+   "text": "Pichai told Google DeepMind teams on August 5, 2026 that Demis Hassabis will take on a new strategic role as chair of Go",
+   "fp": "a97625d7e9080aa3"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "AI Industry & Markets",
+   "text": "Jeff Dean, Google's chief scientist and a 27-year veteran of the company, left on August 5, 2026 to co-found Discovery L",
+   "fp": "9395496c63780b4d"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Senate Committee on Commerce, Science and Transportation advanced four children's online-safety measures by voice vo",
+   "fp": "b98aae1445d53a2b"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Appian chief executive Matt Calkins said the White House's decision to withhold details of its AI model review framework",
+   "fp": "b1911dcc6b9ac82b"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Meta said on August 5, 2026 that one of its AI models hacked another company during cybersecurity testing, after a misco",
+   "fp": "3d8c31c504b947d1"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Agentic AI & Coding",
+   "text": "Update on Meta's coding-agent effort, carried in the earlier file for this date as an internal tool named MetaCode: Meta",
+   "fp": "612ced09c3ec7b8a"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the Senate Commerce children's online-safety votes carried in the August 5 files: the committee favorably repo",
+   "fp": "55d16bf279a02749"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The National Science Foundation announced the NSF State and Regional Artificial Intelligence Infrastructure Hubs program",
+   "fp": "bddd2d6c877bf496"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Software and government contractor groups told the General Services Administration on August 6, 2026 that its revised co",
+   "fp": "ea271c4541a3a6f1"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Consumer Technology Association filed a comment submission targeting \"ambiguity\" in the Federal Trade Commission's p",
+   "fp": "83bfe198e416fc37"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on the UK AI Security Institute incident carried in the August 4 22:05 file, which noted AISI had not named the a",
+   "fp": "069ff72387d78d3a"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Agentic AI & Coding",
+   "text": "Cloudflare published a proposed Agent Access Model on August 5, 2026, authored by Matt Silverlock, arguing that controls",
+   "fp": "8f17d8ad25d71f92"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Meta's Muse Code release covered in the August 5 22:12 file: Meta Superintelligence Labs published the accompa",
+   "fp": "39e5a88088bafa99"
   }
  ],
  "seen": [
@@ -1264,7 +1487,25 @@
   "8aedc3ddb6a53038",
   "174f31491d0931ac",
   "072650776cd2a581",
-  "545d5d118b5afd77"
+  "545d5d118b5afd77",
+  "a97625d7e9080aa3",
+  "9395496c63780b4d",
+  "b98aae1445d53a2b",
+  "b1911dcc6b9ac82b",
+  "3d8c31c504b947d1",
+  "612ced09c3ec7b8a",
+  "fe2c621cf49888cb",
+  "55d16bf279a02749",
+  "bddd2d6c877bf496",
+  "ea271c4541a3a6f1",
+  "83bfe198e416fc37",
+  "f030acc343fa665a",
+  "8252c8a5915c9808",
+  "547623c77029a1ca",
+  "069ff72387d78d3a",
+  "8f17d8ad25d71f92",
+  "39e5a88088bafa99",
+  "2351a6f7c7b866d8"
  ],
  "residue_r0": [
   {
