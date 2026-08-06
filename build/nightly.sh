@@ -38,9 +38,33 @@ git add -A
 git commit -q -m "Nightly emit $(date +%F)" || true   # no-op commit is fine
 git push -q origin main || exit 3
 
-sleep 90                                        # let Pages build
-LIVE=$(curl -s https://augustg97.github.io/ai-atlas/ | grep -o 'DATA_V = "[^"]*"' | head -1)
+# Verify the LIVE artefact. Two things can go wrong and they need different
+# answers, which is why this is no longer a fixed sleep and a stamp compare.
+# On 2026-08-06 the deploy FAILED on a GitHub-side OIDC token error while the
+# chain reported only "live != want", and the real cause took a `gh run view`
+# to find. A slow deploy wants patience; a failed one wants reporting.
 WANT=$(grep -o 'DATA_V = "[^"]*"' web/index.html | head -1)
+SHA=$(git rev-parse HEAD)
+for i in $(seq 1 40); do                        # up to ~10 min
+  LIVE=$(curl -s -H 'Cache-Control: no-cache' \
+         https://augustg97.github.io/ai-atlas/ \
+         | grep -o 'DATA_V = "[^"]*"' | head -1)
+  [ "$LIVE" = "$WANT" ] && { echo "live: $LIVE / want: $WANT"
+                             echo "nightly OK $(date +%F-%H%M)"; exit 0; }
+  CONC=$(gh run list --limit 20 --json headSha,conclusion,status,databaseId \
+         --jq "[.[]|select(.headSha==\"$SHA\")][0]
+               |\"\(.status)/\(.conclusion//\"-\")/\(.databaseId)\"" \
+         2>/dev/null)
+  case "$CONC" in
+    completed/failure/*|completed/cancelled/*|completed/timed_out/*)
+      echo "live: $LIVE / want: $WANT"
+      echo "DEPLOY FAILED for $SHA — run ${CONC##*/}"
+      gh run view "${CONC##*/}" --log-failed 2>/dev/null | tail -12
+      echo "the build is correct and pushed; the hosting step is not."
+      exit 3;;
+  esac
+  sleep 15
+done
 echo "live: $LIVE / want: $WANT"
-[ "$LIVE" = "$WANT" ] || exit 3
-echo "nightly OK $(date +%F-%H%M)"
+echo "DEPLOY PENDING after 10 min for $SHA (last seen: ${CONC:-unknown})"
+exit 3

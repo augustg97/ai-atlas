@@ -54,6 +54,15 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
   padding-left:7px;margin:6px 0}
 .delta .mag{font-family:var(--mono);color:var(--hot);font-size:9px}
 .delta .drv{color:var(--ink-dim)}
+/* what moved, and which force moved it — its own compact rows; .posrow is
+   scoped to #infoCard and inherits the panel's body type out here */
+.mvrow{display:flex;justify-content:space-between;gap:8px;font-size:9.5px;
+  line-height:1.5;color:var(--ink-dim)}
+.mvrow .k{font-family:var(--mono)}
+.mvrow .v{font-family:var(--mono);color:var(--gold);white-space:nowrap}
+.mvrow .why{opacity:.72}
+.mvhead{font-size:9.5px;line-height:1.5;color:var(--ink-dim);margin:2px 0 5px}
+.mvhead b{color:var(--gold);font-weight:600}
 .pillgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px}
 .cpill{font-size:8.5px;font-weight:700;letter-spacing:.06em;padding:3px 6px;
   border-radius:3px;background:#2a3742;color:var(--ink-faint);text-align:center}
@@ -240,7 +249,7 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
    Engine CONSTANTS come from data/forecast/engine.json (single source of
    truth with the python engine); this file implements only functions.
    ========================================================================= */
-const DATA_V = "20260806-1049";
+const DATA_V = "20260806-1248";
 const NOW_Y = 2026.58;
 const LADDER_SHORT = ["","unreliable agent","reliable agent","superhuman coder",
   "superhuman AI researcher","generally superintelligent","wildly superintelligent"];
@@ -464,20 +473,37 @@ function waypointCard(ev){
     ev.cites);
 }
 function deltaCard(e){
+  /* the card now shows the whole arithmetic, including the two things that
+     were computed every night and never drawn: what the rule REQUESTED of
+     the registry versus what the distribution actually moved (they differ,
+     because the registry renormalises), and whether another rule disputed
+     the reading. */
+  const req = e.requested || {};
+  const rows = Object.keys(e.applied || {}).map(k =>
+    "<div class=posrow><span>" + esc(k) + "</span><span class=pv>" +
+    (k in req ? "asked " + pp(req[k]) + " · " : "") +
+    "moved " + pp(e.applied[k]) + "</span></div>").join("");
   showCard("evidence application · " + (e.date || ""),
     e.rule,
     "<div class=posrow><span>impact class</span><span class=pv>" +
     esc(e.impact_class) + "</span></div>" +
     "<div class=posrow><span>magnitude</span><span class=pv>×" +
-    (e.magnitude || 0).toFixed(4) + "</span></div>" +
+    sig(e.magnitude, 3) + "</span></div>" +
     "<div class=posrow><span>corroborating sources</span><span class=pv>" +
-    (e.sources || 1) + "</span></div>" +
-    "<div class=posrow><span>novelty decay k</span><span class=pv>" +
-    (e.repeat_k || 0) + "</span></div>" +
-    "<div style=\"margin-top:6px\">applied: " +
-    esc(Object.entries(e.applied || {}).map(([k, v]) =>
-      k + " " + (v >= 0 ? "+" : "") + (v * 100).toFixed(2) + "pp").join(" · ")) +
-    "</div>" +
+    (e.sources || 1) + " publisher" + ((e.sources||1)==1?"":"s") +
+    (e.reports > 1 ? " · " + e.reports + " reports of one incident" : "") +
+    "</span></div>" +
+    "<div class=posrow><span>novelty k (7-day half-life)</span><span class=pv>" +
+    sig(e.repeat_k || 0, 3) + " → ×" + sig(0.15 + 0.85*Math.pow(0.5, e.repeat_k||0), 2) +
+    "</span></div>" +
+    (e.spread && e.spread < 1 ?
+      "<div class=posrow><span>same-class incidents tonight</span><span class=pv>" +
+      Math.round(1/(e.spread*e.spread)) + " · each ×" + sig(e.spread,2) +
+      "</span></div>" : "") +
+    (e.contested ? "<div class=posrow><span>contested reading</span>" +
+      "<span class=pv>disputed by " + esc(e.contested.join(", ")) +
+      " — damped by half</span></div>" : "") +
+    rows +
     (e.driver ? "<div style=\"margin-top:6px;color:var(--ink-dim)\">driver: " +
       esc(e.driver) + "</div>" : ""),
     (e.cites || []).concat(e.driver_urls || []));
@@ -989,16 +1015,53 @@ function refreshRail(){
   /* deltas */
   /* every application, never a silent slice: this used to render the last
      four with nothing to say twelve were hidden — invisible while the count
-     was zero, misleading the moment it was not. */
+     was zero, misleading the moment it was not. The fix for THAT then
+     printed the whole log's length against today's date: on 2026-08-06 the
+     header claimed 31 applications when 5 were today's, and the error grew
+     every night the log did. The count is today's; the history stays
+     visible, under its own heading, labelled with the days it covers. */
   const ent=D.delta.entries.slice().reverse();
+  const today=ent.filter(e=>e.date===D.delta.date),
+        older=ent.filter(e=>e.date!==D.delta.date);
+  const row=(e,i)=>"<div class=\"delta clicky\" data-i="+i+"><span class=mag>"+
+    esc(e.rule)+" · "+e.impact_class+" ×"+sig(e.magnitude)+
+    (e.contested?" · <span style=\"color:var(--warn,#c9a227)\">contested</span>":"")+
+    (e.reports>1?" · "+e.reports+" reports":"")+
+    "</span><br><span class=drv>"+
+    esc((e.driver||"awaiting the first live morning").slice(0,90))+
+    "</span></div>";
+  /* what actually moved, and which of the two forces moved it */
+  const mv=D.delta.moved||{};
+  const mk=Object.keys(mv).sort((a,b)=>Math.abs(mv[b].shown)-Math.abs(mv[a].shown));
+  const sum=k=>mk.reduce((s,p)=>s+Math.abs(mv[p][k]),0);
+  const attr=D.delta.attributable!==false;
+  const L1=sum("shown"), L1g=attr?sum("grounding"):0;
+  const movedHTML = mk.length?
+    "<div class=mvhead>the distribution moved <b>"+sig(L1,2)+"</b> in total"+
+    (attr&&L1>0? " — <b>"+Math.round(100*(L1-L1g)/L1)+"%</b> evidence, <b>"+
+      Math.round(100*L1g/L1)+"%</b> grounding width"
+     : " · the evidence-vs-width split needs yesterday's ungrounded state, "+
+       "which the record began keeping today")+
+    "</div><div style=\"max-height:104px;overflow-y:auto;margin-bottom:9px\">"+
+    mk.slice(0,8).map(p=>{
+      const m=mv[p], onlyG=attr&&Math.abs(m.evidence)<5e-7;
+      return "<div class=mvrow><span class=k>"+esc(p)+
+        (onlyG?" <span class=why>width only</span>":"")+
+        "</span><span class=v>"+pp(m.shown)+"</span></div>";}).join("")+
+    (mk.length>8?"<div class=mvrow><span class='k why'>+"+(mk.length-8)+
+      " smaller</span><span class=v></span></div>":"")+
+    "</div>" : "";
   $("deltas").innerHTML = ent.length?
-    "<div class=drv style=\"margin-bottom:6px\">"+ent.length+
-    " application"+(ent.length==1?"":"s")+" on "+esc(D.delta.date)+
-    " — all shown, newest first</div>"+
-    "<div style=\"max-height:290px;overflow-y:auto\">"+ent.map((e,i)=>
-    "<div class=\"delta clicky\" data-i="+i+"><span class=mag>"+esc(e.rule)+" · "+e.impact_class+
-    " ×"+(e.magnitude||0).toFixed(3)+"</span><br><span class=drv>"+
-    esc((e.driver||"awaiting the first live morning").slice(0,90))+"</span></div>").join("")+
+    "<div class=drv style=\"margin-bottom:6px\">"+today.length+
+    " application"+(today.length==1?"":"s")+" on "+esc(D.delta.date)+
+    (today.length?"":" — the record moved nothing the rules recognised")+
+    "</div>"+movedHTML+
+    "<div style=\"max-height:196px;overflow-y:auto\">"+
+    today.map((e,i)=>row(e,ent.indexOf(e))).join("")+
+    (older.length?"<div class=drv style=\"margin:8px 0 4px\">earlier — "+
+      older.length+" application"+(older.length==1?"":"s")+" from "+
+      esc(older[older.length-1].date)+" to "+esc(older[0].date)+"</div>"+
+      older.map(e=>row(e,ent.indexOf(e))).join(""):"")+
     "</div>" :
     "<div class=delta><span class=drv>no evidence applications yet — the "+
     "first live morning writes this panel</span></div>";
@@ -1198,6 +1261,15 @@ function esc(s){ return String(s).replace(/[&<>"]/g,
   c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
 function fmtNum(n){ return n>=1e6? (n/1e6).toFixed(1)+"M" :
   n>=1e3? (n/1e3).toFixed(0)+"K" : String(Math.round(n)); }
+/* Evidence magnitudes span four orders — a first-of-kind structural event is
+   0.09, a recurring minor class at its novelty floor is 4.5e-4. toFixed(3)
+   printed EVERY application on 2026-08-06 as "×0.000", which told a reader
+   that five things happened and each moved the model by nothing. Two
+   significant figures, always, whatever the exponent. */
+function sig(x,n){ x=+x||0; if(!x) return "0";
+  const d=Math.max(0,(n||2)-1-Math.floor(Math.log10(Math.abs(x))));
+  return d>6 ? x.toExponential((n||2)-1) : x.toFixed(d); }
+function pp(v){ return (v>=0?"+":"")+(v*100).toFixed(3)+"pp"; }
 function fmtYr(y){ const yr=Math.floor(y);
   if (y<NOW_Y+0.05 && y>NOW_Y-0.05) return "Jul 2026 — today";
   if (yr>=2032) return String(yr);

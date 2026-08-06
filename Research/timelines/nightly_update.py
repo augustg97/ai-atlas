@@ -23,6 +23,7 @@ import datetime as _dt
 import hashlib
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -86,6 +87,205 @@ def rule_matches(rule, ev):
     return axes.match_event(rule, ev)
 
 
+# --- incidents (r2, 2026-08-06) --------------------------------------------
+# The machine could not tell four digests carrying one Illinois signing from
+# three unrelated funding rounds landing on one night. Both looked like "the
+# same rule fired N times", so novelty decay punished them identically — and
+# on 2026-08-06 it discounted SpaceX's Terafab, Mirendil's Google Cloud deal
+# and Discovery Loop's round against each other for no reason but arrival
+# order. The two cases want opposite treatment: repeated REPORTS are
+# corroboration and should raise confidence in one incident; repeated
+# INCIDENTS are new evidence and should each move the model.
+#
+# An INCIDENT is one development in the world. Reports are linked into one
+# when they share a source URL, when the trunk marks one as a follow-up
+# (`update: true`, 145 of 1942 events — the wiki already knows), or when
+# their salient content overlaps enough. Ground truth used to set the
+# threshold, both from the record: the three 2026-07-06 reports of Pritzker
+# signing SB 315 are ONE incident; the three 2026-08-06 capital commitments
+# are THREE.
+#
+# Two things were measured and both changed the design:
+#
+#   AGGREGATOR URLS. A shared link is not identity. `newsletter.safe.ai`'s
+#   AISN-77 issue is cited by five unrelated events and `transformernews.ai`
+#   by four, because a newsletter covers many stories. Linking on any shared
+#   URL chained 28 unrelated developments — an OpenAI disclosure, a Gemini
+#   release, a court ruling, Illinois SB 315 — into one "incident". Only a
+#   url cited by at most URL_DF_MAX events is identity evidence.
+#
+#   RARITY, NOT OVERLAP. Two independent write-ups of the Pritzker signing
+#   share only 0.30 of their salient tokens: different reporters choose
+#   different words. What they do share is "pritzker", "315", "illinois" —
+#   tokens that are rare in the corpus. A flat Jaccard cannot separate that
+#   from two unrelated items that both say "openai" and "2026". Similarity
+#   is therefore IDF-weighted: a shared bill number counts, a shared year
+#   does not.
+#
+# And clustering is greedy against cluster REPRESENTATIVES, never transitive.
+# Union-find let A~B and B~C drag in A~C; a report now has to look like the
+# story it is joining, not merely like something already in it.
+#
+# WHERE THIS DELIBERATELY STOPS. Two independent write-ups of the Pritzker
+# signing score 0.269; an Alphabet chip story and an Alphabet share-price
+# story score 0.257. Three hundred characters of prose do not separate those,
+# and a threshold that split them would be fitted to two examples. So the
+# resolver merges only on evidence it can stand behind — a shared non-digest
+# article, the trunk's own follow-up flag, or near-duplicate prose — and
+# UNDER-merges by design. Leaving two reports as two incidents costs a little
+# double-count, which the novelty floor now handles gracefully; merging two
+# real developments into one silently deletes evidence. Every collapse is
+# reported each morning so the choice stays auditable.
+INCIDENT_WINDOW_DAYS = 14
+INCIDENT_SIM = 0.45            # near-duplicate prose, on its own
+INCIDENT_SIM_URL = 0.20        # when they also share a non-digest article
+INCIDENT_SIM_UPD = 0.36        # when the trunk marks one a follow-up
+URL_DF_MAX = 2                 # a link in more events than this is a digest
+_STOP = frozenset("""about after also amid among announced been before being
+between both could during each first from have into more most other over
+said says some such than that their them then there these they this those
+through under until were what when where which while will with would year
+years company companies report reports reported according including new
+would also""".split())
+
+
+def salient(ev):
+    """The tokens that identify WHICH development this is: long words, and
+    anything carrying a digit (bill numbers, dollar figures, dates)."""
+    txt = (ev.get("text") or "").lower()
+    out = set()
+    for w in re.findall(r"[a-z0-9][a-z0-9\-\.$]*", txt):
+        w = w.strip(".-")
+        if any(c.isdigit() for c in w):
+            out.add(w)
+        elif len(w) >= 5 and w not in _STOP:
+            out.add(w)
+    return out
+
+
+def domains(ev):
+    """Distinct publishers behind an event. Four links to one newsroom are
+    one source; r1 counted them as four and inflated corroboration."""
+    out = set()
+    for u in (ev.get("urls") or []):
+        m = re.match(r"https?://([^/]+)", u)
+        if m:
+            host = m.group(1).lower()
+            if host.startswith("www."):
+                host = host[4:]
+            out.add(host)
+    return out
+
+
+def corpus_stats(corpus):
+    """Token IDF and URL document-frequency over a reference corpus."""
+    import math
+    n = max(1, len(corpus))
+    tdf, udf = {}, {}
+    for e in corpus:
+        for t in salient(e):
+            tdf[t] = tdf.get(t, 0) + 1
+        for u in {u.split("?")[0] for u in (e.get("urls") or [])}:
+            udf[u] = udf.get(u, 0) + 1
+    idf = {t: math.log(n / float(c)) for t, c in tdf.items()}
+    return {"idf": idf, "udf": udf, "n": n, "default": math.log(n)}
+
+
+def similarity(a, b, stats):
+    """IDF-weighted Jaccard. A shared bill number or company name carries
+    weight; a shared "2026" or "openai" barely moves it."""
+    sa, sb = salient(a), salient(b)
+    if not sa or not sb:
+        return 0.0
+    idf, dflt = stats["idf"], stats["default"]
+    inter = sum(idf.get(t, dflt) for t in (sa & sb))
+    union = sum(idf.get(t, dflt) for t in (sa | sb))
+    return inter / union if union else 0.0
+
+
+def anchors(ev, stats):
+    """The rarest tokens in a report — bill numbers, prices, proper nouns.
+    Two accounts of one development share several; two items that merely
+    both mention OpenAI and 2026 share none."""
+    import math
+    cut = math.log(stats["n"] / 30.0)
+    return {t for t in salient(ev)
+            if stats["idf"].get(t, stats["default"]) >= cut}
+
+
+def same_incident(a, b, stats):
+    """Two reports describe one development."""
+    da = abs((_dt.date.fromisoformat(a["date"]["iso"][:10])
+              - _dt.date.fromisoformat(b["date"]["iso"][:10])).days)
+    if da > INCIDENT_WINDOW_DAYS:
+        return False
+    # nothing merges without agreeing on who and what. Cheap, and it is the
+    # guard that keeps a shared date or a shared company name from ever being
+    # enough on its own.
+    if len(anchors(a, stats) & anchors(b, stats)) < 2:
+        return False
+    s = similarity(a, b, stats)
+    ua = {u.split("?")[0] for u in (a.get("urls") or [])}
+    ub = {u.split("?")[0] for u in (b.get("urls") or [])}
+    shared = {u for u in (ua & ub) if stats["udf"].get(u, 99) <= URL_DF_MAX}
+    # a shared non-digest article is strong evidence, but not on its own:
+    # the trunk sometimes splits one source into two entries about different
+    # things, so the content still has to agree a little.
+    if shared and s >= INCIDENT_SIM_URL:
+        return True
+    if s >= INCIDENT_SIM:
+        return True
+    # the trunk marks follow-ups explicitly (`update: true`), and a follow-up
+    # legitimately shares less prose with its referent than two independent
+    # write-ups of one event share with each other.
+    return bool(a.get("update") or b.get("update")) and s >= INCIDENT_SIM_UPD
+
+
+def resolve_incidents(events, corpus=None):
+    """Group reports into incidents.
+
+    Greedy against cluster REPRESENTATIVES, in input order — deterministic,
+    and non-transitive by construction, which is what keeps one shared token
+    from chaining a month of unrelated news into a single incident.
+
+    Returns [{"id", "events", "rep", "sources", "urls", "reports"}]."""
+    stats = corpus_stats(corpus if corpus is not None else events)
+    clusters = []                 # [{"anchor": ev, "events": [...]}]
+    for ev in events:
+        best, best_s = None, 0.0
+        for c in clusters:
+            # against the ANCHOR — the event that opened the cluster, which
+            # never changes. Matching against a representative that is
+            # recomputed as the cluster grows lets its identity drift, and
+            # drift is chaining by another name: it merged a Microsoft
+            # /Mistral deal with an Anduril round that share nothing.
+            if not same_incident(c["anchor"], ev, stats):
+                continue
+            s = similarity(c["anchor"], ev, stats)
+            if best is None or s > best_s:
+                best, best_s = c, s
+        if best is None:
+            clusters.append({"anchor": ev, "events": [ev]})
+        else:
+            best["events"].append(ev)
+    out = []
+    for c in clusters:
+        doms, urls = set(), []
+        for e in c["events"]:
+            doms |= domains(e)
+            for u in (e.get("urls") or []):
+                if u not in urls:
+                    urls.append(u)
+        # the quoted driver should be the fullest first-hand report, so the
+        # log describes the development rather than a revision to it.
+        rep = sorted(c["events"], key=lambda e: (bool(e.get("update")),
+                                                 -len(e.get("text") or "")))[0]
+        out.append({"id": fingerprint(rep), "events": c["events"],
+                    "rep": rep, "sources": max(1, len(doms)),
+                    "urls": urls, "reports": len(c["events"])})
+    return out
+
+
 def weights_to_reg(weights):
     import copy
     reg = copy.deepcopy(axes.REGISTRY)
@@ -117,9 +317,35 @@ def weekly_cum(weights, today):
 
 
 def repeat_count(weights, rule_id, today):
+    """r1: a hard count inside a 30-day box. Kept for the selftest that
+    documents what changed; no longer used by the chain."""
     cutoff = (today - _dt.timedelta(days=30)).isoformat()
     return sum(1 for e in weights.get("evidence_log", [])
                if e.get("rule") == rule_id and e.get("date", "") >= cutoff)
+
+
+def novelty_k(weights, rule_id, today):
+    """Recency-weighted count of PRIOR incidents of this class.
+
+    Two problems with the r1 box. It had a cliff — an incident 30 days old
+    counted fully and one 31 days old counted zero — and no gradient inside
+    it, so a class that fired eight times last week and a class that fired
+    eight times last month were treated identically. The design note asks for
+    "a DROUGHT-then-return carries weight", which needs a gradient.
+
+    Prior nights only. Incidents from tonight are handled by `spread`, so
+    that the third funding round of an evening is not worth a quarter of the
+    first because of the order the trunk happened to list them in."""
+    k = 0.0
+    for e in weights.get("evidence_log", []):
+        if e.get("rule") != rule_id:
+            continue
+        d = e.get("date")
+        if not d or d >= today.isoformat():
+            continue
+        age = (today - _dt.date.fromisoformat(d)).days
+        k += 0.5 ** (age / axes.NOVELTY_HALFLIFE_DAYS)
+    return k
 
 
 def schema_review(weights, today):
@@ -198,30 +424,57 @@ def update(today=None):
     reg = weights_to_reg(weights)
     log = weights.setdefault("evidence_log", [])
     cum = weekly_cum(weights, today)
+
+    # r2: resolve reports into incidents, then classify each incident ONCE.
+    inc = resolve_incidents(fresh)
+    plan = []                     # (incident, rule, contested) for matches
+    unmatched = []
+    for g in inc:
+        rule, contested, _all = axes.classify(g["rep"])
+        if rule is None:
+            # an incident is unexplained only if NO report in it matched;
+            # the representative is the fullest report, but a shorter one
+            # can still carry the term the rule needs.
+            for ev in g["events"]:
+                rule, contested, _all = axes.classify(ev)
+                if rule is not None:
+                    break
+        if rule is None:
+            unmatched.append(g)
+        else:
+            plan.append((g, rule, contested))
+
+    # how many DISTINCT incidents of each class landed tonight; every one of
+    # them gets the same weight and the class total grows as sqrt(n).
+    per_rule = {}
+    for g, rule, _c in plan:
+        per_rule[rule["id"]] = per_rule.get(rule["id"], 0) + 1
+
     applied_n, residue_n = 0, 0
-    for ev in fresh:
-        matched = False
-        for rule in axes.EVIDENCE_RULES:
-            if rule_matches(rule, ev):
-                matched = True
-                k = repeat_count(weights, rule["id"], today)
-                entry_before = len(log)
-                axes.apply_evidence(reg, rule, log,
-                                    sources=max(1, len(ev.get("urls", []))),
-                                    repeat_k=k, weekly_cum=cum)
-                for e2 in log[entry_before:]:
-                    e2["date"] = today.isoformat()
-                    e2["driver"] = ev.get("text", "")[:140]
-                    e2["driver_urls"] = ev.get("urls", [])[:3]
-                applied_n += 1
-                break
-        if not matched:
-            weights.setdefault("residue", []).append(
-                {"date": ev["date"]["iso"][:10],
-                 "section": axes.canon_section(ev.get("section")) or "?",
-                 "text": ev.get("text", "")[:120],
-                 "fp": fingerprint(ev)})
-            residue_n += 1
+    for g, rule, contested in plan:
+        n = per_rule[rule["id"]]
+        k = novelty_k(weights, rule["id"], today)
+        entry_before = len(log)
+        axes.apply_evidence(reg, rule, log, sources=g["sources"],
+                            repeat_k=k, weekly_cum=cum,
+                            spread=(n ** 0.5) / n, contested=contested,
+                            incident=g["id"])
+        for e2 in log[entry_before:]:
+            e2["date"] = today.isoformat()
+            e2["event_date"] = g["rep"]["date"]["iso"][:10]
+            e2["driver"] = (g["rep"].get("text") or "")[:140]
+            e2["driver_urls"] = g["urls"][:3]
+            e2["reports"] = g["reports"]
+        applied_n += 1
+    for g in unmatched:
+        ev = g["rep"]
+        weights.setdefault("residue", []).append(
+            {"date": ev["date"]["iso"][:10],
+             "section": axes.canon_section(ev.get("section")) or "?",
+             "text": (ev.get("text") or "")[:120],
+             "reports": g["reports"],
+             "fp": fingerprint(ev)})
+        residue_n += 1
 
     # mark everything considered — matched or not — so a late arrival is
     # picked up exactly once and never re-applied on a later night.
@@ -233,6 +486,11 @@ def update(today=None):
     weights["evidence_log"] = log[-400:]
     reg_to_weights(reg, weights)
     weights["date"] = today.isoformat()
+    # the stored version must track the code that wrote the state, or a
+    # future reader dates these weights to the wrong methodology. r1 set it
+    # only inside the one-time migration, so it froze at r1 the moment the
+    # migration stopped running.
+    weights["version"] = axes.REGISTRY_VERSION
 
     additions = schema_review(weights, today)
     if additions:
@@ -248,8 +506,21 @@ def update(today=None):
     with open(rp, "w") as f:
         f.write("# Forecast update — %s\n\n" % today.isoformat())
         f.write("- fresh events considered: %d\n" % len(fresh))
+        f.write("- distinct incidents resolved: %d (%d reports collapsed)\n"
+                % (len(inc), len(fresh) - len(inc)))
         f.write("- evidence applications: %d\n" % applied_n)
         f.write("- residue (unexplained): %d\n" % residue_n)
+        multi = [g for g in inc if g["reports"] > 1]
+        if multi:
+            f.write("- multi-report incidents: %d\n" % len(multi))
+            for g in multi[:8]:
+                f.write("  - %d reports · %d sources · %s\n"
+                        % (g["reports"], g["sources"],
+                           " ".join((g["rep"].get("text") or "").split())[:70]))
+        contested_n = sum(1 for _g, _r, c in plan if c)
+        if contested_n:
+            f.write("- contested classifications (damped and named): %d\n"
+                    % contested_n)
         # late arrivals are the whole point of the ledger — name them, so a
         # silent day-boundary loss can never look like a quiet night again.
         late = [e for e in fresh
@@ -275,10 +546,18 @@ def update(today=None):
                 f.write("- %s ← %s\n" % (add["axis"],
                                           add["subaxis"]["origin"]))
         for e in weights["evidence_log"][-applied_n:] if applied_n else []:
-            f.write("\n- %s [%s ×%.4f] %s\n" %
+            f.write("\n- %s [%s ×%.5f k=%.2f spread=%.2f reports=%d "
+                    "src=%d]%s %s\n" %
                     (e["rule"], e["impact_class"], e["magnitude"],
+                     e.get("repeat_k", 0), e.get("spread", 1.0),
+                     e.get("reports", 1), e.get("sources", 1),
+                     (" CONTESTED by %s" % ",".join(e["contested"]))
+                     if e.get("contested") else "",
                      e.get("driver", "")[:100]))
-    return {"fresh": len(fresh), "applied": applied_n, "residue": residue_n,
+    return {"fresh": len(fresh), "incidents": len(inc),
+            "applied": applied_n, "residue": residue_n,
+            "collapsed": len(fresh) - len(inc),
+            "contested": sum(1 for _g, _r, c in plan if c),
             "recovered_late": len([e for e in fresh
                                    if e["date"]["iso"][:10] <
                                    today.isoformat()]),
@@ -348,7 +627,59 @@ def _selftest():
     a1 = dict(hb); a2 = dict(hb, section="AI Industry & Markets")
     assert fingerprint(a1) != fingerprint(a2)
     assert fingerprint(a1) == fingerprint(dict(hb))
-    return 5
+
+    # --- incidents (r2): reports of one event vs events of one kind --------
+    def _ev(txt, day="2026-08-06", urls=(), upd=False,
+            sec="AI Industry & Markets"):
+        return {"date": {"iso": day, "kind": "event"}, "section": sec,
+                "text": txt, "urls": list(urls), "update": upd}
+    # one development, three write-ups, three publishers
+    one = [_ev("Illinois Gov. JB Pritzker signed SB 315 into law on July 6, "
+               "2026, the first state law requiring annual independent "
+               "third-party audits of frontier AI developers.",
+               "2026-07-06", ["https://govtech.com/a"]),
+           _ev("Illinois Gov. JB Pritzker signed SB 315 into law on July 6, "
+               "2026, the first state law requiring annual independent "
+               "third-party audits of frontier AI developers and reporting.",
+               "2026-07-06", ["https://govtech.com/a"]),
+           _ev("On July 6, 2026 Illinois Governor Pritzker signed SB 315, "
+               "requiring independent third-party audits, Pritzker said.",
+               "2026-07-06", ["https://capitolnewsillinois.com/b"])]
+    got = resolve_incidents(one, one)
+    assert len(got) < len(one), "repeated reports must collapse"
+    assert got[0]["reports"] >= 2 and got[0]["sources"] >= 1
+    # three unrelated developments of ONE class stay three
+    three = [_ev("SpaceX said on August 6, 2026 that it and Tesla will "
+                 "initially invest $16.8 billion to build Terafab in Grimes "
+                 "County, Texas.", urls=["https://reuters.com/x"]),
+             _ev("Mirendil signed a multi-year Google Cloud partnership "
+                 "worth more than $100 million to source compute.",
+                 urls=["https://techcrunch.com/y"]),
+             _ev("Khosla Ventures and Radical Ventures invested alongside "
+                 "Alphabet in the Discovery Loop founding round.",
+                 urls=["https://implicator.ai/z"])]
+    got3 = resolve_incidents(three, three)
+    assert len(got3) == 3, [g["reports"] for g in got3]
+    # a digest URL cited by many events is not identity
+    st = corpus_stats(three + one)
+    assert not same_incident(three[0], three[1], st)
+    # novelty_k: recency-weighted, prior nights only, and it RECOVERS
+    wk = {"evidence_log": [{"rule": "r", "date": "2026-08-05"},
+                           {"rule": "r", "date": "2026-08-05"},
+                           {"rule": "r", "date": "2026-08-06"}]}
+    k_today = novelty_k(wk, "r", _dt.date(2026, 8, 6))
+    # two priors, one day old, half-life 7 → 2 × 0.5**(1/7) = 1.811. Tonight's
+    # own entry is excluded: within-night incidents are handled by `spread`.
+    assert abs(k_today - 2 * 0.5 ** (1 / 7.0)) < 1e-9, k_today
+    k_later = novelty_k(wk, "r", _dt.date(2026, 8, 20))
+    assert k_later < k_today / 2, (k_today, k_later)   # two half-lives on
+    assert axes.novelty(k_later) > axes.novelty(k_today) * 1.2, \
+        "a fortnight of silence must buy a class real weight back"
+    # r1's box could not do this: inside 30 days it counted both the same
+    assert repeat_count(wk, "r", _dt.date(2026, 8, 6)) == \
+        repeat_count(wk, "r", _dt.date(2026, 8, 20)) == 3
+    assert axes.novelty(99) >= axes.NOVELTY_FLOOR
+    return 7
 
 
 if __name__ == "__main__":

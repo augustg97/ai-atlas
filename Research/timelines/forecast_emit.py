@@ -138,11 +138,61 @@ def emit():
     today = _dt.date.today().isoformat()
 
     marg = axes.marginals(reg)
+    # Attribute the night's movement BEFORE history is stamped.
+    #
+    # Two forces move what the app draws and only one of them is evidence.
+    # The grounding widener spreads a thin axis, and it moves whenever the
+    # corpus grows ANYWHERE — on 2026-08-06 it supplied 41% of the visible
+    # motion, all of D's and all of P's, on a morning when neither axis had a
+    # single new page or a single application. It even inverted E4's sign
+    # against the evidence. That is legitimate design (thin grounding renders
+    # as width, SCOPE §11b) but the app said nothing, so a reader could not
+    # tell "the model learned something about the economy" from "the wiki
+    # gained ten pages about capability". Now it can.
+    raw = axes.marginals(widened_registry(weights, {}))
+    # the last entry for a PREVIOUS day. history[-1] is today's own entry on
+    # any re-run, and comparing today with itself reports that nothing moved.
+    prev = next((h for h in reversed(weights.get("history") or [])
+                 if h.get("date") != today), {})
+    prev_m = prev.get("marginals") or {}
+    prev_raw = prev.get("raw")
+    # The split needs YESTERDAY's unwidened marginals, and history only began
+    # carrying them today. Without them the arithmetic would charge the whole
+    # night's motion to grounding — a fallback wearing a measurement's
+    # clothes. Standing rule 10: return unknown, and say so on screen.
+    attributable = bool(prev_raw) and bool(prev_m)
+    moved = {}
+    for ax, poss in marg.items():
+        for pos, v in poss.items():
+            dm = v - (prev_m.get(ax, {}).get(pos, v))
+            if not attributable:
+                if abs(dm) >= 5e-7:
+                    moved["%s.%s" % (ax, pos)] = {"shown": round(dm, 7)}
+                continue
+            dr = raw[ax][pos] - prev_raw.get(ax, {}).get(pos, raw[ax][pos])
+            if abs(dm) < 5e-7 and abs(dr) < 5e-7:
+                continue
+            moved["%s.%s" % (ax, pos)] = {
+                "shown": round(dm, 7), "evidence": round(dr, 7),
+                "grounding": round(dm - dr, 7)}
     hist = weights.get("history", [])
-    if not hist or hist[-1]["date"] != today:
-        hist.append({"date": today, "marginals": marg})
-        weights["history"] = hist[-60:]
-        json.dump(weights, open(WEIGHTS, "w"), indent=1)
+    # r2 (2026-08-06): this used to APPEND only when the last entry was not
+    # today, which meant the first run of a calendar day won and every later
+    # run of that day was silently dropped from the record. On 2026-08-04 the
+    # published 10:49 state was C1 0.40548 while history kept the 01:24 run's
+    # 0.40618, so the next morning's report had to be reconstructed from a git
+    # commit — and measured against the stale point, that morning's largest C
+    # component appeared to move the OPPOSITE way to the evidence that caused
+    # it. history is what the 30-day drift on screen is computed against, so
+    # the error ages into position rather than showing up at once. The last
+    # run of a day is the one that is served; it is the one that is recorded.
+    if hist and hist[-1]["date"] == today:
+        hist[-1]["marginals"] = marg
+        hist[-1]["raw"] = raw
+    else:
+        hist.append({"date": today, "marginals": marg, "raw": raw})
+    weights["history"] = hist[-60:]
+    json.dump(weights, open(WEIGHTS, "w"), indent=1)
 
     ml, p_ml = worldlines.mainline(reg)
     kn = worldlines.capability_path(ml)
@@ -372,7 +422,8 @@ def emit():
         "ensemble2k.json": {"lines": ens},
         "crisis.json": {"crises": crises},
         "delta.json": {"date": today,
-                       "entries": weights.get("evidence_log", [])[-40:]},
+                       "entries": weights.get("evidence_log", [])[-40:],
+                       "moved": moved, "attributable": attributable},
         "claims.json": {"claims": claims},
     }
     for name, data in outputs.items():

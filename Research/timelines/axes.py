@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r1-2026-08-03"
+REGISTRY_VERSION = "r2-2026-08-06"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -42,6 +42,40 @@ IMPACT_CLASS = {
     "structural": 0.090,   # treaty, AI-attributed catastrophe, autonomous
 }                          #   R&D demonstrated — rare by definition
 WEEKLY_SOFT_CAP = 0.10     # per-axis 7-day drift where damping begins
+
+# --- novelty, repaired 2026-08-06 (registry r2) ----------------------------
+# The r1 note under EVIDENCE_RULES states the design intent exactly: novelty
+# decay exists so that a STEADY drumbeat moves almost nothing and only a burst
+# or a drought-then-return carries weight, with the whole drumbeat "summing to
+# under 0.006 no matter how long it runs". That is a bound on the CUMULATIVE
+# contribution of a class. The implementation delivered it by making each
+# successive event worth nothing, which is a different thing and a worse one.
+#
+# Measured on 2026-08-06: five applications at k=4..7 were together worth 2.9%
+# of their unrepeated value, on the largest input day the machine has seen.
+# Three of them were unrelated transactions — SpaceX/Terafab, Mirendil/Google
+# Cloud, Discovery Loop — discounted against each other purely for arriving on
+# the same night. Meanwhile soft_squash, the mechanism actually designed to
+# bound axis drift, sat 300x below its cap and had never damped anything.
+#
+# Three changes, and the bound is kept:
+#   FLOOR      novelty decays TOWARD a floor, never to zero. A class that keeps
+#              firing is confirmatory evidence at a reduced but real weight;
+#              silence is what should stop moving the model, not repetition.
+#   HALF-LIFE  k is a recency-WEIGHTED count, not a count inside a 30-day box.
+#              A hard box has a cliff at 30 days and no memory gradient inside
+#              it; an exponential half-life gives the drought-then-return
+#              behaviour the design asked for, continuously.
+#   INCIDENTS  k counts distinct INCIDENTS, not reports. Four digests carrying
+#              one Illinois signing are one incident with three sources; three
+#              unrelated funding rounds are three incidents. nightly_update
+#              resolves them; this module only consumes the count.
+# The cumulative bound now comes from soft_squash (per-axis, per-week) and from
+# the sqrt aggregation of same-class incidents within one night — both of which
+# bound the thing that matters (axis drift) rather than the thing that does not
+# (how often the world does something).
+NOVELTY_FLOOR = 0.15           # steady-state weight of a recurring class
+NOVELTY_HALFLIFE_DAYS = 7.0    # recency half-life of a prior incident
 
 # ---------------------------------------------------------------------------
 # The seed registry. Every position: (key, label, prior, provenance[]).
@@ -319,7 +353,7 @@ REGISTRY = {
      "change": "seed registry: 7 axes, 24 positions, 3 sub-axes, "
                "5 conditional families",
      "approved": "August (design of record, rev 3)"},
-    {"version": REGISTRY_VERSION, "date": "2026-08-03",
+    {"version": "r1-2026-08-03", "date": "2026-08-03",
      "change": "evidence layer r1: structured matcher (section aliases, "
                "word-boundary terms, text_all/text_none, min_sources); "
                "ev-state-law-enacted given the content gate it never had; "
@@ -329,6 +363,32 @@ REGISTRY = {
                "sections now watched, most from both directions.",
      "approved": "August (2026-08-03: 'can we please fix all of the issues "
                  "flagged above') — morning-4 report §8"},
+    {"version": REGISTRY_VERSION, "date": "2026-08-06",
+     "change": "evidence layer r2 — the novelty repair. (1) Novelty decays "
+               "toward a FLOOR (0.15) instead of to zero, so a class that "
+               "keeps firing stays audible; the cumulative bound the design "
+               "asked for now comes from soft_squash and sqrt aggregation, "
+               "which bound axis drift rather than the world's event rate. "
+               "(2) k is recency-WEIGHTED with a 7-day half-life, not a "
+               "count inside a 30-day box, so a drought-then-return carries "
+               "weight and there is no cliff. (3) k counts INCIDENTS, not "
+               "reports: nightly_update resolves reports into developments, "
+               "so four digests carrying one signing are one incident with "
+               "several sources while three unrelated funding rounds are "
+               "three incidents, each at equal weight. (4) classify() ranks "
+               "by SPECIFICITY instead of taking the first list entry, and "
+               "records `contested` when a matching rule disagrees, damping "
+               "rather than silently picking. (5) Vocabulary repairs, each "
+               "measured against the whole trunk: ev-compute-buildout could "
+               "not read a chip fab and read six moratoria as build-out; "
+               "ev-safety-incident was written in the vocabulary of "
+               "alignment papers and missed every incident the record "
+               "reported; ev-capital-commitment's `invest*` reached "
+               "INVESTIGATION.",
+     "approved": "August (2026-08-06: 'give repeat_k a floor and fix the "
+                 "decay window … teach the difference between multiple "
+                 "reports of one event and three unrelated events of one "
+                 "kind') — morning-7 report §5"},
   ],
 }
 
@@ -420,6 +480,74 @@ def match_event(rule, ev):
         if mode == "none" and any(hits):
             return False
     return True
+
+
+def rule_specificity(rule, ev):
+    """How much of this event a rule actually accounts for.
+
+    r1 matched by walking EVIDENCE_RULES and taking the first hit, so "most
+    specific" meant "earliest in the list". On 2026-08-05 that read a Texas
+    data-centre MORATORIUM as evidence for build-out, because
+    ev-compute-buildout sits at index 13 and ev-compute-constraint at 14.
+    Every rule ever shadowed lost to a neighbour, which is the signature of
+    ordering rather than of judgment.
+
+    Score = the constraints the rule actually had to satisfy. A rule gated on
+    a section and matching four of its terms has explained more of the event
+    than one gated on nothing that matched a single generic verb."""
+    m = rule["match"]
+    txt = " ".join((ev.get("text") or "").lower().split())
+    score = 0.0
+    if m.get("section_any") or m.get("section"):
+        score += 2.0
+    if m.get("kind_any") or m.get("kind"):
+        score += 1.0
+    if "update" in m:
+        score += 1.0
+    score += min(2, m.get("min_sources", 0))
+    cache = rule.setdefault("_re", {})
+    for key, weight in (("text_any", 1.0), ("text_all", 1.5)):
+        pats = m.get(key)
+        if not pats:
+            continue
+        if key not in cache:
+            cache[key] = _compile(pats)
+        score += weight * sum(1 for p in cache[key] if p.search(txt))
+    if m.get("text_none"):
+        score += 0.5          # a rule that also had to NOT see something
+    return score
+
+
+def opposes(a, b):
+    """True when two rules push the SAME position of an axis in opposite
+    directions — a genuine contradiction about what the event means.
+
+    Two rules that both raise T3 while one also raises T2 are not in
+    conflict; they are two compatible readings of one release. Measured on
+    the trunk, a looser test flagged every frontier release as contested
+    against the benchmark rule, which would have damped agreement."""
+    for (ax1, pos1), d1 in a["nudge"].items():
+        for (ax2, pos2), d2 in b["nudge"].items():
+            if ax1 == ax2 and pos1 == pos2 and d1 * d2 < 0:
+                return True
+    return False
+
+
+def classify(ev, rules=None):
+    """Pick the rule that best explains one event.
+
+    Returns (rule, contested_ids, all_matching_ids). `contested_ids` are the
+    other matching rules that pull the winner's axes the other way — the
+    application is damped and the dispute is recorded, rather than being
+    resolved silently by whichever rule happens to be listed first."""
+    rules = EVIDENCE_RULES if rules is None else rules
+    hits = [r for r in rules if match_event(r, ev)]
+    if not hits:
+        return None, [], []
+    idx = {id(r): i for i, r in enumerate(rules)}
+    best = max(hits, key=lambda r: (rule_specificity(r, ev), -idx[id(r)]))
+    contested = [r["id"] for r in hits if r is not best and opposes(best, r)]
+    return best, contested, [r["id"] for r in hits]
 
 
 # Evidence rules r1: development-class → bounded weight nudges (per source).
@@ -558,22 +686,65 @@ EVIDENCE_RULES = [
   # S — compute & supply, watched from both sides so buildout news and
   # constraint news cannot both push the same way.
   {"id": "ev-compute-buildout", "impact": "minor",
+   # r2 (2026-08-06): this rule is written in the vocabulary of data centres
+   # and had almost nothing to say about CHIPS. SpaceX/Tesla's $16.8bn
+   # Terafab complex, filed in this very section, did not match it and fell
+   # through to ev-capital-commitment — moving the economy axis instead of
+   # compute & supply, at an eighth of the weight. Verified: "fab" is a whole
+   # word and "Terafab" is not it, and the obvious repair fails too, because
+   # \bfab\w* still needs a word boundary that "Terafab" does not have. The
+   # gap was never the stem; it was that the record says "manufacturing".
+   # text_none gains restriction framings so a moratorium item cannot read as
+   # build-out even before classify() sees the contest.
    "match": {"section": "Compute, Chips & Infrastructure",
              "text_any": ["datacenter*", "data center*", "gigawatt*",
                           "megawatt*", "fab", "fabs", "fabrication",
                           "foundry", "foundries", "capacity expansion",
-                          "broke ground", "capex", "supply agreement"],
+                          "broke ground", "capex", "supply agreement",
+                          # ACT-phrases, not the bare stem. "manufactur*"
+                          # was tried and rejected on measurement: it fired
+                          # on "DRAM manufacturing" in a demand forecast, on
+                          # "manufacturability" in a delay notice, on "China
+                          # manufactures 60%" in an analysis, and on "pilot
+                          # manufacturing" in a Series B. The rule wants the
+                          # act of adding capacity, not the word.
+                          "chip manufacturing", "manufacturing complex",
+                          "manufacturing capacity", "manufacturing plant*",
+                          "will manufacture", "begin production",
+                          "begins production", "began production",
+                          "into production", "chip plant*", "wafer fab*",
+                          "semiconductor plant*", "in-house chip*",
+                          "in-house ai chip*", "custom ai chip*",
+                          "custom accelerator*", "assembly line*"],
+             # two families of exclusion, both measured on the trunk:
+             # RESTRICTIONS (a moratorium is not a build-out — this is the
+             # 2026-08-03 Texas class, six more items of which were being
+             # read the same wrong way), and COMMENTARY (a market-size
+             # estimate, a delay notice or a strike is talk or trouble about
+             # capacity, not capacity being added).
              "text_none": ["shortage*", "export control*", "denied",
-                           "halted"]},
+                           "halted", "moratorium", "moratoria",
+                           "rationing", "curtailment*",
+                           "strike", "walkout", "disrupting",
+                           "addressable market", "delayed",
+                           "manufacturability"]},
    "nudge": {("S", "S2"): +2, ("S", "S3"): -1},
    "cites": ["concepts/compute-governance", "analysis/ai-bubble-vs-buildout"]},
   {"id": "ev-compute-constraint", "impact": "minor",
+   # r2 (2026-08-06): "moratorium on datacenter*" was spelled as one word and
+   # the record writes two. Verified on the 08-03 Texas item: the one-word
+   # spelling matched nothing, the two-word spelling would have. It escaped
+   # notice only because "interconnection queue" happened to carry the match.
+   # The term is now just the restriction itself — the section gate already
+   # establishes that the subject is compute.
    "match": {"section_any": ["Compute, Chips & Infrastructure",
                              "National Security & Geopolitics"],
              "text_any": ["shortage*", "export control*", "licence denied",
                           "license denied", "grid constraint*", "power "
                           "constraint*", "interconnection queue",
-                          "moratorium on datacenter*", "rationing"]},
+                          "moratorium", "moratoria", "rationing",
+                          "permitting pause", "halted construction",
+                          "curtailment*", "denied interconnection"]},
    "nudge": {("S", "S3"): +2, ("S", "S2"): -1},
    "cites": ["concepts/export-controls-ai", "concepts/compute-governance"]},
 
@@ -591,12 +762,24 @@ EVIDENCE_RULES = [
    "cites": ["analysis/interpretability-and-safety",
              "concepts/responsible-scaling-policy"]},
   {"id": "ev-safety-incident", "impact": "minor",
+   # r2 (2026-08-06): every term here was the vocabulary of ALIGNMENT PAPERS,
+   # and the record reports incidents in the vocabulary of NEWS. On 08-05 a
+   # Meta model "hacked another company during cybersecurity testing" and
+   # "exploited a security vulnerability in a third-party service"; the rule
+   # that exists for exactly that event matched none of it and the item went
+   # to residue with no competitor present. The second block is the incident
+   # vocabulary; the section gate keeps ordinary cyber news out.
    "match": {"section_any": ["AI Safety, Alignment & Interpretability",
                              "Agentic AI & Coding"],
              "text_any": ["jailbreak*", "exfiltrat*", "deceptive", "scheming",
                           "misaligned", "reward hacking", "autonomous "
                           "replication", "worm", "worms", "prompt injection",
-                          "sandbagging"]},
+                          "sandbagging",
+                          "hacked", "hacking", "exploited",
+                          "security vulnerabilit*", "unauthorized access",
+                          "unintended access", "escaped its", "self-exfil*",
+                          "took control", "acted without authorization",
+                          "unsanctioned"]},
    "nudge": {("A", "A1"): +1, ("A", "A2"): +2, ("A", "A4"): -1},
    "cites": ["sources/ai-2027", "analysis/interpretability-and-safety"]},
 
@@ -681,7 +864,14 @@ EVIDENCE_RULES = [
   {"id": "ev-capital-commitment", "impact": "minor",
    "match": {"section_any": ["AI Industry & Markets",
                              "Compute, Chips & Infrastructure"],
-             "text_any": ["raised", "funding round*", "valuation*", "invest*",
+             # r2 (2026-08-06): "invest*" was a stem and it reached
+             # INVESTIGATION, INVESTIGATORS, INVESTIGATIVE. That is how a
+             # Taiwanese prosecutor detaining an Nvidia employee over export
+             # controls came to match the capital-commitment rule. This is
+             # the most-fired rule in the set, so the term is now enumerated.
+             "text_any": ["raised", "funding round*", "valuation*",
+                          "invest", "invests", "invested", "investing",
+                          "investment*", "investor*",
                           "commitment*", "backlog", "revenue run-rate",
                           "annualized revenue", "ipo"],
              "text_none": ["writedown*", "wrote down", "bubble bursts",
@@ -754,14 +944,40 @@ def ensemble_marginals(lines):
     return {k: {p: c / n for p, c in v.items()} for k, v in out.items()}
 
 
-def impact_magnitude(rule, sources=1, repeat_k=0):
-    """Class base × corroboration (independent sources, capped ×1.5) ×
-    novelty decay (k-th repeat of the same class halves). Stepwise by
-    design — concomitant, not proportional."""
+def novelty(repeat_k):
+    """Weight of the (k+1)-th incident of a class, decaying toward a floor.
+
+    k is a real number: the recency-weighted count of PRIOR incidents of this
+    class (see NOVELTY_HALFLIFE_DAYS), so it falls between nights as old
+    incidents age out and rises as new ones land.
+
+        k = 0  → 1.000    the class speaks for the first time in a while
+        k = 1  → 0.575
+        k = 2  → 0.363
+        k = 4  → 0.203
+        k → ∞  → 0.150    the steady-state rate of a class that always fires
+    """
+    return NOVELTY_FLOOR + (1.0 - NOVELTY_FLOOR) * (0.5 ** max(0.0, repeat_k))
+
+
+def corroboration(sources=1):
+    """Independent sources amplify, capped at ×1.5. `sources` is a count of
+    distinct DOMAINS, not of URLs — four links to one newsroom are one
+    source, and the r1 code counted them as four."""
+    return 1.0 + 0.25 * min(2, max(0, sources - 1))
+
+
+def impact_magnitude(rule, sources=1, repeat_k=0, spread=1.0):
+    """Class base × corroboration × novelty × spread.
+
+    `spread` divides one night's same-class incidents so that n distinct
+    incidents together carry sqrt(n) times one incident's weight, and each
+    carries an EQUAL share of it. Equal because the order of events inside a
+    night is an artefact of the trunk's file order and must not decide which
+    funding round counts and which does not; sqrt because n observations of
+    one class are not n independent units of information."""
     base = IMPACT_CLASS[rule.get("impact", "notable")]
-    corro = 1.0 + 0.25 * min(2, max(0, sources - 1))
-    novelty = 0.5 ** repeat_k
-    return base * corro * novelty
+    return base * corroboration(sources) * novelty(repeat_k) * spread
 
 
 def soft_squash(cum, delta, cap=WEEKLY_SOFT_CAP):
@@ -774,17 +990,37 @@ def soft_squash(cum, delta, cap=WEEKLY_SOFT_CAP):
     return delta / (1.0 + 2.0 * over)
 
 
-def apply_evidence(reg, rule, log, sources=1, repeat_k=0, weekly_cum=None):
+CONTESTED_DAMP = 0.5       # weight of an application the record disputes
+
+
+def apply_evidence(reg, rule, log, sources=1, repeat_k=0, weekly_cum=None,
+                   spread=1.0, contested=None, incident=None):
     """Apply one evidence rule under the tiered methodology. rule["nudge"]
     values are DIRECTIONS (+1/-1 scaled by their relative share); the
     magnitude comes from impact_magnitude. Every application logs its
-    arithmetic — the delta is auditable end to end."""
+    arithmetic — the delta is auditable end to end.
+
+    `contested` is the list of rule ids that also matched this event and
+    nudge an axis the OPPOSITE way. Standing rule 9 — say what is contested,
+    in the data, as a field — so a disputed reading is damped and named
+    rather than silently resolved by list order (which is how the 2026-08-05
+    Texas moratorium came to be read as evidence FOR build-out).
+
+    The log now separates `requested` (what the rule asked the registry for,
+    before normalisation and before the grounding widener) from `applied`
+    (what the registry actually moved). Those differ every night and until
+    now only the first was recorded, so the panel showed a number the
+    distribution never used."""
     weekly_cum = weekly_cum if weekly_cum is not None else {}
-    mag = impact_magnitude(rule, sources, repeat_k)
+    contested = list(contested or [])
+    mag = impact_magnitude(rule, sources, repeat_k, spread)
+    if contested:
+        mag *= CONTESTED_DAMP
     total_share = sum(abs(v) for v in rule["nudge"].values()) or 1.0
-    applied = {}
+    applied, requested = {}, {}
     for (ax_key, pos), direction in rule["nudge"].items():
         d = mag * (direction / total_share) * len(rule["nudge"])
+        requested[(ax_key, pos)] = d
         d = soft_squash(weekly_cum.get(ax_key, 0.0), d)
         a = axis(reg, ax_key)
         pri = {p[0]: p[2] for p in a["positions"]}
@@ -794,13 +1030,20 @@ def apply_evidence(reg, rule, log, sources=1, repeat_k=0, weekly_cum=None):
                           for p in a["positions"]]
         applied[(ax_key, pos)] = d
         weekly_cum[ax_key] = weekly_cum.get(ax_key, 0.0) + abs(d)
-    log.append({"rule": rule["id"],
-                "impact_class": rule.get("impact", "notable"),
-                "magnitude": round(mag, 5), "sources": sources,
-                "repeat_k": repeat_k,
-                "applied": {"%s.%s" % k: round(v, 5)
-                            for k, v in applied.items()},
-                "cites": rule["cites"]})
+    entry = {"rule": rule["id"],
+             "impact_class": rule.get("impact", "notable"),
+             "magnitude": round(mag, 7), "sources": sources,
+             "repeat_k": round(repeat_k, 3), "spread": round(spread, 4),
+             "requested": {"%s.%s" % k: round(v, 7)
+                           for k, v in requested.items()},
+             "applied": {"%s.%s" % k: round(v, 7)
+                         for k, v in applied.items()},
+             "cites": rule["cites"]}
+    if contested:
+        entry["contested"] = contested
+    if incident:
+        entry["incident"] = incident
+    log.append(entry)
     return applied
 
 
@@ -903,7 +1146,55 @@ def _selftest():
     m_struct = impact_magnitude({"impact": "structural"})
     assert m_struct > 3 * m_note > 3 * m_minor
     assert impact_magnitude({"impact": "notable"}, sources=3) > m_note
-    assert impact_magnitude({"impact": "notable"}, repeat_k=2) < m_note / 3
+    # r2 novelty: repeats decay TOWARD A FLOOR, never to zero. The r1 test
+    # asserted `repeat_k=2 < m_note/3`, which encoded the behaviour that made
+    # the machine deaf — by k=7 an event was worth 0.8% of base, and on
+    # 2026-08-06 three unrelated funding rounds were annihilated by it. What
+    # must hold now is that repeats fall, that they fall monotonically, and
+    # that they never fall past the floor.
+    ks = [impact_magnitude({"impact": "notable"}, repeat_k=k)
+          for k in (0, 1, 2, 4, 8, 40)]
+    assert ks == sorted(ks, reverse=True), ks
+    assert ks[1] < ks[0] * 0.7, "a repeat must cost something"
+    assert ks[-1] >= m_note * NOVELTY_FLOOR * 0.999, "the floor must hold"
+    assert ks[-1] > m_note * 0.10, "a recurring class must still speak"
+    # and k is continuous, so a class recovers as its incidents age out
+    assert (impact_magnitude({"impact": "notable"}, repeat_k=0.5)
+            > impact_magnitude({"impact": "notable"}, repeat_k=2.0))
+    # spread: n incidents of one class in one night carry sqrt(n) together,
+    # and each carries the SAME weight — order inside a night must not decide
+    # which funding round counts.
+    one = impact_magnitude({"impact": "minor"}, spread=1.0)
+    each = impact_magnitude({"impact": "minor"}, spread=(3 ** 0.5) / 3)
+    assert abs(3 * each - one * (3 ** 0.5)) < 1e-12
+    assert each < one and 3 * each > one
+    # corroboration counts distinct publishers
+    assert corroboration(4) == corroboration(3) == 1.5 and corroboration(1) == 1.0
+    # specificity beats list order: the 2026-08-05 Texas item matched both
+    # compute rules and lost to the earlier one. Now the contest is named.
+    tex = {"section": "Compute, Chips & Infrastructure",
+           "date": {"kind": "event", "iso": "2026-08-03"},
+           "text": "Texas announced a moratorium on data center approvals, "
+                   "directing the utility commission to audit the "
+                   "interconnection queue", "urls": ["u1"]}
+    r, contested, allm = classify(tex)
+    assert r["id"] == "ev-compute-constraint", (r["id"], allm)
+    assert "ev-compute-buildout" not in allm, allm
+    # opposition is about the SAME position, not merely the same axis
+    buildout = [x for x in EVIDENCE_RULES if x["id"] == "ev-compute-buildout"][0]
+    constraint = [x for x in EVIDENCE_RULES
+                  if x["id"] == "ev-compute-constraint"][0]
+    release = [x for x in EVIDENCE_RULES if x["id"] == "ev-frontier-release"][0]
+    bench = [x for x in EVIDENCE_RULES
+             if x["id"] == "ev-benchmark-progress"][0]
+    assert opposes(buildout, constraint)
+    assert not opposes(release, bench), "two compatible readings of a release"
+    # a contested application is damped and says so
+    lg = []
+    apply_evidence(reg, constraint, lg, contested=["ev-compute-buildout"])
+    assert lg[-1]["contested"] == ["ev-compute-buildout"]
+    assert lg[-1]["magnitude"] < impact_magnitude(constraint)
+    assert "requested" in lg[-1] and "applied" in lg[-1]
     log = []
     struct_rule = {"id": "test-struct", "impact": "structural",
                    "nudge": {("C", "C3"): +1}, "cites": ["x"]}
