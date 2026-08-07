@@ -1,6 +1,6 @@
-# Emit needs-review — 20260806-1048
+# Emit needs-review — 20260807-1048
 
-222 items. Unparseable values are reported here, never guessed.
+220 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -122,7 +122,6 @@
 - entities/access-now: dangling relationship target 'entities/rightscon'
 - entities/alex-bores: dangling relationship target 'concepts/universal-basic-capital'
 - entities/ben-thompson: dangling relationship target 'entities/clayton-christensen|Clayton Christensen'
-- entities/chamber-of-progress: dangling relationship target 'entities/ccia'
 - entities/chamber-of-progress: dangling relationship target 'entities/netchoice'
 - entities/chris-lehane: dangling relationship target 'concepts/ai-public-perception'
 - entities/cisa: dangling relationship target 'entities/asd-acsc'
@@ -188,7 +187,6 @@
 - legislation/trump-dpa-determination-2026-10: dangling relationship target 'concepts/industrial-policy-ai'
 - litigation/acls-v-neh: unparseable date 'not specified in available reporting' (filed)
 - litigation/bartz-v-anthropic: dangling relationship target 'litigation/authors-guild-v-openai'
-- litigation/character-ai-cases: duplicate key 'status' (last wins)
 - litigation/gema-v-suno: unparseable date 'unknown' (filed)
 - litigation/musk-v-altman: duplicate key 'status' (last wins)
 - litigation/netchoice-v-bonta: duplicate key 'status' (last wins)

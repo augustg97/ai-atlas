@@ -1,6 +1,6 @@
 {
  "version": "r2-2026-08-06",
- "date": "2026-08-06",
+ "date": "2026-08-07",
  "axes": {
   "T": {
    "T1": 0.09930566707204999,
@@ -9,10 +9,10 @@
    "T4": 0.21147063223227613
   },
   "A": {
-   "A1": 0.11753521321613274,
-   "A2": 0.2630962553785366,
-   "A3": 0.344895333132714,
-   "A4": 0.2744731982726167
+   "A1": 0.11857164021364182,
+   "A2": 0.26509691093427207,
+   "A3": 0.34396154609626034,
+   "A4": 0.2723699027558258
   },
   "C": {
    "C1": 0.40411662036924423,
@@ -22,9 +22,9 @@
    "C5": 0.014591870426558332
   },
   "D": {
-   "D1": 0.176990085382572,
-   "D2": 0.5561529084502644,
-   "D3": 0.2668570061671637
+   "D1": 0.17675812884219133,
+   "D2": 0.5580520757319787,
+   "D3": 0.2651897954258299
   },
   "S": {
    "S1": 0.3284239729130431,
@@ -380,6 +380,93 @@
      "D1": 0.176990085382572,
      "D2": 0.5561529084502644,
      "D3": 0.2668570061671637
+    },
+    "S": {
+     "S1": 0.3284239729130431,
+     "S2": 0.4176360532800789,
+     "S3": 0.25393997380687805
+    },
+    "P": {
+     "P1": 0.2594163132950861,
+     "P2": 0.311549014716887,
+     "P3": 0.42903467198802697
+    },
+    "E": {
+     "E1": 0.28537787217269733,
+     "E2": 0.44248876396948916,
+     "E3": 0.19838523652956522,
+     "E4": 0.07374812732824826
+    }
+   }
+  },
+  {
+   "date": "2026-08-07",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11857164021364182,
+     "A2": 0.26509691093427207,
+     "A3": 0.34396154609626034,
+     "A4": 0.2723699027558258
+    },
+    "C": {
+     "C1": 0.40411662036924423,
+     "C2": 0.2656492926100581,
+     "C3": 0.07922657252781082,
+     "C4": 0.23641564406632853,
+     "C5": 0.014591870426558332
+    },
+    "D": {
+     "D1": 0.1884710030349162,
+     "D2": 0.5385450201253058,
+     "D3": 0.2729839768397781
+    },
+    "S": {
+     "S1": 0.3284239729130431,
+     "S2": 0.4176360532800789,
+     "S3": 0.25393997380687805
+    },
+    "P": {
+     "P1": 0.26100993908738757,
+     "P2": 0.31217498542791866,
+     "P3": 0.4268150754846937
+    },
+    "E": {
+     "E1": 0.2856294588008465,
+     "E2": 0.4313476017509517,
+     "E3": 0.20295065341751564,
+     "E4": 0.08007228603068607
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11857164021364182,
+     "A2": 0.26509691093427207,
+     "A3": 0.34396154609626034,
+     "A4": 0.2723699027558258
+    },
+    "C": {
+     "C1": 0.40411662036924423,
+     "C2": 0.2656492926100581,
+     "C3": 0.07922657252781082,
+     "C4": 0.23641564406632853,
+     "C5": 0.014591870426558332
+    },
+    "D": {
+     "D1": 0.17675812884219136,
+     "D2": 0.5580520757319788,
+     "D3": 0.26518979542582993
     },
     "S": {
      "S1": 0.3284239729130431,
@@ -1100,6 +1187,64 @@
     "https://www.axios.com/2026/08/06/openai-apple-motion-to-dismiss"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-incident",
+   "impact_class": "minor",
+   "magnitude": 0.0018111,
+   "sources": 1,
+   "repeat_k": 0.906,
+   "spread": 1.0,
+   "requested": {
+    "A.A1": 0.0013583,
+    "A.A2": 0.0027167,
+    "A.A4": -0.0013583
+   },
+   "applied": {
+    "A.A1": 0.0013583,
+    "A.A2": 0.0027167,
+    "A.A4": -0.0013583
+   },
+   "cites": [
+    "sources/ai-2027",
+    "analysis/interpretability-and-safety"
+   ],
+   "incident": "e2ab8b4b1fa006b6",
+   "date": "2026-08-07",
+   "event_date": "2026-08-05",
+   "driver": "OpenAI alignment and safety researcher Eric Wallace and security and infrastructure staffer Michael Dalton told the Black Hat conference in ",
+   "driver_urls": [
+    "https://www.wired.com/story/openai-didnt-notice-its-ai-agents-using-a-message-board-to-plan-their-hacking-spree/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-agentic-deployment",
+   "impact_class": "minor",
+   "magnitude": 0.0019736,
+   "sources": 1,
+   "repeat_k": 0.743,
+   "spread": 1.0,
+   "requested": {
+    "D.D2": 0.0026315,
+    "D.D3": -0.0013157
+   },
+   "applied": {
+    "D.D2": 0.0026315,
+    "D.D3": -0.0013157
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/professional-services-ai-adoption"
+   ],
+   "incident": "bf8232df49eb8d79",
+   "date": "2026-08-07",
+   "event_date": "2026-08-06",
+   "driver": "Replit co-founder and chief executive Amjad Masad said in an interview published August 6, 2026 that lines of code contributed by the compan",
+   "driver_urls": [
+    "https://www.platformer.news/replit-amjad-massad-interview-coding-design-jobs/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -1522,6 +1667,111 @@
    "text": "Update on Meta's Muse Code release covered in the August 5 22:12 file: Meta Superintelligence Labs published the accompa",
    "reports": 1,
    "fp": "39e5a88088bafa99"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Stanford researchers led by assistant professor Brian Hie reported in the journal Science on August 6, 2026 that they ha",
+   "reports": 1,
+   "fp": "1db21dd128958550"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Trump administration convened staff from OpenAI, Anthropic, Google, Meta, Nvidia and other AI companies at the White",
+   "reports": 1,
+   "fp": "6aa219b9ba6d868f"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the Federal Trade Commission's proposed AI policy statement, covered in the earlier August 6 file through the ",
+   "reports": 1,
+   "fp": "973c8605066ccf25"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI announced on August 6, 2026 that it is removing daily message caps on text chats for free ChatGPT accounts, while",
+   "reports": 1,
+   "fp": "9351700727103d47"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Gemini 3.5 Pro, recorded in the August 5 file as months behind its original June launch target: SemiAnalysis r",
+   "reports": 1,
+   "fp": "e33528ff9fcee508"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "AI Industry & Markets",
+   "text": "Canva cut its revenue growth forecast after heavy use of newly launched AI features drove up costs and slowed their roll",
+   "reports": 1,
+   "fp": "57cd47b501c9609c"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Gabe Weil of the Institute for Law and AI in Massachusetts proposed applying a system of strict liability to AI develope",
+   "reports": 1,
+   "fp": "da78cacb2bca819d"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Trump said in a Punchbowl News interview published August 7, 2026 that Congress wants to regulate the AI industry \"out o",
+   "reports": 1,
+   "fp": "1b6b4854f3ba3df3"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Commerce Department's National Institute of Standards and Technology proposed guidelines on August 7, 2026 for evalu",
+   "reports": 1,
+   "fp": "9160adedc62f9285"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "AMD announced on August 6, 2026 a definitive agreement to acquire Taalas, a Toronto startup founded in 2023 that builds ",
+   "reports": 1,
+   "fp": "6d0024ea05c943d7"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Amazon Web Services leaders told engineers in meetings in May 2026 to save capacity wherever they could so that the EC2 ",
+   "reports": 1,
+   "fp": "fdd6caa07691279e"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI's first hardware device will be a doughnut-shaped, screenless speaker built from high-quality metal with moving p",
+   "reports": 1,
+   "fp": "74f0a4a81157752b"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "AI Industry & Markets",
+   "text": "Stripe entered exclusive talks to buy OpenRouter in a cash-and-stock deal valuing the AI-model marketplace at close to $",
+   "reports": 1,
+   "fp": "a71629b3a1e2f26c"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Judge Bryan Biedscheid of a New Mexico state court in Santa Fe ordered Meta on August 6, 2026 to pay US$567 million into",
+   "reports": 1,
+   "fp": "4a452147ce971ff9"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "AI researcher Adele Lopez's documentation of \"spiralism\" \u2014 a quasi-spiritual movement arising from thousands of independ",
+   "reports": 1,
+   "fp": "eae35cc2f36c6958"
   }
  ],
  "seen": [
@@ -1624,7 +1874,24 @@
   "069ff72387d78d3a",
   "8f17d8ad25d71f92",
   "39e5a88088bafa99",
-  "2351a6f7c7b866d8"
+  "2351a6f7c7b866d8",
+  "e2ab8b4b1fa006b6",
+  "1db21dd128958550",
+  "6aa219b9ba6d868f",
+  "973c8605066ccf25",
+  "9351700727103d47",
+  "e33528ff9fcee508",
+  "bf8232df49eb8d79",
+  "57cd47b501c9609c",
+  "da78cacb2bca819d",
+  "1b6b4854f3ba3df3",
+  "9160adedc62f9285",
+  "6d0024ea05c943d7",
+  "fdd6caa07691279e",
+  "74f0a4a81157752b",
+  "a71629b3a1e2f26c",
+  "4a452147ce971ff9",
+  "eae35cc2f36c6958"
  ],
  "residue_r0": [
   {
