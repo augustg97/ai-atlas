@@ -1,6 +1,6 @@
 {
  "version": "r2-2026-08-06",
- "date": "2026-08-07",
+ "date": "2026-08-08",
  "axes": {
   "T": {
    "T1": 0.09930566707204999,
@@ -9,22 +9,22 @@
    "T4": 0.21147063223227613
   },
   "A": {
-   "A1": 0.11857164021364182,
-   "A2": 0.26509691093427207,
-   "A3": 0.34396154609626034,
-   "A4": 0.2723699027558258
+   "A1": 0.11750781399192234,
+   "A2": 0.2639595205800137,
+   "A3": 0.3473313575800136,
+   "A4": 0.2712013078480504
   },
   "C": {
-   "C1": 0.40411662036924423,
-   "C2": 0.2656492926100581,
-   "C3": 0.07922657252781082,
-   "C4": 0.23641564406632853,
-   "C5": 0.014591870426558332
+   "C1": 0.4026659166312478,
+   "C2": 0.2646956609048503,
+   "C3": 0.07528537940391479,
+   "C4": 0.2465776701755874,
+   "C5": 0.010775372884399805
   },
   "D": {
-   "D1": 0.17675812884219133,
-   "D2": 0.5580520757319787,
-   "D3": 0.2651897954258299
+   "D1": 0.17675812884219136,
+   "D2": 0.5580520757319788,
+   "D3": 0.26518979542582993
   },
   "S": {
    "S1": 0.3284239729130431,
@@ -37,10 +37,10 @@
    "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.28537787217269733,
-   "E2": 0.44248876396948916,
-   "E3": 0.19838523652956522,
-   "E4": 0.07374812732824826
+   "E1": 0.2865832418259527,
+   "E2": 0.4421778687134346,
+   "E3": 0.1975425780083735,
+   "E4": 0.07369631145223919
   }
  },
  "history": [
@@ -483,6 +483,93 @@
      "E2": 0.44248876396948916,
      "E3": 0.19838523652956522,
      "E4": 0.07374812732824826
+    }
+   }
+  },
+  {
+   "date": "2026-08-08",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11750781399192234,
+     "A2": 0.2639595205800137,
+     "A3": 0.3473313575800136,
+     "A4": 0.2712013078480504
+    },
+    "C": {
+     "C1": 0.4026659166312478,
+     "C2": 0.2646956609048503,
+     "C3": 0.07528537940391479,
+     "C4": 0.2465776701755874,
+     "C5": 0.010775372884399805
+    },
+    "D": {
+     "D1": 0.18870012318311122,
+     "D2": 0.5381685804082214,
+     "D3": 0.27313129640866746
+    },
+    "S": {
+     "S1": 0.3284239729130431,
+     "S2": 0.4176360532800789,
+     "S3": 0.25393997380687805
+    },
+    "P": {
+     "P1": 0.26107768928721137,
+     "P2": 0.3122014358199697,
+     "P3": 0.42672087489281907
+    },
+    "E": {
+     "E1": 0.2867687141808913,
+     "E2": 0.4307415534069124,
+     "E3": 0.20227692078092346,
+     "E4": 0.08021281163127286
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11750781399192234,
+     "A2": 0.2639595205800137,
+     "A3": 0.3473313575800136,
+     "A4": 0.2712013078480504
+    },
+    "C": {
+     "C1": 0.4026659166312478,
+     "C2": 0.2646956609048503,
+     "C3": 0.07528537940391479,
+     "C4": 0.2465776701755874,
+     "C5": 0.010775372884399805
+    },
+    "D": {
+     "D1": 0.17675812884219136,
+     "D2": 0.5580520757319788,
+     "D3": 0.26518979542582993
+    },
+    "S": {
+     "S1": 0.3284239729130431,
+     "S2": 0.4176360532800789,
+     "S3": 0.25393997380687805
+    },
+    "P": {
+     "P1": 0.2594163132950861,
+     "P2": 0.311549014716887,
+     "P3": 0.42903467198802697
+    },
+    "E": {
+     "E1": 0.2865832418259527,
+     "E2": 0.4421778687134346,
+     "E3": 0.1975425780083735,
+     "E4": 0.07369631145223919
     }
    }
   }
@@ -1245,6 +1332,206 @@
     "https://www.platformer.news/replit-amjad-massad-interview-coding-design-jobs/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003014,
+   "sources": 1,
+   "repeat_k": 5.146,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0004019,
+    "E.E3": -0.0002009
+   },
+   "applied": {
+    "E.E1": 0.0004019,
+    "E.E3": -0.0002009
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "87be6c00b91635e2",
+   "date": "2026-08-08",
+   "event_date": "2026-08-07",
+   "driver": "Situational Awareness, the hedge fund run by Leopold Aschenbrenner, invested a further US$400 million this week in Source Foundry, bringing ",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/situational-awareness-bets-400-million-on-stealth-chip-startup-after-crash-02c7374e"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003768,
+   "sources": 2,
+   "repeat_k": 5.146,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0005023,
+    "E.E3": -0.0002512
+   },
+   "applied": {
+    "E.E1": 0.0005023,
+    "E.E3": -0.0002512
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "338de2bb972546b7",
+   "date": "2026-08-08",
+   "event_date": "2026-08-07",
+   "driver": "Harvey, the four-year-old San Francisco legal AI company, entered talks to raise at least US$500 million at a US$15.5 billion valuation incl",
+   "driver_urls": [
+    "https://techstartups.com/2026/08/07/legal-ai-startup-harvey-in-talks-to-raise-500-million-at-15-5-billion-valuation-after-revenue-surge/",
+    "https://www.theinformation.com/articles/harvey-talks-raise-funding-15-5-billion-valuation"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004178,
+   "sources": 1,
+   "repeat_k": 4.178,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0005571,
+    "A.A1": -0.0002786
+   },
+   "applied": {
+    "A.A3": 0.0005571,
+    "A.A1": -0.0002786
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "3b5dc5ad15635398",
+   "date": "2026-08-08",
+   "event_date": "2026-08-07",
+   "driver": "OpenAI said on August 7, 2026 that internal evaluations of its upcoming Astra model left it unable to rule out \"critical\" cyber capabilities",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003768,
+   "sources": 2,
+   "repeat_k": 5.146,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0005023,
+    "E.E3": -0.0002512
+   },
+   "applied": {
+    "E.E1": 0.0005023,
+    "E.E3": -0.0002512
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "5c77495d09fe8080",
+   "date": "2026-08-08",
+   "event_date": "2026-08-07",
+   "driver": "Nvidia agreed to invest up to US$3 billion in Lancium, the Blackstone-backed power infrastructure developer supplying the OpenAI and Oracle ",
+   "driver_urls": [
+    "https://finance.biggo.com/news/6eb2a63d-5249-4dde-a3ec-9599194ee494",
+    "https://finance.yahoo.com/technology/articles/nvidia-invest-3-billion-lancium-014211358.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004178,
+   "sources": 1,
+   "repeat_k": 4.178,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0005571,
+    "A.A1": -0.0002786
+   },
+   "applied": {
+    "A.A3": 0.0005571,
+    "A.A1": -0.0002786
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "5d271fc1f85fa6ee",
+   "date": "2026-08-08",
+   "event_date": "2026-08-07",
+   "driver": "OpenAI published six principles for AI safety and security auditing on August 7, 2026, distinguishing audits, which examine whether an organ",
+   "driver_urls": [
+    "https://openaiglobalaffairs.substack.com/p/making-ai-audits-and-assessments"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-state-law-enacted",
+   "impact_class": "notable",
+   "magnitude": 0.0054651,
+   "sources": 1,
+   "repeat_k": 0.673,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0072868,
+    "C.C3": -0.0036434
+   },
+   "applied": {
+    "C.C4": 0.0072868,
+    "C.C3": -0.0036434
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "8da0a5161966a2ef",
+   "date": "2026-08-08",
+   "event_date": "2026-08-07",
+   "driver": "Washington state's AI task force will be disbanded following the publication of its final report in July 2026, of whose eleven recommendatio",
+   "driver_urls": [
+    "https://www.geekwire.com/2026/as-washington-states-ai-task-force-winds-down-the-debate-over-how-much-to-regulate-is-far-from-settled/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-standards-published",
+   "impact_class": "minor",
+   "magnitude": 0.00375,
+   "sources": 2,
+   "repeat_k": 0.0,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.00375,
+    "C.C5": -0.00375,
+    "A.A3": 0.00375
+   },
+   "applied": {
+    "C.C4": 0.00375,
+    "C.C5": -0.00375,
+    "A.A3": 0.00375
+   },
+   "cites": [
+    "concepts/responsible-scaling-policy",
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "62bc94c61e122433",
+   "date": "2026-08-08",
+   "event_date": "2026-08-07",
+   "driver": "Update on the NIST evaluation guidelines noted in the August 7 morning file, which did not name the instrument: the draft is NIST AI 200-2, ",
+   "driver_urls": [
+    "https://www.nist.gov/artificial-intelligence/ai-research/tevv-athlon-framework-evaluating-ai-systems",
+    "https://www.reuters.com/legal/litigation/trump-says-congress-wants-regulate-ai-industry-out-business-2026-08-07/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -1772,6 +2059,48 @@
    "text": "AI researcher Adele Lopez's documentation of \"spiralism\" \u2014 a quasi-spiritual movement arising from thousands of independ",
    "reports": 1,
    "fp": "eae35cc2f36c6958"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Senate confirmed Adam Cassady as U.S. ambassador at large for cyberspace and digital policy on August 7, 2026, by 51",
+   "reports": 1,
+   "fp": "f680626527f72d54"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Representatives Greg Casar, Valerie Foushee and Sara Jacobs introduced the AI Tax and Work Protection Act on August 6, 2",
+   "reports": 1,
+   "fp": "a567b8853b63de2d"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "AI Industry & Markets",
+   "text": "Alibaba plans to ask major users of the next version of its Qwen open-source model for a share of the revenue they make ",
+   "reports": 1,
+   "fp": "748b6dcde356fcd1"
+  },
+  {
+   "date": "2026-08-08",
+   "section": "AI Industry & Markets",
+   "text": "Apple published an updated Chinese-language guide explaining how eligible Mac users in mainland China can connect Alibab",
+   "reports": 1,
+   "fp": "bf8eee0fed199f95"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on ByteDance's model-development posture, reported August 5 as a refusal to use distillation: ByteDance's pre-tra",
+   "reports": 1,
+   "fp": "a779b8307a63a103"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Update on the AI containment breaches disclosed by OpenAI, Anthropic and Meta: legal specialists set out on August 7, 20",
+   "reports": 1,
+   "fp": "d6c2d0f0cd967924"
   }
  ],
  "seen": [
@@ -1891,7 +2220,20 @@
   "74f0a4a81157752b",
   "a71629b3a1e2f26c",
   "4a452147ce971ff9",
-  "eae35cc2f36c6958"
+  "eae35cc2f36c6958",
+  "87be6c00b91635e2",
+  "338de2bb972546b7",
+  "3b5dc5ad15635398",
+  "5c77495d09fe8080",
+  "f680626527f72d54",
+  "5d271fc1f85fa6ee",
+  "8da0a5161966a2ef",
+  "a567b8853b63de2d",
+  "748b6dcde356fcd1",
+  "bf8eee0fed199f95",
+  "a779b8307a63a103",
+  "d6c2d0f0cd967924",
+  "62bc94c61e122433"
  ],
  "residue_r0": [
   {

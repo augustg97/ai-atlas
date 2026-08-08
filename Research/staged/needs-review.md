@@ -1,4 +1,4 @@
-# Emit needs-review — 20260807-1048
+# Emit needs-review — 20260808-1048
 
 220 items. Unparseable values are reported here, never guessed.
 
@@ -122,7 +122,6 @@
 - entities/access-now: dangling relationship target 'entities/rightscon'
 - entities/alex-bores: dangling relationship target 'concepts/universal-basic-capital'
 - entities/ben-thompson: dangling relationship target 'entities/clayton-christensen|Clayton Christensen'
-- entities/chamber-of-progress: dangling relationship target 'entities/netchoice'
 - entities/chris-lehane: dangling relationship target 'concepts/ai-public-perception'
 - entities/cisa: dangling relationship target 'entities/asd-acsc'
 - entities/cisa: dangling relationship target 'entities/ncsc-uk'
@@ -166,6 +165,7 @@
 - companies/etched: unparseable date 'unknown' (founded)
 - companies/g42: unparseable date 'unknown' (founded)
 - companies/ibm: implausible year 1911 (founded)
+- companies/lancium: unparseable date 'undisclosed' (founded)
 - companies/midjourney: dangling relationship target 'companies/stability-ai'
 - companies/openevidence: unparseable date 'unknown' (founded)
 - companies/openrouter: unparseable date 'unknown' (founded)
