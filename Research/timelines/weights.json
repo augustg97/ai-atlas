@@ -1,6 +1,6 @@
 {
  "version": "r2-2026-08-06",
- "date": "2026-08-08",
+ "date": "2026-08-09",
  "axes": {
   "T": {
    "T1": 0.09930566707204999,
@@ -9,17 +9,17 @@
    "T4": 0.21147063223227613
   },
   "A": {
-   "A1": 0.11750781399192234,
-   "A2": 0.2639595205800137,
-   "A3": 0.3473313575800136,
-   "A4": 0.2712013078480504
+   "A1": 0.11697811573600828,
+   "A2": 0.2638345099697747,
+   "A3": 0.34811450674988137,
+   "A4": 0.2710728675443356
   },
   "C": {
-   "C1": 0.4026659166312478,
-   "C2": 0.2646956609048503,
-   "C3": 0.07528537940391479,
-   "C4": 0.2465776701755874,
-   "C5": 0.010775372884399805
+   "C1": 0.40225233816354466,
+   "C2": 0.2644237917912175,
+   "C3": 0.07417671143265432,
+   "C4": 0.24838285312182795,
+   "C5": 0.01076430549075561
   },
   "D": {
    "D1": 0.17675812884219136,
@@ -549,6 +549,93 @@
      "C3": 0.07528537940391479,
      "C4": 0.2465776701755874,
      "C5": 0.010775372884399805
+    },
+    "D": {
+     "D1": 0.17675812884219136,
+     "D2": 0.5580520757319788,
+     "D3": 0.26518979542582993
+    },
+    "S": {
+     "S1": 0.3284239729130431,
+     "S2": 0.4176360532800789,
+     "S3": 0.25393997380687805
+    },
+    "P": {
+     "P1": 0.2594163132950861,
+     "P2": 0.311549014716887,
+     "P3": 0.42903467198802697
+    },
+    "E": {
+     "E1": 0.2865832418259527,
+     "E2": 0.4421778687134346,
+     "E3": 0.1975425780083735,
+     "E4": 0.07369631145223919
+    }
+   }
+  },
+  {
+   "date": "2026-08-09",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11697811573600828,
+     "A2": 0.2638345099697747,
+     "A3": 0.34811450674988137,
+     "A4": 0.2710728675443356
+    },
+    "C": {
+     "C1": 0.40225233816354466,
+     "C2": 0.2644237917912175,
+     "C3": 0.07417671143265432,
+     "C4": 0.24838285312182795,
+     "C5": 0.01076430549075561
+    },
+    "D": {
+     "D1": 0.18892856970971209,
+     "D2": 0.5377934402642353,
+     "D3": 0.2732779900260526
+    },
+    "S": {
+     "S1": 0.3284239729130431,
+     "S2": 0.4176360532800789,
+     "S3": 0.25393997380687805
+    },
+    "P": {
+     "P1": 0.26121281431756904,
+     "P2": 0.31225415075033963,
+     "P3": 0.42653303493209127
+    },
+    "E": {
+     "E1": 0.2867704276576598,
+     "E2": 0.4302526193671428,
+     "E3": 0.20247636350820658,
+     "E4": 0.08050058946699092
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11697811573600828,
+     "A2": 0.2638345099697747,
+     "A3": 0.34811450674988137,
+     "A4": 0.2710728675443356
+    },
+    "C": {
+     "C1": 0.40225233816354466,
+     "C2": 0.2644237917912175,
+     "C3": 0.07417671143265432,
+     "C4": 0.24838285312182795,
+     "C5": 0.01076430549075561
     },
     "D": {
      "D1": 0.17675812884219136,
@@ -1532,6 +1619,90 @@
     "https://www.reuters.com/legal/litigation/trump-says-congress-wants-regulate-ai-industry-out-business-2026-08-07/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-regulatory-implementation",
+   "impact_class": "minor",
+   "magnitude": 0.0015454,
+   "sources": 1,
+   "repeat_k": 1.219,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0020606,
+    "C.C3": -0.0010303
+   },
+   "applied": {
+    "C.C4": 0.0020606,
+    "C.C3": -0.0010303
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "sources/europe-2031"
+   ],
+   "incident": "61e7cedc6cf2e45f",
+   "date": "2026-08-09",
+   "event_date": "2026-08-08",
+   "driver": "India's Ministry of Electronics and Information Technology tightened the Information Technology (Intermediary Guidelines and Digital Media E",
+   "driver_urls": [
+    "https://m.economictimes.com/news/india/government-tightens-deepfake-rules-mandates-ai-content-labels-and-three-hour-takedown-timeline/amp_articleshow/133011656.cms"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003555,
+   "sources": 1,
+   "repeat_k": 5.595,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.000474,
+    "A.A1": -0.000237
+   },
+   "applied": {
+    "A.A3": 0.000474,
+    "A.A1": -0.000237
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "e68302ed62128863",
+   "date": "2026-08-09",
+   "event_date": "2026-08-06",
+   "driver": "Update on the Stanford and Arc Institute bacteriophage work covered in the August 6 evening file: the paper appeared in Science on Thursday,",
+   "driver_urls": [
+    "https://www.abc.net.au/news/2026-08-07/ai-models-design-viruses-not-found-in-nature-for-first-time/107007854"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003555,
+   "sources": 1,
+   "repeat_k": 5.595,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.000474,
+    "A.A1": -0.000237
+   },
+   "applied": {
+    "A.A3": 0.000474,
+    "A.A1": -0.000237
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "671539235e9be486",
+   "date": "2026-08-09",
+   "event_date": "2026-08-08",
+   "driver": "Zvi Mowshowitz published a consolidated account of the OpenAI\u2013Hugging Face intrusion on August 8, 2026, setting out a dated chronology and i",
+   "driver_urls": [
+    "https://thezvi.substack.com/p/what-happened-openai-and-huggingface"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -2101,6 +2272,62 @@
    "text": "Update on the AI containment breaches disclosed by OpenAI, Anthropic and Meta: legal specialists set out on August 7, 20",
    "reports": 1,
    "fp": "d6c2d0f0cd967924"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "U.S. State AI Legislation",
+   "text": "California lawmakers took final public comments on roughly 30 AI bills during the week ending August 7, 2026, ahead of s",
+   "reports": 1,
+   "fp": "c86dd694f73eb760"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "U.S. State AI Legislation",
+   "text": "Washington state's AI task force closed a two-year effort at a panel held on August 5, 2026 at the Seattle incubator AI ",
+   "reports": 1,
+   "fp": "9c56bebeb038b3bb"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Agentic AI & Coding",
+   "text": "Amazon Web Services, Anysphere, GitHub, Microsoft, OpenAI and Vercel published Agent Plugins 1.0.0 on August 6, 2026, a ",
+   "reports": 1,
+   "fp": "dce7ad2056ebe68c"
+  },
+  {
+   "date": "2026-08-09",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Nathan Lambert argued on August 9, 2026 that the episode reads as a neutral-to-positive update on alignment and a negati",
+   "reports": 1,
+   "fp": "ab71fc7d089f8ba9"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "A Reuters/Ipsos poll conducted online over the six days ending August 3, 2026 and published August 9, 2026 found that 61",
+   "reports": 1,
+   "fp": "a304c1300d43aa77"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Economist published a briefing datelined Shenzhen, Suzhou and Zhengzhou on August 6, 2026 on the effect of China's A",
+   "reports": 1,
+   "fp": "e67fbfb448b81534"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Frontier Models & Capabilities",
+   "text": "xAI made Imagine Image 2.0 generally available on August 7, 2026 as the new Quality Mode on grok.com/imagine and in its ",
+   "reports": 1,
+   "fp": "50d2da3a65e4eb62"
+  },
+  {
+   "date": "2026-08-09",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Local government measures restricting data-centre development passed 500 nationwide as of August 9, 2026, with New York ",
+   "reports": 1,
+   "fp": "e76b9893f2a8d3fb"
   }
  ],
  "seen": [
@@ -2233,7 +2460,18 @@
   "bf8eee0fed199f95",
   "a779b8307a63a103",
   "d6c2d0f0cd967924",
-  "62bc94c61e122433"
+  "62bc94c61e122433",
+  "c86dd694f73eb760",
+  "9c56bebeb038b3bb",
+  "61e7cedc6cf2e45f",
+  "dce7ad2056ebe68c",
+  "e68302ed62128863",
+  "671539235e9be486",
+  "ab71fc7d089f8ba9",
+  "a304c1300d43aa77",
+  "e67fbfb448b81534",
+  "50d2da3a65e4eb62",
+  "e76b9893f2a8d3fb"
  ],
  "residue_r0": [
   {
