@@ -1,6 +1,6 @@
-# Emit needs-review — 20260809-1048
+# Emit needs-review — 20260810-1049
 
-220 items. Unparseable values are reported here, never guessed.
+218 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -14,7 +14,6 @@
 - sources/ai-sovereignty-definitional-dilemma-hai: dangling relationship target 'concepts/national-ai-strategies'
 - sources/ais-delusional-spirals-hai: dangling relationship target 'entities/jared-moore'
 - sources/ais-delusional-spirals-hai: dangling relationship target 'entities/nick-haber'
-- sources/ais-delusional-spirals-hai: dangling relationship target 'apa-health-advisory-ai-adolescent-well-being-2025'
 - sources/anthropic-project-glasswing-initial-update: dangling relationship target 'concepts/coordinated-vulnerability-disclosure'
 - sources/anthropic-project-glasswing-initial-update: dangling relationship target 'sources/anthropics-little-brother'
 - sources/bad-news-bernstein: dangling relationship target 'entities/joseph-bernstein'
@@ -57,7 +56,6 @@
 - sources/farahany-class-25b-eo-state-ai-laws: dangling relationship target 'entities/casey-mock'
 - sources/farahany-class-26-ai-stops-advising-starts-acting: dangling relationship target 'litigation/moffatt-v-air-canada'
 - sources/farahany-class-26-ai-stops-advising-starts-acting: dangling relationship target 'concepts/agent-washing'
-- sources/ft-ai-revolution-turbocharged-ma: dangling relationship target 'entities/spacex'
 - sources/ft-ai-revolution-turbocharged-ma: dangling relationship target 'entities/blackstone'
 - sources/ft-ai-revolution-turbocharged-ma: dangling relationship target 'entities/apollo'
 - sources/ft-ai-revolution-turbocharged-ma: dangling relationship target 'entities/kkr'
@@ -143,7 +141,6 @@
 - entities/imf: dangling relationship target 'entities/ecb'
 - entities/imf: dangling relationship target 'entities/federal-reserve'
 - entities/imf: dangling relationship target 'entities/fsb'
-- entities/john-moolenaar: dangling relationship target 'entities/raja-krishnamoorthi'
 - entities/jonas-andrulis: dangling relationship target 'entities/samuel-weinbach'
 - entities/jonas-andrulis: dangling relationship target 'entities/ilhan-scheer'
 - entities/jonas-andrulis: dangling relationship target 'entities/reto-spoerri'
@@ -173,6 +170,7 @@
 - companies/snowflake: dangling relationship target 'concepts/enterprise-ai'
 - companies/sunday-robotics: unparseable date 'unknown' (founded)
 - models/astra: unparseable date 'unreleased' (release_date)
+- models/muse-spark: inline comment stripped from 'false  # every shipped version; Meta ann'
 - legislation/create-ai-act: dangling relationship target 'entities/todd-young|Sen. Todd Young (R-IN)'
 - legislation/ct-sb-4: dangling relationship target 'concepts/data-broker-regulation'
 - legislation/ct-sb-4: dangling relationship target 'concepts/data-broker-regulation'

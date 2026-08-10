@@ -1,6 +1,6 @@
 {
  "version": "r2-2026-08-06",
- "date": "2026-08-09",
+ "date": "2026-08-10",
  "axes": {
   "T": {
    "T1": 0.09930566707204999,
@@ -9,10 +9,10 @@
    "T4": 0.21147063223227613
   },
   "A": {
-   "A1": 0.11697811573600828,
-   "A2": 0.2638345099697747,
-   "A3": 0.34811450674988137,
-   "A4": 0.2710728675443356
+   "A1": 0.11653898698590873,
+   "A2": 0.2637309319824427,
+   "A3": 0.34876363315941644,
+   "A4": 0.2709664478722321
   },
   "C": {
    "C1": 0.40225233816354466,
@@ -22,14 +22,14 @@
    "C5": 0.01076430549075561
   },
   "D": {
-   "D1": 0.17675812884219136,
-   "D2": 0.5580520757319788,
-   "D3": 0.26518979542582993
+   "D1": 0.17658316669280166,
+   "D2": 0.559483311148259,
+   "D3": 0.26393352215893934
   },
   "S": {
-   "S1": 0.3284239729130431,
-   "S2": 0.4176360532800789,
-   "S3": 0.25393997380687805
+   "S1": 0.32806393654735694,
+   "S2": 0.4193731382153974,
+   "S3": 0.2525629252372458
   },
   "P": {
    "P1": 0.2594163132950861,
@@ -37,10 +37,10 @@
    "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.2865832418259527,
-   "E2": 0.4421778687134346,
-   "E3": 0.1975425780083735,
-   "E4": 0.07369631145223919
+   "E1": 0.28712551972215694,
+   "E2": 0.44203802760296557,
+   "E3": 0.1971634480743831,
+   "E4": 0.07367300460049435
   }
  },
  "history": [
@@ -657,6 +657,93 @@
      "E2": 0.4421778687134346,
      "E3": 0.1975425780083735,
      "E4": 0.07369631145223919
+    }
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11653898698590871,
+     "A2": 0.2637309319824427,
+     "A3": 0.34876363315941644,
+     "A4": 0.2709664478722321
+    },
+    "C": {
+     "C1": 0.40225233816354466,
+     "C2": 0.2644237917912175,
+     "C3": 0.07417671143265432,
+     "C4": 0.24838285312182795,
+     "C5": 0.01076430549075561
+    },
+    "D": {
+     "D1": 0.1890042436912402,
+     "D2": 0.5387225306427043,
+     "D3": 0.27227322566605566
+    },
+    "S": {
+     "S1": 0.32806393654735694,
+     "S2": 0.4193731382153974,
+     "S3": 0.2525629252372458
+    },
+    "P": {
+     "P1": 0.26128018983119927,
+     "P2": 0.3122804157051563,
+     "P3": 0.42643939446364443
+    },
+    "E": {
+     "E1": 0.2872798903096921,
+     "E2": 0.42964257822378965,
+     "E3": 0.20231313470493772,
+     "E4": 0.08076439676158055
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11653898698590871,
+     "A2": 0.2637309319824427,
+     "A3": 0.34876363315941644,
+     "A4": 0.2709664478722321
+    },
+    "C": {
+     "C1": 0.40225233816354466,
+     "C2": 0.2644237917912175,
+     "C3": 0.07417671143265432,
+     "C4": 0.24838285312182795,
+     "C5": 0.01076430549075561
+    },
+    "D": {
+     "D1": 0.17658316669280166,
+     "D2": 0.559483311148259,
+     "D3": 0.26393352215893934
+    },
+    "S": {
+     "S1": 0.32806393654735694,
+     "S2": 0.4193731382153974,
+     "S3": 0.2525629252372458
+    },
+    "P": {
+     "P1": 0.2594163132950861,
+     "P2": 0.311549014716887,
+     "P3": 0.42903467198802697
+    },
+    "E": {
+     "E1": 0.28712551972215694,
+     "E2": 0.44203802760296557,
+     "E3": 0.1971634480743831,
+     "E4": 0.07367300460049435
     }
    }
   }
@@ -1703,6 +1790,147 @@
     "https://thezvi.substack.com/p/what-happened-openai-and-huggingface"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004748,
+   "sources": 1,
+   "repeat_k": 6.682,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006331,
+    "E.E3": -0.0003166
+   },
+   "applied": {
+    "E.E1": 0.0006331,
+    "E.E3": -0.0003166
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "3724e2fe1abda3b8",
+   "date": "2026-08-10",
+   "event_date": "2026-08-09",
+   "driver": "Nvidia's agreement to invest $2 billion in Lancium, the power infrastructure developer behind the OpenAI and Oracle AI campus in Texas, beca",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/nvidia-invest-3-billion-blackstone-backed-power-firm-behind-stargate"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0008238,
+   "sources": 1,
+   "repeat_k": 1.835,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0010984,
+    "S.S3": -0.0005492
+   },
+   "applied": {
+    "S.S2": 0.0010984,
+    "S.S3": -0.0005492
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "cc609723c0131d58",
+   "date": "2026-08-10",
+   "event_date": "2026-08-07",
+   "driver": "SemiAnalysis published an analysis on August 7, 2026 arguing that SpaceX is on track to build about 10 gigawatts of compute capacity by the ",
+   "driver_urls": [
+    "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0008238,
+   "sources": 1,
+   "repeat_k": 1.835,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0010984,
+    "S.S3": -0.0005492
+   },
+   "applied": {
+    "S.S2": 0.0010984,
+    "S.S3": -0.0005492
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "8984f2d9de710d84",
+   "date": "2026-08-10",
+   "event_date": "2026-08-10",
+   "driver": "Microsoft is planning to unveil its Maia 300 AI chip this fall, potentially as soon as September, The Information reported on August 10, 202",
+   "driver_urls": [
+    "https://www.reuters.com/business/microsoft-plans-unveil-its-new-maia-300-ai-chip-this-fall-information-reports-2026-08-10/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0005896,
+   "sources": 2,
+   "repeat_k": 6.879,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0007861,
+    "A.A1": -0.0003931
+   },
+   "applied": {
+    "A.A3": 0.0007861,
+    "A.A1": -0.0003931
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "de53fe88fb47750c",
+   "date": "2026-08-10",
+   "event_date": "2026-08-07",
+   "driver": "OpenAI said on August 7, 2026 that internal evaluations of Astra, an upcoming model, over the preceding few days showed advances in agentic ",
+   "driver_urls": [
+    "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+    "https://securityaffairs.com/196931/ai/openai-pauses-astra-model-over-critical-cybersecurity-risk-concerns.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-agentic-deployment",
+   "impact_class": "minor",
+   "magnitude": 0.0014892,
+   "sources": 1,
+   "repeat_k": 1.295,
+   "spread": 1.0,
+   "requested": {
+    "D.D2": 0.0019856,
+    "D.D3": -0.0009928
+   },
+   "applied": {
+    "D.D2": 0.0019856,
+    "D.D3": -0.0009928
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/professional-services-ai-adoption"
+   ],
+   "incident": "9a822e40094c0f6f",
+   "date": "2026-08-10",
+   "event_date": "2026-08-10",
+   "driver": "Fabrizio Serafini, Seema Amble and Eric Zhou of Andreessen Horowitz published computer-use deployment data on August 10, 2026, reporting tha",
+   "driver_urls": [
+    "https://a16z.com/can-agents-use-a-computer-yet-weve-got-the-data/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -2328,6 +2556,55 @@
    "text": "Local government measures restricting data-centre development passed 500 nationwide as of August 9, 2026, with New York ",
    "reports": 1,
    "fp": "e76b9893f2a8d3fb"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Amazon confirmed on August 7, 2026 that it is financing a private gas power plant in Pecos County, Texas to supply a pla",
+   "reports": 1,
+   "fp": "1da43dc7bc963ef9"
+  },
+  {
+   "date": "2026-08-08",
+   "section": "Agentic AI & Coding",
+   "text": "Anthropic said on August 8, 2026 that auto mode will become the default for new Claude Code sessions on Pro, Max and Tea",
+   "reports": 1,
+   "fp": "c65c3d4083bba142"
+  },
+  {
+   "date": "2026-08-09",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Tim Fist, director of emerging technology policy at the Institute for Progress, and Saif M. Khan, a distinguished fellow",
+   "reports": 1,
+   "fp": "80c26dfe822b7aea"
+  },
+  {
+   "date": "2026-08-08",
+   "section": "AI Industry & Markets",
+   "text": "Update on Google's August 5 research reorganisation: Tim O'Reilly wrote on August 8, 2026 that alongside Demis Hassabis ",
+   "reports": 1,
+   "fp": "34fb78fd45afb07a"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Verge published a report on August 6, 2026 on \"spiralism,\" the term AI researcher Adele Lopez gave to a quasi-spirit",
+   "reports": 1,
+   "fp": "d8d8653f206d0236"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "SpaceX confirmed on August 10, 2026 that it will power Terafab with newly built natural gas plants and \"very large batte",
+   "reports": 1,
+   "fp": "6c9cf512b10873b3"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Frontier Models & Capabilities",
+   "text": "Meta released Muse Glimmer, an open-weight agentic model sized to run on a Mac or PC with a single graphics card, on Aug",
+   "reports": 1,
+   "fp": "8b014ed0266c3a7f"
   }
  ],
  "seen": [
@@ -2471,7 +2748,19 @@
   "a304c1300d43aa77",
   "e67fbfb448b81534",
   "50d2da3a65e4eb62",
-  "e76b9893f2a8d3fb"
+  "e76b9893f2a8d3fb",
+  "1da43dc7bc963ef9",
+  "3724e2fe1abda3b8",
+  "cc609723c0131d58",
+  "c65c3d4083bba142",
+  "80c26dfe822b7aea",
+  "34fb78fd45afb07a",
+  "d8d8653f206d0236",
+  "6c9cf512b10873b3",
+  "8984f2d9de710d84",
+  "8b014ed0266c3a7f",
+  "de53fe88fb47750c",
+  "9a822e40094c0f6f"
  ],
  "residue_r0": [
   {
@@ -2556,5 +2845,25 @@
   "cl-deal-2029": "2026-07-31",
   "cl-correction-2027": "2026-07-31",
   "cl-state-laws-2026": "2026-07-31"
- }
+ },
+ "schema_log": [
+  {
+   "axis": "C",
+   "subaxis": {
+    "key": "C.watch-federal",
+    "name": "monitoring: Federal AI Policy & Agency Action residue",
+    "cites": [],
+    "origin": "auto: weekly schema review 2026-08-10 \u2014 19 unexplained events in 7 days; FOR AUGUST'S REVIEW"
+   }
+  },
+  {
+   "axis": "E",
+   "subaxis": {
+    "key": "E.watch-ai",
+    "name": "monitoring: AI Industry & Markets residue",
+    "cites": [],
+    "origin": "auto: weekly schema review 2026-08-10 \u2014 12 unexplained events in 7 days; FOR AUGUST'S REVIEW"
+   }
+  }
+ ]
 }
