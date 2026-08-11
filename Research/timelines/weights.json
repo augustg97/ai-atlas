@@ -1,6 +1,6 @@
 {
  "version": "r2-2026-08-06",
- "date": "2026-08-10",
+ "date": "2026-08-11",
  "axes": {
   "T": {
    "T1": 0.09930566707204999,
@@ -9,17 +9,17 @@
    "T4": 0.21147063223227613
   },
   "A": {
-   "A1": 0.11653898698590873,
-   "A2": 0.2637309319824427,
-   "A3": 0.34876363315941644,
-   "A4": 0.2709664478722321
+   "A1": 0.11636474503376892,
+   "A2": 0.2636897983446782,
+   "A3": 0.34902127089744767,
+   "A4": 0.2709241857241052
   },
   "C": {
-   "C1": 0.40225233816354466,
-   "C2": 0.2644237917912175,
-   "C3": 0.07417671143265432,
-   "C4": 0.24838285312182795,
-   "C5": 0.01076430549075561
+   "C1": 0.40158477073698073,
+   "C2": 0.2642980789867676,
+   "C3": 0.07414144621557267,
+   "C4": 0.24921651615416962,
+   "C5": 0.010759187906509381
   },
   "D": {
    "D1": 0.17658316669280166,
@@ -27,9 +27,9 @@
    "D3": 0.26393352215893934
   },
   "S": {
-   "S1": 0.32806393654735694,
-   "S2": 0.4193731382153974,
-   "S3": 0.2525629252372458
+   "S1": 0.32741173237646304,
+   "S2": 0.41653539969919656,
+   "S3": 0.2560528679243405
   },
   "P": {
    "P1": 0.2594163132950861,
@@ -37,10 +37,10 @@
    "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.28712551972215694,
-   "E2": 0.44203802760296557,
-   "E3": 0.1971634480743831,
-   "E4": 0.07367300460049435
+   "E1": 0.28779695297206126,
+   "E2": 0.44186491082908425,
+   "E3": 0.19669398439400712,
+   "E4": 0.07364415180484746
   }
  },
  "history": [
@@ -744,6 +744,93 @@
      "E2": 0.44203802760296557,
      "E3": 0.1971634480743831,
      "E4": 0.07367300460049435
+    }
+   }
+  },
+  {
+   "date": "2026-08-11",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11636474503376892,
+     "A2": 0.2636897983446782,
+     "A3": 0.34902127089744767,
+     "A4": 0.2709241857241052
+    },
+    "C": {
+     "C1": 0.40158477073698073,
+     "C2": 0.2642980789867676,
+     "C3": 0.07414144621557267,
+     "C4": 0.24921651615416962,
+     "C5": 0.010759187906509381
+    },
+    "D": {
+     "D1": 0.18934527764460465,
+     "D2": 0.5381606483837715,
+     "D3": 0.27249407397162373
+    },
+    "S": {
+     "S1": 0.32741173237646304,
+     "S2": 0.4165353996991965,
+     "S3": 0.2560528679243405
+    },
+    "P": {
+     "P1": 0.2616818462171034,
+     "P2": 0.31243672326714605,
+     "P3": 0.4258814305157505
+    },
+    "E": {
+     "E1": 0.2879068791105054,
+     "E2": 0.42900705645229453,
+     "E3": 0.2020640927919805,
+     "E4": 0.08102197164521957
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11636474503376892,
+     "A2": 0.2636897983446782,
+     "A3": 0.34902127089744767,
+     "A4": 0.2709241857241052
+    },
+    "C": {
+     "C1": 0.40158477073698073,
+     "C2": 0.2642980789867676,
+     "C3": 0.07414144621557267,
+     "C4": 0.24921651615416962,
+     "C5": 0.010759187906509381
+    },
+    "D": {
+     "D1": 0.17658316669280166,
+     "D2": 0.559483311148259,
+     "D3": 0.26393352215893934
+    },
+    "S": {
+     "S1": 0.32741173237646304,
+     "S2": 0.4165353996991965,
+     "S3": 0.2560528679243405
+    },
+    "P": {
+     "P1": 0.2594163132950861,
+     "P2": 0.311549014716887,
+     "P3": 0.42903467198802697
+    },
+    "E": {
+     "E1": 0.28779695297206126,
+     "E2": 0.44186491082908425,
+     "E3": 0.19669398439400712,
+     "E4": 0.07364415180484746
     }
    }
   }
@@ -1931,6 +2018,122 @@
     "https://a16z.com/can-agents-use-a-computer-yet-weve-got-the-data/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0007142,
+   "sources": 1,
+   "repeat_k": 3.271,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0009522,
+    "C.C1": -0.0004761
+   },
+   "applied": {
+    "C.C4": 0.0009522,
+    "C.C1": -0.0004761
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "incident": "d7e456d1e7e0b81c",
+   "date": "2026-08-11",
+   "event_date": "2026-08-10",
+   "driver": "The Ninth Circuit on August 10, 2026 rejected an appeal by Meta and TikTok seeking to overturn a lower-court ruling requiring them to face m",
+   "driver_urls": [
+    "https://www.reuters.com/world/us-appeals-court-allows-thousands-lawsuits-against-social-media-companies-over-2026-08-10/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-constraint",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0.0,
+   "spread": 1.0,
+   "requested": {
+    "S.S3": 0.004,
+    "S.S2": -0.002
+   },
+   "applied": {
+    "S.S3": 0.004,
+    "S.S2": -0.002
+   },
+   "cites": [
+    "concepts/export-controls-ai",
+    "concepts/compute-governance"
+   ],
+   "incident": "4f5a60f1b927bafd",
+   "date": "2026-08-11",
+   "event_date": "2026-08-11",
+   "driver": "The U.S. producer price index for electronic components and accessories rose 27.6% in June 2026 from a year earlier, the largest increase in",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/11/chips-memory-inflation-ai"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002341,
+   "sources": 1,
+   "repeat_k": 7.136,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0003121,
+    "A.A1": -0.000156
+   },
+   "applied": {
+    "A.A3": 0.0003121,
+    "A.A1": -0.000156
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "contested": [
+    "ev-safety-incident"
+   ],
+   "incident": "f3ff3aab16ef02ca",
+   "date": "2026-08-11",
+   "event_date": "2026-08-06",
+   "driver": "OpenAI researchers who disclosed at the Black Hat conference on August 6, 2026 that the company's agents had exploited its own testing infra",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/11/ai-agents-rogue-autonomy-hugging-face"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0005881,
+   "sources": 2,
+   "repeat_k": 6.958,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0007842,
+    "E.E3": -0.0003921
+   },
+   "applied": {
+    "E.E1": 0.0007842,
+    "E.E3": -0.0003921
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "d78f7de89c6d2757",
+   "date": "2026-08-11",
+   "event_date": "2026-08-11",
+   "driver": "Update on OpenAI's roughly $7 billion employee share buyback, dropped from the previous file to keep it inside its length band: the tender c",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/",
+    "https://www.theinformation.com/briefings/nvidia-partners-private-equity-giants-500-billion-ai-compute-financing"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -2605,6 +2808,111 @@
    "text": "Meta released Muse Glimmer, an open-weight agentic model sized to run on a Mac or PC with a single graphics card, on Aug",
    "reports": 1,
    "fp": "8b014ed0266c3a7f"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Nvidia said in a statement on August 10, 2026 that Apollo Global Management, Blackstone, BlackRock, Brookfield Asset Man",
+   "reports": 1,
+   "fp": "36286bc7c9b475b0"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Anthropic, Macquarie Asset Management and Singapore's sovereign wealth fund GIC said on August 10, 2026 that they had fo",
+   "reports": 1,
+   "fp": "397824c6fa664c53"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Americans for Responsible Innovation published a federal frontier-AI governance blueprint on August 10, 2026, written by",
+   "reports": 1,
+   "fp": "ad6e32d0c26b88a0"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Meta's Muse Glimmer release of August 10, 2026, covered in the morning file: Meta specified the model at 30 bi",
+   "reports": 1,
+   "fp": "6cac8ba65fedbe2f"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Frontier Models & Capabilities",
+   "text": "Anthropic disclosed on August 10, 2026 that an unreleased research version of Claude improved the longstanding lower bou",
+   "reports": 1,
+   "fp": "a4c03817c1d19d5c"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on OpenAI's August 7 disclosure that it could not rule out Critical cyber capability in Astra: on August 10, 2026",
+   "reports": 1,
+   "fp": "a6102613d6344011"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "U.S. State AI Legislation",
+   "text": "California Governor Gavin Newsom announced on August 10, 2026 an AI Cyber Defense Program directing state agencies to es",
+   "reports": 1,
+   "fp": "12668ce5bfb49dec"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update on Nvidia's August 10, 2026 financing announcement: the arrangements with Apollo Global Management, BlackRock, Bl",
+   "reports": 1,
+   "fp": "8241a6a6e8a62fcd"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update on Intel's $15 billion common stock offering, announced August 10, 2026 and dropped from the previous file for la",
+   "reports": 1,
+   "fp": "2f1d4972c1d0887d"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on Mark Zuckerberg's August 10, 2026 essay, previously covered through its proposal that labs share intermediate ",
+   "reports": 1,
+   "fp": "962d6effef7c1af0"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Representative John Moolenaar (R-MI), chair of the House select committee on China, has told the Commerce Department tha",
+   "reports": 1,
+   "fp": "9673915e2dc51899"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Standards & Safety Frameworks",
+   "text": "Anthropic confirmed on August 11, 2026, through an updated support page, that it will watermark text and files generated",
+   "reports": 1,
+   "fp": "e27cf5f7d9c27004"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Reported but unverified",
+   "text": "Meta's stated plan to release an open-weight version of its flagship Muse Spark 1.2 model became public on August 11, 20",
+   "reports": 1,
+   "fp": "2b4d9f47912de08f"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Reported but unverified",
+   "text": "Caitlin Kalinowski's move from leading OpenAI's robotics effort to Anthropic as a member of technical staff became publi",
+   "reports": 1,
+   "fp": "ac39bfedf55f15a2"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Reported but unverified",
+   "text": "Nvidia's investment in a new in-house open-source model family it calls Nemotron 4 became public on August 11, 2026; no ",
+   "reports": 1,
+   "fp": "e1abb5cd823f1091"
   }
  ],
  "seen": [
@@ -2760,7 +3068,26 @@
   "8984f2d9de710d84",
   "8b014ed0266c3a7f",
   "de53fe88fb47750c",
-  "9a822e40094c0f6f"
+  "9a822e40094c0f6f",
+  "36286bc7c9b475b0",
+  "397824c6fa664c53",
+  "ad6e32d0c26b88a0",
+  "6cac8ba65fedbe2f",
+  "a4c03817c1d19d5c",
+  "a6102613d6344011",
+  "d7e456d1e7e0b81c",
+  "12668ce5bfb49dec",
+  "8241a6a6e8a62fcd",
+  "2f1d4972c1d0887d",
+  "4f5a60f1b927bafd",
+  "f3ff3aab16ef02ca",
+  "962d6effef7c1af0",
+  "9673915e2dc51899",
+  "d78f7de89c6d2757",
+  "e27cf5f7d9c27004",
+  "2b4d9f47912de08f",
+  "ac39bfedf55f15a2",
+  "e1abb5cd823f1091"
  ],
  "residue_r0": [
   {
