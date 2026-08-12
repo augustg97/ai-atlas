@@ -1,6 +1,6 @@
 {
  "version": "r2-2026-08-06",
- "date": "2026-08-11",
+ "date": "2026-08-12",
  "axes": {
   "T": {
    "T1": 0.09930566707204999,
@@ -9,17 +9,17 @@
    "T4": 0.21147063223227613
   },
   "A": {
-   "A1": 0.11636474503376892,
-   "A2": 0.2636897983446782,
-   "A3": 0.34902127089744767,
-   "A4": 0.2709241857241052
+   "A1": 0.11578101177073212,
+   "A2": 0.26306891830099294,
+   "A3": 0.35086379822785874,
+   "A4": 0.2702862717004163
   },
   "C": {
-   "C1": 0.40158477073698073,
-   "C2": 0.2642980789867676,
-   "C3": 0.07414144621557267,
-   "C4": 0.24921651615416962,
-   "C5": 0.010759187906509381
+   "C1": 0.4015864574461601,
+   "C2": 0.26429918907367433,
+   "C3": 0.07414175761945803,
+   "C4": 0.25126698963898075,
+   "C5": 0.00870560622172665
   },
   "D": {
    "D1": 0.17658316669280166,
@@ -27,9 +27,9 @@
    "D3": 0.26393352215893934
   },
   "S": {
-   "S1": 0.32741173237646304,
-   "S2": 0.41653539969919656,
-   "S3": 0.2560528679243405
+   "S1": 0.3272508495105034,
+   "S2": 0.41731444728376255,
+   "S3": 0.25543470320573397
   },
   "P": {
    "P1": 0.2594163132950861,
@@ -37,10 +37,10 @@
    "P3": 0.42903467198802697
   },
   "E": {
-   "E1": 0.28779695297206126,
-   "E2": 0.44186491082908425,
-   "E3": 0.19669398439400712,
-   "E4": 0.07364415180484746
+   "E1": 0.2885510356823203,
+   "E2": 0.44167040630193466,
+   "E3": 0.19616682363208915,
+   "E4": 0.07361173438365586
   }
  },
  "history": [
@@ -831,6 +831,93 @@
      "E2": 0.44186491082908425,
      "E3": 0.19669398439400712,
      "E4": 0.07364415180484746
+    }
+   }
+  },
+  {
+   "date": "2026-08-12",
+   "marginals": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11578101177073212,
+     "A2": 0.26306891830099294,
+     "A3": 0.35086379822785874,
+     "A4": 0.2702862717004163
+    },
+    "C": {
+     "C1": 0.40158645744616017,
+     "C2": 0.2642991890736744,
+     "C3": 0.07414175761945804,
+     "C4": 0.2512669896389808,
+     "C5": 0.008705606221726652
+    },
+    "D": {
+     "D1": 0.18968481379230406,
+     "D2": 0.5376016566905895,
+     "D3": 0.2727135295171066
+    },
+    "S": {
+     "S1": 0.3272508495105034,
+     "S2": 0.41731444728376255,
+     "S3": 0.25543470320573397
+    },
+    "P": {
+     "P1": 0.2618147505062108,
+     "P2": 0.31248834222884403,
+     "P3": 0.42569690726494525
+    },
+    "E": {
+     "E1": 0.2886070914526816,
+     "E2": 0.42835689128492116,
+     "E3": 0.2017607161700198,
+     "E4": 0.08127530109237742
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09930566707204999,
+     "T2": 0.30240133865361446,
+     "T3": 0.38682236204205944,
+     "T4": 0.21147063223227613
+    },
+    "A": {
+     "A1": 0.11578101177073212,
+     "A2": 0.26306891830099294,
+     "A3": 0.35086379822785874,
+     "A4": 0.2702862717004163
+    },
+    "C": {
+     "C1": 0.40158645744616017,
+     "C2": 0.2642991890736744,
+     "C3": 0.07414175761945804,
+     "C4": 0.2512669896389808,
+     "C5": 0.008705606221726652
+    },
+    "D": {
+     "D1": 0.17658316669280166,
+     "D2": 0.559483311148259,
+     "D3": 0.26393352215893934
+    },
+    "S": {
+     "S1": 0.3272508495105034,
+     "S2": 0.41731444728376255,
+     "S3": 0.25543470320573397
+    },
+    "P": {
+     "P1": 0.2594163132950861,
+     "P2": 0.311549014716887,
+     "P3": 0.42903467198802697
+    },
+    "E": {
+     "E1": 0.2885510356823203,
+     "E2": 0.44167040630193466,
+     "E3": 0.19616682363208915,
+     "E4": 0.07361173438365586
     }
    }
   }
@@ -2134,6 +2221,148 @@
     "https://www.theinformation.com/briefings/nvidia-partners-private-equity-giants-500-billion-ai-compute-financing"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0007382,
+   "sources": 1,
+   "repeat_k": 3.146,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0009842,
+    "S.S3": -0.0004921
+   },
+   "applied": {
+    "S.S2": 0.0009842,
+    "S.S3": -0.0004921
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "f73bad3c3b12ea8c",
+   "date": "2026-08-12",
+   "event_date": "2026-08-10",
+   "driver": "Riot Platforms disclosed on August 10, 2026 a 20-year agreement to supply 191 megawatts of capacity from its Rockdale, Texas campus to an un",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-08-11/anthropic-strikes-9-billion-deal-with-cloud-computing-firm-riot"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003304,
+   "sources": 1,
+   "repeat_k": 7.208,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004405,
+    "E.E3": -0.0002203
+   },
+   "applied": {
+    "E.E1": 0.0004405,
+    "E.E3": -0.0002203
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "574eb7f8d1ee6c65",
+   "date": "2026-08-12",
+   "event_date": "2026-08-10",
+   "driver": "Anthropic has been meeting potential investors ahead of an offering the Wall Street Journal reported on August 10, 2026 could be the largest",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/anthropic-tries-to-shore-up-investor-confidence-ahead-of-blockbuster-ipo-0ff736ad"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004654,
+   "sources": 1,
+   "repeat_k": 7.369,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006206,
+    "A.A1": -0.0003103
+   },
+   "applied": {
+    "A.A3": 0.0006206,
+    "A.A1": -0.0003103
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "4c09f80488b728ae",
+   "date": "2026-08-12",
+   "event_date": "2026-08-06",
+   "driver": "Samuel H. King, Brian L. Hie and colleagues published work in Science on August 6, 2026 reporting the generative design of complete bacterio",
+   "driver_urls": [
+    "https://www.science.org/doi/10.1126/science.aec2657"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-standards-published",
+   "impact_class": "minor",
+   "magnitude": 0.0020494,
+   "sources": 1,
+   "repeat_k": 0.673,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0020494,
+    "C.C5": -0.0020494,
+    "A.A3": 0.0020494
+   },
+   "applied": {
+    "C.C4": 0.0020494,
+    "C.C5": -0.0020494,
+    "A.A3": 0.0020494
+   },
+   "cites": [
+    "concepts/responsible-scaling-policy",
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "04fdea9427d3e2ad",
+   "date": "2026-08-12",
+   "event_date": "2026-08-12",
+   "driver": "Americans for Responsible Innovation proposed a frontier AI governance framework, reported August 12, 2026, under which government-certified",
+   "driver_urls": [
+    "https://insideaipolicy.com/ai-daily-news/ari-framework-frontier-ai-governance-preserves-liability-federal-evaluators"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003304,
+   "sources": 1,
+   "repeat_k": 7.208,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004405,
+    "E.E3": -0.0002203
+   },
+   "applied": {
+    "E.E1": 0.0004405,
+    "E.E3": -0.0002203
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "d19f348bf4d8b1b0",
+   "date": "2026-08-12",
+   "event_date": "2026-08-10",
+   "driver": "OpenAI completed a tender offer, reported August 10, 2026, in which the company itself bought back roughly $7 billion of shares from current",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -2913,6 +3142,132 @@
    "text": "Nvidia's investment in a new in-house open-source model family it calls Nemotron 4 became public on August 11, 2026; no ",
    "reports": 1,
    "fp": "e1abb5cd823f1091"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update on Nvidia's compute-financing alliance, covered this morning through the announcement and The Information's accou",
+   "reports": 1,
+   "fp": "6b72e0a71f77abf2"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "CoreWeave reported second-quarter results on August 11, 2026 showing revenue of $2.58 billion, up 112% year over year ag",
+   "reports": 1,
+   "fp": "e9bbf57f1939f82b"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Industry & Markets",
+   "text": "Manus said on August 11, 2026 that it will \"soon return to operating as an independent company,\" which The Information r",
+   "reports": 1,
+   "fp": "e291eb91c9945f73"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Researchers at the University of T\u00fcbingen, the Max Planck Institute, MATS Research and the security firm Snyk disclosed,",
+   "reports": 1,
+   "fp": "81ecb6d89c67c1b0"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Twenty-nine House Democrats led by Representatives Greg Casar and Doris Matsui wrote to OpenAI on August 10, 2026 asking",
+   "reports": 1,
+   "fp": "c0c8f9305462c479"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Western Australia Police have been running the country's first live facial recognition trial by a police force since Jun",
+   "reports": 1,
+   "fp": "8d5d65e06222ad8a"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Nvidia signed preliminary agreements on August 10, 2026 with Apollo Global Management, BlackRock, Blackstone, Brookfield",
+   "reports": 1,
+   "fp": "0ff745bc7b29d33b"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "CME Group and Silicon Data announced on August 11, 2026 plans to launch two Compute futures contracts on October 5, 2026",
+   "reports": 1,
+   "fp": "6c383022163d28cd"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "CoreWeave reported on August 11, 2026 that second-quarter revenue more than doubled to $2.575 billion while its cash bur",
+   "reports": 1,
+   "fp": "ad45c69d0042d90f"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The National Institute of Standards and Technology published a request for information on modernizing the National Vulne",
+   "reports": 1,
+   "fp": "cfa3039024ce3137"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Palantir called on August 11, 2026 for the General Services Administration to withdraw its draft AI contract clause, arg",
+   "reports": 1,
+   "fp": "2c72a70f8ceb892b"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Senators Mike Rounds (R-SD) and John Hickenlooper (D-CO) introduced legislation, reported August 12, 2026, that would re",
+   "reports": 1,
+   "fp": "00447bfd5ddb03aa"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Standards & Safety Frameworks",
+   "text": "Anthropic confirmed on August 11, 2026 that Claude models launched on or after August 2, 2026 embed an imperceptible mac",
+   "reports": 1,
+   "fp": "957149c46f07d70e"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Industry & Markets",
+   "text": "Brad Lightcap told OpenAI employees on August 11, 2026 that he is leaving the company, writing \"It is bittersweet to sha",
+   "reports": 1,
+   "fp": "26d161e33f7c0bcb"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Industry & Markets",
+   "text": "Sundar Pichai said on X on August 11, 2026 that Google's Gemini app reached 1 billion monthly users, which Google descri",
+   "reports": 1,
+   "fp": "ff0f5d1a8325f55f"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Industry & Markets",
+   "text": "Manus said on August 11, 2026 that it will soon return to operating as an independent company as it separates from Meta ",
+   "reports": 1,
+   "fp": "5fbf467c033ff4fd"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Agentic AI & Coding",
+   "text": "SpaceXAI released Grok Bot in beta on August 11, 2026, a cloud-hosted agent that signs into a customer's existing applic",
+   "reports": 1,
+   "fp": "ff65d12944aec947"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Spotify announced on August 11, 2026 that starting in mid-September it will apply an AI Persona badge to artist profiles",
+   "reports": 1,
+   "fp": "89e0cd6871b977b0"
   }
  ],
  "seen": [
@@ -3087,7 +3442,30 @@
   "e27cf5f7d9c27004",
   "2b4d9f47912de08f",
   "ac39bfedf55f15a2",
-  "e1abb5cd823f1091"
+  "e1abb5cd823f1091",
+  "6b72e0a71f77abf2",
+  "f73bad3c3b12ea8c",
+  "e9bbf57f1939f82b",
+  "574eb7f8d1ee6c65",
+  "e291eb91c9945f73",
+  "81ecb6d89c67c1b0",
+  "4c09f80488b728ae",
+  "c0c8f9305462c479",
+  "8d5d65e06222ad8a",
+  "0ff745bc7b29d33b",
+  "6c383022163d28cd",
+  "ad45c69d0042d90f",
+  "cfa3039024ce3137",
+  "2c72a70f8ceb892b",
+  "00447bfd5ddb03aa",
+  "957149c46f07d70e",
+  "04fdea9427d3e2ad",
+  "26d161e33f7c0bcb",
+  "d19f348bf4d8b1b0",
+  "ff0f5d1a8325f55f",
+  "5fbf467c033ff4fd",
+  "ff65d12944aec947",
+  "89e0cd6871b977b0"
  ],
  "residue_r0": [
   {

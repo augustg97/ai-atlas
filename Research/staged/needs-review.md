@@ -1,6 +1,6 @@
-# Emit needs-review — 20260811-1049
+# Emit needs-review — 20260812-1048
 
-218 items. Unparseable values are reported here, never guessed.
+216 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -157,13 +157,11 @@
 - companies/aleph-alpha: dangling relationship target 'entities/ilhan-scheer'
 - companies/aleph-alpha: dangling relationship target 'entities/samuel-weinbach'
 - companies/alphasense: unparseable date 'unknown' (founded)
-- companies/black-forest-labs: unparseable date 'unknown' (founded)
 - companies/clickup: dangling relationship target 'industries/software'
 - companies/etched: unparseable date 'unknown' (founded)
 - companies/g42: unparseable date 'unknown' (founded)
 - companies/ibm: implausible year 1911 (founded)
 - companies/lancium: unparseable date 'undisclosed' (founded)
-- companies/midjourney: dangling relationship target 'companies/stability-ai'
 - companies/openevidence: unparseable date 'unknown' (founded)
 - companies/openrouter: unparseable date 'unknown' (founded)
 - companies/sierra: unparseable date 'unknown' (founded)
