@@ -3,23 +3,23 @@
  "date": "2026-08-13",
  "axes": {
   "T": {
-   "T1": 0.07,
-   "T2": 0.29,
-   "T3": 0.41,
-   "T4": 0.23
+   "T1": 0.06986262602007891,
+   "T2": 0.2894308792260411,
+   "T3": 0.4131359101326234,
+   "T4": 0.2275705846212566
   },
   "A": {
-   "A1": 0.17,
-   "A2": 0.29,
-   "A3": 0.29,
-   "A4": 0.25
+   "A1": 0.16963856075064457,
+   "A2": 0.28991050705745885,
+   "A3": 0.290528081280294,
+   "A4": 0.24992285091160246
   },
   "C": {
-   "C1": 0.34,
-   "C2": 0.26,
-   "C3": 0.12,
-   "C4": 0.27,
-   "C5": 0.01
+   "C1": 0.33732005844358043,
+   "C2": 0.25948310964558596,
+   "C3": 0.11976143522103969,
+   "C4": 0.2734552770880407,
+   "C5": 0.009980119601753308
   },
   "D": {
    "D1": 0.17,
@@ -37,10 +37,10 @@
    "P3": 0.34
   },
   "E": {
-   "E1": 0.26,
-   "E2": 0.44,
-   "E3": 0.22,
-   "E4": 0.08
+   "E1": 0.26000000000000006,
+   "E2": 0.44000000000000006,
+   "E3": 0.22000000000000003,
+   "E4": 0.08000000000000002
   }
  },
  "history": [
@@ -1012,28 +1012,28 @@
    "date": "2026-08-13",
    "marginals": {
     "T": {
-     "T1": 0.07,
-     "T2": 0.29,
-     "T3": 0.41,
-     "T4": 0.23
+     "T1": 0.06986262602007891,
+     "T2": 0.2894308792260411,
+     "T3": 0.4131359101326234,
+     "T4": 0.2275705846212566
     },
     "A": {
-     "A1": 0.17,
-     "A2": 0.29,
-     "A3": 0.29,
-     "A4": 0.25
+     "A1": 0.16963856075064457,
+     "A2": 0.28991050705745885,
+     "A3": 0.290528081280294,
+     "A4": 0.24992285091160246
     },
     "C": {
-     "C1": 0.34,
-     "C2": 0.26,
-     "C3": 0.12,
-     "C4": 0.27,
-     "C5": 0.01
+     "C1": 0.33732005844358043,
+     "C2": 0.25948310964558596,
+     "C3": 0.11976143522103969,
+     "C4": 0.2734552770880407,
+     "C5": 0.009980119601753308
     },
     "D": {
-     "D1": 0.18346000110534935,
-     "D2": 0.5472438616197486,
-     "D3": 0.26929613727490215
+     "D1": 0.18357616584450828,
+     "D2": 0.5470505097028835,
+     "D3": 0.26937332445260836
     },
     "S": {
      "S1": 0.35,
@@ -1041,36 +1041,36 @@
      "S3": 0.32
     },
     "P": {
-     "P1": 0.3784152904586829,
-     "P2": 0.28172671651225545,
-     "P3": 0.3398579930290617
+     "P1": 0.37850295063761363,
+     "P2": 0.2816310487733587,
+     "P3": 0.3398660005890277
     },
     "E": {
-     "E1": 0.2617371292758842,
-     "E2": 0.42639564839571154,
-     "E3": 0.2241631182601354,
-     "E4": 0.0877041040682689
+     "E1": 0.2617558969580719,
+     "E2": 0.4262333956959235,
+     "E3": 0.22421139079733218,
+     "E4": 0.0877993165486724
     }
    },
    "raw": {
     "T": {
-     "T1": 0.07,
-     "T2": 0.29,
-     "T3": 0.41,
-     "T4": 0.23
+     "T1": 0.06986262602007891,
+     "T2": 0.2894308792260411,
+     "T3": 0.4131359101326234,
+     "T4": 0.2275705846212566
     },
     "A": {
-     "A1": 0.17,
-     "A2": 0.29,
-     "A3": 0.29,
-     "A4": 0.25
+     "A1": 0.16963856075064457,
+     "A2": 0.28991050705745885,
+     "A3": 0.290528081280294,
+     "A4": 0.24992285091160246
     },
     "C": {
-     "C1": 0.34,
-     "C2": 0.26,
-     "C3": 0.12,
-     "C4": 0.27,
-     "C5": 0.01
+     "C1": 0.33732005844358043,
+     "C2": 0.25948310964558596,
+     "C3": 0.11976143522103969,
+     "C4": 0.2734552770880407,
+     "C5": 0.009980119601753308
     },
     "D": {
      "D1": 0.17,
@@ -1088,10 +1088,10 @@
      "P3": 0.34
     },
     "E": {
-     "E1": 0.26,
-     "E2": 0.43999999999999995,
-     "E3": 0.21999999999999997,
-     "E4": 0.08
+     "E1": 0.26000000000000006,
+     "E2": 0.44,
+     "E3": 0.22,
+     "E4": 0.08000000000000002
     }
    },
    "note": "r3 re-set from the forecaster evidence programme (26 priors, dossier per axis). Not an evidence application: a deliberate re-basing, approved by August 2026-08-13."
@@ -2538,6 +2538,91 @@
     "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-state-bill-activity",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0.0,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.004,
+    "C.C1": -0.002
+   },
+   "applied": {
+    "C.C4": 0.004,
+    "C.C1": -0.002
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "incident": "538df14ab0ce0f1f",
+   "date": "2026-08-13",
+   "event_date": "2026-08-11",
+   "driver": "Colorado's Department of Law filed draft Automated Decision-Making Technology and Conversational Artificial Intelligence Service rules with ",
+   "driver_urls": [
+    "https://coag.gov/ai/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.0029612,
+   "sources": 2,
+   "repeat_k": 0.41,
+   "spread": 1.0,
+   "requested": {
+    "T.T3": 0.0039483,
+    "T.T4": -0.0019741
+   },
+   "applied": {
+    "T.T3": 0.0039483,
+    "T.T4": -0.0019741
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "incident": "e3689c240b8f7969",
+   "date": "2026-08-13",
+   "event_date": "2026-08-12",
+   "driver": "DeepSeek released its flagship V4-Pro-0813 model on August 12, 2026 across the DeepSeek API and DeepSeek Chat, priced at $0.435 per 1 millio",
+   "driver_urls": [
+    "https://wccftech.com/deepseek-prices-its-new-v4-pro-0813-model-at-0-87-per-1-million-output-tokens-as-the-high-flying-chinese-ai-lab-wows-with-its-soaring-token-consumption/",
+    "https://www.theinformation.com/briefings/deepseek-releases-flagship-v4-pro-model-challenge-kimi-k3"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004633,
+   "sources": 1,
+   "repeat_k": 7.58,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006178,
+    "A.A1": -0.0003089
+   },
+   "applied": {
+    "A.A3": 0.0006178,
+    "A.A1": -0.0003089
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "b410f1f33b28a2d4",
+   "date": "2026-08-13",
+   "event_date": "2026-08-13",
+   "driver": "MIT FutureTech's AI Risk Initiative research, in which 272 international AI experts rated 24 AI risk domains, became public on August 13, 20",
+   "driver_urls": [
+    "https://mitsloan.mit.edu/ideas-made-to-matter/these-are-most-urgent-ai-risks-according-to-272-experts"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -3443,6 +3528,146 @@
    "text": "Spotify announced on August 11, 2026 that starting in mid-September it will apply an AI Persona badge to artist profiles",
    "reports": 1,
    "fp": "89e0cd6871b977b0"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "AI Industry & Markets",
+   "text": "Sergey Brin urged key Google AI staff in recent months to go all in on Gemini, and has pushed resource allocation toward",
+   "reports": 1,
+   "fp": "fd7f014559b90981"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic is in early-stage talks to buy Nvidia-backed Decart AI, a source told Reuters on August 12, 2026; Bloomberg, w",
+   "reports": 1,
+   "fp": "5335c6436e4179e4"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "AI Industry & Markets",
+   "text": "Apple has approached publishers in recent months about new multiyear content deals to supply current news and informatio",
+   "reports": 1,
+   "fp": "b6e67ba310aa2c17"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Frontier Models & Capabilities",
+   "text": "SpaceXAI released Grok 4.6 on August 12, 2026, scoring 61 on the Artificial Analysis Intelligence Index \u2014 level with GPT",
+   "reports": 1,
+   "fp": "9fb6401b979ac077"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Frontier Models & Capabilities",
+   "text": "Mistral AI announced on August 11, 2026 that its platform will support third-party open models, starting with Z.ai's GLM",
+   "reports": 1,
+   "fp": "71fc68233405b459"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "White House officials are almost certain to revise the Trump administration's new artificial intelligence guidelines and",
+   "reports": 1,
+   "fp": "1c1bd10fad2b7835"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Rep. Frank Pallone (D-NJ) announced in an August 12, 2026 press release that he had sent letters to eight major airlines",
+   "reports": 1,
+   "fp": "44bbe5e0d4965b2d"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "International AI Regulation",
+   "text": "The UK government is planning to regulate the use of artificial intelligence in gene synthesis, with ministers examining",
+   "reports": 1,
+   "fp": "7b4fff9c17701940"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "National Security & Geopolitics",
+   "text": "Taiwan's Ministry of Digital Affairs said on August 13, 2026 that it detected an \"abnormal attack\" on government agencie",
+   "reports": 1,
+   "fp": "613b2765c0c00164"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "German digital rights group HateAid said on August 12, 2026 that it had filed a criminal complaint with Frankfurt's ZIT ",
+   "reports": 1,
+   "fp": "5880b5c8acebe818"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "AI Adoption by Industry",
+   "text": "AT&T Chief Data and AI Officer Andy Markus said in an interview published August 12, 2026 that open models currently pow",
+   "reports": 1,
+   "fp": "e5b3236d00284374"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Twitch said on August 12, 2026 that creators' content will be used to train generative AI models across Amazon, with cre",
+   "reports": 1,
+   "fp": "6310c8f42bd22396"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The White House published a presidential memorandum on August 12, 2026 that will for the first time allow vetted private",
+   "reports": 1,
+   "fp": "18e131083a358a0b"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sen. Jim Banks (R-IN) urged Treasury Secretary Scott Bessent to determine whether the United States and China could work",
+   "reports": 1,
+   "fp": "9103d00a9417d97c"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Frontier Models & Capabilities",
+   "text": "Google said the Gemini app passed 1 billion monthly active users on August 11, 2026, its 14th product to reach that mark",
+   "reports": 1,
+   "fp": "30fbf8cc1eaaa065"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "A preprint submitted August 10, 2026 decoded 315,320 encrypted reasoning blocks taken from 6,708 publicly posted agent t",
+   "reports": 1,
+   "fp": "814f35c1e0d8e975"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "AI Industry & Markets",
+   "text": "Brad Lightcap announced on August 11, 2026 that he is leaving OpenAI after eight years to start a venture he has not des",
+   "reports": 1,
+   "fp": "47ced759c4e2a695"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "AI Industry & Markets",
+   "text": "Nebius reported second-quarter revenue of $582 million on August 12, 2026, a 454% expansion, with cash burn rising to $3",
+   "reports": 1,
+   "fp": "8bb11ea95ead104b"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "More than a dozen state attorneys general have asked OpenAI to preserve documents related to the Hugging Face incident, ",
+   "reports": 1,
+   "fp": "85bcf71e7a246d7f"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Anthropic said on August 11, 2026 that it will watermark text generated by its AI models, citing the EU AI Act's transpa",
+   "reports": 1,
+   "fp": "470ad2ad639488ef"
   }
  ],
  "seen": [
@@ -3640,7 +3865,30 @@
   "ff0f5d1a8325f55f",
   "5fbf467c033ff4fd",
   "ff65d12944aec947",
-  "89e0cd6871b977b0"
+  "89e0cd6871b977b0",
+  "fd7f014559b90981",
+  "5335c6436e4179e4",
+  "b6e67ba310aa2c17",
+  "9fb6401b979ac077",
+  "71fc68233405b459",
+  "1c1bd10fad2b7835",
+  "44bbe5e0d4965b2d",
+  "538df14ab0ce0f1f",
+  "7b4fff9c17701940",
+  "613b2765c0c00164",
+  "5880b5c8acebe818",
+  "e5b3236d00284374",
+  "6310c8f42bd22396",
+  "18e131083a358a0b",
+  "9103d00a9417d97c",
+  "e3689c240b8f7969",
+  "30fbf8cc1eaaa065",
+  "814f35c1e0d8e975",
+  "b410f1f33b28a2d4",
+  "47ced759c4e2a695",
+  "8bb11ea95ead104b",
+  "85bcf71e7a246d7f",
+  "470ad2ad639488ef"
  ],
  "residue_r0": [
   {
