@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r2-2026-08-06"
+REGISTRY_VERSION = "r3-2026-08-13"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -193,6 +193,25 @@ CONDITIONAL_STORIES = {
                "turns a market correction into a demand crisis (E4).",
   ("E", "D3"): "Slow diffusion starves the spiral — E4 nearly requires a "
                "labor shock to ignite.",
+  ("T", "S3"): "Compute supply gates capability. Under a constrained "
+               "build-out effective compute grows at about 60% of its "
+               "baseline rate, which stretches the measured capability "
+               "doubling from 212 days to about 350 and moves month-long "
+               "autonomous work out by roughly three years.",
+  ("T", "S2"): "A diversified build-out lifts the supply ceiling, and only "
+               "partly: about 40% of effective-compute growth is algorithmic "
+               "and runs under any siting arrangement.",
+  ("D", "E3"): "Automation displacement is a recession phenomenon. Across "
+               "three recessions in thirty years, 88% of American job losses "
+               "in routine occupations fell inside a twelve-month window "
+               "around the downturn, and those jobs never came back.",
+  ("D", "E4"): "A demand crisis is when the reorganisation gets carried out. "
+               "Firms defer it while demand holds.",
+  ("D", "E1"): "A sustained boom defers displacement: firms reorganise when "
+               "demand falls, and it has not fallen.",
+  ("D", "T1"): "Faster capability moves diffusion only weakly. Adoption is "
+               "governed by liability, procurement and job design, which a "
+               "capability jump does not touch.",
 }
 
 REGISTRY = {
@@ -208,13 +227,13 @@ REGISTRY = {
                "sources/ai-2027", "sources/aschenbrenner-situational-awareness",
                "sources/ai-as-normal-technology"],
      "positions": [
-       ("T1", "explosive (SC 2027-28)", 0.10,
+       ("T1", "explosive (SC 2027-28)", 0.07,
         ["sources/ai-2027", "sources/grading-ai-2027-2025-predictions"]),
-       ("T2", "fast (2029-31)", 0.30,
+       ("T2", "fast (2029-31)", 0.29,
         ["sources/ai-2040-plan-a", "sources/aschenbrenner-situational-awareness"]),
-       ("T3", "gradual (2032-36)", 0.38,
+       ("T3", "gradual (2032-36)", 0.41,
         ["concepts/agi-timelines"]),
-       ("T4", "continuous-normal (no SC in window)", 0.22,
+       ("T4", "continuous-normal (no SC in window)", 0.23,
         ["sources/ai-as-normal-technology"]),
      ],
      "subaxes": [
@@ -229,11 +248,11 @@ REGISTRY = {
      "cites": ["analysis/interpretability-and-safety",
                "concepts/responsible-scaling-policy"],
      "positions": [
-       ("A1", "fails undetected", 0.12, ["sources/ai-2027"]),
-       ("A2", "near-miss, managed", 0.26, ["sources/ai-2027"]),
-       ("A3", "tractable with effort", 0.34,
+       ("A1", "fails undetected", 0.17, ["sources/ai-2027"]),
+       ("A2", "near-miss, managed", 0.29, ["sources/ai-2027"]),
+       ("A3", "tractable with effort", 0.29,
         ["analysis/interpretability-and-safety"]),
-       ("A4", "untested in window", 0.28, ["sources/ai-as-normal-technology"]),
+       ("A4", "untested in window", 0.25, ["sources/ai-as-normal-technology"]),
      ]},
     {"key": "C", "name": "Coordination",
      "desc": "What the states do about it: race, securitize, deal, "
@@ -244,16 +263,16 @@ REGISTRY = {
      "cites": ["analysis/coordinated-slowdown-proposals",
                "analysis/eu-vs-us-ai-regulation", "concepts/compute-governance"],
      "positions": [
-       ("C1", "none / race", 0.41, ["analysis/us-china-ai-competition"]),
-       ("C2", "US securitization", 0.265,
+       ("C1", "none / race", 0.34, ["analysis/us-china-ai-competition"]),
+       ("C2", "US securitization", 0.26,
         ["sources/aschenbrenner-situational-awareness",
          "sources/anthropic-2028-ai-leadership"]),
        # C3 prior ~0.09 independently cross-checked: the AI 2040 authors'
        # own implementation odds run 3-15% (median ~5-8%) —
        # ai-2040.com/supplements/comparing-possible-plans
-       ("C3", "US-CN transparency deal", 0.09, ["sources/ai-2040-plan-a"]),
-       ("C4", "fragmented blocs", 0.22, ["analysis/eu-vs-us-ai-regulation"]),
-       ("C5", "moratorium / shutdown", 0.015,
+       ("C3", "US-CN transparency deal", 0.12, ["sources/ai-2040-plan-a"]),
+       ("C4", "fragmented blocs", 0.27, ["analysis/eu-vs-us-ai-regulation"]),
+       ("C5", "moratorium / shutdown", 0.01,
         ["sources/ai-2040-plan-a"]),          # their Plan S, scored & rejected
      ],
      "subaxes": [
@@ -274,11 +293,11 @@ REGISTRY = {
                "concepts/middle-manager-displacement",
                "concepts/professional-services-ai-adoption"],
      "positions": [
-       ("D1", "shock", 0.18, ["sources/ai-2027"]),
-       ("D2", "uneven by sector", 0.55,
+       ("D1", "shock", 0.17, ["sources/ai-2027"]),
+       ("D2", "uneven by sector", 0.57,
         ["industries/healthcare", "industries/legal", "industries/financial",
          "industries/education", "industries/media"]),
-       ("D3", "slow absorption", 0.27, ["sources/ai-as-normal-technology"]),
+       ("D3", "slow absorption", 0.26, ["sources/ai-as-normal-technology"]),
      ]},
     {"key": "S", "name": "Compute & supply",
      "desc": "Where the physical substrate lands and who controls it — "
@@ -287,10 +306,10 @@ REGISTRY = {
              "World view's geography and the climate coupling.",
      "cites": ["concepts/export-controls-ai", "concepts/compute-governance"],
      "positions": [
-       ("S1", "concentration + flashpoint", 0.33,
+       ("S1", "concentration + flashpoint", 0.35,
         ["analysis/us-china-ai-competition"]),
-       ("S2", "diversified build-out", 0.41, ["concepts/compute-governance"]),
-       ("S3", "constrained (controls + energy)", 0.26,
+       ("S2", "diversified build-out", 0.33, ["concepts/compute-governance"]),
+       ("S3", "constrained (controls + energy)", 0.32,
         ["concepts/export-controls-ai"]),
      ]},
     {"key": "P", "name": "Public response",
@@ -300,9 +319,9 @@ REGISTRY = {
              "political room every other axis has to work in.",
      "cites": ["concepts/ai-backlash", "analysis/companion-chatbot-harms"],
      "positions": [
-       ("P1", "populist backlash", 0.26, ["concepts/ai-backlash"]),
-       ("P2", "adoption/acquiescence", 0.31, ["concepts/ai-diffusion"]),
-       ("P3", "polarized-fractured", 0.43, ["sources/europe-2031"]),
+       ("P1", "populist backlash", 0.38, ["concepts/ai-backlash"]),
+       ("P2", "adoption/acquiescence", 0.28, ["concepts/ai-diffusion"]),
+       ("P3", "polarized-fractured", 0.34, ["sources/europe-2031"]),
      ]},
     {"key": "E", "name": "Economy",
      "desc": "How the money side breaks — boom sustained, correction that "
@@ -312,10 +331,10 @@ REGISTRY = {
              "kept apart on purpose.",
      "cites": ["concepts/ai-bubble-debate", "analysis/ai-bubble-vs-buildout"],
      "positions": [
-       ("E1", "boom sustained", 0.28, ["analysis/ai-bubble-vs-buildout"]),
-       ("E2", "bubble corrects, build-out survives", 0.45,
+       ("E1", "boom sustained", 0.26, ["analysis/ai-bubble-vs-buildout"]),
+       ("E2", "bubble corrects, build-out survives", 0.44,
         ["concepts/ai-bubble-debate"]),
-       ("E3", "deflates hard (capex-led)", 0.19,
+       ("E3", "deflates hard (capex-led)", 0.22,
         ["concepts/ai-bubble-debate"]),
        # the Citrini "intelligence displacement spiral": a demand-side
        # crisis originating in labor, not capex — distinct failure mode
@@ -343,6 +362,34 @@ REGISTRY = {
     "E": {"T4": {"E3": 1.5, "E1": 0.6},
           "D1": {"E4": 2.6},                      # the spiral needs the shock
           "D3": {"E4": 0.3}},
+    # ── added 2026-08-13, sized in the forecaster's research programme ──────
+    # T given S. Epoch decomposes effective compute: hardware ~4x/yr and
+    # algorithms delivering the same performance on ~3x less each year, so
+    # effective compute grows ~12x/yr with ~40% of the gain algorithmic. Cap
+    # hardware at ~1.5x/yr under S3 and the rate falls to ~60% of baseline,
+    # stretching METR's 212-day capability doubling to ~350 days and moving a
+    # one-month 80%-reliability horizon from 2030-31 to 2033-35. S2 pulls the
+    # other way more weakly: the algorithmic 40% runs under any siting.
+    "T": {"S3": {"T1": 0.45, "T2": 0.70, "T3": 1.20, "T4": 1.55},
+          "S1": {"T1": 0.95, "T4": 1.05},
+          "S2": {"T1": 1.15, "T2": 1.10, "T3": 0.95, "T4": 0.85}},
+    # D given E, and D given T. Jaimovich & Siu: 88% of US per-capita job
+    # losses in routine occupations fall inside a 12-month window around an
+    # NBER-dated recession, across three recessions, and never recover — which
+    # is what explains jobless recoveries. Displacement is a recession
+    # phenomenon: firms defer the reorganisation while demand holds and carry
+    # it out when demand falls. D given T is deliberately mild, because
+    # adoption is governed by liability, procurement and job design; the
+    # measured size of what capability cannot move is the gap between a 2.8%
+    # realised time saving and >15% in controlled trials.
+    "D": {"E3": {"D1": 2.10, "D2": 0.95, "D3": 0.55},
+          "E4": {"D1": 2.40, "D2": 0.90, "D3": 0.50},
+          "E1": {"D1": 0.60, "D2": 1.05, "D3": 1.25},
+          "E2": {"D1": 1.30, "D3": 0.85},
+          "T1": {"D1": 1.25, "D3": 0.85},
+          "T2": {"D1": 1.10, "D3": 0.95},
+          "T3": {"D1": 0.95, "D2": 1.05, "D3": 1.05},
+          "T4": {"D1": 0.80, "D3": 1.15}},
   },
   # position-conditioned A-tilts applied AFTER C is drawn would need a
   # reordering; instead the same evidence enters as A-priors' provenance and
@@ -389,6 +436,45 @@ REGISTRY = {
                  "decay window … teach the difference between multiple "
                  "reports of one event and three unrelated events of one "
                  "kind') — morning-7 report §5"},
+    {"version": "r3-2026-08-13", "date": "2026-08-13",
+     "change": "the evidence round. (1) The sampler was dropping edges. "
+               "Conditionals are a directed graph over axes and were applied "
+               "in one forward pass over the axis order, so a tilt whose "
+               "parent sat later in that order could never fire: the code "
+               "asked whether the parent was already in the world-line, and "
+               "the answer was always no. Three declared conditionals were "
+               "dead that way — S given E3, S given E4, P given E4 — and "
+               "nothing raised, because a dropped edge looks exactly like a "
+               "condition that happened not to apply. Verified with a "
+               "positive control: pinning E3 moved S3 by -0.004 against a "
+               "declared 1.6x, while the forward edge A given T4 moved A4 "
+               "from 0.324 to 0.576 as declared. sample_one now draws from "
+               "the priors and re-draws each unpinned axis against all the "
+               "others for four sweeps, which is Gibbs sampling from the "
+               "conditional specification; convergence measured flat at 4, 6 "
+               "and 8 sweeps against 16. The self-test now checks that every "
+               "declared conditional orders its target as declared, comparing "
+               "two pins on the same parent axis, because a marginal is a net "
+               "effect through the network and a multiplier is a local tilt. "
+               "(2) 26 priors re-set from the forecaster dossier programme, "
+               "each with a base rate, a mechanism, resolution criteria and a "
+               "source about the world. The largest move is P1 0.26 to 0.38 "
+               "against P3 0.43 to 0.34: P3's own criterion is a partisan "
+               "split, and the polling has both coalitions opposing federal "
+               "preemption 57-19. (3) Three conditional edges added and "
+               "sized. T given S from Epoch\'s effective-compute "
+               "decomposition; D given E from Jaimovich and Siu, who find 88% "
+               "of routine job losses fall within twelve months of a "
+               "recession; D given T deliberately mild. A fourth, P given C, "
+               "was researched and left out because Gilens and Page and "
+               "Bashir disagree about exactly that quantity. D given E closes "
+               "a loop with the existing E given D, which the new sampler "
+               "carries.",
+     "approved": "August (2026-08-13: apply the three sized edges and the "
+                 "structural changes to the Atlas) — this overrides the "
+                 "forecaster project\'s standing rule against writing to the "
+                 "Atlas, on his instruction. Dossiers and sizing are in "
+                 "~/Forecast Works/Research/"},
   ],
 }
 
@@ -899,33 +985,64 @@ def marginals(reg):
             for a in reg["axes"]}
 
 
-def sample_one(reg, rng, pinned=None):
-    """One world-line: choose per axis in order, applying conditional tilts
-    from already-chosen parents; `pinned` fixes positions (the composer)."""
+# How many times the sampler re-draws every axis against the others. Measured:
+# the largest marginal difference against a 16-sweep run is 0.008 at 4 sweeps,
+# 0.008 at 6 and 0.008 at 8 — flat, so the chain has settled by 4 and what
+# remains is Monte Carlo noise between unpaired RNG streams.
+GIBBS_SWEEPS = 4
+
+
+def _draw(weights, rng):
+    """Draw one position from a normalized weight dict."""
+    r = rng.random()
+    acc = 0.0
+    pos = None
+    for pos, pr in weights.items():
+        acc += pr
+        if r <= acc:
+            return pos
+    return pos
+
+
+def sample_one(reg, rng, pinned=None, sweeps=GIBBS_SWEEPS):
+    """One world-line.
+
+    Conditionals are a directed graph over axes, and until 2026-08-13 they were
+    applied in a single forward pass over the axis order. A tilt whose parent
+    sat LATER in that order could never fire, because the parent was not in the
+    world-line yet — the code asked `if parent_pos in world.values()` and the
+    answer was always no. Three of the registry's declared conditionals were
+    dead that way (S given E3, S given E4, P given E4), and no error was raised,
+    because a dropped edge looks exactly like a satisfied condition that
+    happened not to apply.
+
+    The sampler now draws an initial line from the priors and then re-draws each
+    unpinned axis against ALL the others, a few sweeps. That is Gibbs sampling
+    from the conditional specification: edge direction stops depending on the
+    order axes happen to be listed in, and a genuine two-way relationship — the
+    displacement/demand-crisis loop is one — becomes representable instead of
+    silently half-dropped.
+    """
     pinned = pinned or {}
     world = {}
     for a in reg["axes"]:
         k = a["key"]
-        if k in pinned:
-            world[k] = pinned[k]
-            continue
-        w = {p[0]: p[2] for p in a["positions"]}
-        cond = reg["conditionals"].get(k, {})
-        for parent_pos, tilts in cond.items():
-            if parent_pos in world.values():
-                for pos, mult in tilts.items():
-                    if pos in w:
-                        w[pos] *= mult
-        w = normalized(w)
-        r = rng.random()
-        acc = 0.0
-        for pos, pr in w.items():
-            acc += pr
-            if r <= acc:
-                world[k] = pos
-                break
-        else:
-            world[k] = pos
+        world[k] = pinned[k] if k in pinned else \
+            _draw(normalized({p[0]: p[2] for p in a["positions"]}), rng)
+    for _ in range(sweeps):
+        for a in reg["axes"]:
+            k = a["key"]
+            if k in pinned:
+                continue
+            w = {p[0]: p[2] for p in a["positions"]}
+            cond = reg["conditionals"].get(k, {})
+            other_pos = {vv for kk, vv in world.items() if kk != k}
+            for parent_pos, tilts in cond.items():
+                if parent_pos in other_pos:
+                    for pos, mult in tilts.items():
+                        if pos in w:
+                            w[pos] *= mult
+            world[k] = _draw(normalized(w), rng)
     return world
 
 
@@ -1127,15 +1244,52 @@ def _selftest():
     e1 = ensemble(reg, n=400, seed=7)
     e2 = ensemble(reg, n=400, seed=7)
     assert e1 == e2
-    # marginals ≈ priors where unconditioned (T is a root axis)
-    m = ensemble_marginals(ensemble(reg, n=8000, seed=11))
-    pri = marginals(reg)["T"]
-    for pos, p in pri.items():
-        assert abs(m["T"][pos] - p) < 0.03, (pos, m["T"][pos], p)
-    # conditionals act: A4 far likelier under pinned T4 than pinned T1
-    a4_t4 = ensemble_marginals(ensemble(reg, 4000, 13, {"T": "T4"}))["A"]["A4"]
-    a4_t1 = ensemble_marginals(ensemble(reg, 4000, 13, {"T": "T1"}))["A"]["A4"]
-    assert a4_t4 > 3 * a4_t1, (a4_t4, a4_t1)
+    # Priors reproduce themselves when nothing tilts them. This used to be
+    # asserted of the FULL sampler, on the assumption that the joint's
+    # marginals equal the priors. They do not, and should not: every declared
+    # conditional moves mass, so a marginal is an output of the network and a
+    # prior is its input. T4 sits at 0.26 against a 0.23 prior because T given
+    # S3 raises it and S3 holds 0.32 of the mass — which is the edge working.
+    # What the drawing machinery must still guarantee is that with no sweeps,
+    # and therefore no tilts, the draw reproduces the priors.
+    rng0 = random.Random(11)
+    flat = ensemble_marginals([sample_one(reg, rng0, None, 0) for _ in range(8000)])
+    for k, pri in marginals(reg).items():
+        for pos, pr in pri.items():
+            assert abs(flat[k][pos] - pr) < 0.03, (k, pos, flat[k][pos], pr)
+    # EVERY declared conditional must ORDER its target the way it says. Until
+    # 2026-08-13 three of them did nothing at all, because the sampler dropped
+    # any edge whose parent came later in the axis order, and the old test
+    # would not have caught it: it checked one forward edge.
+    #
+    # The comparison is between two positions OF THE SAME PARENT AXIS, never
+    # against the unpinned ensemble. A declared multiplier is a local tilt and
+    # a marginal is a net effect through the whole network, so pinning a parent
+    # to a position with a mild positive tilt can still lower the child —
+    # pinning E2 lowers D1 despite a declared 1.3x, because it also removes E4,
+    # whose 2.4x was operating in the unpinned base. Comparing two pins on the
+    # same axis holds that structure roughly still.
+    pos_axis = {q[0]: a["key"] for a in reg["axes"] for q in a["positions"]}
+    for child, parents in reg["conditionals"].items():
+        by_axis = {}
+        for parent_pos, tilts in parents.items():
+            by_axis.setdefault(pos_axis[parent_pos], {})[parent_pos] = tilts
+        child_positions = [q[0] for a in reg["axes"] if a["key"] == child
+                           for q in a["positions"]]
+        for pax, group in by_axis.items():
+            if len(group) < 2:
+                continue
+            for pos in child_positions:
+                mults = {pp: t.get(pos, 1.0) for pp, t in group.items()}
+                hi = max(mults, key=mults.get)
+                lo = min(mults, key=mults.get)
+                if mults[hi] / max(mults[lo], 1e-9) < 1.5:
+                    continue                   # too close to read off 6000
+                m_hi = ensemble_marginals(ensemble(reg, 6000, 13, {pax: hi}))
+                m_lo = ensemble_marginals(ensemble(reg, 6000, 13, {pax: lo}))
+                assert m_hi[child][pos] > m_lo[child][pos], \
+                    (child, pos, hi, mults[hi], round(m_hi[child][pos], 4),
+                     lo, mults[lo], round(m_lo[child][pos], 4))
     # conditioning pins exactly
     for wl in ensemble(reg, 200, 5, {"C": "C3"}):
         assert wl["C"] == "C3"
