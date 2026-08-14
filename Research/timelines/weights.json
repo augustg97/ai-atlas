@@ -1,6 +1,6 @@
 {
  "version": "r3-2026-08-13",
- "date": "2026-08-13",
+ "date": "2026-08-14",
  "axes": {
   "T": {
    "T1": 0.06986262602007891,
@@ -9,10 +9,10 @@
    "T4": 0.2275705846212566
   },
   "A": {
-   "A1": 0.16963856075064457,
-   "A2": 0.28991050705745885,
-   "A3": 0.290528081280294,
-   "A4": 0.24992285091160246
+   "A1": 0.169129463923063,
+   "A2": 0.28978441451177495,
+   "A3": 0.2912719711239768,
+   "A4": 0.24981415044118532
   },
   "C": {
    "C1": 0.33732005844358043,
@@ -37,10 +37,10 @@
    "P3": 0.34
   },
   "E": {
-   "E1": 0.26000000000000006,
-   "E2": 0.44000000000000006,
-   "E3": 0.22000000000000003,
-   "E4": 0.08000000000000002
+   "E1": 0.2607602911004628,
+   "E2": 0.43980783905880744,
+   "E3": 0.21946680819367387,
+   "E4": 0.07996506164705591
   }
  },
  "history": [
@@ -1095,6 +1095,93 @@
     }
    },
    "note": "r3 re-set from the forecaster evidence programme (26 priors, dossier per axis). Not an evidence application: a deliberate re-basing, approved by August 2026-08-13."
+  },
+  {
+   "date": "2026-08-14",
+   "marginals": {
+    "T": {
+     "T1": 0.06986262602007891,
+     "T2": 0.2894308792260411,
+     "T3": 0.4131359101326234,
+     "T4": 0.2275705846212566
+    },
+    "A": {
+     "A1": 0.169129463923063,
+     "A2": 0.28978441451177495,
+     "A3": 0.2912719711239768,
+     "A4": 0.24981415044118532
+    },
+    "C": {
+     "C1": 0.33732005844358043,
+     "C2": 0.25948310964558596,
+     "C3": 0.11976143522103969,
+     "C4": 0.2734552770880407,
+     "C5": 0.009980119601753308
+    },
+    "D": {
+     "D1": 0.18357616584450828,
+     "D2": 0.5470505097028835,
+     "D3": 0.26937332445260836
+    },
+    "S": {
+     "S1": 0.35,
+     "S2": 0.33,
+     "S3": 0.32
+    },
+    "P": {
+     "P1": 0.37859095116383207,
+     "P2": 0.2815350275422835,
+     "P3": 0.33987402129388433
+    },
+    "E": {
+     "E1": 0.26246583780987814,
+     "E2": 0.4260618998792973,
+     "E3": 0.22370827198398932,
+     "E4": 0.08776399032683531
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.06986262602007891,
+     "T2": 0.2894308792260411,
+     "T3": 0.4131359101326234,
+     "T4": 0.2275705846212566
+    },
+    "A": {
+     "A1": 0.169129463923063,
+     "A2": 0.28978441451177495,
+     "A3": 0.2912719711239768,
+     "A4": 0.24981415044118532
+    },
+    "C": {
+     "C1": 0.33732005844358043,
+     "C2": 0.25948310964558596,
+     "C3": 0.11976143522103969,
+     "C4": 0.2734552770880407,
+     "C5": 0.009980119601753308
+    },
+    "D": {
+     "D1": 0.17,
+     "D2": 0.57,
+     "D3": 0.26
+    },
+    "S": {
+     "S1": 0.35,
+     "S2": 0.33,
+     "S3": 0.32
+    },
+    "P": {
+     "P1": 0.38,
+     "P2": 0.28,
+     "P3": 0.34
+    },
+    "E": {
+     "E1": 0.2607602911004628,
+     "E2": 0.43980783905880744,
+     "E3": 0.21946680819367387,
+     "E4": 0.07996506164705591
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -2623,6 +2710,118 @@
     "https://mitsloan.mit.edu/ideas-made-to-matter/these-are-most-urgent-ai-risks-according-to-272-experts"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003278,
+   "sources": 1,
+   "repeat_k": 7.553,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004371,
+    "E.E3": -0.0002185
+   },
+   "applied": {
+    "E.E1": 0.0004371,
+    "E.E3": -0.0002185
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "054cc1e6b1573de2",
+   "date": "2026-08-14",
+   "event_date": "2026-08-13",
+   "driver": "Databricks closed a $5 billion funding round at a $190 billion valuation on August 13, 2026, up from $134 billion six months earlier. Chief ",
+   "driver_urls": [
+    "https://www.cnbc.com/2026/08/13/databricks-funding-round-190-billion-valuation.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003278,
+   "sources": 1,
+   "repeat_k": 7.553,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004371,
+    "E.E3": -0.0002185
+   },
+   "applied": {
+    "E.E1": 0.0004371,
+    "E.E3": -0.0002185
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "9e9a02bd8bcaf389",
+   "date": "2026-08-14",
+   "event_date": "2026-08-13",
+   "driver": "Anthropic's investors expect the company to list at a $2 trillion valuation, in reporting published August 13, 2026 that describes the offer",
+   "driver_urls": [
+    "https://www.ft.com/content/840ac156-af1c-4a82-b260-ae791072fcfa"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003265,
+   "sources": 1,
+   "repeat_k": 7.771,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004353,
+    "A.A1": -0.0002176
+   },
+   "applied": {
+    "A.A3": 0.0004353,
+    "A.A1": -0.0002176
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "a7c04c50ee4a1488",
+   "date": "2026-08-14",
+   "event_date": "2026-08-13",
+   "driver": "Anthropic published multi-agent experiments on August 13, 2026 in which Claude agents assigned overlapping work collided rather than coopera",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003265,
+   "sources": 1,
+   "repeat_k": 7.771,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004353,
+    "A.A1": -0.0002176
+   },
+   "applied": {
+    "A.A3": 0.0004353,
+    "A.A1": -0.0002176
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "729d7ef43629b5cd",
+   "date": "2026-08-14",
+   "event_date": "2026-08-13",
+   "driver": "Demis Hassabis held discussions with heads of other AI labs and Trump administration officials, including Treasury Secretary Scott Bessent, ",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/deepminds-hassabis-pitched-ai-oversight-body-before-shake-up-e25b3f71"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -3668,6 +3867,55 @@
    "text": "Anthropic said on August 11, 2026 that it will watermark text generated by its AI models, citing the EU AI Act's transpa",
    "reports": 1,
    "fp": "470ad2ad639488ef"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "AI Industry & Markets",
+   "text": "Update on Brad Lightcap's August 11 departure: OpenAI named Dali Rajic chief revenue officer on August 13, 2026, replaci",
+   "reports": 1,
+   "fp": "efc0cbbf73b1d817"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "AI Industry & Markets",
+   "text": "Ramp lead economist Ara Kharazian published July business-spending data on August 12, 2026 showing Anthropic at 43.5% of",
+   "reports": 1,
+   "fp": "95e9fee6dc7ab0c8"
+  },
+  {
+   "date": "2026-08-03",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI security engineers Michael Dalton and Eric Wallace disclosed at the Black Hat conference the week of August 3, 20",
+   "reports": 1,
+   "fp": "9534c0e74bafbce5"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "Frontier Models & Capabilities",
+   "text": "Google released Gemini 3.7 Flash on August 13, 2026, priced at an introductory $0.75 per 1 million input tokens and $3.7",
+   "reports": 1,
+   "fp": "cd58b3939bddcd9c"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI previewed Ultrafast on August 13, 2026, a mode running GPT-5.6 Sol at up to 14 times standard speed and generatin",
+   "reports": 1,
+   "fp": "bdd34a49b45b5547"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "National Security & Geopolitics",
+   "text": "Taiwan's Ministry of Digital Affairs said on August 13, 2026 that it detected AI-assisted cyberattacks on government age",
+   "reports": 1,
+   "fp": "51521b97095ba4b7"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Flock chief executive Garrett Langley said on August 13, 2026 that \"we got this one wrong\" and that the company will mak",
+   "reports": 1,
+   "fp": "6ed898a28f833088"
   }
  ],
  "seen": [
@@ -3888,7 +4136,18 @@
   "47ced759c4e2a695",
   "8bb11ea95ead104b",
   "85bcf71e7a246d7f",
-  "470ad2ad639488ef"
+  "470ad2ad639488ef",
+  "efc0cbbf73b1d817",
+  "054cc1e6b1573de2",
+  "9e9a02bd8bcaf389",
+  "95e9fee6dc7ab0c8",
+  "a7c04c50ee4a1488",
+  "9534c0e74bafbce5",
+  "cd58b3939bddcd9c",
+  "bdd34a49b45b5547",
+  "51521b97095ba4b7",
+  "729d7ef43629b5cd",
+  "6ed898a28f833088"
  ],
  "residue_r0": [
   {
