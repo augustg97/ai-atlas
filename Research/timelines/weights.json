@@ -1,6 +1,6 @@
 {
  "version": "r3-2026-08-13",
- "date": "2026-08-14",
+ "date": "2026-08-15",
  "axes": {
   "T": {
    "T1": 0.06986262602007891,
@@ -9,17 +9,17 @@
    "T4": 0.2275705846212566
   },
   "A": {
-   "A1": 0.169129463923063,
-   "A2": 0.28978441451177495,
-   "A3": 0.2912719711239768,
-   "A4": 0.24981415044118532
+   "A1": 0.16862736234267728,
+   "A2": 0.2896600533084754,
+   "A3": 0.292005641841541,
+   "A4": 0.24970694250730635
   },
   "C": {
-   "C1": 0.33732005844358043,
-   "C2": 0.25948310964558596,
-   "C3": 0.11976143522103969,
-   "C4": 0.2734552770880407,
-   "C5": 0.009980119601753308
+   "C1": 0.3366087944364199,
+   "C2": 0.2593453209794021,
+   "C3": 0.11969784045203176,
+   "C4": 0.2743732240944771,
+   "C5": 0.009974820037669313
   },
   "D": {
    "D1": 0.17,
@@ -27,9 +27,9 @@
    "D3": 0.26
   },
   "S": {
-   "S1": 0.35,
-   "S2": 0.33,
-   "S3": 0.32
+   "S1": 0.34930527260606964,
+   "S2": 0.32922687721635746,
+   "S3": 0.32146785017757296
   },
   "P": {
    "P1": 0.38,
@@ -37,10 +37,10 @@
    "P3": 0.34
   },
   "E": {
-   "E1": 0.2607602911004628,
-   "E2": 0.43980783905880744,
-   "E3": 0.21946680819367387,
-   "E4": 0.07996506164705591
+   "E1": 0.2612892972610263,
+   "E2": 0.43967416094436884,
+   "E3": 0.2190957852592651,
+   "E4": 0.0799407565353398
   }
  },
  "history": [
@@ -1180,6 +1180,93 @@
      "E2": 0.43980783905880744,
      "E3": 0.21946680819367387,
      "E4": 0.07996506164705591
+    }
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "marginals": {
+    "T": {
+     "T1": 0.06986262602007891,
+     "T2": 0.2894308792260411,
+     "T3": 0.4131359101326234,
+     "T4": 0.2275705846212566
+    },
+    "A": {
+     "A1": 0.16862736234267728,
+     "A2": 0.2896600533084754,
+     "A3": 0.292005641841541,
+     "A4": 0.24970694250730635
+    },
+    "C": {
+     "C1": 0.33660879443641983,
+     "C2": 0.25934532097940205,
+     "C3": 0.11969784045203173,
+     "C4": 0.27437322409447706,
+     "C5": 0.009974820037669311
+    },
+    "D": {
+     "D1": 0.18357616584450828,
+     "D2": 0.5470505097028835,
+     "D3": 0.26937332445260836
+    },
+    "S": {
+     "S1": 0.34930527260606964,
+     "S2": 0.32922687721635746,
+     "S3": 0.32146785017757296
+    },
+    "P": {
+     "P1": 0.3785469082339795,
+     "P2": 0.28158308246600194,
+     "P3": 0.3398700093000186
+    },
+    "E": {
+     "E1": 0.26295976188443293,
+     "E2": 0.425942656622314,
+     "E3": 0.22335815394486705,
+     "E4": 0.087739427548386
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.06986262602007891,
+     "T2": 0.2894308792260411,
+     "T3": 0.4131359101326234,
+     "T4": 0.2275705846212566
+    },
+    "A": {
+     "A1": 0.16862736234267728,
+     "A2": 0.2896600533084754,
+     "A3": 0.292005641841541,
+     "A4": 0.24970694250730635
+    },
+    "C": {
+     "C1": 0.33660879443641983,
+     "C2": 0.25934532097940205,
+     "C3": 0.11969784045203173,
+     "C4": 0.27437322409447706,
+     "C5": 0.009974820037669311
+    },
+    "D": {
+     "D1": 0.17,
+     "D2": 0.57,
+     "D3": 0.26
+    },
+    "S": {
+     "S1": 0.34930527260606964,
+     "S2": 0.32922687721635746,
+     "S3": 0.32146785017757296
+    },
+    "P": {
+     "P1": 0.38,
+     "P2": 0.28,
+     "P3": 0.34
+    },
+    "E": {
+     "E1": 0.2612892972610263,
+     "E2": 0.43967416094436884,
+     "E3": 0.2190957852592651,
+     "E4": 0.0799407565353398
     }
    }
   }
@@ -2822,6 +2909,175 @@
     "https://www.wsj.com/tech/ai/deepminds-hassabis-pitched-ai-oversight-body-before-shake-up-e25b3f71"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003221,
+   "sources": 1,
+   "repeat_k": 8.85,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004295,
+    "A.A1": -0.0002147
+   },
+   "applied": {
+    "A.A3": 0.0004295,
+    "A.A1": -0.0002147
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "01bb0d19bb4e229a",
+   "date": "2026-08-15",
+   "event_date": "2026-08-14",
+   "driver": "Anthropic published a redacted risk report on August 14, 2026 raising its estimate of the risk of misalignment in high-stakes situations fro",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003221,
+   "sources": 1,
+   "repeat_k": 8.85,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004295,
+    "A.A1": -0.0002147
+   },
+   "applied": {
+    "A.A3": 0.0004295,
+    "A.A1": -0.0002147
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "2e2ef79c479ea3bf",
+   "date": "2026-08-15",
+   "event_date": "2026-08-14",
+   "driver": "Anthropic's Frontier Red Team research on multiagent systems became public on August 14, 2026, reporting that a swarm of 45 coordinating age",
+   "driver_urls": [
+    "https://jonasfreund.substack.com/p/ai-risk-management-newsletter-45"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0009394,
+   "sources": 2,
+   "repeat_k": 3.08,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0012525,
+    "S.S3": -0.0006263
+   },
+   "applied": {
+    "S.S2": 0.0012525,
+    "S.S3": -0.0006263
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "49f167b956c75369",
+   "date": "2026-08-15",
+   "event_date": "2026-08-14",
+   "driver": "Nvidia and OpenAI reworked the structure of their proposed Ohio data-center financing so that Nvidia would initially guarantee only half the",
+   "driver_urls": [
+    "https://www.wsj.com/tech/nvidia-downsizes-plans-for-250-billion-guarantee-of-openai-data-center-b56c38d3",
+    "https://www.theinformation.com/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004563,
+   "sources": 1,
+   "repeat_k": 8.653,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006084,
+    "E.E3": -0.0003042
+   },
+   "applied": {
+    "E.E1": 0.0006084,
+    "E.E3": -0.0003042
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "53ea469ee014db24",
+   "date": "2026-08-15",
+   "event_date": "2026-08-15",
+   "driver": "Update on Anthropic's IPO preparations covered on August 14: Anthropic told prospective investors it recorded preliminary revenue of more th",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-08-14/anthropic-revenue-ahead-of-ipo-surges-over-14-fold-in-second-quarter"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0007978,
+   "sources": 1,
+   "repeat_k": 2.874,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0010637,
+    "C.C1": -0.0005319
+   },
+   "applied": {
+    "C.C4": 0.0010637,
+    "C.C1": -0.0005319
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "concepts/ai-preemption"
+   ],
+   "incident": "7850d920195f3aa0",
+   "date": "2026-08-15",
+   "event_date": "2026-08-15",
+   "driver": "A Wyoming woman identified in filings as Jane Doe 4 alleges in a federal lawsuit that her stepfather used the Grok chatbot to turn a childho",
+   "driver_urls": [
+    "https://www.washingtonpost.com/technology/2026/08/15/woman-alleges-grok-made-thousands-sexual-abuse-images-childhood-snap/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-constraint",
+   "impact_class": "minor",
+   "magnitude": 0.0020494,
+   "sources": 1,
+   "repeat_k": 0.673,
+   "spread": 1.0,
+   "requested": {
+    "S.S3": 0.0027326,
+    "S.S2": -0.0013663
+   },
+   "applied": {
+    "S.S3": 0.0027326,
+    "S.S2": -0.0013663
+   },
+   "cites": [
+    "concepts/export-controls-ai",
+    "concepts/compute-governance"
+   ],
+   "incident": "84809cc2734c5397",
+   "date": "2026-08-15",
+   "event_date": "2026-08-14",
+   "driver": "Commerce Secretary Howard Lutnick said in an interview published August 14, 2026 that the Trump administration does not want Apple to buy me",
+   "driver_urls": [
+    "https://www.wsj.com/tech/apple-china-memory-chip-plan-57773a83"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -3916,6 +4172,104 @@
    "text": "Flock chief executive Garrett Langley said on August 13, 2026 that \"we got this one wrong\" and that the company will mak",
    "reports": 1,
    "fp": "6ed898a28f833088"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI's account of the Hugging Face breach became public on August 13, 2026: security engineers Michael Dalton and Eric",
+   "reports": 1,
+   "fp": "f449fee6fd5a15f6"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Tolga Bilge and Andrea Miotti of ControlAI argued on August 14, 2026 that neither leading lab's framework commits it to ",
+   "reports": 1,
+   "fp": "ad58eeed5a038f4b"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "Frontier Models & Capabilities",
+   "text": "Z.ai said on August 14, 2026 that GLM-5.3 scored 84.5% on CyberGym against the 83.8% it reported for Anthropic's Mythos ",
+   "reports": 1,
+   "fp": "dc701f19d0021931"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI CFO Sarah Friar told shareholders on August 14, 2026 that enterprise now accounts for more revenue than the ChatG",
+   "reports": 1,
+   "fp": "44ea2d7dd1ae8c90"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic is projecting 2028 revenue of roughly $190 billion to $200 billion, two people familiar with its financials sa",
+   "reports": 1,
+   "fp": "4a149f8bd550ea7b"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Industry & Markets",
+   "text": "Apple has trained a large language model specifically for the China market with Alibaba's support, three people familiar",
+   "reports": 1,
+   "fp": "eb27fbc5ae9ed7e6"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Republican Senator Jim Banks released a letter on August 14, 2026 to Christopher Phelan, chair-designate of the Council ",
+   "reports": 1,
+   "fp": "1d1153bbf15931d4"
+  },
+  {
+   "date": "2026-08-06",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Three AI-related bills were introduced in Congress over the past week: the Military Readiness Through Resilient Lands Ac",
+   "reports": 1,
+   "fp": "c148e863f3d33250"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "National Security & Geopolitics",
+   "text": "The State Department has drafted a letter, undated and not yet sent, telling the 35 signatories of the U.S. \"AI Opportun",
+   "reports": 1,
+   "fp": "b6c0b62e301806f4"
+  },
+  {
+   "date": "2026-08-15",
+   "section": "AI Industry & Markets",
+   "text": "Update on the OpenAI departures noted on August 14: chief revenue officer Denise Dresser is leaving less than a year int",
+   "reports": 1,
+   "fp": "cdf9fa69de182e8f"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Industry & Markets",
+   "text": "SpaceX completed its $60 billion acquisition of the AI coding startup Cursor effective August 14, 2026, according to a r",
+   "reports": 1,
+   "fp": "f525261d32d2cc12"
+  },
+  {
+   "date": "2026-08-15",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "A copyright shareholder derivative complaint against Apple chief executive Tim Cook, captioned Rosen v. Cook, became pub",
+   "reports": 1,
+   "fp": "ebe72d6db1af7512"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "Agentic AI & Coding",
+   "text": "DeepSeek released the official version of DeepSeek-V4-Pro-0813 and DeepSeek Harness v0.1 on August 13, 2026, the latter ",
+   "reports": 1,
+   "fp": "3537a48269624ec2"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Standards & Safety Frameworks",
+   "text": "Google added a \"Media watermark\" setting to Gemini and its video generator Flow on August 14, 2026 that removes the visi",
+   "reports": 1,
+   "fp": "22b1126648c6f3fe"
   }
  ],
  "seen": [
@@ -4147,7 +4501,27 @@
   "bdd34a49b45b5547",
   "51521b97095ba4b7",
   "729d7ef43629b5cd",
-  "6ed898a28f833088"
+  "6ed898a28f833088",
+  "01bb0d19bb4e229a",
+  "f449fee6fd5a15f6",
+  "2e2ef79c479ea3bf",
+  "ad58eeed5a038f4b",
+  "dc701f19d0021931",
+  "44ea2d7dd1ae8c90",
+  "4a149f8bd550ea7b",
+  "eb27fbc5ae9ed7e6",
+  "49f167b956c75369",
+  "1d1153bbf15931d4",
+  "c148e863f3d33250",
+  "b6c0b62e301806f4",
+  "53ea469ee014db24",
+  "cdf9fa69de182e8f",
+  "f525261d32d2cc12",
+  "ebe72d6db1af7512",
+  "7850d920195f3aa0",
+  "3537a48269624ec2",
+  "22b1126648c6f3fe",
+  "84809cc2734c5397"
  ],
  "residue_r0": [
   {
