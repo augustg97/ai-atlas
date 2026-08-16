@@ -1,25 +1,25 @@
 {
  "version": "r3-2026-08-13",
- "date": "2026-08-15",
+ "date": "2026-08-16",
  "axes": {
   "T": {
-   "T1": 0.06986262602007891,
-   "T2": 0.2894308792260411,
-   "T3": 0.4131359101326234,
-   "T4": 0.2275705846212566
+   "T1": 0.06971757031502916,
+   "T2": 0.29091058036741174,
+   "T3": 0.4143631007298628,
+   "T4": 0.2250087485876962
   },
   "A": {
-   "A1": 0.16862736234267728,
-   "A2": 0.2896600533084754,
-   "A3": 0.292005641841541,
-   "A4": 0.24970694250730635
+   "A1": 0.16812847127687824,
+   "A2": 0.2895364867477405,
+   "A3": 0.29273462236526004,
+   "A4": 0.2496004196101211
   },
   "C": {
-   "C1": 0.3366087944364199,
-   "C2": 0.2593453209794021,
-   "C3": 0.11969784045203176,
-   "C4": 0.2743732240944771,
-   "C5": 0.009974820037669313
+   "C1": 0.33660879443641983,
+   "C2": 0.25934532097940205,
+   "C3": 0.11969784045203173,
+   "C4": 0.27437322409447706,
+   "C5": 0.009974820037669311
   },
   "D": {
    "D1": 0.17,
@@ -27,9 +27,9 @@
    "D3": 0.26
   },
   "S": {
-   "S1": 0.34930527260606964,
-   "S2": 0.32922687721635746,
-   "S3": 0.32146785017757296
+   "S1": 0.349154840385455,
+   "S2": 0.32994715781734774,
+   "S3": 0.3208980017971973
   },
   "P": {
    "P1": 0.38,
@@ -37,10 +37,10 @@
    "P3": 0.34
   },
   "E": {
-   "E1": 0.2612892972610263,
-   "E2": 0.43967416094436884,
-   "E3": 0.2190957852592651,
-   "E4": 0.0799407565353398
+   "E1": 0.26234597153439704,
+   "E2": 0.4394070492637262,
+   "E3": 0.2183547884266537,
+   "E4": 0.07989219077522297
   }
  },
  "history": [
@@ -1267,6 +1267,93 @@
      "E2": 0.43967416094436884,
      "E3": 0.2190957852592651,
      "E4": 0.0799407565353398
+    }
+   }
+  },
+  {
+   "date": "2026-08-16",
+   "marginals": {
+    "T": {
+     "T1": 0.06971757031502916,
+     "T2": 0.29091058036741174,
+     "T3": 0.4143631007298628,
+     "T4": 0.2250087485876962
+    },
+    "A": {
+     "A1": 0.16812847127687824,
+     "A2": 0.2895364867477405,
+     "A3": 0.29273462236526004,
+     "A4": 0.2496004196101211
+    },
+    "C": {
+     "C1": 0.33660879443641983,
+     "C2": 0.25934532097940205,
+     "C3": 0.11969784045203173,
+     "C4": 0.27437322409447706,
+     "C5": 0.009974820037669311
+    },
+    "D": {
+     "D1": 0.1836921644015944,
+     "D2": 0.5468574851739852,
+     "D3": 0.2694503504244205
+    },
+    "S": {
+     "S1": 0.349154840385455,
+     "S2": 0.32994715781734774,
+     "S3": 0.3208980017971973
+    },
+    "P": {
+     "P1": 0.37859095116383207,
+     "P2": 0.2815350275422835,
+     "P3": 0.33987402129388433
+    },
+    "E": {
+     "E1": 0.26392932810836955,
+     "E2": 0.4258660446336982,
+     "E3": 0.2226094558760859,
+     "E4": 0.08759517138184653
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.06971757031502916,
+     "T2": 0.29091058036741174,
+     "T3": 0.4143631007298628,
+     "T4": 0.2250087485876962
+    },
+    "A": {
+     "A1": 0.16812847127687824,
+     "A2": 0.2895364867477405,
+     "A3": 0.29273462236526004,
+     "A4": 0.2496004196101211
+    },
+    "C": {
+     "C1": 0.33660879443641983,
+     "C2": 0.25934532097940205,
+     "C3": 0.11969784045203173,
+     "C4": 0.27437322409447706,
+     "C5": 0.009974820037669311
+    },
+    "D": {
+     "D1": 0.17,
+     "D2": 0.57,
+     "D3": 0.26
+    },
+    "S": {
+     "S1": 0.349154840385455,
+     "S2": 0.32994715781734774,
+     "S3": 0.3208980017971973
+    },
+    "P": {
+     "P1": 0.38,
+     "P2": 0.28,
+     "P3": 0.34
+    },
+    "E": {
+     "E1": 0.26234597153439704,
+     "E2": 0.4394070492637262,
+     "E3": 0.2183547884266537,
+     "E4": 0.07989219077522297
     }
    }
   }
@@ -3078,6 +3165,233 @@
     "https://www.wsj.com/tech/apple-china-memory-chip-plan-57773a83"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.000228,
+   "sources": 1,
+   "repeat_k": 8.743,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "applied": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "510a50254877f630",
+   "date": "2026-08-16",
+   "event_date": "2026-08-15",
+   "driver": "Update on Anthropic's IPO preparations covered in the 08:08 file: Anthropic is projecting 2028 revenue of roughly $190 billion to $200 billi",
+   "driver_urls": [
+    "https://www.reuters.com/business/anthropic-ipo-valuation-hinges-190-200-billion-2028-revenue-forecast-sources-say-2026-08-15/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.000228,
+   "sources": 1,
+   "repeat_k": 8.743,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "applied": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "6e67b443522f1d12",
+   "date": "2026-08-16",
+   "event_date": "2026-08-15",
+   "driver": "Update on the Nvidia\u2013OpenAI Ohio financing covered on August 14: Nvidia is in talks to invest as much as $3 billion in SB Energy, the SoftBa",
+   "driver_urls": [
+    "https://www.reuters.com/business/nvidia-talks-invest-3-billion-sb-energy-part-openai-data-center-deal-information-2026-08-15/",
+    "https://www.reuters.com/business/nvidia-scales-back-250-billion-openai-data-center-guarantee-wsj-reports-2026-08-14/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.000228,
+   "sources": 1,
+   "repeat_k": 8.743,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "applied": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "3b72a273b2da8c86",
+   "date": "2026-08-16",
+   "event_date": "2026-08-14",
+   "driver": "Update on the Situational Awareness unwind: Jane Street told employees in a note dated August 14, 2026 that it took a $15 billion hit in Jul",
+   "driver_urls": [
+    "https://www.reuters.com/business/finance/jane-street-took-15-billion-hit-july-tied-situational-awareness-sources-say-2026-08-14/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.002085,
+   "sources": 1,
+   "repeat_k": 0.641,
+   "spread": 1.0,
+   "requested": {
+    "T.T2": 0.002085,
+    "T.T3": 0.002085,
+    "T.T4": -0.002085
+   },
+   "applied": {
+    "T.T2": 0.002085,
+    "T.T3": 0.002085,
+    "T.T4": -0.002085
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "incident": "1695b2771c220d05",
+   "date": "2026-08-16",
+   "event_date": "2026-08-14",
+   "driver": "Inherent Laboratories published Faraday on August 14, 2026, a 27-billion-parameter agent trained by long-horizon reinforcement learning to r",
+   "driver_urls": [
+    "https://inherentlabs.ai/research/training-to-replicate"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003202,
+   "sources": 1,
+   "repeat_k": 9.827,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004269,
+    "A.A1": -0.0002135
+   },
+   "applied": {
+    "A.A3": 0.0004269,
+    "A.A1": -0.0002135
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "8bc461e0eb3ce91f",
+   "date": "2026-08-16",
+   "event_date": "2026-08-14",
+   "driver": "Anthropic published a redacted risk report on August 14, 2026 raising its broad estimate of the risk of misalignment in high-stakes situatio",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003202,
+   "sources": 1,
+   "repeat_k": 9.827,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004269,
+    "A.A1": -0.0002135
+   },
+   "applied": {
+    "A.A3": 0.0004269,
+    "A.A1": -0.0002135
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "268f5762c6a8bf10",
+   "date": "2026-08-16",
+   "event_date": "2026-08-14",
+   "driver": "Giordano De Marzo, Claudio Castellano and David Garcia published work in Science Advances on August 14, 2026 finding that large language mod",
+   "driver_urls": [
+    "https://www.science.org/doi/10.1126/sciadv.aea6091"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.000228,
+   "sources": 1,
+   "repeat_k": 8.743,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "applied": {
+    "E.E1": 0.000304,
+    "E.E3": -0.000152
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "9f432f2e28e8e990",
+   "date": "2026-08-16",
+   "event_date": "2026-08-16",
+   "driver": "Nebius and CoreWeave each pitched investors on shorter-term compute contracts in the week ending August 16, 2026, saying the structure would",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/nebius-coreweave-tout-short-term-cloud-deals-aws-goes-long"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0006468,
+   "sources": 1,
+   "repeat_k": 3.695,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0008624,
+    "S.S3": -0.0004312
+   },
+   "applied": {
+    "S.S2": 0.0008624,
+    "S.S3": -0.0004312
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "9e2704c51d92dc0a",
+   "date": "2026-08-16",
+   "event_date": "2026-08-07",
+   "driver": "Alex Hsu and Hala Moussawi of the Georgia Institute of Technology's Scheller College of Business posted a 46-page working paper to SSRN on A",
+   "driver_urls": [
+    "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7202741"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -4270,6 +4584,34 @@
    "text": "Google added a \"Media watermark\" setting to Gemini and its video generator Flow on August 14, 2026 that removes the visi",
    "reports": 1,
    "fp": "22b1126648c6f3fe"
+  },
+  {
+   "date": "2026-08-16",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on DeepSeek's August 12 V4-Pro release: DeepSeek is raising prices for its flagship V4 models by more than four t",
+   "reports": 1,
+   "fp": "06d45b9f6aeb397a"
+  },
+  {
+   "date": "2026-08-15",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Delsia Bare and Ida Huddleston, a daughter and mother in Maysville, Kentucky, refused an offer totaling $26.48 million f",
+   "reports": 1,
+   "fp": "7cf97416b6b7c27e"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Brennan Center for Justice published the expert brief \"Does AI Fight or Fuel Election Disinformation?\" on August 11,",
+   "reports": 1,
+   "fp": "08ba727fbedab2ef"
+  },
+  {
+   "date": "2026-08-10",
+   "section": "AI Industry & Markets",
+   "text": "Update on the August 5 Google DeepMind reorganization carried in the August 9 and August 12 files: an account published ",
+   "reports": 1,
+   "fp": "50c4c7866d26e9ec"
   }
  ],
  "seen": [
@@ -4521,7 +4863,19 @@
   "7850d920195f3aa0",
   "3537a48269624ec2",
   "22b1126648c6f3fe",
-  "84809cc2734c5397"
+  "84809cc2734c5397",
+  "06d45b9f6aeb397a",
+  "510a50254877f630",
+  "6e67b443522f1d12",
+  "3b72a273b2da8c86",
+  "1695b2771c220d05",
+  "7cf97416b6b7c27e",
+  "8bc461e0eb3ce91f",
+  "268f5762c6a8bf10",
+  "08ba727fbedab2ef",
+  "9f432f2e28e8e990",
+  "9e2704c51d92dc0a",
+  "50c4c7866d26e9ec"
  ],
  "residue_r0": [
   {
