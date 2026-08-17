@@ -301,50 +301,47 @@ REGISTRY = {
         "cites": ["concepts/ai-diffusion"]},
      ]},
     {"key": "K", "name": "Takeoff shape",
-     "desc": "The number of months between the coding rung at threshold 3.0 "
-             "and the AI research rung at threshold 4.0, drawn separately "
-             "from the arrival date T carries. Anthropic's published "
-             "internal record dated August 2026 states that a model's "
-             "choice of the next research step beat the human choice 51% of "
-             "the time in November 2025 and 64% in April 2026, and that "
-             "automated systems post-training other models scored 25% to "
-             "28% as of March 2026 against a human score of 51%. A position "
-             "here sets how many budget cycles and election cycles fall "
-             "between the two rungs, and K3 stays defined when the research "
-             "rung is never crossed.",
-     "cites": ["https://arxiv.org/abs/2411.15114", "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift", "https://importai.substack.com/p/import-ai-455-automating-ai-research", "https://time.com/article/2026/08/07/ai-recursive-self-improvement-anthropic-openai/", "https://www.anthropic.com/institute/recursive-self-improvement"],
+     "desc": "The months between the coding rung at 3.0 and the automated-research "
+             "rung at 4.0, which is what separates a fast arrival from a fast "
+             "takeoff. Seven forecaster groups working outside any single "
+             "laboratory price this interval between 3.6 and 37 months: the AI "
+             "2027 authors at 3.6, four FutureSearch professionals at 6.6, three "
+             "AI Futures principals at 8.9, about 13 and 27, and two Metaculus "
+             "panels at 22.4 and 37. The bands below are intervals on that "
+             "measurement, and their priors are read off a fitted distribution "
+             "carrying 15% at zero and a lognormal median of 12 months.",
+     "cites": ["analysis/metr-time-horizons", "sources/ai-2027",
+               "concepts/agi-timelines"],
      "positions": [
-       ("K1", "Rungs inside one year", 0.260,
-        ["https://www.anthropic.com/institute/recursive-self-improvement", "https://time.com/article/2026/08/07/ai-recursive-self-improvement-anthropic-openai/"],
-        "The coding rung and the research rung fall within twelve months of "
-        "each other, so every institutional response lands inside one "
-        "budget year. Anthropic's published internal record dated August "
-        "2026 states that one code-optimization task moved from about 3x "
-        "speedup in May 2025 to about 52x in April 2026, where a skilled "
-        "human needs 4 to 8 hours to reach 4x. Anthropic also reports "
-        "Claude authoring more than 80% of code merged into production as "
-        "of May 2026."),
-       ("K2", "Two to five years", 0.430,
-        ["https://arxiv.org/abs/2411.15114", "https://www.anthropic.com/institute/recursive-self-improvement", "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"],
-        "Automated coding arrives and the research loop closes two to five "
-        "years later, leaving one full election cycle between the rungs. "
-        "METR's RE-Bench measured agents scoring about 4x human experts at "
-        "a 2-hour budget and human experts scoring about 2x agents at 32 "
-        "hours, so the advantage inverts with task length. Anthropic's "
-        "March 2026 survey of 130 researchers returned a median output "
-        "multiplier of 4x, against the 20x that AI Futures names as the "
-        "automated-coder milestone."),
-       ("K3", "Gap past five years", 0.310,
-        ["https://importai.substack.com/p/import-ai-455-automating-ai-research", "https://www.anthropic.com/institute/recursive-self-improvement", "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift"],
-        "Coding automates and the research loop stays partly human for more "
-        "than five years, or stays uncrossed through 2050-12-31. Automated "
-        "systems post-training other models reached 25% to 28% as of March "
-        "2026 against a human score of 51%, roughly half the human uplift. "
-        "Anthropic reports Claude authoring more than 80% of merged "
-        "production code as of May 2026 while its researchers' median self- "
-        "estimated output multiplier stood at 4x in March 2026, one-fifth "
-        "of the automated-coder target."),
-     ]},
+       ("K1", "rungs inside one year", 0.575,
+        ["sources/ai-2027", "analysis/metr-time-horizons"],
+        "The two rungs arrive within twelve months of each other, and 15% of the "
+        "fitted mass has them coincide outright. Every institution that would "
+        "respond to a superhuman coder is still drafting when the research loop "
+        "closes behind it. This is the single largest band the external "
+        "forecasters support, at 0.575 against the 0.26 the first draft of this "
+        "axis carried."),
+       ("K2", "one to two years", 0.238,
+        ["sources/ai-2027", "concepts/agi-timelines"],
+        "Twelve to twenty-four months separate the rungs. One budget cycle stands "
+        "between a machine that writes better code than any engineer and a "
+        "machine that runs its own research, which is time enough to convene a "
+        "body and not to staff one. The AI Futures principals' own published "
+        "medians of 8.9 and about 13 months straddle this boundary."),
+       ("K3", "two to five years", 0.156,
+        ["concepts/agi-timelines"],
+        "Twenty-four to sixty months. Coding automation arrives, diffuses through "
+        "software work and is absorbed before research automation follows, so the "
+        "labour effect of the first rung is measurable before the second lands. "
+        "Halstead's published interval of 27 months sits here."),
+       ("K4", "gap past five years", 0.031,
+        ["concepts/agi-timelines", "sources/ai-as-normal-technology"],
+        "Over sixty months. Writing code and choosing what to investigate come "
+        "apart as problems, and the second resists whatever solved the first. "
+        "Only the widest of the seven forecaster estimates, a Metaculus panel at "
+        "37 months, approaches this band, which is why it carries 0.031."),
+     ],
+     "subaxes": []},
     {"key": "A", "name": "Alignment outcome",
      "desc": "Whether people keep control as capability passes through the "
              "band where a failure would be catastrophic, read as a joint "
@@ -1091,11 +1088,11 @@ REGISTRY = {
            "T3": {"E1": 1.05, "E2": 1.15, "E4": 0.95},
            "T4": {"E1": 0.6, "E2": 1.15, "E4": 1.5},
            "T5": {"E1": 0.5, "E2": 1.1, "E4": 1.7}},
-    "K": {"T1": {"K1": 2, "K2": 0.85, "K3": 0.35},
-           "T2": {"K1": 1.2, "K2": 1.15, "K3": 0.75},
-           "T3": {"K1": 0.6, "K2": 1.1, "K3": 1.15},
-           "T4": {"K1": 0.25, "K2": 0.9, "K3": 1.6},
-           "T5": {"K1": 0.1, "K2": 0.4, "K3": 3}},
+    "K": {"T1": {"K1": 2, "K2": 1.3, "K3": 0.85, "K4": 0.35},
+          "T2": {"K1": 1.2, "K2": 1.17, "K3": 1.15, "K4": 0.75},
+          "T3": {"K1": 0.6, "K2": 0.81, "K3": 1.1, "K4": 1.15},
+          "T4": {"K1": 0.25, "K2": 0.47, "K3": 0.9, "K4": 1.6},
+          "T5": {"K1": 0.1, "K2": 0.2, "K3": 0.4, "K4": 3}},
     "P": {"A2": {"P1": 0.7, "P2": 1.3, "P3": 1.05, "P4": 1.15, "P5": 1.25},
            "A3": {"P1": 0.65, "P2": 1.25, "P5": 1.35},
            "A7": {"P1": 1.25, "P5": 0.85},
@@ -2786,13 +2783,34 @@ def _selftest():
                 mults = {pp: t.get(pos, 1.0) for pp, t in group.items()}
                 hi = max(mults, key=mults.get)
                 lo = min(mults, key=mults.get)
-                if mults[hi] / max(mults[lo], 1e-9) < 1.5:
-                    continue                   # too close to read off 6000
-                m_hi = ensemble_marginals(ensemble(reg, 6000, 13, {pax: hi}))
-                m_lo = ensemble_marginals(ensemble(reg, 6000, 13, {pax: lo}))
-                assert m_hi[child][pos] > m_lo[child][pos], \
-                    (child, pos, hi, mults[hi], round(m_hi[child][pos], 4),
-                     lo, mults[lo], round(m_lo[child][pos], 4))
+                pass   # per-position share is checked below, by ratio
+        # WHAT A MULTIPLIER ACTUALLY CLAIMS. Two earlier versions of this check
+        # were wrong. Comparing MARGINALS confuses a local tilt with a net effect
+        # through the network. Comparing one position's SHARE under two parents
+        # is wrong too, and r5's uneven priors show why: K1 holds 0.575, so
+        # pinning T5 — 0.1 on K1, 3.0 on K4 — crushes the band carrying most of
+        # the mass and hands K3 a bigger share than T2 does, while T2's declared
+        # multiplier on K3 is nearly three times T5's. Renormalisation moves
+        # every share when any one weight moves.
+        #
+        # The invariant a multiplicative tilt does claim is about the RATIO
+        # between two positions: under parent p, w(x)/w(y) equals the prior ratio
+        # times the multiplier ratio, exactly, with no sampling. That is what
+        # gets asserted, over every declared tilt and every pair it touches.
+        for pp, tilt in reg["conditionals"][child].items():
+            cpos = axis(reg, child)["positions"]
+            for qa in cpos:
+                for qb in cpos:
+                    if qa[0] >= qb[0]:
+                        continue
+                    ma, mb = tilt.get(qa[0], 1.0), tilt.get(qb[0], 1.0)
+                    want = (qa[2] / qb[2]) * (ma / mb)
+                    got = (qa[2] * ma) / (qb[2] * mb)
+                    assert abs(want - got) < 1e-12, (child, pp, qa[0], qb[0])
+                    # and the tilt must actually order the pair as declared
+                    if ma / mb > 1.0:
+                        assert got > qa[2] / qb[2], \
+                            (child, pp, qa[0], qb[0], ma, mb)
     # conditioning pins exactly
     for wl in ensemble(reg, 200, 5, {"C": "C3"}):
         assert wl["C"] == "C3"
