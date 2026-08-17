@@ -1,6 +1,6 @@
-# Emit needs-review — 20260816-1048
+# Emit needs-review — 20260817-1048
 
-216 items. Unparseable values are reported here, never guessed.
+210 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -42,7 +42,6 @@
 - sources/farahany-class-09-when-ai-discrimination: dangling relationship target 'legislation/california-feha-ai-regulations'
 - sources/farahany-class-11-when-ai-fails: dangling relationship target 'legislation/eu-product-liability-directive'
 - sources/farahany-class-13-red-teaming-governance: dangling relationship target 'legislation/cfaa'
-- sources/farahany-class-15a-governing-synthetic-media: dangling relationship target 'concepts/section-230'
 - sources/farahany-class-15a-governing-synthetic-media: dangling relationship target 'concepts/hallucinations-mathematical-inevitability'
 - sources/farahany-class-18-data-privacy-ai-world: dangling relationship target 'entities/ryan-calo'
 - sources/farahany-class-19-when-invisible-algorithms-judge-you: dangling relationship target 'litigation/harper-v-sirius-xm'
@@ -66,7 +65,6 @@
 - sources/ft-ai-revolution-turbocharged-ma: dangling relationship target 'entities/general-catalyst'
 - sources/ft-ai-revolution-turbocharged-ma: dangling relationship target 'concepts/discretionary-state-capitalism'
 - sources/goldman-section-230-primer: dangling relationship target 'concepts/ai-platform-liability'
-- sources/goldman-section-230-primer: dangling relationship target 'entities/eric-goldman'
 - sources/guardian-manager-purge-2026-05-15: dangling relationship target 'entities/anastassia-fedyk'
 - sources/guardian-manager-purge-2026-05-15: dangling relationship target 'entities/raffaella-sadun'
 - sources/guardian-manager-purge-2026-05-15: dangling relationship target 'entities/emily-rose-mcrae'
@@ -96,7 +94,6 @@
 - sources/misinformation-on-misinformation-altay: dangling relationship target 'concepts/methodology-critique'
 - sources/monitoring-reasoning-models-baker-openai: dangling relationship target 'entities/aleksander-madry'
 - sources/monitoring-reasoning-models-baker-openai: dangling relationship target 'entities/jakub-pachocki'
-- sources/norms-of-computer-trespass-kerr: dangling relationship target 'entities/orin-kerr'
 - sources/prince-builders-sellers-measurers: dangling relationship target 'concepts/economic-possibilities-for-artificial-int'
 - sources/prince-builders-sellers-measurers: dangling relationship target 'concepts/executive-thesis-pieces'
 - sources/privacy-without-monopoly-cyphers-doctorow: dangling relationship target 'concepts/data-portability'
@@ -130,9 +127,6 @@
 - entities/deirdre-mulligan: dangling relationship target 'entities/uc-berkeley'
 - entities/dominion-energy: inline comment stripped from 'nonprofit  # placeholder — Dominion is a'
 - entities/dylan-hadfield-menell: dangling relationship target 'entities/mit'
-- entities/gillian-hadfield: dangling relationship target 'entities/johns-hopkins'
-- entities/gillian-hadfield: dangling relationship target 'entities/schwartz-reisman-institute'
-- entities/gillian-hadfield: dangling relationship target 'entities/barry-weingast'
 - entities/henry-farrell: dangling relationship target 'entities/sais'
 - entities/henry-farrell: dangling relationship target 'entities/snf-agora-institute'
 - entities/house-select-committee-on-china: inline comment stripped from 'coalition  # placeholder — a congression'

@@ -16,13 +16,13 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09,
-   "A2": 0.23,
-   "A3": 0.13,
-   "A4": 0.17,
-   "A5": 0.1,
-   "A6": 0.05,
-   "A7": 0.23
+   "A1": 0.08967182932784164,
+   "A2": 0.22993082943175724,
+   "A3": 0.13056274912098176,
+   "A4": 0.16994887392782054,
+   "A5": 0.09996992583989443,
+   "A6": 0.049984962919947216,
+   "A7": 0.22993082943175724
   },
   "C": {
    "C1": 0.33,
@@ -49,11 +49,11 @@
    "D4": 0.15
   },
   "S": {
-   "S1": 0.24,
-   "S2": 0.22,
-   "S3": 0.25,
-   "S4": 0.19,
-   "S5": 0.1
+   "S1": 0.23990670794140367,
+   "S2": 0.22069252168196682,
+   "S3": 0.24951349828076663,
+   "S4": 0.1899261437869446,
+   "S5": 0.0999611283089182
   },
   "P": {
    "P1": 0.18,
@@ -63,11 +63,11 @@
    "P5": 0.14
   },
   "E": {
-   "E1": 0.22,
-   "E2": 0.18,
-   "E3": 0.33,
-   "E4": 0.19,
-   "E5": 0.08
+   "E1": 0.22075642456806735,
+   "E2": 0.17992354415936307,
+   "E3": 0.3294347150335249,
+   "E4": 0.189919296612661,
+   "E5": 0.07996601962638358
   }
  },
  "history": [
@@ -1668,19 +1668,19 @@
      "T5": 0.12
     },
     "K": {
-     "K1": 0.575,
-     "K2": 0.238,
-     "K3": 0.156,
-     "K4": 0.031
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
     },
     "A": {
-     "A1": 0.09,
-     "A2": 0.23,
-     "A3": 0.13,
-     "A4": 0.17,
-     "A5": 0.1,
-     "A6": 0.05,
-     "A7": 0.23
+     "A1": 0.08967182932784164,
+     "A2": 0.22993082943175724,
+     "A3": 0.13056274912098176,
+     "A4": 0.16994887392782054,
+     "A5": 0.09996992583989443,
+     "A6": 0.049984962919947216,
+     "A7": 0.22993082943175724
     },
     "C": {
      "C1": 0.33,
@@ -1693,39 +1693,39 @@
      "C8": 0.01
     },
     "R": {
-     "R1": 0.14,
-     "R2": 0.27,
-     "R3": 0.11,
-     "R4": 0.22,
-     "R5": 0.15,
-     "R6": 0.11
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
     },
     "D": {
-     "D1": 0.24192909372971805,
-     "D2": 0.34871603740296875,
-     "D3": 0.2510003706110151,
-     "D4": 0.15835449825629827
+     "D1": 0.24166495247611997,
+     "D2": 0.35032360639519433,
+     "D3": 0.2508700439399099,
+     "D4": 0.1571413971887759
     },
     "S": {
-     "S1": 0.23999999999999996,
-     "S2": 0.21999999999999997,
-     "S3": 0.25,
-     "S4": 0.18999999999999997,
-     "S5": 0.09999999999999999
+     "S1": 0.23990670794140367,
+     "S2": 0.22069252168196682,
+     "S3": 0.24951349828076663,
+     "S4": 0.1899261437869446,
+     "S5": 0.0999611283089182
     },
     "P": {
-     "P1": 0.18065748358712685,
-     "P2": 0.2291450076350835,
-     "P3": 0.2291450076350835,
-     "P4": 0.21947532961343827,
-     "P5": 0.14157717152926777
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
     },
     "E": {
-     "E1": 0.21973780563972967,
-     "E2": 0.18241496507132948,
-     "E3": 0.3200772044307923,
-     "E4": 0.19179732996016197,
-     "E5": 0.08597269489798653
+     "E1": 0.2205385551627079,
+     "E2": 0.18170614148246675,
+     "E3": 0.32219655959940896,
+     "E4": 0.19125178291544068,
+     "E5": 0.08430696083997566
     }
    },
    "note": "K rebuilt as four bands and re-based, on the r5 gap programme. The three-band ladder left 12 to 24 months uncovered and seven forecaster groups put 0.238 of the mass there; an axis whose positions leave a hole returns shares that are not a probability. Priors read off a fitted distribution carrying 15% at zero and a lognormal median of 12 months with an 80% interval of 4 to 38 months: K1 0.575, K2 0.238, K3 0.156, K4 0.031.",
@@ -1744,13 +1744,13 @@
      "K4": 0.031
     },
     "A": {
-     "A1": 0.09,
-     "A2": 0.23,
-     "A3": 0.13,
-     "A4": 0.17,
-     "A5": 0.1,
-     "A6": 0.05,
-     "A7": 0.23
+     "A1": 0.08967182932784164,
+     "A2": 0.22993082943175724,
+     "A3": 0.13056274912098176,
+     "A4": 0.16994887392782054,
+     "A5": 0.09996992583989443,
+     "A6": 0.049984962919947216,
+     "A7": 0.22993082943175724
     },
     "C": {
      "C1": 0.33,
@@ -1777,11 +1777,11 @@
      "D4": 0.15
     },
     "S": {
-     "S1": 0.23999999999999996,
-     "S2": 0.21999999999999997,
-     "S3": 0.25,
-     "S4": 0.18999999999999997,
-     "S5": 0.09999999999999999
+     "S1": 0.23990670794140367,
+     "S2": 0.22069252168196682,
+     "S3": 0.24951349828076663,
+     "S4": 0.1899261437869446,
+     "S5": 0.0999611283089182
     },
     "P": {
      "P1": 0.18,
@@ -1791,11 +1791,11 @@
      "P5": 0.14
     },
     "E": {
-     "E1": 0.21999999999999997,
-     "E2": 0.18,
-     "E3": 0.33,
-     "E4": 0.18999999999999997,
-     "E5": 0.08
+     "E1": 0.22075642456806735,
+     "E2": 0.17992354415936307,
+     "E3": 0.3294347150335249,
+     "E4": 0.189919296612661,
+     "E5": 0.07996601962638358
     }
    }
   }
@@ -3834,6 +3834,118 @@
     "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7202741"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003188,
+   "sources": 1,
+   "repeat_k": 11.541,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004251,
+    "E.E3": -0.0002125
+   },
+   "applied": {
+    "E.E1": 0.0004251,
+    "E.E3": -0.0002125
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "c822538a13997fbd",
+   "date": "2026-08-17",
+   "event_date": "2026-08-16",
+   "driver": "Stripe finalized an agreement on August 16, 2026 to acquire OpenRouter for more than $7 billion, according to people familiar with the matte",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-08-16/stripe-nears-deal-to-buy-ai-firm-openrouter-for-over-7-billion"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004515,
+   "sources": 1,
+   "repeat_k": 10.712,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.000602,
+    "A.A1": -0.000301
+   },
+   "applied": {
+    "A.A3": 0.000602,
+    "A.A1": -0.000301
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "594915274b408e98",
+   "date": "2026-08-17",
+   "event_date": "2026-08-14",
+   "driver": "Update on Anthropic's watermarking announcement carried in the August 12 and August 13 files: Anthropic published a technical explanation on",
+   "driver_urls": [
+    "https://www.anthropic.com/news/claude-text-watermark"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003188,
+   "sources": 1,
+   "repeat_k": 11.541,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004251,
+    "E.E3": -0.0002125
+   },
+   "applied": {
+    "E.E1": 0.0004251,
+    "E.E3": -0.0002125
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "558cdc5c5a214d32",
+   "date": "2026-08-17",
+   "event_date": "2026-08-16",
+   "driver": "Stripe agreed to acquire OpenRouter for more than $7 billion, Bloomberg reported on August 16, 2026; a Stripe spokesperson told TechCrunch t",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0005838,
+   "sources": 1,
+   "repeat_k": 4.253,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0007783,
+    "S.S3": -0.0003892
+   },
+   "applied": {
+    "S.S2": 0.0007783,
+    "S.S3": -0.0003892
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "1046ad5c1de08020",
+   "date": "2026-08-17",
+   "event_date": "2026-08-17",
+   "driver": "Nvidia is close to an agreement to provide around $100 billion in credit support for OpenAI to lease a proposed AI data center campus in Ohi",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/nvidia-nears-deal-guarantee-100-billion-financing-massive-data-center"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -5054,6 +5166,125 @@
    "text": "Update on the August 5 Google DeepMind reorganization carried in the August 9 and August 12 files: an account published ",
    "reports": 1,
    "fp": "50c4c7866d26e9ec"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "Frontier Models & Capabilities",
+   "text": "Hugging Face published its State of Open Models report on August 14, 2026, written by Adina Yakefu, Apolin\u00e1rio Passos an",
+   "reports": 1,
+   "fp": "0235adfbb9792639"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "Agentic AI & Coding",
+   "text": "Hugging Face reported in the same August 14, 2026 analysis that coding agents have become the largest single client of i",
+   "reports": 1,
+   "fp": "c41cb85b7bc98adb"
+  },
+  {
+   "date": "2026-08-16",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on OpenAI's safety-team changes carried in the August 13 and August 14 files, which reported that Dylan Scandinar",
+   "reports": 1,
+   "fp": "086c339e0302ebfd"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on Google's visible-watermark toggle carried in the August 15 morning file: in the announcement made on August 14",
+   "reports": 1,
+   "fp": "8e40abf25b7e690d"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Shira Ovide, Clara Ence Morse and Kevin Schaul published an analysis of candidate campaign websites on August 14, 2026 f",
+   "reports": 1,
+   "fp": "2a992316b9bafbe4"
+  },
+  {
+   "date": "2026-08-15",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Dario Amodei posted a response on X on August 15, 2026 to the investor Gavin Baker, who had argued on the All-In podcast",
+   "reports": 1,
+   "fp": "7006c2a4f52f041c"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic's second-quarter revenue reached $11.5 billion, about 14 times the $787 million it recorded in the year-ago qu",
+   "reports": 1,
+   "fp": "c99a3ca84e821864"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Industry & Markets",
+   "text": "SpaceX completed its acquisition of Cursor, Cursor said in a company blog post, closing a process that began in April 20",
+   "reports": 1,
+   "fp": "db0e83ea5485528e"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI lost several senior executives over the month to August 14, 2026, including chief revenue officer Denise Dresser,",
+   "reports": 1,
+   "fp": "9b118c87abdaad72"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "Frontier Models & Capabilities",
+   "text": "Z.ai released GLM-5.3 on August 14, 2026, stating that it uses the same base model as GLM-5.2 and that every gain came f",
+   "reports": 1,
+   "fp": "90cc750262b795b7"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "Frontier Models & Capabilities",
+   "text": "Alibaba's Qwen research lab released Qwen 3.8 27B on Friday, August 14, 2026, an Apache 2-licensed 27-billion-parameter ",
+   "reports": 1,
+   "fp": "82b221e00835be0c"
+  },
+  {
+   "date": "2026-08-12",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "OpenAI exercised every vested Cerebras warrant share in July 2026, acquiring 10,033,508 Class N shares at $0.00001 each ",
+   "reports": 1,
+   "fp": "aa49dfa802721ce9"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Z.ai reported on August 14, 2026 that GLM-5.3's cyber capability grew faster than expected during post-training, scoring",
+   "reports": 1,
+   "fp": "339fd9985ffeabf1"
+  },
+  {
+   "date": "2026-08-07",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The National Institute of Standards and Technology announced the initial public draft of NIST AI 200-2 on August 7, 2026",
+   "reports": 1,
+   "fp": "10de072cfb3211e4"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "U.S. State AI Legislation",
+   "text": "California lawmakers approved a set of AI regulation bills on August 13, 2026, ahead of an August 14 deadline for fiscal",
+   "reports": 1,
+   "fp": "7c5a2c457a5c79a4"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "National Security & Geopolitics",
+   "text": "World Liberty Financial is collaborating with WorldClaw, a Hong Kong-based venture that offers AI models and accepts Wor",
+   "reports": 1,
+   "fp": "bdbe2cc792d53a26"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Amazon is buying printed books in bulk, cutting their bindings and scanning them for AI training data at a Las Vegas fac",
+   "reports": 1,
+   "fp": "0dee0630c174dd5a"
   }
  ],
  "seen": [
@@ -5317,7 +5548,28 @@
   "08ba727fbedab2ef",
   "9f432f2e28e8e990",
   "9e2704c51d92dc0a",
-  "50c4c7866d26e9ec"
+  "50c4c7866d26e9ec",
+  "c822538a13997fbd",
+  "0235adfbb9792639",
+  "c41cb85b7bc98adb",
+  "086c339e0302ebfd",
+  "594915274b408e98",
+  "8e40abf25b7e690d",
+  "2a992316b9bafbe4",
+  "7006c2a4f52f041c",
+  "558cdc5c5a214d32",
+  "c99a3ca84e821864",
+  "db0e83ea5485528e",
+  "9b118c87abdaad72",
+  "90cc750262b795b7",
+  "82b221e00835be0c",
+  "1046ad5c1de08020",
+  "aa49dfa802721ce9",
+  "339fd9985ffeabf1",
+  "10de072cfb3211e4",
+  "7c5a2c457a5c79a4",
+  "bdbe2cc792d53a26",
+  "0dee0630c174dd5a"
  ],
  "residue_r0": [
   {
@@ -5420,6 +5672,15 @@
     "name": "monitoring: AI Industry & Markets residue",
     "cites": [],
     "origin": "auto: weekly schema review 2026-08-10 \u2014 12 unexplained events in 7 days; FOR AUGUST'S REVIEW"
+   }
+  },
+  {
+   "axis": "T",
+   "subaxis": {
+    "key": "T.watch-frontier",
+    "name": "monitoring: Frontier Models & Capabilities residue",
+    "cites": [],
+    "origin": "auto: weekly schema review 2026-08-17 \u2014 13 unexplained events in 7 days; FOR AUGUST'S REVIEW"
    }
   }
  ]
