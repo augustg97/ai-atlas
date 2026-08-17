@@ -36,15 +36,22 @@ LADDER = ["none", "unreliable agent", "reliable agent", "superhuman coder",
 # The 2026 anchor (2.6, approaching "superhuman coder") is the trunk's
 # current frontier read from the wiki's model record.
 # ---------------------------------------------------------------------------
+# Each T position now NAMES the window in which the research rung at 4.0 is
+# first crossed, so the knots are derived from the window rather than chosen
+# beside it: T1 2027-2028, T2 2029-2031, T3 2032-2036, T4 2037-2050. T5 asserts
+# that the method asymptotes, so it stays below 4.0 through 2050 and never
+# reaches 5.0 inside the window at all.
 TEMPO_KNOTS = {
-    "T1": [(2026.6, 2.6), (2027.3, 3.0), (2028.0, 4.0), (2028.7, 5.0),
-           (2029.5, 6.0)],
-    "T2": [(2026.6, 2.6), (2029.0, 3.0), (2030.5, 4.0), (2032.5, 5.0),
-           (2034.5, 6.0)],
-    "T3": [(2026.6, 2.6), (2031.5, 3.0), (2034.5, 4.0), (2038.5, 5.0),
-           (2043.0, 6.0)],
-    "T4": [(2026.6, 2.6), (2034.0, 3.0), (2046.0, 3.8), (2070.0, 4.3),
-           (2100.0, 4.6)],
+    "T1": [(2026.6, 2.6), (2027.2, 3.0), (2027.9, 4.0), (2028.6, 5.0),
+           (2029.4, 6.0)],
+    "T2": [(2026.6, 2.6), (2028.6, 3.0), (2030.2, 4.0), (2032.2, 5.0),
+           (2034.4, 6.0)],
+    "T3": [(2026.6, 2.6), (2031.0, 3.0), (2034.0, 4.0), (2038.0, 5.0),
+           (2042.5, 6.0)],
+    "T4": [(2026.6, 2.6), (2033.5, 3.0), (2043.5, 4.0), (2058.0, 5.0),
+           (2078.0, 6.0)],
+    "T5": [(2026.6, 2.6), (2036.0, 3.0), (2050.0, 3.6), (2075.0, 3.9),
+           (2100.0, 4.0)],
 }
 
 
@@ -54,7 +61,7 @@ def capability_path(wl):
     pause 2035→2040 then resumes; A1 truncates ascent at takeover (the
     index stays — the world changes owner, not capability)."""
     knots = list(TEMPO_KNOTS[wl["T"]])
-    if wl["C"] == "C5":
+    if wl["C"] == "C8":
         # moratorium: the ladder freezes where the halt catches it (~2029),
         # below the researcher line — their Plan S, scored and rejected but
         # on the table (sources/ai-2040-plan-a)
@@ -63,12 +70,12 @@ def capability_path(wl):
             held = [knots[0]]
         cap = min(3.2, held[-1][1] + 0.3)
         knots = held + [(2031.0, cap)]
-    elif wl["C"] == "C3" and wl["T"] in ("T2", "T3"):
+    elif wl["C"] in ("C5", "C4") and wl["T"] in ("T2", "T3"):
         held = [(y, v) for (y, v) in knots if v <= 4.0]
         held += [(2040.0, 4.0)]
         resume = [(y + 7.5, v) for (y, v) in knots if v > 4.0]
         knots = held + [k for k in resume if k[0] > 2040.0]
-    elif wl["A"] == "A2" and wl["T"] in ("T1", "T2"):
+    elif wl["A"] in ("A2", "A3") and wl["T"] in ("T1", "T2"):
         out = []
         for (y, v) in knots:
             if v >= 4.0:
@@ -104,17 +111,27 @@ def cap_at(knots, year):
 #  - approval: concepts/ai-backlash + AI 2027's approval readings (−26%).
 # ---------------------------------------------------------------------------
 
-COMPUTE_G = {"S1": 1.42, "S2": 1.50, "S3": 1.24}      # near-term GW growth/yr
-E_DAMP = {"E1": 1.00, "E2": 0.90, "E3": 0.72,
-          "E4": 0.80}                                  # demand crisis damps
-# D1 shock rate −2.6 pp/yr calibrated to the Citrini memo's path (≈4% →
-# 10.2% unemployment across ~2 years under full shock) —
-# sources/2028-global-intelligence-crisis; capability-gated as before
-REV_G = {"D1": 1.85, "D2": 1.55, "D3": 1.28}           # revenue growth by
-JOBS_RATE = {"D1": -2.6, "D2": -0.55, "D3": -0.18}     #   diffusion; jobs
-LAWS_RATE = {"C1": 14, "C2": 8, "C3": 6, "C4": 22,
-             "C5": 4}                                   # halt ≠ many laws
-APPROVAL0 = {"P1": 34, "P2": 47, "P3": 40}
+# r5 re-keyed every one of these. S now names WHICH constraint binds, so capacity
+# growth follows the constraint: capital binding leaves siting free and grows
+# fastest, power and siting binding is the slowest, and a leading-edge supply
+# shock is slower still while it lasts.
+COMPUTE_G = {"S1": 1.44, "S2": 1.50, "S3": 1.22, "S4": 1.30, "S5": 1.15}
+# E is now five states of the capital side, ordered by how hard each cuts the
+# spend that builds capacity.
+E_DAMP = {"E1": 1.00, "E2": 0.94, "E3": 0.88, "E4": 0.72, "E5": 0.62}
+# D is a measured ladder: the share of client-judged paid work finished at
+# acceptable quality. The Remote Labor Index graded 240 real freelance projects
+# at 15.8% on 2026-07-01 against 2.5% in October 2025, so D1 (delivery stalls
+# under a tenth) and D2 (reliability gates it) are the two live bands today.
+REV_G = {"D1": 1.22, "D2": 1.48, "D3": 1.70, "D4": 1.88}
+# The jobs rate follows the same ladder. D4's −2.6 pp/yr is the rate calibrated
+# to the displacement path; a stalled delivery band barely moves employment.
+JOBS_RATE = {"D1": -0.12, "D2": -0.45, "D3": -1.10, "D4": -2.60}
+# LAW VELOCITY MOVED AXIS. Counting statutes was never a question about what the
+# principal states settle between them; it is a question about regulatory
+# architecture, which is why r5 carved R out of C. Keyed on R now.
+LAWS_RATE = {"R1": 5, "R2": 24, "R3": 9, "R4": 12, "R5": 18, "R6": 7}
+APPROVAL0 = {"P1": 47, "P2": 38, "P3": 40, "P4": 36, "P5": 31}
 
 
 # Capability domains ("explain each of our capability domains in detail") —
@@ -283,7 +300,7 @@ def layer_states(wl, knots):
     """The Outcomes panel's data: per layer, the condition-matched state
     entries for this world-line, tempo-adjusted (fast worlds pull anchor
     years earlier, slow push later)."""
-    shift = {"T1": -3, "T2": -1, "T3": 0, "T4": +6}[wl["T"]]
+    shift = {"T1": -3, "T2": -1, "T3": 0, "T4": +6, "T5": +12}[wl["T"]]
     out = {}
     for layer, entries in LAYER_MATRIX.items():
         rows = []
@@ -314,8 +331,9 @@ def tracks(wl, knots):
     # grid intensity declines faster where build-out is coordinated/clean
     # (industries/energy, concepts/compute-governance); floor 40 g/kWh
     intensity = 350.0
-    int_decline = {"S1": 0.955, "S2": 0.94, "S3": 0.95}[wl["S"]]
-    if wl["C"] == "C3":
+    int_decline = {"S1": 0.955, "S2": 0.940, "S3": 0.950,
+                   "S4": 0.948, "S5": 0.958}[wl["S"]]
+    if wl["C"] in ("C5", "C4"):
         int_decline -= 0.005
     for y in yrs:
         c = cap_at(knots, y)
@@ -324,11 +342,11 @@ def tracks(wl, knots):
         g = 1.0 + (g - 1.0) * (1.0 / (1.0 + max(0, gw / 8000.0)))
         gw = min(60000.0, gw * g)
         # shares drift: C2 concentrates US; C3 diversifies; C4 lifts EU a bit
-        if wl["C"] == "C2":
+        if wl["R"] == "R4":
             us = min(0.72, us + 0.004)
-        if wl["C"] == "C3":
+        if wl["C"] in ("C5", "C4"):
             us = max(0.44, us - 0.003); cn = min(0.30, cn + 0.002)
-        if wl["C"] == "C4":
+        if wl["R"] == "R2":
             eu = min(0.16, eu + 0.0025)
         cn = min(0.34, cn + (0.003 if wl["S"] != "S3" else 0.000))
         # revenue: diffusion growth × capability lift, saturating vs GWP
@@ -337,10 +355,10 @@ def tracks(wl, knots):
         rev = min(30.0, rev * (1.0 + (rg - 1.0) / (1.0 + rev / 6.0)))
         # jobs: cumulative displacement, capability-gated, floor -35%
         jobs = max(-35.0, jobs + JOBS_RATE[wl["D"]] * min(2.5, max(0.3, c - 2.0)))
-        laws = laws + LAWS_RATE[wl["C"]]
+        laws = laws + LAWS_RATE[wl["R"]]
         # approval decays under shock/backlash, recovers under C3 stability
-        appr += (-1.2 if wl["D"] == "D1" else -0.3)
-        appr += (0.8 if wl["C"] == "C3" else 0.0)
+        appr += (-1.2 if wl["D"] == "D4" else -0.3)
+        appr += (0.8 if wl["C"] in ("C5", "C4") else 0.0)
         appr = max(8, min(72, appr))
         copies = 0 if c < 3.0 else min(5e7, 2.2e4 * (10 ** (1.1 * (c - 3.0))))
         speed = 1 if c < 3.0 else min(1000, int(13 * (5.5 ** (c - 3.0))))
@@ -582,7 +600,7 @@ def instantiate(wl, knots, seed):
             continue
         txt = t["text"].replace("{year}", str(int(year)))
         txt = txt.replace("{survives}",
-                          "survives" if wl["E"] == "E2" else "stalls")
+                          "survives" if wl["E"] in ("E2", "E3") else "stalls")
         events.append({"id": t["id"], "year": round(year, 1),
                        "layer": t["layer"], "text": txt, "cites": t["cites"]})
     events.sort(key=lambda e: e["year"])
