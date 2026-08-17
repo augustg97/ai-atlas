@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r3-2026-08-13"
+REGISTRY_VERSION = "r4-2026-08-17"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -219,22 +219,27 @@ REGISTRY = {
   "axes": [
     {"key": "T", "name": "Capability tempo",
      "desc": "How fast frontier capability climbs the milestone ladder — "
-             "the master variable every other axis conditions on. The "
-             "positions span the literature: AI 2027's months, the "
-             "Situational-Awareness decade, the gradual road, and the "
-             "Normal-Technology null.",
-     "cites": ["concepts/agi-timelines", "concepts/scaling-laws",
-               "sources/ai-2027", "sources/aschenbrenner-situational-awareness",
+             "the master variable every other axis conditions on. Scored "
+             "against the measured task-completion horizon: the task "
+             "length, in human expert time, an agent finishes half the "
+             "time, which ran from 4 seconds in 2019 to over 16 hours in "
+             "2026. Doubling took about 7 months across 2019-2025 and "
+             "about 4 months across 2024-2025.",
+     "cites": ["analysis/metr-time-horizons", "concepts/agi-timelines",
+               "concepts/scaling-laws", "sources/ai-2027",
+               "sources/aschenbrenner-situational-awareness",
                "sources/ai-as-normal-technology"],
      "positions": [
-       ("T1", "explosive (SC 2027-28)", 0.07,
-        ["sources/ai-2027", "sources/grading-ai-2027-2025-predictions"]),
-       ("T2", "fast (2029-31)", 0.29,
-        ["sources/ai-2040-plan-a", "sources/aschenbrenner-situational-awareness"]),
-       ("T3", "gradual (2032-36)", 0.41,
-        ["concepts/agi-timelines"]),
-       ("T4", "continuous-normal (no SC in window)", 0.23,
-        ["sources/ai-as-normal-technology"]),
+       ("T1", "explosive (SC 2027-28)", 0.11,
+        ["analysis/metr-time-horizons", "sources/ai-2027",
+         "sources/grading-ai-2027-2025-predictions"]),
+       ("T2", "fast (2029-31)", 0.42,
+        ["analysis/metr-time-horizons", "sources/ai-2040-plan-a",
+         "sources/aschenbrenner-situational-awareness"]),
+       ("T3", "gradual (2032-36)", 0.30,
+        ["analysis/metr-time-horizons", "concepts/agi-timelines"]),
+       ("T4", "continuous-normal (no SC in window)", 0.17,
+        ["analysis/metr-time-horizons", "sources/ai-as-normal-technology"]),
      ],
      "subaxes": [
        {"key": "T.bench", "name": "benchmark-to-deployment lag",
@@ -410,6 +415,34 @@ REGISTRY = {
                "sections now watched, most from both directions.",
      "approved": "August (2026-08-03: 'can we please fix all of the issues "
                  "flagged above') — morning-4 report §8"},
+    {"version": REGISTRY_VERSION, "date": "2026-08-17",
+     "change": "r4 — the T axis re-scored against its own measurement. The "
+               "tempo priors rested on four scenario documents and quoted "
+               "METR's task-completion horizon only as a 212-day doubling, "
+               "which is the 2019-2025 average. Two things were missed. "
+               "(1) The 2024-2025 window doubles in about 4 months, roughly "
+               "twice as fast, and the horizon itself has run from 4 seconds "
+               "in 2019 to over 16 hours in 2026. (2) More seriously, EVEN "
+               "THE SLOW FIGURE ALREADY ARGUED AGAINST THE PRIORS: from 16 h "
+               "at mid-2026, month-long work (160 h) is 3.32 doublings at "
+               "50% reliability and 5.64 at the 80% bar, since METR's 80% "
+               "horizon runs about 5x shorter in task length. That puts a "
+               "superhuman coder at 2029.8 on the 7-month rate and 2028.4 on "
+               "the 4-month rate. BOTH LAND IN T2 (2029-31); NEITHER LANDS IN "
+               "T3 (2032-36), which held the modal weight at 0.41 against "
+               "T2's 0.29. The mode was on a window the axis's own evidence "
+               "does not reach. T1 0.07->0.11, T2 0.29->0.42 (now modal), "
+               "T3 0.41->0.30, T4 0.23->0.17. T3 and T4 stay substantial "
+               "because a 5.64-doubling extrapolation breaks easily, because "
+               "METR's own caution is that one year is a weak estimate, and "
+               "because T4's mechanism — data limits, physical and "
+               "deployment constraints — is structural and untested by a "
+               "horizon trend. The axis description now leads with the "
+               "measurement instead of with four scenario documents, and "
+               "every position carries the measurement as a citation.",
+     "approved": "August (2026-08-17: 'let's apply the METR calibration "
+                 "finding to the Atlas priors') — Forecast Works "
+                 "Research/findings/source-register.md"},
     {"version": REGISTRY_VERSION, "date": "2026-08-06",
      "change": "evidence layer r2 — the novelty repair. (1) Novelty decays "
                "toward a FLOOR (0.15) instead of to zero, so a class that "
