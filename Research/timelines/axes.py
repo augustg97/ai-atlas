@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r5-2026-08-17"
+REGISTRY_VERSION = "r6-2026-08-18"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -1115,9 +1115,10 @@ REGISTRY = {
            "D4": {"R2": 1.25, "R3": 0.85, "R5": 1.15},
            "E4": {"R2": 1.15, "R5": 0.9},
            "K1": {"R1": 0.8, "R4": 1.35, "R5": 0.9},
-           "P3": {"R2": 1.2, "R5": 1.15},
-           "P4": {"R2": 1.3, "R3": 0.8},
-           "P5": {"R2": 1.3, "R3": 0.85, "R5": 1.25},
+           "P3": {"R2": 1.35, "R5": 1.3},
+           "P4": {"R2": 1.4, "R3": 0.75},
+           "P1": {"R1": 1.2, "R2": 0.8, "R5": 0.85, "R6": 1.25},
+           "P5": {"R1": 0.75, "R2": 1.55, "R3": 0.7, "R5": 1.5},
            "S1": {"R4": 1.2},
            "T1": {"R1": 0.7, "R2": 0.9, "R4": 1.5, "R5": 0.85, "R6": 1.1},
            "T2": {"R1": 0.85, "R4": 1.25, "R5": 1.05},
@@ -1152,7 +1153,7 @@ REGISTRY = {
            "E4": {"T1": 0.6, "T2": 0.85, "T3": 1.15, "T4": 1.3},
            "R4": {"T1": 1.2, "T2": 1.1, "T3": 0.95, "T4": 0.85},
            "S2": {"T1": 1.15, "T2": 1.1, "T3": 0.95, "T4": 0.85},
-           "S3": {"T1": 0.55, "T2": 0.8, "T3": 1.15, "T4": 1.35},
+           "S3": {"T1": 0.67, "T2": 0.85, "T3": 1.11, "T4": 1.26},
            "S4": {"T1": 0.8, "T2": 0.9, "T3": 1.1, "T4": 1.1},
            "S5": {"T1": 0.4, "T2": 0.7, "T3": 1.15, "T4": 1.5, "T5": 1.2}},
   },
@@ -1645,18 +1646,21 @@ REGISTRY = {
       "Cyber Director conditioned an OpenAI release within days on "
       "2026-06-26.",
     "R|P3":
-      "Siting fights are legislated at state level, where 28 data-center "
-      "statutes were enacted in the first half of 2026 addressing tax "
-      "treatment and utility cost allocation.",
+      "Local opposition is the channel that actually converts. Data " +
+      "Center Watch counted 75 projects worth $130 billion blocked or " +
+      "delayed between January and March 2026, and siting fights are " +
+      "decided by the county and state bodies the patchwork is made of.",
     "R|P4":
-      "A split public leaves each coalition a jurisdiction it controls, and "
-      "Congress enacted no preemption statute through 2026-08-16 while the "
-      "Department of Justice litigated state laws from 2026-01-10.",
+      "A durable fracture keeps the patchwork and blocks preemption, " +
+      "because a federal standard needs a coalition that a split public " +
+      "does not supply.",
     "R|P5":
-      "A backlash coalition passes restrictions in the jurisdictions it "
-      "controls at a measured conversion rate: United States states "
-      "converted 1,561 introduced AI bills into 109 enacted laws plus 28 "
-      "data-center statutes in the first half of 2026.",
+      "Backlash governing converts public support into enacted law. " +
+      "Gilens and Page's own descriptive figure gives pro-change " +
+      "majorities of 80% the change 43% of the time within four years, " +
+      "and Lax and Phillips put state congruence at 57% for majorities of " +
+      "70% or more, so the four-year probability of change tops out near " +
+      "0.5 and the tilt is bounded accordingly.",
     "R|S1":
       "Capacity pooled in a few named United States operators is capacity "
       "an executive order can address, as Commerce did on 2026-06-12 by "
@@ -1821,11 +1825,13 @@ REGISTRY = {
       "effective-compute growth to algorithmic progress running under any "
       "siting arrangement.",
     "T|S3":
-      "Grid and permitting constraints slow the physical-compute share of "
-      "effective progress while the algorithmic share keeps running, and "
-      "Epoch measures frontier training compute at 4-5x per year against "
-      "pre-training compute efficiency at about 3x per year with a doubling "
-      "near 7.6 months.",
+      "Power and siting cap physical compute, and the cap retards " +
+      "effective compute by less than a pre-training reading suggests. " +
+      "With physical growth capped at 1.5x/yr against a 4.5x/yr baseline " +
+      "and algorithmic progress at 10x/yr, the all-software rate the " +
+      "window requires, ln(15)/ln(45) = 0.711 of the growth survives, " +
+      "against 0.578 on the 3x/yr pre-training reading the tilt had been " +
+      "sized on.",
     "T|S4":
       "Licence volume binds the party buying rather than the party selling, "
       "and a United States government evaluation reported in 2026 placed "
@@ -1834,9 +1840,56 @@ REGISTRY = {
     "T|S5":
       "An interruption to leading-edge fabrication queues every frontier "
       "programme behind one bottleneck, and qualifying a first United "
-      "States advanced-packaging line takes 18 to 24 months.",
+      "States advanced-packaging line takes 18 to 24 months.",    "R|P1":
+      "Acquiescence through use leaves regulation to developer commitment " +
+      "and to statutes written and deferred. The state conversion rate is " +
+      "the base: 145 of 1,208 AI bills introduced in 2025 were enacted, " +
+      "12.0%, and a measure with no salience behind it converts at that " +
+      "rate or below.",
+
   },
   "changelog": [
+    {"version": REGISTRY_VERSION, "date": "2026-08-18",
+     "change": "r6 - the two edges r5 left open, closed on evidence. (1) THE "
+               "PUBLIC-TO-REGULATION CHANNEL. r3 researched an edge from public "
+               "response into policy and left it out because Gilens and Page "
+               "(near-zero independent effect of ordinary preferences over 1,779 "
+               "cases) and their critics disagreed about exactly that quantity; "
+               "r5 carried the surviving tilts at a 1.3 cap for the same reason. "
+               "On 2026-05-05 the near-zero result was shown to be reproducible "
+               "from a data-generating process in which rich and poor have "
+               "identical influence, and on the identical 1,779 cases the "
+               "general public's coefficient ratio is 1.31 against the 0.039 the "
+               "original implied, a factor of 34. The channel is real and it is "
+               "BOUNDED: Gilens and Page's own descriptive figure gives "
+               "pro-change majorities of 80% the change 43% of the time within "
+               "four years, and Lax and Phillips put state congruence at 57% for "
+               "majorities of 70% or more, so a four-year probability of change "
+               "tops out near 0.5. R|P5 raises contested patchwork to 1.55 and "
+               "civil enforcement to 1.50; R|P3 and R|P4 rise to 1.35 and 1.40; "
+               "and R|P1 is ADDED, so acquiescence through use pushes the other "
+               "way, toward developer commitment and statutes written and "
+               "deferred, against a base conversion of 145 enacted from 1,208 "
+               "state AI bills introduced in 2025. C is left alone: the evidence "
+               "is about domestic responsiveness, which is R's subject, and no "
+               "comparable measurement bears on what principal states settle "
+               "between them. (2) T|S3 WAS SIZED ON THE WRONG ESTIMAND. The tilt "
+               "asks how much effective-compute growth survives when physical "
+               "compute is capped, which is ln(g_phys)/ln(g_phys x g_algo), a "
+               "share of a log growth rate. It had been sized from Epoch's "
+               "60-95% Shapley share of a perplexity reduction between two named "
+               "models in linear space, which is a different quantity and rises "
+               "with how recent the baseline model is. On the all-software "
+               "reading the forecast window requires, with reinforcement-learning "
+               "post-training live from 2024, physical 4.5x/yr and algorithmic "
+               "10x/yr give ln(15)/ln(45) = 0.711 surviving against the 0.578 of "
+               "the 3x/yr pre-training reading. Constrained supply therefore "
+               "retards tempo LESS than the model assumed: T|S3 moves from "
+               "0.55/0.80/1.15/1.35 to 0.67/0.85/1.11/1.26, each multiplier "
+               "shrunk toward 1 by (1-0.711)/(1-0.605) = 0.732.",
+     "approved": "August (2026-08-18: 'please continue to completion with the "
+                 "two remaining items') - arithmetic in Forecast Works "
+                 "Research/findings/r5-gap-register.md"},
     {"version": REGISTRY_VERSION, "date": "2026-08-17",
      "change": "r5 - the position space and the edge structure rebuilt. 7 axes "
                "and 26 positions become 9 axes and 48 positions; 25 conditional "

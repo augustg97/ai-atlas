@@ -5,7 +5,13 @@
 # 3 push/verify failed.
 set -u
 ROOT="/Users/augustgweon/AI Atlas"
-VAULT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/August's Vault"
+# Vault root — new location first, legacy iCloud path as fallback.
+VAULT=""
+for c in "$HOME/Vaults/August's Vault" \
+         "$HOME/Library/Mobile Documents/com~apple~CloudDocs/August's Vault"; do
+  if [ -d "$c" ]; then VAULT="$c"; break; fi
+done
+[ -n "$VAULT" ] || { echo "vault not found at either location" >&2; exit 2; }
 cd "$ROOT/Research/modeling" || exit 2
 
 # incremental embedding refresh (checksum-gated; seconds for a normal day),

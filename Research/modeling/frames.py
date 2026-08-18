@@ -25,8 +25,18 @@ import os
 import re
 import sys
 
-VAULT = os.path.expanduser(
-    "~/Library/Mobile Documents/com~apple~CloudDocs/August's Vault")
+# Vault root. The new location is checked first; the legacy iCloud path is kept
+# as a fallback so this resolves either side of the vault move.
+def _find_vault():
+    for c in ("~/Vaults/August's Vault",
+              "~/Library/Mobile Documents/com~apple~CloudDocs/August's Vault"):
+        p = os.path.expanduser(c)
+        if os.path.isdir(p):
+            return p
+    return os.path.expanduser("~/Vaults/August's Vault")
+
+
+VAULT = os.environ.get("AUGUST_VAULT") or _find_vault()
 WIKI = os.path.join(VAULT, "Wiki")
 
 # Wiki folders that hold content pages (SCOPE §5: slugs are canonical IDs).
