@@ -107,7 +107,10 @@ def widened_registry(weights, widen):
         if temp > 1.0:
             w = {pos: v ** (1.0 / temp) for pos, v in w.items()}
         w = axes.normalized(w)
-        a["positions"] = [(p[0], p[1], w[p[0]], p[3]) for p in a["positions"]]
+        # Keep the whole tuple and replace only the prior. Rebuilding it with four
+        # elements discarded the position's own description, which is element five.
+        a["positions"] = [tuple([p[0], p[1], w[p[0]]] + list(p[3:]))
+                          for p in a["positions"]]
     return reg
 
 
@@ -401,10 +404,17 @@ def emit():
                          "axes": [{"key": a["key"], "name": a["name"],
                                    "desc": a.get("desc", ""),
                                    "cites": a.get("cites", []),
+                                   # A POSITION'S OWN DESCRIPTION WINS. Reading it only from
+                                   # POSITION_STORIES meant a registry rebuild emitted the OLD
+                                   # text under a reused letter — T1 means "2027 to 2028" at r5
+                                   # and was still shipping the r4 sentence — and emitted
+                                   # nothing at all for letters the old map never had, so every
+                                   # K and R button lettered a blank.
                                    "positions": [[p[0], p[1],
                                                   round(p[2], 5), p[3],
-                                                  axes.POSITION_STORIES
-                                                  .get(p[0], "")]
+                                                  (p[4] if len(p) > 4 and p[4]
+                                                   else axes.POSITION_STORIES
+                                                   .get(p[0], ""))]
                                                  for p in a["positions"]],
                                    "subaxes": a.get("subaxes", [])}
                                   for a in reg["axes"]],
