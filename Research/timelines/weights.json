@@ -25,14 +25,14 @@
    "A7": 0.22993082943175724
   },
   "C": {
-   "C1": 0.33,
-   "C2": 0.19,
-   "C3": 0.14,
-   "C4": 0.15,
-   "C5": 0.06,
-   "C6": 0.065,
-   "C7": 0.055,
-   "C8": 0.01
+   "C1": 0.32934616346263945,
+   "C2": 0.19620474224207884,
+   "C3": 0.1377186067862998,
+   "C4": 0.14710693884867432,
+   "C5": 0.059881120629570794,
+   "C6": 0.06487121401536836,
+   "C7": 0.05489102724377323,
+   "C8": 0.009980186771595134
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.15
   },
   "S": {
-   "S1": 0.23990670794140367,
-   "S2": 0.22069252168196682,
-   "S3": 0.24951349828076663,
-   "S4": 0.1899261437869446,
-   "S5": 0.0999611283089182
+   "S1": 0.23981975376779097,
+   "S2": 0.22133795801759917,
+   "S3": 0.2490600857451957,
+   "S4": 0.18985730506616788,
+   "S5": 0.09992489740324624
   },
   "P": {
    "P1": 0.18,
@@ -63,11 +63,11 @@
    "P5": 0.14
   },
   "E": {
-   "E1": 0.22075642456806735,
-   "E2": 0.17992354415936307,
-   "E3": 0.3294347150335249,
-   "E4": 0.189919296612661,
-   "E5": 0.07996601962638358
+   "E1": 0.2218248388669065,
+   "E2": 0.17981553871674213,
+   "E3": 0.3286363143412383,
+   "E4": 0.1898052908676722,
+   "E5": 0.07991801720744096
   }
  },
  "history": [
@@ -2039,14 +2039,14 @@
      "A7": 0.22993082943175724
     },
     "C": {
-     "C1": 0.33,
-     "C2": 0.19,
-     "C3": 0.14,
-     "C4": 0.15,
-     "C5": 0.06,
-     "C6": 0.065,
-     "C7": 0.055,
-     "C8": 0.01
+     "C1": 0.3293461634626395,
+     "C2": 0.19620474224207887,
+     "C3": 0.13771860678629982,
+     "C4": 0.14710693884867435,
+     "C5": 0.0598811206295708,
+     "C6": 0.06487121401536837,
+     "C7": 0.05489102724377324,
+     "C8": 0.009980186771595135
     },
     "R": {
      "R1": 0.1463569879297491,
@@ -2057,17 +2057,17 @@
      "R6": 0.12067718822756786
     },
     "D": {
-     "D1": 0.24166495247611997,
-     "D2": 0.35032360639519433,
-     "D3": 0.2508700439399099,
-     "D4": 0.1571413971887759
+     "D1": 0.2416330782607891,
+     "D2": 0.35051612381221625,
+     "D3": 0.2508541616885004,
+     "D4": 0.15699663623849422
     },
     "S": {
-     "S1": 0.23990670794140367,
-     "S2": 0.22069252168196682,
-     "S3": 0.24951349828076663,
-     "S4": 0.1899261437869446,
-     "S5": 0.0999611283089182
+     "S1": 0.23981975376779097,
+     "S2": 0.22133795801759917,
+     "S3": 0.2490600857451957,
+     "S4": 0.18985730506616788,
+     "S5": 0.09992489740324624
     },
     "P": {
      "P1": 0.18,
@@ -2077,11 +2077,11 @@
      "P5": 0.14
     },
     "E": {
-     "E1": 0.2205385551627079,
-     "E2": 0.18170614148246675,
-     "E3": 0.32219655959940896,
-     "E4": 0.19125178291544068,
-     "E5": 0.08430696083997566
+     "E1": 0.22156307520508597,
+     "E2": 0.18151139043756948,
+     "E3": 0.3218183119239014,
+     "E4": 0.19107467077503076,
+     "E5": 0.08403255165841236
     }
    },
    "raw": {
@@ -2108,14 +2108,14 @@
      "A7": 0.22993082943175724
     },
     "C": {
-     "C1": 0.33,
-     "C2": 0.19,
-     "C3": 0.14,
-     "C4": 0.15,
-     "C5": 0.06,
-     "C6": 0.065,
-     "C7": 0.055,
-     "C8": 0.01
+     "C1": 0.3293461634626395,
+     "C2": 0.19620474224207887,
+     "C3": 0.13771860678629982,
+     "C4": 0.14710693884867435,
+     "C5": 0.0598811206295708,
+     "C6": 0.06487121401536837,
+     "C7": 0.05489102724377324,
+     "C8": 0.009980186771595135
     },
     "R": {
      "R1": 0.14,
@@ -2132,11 +2132,11 @@
      "D4": 0.15
     },
     "S": {
-     "S1": 0.23990670794140367,
-     "S2": 0.22069252168196682,
-     "S3": 0.24951349828076663,
-     "S4": 0.1899261437869446,
-     "S5": 0.0999611283089182
+     "S1": 0.23981975376779097,
+     "S2": 0.22133795801759917,
+     "S3": 0.2490600857451957,
+     "S4": 0.18985730506616788,
+     "S5": 0.09992489740324624
     },
     "P": {
      "P1": 0.18,
@@ -2146,11 +2146,11 @@
      "P5": 0.14
     },
     "E": {
-     "E1": 0.22075642456806735,
-     "E2": 0.17992354415936307,
-     "E3": 0.3294347150335249,
-     "E4": 0.189919296612661,
-     "E5": 0.07996601962638358
+     "E1": 0.2218248388669065,
+     "E2": 0.17981553871674213,
+     "E3": 0.3286363143412383,
+     "E4": 0.1898052908676722,
+     "E5": 0.07991801720744096
     }
    }
   }
@@ -4301,6 +4301,202 @@
     "https://www.theinformation.com/articles/nvidia-nears-deal-guarantee-100-billion-financing-massive-data-center"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002253,
+   "sources": 1,
+   "repeat_k": 12.265,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "applied": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "f8b7d03a8a0481f0",
+   "date": "2026-08-18",
+   "event_date": "2026-08-17",
+   "driver": "Groq raised $350 million at a $3.5 billion valuation in a round led by Dallas-based Disruptive, announced August 17, 2026, with Nvidia also ",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-08-17/groq-valued-at-3-5-billion-in-funding-round-after-nvidia-deal"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002253,
+   "sources": 1,
+   "repeat_k": 12.265,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "applied": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "afc4c5c668d5c3fb",
+   "date": "2026-08-18",
+   "event_date": "2026-08-17",
+   "driver": "Alphabet, Amazon, Meta and Microsoft carry $1.52 trillion in purchase commitments and $904 billion in leases not yet started off their balan",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/why-big-techs-ai-spending-is-3-trillion-higher-than-it-seems-e1067bb2"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002253,
+   "sources": 1,
+   "repeat_k": 12.265,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "applied": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "c045c81d65cdc442",
+   "date": "2026-08-18",
+   "event_date": "2026-08-14",
+   "driver": "Update on the OpenAI executive departures covered this morning: at an investor meeting on Friday, August 14, 2026, chief financial officer S",
+   "driver_urls": [
+    "https://www.cnbc.com/2026/08/14/openai-cfo-friar-tells-investors-that-enterprise-bigger-than-consumer.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-federal-preemption-push",
+   "impact_class": "minor",
+   "magnitude": 0.0025943,
+   "sources": 1,
+   "repeat_k": 0.25,
+   "spread": 1.0,
+   "requested": {
+    "C.C2": 0.0025943,
+    "C.C4": -0.0025943
+   },
+   "applied": {
+    "C.C2": 0.0025943,
+    "C.C4": -0.0025943
+   },
+   "cites": [
+    "concepts/ai-preemption",
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "ce115521fe1ece39",
+   "date": "2026-08-18",
+   "event_date": "2026-08-14",
+   "driver": "The American Bankers Association filed a 21-page submission to House Financial Services Committee Democrats on August 14, 2026, responding t",
+   "driver_urls": [
+    "https://insideaipolicy.com/ai-daily-news/bankers-group-cites-existing-frameworks-sector-oversight-response-house-democrats-ai"
+   ],
+   "reports": 2
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002253,
+   "sources": 1,
+   "repeat_k": 12.265,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "applied": {
+    "E.E1": 0.0003003,
+    "E.E3": -0.0001502
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "8130f0d211b17f0d",
+   "date": "2026-08-18",
+   "event_date": "2026-08-17",
+   "driver": "Anthropic's annualized revenue run rate passed $65 billion at the end of July 2026, a figure that became public on August 17, 2026; second-q",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/17/anthropic-revenue-run-rate-ipo-openai"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0005443,
+   "sources": 1,
+   "repeat_k": 4.758,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0007257,
+    "S.S3": -0.0003628
+   },
+   "applied": {
+    "S.S2": 0.0007257,
+    "S.S3": -0.0003628
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "349ec08c38a1a825",
+   "date": "2026-08-18",
+   "event_date": "2026-08-17",
+   "driver": "OpenAI signed a 20-year lease on August 17, 2026 for the PORTS-Pike campus in southern Ohio, an 8 IT-gigawatt facility powered by 10 gigawat",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/17/openai-nvidia-ohio-data-center-sb-energy"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-natsec-posture",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0.0,
+   "spread": 1.0,
+   "requested": {
+    "C.C2": 0.004,
+    "C.C3": -0.002
+   },
+   "applied": {
+    "C.C2": 0.004,
+    "C.C3": -0.002
+   },
+   "cites": [
+    "analysis/us-china-ai-competition",
+    "concepts/export-controls-ai"
+   ],
+   "incident": "928bcb4f524e05d8",
+   "date": "2026-08-18",
+   "event_date": "2026-08-18",
+   "driver": "The U.S.-China Economic and Security Review Commission reported on August 18, 2026 that China is commercialising and monetising data as a st",
+   "driver_urls": [
+    "https://www.reuters.com/world/china/us-advisory-body-says-chinas-data-dominance-gives-it-ai-advantage-2026-08-18/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -5640,6 +5836,111 @@
    "text": "Amazon is buying printed books in bulk, cutting their bindings and scanning them for AI training data at a Las Vegas fac",
    "reports": 1,
    "fp": "0dee0630c174dd5a"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update to this morning's report of roughly $100 billion in Nvidia credit support for an Ohio campus: the transaction is ",
+   "reports": 1,
+   "fp": "979f0a9cc6cde381"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "AI Industry & Markets",
+   "text": "Update on Anthropic's second-quarter revenue, reported this morning at $11.5 billion: the company's annualized run rate ",
+   "reports": 1,
+   "fp": "4cc9c1ffff23fda4"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "AI Industry & Markets",
+   "text": "Cursor began rolling out Origin, its own code-hosting service, in early beta on August 17, 2026 to all paid plans except",
+   "reports": 1,
+   "fp": "f6883292653e8d46"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Industry & Markets",
+   "text": "Google won a bankruptcy auction with a $10 million bid for deidentified business data from the collapsed carrier Spirit ",
+   "reports": 1,
+   "fp": "66f3c63e0080ecb4"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "The Justice Department is investigating Andreessen Horowitz over whether its investment partners are improperly serving ",
+   "reports": 2,
+   "fp": "d474983a6bce1786"
+  },
+  {
+   "date": "2026-08-13",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "The U.S. District Court for the Northern District of California held on August 13, 2026 in Skaggs v. X.ai, LLC, 2026 WL ",
+   "reports": 1,
+   "fp": "fee2d59b52405d83"
+  },
+  {
+   "date": "2026-08-16",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI president Greg Brockman wrote on August 16, 2026 that in the OpenAI\u2013Hugging Face incident an agentic collective a",
+   "reports": 1,
+   "fp": "09037387b8ef1cce"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "Reported but unverified",
+   "text": "Anthropic published a redacted risk report in August 2026 describing an incident in which biological and chemical weapon",
+   "reports": 1,
+   "fp": "dcfda81cd26193b8"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Presidential AI advisor David Sacks rejected proposals for a federal agency to govern artificial intelligence on August ",
+   "reports": 1,
+   "fp": "6f95058398b7126d"
+  },
+  {
+   "date": "2026-08-04",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The White House completed a frontier AI evaluation framework offering companies up to 30 days of voluntary pre-deploymen",
+   "reports": 1,
+   "fp": "f7e21f9a30da1d2d"
+  },
+  {
+   "date": "2026-08-05",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI researchers disclosed at the Black Hat USA conference on August 5, 2026 that from May 2026 its agents in separate",
+   "reports": 1,
+   "fp": "a9a44068a8743155"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI launched ChatGPT for Teens on August 18, 2026, a mode that limits conversations about self-harm, violence and eat",
+   "reports": 1,
+   "fp": "54a604ec229a56ac"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Attorneys general for Colorado, California, New Jersey and Kentucky delivered opening statements on August 18, 2026 in O",
+   "reports": 1,
+   "fp": "62129b6b5dd9ef9e"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Frontier Models & Capabilities",
+   "text": "Alibaba Group said its Qwen3.8-27B model \u2014 a 27 billion-parameter open-source system that accepts text, image and video ",
+   "reports": 1,
+   "fp": "9c481834ec9e5fbd"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Reported but unverified",
+   "text": "A Defense Department award of $100 million to vendor NODA AI, to scale its AI-enabled mission command and coordination t",
+   "reports": 1,
+   "fp": "284abfa0401457c1"
   }
  ],
  "seen": [
@@ -5924,7 +6225,31 @@
   "10de072cfb3211e4",
   "7c5a2c457a5c79a4",
   "bdbe2cc792d53a26",
-  "0dee0630c174dd5a"
+  "0dee0630c174dd5a",
+  "979f0a9cc6cde381",
+  "f8b7d03a8a0481f0",
+  "afc4c5c668d5c3fb",
+  "4cc9c1ffff23fda4",
+  "c045c81d65cdc442",
+  "f6883292653e8d46",
+  "66f3c63e0080ecb4",
+  "d474983a6bce1786",
+  "fee2d59b52405d83",
+  "09037387b8ef1cce",
+  "ce115521fe1ece39",
+  "dcfda81cd26193b8",
+  "8130f0d211b17f0d",
+  "6c73686cc99d8035",
+  "6f95058398b7126d",
+  "f7e21f9a30da1d2d",
+  "a9a44068a8743155",
+  "54a604ec229a56ac",
+  "349ec08c38a1a825",
+  "62129b6b5dd9ef9e",
+  "928bcb4f524e05d8",
+  "9c481834ec9e5fbd",
+  "fc961443b256171f",
+  "284abfa0401457c1"
  ],
  "residue_r0": [
   {

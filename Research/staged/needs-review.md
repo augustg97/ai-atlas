@@ -1,6 +1,6 @@
-# Emit needs-review — 20260817-1048
+# Emit needs-review — 20260818-1051
 
-210 items. Unparseable values are reported here, never guessed.
+211 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -116,6 +116,7 @@
 - sources/wsj-data-centers-in-space-2026: dangling relationship target 'companies/blue-origin'
 - entities/access-now: dangling relationship target 'entities/rightscon'
 - entities/alex-bores: dangling relationship target 'concepts/universal-basic-capital'
+- entities/andreessen-horowitz: inline comment stripped from 'nonprofit  # placeholder — a16z is a for'
 - entities/ben-thompson: dangling relationship target 'entities/clayton-christensen|Clayton Christensen'
 - entities/chris-lehane: dangling relationship target 'concepts/ai-public-perception'
 - entities/cisa: dangling relationship target 'entities/asd-acsc'
