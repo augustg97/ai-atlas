@@ -1,6 +1,6 @@
-# Emit needs-review — 20260818-1051
+# Emit needs-review — 20260819-1047
 
-211 items. Unparseable values are reported here, never guessed.
+210 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -47,7 +47,6 @@
 - sources/farahany-class-19-when-invisible-algorithms-judge-you: dangling relationship target 'litigation/harper-v-sirius-xm'
 - sources/farahany-class-19-when-invisible-algorithms-judge-you: dangling relationship target 'concepts/three-frameworks-ai-discrimination'
 - sources/farahany-class-19-when-invisible-algorithms-judge-you: dangling relationship target 'concepts/dynamic-pricing-ai'
-- sources/farahany-class-22-us-ai-policy-myths: dangling relationship target 'entities/alondra-nelson'
 - sources/farahany-class-23-effective-altruists-export-controls: dangling relationship target 'concepts/p-doom'
 - sources/farahany-class-23-effective-altruists-export-controls: dangling relationship target 'concepts/foreign-direct-product-rule'
 - sources/farahany-class-25b-eo-state-ai-laws: dangling relationship target 'concepts/federal-preemption-ai'

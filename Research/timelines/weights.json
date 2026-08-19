@@ -1,6 +1,6 @@
 {
  "version": "r6-2026-08-18",
- "date": "2026-08-18",
+ "date": "2026-08-19",
  "axes": {
   "T": {
    "T1": 0.1,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08967182932784164,
-   "A2": 0.22993082943175724,
-   "A3": 0.13056274912098176,
-   "A4": 0.16994887392782054,
-   "A5": 0.09996992583989443,
-   "A6": 0.049984962919947216,
-   "A7": 0.22993082943175724
+   "A1": 0.08926013071791676,
+   "A2": 0.2298440775964576,
+   "A3": 0.13126864960714016,
+   "A4": 0.16988475300607733,
+   "A5": 0.09993220765063372,
+   "A6": 0.04996610382531686,
+   "A7": 0.2298440775964576
   },
   "C": {
-   "C1": 0.32934616346263945,
-   "C2": 0.19620474224207884,
-   "C3": 0.1377186067862998,
-   "C4": 0.14710693884867432,
-   "C5": 0.059881120629570794,
-   "C6": 0.06487121401536836,
-   "C7": 0.05489102724377323,
-   "C8": 0.009980186771595134
+   "C1": 0.3293461634626395,
+   "C2": 0.19620474224207887,
+   "C3": 0.13771860678629982,
+   "C4": 0.14710693884867435,
+   "C5": 0.0598811206295708,
+   "C6": 0.06487121401536837,
+   "C7": 0.05489102724377324,
+   "C8": 0.009980186771595135
   },
   "R": {
    "R1": 0.14,
@@ -63,11 +63,11 @@
    "P5": 0.14
   },
   "E": {
-   "E1": 0.2218248388669065,
-   "E2": 0.17981553871674213,
-   "E3": 0.3286363143412383,
-   "E4": 0.1898052908676722,
-   "E5": 0.07991801720744096
+   "E1": 0.2226734796974142,
+   "E2": 0.17972976771511742,
+   "E3": 0.32800210101479227,
+   "E4": 0.18971475481040168,
+   "E5": 0.07987989676227442
   }
  },
  "history": [
@@ -2151,6 +2151,147 @@
      "E3": 0.3286363143412383,
      "E4": 0.1898052908676722,
      "E5": 0.07991801720744096
+    }
+   }
+  },
+  {
+   "date": "2026-08-19",
+   "marginals": {
+    "T": {
+     "T1": 0.1,
+     "T2": 0.33,
+     "T3": 0.27,
+     "T4": 0.18,
+     "T5": 0.12
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08926013071791676,
+     "A2": 0.2298440775964576,
+     "A3": 0.13126864960714016,
+     "A4": 0.16988475300607733,
+     "A5": 0.09993220765063372,
+     "A6": 0.04996610382531686,
+     "A7": 0.2298440775964576
+    },
+    "C": {
+     "C1": 0.3293461634626395,
+     "C2": 0.19620474224207887,
+     "C3": 0.13771860678629982,
+     "C4": 0.14710693884867435,
+     "C5": 0.0598811206295708,
+     "C6": 0.06487121401536837,
+     "C7": 0.05489102724377324,
+     "C8": 0.009980186771595135
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.2416490368329201,
+     "D2": 0.35041977435808336,
+     "D3": 0.2508621176309323,
+     "D4": 0.15706907117806435
+    },
+    "S": {
+     "S1": 0.23981975376779097,
+     "S2": 0.22133795801759917,
+     "S3": 0.2490600857451957,
+     "S4": 0.18985730506616788,
+     "S5": 0.09992489740324624
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.22236614369632587,
+     "E2": 0.18142767438889162,
+     "E3": 0.32122584347230737,
+     "E4": 0.19098654398364243,
+     "E5": 0.08399379445883277
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.1,
+     "T2": 0.33,
+     "T3": 0.27,
+     "T4": 0.18,
+     "T5": 0.12
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08926013071791676,
+     "A2": 0.2298440775964576,
+     "A3": 0.13126864960714016,
+     "A4": 0.16988475300607733,
+     "A5": 0.09993220765063372,
+     "A6": 0.04996610382531686,
+     "A7": 0.2298440775964576
+    },
+    "C": {
+     "C1": 0.3293461634626395,
+     "C2": 0.19620474224207887,
+     "C3": 0.13771860678629982,
+     "C4": 0.14710693884867435,
+     "C5": 0.0598811206295708,
+     "C6": 0.06487121401536837,
+     "C7": 0.05489102724377324,
+     "C8": 0.009980186771595135
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.24,
+     "D2": 0.36,
+     "D3": 0.25,
+     "D4": 0.15
+    },
+    "S": {
+     "S1": 0.23981975376779097,
+     "S2": 0.22133795801759917,
+     "S3": 0.2490600857451957,
+     "S4": 0.18985730506616788,
+     "S5": 0.09992489740324624
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.2226734796974142,
+     "E2": 0.17972976771511742,
+     "E3": 0.32800210101479227,
+     "E4": 0.18971475481040168,
+     "E5": 0.07987989676227442
     }
    }
   }
@@ -4497,6 +4638,92 @@
     "https://www.reuters.com/world/china/us-advisory-body-says-chinas-data-dominance-gives-it-ai-advantage-2026-08-18/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0005666,
+   "sources": 2,
+   "repeat_k": 9.608,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0007554,
+    "A.A1": -0.0003777
+   },
+   "applied": {
+    "A.A3": 0.0007554,
+    "A.A1": -0.0003777
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "2e8578e2f07422d1",
+   "date": "2026-08-19",
+   "event_date": "2026-08-18",
+   "driver": "Update on OpenAI's August 7 determination that Astra may reach a critical cyber threshold: OpenAI published on August 18, 2026 that it pause",
+   "driver_urls": [
+    "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+    "https://www.axios.com/2026/08/18/openai-pause-astra-preparedness-framework"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003978,
+   "sources": 2,
+   "repeat_k": 14.731,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0005304,
+    "E.E3": -0.0002652
+   },
+   "applied": {
+    "E.E1": 0.0005304,
+    "E.E3": -0.0002652
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "e06c6791be1bcc52",
+   "date": "2026-08-19",
+   "event_date": "2026-08-18",
+   "driver": "OpenAI told investors, in figures reported on August 18, 2026, that its revenue grew 18% quarter over quarter to $6.7 billion in the three m",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/openais-second-quarter-sales-show-tepid-growth-compared-with-anthropic-5cb42998",
+    "https://time.com/article/2026/08/18/openai-slowing-training/"
+   ],
+   "reports": 2
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003183,
+   "sources": 1,
+   "repeat_k": 14.731,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004244,
+    "E.E3": -0.0002122
+   },
+   "applied": {
+    "E.E1": 0.0004244,
+    "E.E3": -0.0002122
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "ad2d3247ff26b96c",
+   "date": "2026-08-19",
+   "event_date": "2026-08-18",
+   "driver": "Etched said on August 18, 2026 that it raised $700 million at a $21 billion valuation in a round led by Jane Street and joined by Kleiner Pe",
+   "driver_urls": [
+    "https://www.reuters.com/technology/ai-chip-startup-etched-valued-21-billion-latest-funding-round-2026-08-18/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -5941,6 +6168,146 @@
    "text": "A Defense Department award of $100 million to vendor NODA AI, to scale its AI-enabled mission command and coordination t",
    "reports": 1,
    "fp": "284abfa0401457c1"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Also on the slowdown, reported August 18, 2026: Sam Altman said in interviews conducted the previous week that the decis",
+   "reports": 1,
+   "fp": "b71c976ba03f6182"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic has been preparing to give chief executive Dario Amodei and other co-founders a class of stock carrying extra ",
+   "reports": 1,
+   "fp": "9b9d355537ca8c16"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The National Science Foundation announced on August 18, 2026 that it is committing $1.5 billion to Notices of Funding Op",
+   "reports": 2,
+   "fp": "80926e3dee51a0a5"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The House Office of Legislative Counsel is spending more time repairing AI-generated bill text than it would take to dra",
+   "reports": 1,
+   "fp": "7cd153c91ad57e87"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Pew Research Center reported on August 18, 2026 that 55% of U.S. adults under 30 are more concerned than excited about t",
+   "reports": 1,
+   "fp": "d979c1e3aa250476"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Meta Platforms ran 32 advertisements for an AI image tool called Kromix, one of which showed a pornographic video featur",
+   "reports": 1,
+   "fp": "7a410855f4e464d0"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "U.S. State AI Legislation",
+   "text": "Pennsylvania Governor Josh Shapiro signed an executive order on August 18, 2026 requiring that data center projects firs",
+   "reports": 1,
+   "fp": "05a8b0ebe74dccd7"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Update on the Meta trial that opened August 18, 2026: U.S. District Judge Yvonne Gonzalez Rogers resolved the structural",
+   "reports": 1,
+   "fp": "6722a79ceba88269"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The White House hosted OpenAI, Anthropic and Google in early August 2026 to brief them on a new AI framework that would ",
+   "reports": 1,
+   "fp": "a4817ae921598d25"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Pew Research Center reported on August 18, 2026 that 55% of U.S. adults under 30 were more concerned than excited ab",
+   "reports": 1,
+   "fp": "a7bae859cb050d9a"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "LinkedIn published data on August 18, 2026 showing women took 26% of U.S. new hires for AI roles in 2025 and men 74%, ag",
+   "reports": 1,
+   "fp": "0788d29db3412cfa"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "New York Governor Kathy Hochul launched a series of listening sessions on August 19, 2026 under her FutureWorks Commissi",
+   "reports": 1,
+   "fp": "dfe5791b51b45242"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI announced on August 18, 2026 that it is rewriting its Preparedness Framework, most of which dates to 2023, while ",
+   "reports": 1,
+   "fp": "def2b411b2a6abe8"
+  },
+  {
+   "date": "2026-08-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Anthropic said on August 14, 2026 that if the safeguards laid out in its 186-page risk report are followed, a pause on i",
+   "reports": 1,
+   "fp": "cefc1a4f9a10a79c"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Marvell Technology said on August 19, 2026 that it had issued Alphabet's Google a warrant to buy a Marvell stake worth a",
+   "reports": 1,
+   "fp": "562969830d412bb8"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Cerebras launched the CS-4 on August 18, 2026, a rack holding three WSE-3 Turbo wafer-scale processors that the company ",
+   "reports": 1,
+   "fp": "ca0a96d4e40d4196"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "California, Colorado, New Jersey and Kentucky delivered opening arguments against Meta Platforms on August 18, 2026 in f",
+   "reports": 1,
+   "fp": "f2fc95936f4051fd"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "AI Adoption by Industry",
+   "text": "Flock Safety has built an AI tool for police, originally called Nightshift and now OS Investigate, that identifies drive",
+   "reports": 1,
+   "fp": "2030ce5b14a60aaf"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "National Security & Geopolitics",
+   "text": "Unitree Robotics closed its Shanghai STAR Market debut at 845 yuan on August 19, 2026, 460% above its IPO price of 150.8",
+   "reports": 1,
+   "fp": "f2f4d94b3d7ac10b"
+  },
+  {
+   "date": "2026-08-16",
+   "section": "Reported but unverified",
+   "text": "A reported collaboration between Google and AMD on a tenth-generation TPU variant with on-package CPU cores became publi",
+   "reports": 1,
+   "fp": "6afa459ce1a6ae56"
   }
  ],
  "seen": [
@@ -6249,7 +6616,32 @@
   "928bcb4f524e05d8",
   "9c481834ec9e5fbd",
   "fc961443b256171f",
-  "284abfa0401457c1"
+  "284abfa0401457c1",
+  "2e8578e2f07422d1",
+  "b71c976ba03f6182",
+  "bc7e1234f02dfd07",
+  "9b9d355537ca8c16",
+  "80926e3dee51a0a5",
+  "7cd153c91ad57e87",
+  "d979c1e3aa250476",
+  "7a410855f4e464d0",
+  "05a8b0ebe74dccd7",
+  "6722a79ceba88269",
+  "a4817ae921598d25",
+  "ce4363dbf0b8b522",
+  "a7bae859cb050d9a",
+  "0788d29db3412cfa",
+  "dfe5791b51b45242",
+  "def2b411b2a6abe8",
+  "cefc1a4f9a10a79c",
+  "e06c6791be1bcc52",
+  "ad2d3247ff26b96c",
+  "562969830d412bb8",
+  "ca0a96d4e40d4196",
+  "f2fc95936f4051fd",
+  "2030ce5b14a60aaf",
+  "f2f4d94b3d7ac10b",
+  "6afa459ce1a6ae56"
  ],
  "residue_r0": [
   {
