@@ -126,6 +126,15 @@ python3 build/build_site.py && git add -A && git commit && git push
   enumeration keeps the first maximum it meets and a mainline that flips between builds for no
   visible reason is worse than a slow one.
 
+- **A SPOT-CHECK OF ANY PUBLISHED FIGURE MUST REBUILD THE WIDENED REGISTRY.** `emit()` runs on
+  `widened_registry(weights, grounding["widen"])` — the live weights, spread by the thin-axis
+  widener — and NOT on `axes.REGISTRY`. Recomputing the published mainline's probability against
+  the seed priors gives 9.034e-06 against a published 7.353e-06, a 23% gap that looks exactly like
+  a stale or corrupted artefact and is neither. Verified 2026-08-20: on the widened registry the
+  recomputation matches to all ten digits. The ARGMAX LINE is the same under both — widening
+  spreads the priors without moving which line is likeliest — so a check on the line is safe
+  against the seed registry and a check on any NUMBER is not.
+
 - **Check what an emit WROTE, and treat a nonzero exit as authoritative.** `forecast_emit.py`
   writes `weights.json` early and its eleven staged files at the end, none of it atomically, so a
   run stopped in between leaves weights at the new revision and `Research/staged/forecast/*` at
