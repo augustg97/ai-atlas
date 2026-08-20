@@ -400,7 +400,14 @@ def emit():
     }
     outputs = {
         "engine.json": engine,
-        "network.json": {"version": weights["version"], "date": today,
+        # network.json DESCRIBES THE REGISTRY, so it carries the registry's version. It
+        # took `weights["version"]` instead, which is the evidence layer's stamp and
+        # only equals the registry's until a registry revision lands without a weights
+        # rebuild. r6 first emitted under an r5 stamp for exactly this reason, and the
+        # fix that time was to bump the other file rather than this line, so r7 emitted
+        # under r6. The coverage gate compares this string against what the drawing
+        # declares, so a stale one lets a moved registry through.
+        "network.json": {"version": axes.REGISTRY["version"], "date": today,
                          "axes": [{"key": a["key"], "name": a["name"],
                                    "desc": a.get("desc", ""),
                                    "cites": a.get("cites", []),

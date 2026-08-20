@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r6-2026-08-18"
+REGISTRY_VERSION = "r7-2026-08-20"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -1009,9 +1009,234 @@ REGISTRY = {
         "2026-01-01 and AIG, WR Berkley, Berkshire Hathaway, Chubb and "
         "Great American filing AI exclusions during 2026."),
      ]},
+    {"key": "L", "name": "Laboratory conduct",
+     "desc": "How do the frontier laboratories choose to act on the world and "
+             "on each other, up to and past the point where the systems improve "
+             "themselves? What the frontier laboratories choose to do with the "
+             "position they hold, read as one posture across four decisions "
+             "nobody makes for them: what they sell and refuse to sell, what "
+             "they give away and on what conditions, how they act on "
+             "governments and on each other, and how they develop once the "
+             "systems improve themselves. The 2026 record establishes this as "
+             "choice rather than circumstance. One Department of War demand for "
+             "unrestricted lawful use, announced 2026-01-12 and pressed to a "
+             "17:01 deadline on 2026-02-27, produced four answers inside eleven "
+             "weeks under one regulatory environment: a published refusal that "
+             "cost the designation of supply-chain risk the following day, a "
+             "contract engineered with red lines signed within hours of that "
+             "designation, an accommodation reported in late April as more "
+             "permissive than either, and silence. The post-self-improvement "
+             "half of the position is the load-bearing half and the thinnest in "
+             "evidence: no laboratory has published what it would do with an "
+             "automated researcher, four weakened or voided unilateral pause "
+             "pledges between February and July 2026, one halted frontier "
+             "reinforcement-learning training for two weeks from 2026-08-07 "
+             "after a finding that an unreleased model might meet its highest "
+             "cybersecurity tier, and 1,378 frontier-company employees asked on "
+             "2026-07-28 for pacing tools that do not yet exist. A position "
+             "here fixes who sets the research agenda after that point, at what "
+             "rate, open-ended or confined, held or published, coordinated or "
+             "alone, and turned toward what first.",
+     "cites": ["analysis/frontier-lab-conduct"],
+     "positions": [
+       ("L1", "Refusals held, rules sought", 0.160,
+        ["analysis/frontier-lab-conduct"],
+        "The laboratories publish named exclusions, pay for them, and spend to "
+        "have statute written that binds themselves. They sell to firms and "
+        "developers, decline attention monetisation, gate their strongest "
+        "systems to vetted partners, and forgo customers on grounds they state "
+        "in advance. Giving is aimed at the damage their own product does — "
+        "displacement, electricity bills, local consent — and comes with policy "
+        "asks attached. The wager is that a laboratory trusted to hold a line "
+        "is worth more than the contracts the line costs. People keep the "
+        "research agenda and the systems propose inside it; an affirmative case "
+        "is filed before each capability step and an outside review body the "
+        "laboratory asked for sets the rate. Self-improvement is confined to "
+        "named problems rather than run open-ended, and a slowdown is offered "
+        "on condition that rivals slow in a way that can be verified — "
+        "reciprocity is the whole of the offer, and without verification it "
+        "lapses. Results are held while evaluations, thresholds and incident "
+        "counts are published. Capability is turned first at the verification "
+        "and alignment problem and then at defensive security, on the stated "
+        "reasoning that nothing else is safe to point it at until the "
+        "measurement holds. The laboratories evaluate models against a "
+        "published framework before release, give government evaluation bodies "
+        "pre-launch access, and publish the thresholds they set and the "
+        "incidents they counted. They ask legislators for mandatory third-party "
+        "testing in four risk categories, with government power to block or "
+        "reverse a release. That proposal moves the stopping decision from the "
+        "company to a regulator, and their strongest cyber systems reach "
+        "roughly fifty vetted defender organisations before any buyer. Giving "
+        "follows the damage the product does, with $200M for research and $150M "
+        "for fellowships on labour displacement, plus the full grid-upgrade "
+        "cost near new sites. They pay the economists who measure that "
+        "displacement, and they forgo advertising revenue and several hundred "
+        "million dollars of sales barred under a published ownership rule. By "
+        "July 2026 they had put $40M into a bipartisan group lobbying for rules "
+        "that would bind them."),
+       ("L2", "Fused to state power", 0.220,
+        ["analysis/frontier-lab-conduct"],
+        "The laboratories attach themselves to a national government and let "
+        "procurement, clearance and pre-release review stand in for regulation. "
+        "They accept unrestricted lawful use, take classified work, offer the "
+        "state ownership or a standing veto over releases, and export sovereign "
+        "capacity to allied buyers as the product. Refusals are made to foreign "
+        "customers rather than to the home state. The wager is that a "
+        "laboratory inside the national security perimeter is one the state "
+        "will protect, fund and clear the way for. The agenda is set jointly "
+        "with the national security apparatus, and the systems are pointed "
+        "first at defence, intelligence and critical-infrastructure security. "
+        "The rate is whatever the state's review step permits, which is fast "
+        "whenever the rival capital is believed to be faster — the review "
+        "becomes an accelerator once the race framing is accepted. Self- "
+        "improvement runs open-ended inside a cleared programme. Results are "
+        "held and classified, with a weaker public model released some months "
+        "behind, and coordination extends to allies inside the bloc and stops "
+        "at its edge. Safety review runs through the state. The laboratories "
+        "give a government body up to thirty days of pre-release access, submit "
+        "to classified evaluation of cyber, biological and chemical capability, "
+        "and adjust safety settings on request. A government objection stops a "
+        "release inside a day, as an export directive proved on 2026-06-12, and "
+        "the same authority can lift the objection whenever policy changes. The "
+        "laboratories hand governments capacity at prices near zero. Federal "
+        "agencies buy enterprise access at $1 each, reaching 120 orders and "
+        "about 3.4 million users, and allied states receive ten sovereign "
+        "campuses in a first phase. Having offered its home government a 5% "
+        "passive stake worth roughly $42.6B, one laboratory now supplies "
+        "ministries that depend on a vendor their own state part-owns."),
+       ("L3", "Developers pace each other", 0.170,
+        ["analysis/frontier-lab-conduct"],
+        "The laboratories build the machinery to slow together and then use it. "
+        "They fund a standards body they are members of, share pre-release "
+        "access with each other and with a referee, publish frameworks against "
+        "which each is graded, and make restraint explicitly conditional on the "
+        "others' restraint being checkable. Competition continues on product "
+        "and price; the pacing is a floor beneath it that no member may go "
+        "under alone. The wager is that the collective-action trap is the "
+        "binding problem and that the laboratories can solve it before a "
+        "government does. The agenda is set by a joint body the laboratories "
+        "fund and staff, and the rate is a negotiated ceiling on effective "
+        "compute per unit time, audited across members and moved by vote rather "
+        "than unilaterally. Self-improvement runs open-ended inside that "
+        "envelope. Results are held among members and summarised publicly, so "
+        "the outside world learns what was built some months after the members "
+        "do. Capability is turned first at the verification tools that make the "
+        "ceiling checkable, because the arrangement collapses the moment a "
+        "member can cheat undetected — which is the same reasoning the 2026 "
+        "record already puts in writing. Each laboratory makes its own halt "
+        "conditional on rivals halting verifiably. Twelve laboratories publish "
+        "frontier safety frameworks, members share pre-release access for "
+        "thirty days, and one committed in February 2026 to match a rival's "
+        "better mitigations. The proposed referee starts voluntary and becomes "
+        "mandatory once members show it works, so the commitment binds only "
+        "when verification tools arrive. The laboratories fund the referee. "
+        "Founding members pay into a joint safety fund holding over $10M, which "
+        "gave more than $5M to eleven grantees in 2026 for biosecurity, cyber "
+        "and agent evaluation. Grants favour work that makes a shared ceiling "
+        "checkable, and the independent evaluators who grade these laboratories "
+        "draw their budgets from the firms they grade."),
+       ("L4", "Commercial cadence governs", 0.240,
+        ["analysis/frontier-lab-conduct"],
+        "Release schedule and revenue set every other decision. The "
+        "laboratories monetise attention as well as work, extend the price "
+        "ladder downward to buy scale, sell to any lawful customer, and treat "
+        "safety undertakings as a cost to be minimised and renegotiated "
+        "whenever a rival moves first. Political money runs against rules that "
+        "would slow a release; giving is sized to the reputational problem of "
+        "the quarter. Public listing arrives and every choice acquires a "
+        "quarterly constraint none of them had before. The systems set the "
+        "agenda wherever they raise measured output, and the laboratory follows "
+        "whichever direction the metrics reward. The rate is full speed, "
+        "constrained only by cost and by incidents severe enough to be "
+        "uninsurable or to reach a court. Self-improvement is open-ended. "
+        "Results are held as product and licensed by tier, with the strongest "
+        "capability priced highest rather than withheld. Coordination happens "
+        "only where it is cheaper than competing, and capability is turned "
+        "first at the next model and at whatever a paying customer asks for. "
+        "Evaluations run, and the thresholds move. The laboratories publish "
+        "system cards, admit government evaluators where the relationship pays, "
+        "and rewrite any commitment they authored, four of them voiding pause "
+        "pledges between February and July 2026. One framework permits adjusted "
+        "requirements once a rival ships a high-risk system without comparable "
+        "safeguards; a summer 2026 index capped the field at C+, with three "
+        "companies at F. These laboratories put their discretionary money into "
+        "politics. One anti-regulation network assembled between $75M and $140M "
+        "by mid-2026, spent $8M to defeat the author of a state safety law, and "
+        "put $65M more into state races. Charitable spending attaches community "
+        "funds to new campuses, and the candidates these networks back run on "
+        "industry money."),
+       ("L5", "Capability spread deliberately", 0.150,
+        ["analysis/frontier-lab-conduct"],
+        "The laboratories treat concentration as the danger and wide "
+        "distribution as the remedy. Weights near the frontier are published, "
+        "prices are cut permanently, and access is given away to seed an "
+        "ecosystem the giver sits under — a cloud, a phone, a social platform. "
+        "Restriction is fought as the enemy rather than sought as the referee, "
+        "and the public argument is that many checked systems are safer than "
+        "one held system. Licences begin acquiring revenue thresholds and "
+        "attribution terms as the position hardens into a business. Agenda- "
+        "setting is distributed by construction, because every holder points a "
+        "self-improving system at what it wants, and there is no seat at which "
+        "the agenda could be set. The rate is whatever the fastest holder runs "
+        "at, and no ceiling is enforceable once the weights are out. Self- "
+        "improvement is open-ended and simultaneous in many places. Results are "
+        "published, which is the entire point of the position. Coordination is "
+        "refused as the concentration it was meant to prevent, and capability "
+        "is turned first at cost and efficiency, because the position belongs "
+        "to whoever is cheapest. The laboratories argue that publishing weights "
+        "is the safety measure, because many holders inspecting a model catch "
+        "failures one company misses. Pre-release evaluation stays thin under "
+        "that argument, and one index placed these developers last on "
+        "governance. A 2.8T-parameter model published on 2026-07-27 sits beyond "
+        "recall by anyone, so any bad finding about it arrives after the model "
+        "is everywhere. The laboratories give away the model itself. One open- "
+        "weight family passed a billion cumulative downloads and anchors about "
+        "40% of new derivatives on the main model hub. Permanent price cuts "
+        "near $0.435 per million tokens arrive with licences carrying revenue "
+        "thresholds the giver can revise, so every derivative builder holds a "
+        "permission."),
+       ("L6", "Frontier declined, scope confined", 0.060,
+        ["analysis/frontier-lab-conduct"],
+        "The laboratories refuse the race frame and build systems bounded on "
+        "purpose — domain-specific, with autonomy capped by design and "
+        "containment repeated every cycle. They sell capability inside named "
+        "problems and decline to sell an open-ended agent even where they "
+        "demonstrably have one. Monitoring overhead, held runs and staged "
+        "access are accepted as permanent costs of the product rather than as "
+        "friction to be engineered away. The wager is that a bounded system a "
+        "customer can underwrite outsells an unbounded one nobody will insure. "
+        "People set the agenda and the systems are given problems rather than "
+        "asked what to work on. The rate is one improvement cycle at a time, "
+        "each followed by re-containment and re-evaluation before the next is "
+        "authorised, which is the sense in which containment is maintained in "
+        "perpetuity rather than achieved. Self-improvement is confined to a "
+        "named domain and does not carry across domains by design. Results are "
+        "held and licensed inside the domain. Coordination is unnecessary "
+        "because the laboratory is not racing, and capability is turned first "
+        "at whichever bounded problem someone has underwritten — most often "
+        "disease and energy, since those are the ones that pay for a system "
+        "built this way. The laboratories build the limit into the product, and "
+        "customers and insurers hold them to it. Monitoring runs at about 20% "
+        "of the inference compute it watches, and an alert left unresolved for "
+        "thirty minutes pauses the activity. In August 2026 a capability "
+        "finding held one laboratory's largest planned training run for two "
+        "weeks, and the laboratory published the reason before the hold ended. "
+        "The laboratories give away results inside the domains they chose. A "
+        "superintelligence programme announced in November 2025 named "
+        "diagnostics, materials and molecule discovery as its object, and one "
+        "laboratory has published a protein-structure database free to "
+        "researchers. Medical and energy groups receive capability inside a "
+        "stated scope, underwritten by a customer or an insurer."),
+     ]},
   ],
   "conditionals": {
-    "A": {"C1": {"A1": 1.2, "A2": 0.8, "A3": 0.8},
+    "A": {
+           "L1": {"A3": 1.3},
+           "L2": {"A3": 1.2},
+           "L3": {"A3": 1.35},
+           "L4": {"A1": 1.3, "A3": 0.75},
+           "L5": {"A1": 1.2, "A3": 0.7},
+           "L6": {"A4": 1.25},"C1": {"A1": 1.2, "A2": 0.8, "A3": 0.8},
            "C5": {"A1": 0.8, "A2": 1.1, "A3": 1.1, "A4": 1.35, "A5": 1.35},
            "D1": {"A2": 0.9, "A3": 0.9, "A6": 1.15, "A7": 1.15},
            "D4": {"A2": 1.2, "A3": 1.2, "A6": 0.9, "A7": 0.85},
@@ -1029,7 +1254,10 @@ REGISTRY = {
            "T3": {"A1": 0.8, "A2": 1.05, "A3": 1.05, "A4": 1.25, "A5": 1.25, "A7": 0.9},
            "T4": {"A1": 0.3, "A2": 0.7, "A3": 0.7, "A7": 2.6},
            "T5": {"A1": 0.25, "A2": 0.6, "A3": 0.6, "A7": 3}},
-    "C": {"A1": {"C5": 0.65, "C6": 1.1, "C7": 1.2},
+    "C": {
+           "L2": {"C1": 1.2},
+           "L3": {"C5": 1.3, "C8": 1.25},
+           "L5": {"C5": 0.7},"A1": {"C5": 0.65, "C6": 1.1, "C7": 1.2},
            "A2": {"C1": 0.85, "C3": 1.1, "C4": 1.2, "C5": 1.15},
            "A3": {"C1": 0.8, "C4": 1.25, "C5": 1.3},
            "A6": {"C4": 1.1, "C5": 0.7},
@@ -1049,7 +1277,10 @@ REGISTRY = {
            "T3": {"C1": 0.9, "C3": 1.1, "C4": 1.2, "C5": 1.5, "C6": 1.1, "C7": 1.05},
            "T4": {"C1": 1.1, "C3": 1.05, "C4": 0.9, "C5": 0.8, "C8": 0.5},
            "T5": {"C1": 1.15, "C4": 0.85, "C5": 0.75, "C8": 0.4}},
-    "D": {"A2": {"D1": 1.3, "D2": 1.1, "D3": 0.85, "D4": 0.7},
+    "D": {
+           "L1": {"D2": 1.15},
+           "L4": {"D3": 1.2},
+           "L5": {"D4": 1.2},"A2": {"D1": 1.3, "D2": 1.1, "D3": 0.85, "D4": 0.7},
            "A3": {"D1": 1.45, "D2": 1.1, "D3": 0.8, "D4": 0.6},
            "A4": {"D1": 0.9, "D2": 1.15, "D3": 1.05},
            "A5": {"D1": 0.75, "D2": 1.05, "D3": 1.2, "D4": 1.15},
@@ -1073,7 +1304,11 @@ REGISTRY = {
            "T3": {"D1": 1.05, "D2": 1.05, "D3": 1.05, "D4": 0.95},
            "T4": {"D1": 1.15, "D4": 0.8},
            "T5": {"D1": 1.25, "D4": 0.7}},
-    "E": {"A1": {"E1": 1.05, "E3": 1.05},
+    "E": {
+           "L1": {"E1": 0.9},
+           "L4": {"E3": 1.25},
+           "L5": {"E2": 1.35},
+           "L6": {"E4": 1.25},"A1": {"E1": 1.05, "E3": 1.05},
            "A2": {"E1": 0.85, "E2": 1.1, "E3": 1.2, "E4": 1.1},
            "A4": {"E1": 1.1, "E2": 1.05},
            "A5": {"E1": 1.2, "E3": 0.95, "E4": 0.85},
@@ -1088,12 +1323,18 @@ REGISTRY = {
            "T3": {"E1": 1.05, "E2": 1.15, "E4": 0.95},
            "T4": {"E1": 0.6, "E2": 1.15, "E4": 1.5},
            "T5": {"E1": 0.5, "E2": 1.1, "E4": 1.7}},
-    "K": {"T1": {"K1": 2, "K2": 1.3, "K3": 0.85, "K4": 0.35},
+    "K": {
+           "L3": {"K3": 1.25},
+           "L4": {"K1": 1.2},
+           "L5": {"K1": 1.15},"T1": {"K1": 2, "K2": 1.3, "K3": 0.85, "K4": 0.35},
           "T2": {"K1": 1.2, "K2": 1.17, "K3": 1.15, "K4": 0.75},
           "T3": {"K1": 0.6, "K2": 0.81, "K3": 1.1, "K4": 1.15},
           "T4": {"K1": 0.25, "K2": 0.47, "K3": 0.9, "K4": 1.6},
           "T5": {"K1": 0.1, "K2": 0.2, "K3": 0.4, "K4": 3}},
-    "P": {"A2": {"P1": 0.7, "P2": 1.3, "P3": 1.05, "P4": 1.15, "P5": 1.25},
+    "P": {
+           "L1": {"P5": 0.85},
+           "L2": {"P4": 1.15},
+           "L4": {"P4": 1.2},"A2": {"P1": 0.7, "P2": 1.3, "P3": 1.05, "P4": 1.15, "P5": 1.25},
            "A3": {"P1": 0.65, "P2": 1.25, "P5": 1.35},
            "A7": {"P1": 1.25, "P5": 0.85},
            "D4": {"P1": 0.75, "P2": 1.2, "P3": 1.05, "P4": 1.1, "P5": 1.6},
@@ -1108,7 +1349,12 @@ REGISTRY = {
            "T2": {"P1": 0.85, "P3": 1.2, "P5": 1.05},
            "T4": {"P1": 1.3, "P3": 0.85, "P5": 0.85},
            "T5": {"P1": 1.35, "P3": 0.8, "P5": 0.8}},
-    "R": {"A2": {"R1": 0.7, "R2": 1.1, "R4": 1.6, "R5": 1.3},
+    "R": {
+           "L1": {"R5": 1.3, "R1": 0.75},
+           "L2": {"R4": 1.4},
+           "L3": {"R1": 1.35},
+           "L4": {"R3": 1.25},
+           "L5": {"R6": 1.2},"A2": {"R1": 0.7, "R2": 1.1, "R4": 1.6, "R5": 1.3},
            "A3": {"R1": 0.6, "R4": 1.7, "R5": 1.45},
            "A6": {"R1": 1.15, "R5": 0.8},
            "A7": {"R1": 1.15, "R5": 0.9},
@@ -1124,7 +1370,10 @@ REGISTRY = {
            "T2": {"R1": 0.85, "R4": 1.25, "R5": 1.05},
            "T4": {"R2": 1.6, "R4": 0.5, "R5": 1.2, "R6": 1.15},
            "T5": {"R2": 1.5, "R4": 0.45, "R5": 1.15, "R6": 1.2}},
-    "S": {"A2": {"S1": 1.3, "S2": 0.8},
+    "S": {
+           "L2": {"S2": 1.25},
+           "L4": {"S1": 1.2},
+           "L5": {"S2": 1.2},"A2": {"S1": 1.3, "S2": 0.8},
            "A3": {"S1": 1.35, "S2": 0.75},
            "C2": {"S1": 0.85, "S2": 1.3, "S4": 1.2},
            "C5": {"S1": 0.85, "S2": 1.35},
@@ -1141,7 +1390,11 @@ REGISTRY = {
            "T2": {"S1": 0.95, "S3": 1.15, "S4": 1.05},
            "T4": {"S1": 1.2, "S2": 1.05, "S3": 0.85, "S4": 0.95},
            "T5": {"S1": 1.3, "S2": 1.05, "S3": 0.75}},
-    "T": {"A1": {"T1": 1.15, "T2": 1.05, "T3": 0.9},
+    "T": {
+           "L2": {"T1": 1.15},
+           "L3": {"T3": 1.2},
+           "L4": {"T1": 1.25},
+           "L6": {"T4": 1.25},"A1": {"T1": 1.15, "T2": 1.05, "T3": 0.9},
            "A2": {"T1": 0.95, "T3": 1.05},
            "A3": {"T1": 0.8, "T2": 0.9, "T3": 1.15, "T4": 1.1, "T5": 1.05},
            "A6": {"T1": 1.1, "T2": 1.05, "T3": 0.95},
@@ -1849,6 +2102,41 @@ REGISTRY = {
 
   },
   "changelog": [
+    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+     "change": "r7 - a tenth axis, L, laboratory conduct, and the first that "
+               "asks what an actor CHOOSES. Every existing axis is a condition "
+               "the laboratories find themselves in: T how fast capability "
+               "arrives, S who owns the computing, E whether the money holds, C "
+               "what the two governments settle, R who writes the rules, P what "
+               "the public does. February 2026 showed that conduct is separate: "
+               "four United States frontier laboratories met the same "
+               "Department of War demand for all-lawful-purposes access inside "
+               "one week and chose four postures. One published a refusal "
+               "naming two exclusions, was designated a supply-chain risk the "
+               "next day, and is still litigating. One signed and engineered "
+               "the limits into architecture and contract, retaining discretion "
+               "over its own safety stack, then amended after a backlash. One "
+               "agreed to adjust safety settings on request. One took the "
+               "contract with no public red line. Same environment, same week, "
+               "four choices, which no structural axis can express. Six "
+               "postures, priors summing to 1, 38 conditional edges. Each "
+               "position states what it does once systems improve themselves - "
+               "who sets the research agenda, at what rate, open-ended or "
+               "confined, held or published, coordinated or not - and its "
+               "approach to safety and its use of wealth. THE OBJECTION, "
+               "RECORDED BECAUSE IT WAS NOT RESOLVED: a posture can be voided "
+               "by the state in an afternoon, so L may be R4 wearing six coats. "
+               "The answer is that four laboratories differed under one "
+               "government in one week, which R4 cannot say.",
+     "approved": "August (2026-08-20). He set the framing - 'for the AI labs, "
+                 "this is about what they choose to do, given their "
+                 "environment. this is not about structural factors - it is "
+                 "about their choices and how they adapt and change' - "
+                 "sharpened it twice, with 'Especially post RSI, how they "
+                 "choose to approach AI development also' and 'include AI lab's "
+                 "approach to AI safety and how they use their potential "
+                 "largesse', and chose 'Add it - write r7' from a proposal that "
+                 "named the objection above."},
     {"version": REGISTRY_VERSION, "date": "2026-08-18",
      "change": "r6 - the two edges r5 left open, closed on evidence. (1) THE "
                "PUBLIC-TO-REGULATION CHANNEL. r3 researched an edge from public "
