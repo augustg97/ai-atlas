@@ -626,11 +626,9 @@ def joint_probability(reg, wl):
     return p
 
 
-def mainline(reg, n=None, seed=None):
-    """The exact argmax world-line by full enumeration (≤ a few thousand
-    cells) — deterministic, no sampling noise. Returns (line, its exact
-    joint probability). Per-axis modes can be jointly incoherent; the
-    enumerated argmax cannot."""
+def mainline_enumerate(reg):
+    """The argmax by full enumeration. Kept as the reference implementation the
+    fast one is tested against, and never called by the emit."""
     import itertools
     keys = [a["key"] for a in reg["axes"]]
     posl = [[p[0] for p in a["positions"]] for a in reg["axes"]]
@@ -641,6 +639,114 @@ def mainline(reg, n=None, seed=None):
         if p > bp:
             best, bp = wl, p
     return best, bp
+
+
+def _axis_bounds(reg):
+    """The largest factor each axis can contribute under ANY parent assignment.
+
+    Admissible and cheap. The numerator is bounded above by taking every tilt
+    ABOVE one that could reach a position; the denominator below by taking
+    every tilt BELOW one on every position. No real parent assignment can beat
+    that, so the product of these bounds over the unassigned tail can never
+    understate what the tail is worth — which is what makes the pruning exact.
+    """
+    out = []
+    for a in reg["axes"]:
+        pri = {q[0]: q[2] for q in a["positions"]}
+        up = {k: v for k, v in pri.items()}
+        lo = {k: v for k, v in pri.items()}
+        for _parent, tilts in reg["conditionals"].get(a["key"], {}).items():
+            for pos, mult in tilts.items():
+                if pos not in pri:
+                    continue
+                if mult > 1.0:
+                    up[pos] *= mult
+                else:
+                    lo[pos] *= mult
+        best = 0.0
+        for pos in pri:
+            # the denominator is smallest when every OTHER position is tilted
+            # down as far as it can go and this one sits at its own low value
+            den = sum(lo[q] for q in pri if q != pos) + min(lo[pos], up[pos])
+            if den > 0:
+                best = max(best, up[pos] / den)
+        out.append(min(1.0, best) if best <= 1.0 else best)
+    return out
+
+
+def mainline(reg, n=None, seed=None):
+    """The exact argmax world-line — deterministic, no sampling noise. Returns
+    (line, its exact joint probability). Per-axis modes can be jointly
+    incoherent; the argmax cannot.
+
+    IT WAS A FULL CARTESIAN PRODUCT, and the docstring said "≤ a few thousand
+    cells" while r8 made it 120,960,000. Ten axes were 20.16M and eleven are
+    six times that; the emit calls this twice, so 2026-08-20's run needed about
+    three and a half hours and was killed twice before anyone read the cause.
+    The cost was never in the arithmetic — it is 19,722 lines a second — but in
+    enumerating lines that cannot possibly win.
+
+    The joint factorises along the registry's own axis order: axis k's factor
+    depends only on positions already chosen, because `joint_probability` tests
+    `parent_pos in chosen.values()`. So this is depth-first with branch and
+    bound. A partial assignment is abandoned when its product, times the most
+    any unassigned axis could contribute, cannot reach the best complete line
+    already found. The bound is admissible, so the argmax cannot be pruned.
+
+    Children are tried in descending order of their own factor, which finds a
+    strong incumbent in the first few descents and makes the bound bite. Ties
+    are resolved to the line enumeration would have reached first, so this
+    returns the same answer as `mainline_enumerate` and not merely an equally
+    probable one.
+    """
+    axes_ = reg["axes"]
+    keys = [a["key"] for a in axes_]
+    posl = [[q[0] for q in a["positions"]] for a in axes_]
+    pris = [{q[0]: q[2] for q in a["positions"]} for a in axes_]
+    conds = [reg["conditionals"].get(k, {}) for k in keys]
+    rank = [{pos: i for i, pos in enumerate(pl)} for pl in posl]
+    bounds = _axis_bounds(reg)
+    # tail[d] — the most the axes from d onward can contribute together
+    tail = [1.0] * (len(axes_) + 1)
+    for d in range(len(axes_) - 1, -1, -1):
+        tail[d] = tail[d + 1] * bounds[d]
+
+    best = {"p": -1.0, "combo": None}
+
+    def descend(d, chosen, prod):
+        if prod * tail[d] <= best["p"]:
+            return
+        if d == len(axes_):
+            if prod > best["p"]:
+                best["p"], best["combo"] = prod, list(chosen)
+            return
+        w = dict(pris[d])
+        for parent_pos, tilts in conds[d].items():
+            if parent_pos in chosen:
+                for pos, mult in tilts.items():
+                    if pos in w:
+                        w[pos] *= mult
+        tot = sum(w.values())
+        # descending factor, then the enumeration's own order, so a tie lands
+        # exactly where a full sweep would have left it
+        order = sorted(w, key=lambda pos: (-w[pos], rank[d][pos]))
+        for pos in order:
+            f = w[pos] / tot
+            nxt = prod * f
+            if nxt * tail[d + 1] <= best["p"]:
+                break        # every later child has a factor no larger
+            chosen.append(pos)
+            descend(d + 1, chosen, nxt)
+            chosen.pop()
+
+    import sys as _sys
+    lim = _sys.getrecursionlimit()
+    _sys.setrecursionlimit(max(lim, 200 + 20 * len(axes_)))
+    try:
+        descend(0, [], 1.0)
+    finally:
+        _sys.setrecursionlimit(lim)
+    return dict(zip(keys, best["combo"])), best["p"]
 
 
 def bands(reg, n=10000, seed=20260731, pcts=(10, 25, 50, 75, 90)):
@@ -687,14 +793,35 @@ def _selftest():
         kn = capability_path({"T": tpo, "A": "A3", "C": "C1"})
         vals = [v for _, v in kn]
         assert all(b >= a - 1e-9 for a, b in zip(vals, vals[1:])), tpo
+    # A TEST KEYED TO A LETTER INHERITS WHATEVER THE LETTER LATER MEANS. This
+    # asserted that T4 never reaches researcher level, and r5 redefined T4 from
+    # "no arrival" to "arrival 2037 to 2050" and moved no-arrival to T5. The
+    # assertion then failed for a reason that had nothing to do with the code
+    # under test, and nobody saw it because nothing ran this file. It is keyed
+    # to the MEASURED thing now: whichever tempo position is the asymptote.
+    slow = next(q[0] for q in axes.axis(reg, "T")["positions"]
+                if "asymptote" in q[1].lower())
     assert max(v for _, v in capability_path(
-        {"T": "T4", "A": "A4", "C": "C4"})) < 5.0
-    knC3 = capability_path({"T": "T2", "A": "A3", "C": "C3"})
-    assert abs(cap_at(knC3, 2037.0) - 4.0) < 0.05
-    assert cap_at(knC3, 2043.0) > 4.3
+        {"T": slow, "A": "A4", "C": "C4"})) < 5.0
+    # The same letter defect once more: this read C3 for "the pause", and r5
+    # made C3 a declaratory accord that pauses nothing while the binding limit
+    # moved to C5. Keyed to the meaning, so a rebuild that renames it fails
+    # loudly and a rebuild that merely renumbers it does not.
+    hold = next(q[0] for q in axes.axis(reg, "C")["positions"]
+                if "limit holds" in q[1].lower())
+    knHold = capability_path({"T": "T2", "A": "A3", "C": hold})
+    assert abs(cap_at(knHold, 2037.0) - 4.0) < 0.05
+    assert cap_at(knHold, 2043.0) > 4.3
     # tracks: laws monotone, revenue positive and capped, approval bounded
-    wl = {"T": "T2", "A": "A2", "C": "C1", "D": "D2", "S": "S1",
-          "P": "P3", "E": "E2"}
+    # A HAND-WRITTEN WORLD-LINE GOES STALE THE NEXT TIME AN AXIS IS ADDED. This
+    # literal named seven axes; r5 added R, which `tracks` reads, and r7 and r8
+    # added two more. It raised KeyError on a file nothing ran. Start from the
+    # registry's own modal line, so every axis is present whatever the
+    # revision, and override only the positions this test is about.
+    wl = {a["key"]: max(a["positions"], key=lambda q: q[2])[0]
+          for a in reg["axes"]}
+    wl.update({"T": "T2", "A": "A2", "C": "C1", "D": "D2", "S": "S1",
+               "P": "P3", "E": "E2"})
     tr = tracks(wl, capability_path(wl))
     assert all(b >= a for a, b in zip(tr["laws"], tr["laws"][1:]))
     assert 0 < max(tr["rev"]) <= 30.0
@@ -730,14 +857,35 @@ def _selftest():
     # mainline: exact argmax; probability positive; beats per-axis-mode
     # joint when the modes are jointly tilted; deterministic
     ml, p_ml = mainline(reg)
-    assert set(ml.keys()) == {"T", "A", "C", "D", "S", "P", "E"}
+    # derived, not listed — the seven-axis literal here survived r7 and r8
+    assert set(ml.keys()) == {a["key"] for a in reg["axes"]}
     assert p_ml > 0
     naive = {a["key"]: max(a["positions"], key=lambda q: q[2])[0]
              for a in reg["axes"]}
     assert p_ml >= joint_probability(reg, naive) - 1e-12
     ml2, p2 = mainline(reg)
     assert ml2 == ml and abs(p2 - p_ml) < 1e-15
-    return 6
+    # THE FAST ARGMAX MUST RETURN WHAT ENUMERATION RETURNS, and the same LINE
+    # rather than merely one of equal probability: enumeration keeps the first
+    # maximum it meets, and a mainline that flips between builds for no visible
+    # reason is worse than a slow one. Checked on real prefixes of the live
+    # registry, so the priors and the conditionals are the real ones, at sizes
+    # a full sweep can still reach.
+    keys = [a["key"] for a in reg["axes"]]
+    for n in (4, 6, 7):
+        sub = copy.deepcopy(reg)
+        keep = set(keys[:n])
+        sub["axes"] = [a for a in sub["axes"] if a["key"] in keep]
+        alive = {q[0] for a in sub["axes"] for q in a["positions"]}
+        sub["conditionals"] = {
+            k: {pp: {q: m for q, m in t.items() if q in alive}
+                for pp, t in v.items() if pp in alive}
+            for k, v in sub["conditionals"].items() if k in keep}
+        e_line, e_p = mainline_enumerate(sub)
+        b_line, b_p = mainline(sub)
+        assert e_line == b_line, (n, e_line, b_line)
+        assert abs(e_p - b_p) <= 1e-15 * max(1.0, abs(e_p)), (n, e_p, b_p)
+    return 7
 
 
 if __name__ == "__main__":

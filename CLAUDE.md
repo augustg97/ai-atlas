@@ -108,6 +108,34 @@ python3 build/build_site.py && git add -A && git commit && git push
 # then verify the live data-version stamp
 ```
 
+- **`worldlines.mainline()` was a full Cartesian product, and every new axis multiplied it.** Its
+  docstring said "≤ a few thousand cells" while r7 made it 20,160,000 and r8's eleventh axis made
+  it 120,960,000. At its measured 19,722 lines a second that is 102 minutes a call, and the emit
+  makes two — about three and a half hours on 2026-08-20, up from roughly half an hour the day
+  before. It is now depth-first branch and bound over the same factorisation: axis k's factor
+  depends only on positions already chosen, so a partial assignment can be abandoned once its
+  product times the most the unassigned tail could contribute cannot reach the best complete line.
+  0.53 seconds. **`mainline_enumerate()` is kept as the reference implementation and is never
+  called by the emit** — `_selftest` checks the two agree on real prefixes of the live registry
+  and on randomised sub-registries, on the LINE and not merely on its probability, because
+  enumeration keeps the first maximum it meets and a mainline that flips between builds for no
+  visible reason is worse than a slow one.
+
+- **Check what an emit WROTE, and treat a nonzero exit as authoritative.** `forecast_emit.py`
+  writes `weights.json` early and its eleven staged files at the end, none of it atomically, so a
+  run stopped in between leaves weights at the new revision and `Research/staged/forecast/*` at
+  the previous night's — which reads like a crash between two writes when it was an interruption.
+  `forecast_emit.py || exit 2` in `build/nightly.sh` is what keeps that mixed frame out of
+  `build_site.py`; on 2026-08-20 it did exactly that, with an eleven-axis `grounding.json` sitting
+  against ten ten-axis files. So: read `network.json`'s version and mtime after any emit, and do
+  not treat a nonzero exit as noise.
+
+- **Two sessions must not run the emit at once.** Both call `load_weights()` and write
+  `weights.json`, and neither writes atomically, so an overlapping run wins on whichever file it
+  touches last. On 2026-08-20 a run begun at 10:29 would have published a `weights.json` read
+  before `nightly_update` wrote that night's four applications, overwriting them. Check
+  `pgrep -f forecast_emit` before starting one, and say so in the other session.
+
 ## Traps that have each cost real time here
 
 - **The dev-log SCHEMA.md lies** — 1 of 201 files follows it; parse the prose+footnote format

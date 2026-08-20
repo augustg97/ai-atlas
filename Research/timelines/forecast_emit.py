@@ -27,6 +27,7 @@ from __future__ import annotations
 import datetime as _dt
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -44,8 +45,13 @@ CRISES = [
      "cites": ["sources/ai-2040-plan-a"]},
     {"id": "explosive-takeoff", "q": "Explosive tempo (SC by 2028)",
      "kind": "axis", "axis": "T", "pos": "T1", "cites": ["sources/ai-2027"]},
+    # KEYED TO T4, WHICH r5 REDEFINED FROM NO-ARRIVAL TO ARRIVAL BETWEEN 2037
+    # AND 2050. The card asked whether superintelligence stays away and was
+    # answered by the probability that it arrives, late. T5 is the position
+    # where the research rung is never crossed; capability_path confirms it,
+    # reaching 4.0 in 2044 on T4 and never on T5.
     {"id": "no-sc-window", "q": "No superintelligence this window",
-     "kind": "axis", "axis": "T", "pos": "T4",
+     "kind": "axis", "axis": "T", "pos": "T5",
      "cites": ["sources/ai-as-normal-technology"]},
     {"id": "alignment-fails", "q": "Alignment fails undetected",
      "kind": "axis", "axis": "A", "pos": "A1", "cites": ["sources/ai-2027"]},
@@ -57,18 +63,38 @@ CRISES = [
      ["concepts/agi-timelines"]},
 ]
 
+# A CLAIM'S SUPPORT IS A KEY, AND A KEY INHERITS WHATEVER ITS LETTER LATER
+# MEANS. Read against the live r8 names on 2026-08-20, three of these four were
+# pointing at positions about something else. r5 split rulemaking out of C into
+# R and added E4, and nothing re-read the register afterwards.
 CLAIMS = [
+    # NO POSITION SUPPORTS THIS BY ITS OWN DATE, and saying so is worth more
+    # than a plausible key. T1 is the fastest tempo the registry holds and
+    # capability_path puts its crossing of the coder rung at 2028, a year past
+    # the claim; every other position is later still. T1 is kept as the
+    # nearest and the shortfall is stated, so the claim reads as expected to
+    # resolve false on the model's own arithmetic.
     {"id": "cl-sc-2027", "text": "superhuman-coder milestone crossed",
      "by": "2027-12-31", "axis_support": {"T": ["T1"]},
+     "support_gap": "no position crosses rung 3.0 by 2027; T1, the fastest, "
+                    "crosses it in 2028",
      "cites": ["sources/ai-2027"]},
     {"id": "cl-deal-2029", "text": "US-CN AI agreement concluded",
      "by": "2029-12-31", "axis_support": {"C": ["C3"]},
      "cites": ["sources/ai-2040-plan-a"]},
+    # E2 IS "Margin squeeze", whose own description says the build-out
+    # CONTINUES, so it cannot support a claim that capital expenditure
+    # corrects; E4, "Capital expenditure cut", is the position the claim is
+    # about and was missing.
     {"id": "cl-correction-2027", "text": "major AI capex correction",
-     "by": "2027-12-31", "axis_support": {"E": ["E2", "E3"]},
+     "by": "2027-12-31", "axis_support": {"E": ["E3", "E4"]},
      "cites": ["analysis/ai-bubble-vs-buildout"]},
+    # SUPPORTED BY C4, "Domain-confined limit" — a US-China coordination
+    # position with nothing to say about American state legislatures. The
+    # claim's own subject is R2, "Contested patchwork": state statutes binding
+    # frontier developers while the federal executive litigates them.
     {"id": "cl-state-laws-2026", "text": "state AI-law count exceeds 90",
-     "by": "2026-12-31", "axis_support": {"C": ["C4"]},
+     "by": "2026-12-31", "axis_support": {"R": ["R2"]},
      "cites": ["analysis/eu-vs-us-ai-regulation"]},
 ]
 
@@ -452,8 +478,119 @@ def emit():
             "grounding": grounding["counts"]}
 
 
+# WHICH AXIS EACH CARD IS ABOUT, DECLARED BY HAND. A card is keyed to a
+# position letter and a letter inherits whatever it later means, so the
+# declaration is what a rebuild has to be checked against. r5 split rulemaking
+# out of C into R and added E4, and nothing re-read the register: on
+# 2026-08-20 a state-legislation claim was supported by a US-China
+# coordination position, a capital-expenditure claim by a margin position
+# whose own description says the build-out continues, and "No superintelligence
+# this window" was answered by the probability that it arrives between 2037
+# and 2050.
+#
+# A WORD-OVERLAP TEST WAS TRIED FIRST AND DOES NOT WORK: the vocabularies
+# differ legitimately — "superintelligence" against "research rung", "capex"
+# against "capital expenditure", "agreement" against "accord" — so it flagged
+# four correct keys and would have been switched off within a week. These two
+# checks are exact instead. The first catches a key on the wrong SUBJECT; the
+# second catches a key pointing the wrong WAY, by asking the model's own
+# arithmetic rather than reading a label.
+CARD_AXIS = {
+    "deal-window": "C", "explosive-takeoff": "T", "no-sc-window": "T",
+    "alignment-fails": "A", "hard-deflate": "E", "researcher-by-2035": None,
+    "cl-sc-2027": "T", "cl-deal-2029": "C", "cl-correction-2027": "E",
+    "cl-state-laws-2026": "R",
+}
+# cards asserting something about WHEN capability arrives, and what must hold
+# of the supporting position for the assertion to be the right way round.
+# (card id, rung, year, must the rung be reached by then?)
+TEMPO_DIRECTION = [
+    ("explosive-takeoff", 3.0, 2028, True),
+    ("no-sc-window", 4.0, 2050, False),
+    ("cl-sc-2027", 3.0, 2027, True),
+]
+
+
+# ONE FINDING SURVIVES THE CHECK AND IS DECLARED RATHER THAN SUPPRESSED. No
+# position crosses the coder rung by 2027 — T1, the fastest the registry
+# holds, crosses it in 2028 — so cl-sc-2027 is expected to resolve false on
+# the model's own arithmetic. Declaring it keeps the assertion strict; a
+# SECOND finding would still fail the build.
+#
+# WHAT THIS PAIR OF CHECKS CANNOT SEE, stated so nobody trusts it further than
+# it goes: a key on the RIGHT axis pointing at the wrong position, where no
+# tempo rule applies. cl-correction-2027 was supported by E2, a margin
+# position whose own description says the build-out continues, and the axis
+# check passes it because E2 is on E. That one was found by reading.
+KNOWN_GAPS = {
+    ("cl-sc-2027", "T1"),
+}
+
+
+def unkeyed_cards(reg=None):
+    """Cards whose support is on the wrong axis, or points the wrong way."""
+    reg = reg or axes.REGISTRY
+    known = {q[0] for a in reg["axes"] for q in a["positions"]}
+    axis_of = {q[0]: a["key"] for a in reg["axes"] for q in a["positions"]}
+    out = []
+    cards = ([(c["id"], [c["pos"]]) for c in CRISES if c["kind"] == "axis"]
+             + [(c["id"], [x for v in c["axis_support"].values() for x in v])
+                for c in CLAIMS])
+    for cid, keys in cards:
+        want = CARD_AXIS.get(cid, "?")
+        if want == "?":
+            out.append((cid, "-", "no declared axis; add it to CARD_AXIS"))
+        for k in keys:
+            if k not in known:
+                out.append((cid, k, "no such position in %s" % reg["version"]))
+            elif want and axis_of[k] != want:
+                out.append((cid, k, "declared for axis %s, keyed to %s (%s)"
+                            % (want, axis_of[k], k)))
+    # DOES THE POSITION POINT THE WAY THE CARD ASKS? Read off capability_path,
+    # so a redefinition that keeps a letter cannot survive it.
+    by_id = {c["id"]: c for c in CRISES}
+    by_id.update({c["id"]: c for c in CLAIMS})
+    for cid, rung, year, want_reached in TEMPO_DIRECTION:
+        c = by_id.get(cid)
+        if not c:
+            continue
+        keys = [c["pos"]] if "pos" in c else [
+            x for v in c["axis_support"].values() for x in v]
+        for k in keys:
+            if k not in known:
+                continue
+            kn = worldlines.capability_path({"T": k, "A": "A3", "C": "C1"})
+            reached = worldlines.cap_at(kn, float(year)) >= rung
+            if reached != want_reached:
+                out.append((cid, k, "asks whether rung %.1f is reached by %d; "
+                            "%s %s it" % (rung, year, k,
+                                          "reaches" if reached else "does not reach")))
+    return out
+
+
 def _selftest():
     import copy, tempfile
+    # NOTHING RAN worldlines._selftest, AND IT HAD BEEN FAILING. Three of its
+    # assertions were keyed to position letters whose meanings r5 changed, and
+    # one world-line literal named seven axes on an eleven-axis registry, so it
+    # raised KeyError. A test no chain invokes is a test that reports nothing.
+    # It runs here, first, because this is the file the nightly calls.
+    n_wl = worldlines._selftest()
+    assert n_wl >= 7, n_wl
+    bad = [x for x in unkeyed_cards() if (x[0], x[1]) not in KNOWN_GAPS]
+    assert not bad, bad
+    # the check has to be able to fail: reinstate the inversion r5 created and
+    # require it to be caught, the same positive control the drawing's own
+    # collision audit plants. A zero from a check that cannot fail is nothing.
+    saved = [dict(c) for c in CRISES]
+    try:
+        for c in CRISES:
+            if c["id"] == "no-sc-window":
+                c["pos"] = "T4"
+        assert any(x[0] == "no-sc-window" for x in unkeyed_cards()), \
+            "the card check cannot detect the inversion it was written for"
+    finally:
+        CRISES[:] = saved
     # widening spreads toward uniform and preserves normalization
     w = {"axes": {"T": {"T1": 0.6, "T2": 0.3, "T3": 0.08, "T4": 0.02}}}
     reg = widened_registry({"axes": w["axes"], "version": "x"},
@@ -469,6 +606,6 @@ def _selftest():
 
 if __name__ == "__main__":
     n = _selftest()
-    print("forecast_emit selftest: %d groups passed" % n)
+    print("forecast_emit selftest: %d groups passed (worldlines included)" % n)
     out = emit()
     print(json.dumps(out, indent=1))

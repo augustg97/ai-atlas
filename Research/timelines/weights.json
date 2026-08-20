@@ -1,6 +1,6 @@
 {
- "version": "r6-2026-08-18",
- "date": "2026-08-19",
+ "version": "r8-2026-08-20",
+ "date": "2026-08-20",
  "axes": {
   "T": {
    "T1": 0.1,
@@ -16,13 +16,13 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08926013071791676,
-   "A2": 0.2298440775964576,
-   "A3": 0.13126864960714016,
-   "A4": 0.16988475300607733,
-   "A5": 0.09993220765063372,
-   "A6": 0.04996610382531686,
-   "A7": 0.2298440775964576
+   "A1": 0.08893091269765814,
+   "A2": 0.22977468656175906,
+   "A3": 0.13183319374507205,
+   "A4": 0.1698334639804306,
+   "A5": 0.09990203763554739,
+   "A6": 0.049951018817773696,
+   "A7": 0.22977468656175906
   },
   "C": {
    "C1": 0.3293461634626395,
@@ -63,11 +63,27 @@
    "P5": 0.14
   },
   "E": {
-   "E1": 0.2226734796974142,
-   "E2": 0.17972976771511742,
-   "E3": 0.32800210101479227,
-   "E4": 0.18971475481040168,
-   "E5": 0.07987989676227442
+   "E1": 0.22352167087852493,
+   "E2": 0.17964404215649318,
+   "E3": 0.3273682237302421,
+   "E4": 0.18962426672074278,
+   "E5": 0.07984179651399698
+  },
+  "L": {
+   "L1": 0.16,
+   "L2": 0.22,
+   "L3": 0.17,
+   "L4": 0.24,
+   "L5": 0.15,
+   "L6": 0.06
+  },
+  "G": {
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -2312,13 +2328,13 @@
      "K4": 0.049769500577016595
     },
     "A": {
-     "A1": 0.08926013071791676,
-     "A2": 0.2298440775964576,
-     "A3": 0.13126864960714016,
-     "A4": 0.16988475300607733,
-     "A5": 0.09993220765063372,
-     "A6": 0.04996610382531686,
-     "A7": 0.2298440775964576
+     "A1": 0.08893091269765814,
+     "A2": 0.22977468656175906,
+     "A3": 0.13183319374507205,
+     "A4": 0.1698334639804306,
+     "A5": 0.09990203763554739,
+     "A6": 0.049951018817773696,
+     "A7": 0.22977468656175906
     },
     "C": {
      "C1": 0.3293461634626395,
@@ -2339,10 +2355,10 @@
      "R6": 0.12067718822756786
     },
     "D": {
-     "D1": 0.2416490368329201,
-     "D2": 0.35041977435808336,
-     "D3": 0.2508621176309323,
-     "D4": 0.15706907117806435
+     "D1": 0.24097552785214732,
+     "D2": 0.35442090750776284,
+     "D3": 0.25051943006575306,
+     "D4": 0.15408413457433678
     },
     "S": {
      "S1": 0.23981975376779097,
@@ -2359,19 +2375,27 @@
      "P5": 0.14
     },
     "E": {
-     "E1": 0.22236614369632587,
-     "E2": 0.18142767438889162,
-     "E3": 0.32122584347230737,
-     "E4": 0.19098654398364243,
-     "E5": 0.08399379445883277
+     "E1": 0.22352167087852493,
+     "E2": 0.17964404215649318,
+     "E3": 0.3273682237302421,
+     "E4": 0.18962426672074278,
+     "E5": 0.07984179651399698
     },
     "L": {
-     "L1": 0.16,
-     "L2": 0.22,
-     "L3": 0.17,
-     "L4": 0.24,
-     "L5": 0.15,
-     "L6": 0.06
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19409725539912626,
+     "G2": 0.25927206388776386,
+     "G3": 0.15209435788422065,
+     "G4": 0.15209435788422065,
+     "G5": 0.10633904396224131,
+     "G6": 0.13610292098242716
     }
    },
    "raw": {
@@ -2389,13 +2413,13 @@
      "K4": 0.031
     },
     "A": {
-     "A1": 0.08926013071791676,
-     "A2": 0.2298440775964576,
-     "A3": 0.13126864960714016,
-     "A4": 0.16988475300607733,
-     "A5": 0.09993220765063372,
-     "A6": 0.04996610382531686,
-     "A7": 0.2298440775964576
+     "A1": 0.08893091269765814,
+     "A2": 0.22977468656175906,
+     "A3": 0.13183319374507205,
+     "A4": 0.1698334639804306,
+     "A5": 0.09990203763554739,
+     "A6": 0.049951018817773696,
+     "A7": 0.22977468656175906
     },
     "C": {
      "C1": 0.3293461634626395,
@@ -2436,11 +2460,11 @@
      "P5": 0.14
     },
     "E": {
-     "E1": 0.2226734796974142,
-     "E2": 0.17972976771511742,
-     "E3": 0.32800210101479227,
-     "E4": 0.18971475481040168,
-     "E5": 0.07987989676227442
+     "E1": 0.22352167087852493,
+     "E2": 0.17964404215649318,
+     "E3": 0.3273682237302421,
+     "E4": 0.18962426672074278,
+     "E5": 0.07984179651399698
     },
     "L": {
      "L1": 0.16,
@@ -2449,6 +2473,14 @@
      "L4": 0.24,
      "L5": 0.15,
      "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
     }
    }
   }
@@ -4881,6 +4913,120 @@
     "https://www.reuters.com/technology/ai-chip-startup-etched-valued-21-billion-latest-funding-round-2026-08-18/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003978,
+   "sources": 2,
+   "repeat_k": 15.154,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0005304,
+    "E.E3": -0.0002652
+   },
+   "applied": {
+    "E.E1": 0.0005304,
+    "E.E3": -0.0002652
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "4b7284ff6f89c556",
+   "date": "2026-08-20",
+   "event_date": "2026-08-19",
+   "driver": "Stripe told investors in a letter dated August 19, 2026 that it had agreed to acquire OpenRouter, its largest acquisition to date, and that ",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/19/stripe-payments-openrouter-singularity",
+    "https://www.nytimes.com/2026/08/19/business/stripe-openrouter-ai.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004533,
+   "sources": 1,
+   "repeat_k": 9.608,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006044,
+    "A.A1": -0.0003022
+   },
+   "applied": {
+    "A.A3": 0.0006044,
+    "A.A1": -0.0003022
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "f245b34f6e6e58ab",
+   "date": "2026-08-20",
+   "event_date": "2026-08-19",
+   "driver": "Security researchers criticized the evaluation-environment provider Irregular on August 19, 2026 over the postmortem it published on the inc",
+   "driver_urls": [
+    "https://therecord.media/irregular-ai-hacking-model-blog"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003182,
+   "sources": 1,
+   "repeat_k": 15.154,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004243,
+    "E.E3": -0.0002122
+   },
+   "applied": {
+    "E.E1": 0.0004243,
+    "E.E3": -0.0002122
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "3d92ec3b9a2858db",
+   "date": "2026-08-20",
+   "event_date": "2026-08-20",
+   "driver": "Update on the second-quarter revenue figures carried in the August 18 file, which reported OpenAI at $6.7 billion against \"more than $11.5 b",
+   "driver_urls": [
+    "https://www.investing.com/news/stock-market-news/openais-q2-revenue-growth-lagged-anthropic-as-losses-deepened-wsj-reports-4866258"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-device-authorisation",
+   "impact_class": "minor",
+   "magnitude": 0.003,
+   "sources": 1,
+   "repeat_k": 0.0,
+   "spread": 1.0,
+   "requested": {
+    "G.G2": 0.0045,
+    "G.G6": 0.00225,
+    "G.G1": -0.00225
+   },
+   "applied": {
+    "G.G2": 0.0045,
+    "G.G6": 0.00225,
+    "G.G1": -0.00225
+   },
+   "cites": [
+    "concepts/ai-in-medicine"
+   ],
+   "incident": "db30d82a3ddbdfaf",
+   "date": "2026-08-20",
+   "event_date": "2026-08-18",
+   "driver": "The Food and Drug Administration released a request for information on August 18, 2026 on the regulation of generative artificial intelligen",
+   "driver_urls": [
+    "https://insideaipolicy.com/ai-wire/fda-floats-competency-based-regs-generative-ai-enabled-devices"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -6465,6 +6611,118 @@
    "text": "A reported collaboration between Google and AMD on a tenth-generation TPU variant with on-package CPU cores became publi",
    "reports": 1,
    "fp": "6afa459ce1a6ae56"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI CFO Sarah Friar told employees at an all-hands meeting on August 19, 2026 that the company \"will be a public comp",
+   "reports": 1,
+   "fp": "d52edab5dd706f80"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI said on August 19, 2026 that it is testing a technique it calls Private Safety Processing with early customers, d",
+   "reports": 1,
+   "fp": "75019ee26726bc9a"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Federal Trade Commission released an enforcement bulletin on August 19, 2026 telling companies they must disclose wh",
+   "reports": 1,
+   "fp": "424561b2e8c52d5a"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Senator Adam Schiff (D-Calif.) said in remarks published on August 19, 2026 that he wants Congress to identify \"what dis",
+   "reports": 1,
+   "fp": "fd8cd4f37e766a59"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Update on the Meta child-safety trial that opened in Oakland on August 18, 2026: former Meta engineering director Arturo",
+   "reports": 1,
+   "fp": "20fe11c0b1200782"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "The Justice Department filed a statement of interest on August 17, 2026 largely adopting xAI's argument that Minnesota's",
+   "reports": 1,
+   "fp": "2e52f62801180214"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "U.S. State AI Legislation",
+   "text": "Pennsylvania Governor Josh Shapiro signed Executive Order 2026-05 on August 18, 2026, directing the Department of Enviro",
+   "reports": 1,
+   "fp": "9d505d98509c071d"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "A National Republican Senatorial Committee memo to top AI companies, headlined \"Ohio Data Center Risk\" and made public o",
+   "reports": 1,
+   "fp": "86fcddfe8d435b44"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "AI Industry & Markets",
+   "text": "Ode, the enterprise AI services joint venture Anthropic established with Blackstone and other Wall Street firms, said it",
+   "reports": 1,
+   "fp": "5b241c1dc75c8c17"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "AI Industry & Markets",
+   "text": "Elia Zaitsev, global chief technology officer of CrowdStrike, said on August 20, 2026 that he is leaving the company aft",
+   "reports": 1,
+   "fp": "115ee7a2ffde940a"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the Federal Trade Commission's personalized-pricing action carried in the August 19 evening file, which descri",
+   "reports": 1,
+   "fp": "96bb5e1f14014454"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "National Security & Geopolitics",
+   "text": "ByteDance and Tencent have each received 10,000 Nvidia H200 processors over the preceding weeks, the Financial Times rep",
+   "reports": 1,
+   "fp": "3898431f6d019fa2"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "National Security & Geopolitics",
+   "text": "The Army awarded the AI company Raft a five-year, $99 million firm-fixed-price indefinite-delivery, indefinite-quantity ",
+   "reports": 1,
+   "fp": "92d4c9a763ce823c"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update on the Marvell\u2013Google warrant carried in the August 19 morning file: Marvell issued the warrant on August 18, 202",
+   "reports": 1,
+   "fp": "5a04d3f05830beba"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "U.S. State AI Legislation",
+   "text": "Update on Pennsylvania Governor Josh Shapiro's data-center executive order carried in the August 19 evening file: Daniel",
+   "reports": 1,
+   "fp": "8c8192fb071dd169"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Emanuel Maiberg reported on August 20, 2026 on a category of nonconsensual AI imagery circulating on X that he calls \"su",
+   "reports": 1,
+   "fp": "4e38327fd6bf6abc"
   }
  ],
  "seen": [
@@ -6798,7 +7056,27 @@
   "f2fc95936f4051fd",
   "2030ce5b14a60aaf",
   "f2f4d94b3d7ac10b",
-  "6afa459ce1a6ae56"
+  "6afa459ce1a6ae56",
+  "4b7284ff6f89c556",
+  "d52edab5dd706f80",
+  "75019ee26726bc9a",
+  "f245b34f6e6e58ab",
+  "424561b2e8c52d5a",
+  "fd8cd4f37e766a59",
+  "20fe11c0b1200782",
+  "2e52f62801180214",
+  "9d505d98509c071d",
+  "86fcddfe8d435b44",
+  "5b241c1dc75c8c17",
+  "115ee7a2ffde940a",
+  "3d92ec3b9a2858db",
+  "96bb5e1f14014454",
+  "db30d82a3ddbdfaf",
+  "3898431f6d019fa2",
+  "92d4c9a763ce823c",
+  "5a04d3f05830beba",
+  "8c8192fb071dd169",
+  "4e38327fd6bf6abc"
  ],
  "residue_r0": [
   {

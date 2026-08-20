@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r7-2026-08-20"
+REGISTRY_VERSION = "r8-2026-08-20"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -233,10 +233,10 @@ REGISTRY = {
              "research rung at threshold 4.0, and that date sets the "
              "capability curve from which revenue growth, cumulative "
              "employment change and the agent-copies count are computed.",
-     "cites": ["analysis/metr-time-horizons", "concepts/agi-timelines", "https://arxiv.org/abs/2211.04325", "https://arxiv.org/abs/2510.13786", "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift", "https://datacenterwatch.substack.com/p/briefing-04102026"],
+     "cites": ["sources/metr-long-tasks", "concepts/agi-timelines", "https://arxiv.org/abs/2211.04325", "https://arxiv.org/abs/2510.13786", "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift", "https://datacenterwatch.substack.com/p/briefing-04102026"],
      "positions": [
        ("T1", "2027 to 2028", 0.100,
-        ["analysis/metr-time-horizons", "https://metr.org/blog/2026-1-29-time-horizon-1-1/", "https://metr.org/time-horizons/", "https://time.com/article/2026/08/07/ai-recursive-self-improvement-anthropic-openai/", "https://polymarket.com/predictions/artificial-general-intelligence"],
+        ["sources/metr-long-tasks", "https://metr.org/blog/2026-1-29-time-horizon-1-1/", "https://metr.org/time-horizons/", "https://time.com/article/2026/08/07/ai-recursive-self-improvement-anthropic-openai/", "https://polymarket.com/predictions/artificial-general-intelligence"],
         "Frontier systems run the AI research loop end to end by "
         "2028-12-31. Arithmetic on METR's published rates carries a 50% "
         "time horizon from 16 hours on 2026-05-08 to one working month of "
@@ -247,7 +247,7 @@ REGISTRY = {
         "August 2026 on OpenAI announcing artificial general intelligence "
         "before 2027."),
        ("T2", "2029 to 2031", 0.330,
-        ["analysis/metr-time-horizons", "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift", "https://futuresearch.ai/blog/agi-timeline-tracker/", "https://kalshi.com/category/science/ai"],
+        ["sources/metr-long-tasks", "https://blog.aifutures.org/p/q25-2026-timelines-update-uplift", "https://futuresearch.ai/blog/agi-timeline-tracker/", "https://kalshi.com/category/science/ai"],
         "The research rung is crossed between 2029-01-01 and 2031-12-31. AI "
         "Futures' August 2026 update reports three medians drawn from one "
         "shared model and one shared dataset: November 2027, January 2029 "
@@ -257,7 +257,7 @@ REGISTRY = {
         "and Kalshi priced about 45% in August 2026 on OpenAI achieving "
         "artificial general intelligence by 2030."),
        ("T3", "2032 to 2036", 0.270,
-        ["analysis/metr-time-horizons", "concepts/agi-timelines", "https://futuresearch.ai/blog/agi-timeline-tracker/", "https://epoch.ai/eci"],
+        ["sources/metr-long-tasks", "concepts/agi-timelines", "https://futuresearch.ai/blog/agi-timeline-tracker/", "https://epoch.ai/eci"],
         "The research rung is crossed between 2032-01-01 and 2036-12-31. "
         "The Metaculus community median for a first general AI system stood "
         "at January 2033 in mid-July 2026, drawn from more than 1,800 "
@@ -310,11 +310,11 @@ REGISTRY = {
              "panels at 22.4 and 37. The bands below are intervals on that "
              "measurement, and their priors are read off a fitted distribution "
              "carrying 15% at zero and a lognormal median of 12 months.",
-     "cites": ["analysis/metr-time-horizons", "sources/ai-2027",
+     "cites": ["sources/metr-long-tasks", "sources/ai-2027",
                "concepts/agi-timelines"],
      "positions": [
        ("K1", "rungs inside one year", 0.575,
-        ["sources/ai-2027", "analysis/metr-time-horizons"],
+        ["sources/ai-2027", "sources/metr-long-tasks"],
         "The two rungs arrive within twelve months of each other, and 15% of the "
         "fitted mass has them coincide outright. Every institution that would "
         "respond to a superhuman coder is still drafting when the research loop "
@@ -697,7 +697,7 @@ REGISTRY = {
      ],
      "subaxes": [
        {"key": "R.domestic", "name": "US domestic preemption vs patchwork",
-        "cites": ["legislation/", "concepts/ai-preemption"]},
+        "cites": ["legislation/eo-trump-december-2025-state-preemption", "sources/hanshaw-preemption-emerging-tech"]},
        {"key": "R.watch-federal", "name": "monitoring: Federal AI Policy & Agency Action residue",
         "cites": [],
         "origin": "auto: weekly schema review 2026-08-10 - 19 unexplained events in 7 days; FOR AUGUST'S REVIEW. Carried from C at r5, which split C into C and R."},
@@ -1037,10 +1037,10 @@ REGISTRY = {
              "here fixes who sets the research agenda after that point, at what "
              "rate, open-ended or confined, held or published, coordinated or "
              "alone, and turned toward what first.",
-     "cites": ["analysis/frontier-lab-conduct"],
+     "cites": ["analysis/safety-frameworks-compared"],
      "positions": [
        ("L1", "Refusals held, rules sought", 0.160,
-        ["analysis/frontier-lab-conduct"],
+        ["analysis/safety-frameworks-compared"],
         "The laboratories publish named exclusions, pay for them, and spend to "
         "have statute written that binds themselves. They sell to firms and "
         "developers, decline attention monetisation, gate their strongest "
@@ -1075,7 +1075,7 @@ REGISTRY = {
         "July 2026 they had put $40M into a bipartisan group lobbying for rules "
         "that would bind them."),
        ("L2", "Fused to state power", 0.220,
-        ["analysis/frontier-lab-conduct"],
+        ["analysis/safety-frameworks-compared"],
         "The laboratories attach themselves to a national government and let "
         "procurement, clearance and pre-release review stand in for regulation. "
         "They accept unrestricted lawful use, take classified work, offer the "
@@ -1105,7 +1105,7 @@ REGISTRY = {
         "passive stake worth roughly $42.6B, one laboratory now supplies "
         "ministries that depend on a vendor their own state part-owns."),
        ("L3", "Developers pace each other", 0.170,
-        ["analysis/frontier-lab-conduct"],
+        ["analysis/safety-frameworks-compared"],
         "The laboratories build the machinery to slow together and then use it. "
         "They fund a standards body they are members of, share pre-release "
         "access with each other and with a referee, publish frameworks against "
@@ -1136,7 +1136,7 @@ REGISTRY = {
         "checkable, and the independent evaluators who grade these laboratories "
         "draw their budgets from the firms they grade."),
        ("L4", "Commercial cadence governs", 0.240,
-        ["analysis/frontier-lab-conduct"],
+        ["analysis/safety-frameworks-compared"],
         "Release schedule and revenue set every other decision. The "
         "laboratories monetise attention as well as work, extend the price "
         "ladder downward to buy scale, sell to any lawful customer, and treat "
@@ -1166,7 +1166,7 @@ REGISTRY = {
         "funds to new campuses, and the candidates these networks back run on "
         "industry money."),
        ("L5", "Capability spread deliberately", 0.150,
-        ["analysis/frontier-lab-conduct"],
+        ["analysis/safety-frameworks-compared"],
         "The laboratories treat concentration as the danger and wide "
         "distribution as the remedy. Weights near the frontier are published, "
         "prices are cut permanently, and access is given away to seed an "
@@ -1196,7 +1196,7 @@ REGISTRY = {
         "thresholds the giver can revise, so every derivative builder holds a "
         "permission."),
        ("L6", "Frontier declined, scope confined", 0.060,
-        ["analysis/frontier-lab-conduct"],
+        ["analysis/safety-frameworks-compared"],
         "The laboratories refuse the race frame and build systems bounded on "
         "purpose — domain-specific, with autonomy capped by design and "
         "containment repeated every cycle. They sell capability inside named "
@@ -1228,8 +1228,287 @@ REGISTRY = {
         "researchers. Medical and energy groups receive capability inside a "
         "stated scope, underwritten by a customer or an insurer."),
      ]},
+    {"key": "G", "name": "Benefit realisation",
+     "desc": "Which class of gain is the largest one visible in a measured "
+             "population statistic on 2036-12-31, and which population is "
+             "counted in it? The largest realised gain visible in a measured "
+             "population statistic on 2036-12-31, and the population counted in "
+             "it. Four quantities decide it and none of them is model "
+             "capability: which class of output carries the gain, which gate "
+             "stands in front of that class, the years between a capability "
+             "existing and a person being better off, and who sits on the "
+             "receiving side. The record on 2026-08-20 sets the zero. No "
+             "medicine whose discovery is attributed to a machine holds a "
+             "marketing authorisation anywhere in the world; the most advanced "
+             "candidate published a 71-patient safety trial in June 2025 with a "
+             "lung-function signal as a secondary endpoint and no between-arm "
+             "test, and enters a 320-patient pivotal trial whose primary "
+             "completion is dated 30 October 2029. The United States device "
+             "authorisation list held 1,524 entries at its 30 March 2026 cut, "
+             "1,164 of them radiology, 1,466 cleared on equivalence to an "
+             "existing device rather than on an outcome; three permanent "
+             "payment codes existed for clinical machine services in January "
+             "2026. Against that, an intergovernmental forecasting centre has "
+             "run a machine-learned model as its headline product since 25 "
+             "February 2025, and riverine flood warning now reaches about 460 "
+             "million people across more than 150 countries. The positions are "
+             "six worlds and not one quantity graded. A world where warning "
+             "reaches the poorest countries inside four years while no medicine "
+             "arrives for a decade, and a world where a screening programme in "
+             "a rich country cuts reading workload 44 percent while the same "
+             "tool has no delivery channel in a poor one, are both realised- "
+             "gain worlds and they disagree about who is counted. A position "
+             "here sets the benefit clock the document draws, separately from "
+             "the capability clock T sets, and carries edges from all ten "
+             "existing axes.",
+     "cites": ["concepts/ai-for-science"],
+     "positions": [
+       ("G1", "Forecasts land first", 0.200,
+        ["concepts/ai-for-science"],
+        "The gains that arrive by the horizon are carried in outputs consumed "
+        "the moment they are issued, needing no purchase, permit, plant or "
+        "trial. The ordering is set entirely by whether a delivery channel "
+        "already exists, and it inverts the ordering the reference text "
+        "expects: the area its author was least confident about lands, and the "
+        "area he was most confident about does not. The poorest countries are "
+        "early rather than last here, because the tool substitutes for a scarce "
+        "specialist instead of adding a billable service on top of an abundant "
+        "one, and because it is given away rather than sold. Medicine, "
+        "materials and freight are still inside their pipelines at the horizon. "
+        "The case against this position is in the same literature: a May 2026 "
+        "comparison found the machine-learned models consistently worse than "
+        "the physics models on record-breaking events, underestimating both "
+        "intensity and frequency, with the error growing the further an event "
+        "exceeds the training window — and a warning system that fails at the "
+        "events justifying it does not become a measured statistic. The second "
+        "weakness is that coverage is not receipt; no published estimate exists "
+        "of how many of the 460 million covered received a warning and moved. "
+        "An intergovernmental centre put a machine-learned model into "
+        "operations on 25 February 2025 and its ensemble on 1 July 2025; "
+        "medium-range error down 5 to 15 percent against the physics model, "
+        "precipitation skill up about 10 percent, verified against radiosonde "
+        "and surface observations rather than against its own analysis. Cyclone "
+        "track error at five days 230 km against 370 km for the incumbent "
+        "ensemble, roughly a day of extra lead, used operationally in an "
+        "October 2025 landfall forecast. Riverine flood prediction reliable to "
+        "five days in basins with no gauges where the incumbent delivered a "
+        "nowcast; about 1,800 sites, 150-plus countries, roughly 460 million "
+        "people, framework opened June 2026 so national services can train "
+        "their own. Chest-radiograph triage for tuberculosis recommended since "
+        "2021, recommended products four to eight in June 2025, against 2.3 to "
+        "2.4 million cases never diagnosed in 2024. Compute cost per forecast "
+        "down three to four orders of magnitude."),
+       ("G2", "Rich systems absorb it", 0.270,
+        ["concepts/ai-for-science"],
+        "The gains land where a rich health system already had a specialist to "
+        "substitute for and a billing route to pay for it. This is the only "
+        "class with two randomised read-outs already in hand, which is why it "
+        "carries the largest prior, and it is also the class whose ceiling is "
+        "set by something no model improves: an organised programme with "
+        "universal invitation and two radiologists reading every film is what "
+        "made the Swedish result possible, and in most low-income countries "
+        "population screening does not exist at all, with measured mammography "
+        "screening rates of 5.6 to 13 percent. The gate here is payment and "
+        "procurement, and it is open-ended rather than long — a screening tool "
+        "that works has no route to a permanent code, and four software tools "
+        "held add-on payment status in 2025 against one in 2023. The "
+        "instructive failure is the retinopathy model that beat specialists in "
+        "the laboratory and rejected 21 percent of nurse-captured images in "
+        "eleven clinics because the rooms could not be darkened. Nothing was "
+        "wrong with the model. A Swedish randomised screening trial, 105,915 "
+        "women randomised April 2021 to December 2022, final primary results "
+        "January 2026: sensitivity 80.5 against 73.8 percent at identical 98.5 "
+        "percent specificity, reading workload down 44 percent, cancer "
+        "detection up 29 percent, interval cancer 1.55 against 1.76 per "
+        "thousand at p=0.41 — the widely quoted 12 percent is the point "
+        "estimate of a null. A Taiwanese pragmatic trial, 15,965 patients, "
+        "90-day all-cause mortality 3.6 against 4.3 percent, hazard 0.83, "
+        "mechanism stated by its authors as not yet elucidated. Then the gate: "
+        "1,524 authorisations against 3 permanent payment codes and 23 "
+        "temporary ones in January 2026; 19 software billing codes in April "
+        "2025, none billed more than 3,600 times or paid more than 200,000 "
+        "dollars a year. Adoption 86 percent in system-affiliated hospitals "
+        "against 37 percent in independents. Median years to availability by "
+        "income group across 119 medicines and 6,871 launches since 1982: 2.7, "
+        "4.5, 6.9, 8.0, a gap unchanged over forty years."),
+       ("G3", "Molecules clear late", 0.150,
+        ["concepts/ai-for-science"],
+        "The compressed-century claim lands, and it lands on the trial clock "
+        "rather than the model clock. First approvals in 2030 to 2033, a cohort "
+        "behind them drawn from the assets now in Phase 1, and by the horizon a "
+        "disease-specific mortality series moves in high-income and upper- "
+        "middle-income countries for one or two conditions. This is the world "
+        "where the reference text was right about direction and wrong about "
+        "tempo by roughly a factor of three, which is close to what its author "
+        "said in July 2026 when he stated that a rate of ten years per year is "
+        "not currently achievable and named infrastructure and regulatory "
+        "systems as two of the three brakes. The strongest published argument "
+        "against it is not about capability at all: a 0.1 change in the "
+        "correlation between a preclinical model and a clinical outcome offsets "
+        "a ten- to hundred-fold change in screening throughput, and machines "
+        "have demonstrated the throughput far more clearly than the "
+        "correlation. The mechanism to watch is qualification, because it "
+        "converts one company's validated tool into infrastructure any sponsor "
+        "may use without revalidating it. 117 machine-enabled therapeutic "
+        "assets across 63 companies in interventional trials by 2026; 60 "
+        "through Phase 1, 8 through Phase 2, none approved anywhere. Phase 1 "
+        "success 80 to 90 percent against a 50 to 65 percent historical "
+        "baseline, Phase 2 about 40 percent and level with industry — the "
+        "chemistry moved, the biology did not, on a denominator of a few dozen "
+        "molecules. Discovery step compressed to 12 to 18 months while the arc "
+        "from target to prescription stayed near a decade; the flagship pivotal "
+        "trial runs 52 weeks because that is how long the disease takes to "
+        "declare itself, primary completion 30 October 2029, first approval "
+        "therefore 2030 or 2031. Qualification machinery is live: a pathology "
+        "tool qualified in December 2025 for use by any sponsor in a defined "
+        "context, an in-silico liver model accepted into a development-tool "
+        "programme in June 2026. Against it, the field's own review of 7 August "
+        "2026, 22 authors, finding clinically relevant impact disappointingly "
+        "limited. And the access precedent: a hepatitis C cure available since "
+        "2013 had reached 36 percent diagnosed and 20 percent treated by 2024."),
+       ("G4", "Throughput stays inside", 0.150,
+        ["concepts/ai-for-science"],
+        "The capability gains are enormous, real and audited, and they are "
+        "captured as throughput by whoever owns the compute and the "
+        "instruments. Experiments per researcher, formal proofs, chip- "
+        "scheduling heuristics, internal cycle time — all of it compounds, and "
+        "none of it crosses a trial, a payment code, a plant or a border. This "
+        "is the position in which the reader's two sentences stop being in "
+        "tension: the machines keep getting better, the factory floor keeps "
+        "finding them wrong, and no population statistic moves, because the "
+        "gate in front of every class that would move one is set by biology, "
+        "law or payment and not by the model. The single most credible hard- "
+        "dollar gain in the entire record accrues to the company that built the "
+        "model. The measured consumer surplus of 172 billion dollars in March "
+        "2026 does not contradict this: mean willingness-to-accept ran 124.50 "
+        "dollars a month against a median of 11.40, so the aggregate is carried "
+        "by a thin top and half of users would give the thing up for the price "
+        "of a sandwich. An evolutionary search agent at one United States "
+        "laboratory found a 4-by-4 complex matrix multiplication in 48 scalar "
+        "multiplications against a record of 49 standing since 1969, matched "
+        "the state of the art on about 75 percent of more than fifty open "
+        "problems and improved it on about 20, and its scheduling heuristic has "
+        "recovered about 0.7 percent of one worldwide fleet's compute "
+        "continuously for over a year, equivalent to roughly 14,000 servers. An "
+        "open-problems database in mathematics went to 565 solved of 1,217 by "
+        "August 2026. Germline workups reported at a tenth of their former "
+        "time; literature reviews that would have taken two years. Against "
+        "that: 95 percent of enterprise pilots with no measurable profit-and- "
+        "loss impact across 150 interviews, 350 surveys and 300 deployments; 76 "
+        "of 1,978 registered interventional machine studies with posted "
+        "results; two of seventeen farm-technology bundles showing meaningful "
+        "efficiency gains across 570 farms over twenty years; sixteen "
+        "experienced developers 19 percent slower with the tools while "
+        "believing they were 20 percent faster."),
+       ("G5", "Ledger runs negative", 0.100,
+        ["concepts/ai-for-science"],
+        "Deployment is broad, the tools do what they claim, and the measured "
+        "net on the receiving side is flat or negative. Three mechanisms, none "
+        "of which a better model repairs. The tool changes the human beside it, "
+        "and the change is not in the direction of the tool's own metric. The "
+        "same output helps whoever can already judge which part of it to act on "
+        "and harms whoever cannot, so it stratifies exactly along the resource "
+        "that was already unequal. And the industry's own physical demand "
+        "raises the price of an input everyone else buys, which is a measured "
+        "welfare loss landing on people who received no capability at all. This "
+        "position is why the axis is not a ratchet: a world can have rising "
+        "capability, rising deployment and a population statistic moving the "
+        "wrong way, and one of those three movements is already documented. It "
+        "is held at a modest prior because the evidence is thin — the "
+        "deskilling study is observational across four centres with a three- "
+        "month window and no replication, the workload meta-analysis rests on "
+        "two or three studies for its significant estimates, and the grid "
+        "attribution is contested at anywhere from 40 to 70 percent. Adenoma "
+        "detection in standard unassisted colonoscopy fell from 28.4 percent to "
+        "22.4 across four centres comparing the same endoscopists three months "
+        "before and after detection tools arrived, an absolute 6.0 points at "
+        "p=0.0089 with an odds ratio of 0.69, and each point of that rate maps "
+        "to about 3 percent of interval colorectal cancer risk. A meta-analysis "
+        "of 21 studies and 2,885 professionals found ambient documentation cut "
+        "temporal demand while imaging tools and decision support showed mixed "
+        "or paradoxically increased workload, and stated net benefit on the "
+        "workforce as an open empirical question. 640 Kenyan entrepreneurs "
+        "given the same assistant: high performers up just over 15 percent, low "
+        "performers down about 8. One United States capacity market went from "
+        "28.92 to 329.17 dollars per megawatt-day between the 2024/25 and "
+        "2026/27 years, data centres identified as the majority driver, about "
+        "9.3 billion dollars added in one auction and roughly 70 dollars a "
+        "month per household projected by 2028."),
+       ("G6", "Record cannot say", 0.130,
+        ["concepts/ai-for-science"],
+        "Deployment is wide, authorisation is routine, spending is large, and "
+        "there is no apparatus capable of saying whether anyone is better off. "
+        "The gate here is evidence production, which nobody funds because "
+        "nobody bills for it, and which the regulatory route actively "
+        "substitutes away: a clearance turns on equivalence to a predicate, so "
+        "the cheapest path to market is the one that generates no outcome data. "
+        "This is the least assumption-laden description of the state on "
+        "2026-08-20 and stocks of this shape persist, which is the whole "
+        "argument for its prior. It mirrors A's second clause deliberately and "
+        "in the same register, and the mirroring is the point — a world can be "
+        "full of deployed, paid-for, apparently working machines and contain no "
+        "instrument that would distinguish a real gain from none, and the "
+        "deskilling result shows that such a world can be quietly negative. It "
+        "ends when liability attaches to an outcome rather than to an "
+        "equivalence. 1,466 of 1,524 device authorisations to 30 March 2026 "
+        "cleared on equivalence to an existing device rather than on an outcome "
+        "demonstration, and the authorising agency states its own list is built "
+        "by string-matching decision summaries and is not comprehensive. 4 of "
+        "86 randomised trials of machine health tools worldwide between 2018 "
+        "and 2023 ran in low- or middle-income countries, which is the finding "
+        "that moved three funders to commit 60 million dollars in February 2026 "
+        "to establish whether the tools work at all. 76 of 1,978 registered "
+        "interventional machine studies have posted results and 74 name "
+        "mortality anywhere in their outcomes; of published trials, 81 percent "
+        "reported a positive primary and the primaries were overwhelmingly "
+        "diagnostic yield rather than a patient outcome. 71 percent of United "
+        "States acute-care hospitals used integrated predictive tools in 2024 "
+        "while the only systematic study of clinical use, over 11 billion "
+        "billing claims, called adoption nascent and concentrated in a handful "
+        "of devices. The best-known point estimate of the effect on a physical "
+        "science — 44 percent more materials, 39 percent more patents, 17 "
+        "percent more product innovation — was disavowed by its own university "
+        "in May 2025 and was still being cited by a research commissioner "
+        "afterward."),
+     ]},
   ],
   "conditionals": {
+      "G": {
+           "A1": {"G5": 1.25},
+           "A2": {"G5": 1.2, "G6": 0.85},
+           "A3": {"G6": 0.8},
+           "A5": {"G3": 1.2, "G6": 0.8},
+           "A6": {"G6": 1.45},
+           "C1": {"G1": 0.85},
+           "C5": {"G1": 1.15},
+           "C8": {"G2": 1.35, "G3": 0.5, "G4": 0.45},
+           "D1": {"G4": 1.25},
+           "D3": {"G2": 1.2, "G6": 1.15},
+           "D4": {"G5": 1.3, "G3": 1.05},
+           "E1": {"G3": 1.2},
+           "E3": {"G3": 0.8},
+           "E4": {"G3": 0.7, "G1": 1.1},
+           "E5": {"G5": 1.3},
+           "K1": {"G4": 1.3, "G6": 1.15, "G3": 0.9},
+           "K4": {"G2": 1.15, "G4": 0.8},
+           "L1": {"G3": 1.1, "G6": 0.85},
+           "L2": {"G3": 1.15},
+           "L4": {"G4": 1.2, "G6": 1.15},
+           "L6": {"G2": 1.2, "G1": 1.15},
+           "P1": {"G6": 1.2},
+           "P3": {"G5": 1.25},
+           "P5": {"G6": 0.7, "G2": 0.8},
+           "R1": {"G6": 1.3},
+           "R2": {"G2": 0.85},
+           "R4": {"G3": 1.25, "G1": 0.9},
+           "R5": {"G6": 0.7, "G2": 1.15},
+           "S1": {"G4": 1.2},
+           "S2": {"G1": 1.2},
+           "S3": {"G5": 1.35, "G1": 0.9},
+           "T1": {"G4": 1.25, "G3": 1.15, "G1": 1.1},
+           "T4": {"G3": 0.6, "G2": 1.2, "G6": 1.1},
+           "T5": {"G2": 1.25, "G3": 0.55, "G4": 0.7},
+      },
     "A": {
            "L1": {"A3": 1.3},
            "L2": {"A3": 1.2},
@@ -2103,6 +2382,158 @@ REGISTRY = {
   },
   "changelog": [
     {"version": REGISTRY_VERSION, "date": "2026-08-20",
+     "change": "r8c - the claims register and the crisis board re-read against "
+               "the live names, and a check so the next rebuild cannot re-key "
+               "them quietly. Three of four claims and one crisis card were "
+               "pointing at positions about something else, all of it "
+               "inherited: r5 split rulemaking out of C into R and added E4, "
+               "and nothing read the register afterwards. cl-state-laws-2026, a "
+               "claim about American state legislatures, was supported by C4 - "
+               "a US-China coordination position - and moves to R2, contested "
+               "patchwork. cl-correction-2027, about capital expenditure, was "
+               "supported by E2, whose own description says the build-out "
+               "CONTINUES, and by E3; it now takes E3 and E4, capital "
+               "expenditure cut, which is the position it is about and which r5 "
+               "added. And the crisis card No superintelligence this window was "
+               "keyed to T4, which r5 redefined from no-arrival to arrival "
+               "between 2037 and 2050, so the card asking whether it stays away "
+               "was answered by the probability that it comes - it moves to T5, "
+               "the method asymptote, where capability_path never reaches the "
+               "research rung. THE FOURTH CLAIM IS LEFT ALONE AND ITS GAP "
+               "DECLARED: no position crosses the coder rung by 2027, because "
+               "T1, the fastest, crosses it in 2028, so cl-sc-2027 is expected "
+               "to resolve false on the model's own arithmetic. Saying so is "
+               "worth more than a plausible key. THE CHECK: a hand-declared "
+               "axis per card, asserted against the key, plus a direction test "
+               "that asks capability_path whether the supporting position "
+               "reaches the rung the card is about by the year the card names. "
+               "A word-overlap test was tried first and thrown away - "
+               "superintelligence against research rung, capex against capital "
+               "expenditure, agreement against accord - because it flagged four "
+               "correct keys and would have been switched off within a week. "
+               "The self-test plants its own positive control, reinstating the "
+               "T4 inversion and requiring the check to find it. What it cannot "
+               "see is stated in the file: a key on the right axis pointing at "
+               "the wrong position, which is how E2 survived.",
+     "approved": "Practice under the standing rule of 2026-08-20. The four were "
+                 "listed by a second session reading the live r8 registry, and "
+                 "each was verified here against the position names and "
+                 "capability_path before anything moved."},
+    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+     "change": "r8b - the argmax stops enumerating, and the test that would "
+               "have caught it starts running. worldlines.mainline() was a full "
+               "Cartesian product over every position of every axis, with a "
+               "docstring still claiming it covered no more than a few thousand "
+               "cells. r7's tenth axis made it 20,160,000 and r8's eleventh "
+               "made it 120,960,000; at its measured 19,722 lines a second that "
+               "is 102 minutes a call and the emit makes two, so the night's "
+               "run needed about three and a half hours and was stopped twice "
+               "before anyone read the cause. It is now depth-first branch and "
+               "bound over the same factorisation - axis k's factor depends "
+               "only on positions already chosen, so a partial assignment is "
+               "abandoned once its product times the most the unassigned tail "
+               "could contribute cannot reach the best complete line. 0.53 "
+               "seconds, and mainline_enumerate is kept as the reference the "
+               "fast one is tested against. 48 comparisons on real prefixes of "
+               "the live registry and on randomised sub-registries returned the "
+               "identical LINE and probability every time, which is the check "
+               "that matters: enumeration keeps the first maximum it meets, and "
+               "a mainline that flips between builds for no visible reason is "
+               "worse than a slow one. SEPARATELY, worldlines._selftest HAD "
+               "BEEN FAILING AND NO CHAIN RAN IT. Three assertions were keyed "
+               "to position letters whose meanings r5 changed - T4 asserted as "
+               "never reaching researcher level when r5 moved no-arrival to T5, "
+               "and C3 asserted to pause when r5 made it a declaratory accord "
+               "and moved the binding limit to C5 - and one world-line literal "
+               "named seven axes on an eleven-axis registry, raising KeyError "
+               "inside tracks(). All four are keyed to measured things or "
+               "derived from the registry now, and forecast_emit runs the whole "
+               "file before it emits.",
+     "approved": "Practice under the standing rule of 2026-08-20. Found by a "
+                 "second session, which measured the enumeration and was right; "
+                 "the first diagnosis from this side blamed a harness timeout "
+                 "and was wrong. The correction is recorded because the wrong "
+                 "cause was written into CLAUDE.md before the right one was "
+                 "known."},
+    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+     "change": "r8a - the citations now resolve, and G is grounded. FOUR "
+               "REGISTRY CITATIONS NAMED PAGES THAT DO NOT EXIST: "
+               "analysis/metr-time-horizons (the page is sources/metr-long- "
+               "tasks), analysis/frontier-lab-conduct and concepts/ai- "
+               "preemption (never written), and legislation/, an empty slug "
+               "carried in R's sub-axis since r5. A citation that resolves to "
+               "nothing is invisible rather than loud - it contributes nothing "
+               "to the axis it was written on, so that axis reads as thinly "
+               "grounded and the widener spreads its priors for a stated reason "
+               "that is false. All fourteen occurrences repointed and "
+               "wiki_grounding.unresolved_citations() now refuses to ground a "
+               "registry that cites a page with no file. Separately, TAG_HOOKS "
+               "gained fourteen tags for G - healthcare, ai-for-science, drug- "
+               "discovery, productivity, mental-health and their neighbours - "
+               "which grounds it in 76 live pages and takes its widening from "
+               "1.25 to 1.133. The mechanism is direct: a page about machine "
+               "diagnosis, a discovery programme, a productivity study or a "
+               "companion-chatbot harm is evidence about who ends up better or "
+               "worse off, and the harm tags belong here because G5 is the "
+               "position where the measured ledger runs negative. L WAS "
+               "CONSIDERED AND LEFT AT ZERO: its candidate tags were measured "
+               "and `frameworks` reaches concepts/edge-ai while `anthropic` is "
+               "mostly model releases, which are axis T. That is the coverage- "
+               "washing this table already refuses once, so L stays grounded by "
+               "its three named citations and carries the widening that says "
+               "so. Effective from the next emit; tonight's ran on the old "
+               "grounding.",
+     "approved": "Practice under the standing rule August set on 2026-08-20 "
+                 "when he removed the permission requirement: a registry change "
+                 "carries its own entry naming what changed, why, and the "
+                 "evidence, and the self-test passes before anything is "
+                 "emitted. Found while checking why the new axis reported zero "
+                 "grounding on its first night."},
+    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+     "change": "r8 - an eleventh axis, G, benefit realisation, and the first "
+               "that asks whether anyone is better off. The ten existing axes "
+               "measure capability, control, money, computing, rules, consent, "
+               "labour share and conduct, and none of them asks what any of it "
+               "delivered to a person. D counts the share of paid work machines "
+               "do, which is a labour quantity; a world in which a capability "
+               "exists, is deployed, does paid work and cures nobody was one "
+               "this network could describe only by accident. Six positions, "
+               "priors summing to 1, 57 conditional edges from all ten existing "
+               "axes. THE RECORD SETS THE ZERO: no medicine whose discovery is "
+               "attributed to a machine holds a marketing authorisation "
+               "anywhere on 2026-08-20; the most advanced candidate published a "
+               "71-patient safety trial in June 2025 whose lung-function figure "
+               "was a secondary endpoint with no between-arm test, and its "
+               "320-patient pivotal trial is dated to complete 2029-10-30. "
+               "Against that, the United States device list held 1,524 entries "
+               "at its 2026-03-30 cut, 1,164 of them radiology and 1,466 "
+               "cleared on equivalence to an existing device rather than on an "
+               "outcome, and machine-learned weather forecasting has been an "
+               "intergovernmental centre's headline product since 2025-02-25 "
+               "with flood warning reaching about 460 million people. The two "
+               "clocks are measured apart: discovery compressed to 12-18 months "
+               "while the arc to a prescription stayed near a decade. THREE "
+               "OBJECTIONS, RECORDED BECAUSE TWO ARE UNRESOLVED. First, every "
+               "one of the 57 edges is inbound - G receives and drives nothing, "
+               "which makes it a readout sitting in the position space. Second, "
+               "and now measured rather than argued, a generous sweep of "
+               "benefit terms over the 2,180-event trunk matches 17 events, "
+               "several falsely, because the feed carries no health or science "
+               "section at all; the five rules below are written against that. "
+               "Third, the sharpest numbers here are stocks whose flow nobody "
+               "has measured, which is the shape of the window-label defect "
+               "this project has now made twice. What survives all three: the "
+               "residue is already 87 percent unexplained with six axes moving "
+               "zero, and an axis nothing can move makes that map worse now and "
+               "honest later.",
+     "approved": "August (2026-08-20): 'Improved model capabilities will unlock "
+                 "potentially untold benefits - we should note these explicitly "
+                 "in a new control/variable on AI benefits and when/how/where "
+                 "they are realized (biomedicine, logistics, potential benefits "
+                 "in Machines of Loving Grace).' He asked after reading a "
+                 "passage that put AI being wrong beside the machines getting "
+                 "better and found the pairing incoherent."},
+    {"version": REGISTRY_VERSION, "date": "2026-08-20",
      "change": "r7 - a tenth axis, L, laboratory conduct, and the first that "
                "asks what an actor CHOOSES. Every existing axis is a condition "
                "the laboratories find themselves in: T how fast capability "
@@ -2504,6 +2935,58 @@ def classify(ev, rules=None):
 # the mainline layer cannot drift monotonically: buildout vs constraint,
 # safety progress vs safety incident, capital in vs capital out.
 EVIDENCE_RULES = [
+  # G - benefit realisation. WRITTEN KNOWING THE TRUNK BARELY CARRIES THEM.
+  # A generous term sweep over 2,180 events matched 17, and the feed has no
+  # health or science section. These exist so that the day an approval, a
+  # read-out or a payment decision does arrive, something hears it; until then
+  # G reports its own application count rather than pretending to a reading.
+  {"id": "ev-clinical-readout", "impact": "notable",
+   "match": {"text_any": ["phase 3", "phase iii", "pivotal trial*",
+                          "primary endpoint*", "fda approv*",
+                          "approved by the fda", "marketing authoris*",
+                          "marketing authoriz*", "ema approv*",
+                          "randomi*ed controlled", "read out*", "readout*"],
+             "text_all": ["ai"],
+             "text_none": ["discontinu*", "failed to meet",
+                           "missed its primary"]},
+   "nudge": {("G", "G3"): +2, ("G", "G2"): +1, ("G", "G4"): -1},
+   "cites": ["concepts/ai-for-science"]},
+
+  {"id": "ev-clinical-shortfall", "impact": "notable",
+   "match": {"text_any": ["discontinu* the trial", "failed to meet",
+                          "missed its primary", "halted the trial",
+                          "no clinical benefit", "pipeline cull",
+                          "no measurable benefit", "found no improvement",
+                          "no significant difference"],
+             "text_all": ["ai"]},
+   "nudge": {("G", "G4"): +2, ("G", "G6"): +1, ("G", "G3"): -1},
+   "cites": ["concepts/ai-for-science"]},
+
+  {"id": "ev-device-authorisation", "impact": "minor",
+   "match": {"text_any": ["510(k)", "de novo", "premarket",
+                          "cleared by the fda", "ai-enabled device*",
+                          "medical device*", "radiolog*", "screening "
+                          "programme*", "screening program*"]},
+   "nudge": {("G", "G2"): +2, ("G", "G6"): +1, ("G", "G1"): -1},
+   "cites": ["concepts/ai-healthcare"]},
+
+  {"id": "ev-benefit-delivery", "impact": "minor",
+   "match": {"text_any": ["flood warning*", "early warning*", "reimburs*",
+                          "payment code*", "cpt code*", "medicare*",
+                          "weather forecast*", "drug discovery",
+                          "materials discovery", "protein structure*",
+                          "crop yield*", "grid dispatch"]},
+   "nudge": {("G", "G1"): +2, ("G", "G3"): +1, ("G", "G5"): -1},
+   "cites": ["concepts/ai-for-science"]},
+
+  {"id": "ev-benefit-unmeasured", "impact": "minor",
+   "match": {"text_any": ["no outcome data", "outcome* were not measured",
+                          "equivalence to a predicate", "substantial "
+                          "equivalence", "evidence gap*", "not been "
+                          "evaluated", "no evidence that patients"]},
+   "nudge": {("G", "G6"): +2, ("G", "G5"): +1, ("G", "G2"): -1},
+   "cites": ["concepts/ai-healthcare"]},
+
   # --- tail rules (seed r0, gates repaired) -------------------------------
   {"id": "ev-state-law-enacted", "impact": "notable",
    # r1: this rule had NO text gate at all — section + kind alone, so every
@@ -2722,14 +3205,14 @@ EVIDENCE_RULES = [
                           "compliance audit*", "cease and desist",
                           "class action"]},
    "nudge": {("C", "C4"): +2, ("C", "C1"): -1},
-   "cites": ["analysis/eu-vs-us-ai-regulation", "concepts/ai-preemption"]},
+   "cites": ["analysis/eu-vs-us-ai-regulation", "legislation/eo-trump-december-2025-state-preemption"]},
   {"id": "ev-federal-preemption-push", "impact": "minor",
    "match": {"section": "Federal AI Policy & Agency Action",
              "text_any": ["national standard*", "preempt*",
                           "federal framework", "single national",
                           "patchwork", "uniform federal"]},
    "nudge": {("C", "C2"): +2, ("C", "C4"): -2},
-   "cites": ["concepts/ai-preemption", "analysis/eu-vs-us-ai-regulation"]},
+   "cites": ["legislation/eo-trump-december-2025-state-preemption", "analysis/eu-vs-us-ai-regulation"]},
   {"id": "ev-regulatory-implementation", "impact": "minor",
    # the EU AI Act Art. 50 enforcement of 2026-08-02 — three corroborating
    # sources — passed through the r0 rule set untouched. It fires here.
@@ -2747,7 +3230,7 @@ EVIDENCE_RULES = [
                           "ballot measure*"],
              "text_none": ["signed into law", "enacted"]},
    "nudge": {("C", "C4"): +2, ("C", "C1"): -1},
-   "cites": ["analysis/eu-vs-us-ai-regulation", "concepts/ai-preemption"]},
+   "cites": ["analysis/eu-vs-us-ai-regulation", "legislation/eo-trump-december-2025-state-preemption"]},
   {"id": "ev-natsec-posture", "impact": "minor",
    "match": {"section": "National Security & Geopolitics",
              "text_any": ["allied", "alliance*", "chip control*", "entity "

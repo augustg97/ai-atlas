@@ -59,6 +59,26 @@ TAG_HOOKS = {
     "liability": ["layer:law"],
     "frontier-models": ["axis:T"],
     "ethics": ["axis:P"], "surveillance": ["axis:P"],
+    # G (2026-08-20) — whether, when and where a gain is realised. The
+    # mechanism is direct: a page about machine diagnosis, a drug-discovery
+    # programme, a productivity study or a companion-chatbot harm is evidence
+    # about who ends up better or worse off, which is the whole of what this
+    # axis asks. 76 live pages. The harm tags belong here as much as the
+    # benefit ones — G5 is the position where the measured ledger runs
+    # negative, and a page about deskilling is evidence for it.
+    "healthcare": ["axis:G"], "ai-in-healthcare": ["axis:G"],
+    "medical": ["axis:G"], "ai-medical-device": ["axis:G"],
+    "ai-for-science": ["axis:G"], "science": ["axis:G"],
+    "drug-discovery": ["axis:G"], "life-sciences": ["axis:G"],
+    "biotech": ["axis:G"], "autonomous-labs": ["axis:G"],
+    "productivity": ["axis:G"], "ai-and-productivity": ["axis:G"],
+    "mental-health": ["axis:G"], "ai-mental-health": ["axis:G"],
+    # L HAS NO TAG THAT MAPS TO IT, AND IS LEFT AT ZERO ON PURPOSE. The
+    # candidates were measured: `frameworks` (36 pages) reaches
+    # concepts/edge-ai and concepts/law-of-accelerating-returns, and
+    # `anthropic` (111) is mostly model releases, which are axis T. Both are
+    # the coverage-washing this table already refuses once. L stays grounded
+    # by its three named citations and carries the widening that says so.
 }
 
 
@@ -71,6 +91,27 @@ def registry_direct():
         for p in t["cites"]:
             direct[p].add("template:%s" % t["id"])
     return direct
+
+
+def unresolved_citations():
+    """Registry citations that name no page in the wiki.
+
+    A CITATION THAT RESOLVES TO NOTHING IS INVISIBLE RATHER THAN LOUD. It adds
+    a key to `direct` that no file backs, contributes nothing to the axis it
+    was written on, and leaves that axis reading as thinly grounded — so the
+    widener spreads its priors for a stated reason that is false. Found on
+    2026-08-20: `analysis/metr-time-horizons` (the page is
+    `sources/metr-long-tasks`), `analysis/frontier-lab-conduct` (never
+    written), `concepts/ai-preemption` (never written) and `legislation/`,
+    an empty slug that had been sitting in R's sub-axis since r5.
+    """
+    out = []
+    for pid in sorted(axes.coverage(axes.REGISTRY)):
+        if pid.startswith("http"):
+            continue
+        if not os.path.isfile(os.path.join(WIKI, pid + ".md")):
+            out.append(pid)
+    return out
 
 
 def scan():
@@ -123,6 +164,15 @@ def thin_axes(direct, axis_keys=None):
 
 def build():
     os.makedirs(STAGED_F, exist_ok=True)
+    dangling = unresolved_citations()
+    if dangling:
+        raise SystemExit(
+            "REGISTRY CITES PAGES THAT DO NOT EXIST — refusing to ground:\n  "
+            + "\n  ".join(dangling)
+            + "\nA citation that names no page grounds nothing, and the axis "
+              "carrying it is then widened for thin evidence when the real "
+              "cause is a typo. Four were found this way on 2026-08-20, one "
+              "of them an empty slug.")
     direct, corpus = scan()
     per_axis, widen = thin_axes(direct)
     out = {
@@ -146,7 +196,9 @@ def _selftest():
                             "c": {"axis:P"}})
     assert per["T"] == 2 and per["P"] == 1
     assert widen["P"] >= widen["T"] >= 1.0
-    return 2
+    # the registry it is about to ground must cite pages that exist
+    assert not unresolved_citations(), unresolved_citations()
+    return 3
 
 
 if __name__ == "__main__":

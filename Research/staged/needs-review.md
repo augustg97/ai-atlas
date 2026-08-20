@@ -1,6 +1,6 @@
-# Emit needs-review — 20260819-1047
+# Emit needs-review — 20260820-1048
 
-210 items. Unparseable values are reported here, never guessed.
+202 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -24,14 +24,12 @@
 - sources/clover-new-arms-race-computing-power: dangling relationship target 'concepts/policy-essays-on-compute-sovereignty'
 - sources/conscious-ai-as-safety-issue-jarovsky: dangling relationship target 'concepts/ai-personhood-and-rights'
 - sources/epri-scaling-intelligence-power-needs: dangling relationship target 'entities/electric-power-research-institute'
-- sources/farahany-adv-class-08-3-what-the-law-is-trying-to-do: dangling relationship target 'legislation/coppa'
 - sources/farahany-adv-class-08-3-what-the-law-is-trying-to-do: dangling relationship target 'legislation/california-delete-act'
 - sources/farahany-adv-class-09-1-senate-just-agreed-on-something: dangling relationship target 'legislation/coppa-2-0'
 - sources/farahany-adv-class-09-1-senate-just-agreed-on-something: dangling relationship target 'legislation/australia-social-media-ban'
 - sources/farahany-adv-class-09-2-law-that-kept-getting-blocked: dangling relationship target 'litigation/nm-v-meta'
 - sources/farahany-adv-class-09-2-law-that-kept-getting-blocked: dangling relationship target 'litigation/kgm-v-meta-youtube'
 - sources/farahany-adv-class-10-3-when-interface-is-neural: dangling relationship target 'concepts/fifth-amendment-and-ai'
-- sources/farahany-adv-class-11-1-wall-that-cuts-both-ways: dangling relationship target 'litigation/moody-v-netchoice'
 - sources/farahany-class-01-what-is-ai: dangling relationship target 'concepts/black-box-ai'
 - sources/farahany-class-02-how-ai-works: dangling relationship target 'concepts/ai-supply-chain-liability'
 - sources/farahany-class-03-open-vs-closed: dangling relationship target 'companies/bytedance'
@@ -41,14 +39,11 @@
 - sources/farahany-class-06-training-data-discovery-wars: dangling relationship target 'concepts/data-irreversibility'
 - sources/farahany-class-09-when-ai-discrimination: dangling relationship target 'legislation/california-feha-ai-regulations'
 - sources/farahany-class-11-when-ai-fails: dangling relationship target 'legislation/eu-product-liability-directive'
-- sources/farahany-class-13-red-teaming-governance: dangling relationship target 'legislation/cfaa'
 - sources/farahany-class-15a-governing-synthetic-media: dangling relationship target 'concepts/hallucinations-mathematical-inevitability'
 - sources/farahany-class-18-data-privacy-ai-world: dangling relationship target 'entities/ryan-calo'
 - sources/farahany-class-19-when-invisible-algorithms-judge-you: dangling relationship target 'litigation/harper-v-sirius-xm'
 - sources/farahany-class-19-when-invisible-algorithms-judge-you: dangling relationship target 'concepts/three-frameworks-ai-discrimination'
 - sources/farahany-class-19-when-invisible-algorithms-judge-you: dangling relationship target 'concepts/dynamic-pricing-ai'
-- sources/farahany-class-23-effective-altruists-export-controls: dangling relationship target 'concepts/p-doom'
-- sources/farahany-class-23-effective-altruists-export-controls: dangling relationship target 'concepts/foreign-direct-product-rule'
 - sources/farahany-class-25b-eo-state-ai-laws: dangling relationship target 'concepts/federal-preemption-ai'
 - sources/farahany-class-25b-eo-state-ai-laws: dangling relationship target 'entities/randall-cook'
 - sources/farahany-class-25b-eo-state-ai-laws: dangling relationship target 'entities/casey-mock'
@@ -92,7 +87,6 @@
 - sources/misinformation-on-misinformation-altay: dangling relationship target 'entities/sacha-altay'
 - sources/misinformation-on-misinformation-altay: dangling relationship target 'concepts/methodology-critique'
 - sources/monitoring-reasoning-models-baker-openai: dangling relationship target 'entities/aleksander-madry'
-- sources/monitoring-reasoning-models-baker-openai: dangling relationship target 'entities/jakub-pachocki'
 - sources/prince-builders-sellers-measurers: dangling relationship target 'concepts/economic-possibilities-for-artificial-int'
 - sources/prince-builders-sellers-measurers: dangling relationship target 'concepts/executive-thesis-pieces'
 - sources/privacy-without-monopoly-cyphers-doctorow: dangling relationship target 'concepts/data-portability'
@@ -127,7 +121,6 @@
 - entities/deirdre-mulligan: dangling relationship target 'entities/uc-berkeley'
 - entities/dominion-energy: inline comment stripped from 'nonprofit  # placeholder — Dominion is a'
 - entities/dylan-hadfield-menell: dangling relationship target 'entities/mit'
-- entities/henry-farrell: dangling relationship target 'entities/sais'
 - entities/henry-farrell: dangling relationship target 'entities/snf-agora-institute'
 - entities/house-select-committee-on-china: inline comment stripped from 'coalition  # placeholder — a congression'
 - entities/human-line-project: dangling relationship target 'concepts/ai-companion-chatbots'
@@ -176,7 +169,6 @@
 - legislation/quad-critical-minerals-framework: dangling relationship target 'entities/penny-wong'
 - legislation/trump-dpa-determination-2026-10: dangling relationship target 'concepts/industrial-policy-ai'
 - litigation/acls-v-neh: unparseable date 'not specified in available reporting' (filed)
-- litigation/bartz-v-anthropic: dangling relationship target 'litigation/authors-guild-v-openai'
 - litigation/gema-v-suno: unparseable date 'unknown' (filed)
 - litigation/musk-v-altman: duplicate key 'status' (last wins)
 - litigation/netchoice-v-bonta: duplicate key 'status' (last wins)
