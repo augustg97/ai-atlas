@@ -110,9 +110,12 @@ python3 build/build_site.py && git add -A && git commit && git push
 
 - **`worldlines.mainline()` was a full Cartesian product, and every new axis multiplied it.** Its
   docstring said "≤ a few thousand cells" while r7 made it 20,160,000 and r8's eleventh axis made
-  it 120,960,000. At its measured 19,722 lines a second that is 102 minutes a call, and the emit
-  makes two — about three and a half hours on 2026-08-20, up from roughly half an hour the day
-  before. It is now depth-first branch and bound over the same factorisation: axis k's factor
+  it 120,960,000. **95.1 minutes a call, measured by wall clock** (a probe timing `exemplars(k=5)`
+  — one `mainline()` call plus five trivial world-lines — at 5,706s), and the emit makes two: 3.2
+  hours on 2026-08-20, up from roughly half an hour the day before. A throughput extrapolation had
+  put it at 102 minutes and came in 7% high. The same probe timed `bands` at 0.02s, which rules
+  the rest of the emit out rather than leaving it merely unaccused — **time the suspect part
+  directly before believing an extrapolation about it.** It is now depth-first branch and bound over the same factorisation: axis k's factor
   depends only on positions already chosen, so a partial assignment can be abandoned once its
   product times the most the unassigned tail could contribute cannot reach the best complete line.
   0.53 seconds. **`mainline_enumerate()` is kept as the reference implementation and is never
