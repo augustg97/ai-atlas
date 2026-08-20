@@ -22,6 +22,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import axes
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+
 Y0, Y1 = 2026, 2100
 LADDER = ["none", "unreliable agent", "reliable agent", "superhuman coder",
           "superhuman AI researcher", "generally superintelligent",
@@ -885,7 +887,29 @@ def _selftest():
         b_line, b_p = mainline(sub)
         assert e_line == b_line, (n, e_line, b_line)
         assert abs(e_p - b_p) <= 1e-15 * max(1.0, abs(e_p)), (n, e_p, b_p)
-    return 7
+    # THE SEED AND WIDENED ARGMAXES MUST AGREE, or a spot-check against
+    # axes.REGISTRY is comparing the published line to a different space. On
+    # 2026-08-20 they did agree, but the margin does not make that safe:
+    # widening moved the top line's probability by 18.6% while first-to-second
+    # on the seed registry was 3.8%, so the perturbation is larger than what it
+    # has to survive. This costs one 0.5s call and fails on the night the
+    # shortcut stops being valid, instead of a future check silently reading
+    # the wrong space and concluding the artefact is fine.
+    try:
+        import forecast_emit
+        wts = json.load(open(os.path.join(HERE, "weights.json"))) \
+            if os.path.isfile(os.path.join(HERE, "weights.json")) else None
+        gpath = os.path.join(HERE, "..", "staged", "forecast", "grounding.json")
+        grd = json.load(open(gpath)) if os.path.isfile(gpath) else {}
+    except Exception:
+        wts = None
+    if wts:
+        wide = forecast_emit.widened_registry(wts, grd.get("widen", {}))
+        assert mainline(wide)[0] == ml, (
+            "the seed and widened argmaxes have diverged; a check of a "
+            "published LINE against axes.REGISTRY is no longer valid",
+            mainline(wide)[0], ml)
+    return 8
 
 
 if __name__ == "__main__":

@@ -131,9 +131,20 @@ python3 build/build_site.py && git add -A && git commit && git push
   widener — and NOT on `axes.REGISTRY`. Recomputing the published mainline's probability against
   the seed priors gives 9.034e-06 against a published 7.353e-06, a 23% gap that looks exactly like
   a stale or corrupted artefact and is neither. Verified 2026-08-20: on the widened registry the
-  recomputation matches to all ten digits. The ARGMAX LINE is the same under both — widening
-  spreads the priors without moving which line is likeliest — so a check on the line is safe
-  against the seed registry and a check on any NUMBER is not.
+  recomputation matches to all ten digits.
+
+  **The argmax line HAPPENED to be the same under both on 2026-08-20, and that is not a property
+  of widening.** Measured the same day: widening moved the top line's own probability by 18.6%,
+  while first-to-second on the seed registry is 3.8% (8.9% widened). The perturbation is larger
+  than the margin it has to survive, so the line not moving is inside the range where it easily
+  could — an empirical fact about that night's numbers, to be re-measured and never assumed.
+  `worldlines._selftest` asserts the two argmaxes agree, which costs one 0.5s call and fails on
+  the night the shortcut stops being valid. **A number must always be checked against the widened
+  registry; a line may be checked against the seed one only while that assertion holds.**
+
+  Both runner-ups on 2026-08-20 were the same single swap, **G4 → G2** — the eleventh axis was the
+  least-determined coordinate in the model on its first day, which is what an axis whose benefit
+  sweep matched 17 of 2,180 events should look like. Treat the mainline's G reading as provisional.
 
 - **Check what an emit WROTE, and treat a nonzero exit as authoritative.** `forecast_emit.py`
   writes `weights.json` early and its eleven staged files at the end, none of it atomically, so a
