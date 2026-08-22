@@ -1,13 +1,13 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-21",
+ "date": "2026-08-22",
  "axes": {
   "T": {
-   "T1": 0.09982812393450693,
-   "T2": 0.33115454423635626,
-   "T3": 0.27126063935175043,
-   "T4": 0.17796294375597824,
-   "T5": 0.11979374872140831
+   "T1": 0.09964958637004814,
+   "T2": 0.3305622910369852,
+   "T3": 0.2743653123197285,
+   "T4": 0.1758433066291804,
+   "T5": 0.11957950364405776
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08893091269765813,
-   "A2": 0.229774686561759,
-   "A3": 0.13183319374507202,
-   "A4": 0.16983346398043056,
-   "A5": 0.09990203763554736,
-   "A6": 0.04995101881777368,
-   "A7": 0.229774686561759
+   "A1": 0.08893091269765814,
+   "A2": 0.22977468656175906,
+   "A3": 0.13183319374507205,
+   "A4": 0.1698334639804306,
+   "A5": 0.09990203763554739,
+   "A6": 0.049951018817773696,
+   "A7": 0.22977468656175906
   },
   "C": {
-   "C1": 0.3373424643744007,
-   "C2": 0.19527641379301994,
-   "C3": 0.1322438501024209,
-   "C4": 0.14641091308076143,
-   "C5": 0.05959779746823062,
-   "C6": 0.06456428059058318,
-   "C7": 0.054631314345878076,
-   "C8": 0.009932966244705105
+   "C1": 0.3359358388048982,
+   "C2": 0.19507134377802973,
+   "C3": 0.13210497389204762,
+   "C4": 0.14835967633380467,
+   "C5": 0.059535210691964095,
+   "C6": 0.06449647824962779,
+   "C7": 0.054573943134300425,
+   "C8": 0.00992253511532735
   },
   "R": {
    "R1": 0.14,
@@ -63,11 +63,11 @@
    "P5": 0.14
   },
   "E": {
-   "E1": 0.22405455836249322,
-   "E2": 0.1795901910105588,
-   "E3": 0.3269699641111098,
-   "E4": 0.1895674238444787,
-   "E5": 0.07981786267135946
+   "E1": 0.22505411469278505,
+   "E2": 0.17948915539579174,
+   "E3": 0.3262229968177357,
+   "E4": 0.18946077514000237,
+   "E5": 0.0797729579536852
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -2654,6 +2654,179 @@
      "G4": 0.14932877986943185,
      "G5": 0.09955251991295459,
      "G6": 0.13166828727752367
+    }
+   }
+  },
+  {
+   "date": "2026-08-22",
+   "marginals": {
+    "T": {
+     "T1": 0.09964958637004814,
+     "T2": 0.3305622910369852,
+     "T3": 0.2743653123197285,
+     "T4": 0.1758433066291804,
+     "T5": 0.11957950364405776
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08893091269765814,
+     "A2": 0.22977468656175906,
+     "A3": 0.13183319374507205,
+     "A4": 0.1698334639804306,
+     "A5": 0.09990203763554739,
+     "A6": 0.049951018817773696,
+     "A7": 0.22977468656175906
+    },
+    "C": {
+     "C1": 0.33593583880489825,
+     "C2": 0.19507134377802976,
+     "C3": 0.13210497389204764,
+     "C4": 0.1483596763338047,
+     "C5": 0.0595352106919641,
+     "C6": 0.0644964782496278,
+     "C7": 0.05457394313430043,
+     "C8": 0.009922535115327352
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.24106382412822877,
+     "D2": 0.353903720231365,
+     "D3": 0.25056513849080764,
+     "D4": 0.15446731714959866
+    },
+    "S": {
+     "S1": 0.23744740414914312,
+     "S2": 0.21992340458369555,
+     "S3": 0.25571357792028004,
+     "S4": 0.187979194951405,
+     "S5": 0.0989364183954763
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.22505411469278505,
+     "E2": 0.17948915539579174,
+     "E3": 0.3262229968177357,
+     "E4": 0.18946077514000237,
+     "E5": 0.0797729579536852
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19407818072239477,
+     "G2": 0.25918040510934237,
+     "G3": 0.15211211805241948,
+     "G4": 0.15211211805241948,
+     "G5": 0.10638502902109831,
+     "G6": 0.13613214904232557
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09964958637004814,
+     "T2": 0.3305622910369852,
+     "T3": 0.2743653123197285,
+     "T4": 0.1758433066291804,
+     "T5": 0.11957950364405776
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08893091269765814,
+     "A2": 0.22977468656175906,
+     "A3": 0.13183319374507205,
+     "A4": 0.1698334639804306,
+     "A5": 0.09990203763554739,
+     "A6": 0.049951018817773696,
+     "A7": 0.22977468656175906
+    },
+    "C": {
+     "C1": 0.33593583880489825,
+     "C2": 0.19507134377802976,
+     "C3": 0.13210497389204764,
+     "C4": 0.1483596763338047,
+     "C5": 0.0595352106919641,
+     "C6": 0.0644964782496278,
+     "C7": 0.05457394313430043,
+     "C8": 0.009922535115327352
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.24,
+     "D2": 0.36,
+     "D3": 0.25,
+     "D4": 0.15
+    },
+    "S": {
+     "S1": 0.23744740414914312,
+     "S2": 0.21992340458369555,
+     "S3": 0.25571357792028004,
+     "S4": 0.187979194951405,
+     "S5": 0.0989364183954763
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.22505411469278505,
+     "E2": 0.17948915539579174,
+     "E3": 0.3262229968177357,
+     "E4": 0.18946077514000237,
+     "E5": 0.0797729579536852
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
     }
    }
   }
@@ -5315,6 +5488,176 @@
     "https://insideai.news/news/ai-hardware-infrastructure/micron-unveils-10-billion-ai-memory-research-lab-in-boise/8340/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002599,
+   "sources": 1,
+   "repeat_k": 14.978,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0003465,
+    "E.E3": -0.0001732
+   },
+   "applied": {
+    "E.E1": 0.0003465,
+    "E.E3": -0.0001732
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "913c80eb992ec04b",
+   "date": "2026-08-22",
+   "event_date": "2026-08-20",
+   "driver": "Update on Anthropic's IPO preparations carried in the August 20 evening file, which could be read only in lede form: Bloomberg reported on A",
+   "driver_urls": [
+    "https://finance.yahoo.com/technology/ai/articles/anthropic-expects-match-spacex-record-175602035.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003248,
+   "sources": 2,
+   "repeat_k": 14.978,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0004331,
+    "E.E3": -0.0002165
+   },
+   "applied": {
+    "E.E1": 0.0004331,
+    "E.E3": -0.0002165
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "3a40604ad178c35e",
+   "date": "2026-08-22",
+   "event_date": "2026-08-21",
+   "driver": "Nvidia and Cloverleaf Infrastructure said on August 21, 2026 that Nvidia has made a minority investment in the privately held firm, which wo",
+   "driver_urls": [
+    "https://www.reuters.com/technology/nvidia-invests-data-center-developer-cloverleaf-infrastructure-2026-08-21/",
+    "https://www.theinformation.com/newsletters/ai-infrastructure/nvidia-using-land-electricity-deals-lock-hardware-bundle"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002599,
+   "sources": 1,
+   "repeat_k": 14.978,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0003465,
+    "E.E3": -0.0001732
+   },
+   "applied": {
+    "E.E1": 0.0003465,
+    "E.E3": -0.0001732
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "bf73871269f1e0f8",
+   "date": "2026-08-22",
+   "event_date": "2026-08-21",
+   "driver": "Starcloud told TechCrunch on August 21, 2026 that it has added a $250 million extension to the $170 million Series A round it raised in Marc",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/21/starcloud-raises-200-million-for-orbital-data-centers-as-launch-options-dry-up/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0007891,
+   "sources": 1,
+   "repeat_k": 1.937,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0010521,
+    "C.C1": -0.000526
+   },
+   "applied": {
+    "C.C4": 0.0010521,
+    "C.C1": -0.000526
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "4695647f7898b3f3",
+   "date": "2026-08-22",
+   "event_date": "2026-08-21",
+   "driver": "The Justice Department, TikTok and ByteDance reached a $400 million settlement resolving allegations that TikTok violated the Children's Onl",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/21/doj-tiktok-biden-lawsuit-settlement"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0007891,
+   "sources": 1,
+   "repeat_k": 1.937,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0010521,
+    "C.C1": -0.000526
+   },
+   "applied": {
+    "C.C4": 0.0010521,
+    "C.C1": -0.000526
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "1945f04454ea1389",
+   "date": "2026-08-22",
+   "event_date": "2026-08-20",
+   "driver": "U.S. District Judge Vince Chhabria in San Francisco threw out seven economic espionage counts against former Google software engineer Linwei",
+   "driver_urls": [
+    "https://bworldonline.com/technology/2026/08/21/771737/ex-google-engineers-conviction-for-stealing-ai-secrets-partially-overturned/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.0026972,
+   "sources": 2,
+   "repeat_k": 0.578,
+   "spread": 1.0,
+   "requested": {
+    "T.T3": 0.0035962,
+    "T.T4": -0.0017981
+   },
+   "applied": {
+    "T.T3": 0.0035962,
+    "T.T4": -0.0017981
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "incident": "fc427ee75f8edbb7",
+   "date": "2026-08-22",
+   "event_date": "2026-08-21",
+   "driver": "DeepSeek released deepseek-v4-flash-vision-exp on August 21, 2026, an experimental multimodal version of its text-only V4 Flash model that a",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-08-21/deepseek-unveils-test-model-to-rival-anthropic-s-opus-4-8",
+    "https://aidisruption.ai/p/deepseek-multimodal-model-deepseek"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -7123,6 +7466,90 @@
    "text": "Meta has become one of Microsoft's largest customers for AI models sold through Azure, spending hundreds of millions of ",
    "reports": 1,
    "fp": "9cd2740333e46fae"
+  },
+  {
+   "date": "2026-08-17",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Representative Kathy Castor (D-Fla.) introduced the Housing Price Transparency Act, H.R. 10110, on August 17, 2026, requ",
+   "reports": 1,
+   "fp": "90fc778b7d56ec05"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Representative Tom Barrett (R-Mich.) introduced two data-center bills on August 20, 2026. The Protecting Local Control o",
+   "reports": 1,
+   "fp": "219d6f20482e7327"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI said on August 21, 2026 that it is cutting prices for its frontier GPT-5.6 Sol model for developers by more than ",
+   "reports": 1,
+   "fp": "034644d2310916a7"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI previewed Private Safety Processing on August 19, 2026, a mechanism intended to let automated systems identify mi",
+   "reports": 1,
+   "fp": "9ef955b8408ac7c6"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Pew Research Center published an analysis on August 20, 2026 finding that 10% of pages in a random sample of 10,000 Engl",
+   "reports": 1,
+   "fp": "85529f2c3a7da900"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "US companies spent $517 million on the 2026 House and Senate races in the 15 months through the end of the first quarter",
+   "reports": 1,
+   "fp": "adada395a12872cf"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "Agentic AI & Coding",
+   "text": "NVIDIA published results on August 21, 2026 showing that its AVO agent system scored 100.00 on the Relative Human Action",
+   "reports": 1,
+   "fp": "3bd41156bbae50a3"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Anthropic said on August 21, 2026 that Claude Security scans now run on Claude Mythos 5, in public beta for Claude Enter",
+   "reports": 1,
+   "fp": "cc47a2ceb1e0da1f"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Anthropic said on August 21, 2026 that Amir Salek, a founder of the custom chip program at Google, has joined its comput",
+   "reports": 1,
+   "fp": "547e6fc24b094c6e"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "National Security & Geopolitics",
+   "text": "Brazil's government announced on August 20, 2026 investments of about 2.3 billion reais ($444.2 million) in its AI ecosy",
+   "reports": 1,
+   "fp": "a9c74493520d031f"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "U.S. State AI Legislation",
+   "text": "OpenAI urged California on August 21, 2026 to strengthen SB 53, asking in a post from its global affairs team that the l",
+   "reports": 1,
+   "fp": "e25c3c06651366d7"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "The Autoriteit Persoonsgegevens, the Dutch data protection authority, imposed a fine of \u20ac824,990,000 on Uber, announced ",
+   "reports": 1,
+   "fp": "5de0f04ee1b6798b"
   }
  ],
  "seen": [
@@ -7496,7 +7923,25 @@
   "651124c44bb0e88a",
   "e868d6292cc72c09",
   "1fd184ed4ce1957f",
-  "9cd2740333e46fae"
+  "9cd2740333e46fae",
+  "913c80eb992ec04b",
+  "3a40604ad178c35e",
+  "bf73871269f1e0f8",
+  "90fc778b7d56ec05",
+  "219d6f20482e7327",
+  "4695647f7898b3f3",
+  "1945f04454ea1389",
+  "034644d2310916a7",
+  "9ef955b8408ac7c6",
+  "85529f2c3a7da900",
+  "adada395a12872cf",
+  "fc427ee75f8edbb7",
+  "3bd41156bbae50a3",
+  "cc47a2ceb1e0da1f",
+  "547e6fc24b094c6e",
+  "a9c74493520d031f",
+  "e25c3c06651366d7",
+  "5de0f04ee1b6798b"
  ],
  "residue_r0": [
   {
