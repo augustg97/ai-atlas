@@ -1,6 +1,6 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-22",
+ "date": "2026-08-23",
  "axes": {
   "T": {
    "T1": 0.09964958637004814,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08893091269765814,
-   "A2": 0.22977468656175906,
-   "A3": 0.13183319374507205,
-   "A4": 0.1698334639804306,
-   "A5": 0.09990203763554739,
-   "A6": 0.049951018817773696,
-   "A7": 0.22977468656175906
+   "A1": 0.0885963147572024,
+   "A2": 0.22970416287577614,
+   "A3": 0.13240695896842625,
+   "A4": 0.1697813377777476,
+   "A5": 0.0998713751633809,
+   "A6": 0.04993568758169045,
+   "A7": 0.22970416287577614
   },
   "C": {
-   "C1": 0.3359358388048982,
-   "C2": 0.19507134377802973,
-   "C3": 0.13210497389204762,
-   "C4": 0.14835967633380467,
-   "C5": 0.059535210691964095,
-   "C6": 0.06449647824962779,
-   "C7": 0.054573943134300425,
-   "C8": 0.00992253511532735
+   "C1": 0.33593583880489825,
+   "C2": 0.19507134377802976,
+   "C3": 0.13210497389204764,
+   "C4": 0.1483596763338047,
+   "C5": 0.0595352106919641,
+   "C6": 0.0644964782496278,
+   "C7": 0.05457394313430043,
+   "C8": 0.009922535115327352
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.15
   },
   "S": {
-   "S1": 0.23744740414914312,
-   "S2": 0.21992340458369555,
-   "S3": 0.25571357792028004,
-   "S4": 0.187979194951405,
-   "S5": 0.0989364183954763
+   "S1": 0.23731067629325178,
+   "S2": 0.22094974509653956,
+   "S3": 0.2549891780891962,
+   "S4": 0.18787095206549104,
+   "S5": 0.09887944845552159
   },
   "P": {
    "P1": 0.18,
@@ -63,11 +63,11 @@
    "P5": 0.14
   },
   "E": {
-   "E1": 0.22505411469278505,
-   "E2": 0.17948915539579174,
-   "E3": 0.3262229968177357,
-   "E4": 0.18946077514000237,
-   "E5": 0.0797729579536852
+   "E1": 0.22580701499737957,
+   "E2": 0.17941305570387636,
+   "E3": 0.32566034574292946,
+   "E4": 0.18938044768742507,
+   "E5": 0.07973913586838949
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -2827,6 +2827,179 @@
      "G4": 0.14932877986943188,
      "G5": 0.09955251991295462,
      "G6": 0.1316682872775237
+    }
+   }
+  },
+  {
+   "date": "2026-08-23",
+   "marginals": {
+    "T": {
+     "T1": 0.09964958637004814,
+     "T2": 0.3305622910369852,
+     "T3": 0.2743653123197285,
+     "T4": 0.1758433066291804,
+     "T5": 0.11957950364405776
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.33593583880489825,
+     "C2": 0.19507134377802976,
+     "C3": 0.13210497389204764,
+     "C4": 0.1483596763338047,
+     "C5": 0.0595352106919641,
+     "C6": 0.0644964782496278,
+     "C7": 0.05457394313430043,
+     "C8": 0.009922535115327352
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.24106382412822877,
+     "D2": 0.353903720231365,
+     "D3": 0.25056513849080764,
+     "D4": 0.15446731714959866
+    },
+    "S": {
+     "S1": 0.23731067629325175,
+     "S2": 0.22094974509653953,
+     "S3": 0.2549891780891962,
+     "S4": 0.187870952065491,
+     "S5": 0.09887944845552157
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.22580701499737957,
+     "E2": 0.17941305570387636,
+     "E3": 0.32566034574292946,
+     "E4": 0.18938044768742507,
+     "E5": 0.07973913586838949
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19407818072239474,
+     "G2": 0.25918040510934237,
+     "G3": 0.1521121180524195,
+     "G4": 0.1521121180524195,
+     "G5": 0.10638502902109831,
+     "G6": 0.13613214904232557
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09964958637004814,
+     "T2": 0.3305622910369852,
+     "T3": 0.2743653123197285,
+     "T4": 0.1758433066291804,
+     "T5": 0.11957950364405776
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.33593583880489825,
+     "C2": 0.19507134377802976,
+     "C3": 0.13210497389204764,
+     "C4": 0.1483596763338047,
+     "C5": 0.0595352106919641,
+     "C6": 0.0644964782496278,
+     "C7": 0.05457394313430043,
+     "C8": 0.009922535115327352
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.24,
+     "D2": 0.36,
+     "D3": 0.25,
+     "D4": 0.15
+    },
+    "S": {
+     "S1": 0.23731067629325175,
+     "S2": 0.22094974509653953,
+     "S3": 0.2549891780891962,
+     "S4": 0.187870952065491,
+     "S5": 0.09887944845552157
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.22580701499737957,
+     "E2": 0.17941305570387636,
+     "E3": 0.32566034574292946,
+     "E4": 0.18938044768742507,
+     "E5": 0.07973913586838949
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
     }
    }
   }
@@ -5658,6 +5831,120 @@
     "https://aidisruption.ai/p/deepseek-multimodal-model-deepseek"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0008652,
+   "sources": 3,
+   "repeat_k": 4.33,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0011536,
+    "S.S3": -0.0005768
+   },
+   "applied": {
+    "S.S2": 0.0011536,
+    "S.S3": -0.0005768
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "4c241253402d05de",
+   "date": "2026-08-23",
+   "event_date": "2026-08-22",
+   "driver": "Nvidia's notification to some of its biggest customers of AI server price increases became public on August 22, 2026. Those customers build ",
+   "driver_urls": [
+    "https://www.theverge.com/ai-artificial-intelligence/983638/nvidias-ai-chips-are-about-to-get-more-expensive-too",
+    "https://www.bloomberg.com/news/articles/2026-08-22/nvidia-customers-notified-about-ai-related-price-hikes-above-15",
+    "https://url3396.theinformation.com/ls/click?upn=u001.71kYkaWDpGOJSzbGrs4y1TNF0-2FB-2Bh5pDUdkL0JSEoBmbIlaCwUAb-2B2vhxG1AFBaNDzehbdLUOyLLG1uTk8VSiwPKMEj4VBEEzm7dsE9jYPWHTabN473sKKs4R9V1EzfTOR-2Fo2BRntSCjegD8rUEbDiO0ro0jf2bnbXn4Mfs1ySYCmI8rOlkP1EiLs-2F2-2F8bNrt3xFIi3xQjh87IiNxkmky-2BkipKQAw6qX3NwshxG44LE-2FmBs5tfjepRhzkLpFTRH2FHyEdvjxXMbeqgZtCKRxMjK9mekJpy6l2leuKjIPlKc-3DR32W_43dsxQV89fa2tEHiwvMi0nOVFp5IO-2FwdrZCwo-2BAXxzGpSco74iJ-2BSc83OiJBgm5rv9ZrmQ-2BzSPTEu-2FNKz0hSm1pTHjxcaTsMMjtl0BU0IhML11vsZHmkiCDwZcluukpapSIxt3S-2FAPA-2BeYHYeAG6oO-2Bsvogg207ahW4QZT6gckiZEpE6qJmlmc3o12a-2Bw4wGJNwRd7rJUR8r7shHCh5UVXGNAexBZUe6kXBD6mlm5MElBjfvLgyy3fVXlX2HYzToLQwnfjk3S67Tw9HELJ-2B5o3uG1b1YdTldwDIRlmEpVkr7rP40WZJIFPICMAHBbcvMm6plJk57iIg7saU8nhdirg-3D-3D"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003182,
+   "sources": 1,
+   "repeat_k": 16.283,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004243,
+    "E.E3": -0.0002121
+   },
+   "applied": {
+    "E.E1": 0.0004243,
+    "E.E3": -0.0002121
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "4c709da9cab7c5cf",
+   "date": "2026-08-23",
+   "event_date": "2026-08-21",
+   "driver": "Amazon raised prices across its Echo, Fire TV, Kindle and eero lines by up to 60 percent, first reported on August 21, 2026 and confirmed to",
+   "driver_urls": [
+    "https://www.theverge.com/tech/983598/amazon-price-increase-echo-kindle-fire-tv"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003182,
+   "sources": 1,
+   "repeat_k": 16.283,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004243,
+    "E.E3": -0.0002121
+   },
+   "applied": {
+    "E.E1": 0.0004243,
+    "E.E3": -0.0002121
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "389f948198703c88",
+   "date": "2026-08-23",
+   "event_date": "2026-08-20",
+   "driver": "Alibaba reported on August 20, 2026 that net profit for the April\u2013June quarter fell 75% year over year as it raised AI capital expenditure, ",
+   "driver_urls": [
+    "https://www.reuters.com/business/retail-consumer/alibaba-beats-quarterly-revenue-estimates-2026-08-20/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004608,
+   "sources": 1,
+   "repeat_k": 7.882,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006144,
+    "A.A1": -0.0003072
+   },
+   "applied": {
+    "A.A3": 0.0006144,
+    "A.A1": -0.0003072
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "0f6679fc9e18677a",
+   "date": "2026-08-23",
+   "event_date": "2026-08-13",
+   "driver": "Update on Anthropic's Frontier Red Team research on multiagent systems, published August 13, 2026: beyond the vulnerability-swarm and price-",
+   "driver_urls": [
+    "https://www.anthropic.com/research/multiagent-systems"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -7550,6 +7837,76 @@
    "text": "The Autoriteit Persoonsgegevens, the Dutch data protection authority, imposed a fine of \u20ac824,990,000 on Uber, announced ",
    "reports": 1,
    "fp": "5de0f04ee1b6798b"
+  },
+  {
+   "date": "2026-08-22",
+   "section": "Frontier Models & Capabilities",
+   "text": "Nvidia is planning to use the $6 billion licensing deal it struck with the AI startup Poolside this week to build one of",
+   "reports": 1,
+   "fp": "4580ea44e03208a2"
+  },
+  {
+   "date": "2026-08-18",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Federal Aviation Administration has run its data and much of its technology stack through Palantir's Foundry platfor",
+   "reports": 1,
+   "fp": "62ccd4b0b48caea0"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "U.S. State AI Legislation",
+   "text": "The Seattle City Council was scheduled to hear amendments on August 21, 2026 to the Fair Pricing and Transparency Ordina",
+   "reports": 1,
+   "fp": "f12d67ebdcb46a3a"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "AI Industry & Markets",
+   "text": "Greg Brockman, OpenAI's president and co-founder, has taken effective control of the company's day-to-day operations whi",
+   "reports": 1,
+   "fp": "24acd0ed3c4567b0"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Pope Leo XIV told the International Catholic Legislators Network at the Vatican on August 21, 2026 that \"we are presente",
+   "reports": 1,
+   "fp": "79e020a67c1d7760"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "AI Adoption by Industry",
+   "text": "Apple Music told industry partners in a note that it will add a \"Made With AI\" label to songs later in 2026 and will req",
+   "reports": 1,
+   "fp": "4f9689725235966e"
+  },
+  {
+   "date": "2026-08-23",
+   "section": "AI Industry & Markets",
+   "text": "Alibaba launched a HK$80 billion ($10.2 billion) share placement on August 23, 2026 to fund AI-related development, in w",
+   "reports": 1,
+   "fp": "45e034c77fd5cc11"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "AI Industry & Markets",
+   "text": "Update on Stripe's August 19, 2026 agreement to acquire OpenRouter: Stripe said in its announcement of the deal that Ope",
+   "reports": 1,
+   "fp": "75a0683537fe5674"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Frontier Models & Capabilities",
+   "text": "Generalist published GEN-1.5 on August 19, 2026, a robot foundation model the company says learns new physical tasks fro",
+   "reports": 1,
+   "fp": "e50f64b4e36df26d"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Agentic AI & Coding",
+   "text": "TrueFoundry released its agent harness TrueForge as open source under an MIT license on August 19, 2026, a runtime layer",
+   "reports": 1,
+   "fp": "f033e1436756bde9"
   }
  ],
  "seen": [
@@ -7941,7 +8298,21 @@
   "547e6fc24b094c6e",
   "a9c74493520d031f",
   "e25c3c06651366d7",
-  "5de0f04ee1b6798b"
+  "5de0f04ee1b6798b",
+  "4c241253402d05de",
+  "4c709da9cab7c5cf",
+  "4580ea44e03208a2",
+  "62ccd4b0b48caea0",
+  "f12d67ebdcb46a3a",
+  "24acd0ed3c4567b0",
+  "79e020a67c1d7760",
+  "4f9689725235966e",
+  "45e034c77fd5cc11",
+  "389f948198703c88",
+  "75a0683537fe5674",
+  "0f6679fc9e18677a",
+  "e50f64b4e36df26d",
+  "f033e1436756bde9"
  ],
  "residue_r0": [
   {
