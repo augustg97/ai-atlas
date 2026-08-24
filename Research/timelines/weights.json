@@ -1,6 +1,6 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-23",
+ "date": "2026-08-24",
  "axes": {
   "T": {
    "T1": 0.09964958637004814,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.0885963147572024,
-   "A2": 0.22970416287577614,
-   "A3": 0.13240695896842625,
-   "A4": 0.1697813377777476,
-   "A5": 0.0998713751633809,
-   "A6": 0.04993568758169045,
-   "A7": 0.22970416287577614
+   "A1": 0.08859631475720241,
+   "A2": 0.22970416287577616,
+   "A3": 0.13240695896842627,
+   "A4": 0.16978133777774762,
+   "A5": 0.09987137516338092,
+   "A6": 0.04993568758169046,
+   "A7": 0.22970416287577616
   },
   "C": {
-   "C1": 0.33593583880489825,
-   "C2": 0.19507134377802976,
-   "C3": 0.13210497389204764,
-   "C4": 0.1483596763338047,
-   "C5": 0.0595352106919641,
-   "C6": 0.0644964782496278,
-   "C7": 0.05457394313430043,
-   "C8": 0.009922535115327352
+   "C1": 0.3350268326972731,
+   "C2": 0.19493874725691707,
+   "C3": 0.13201517771993693,
+   "C4": 0.14961922403964933,
+   "C5": 0.05949474261670212,
+   "C6": 0.06445263783476064,
+   "C7": 0.05453684739864362,
+   "C8": 0.009915790436117022
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.15
   },
   "S": {
-   "S1": 0.23731067629325178,
-   "S2": 0.22094974509653956,
-   "S3": 0.2549891780891962,
-   "S4": 0.18787095206549104,
-   "S5": 0.09887944845552159
+   "S1": 0.23722536367306735,
+   "S2": 0.22158982729074833,
+   "S3": 0.2545374945978944,
+   "S4": 0.18780341290784505,
+   "S5": 0.09884390153044474
   },
   "P": {
    "P1": 0.18,
@@ -63,11 +63,11 @@
    "P5": 0.14
   },
   "E": {
-   "E1": 0.22580701499737957,
-   "E2": 0.17941305570387636,
-   "E3": 0.32566034574292946,
-   "E4": 0.18938044768742507,
-   "E5": 0.07973913586838949
+   "E1": 0.2268054686967649,
+   "E2": 0.17931213153634837,
+   "E3": 0.324914202462364,
+   "E4": 0.1892739166217011,
+   "E5": 0.0796942806828215
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -3000,6 +3000,179 @@
      "G4": 0.14932877986943185,
      "G5": 0.09955251991295459,
      "G6": 0.13166828727752367
+    }
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "marginals": {
+    "T": {
+     "T1": 0.09964958637004814,
+     "T2": 0.3305622910369852,
+     "T3": 0.2743653123197285,
+     "T4": 0.1758433066291804,
+     "T5": 0.11957950364405776
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.3350268326972731,
+     "C2": 0.19493874725691707,
+     "C3": 0.13201517771993693,
+     "C4": 0.14961922403964933,
+     "C5": 0.05949474261670212,
+     "C6": 0.06445263783476064,
+     "C7": 0.05453684739864362,
+     "C8": 0.009915790436117022
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.24106382412822877,
+     "D2": 0.353903720231365,
+     "D3": 0.25056513849080764,
+     "D4": 0.15446731714959866
+    },
+    "S": {
+     "S1": 0.23722536367306737,
+     "S2": 0.22158982729074836,
+     "S3": 0.25453749459789443,
+     "S4": 0.18780341290784508,
+     "S5": 0.09884390153044476
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.22680546869676493,
+     "E2": 0.1793121315363484,
+     "E3": 0.3249142024623641,
+     "E4": 0.18927391662170112,
+     "E5": 0.07969428068282151
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19404010028160537,
+     "G2": 0.2589976184739889,
+     "G3": 0.15214752142858784,
+     "G4": 0.15214752142858784,
+     "G5": 0.10647679512267733,
+     "G6": 0.13619044326455257
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09964958637004814,
+     "T2": 0.3305622910369852,
+     "T3": 0.2743653123197285,
+     "T4": 0.1758433066291804,
+     "T5": 0.11957950364405776
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.3350268326972731,
+     "C2": 0.19493874725691707,
+     "C3": 0.13201517771993693,
+     "C4": 0.14961922403964933,
+     "C5": 0.05949474261670212,
+     "C6": 0.06445263783476064,
+     "C7": 0.05453684739864362,
+     "C8": 0.009915790436117022
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.24,
+     "D2": 0.36,
+     "D3": 0.25,
+     "D4": 0.15
+    },
+    "S": {
+     "S1": 0.23722536367306737,
+     "S2": 0.22158982729074836,
+     "S3": 0.25453749459789443,
+     "S4": 0.18780341290784508,
+     "S5": 0.09884390153044476
+    },
+    "P": {
+     "P1": 0.18,
+     "P2": 0.23,
+     "P3": 0.23,
+     "P4": 0.22,
+     "P5": 0.14
+    },
+    "E": {
+     "E1": 0.22680546869676493,
+     "E2": 0.1793121315363484,
+     "E3": 0.3249142024623641,
+     "E4": 0.18927391662170112,
+     "E5": 0.07969428068282151
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
     }
    }
   }
@@ -5945,6 +6118,175 @@
     "https://www.anthropic.com/research/multiagent-systems"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002598,
+   "sources": 1,
+   "repeat_k": 16.559,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0003464,
+    "E.E3": -0.0001732
+   },
+   "applied": {
+    "E.E1": 0.0003464,
+    "E.E3": -0.0001732
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "20976d71d29a9803",
+   "date": "2026-08-24",
+   "event_date": "2026-08-23",
+   "driver": "Nvidia opened discussions to invest in Perplexity as part of an equity round valuing the startup at more than $30 billion, a plan that becam",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/nvidia-discusses-perplexity-investment-30-billion-plus-valuation-considered-tech-licensing-deal"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003248,
+   "sources": 2,
+   "repeat_k": 16.559,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.000433,
+    "E.E3": -0.0002165
+   },
+   "applied": {
+    "E.E1": 0.000433,
+    "E.E3": -0.0002165
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "8e90f7b59bd6b98b",
+   "date": "2026-08-24",
+   "event_date": "2026-08-23",
+   "driver": "Update on Anthropic's revenue and IPO preparations carried on August 17 and 18: Anthropic's most capable model, Fable 5, has met with sluggi",
+   "driver_urls": [
+    "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245",
+    "https://simonw.substack.com/p/conceptual-integrity-and-counting"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0005104,
+   "sources": 1,
+   "repeat_k": 3.23,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0006805,
+    "C.C1": -0.0003403
+   },
+   "applied": {
+    "C.C4": 0.0006805,
+    "C.C1": -0.0003403
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "de7b5fb5f1add60a",
+   "date": "2026-08-24",
+   "event_date": "2026-08-19",
+   "driver": "The Justice Department's Antitrust Division closed its investigation of the proposed merger of Seismic Software Inc. and Highspot Inc. on Au",
+   "driver_urls": [
+    "https://www.justice.gov/opa/pr/statement-department-justice-antitrust-division-closing-its-investigation-merger-seismic"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0005398,
+   "sources": 1,
+   "repeat_k": 4.827,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0007198,
+    "S.S3": -0.0003599
+   },
+   "applied": {
+    "S.S2": 0.0007198,
+    "S.S3": -0.0003599
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "6c714a8a5296a098",
+   "date": "2026-08-24",
+   "event_date": "2026-08-21",
+   "driver": "Nvidia announced on August 21, 2026 that it had acquired a minority stake in Cloverleaf Infrastructure, its third equity investment in rapid",
+   "driver_urls": [
+    "https://www.theinformation.com/newsletters/ai-infrastructure/nvidia-using-land-electricity-deals-lock-hardware-bundle"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002598,
+   "sources": 1,
+   "repeat_k": 16.559,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0003464,
+    "E.E3": -0.0001732
+   },
+   "applied": {
+    "E.E1": 0.0003464,
+    "E.E3": -0.0001732
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "e583ac59517df275",
+   "date": "2026-08-24",
+   "event_date": "2026-08-23",
+   "driver": "Alibaba Group said on August 23, 2026 that it is seeking to raise 80 billion Hong Kong dollars ($10.2 billion) through a share placement to ",
+   "driver_urls": [
+    "https://www.theinformation.com/briefings/alibaba-seeks-raise-10-billion-share-sale-fund-ai-investments"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0005104,
+   "sources": 1,
+   "repeat_k": 3.23,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0006805,
+    "C.C1": -0.0003403
+   },
+   "applied": {
+    "C.C4": 0.0006805,
+    "C.C1": -0.0003403
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "050940c068f7348b",
+   "date": "2026-08-24",
+   "event_date": "2026-08-21",
+   "driver": "The Department of Justice announced on August 21, 2026 a $400 million settlement with TikTok, ByteDance and affiliated entities resolving li",
+   "driver_urls": [
+    "https://www.justice.gov/opa/pr/justice-department-secures-400m-settlement-tiktok-and-bytedance-resolve-childrens-privacy"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -7907,6 +8249,90 @@
    "text": "TrueFoundry released its agent harness TrueForge as open source under an MIT license on August 19, 2026, a runtime layer",
    "reports": 1,
    "fp": "f033e1436756bde9"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "International AI Regulation",
+   "text": "The Science, Technology and Innovation Committee of Brazil's Chamber of Deputies approved on August 20, 2026 the rapport",
+   "reports": 1,
+   "fp": "2c51a9843e79aa29"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "International AI Regulation",
+   "text": "The Australian Parliament appointed a Joint Select Committee on Artificial Intelligence by resolution of both houses on ",
+   "reports": 1,
+   "fp": "5842112ea68c52ec"
+  },
+  {
+   "date": "2026-08-23",
+   "section": "International AI Regulation",
+   "text": "Japan's Cabinet Office Intellectual Property Strategy Headquarters Secretariat released for public comment a draft \"Prin",
+   "reports": 1,
+   "fp": "5d6457899ea0a6bd"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Commodity Futures Trading Commission issued a Request for Comment on the Listing of Compute Derivatives Contracts (R",
+   "reports": 1,
+   "fp": "84f3da049233641d"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Aerospace Industries Association said draft changes to the General Services Administration's proposed contract terms",
+   "reports": 1,
+   "fp": "753e0105269bc67a"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The National Defense Industrial Association urged the General Services Administration to make another round of revisions",
+   "reports": 1,
+   "fp": "7261288a2411f8d2"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Americans for Responsible Innovation recommended in a new report that policymakers consider invoking the Defense Product",
+   "reports": 1,
+   "fp": "b67a17035eed0c3f"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Prices for some of Nvidia's flagship AI server chip systems are set to rise about 17%, according to two people whose fir",
+   "reports": 1,
+   "fp": "ee066612776ccf21"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic puts every job candidate through a culture interview that includes a question about prioritizing mission over ",
+   "reports": 1,
+   "fp": "84764655101c4e46"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "National Security & Geopolitics",
+   "text": "The Army launched Project Griffin on August 20, 2026 as a commercial solutions opening from the capability program execu",
+   "reports": 1,
+   "fp": "40ee0ae55f2de028"
+  },
+  {
+   "date": "2026-08-20",
+   "section": "Frontier Models & Capabilities",
+   "text": "An unbranded model appeared on OpenRouter under the identifier stealth/ox-alpha on August 20, 2026, offered free during ",
+   "reports": 1,
+   "fp": "798e79bedf6c5bb6"
+  },
+  {
+   "date": "2026-08-19",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Abdul El-Sayed, the Democratic nominee for Senate in Michigan, posted a video to X on August 19, 2026 tying his Republic",
+   "reports": 1,
+   "fp": "69556389604ba63f"
   }
  ],
  "seen": [
@@ -8312,7 +8738,25 @@
   "75a0683537fe5674",
   "0f6679fc9e18677a",
   "e50f64b4e36df26d",
-  "f033e1436756bde9"
+  "f033e1436756bde9",
+  "2c51a9843e79aa29",
+  "5842112ea68c52ec",
+  "5d6457899ea0a6bd",
+  "20976d71d29a9803",
+  "8e90f7b59bd6b98b",
+  "84f3da049233641d",
+  "de7b5fb5f1add60a",
+  "753e0105269bc67a",
+  "7261288a2411f8d2",
+  "b67a17035eed0c3f",
+  "ee066612776ccf21",
+  "6c714a8a5296a098",
+  "e583ac59517df275",
+  "84764655101c4e46",
+  "050940c068f7348b",
+  "40ee0ae55f2de028",
+  "798e79bedf6c5bb6",
+  "69556389604ba63f"
  ],
  "residue_r0": [
   {
@@ -8424,6 +8868,15 @@
     "name": "monitoring: Frontier Models & Capabilities residue",
     "cites": [],
     "origin": "auto: weekly schema review 2026-08-17 \u2014 13 unexplained events in 7 days; FOR AUGUST'S REVIEW"
+   }
+  },
+  {
+   "axis": "D",
+   "subaxis": {
+    "key": "D.watch-labor",
+    "name": "monitoring: Labor, Society & Democratic Institutions residue",
+    "cites": [],
+    "origin": "auto: weekly schema review 2026-08-24 \u2014 12 unexplained events in 7 days; FOR AUGUST'S REVIEW"
    }
   }
  ]
