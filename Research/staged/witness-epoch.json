@@ -1,8 +1,8 @@
 {
- "wiki_models": 68,
+ "wiki_models": 70,
  "epoch_rows": 1041,
  "matched": 20,
- "unmatched_wiki": 48,
+ "unmatched_wiki": 50,
  "unmatched_wiki_slugs": [
   "alphagenome",
   "amazon-nova",
@@ -22,8 +22,8 @@
   "faraday",
   "gemini-robotics-2",
   "gemma",
-  "genie-3",
-  "glm-4"
+  "gen-1-5",
+  "genie-3"
  ],
  "date_disagreements": [
   {

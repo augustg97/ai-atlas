@@ -1,13 +1,13 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-24",
+ "date": "2026-08-25",
  "axes": {
   "T": {
-   "T1": 0.09964958637004814,
-   "T2": 0.3305622910369852,
-   "T3": 0.2743653123197285,
-   "T4": 0.1758433066291804,
-   "T5": 0.11957950364405776
+   "T1": 0.09950521245814488,
+   "T2": 0.33153429438684634,
+   "T3": 0.27542084299410585,
+   "T4": 0.17413339521112908,
+   "T5": 0.11940625494977385
   },
   "K": {
    "K1": 0.575,
@@ -25,14 +25,14 @@
    "A7": 0.22970416287577616
   },
   "C": {
-   "C1": 0.3350268326972731,
-   "C2": 0.19493874725691707,
-   "C3": 0.13201517771993693,
-   "C4": 0.14961922403964933,
-   "C5": 0.05949474261670212,
-   "C6": 0.06445263783476064,
-   "C7": 0.05453684739864362,
-   "C8": 0.009915790436117022
+   "C1": 0.3345412018437463,
+   "C2": 0.19486791337829912,
+   "C3": 0.13196720805148504,
+   "C4": 0.1502921163749291,
+   "C5": 0.05947312432153906,
+   "C6": 0.06442921801500065,
+   "C7": 0.05451703062807747,
+   "C8": 0.009912187386923177
   },
   "R": {
    "R1": 0.14,
@@ -43,31 +43,31 @@
    "R6": 0.11
   },
   "D": {
-   "D1": 0.24,
-   "D2": 0.36,
-   "D3": 0.25,
-   "D4": 0.15
+   "D1": 0.23740558026636896,
+   "D2": 0.36342569794140583,
+   "D3": 0.24948045112014083,
+   "D4": 0.14968827067208448
   },
   "S": {
-   "S1": 0.23722536367306735,
-   "S2": 0.22158982729074833,
-   "S3": 0.2545374945978944,
-   "S4": 0.18780341290784505,
-   "S5": 0.09884390153044474
+   "S1": 0.23722536367306737,
+   "S2": 0.22158982729074836,
+   "S3": 0.25453749459789443,
+   "S4": 0.18780341290784508,
+   "S5": 0.09884390153044476
   },
   "P": {
-   "P1": 0.18,
-   "P2": 0.23,
-   "P3": 0.23,
-   "P4": 0.22,
-   "P5": 0.14
+   "P1": 0.17962435692929865,
+   "P2": 0.2316069175802225,
+   "P3": 0.22952001163188165,
+   "P4": 0.21954088069136504,
+   "P5": 0.13970783316723231
   },
   "E": {
-   "E1": 0.2268054686967649,
-   "E2": 0.17931213153634837,
-   "E3": 0.324914202462364,
-   "E4": 0.1892739166217011,
-   "E5": 0.0796942806828215
+   "E1": 0.2273373224271577,
+   "E2": 0.1792583848729325,
+   "E3": 0.32451671539051113,
+   "E4": 0.18921718403253987,
+   "E5": 0.07967039327685889
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -3173,6 +3173,179 @@
      "G4": 0.14932877986943188,
      "G5": 0.09955251991295462,
      "G6": 0.1316682872775237
+    }
+   }
+  },
+  {
+   "date": "2026-08-25",
+   "marginals": {
+    "T": {
+     "T1": 0.09950521245814488,
+     "T2": 0.33153429438684634,
+     "T3": 0.27542084299410585,
+     "T4": 0.17413339521112908,
+     "T5": 0.11940625494977385
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.3345412018437463,
+     "C2": 0.19486791337829912,
+     "C3": 0.13196720805148504,
+     "C4": 0.1502921163749291,
+     "C5": 0.05947312432153906,
+     "C6": 0.06442921801500065,
+     "C7": 0.05451703062807747,
+     "C8": 0.009912187386923177
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.2386337790965821,
+     "D2": 0.35701325537366874,
+     "D3": 0.25010112448343247,
+     "D4": 0.1542518410463169
+    },
+    "S": {
+     "S1": 0.23722536367306737,
+     "S2": 0.22158982729074836,
+     "S3": 0.25453749459789443,
+     "S4": 0.18780341290784508,
+     "S5": 0.09884390153044476
+    },
+    "P": {
+     "P1": 0.17962435692929865,
+     "P2": 0.2316069175802225,
+     "P3": 0.22952001163188165,
+     "P4": 0.21954088069136504,
+     "P5": 0.13970783316723231
+    },
+    "E": {
+     "E1": 0.22733732242715768,
+     "E2": 0.1792583848729325,
+     "E3": 0.32451671539051113,
+     "E4": 0.18921718403253984,
+     "E5": 0.07967039327685889
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1940210944596938,
+     "G2": 0.2589064896139625,
+     "G3": 0.15216516487703488,
+     "G4": 0.15216516487703488,
+     "G5": 0.1065225764555945,
+     "G6": 0.13621950971667962
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09950521245814488,
+     "T2": 0.33153429438684634,
+     "T3": 0.27542084299410585,
+     "T4": 0.17413339521112908,
+     "T5": 0.11940625494977385
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.3345412018437463,
+     "C2": 0.19486791337829912,
+     "C3": 0.13196720805148504,
+     "C4": 0.1502921163749291,
+     "C5": 0.05947312432153906,
+     "C6": 0.06442921801500065,
+     "C7": 0.05451703062807747,
+     "C8": 0.009912187386923177
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23740558026636893,
+     "D2": 0.36342569794140583,
+     "D3": 0.2494804511201408,
+     "D4": 0.14968827067208448
+    },
+    "S": {
+     "S1": 0.23722536367306737,
+     "S2": 0.22158982729074836,
+     "S3": 0.25453749459789443,
+     "S4": 0.18780341290784508,
+     "S5": 0.09884390153044476
+    },
+    "P": {
+     "P1": 0.17962435692929865,
+     "P2": 0.2316069175802225,
+     "P3": 0.22952001163188165,
+     "P4": 0.21954088069136504,
+     "P5": 0.13970783316723231
+    },
+    "E": {
+     "E1": 0.22733732242715768,
+     "E2": 0.1792583848729325,
+     "E3": 0.32451671539051113,
+     "E4": 0.18921718403253984,
+     "E5": 0.07967039327685889
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
     }
    }
   }
@@ -6287,6 +6460,122 @@
     "https://www.justice.gov/opa/pr/justice-department-secures-400m-settlement-tiktok-and-bytedance-resolve-childrens-privacy"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.001453,
+   "sources": 1,
+   "repeat_k": 1.346,
+   "spread": 1.0,
+   "requested": {
+    "T.T2": 0.001453,
+    "T.T3": 0.001453,
+    "T.T4": -0.001453
+   },
+   "applied": {
+    "T.T2": 0.001453,
+    "T.T3": 0.001453,
+    "T.T4": -0.001453
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "incident": "4beae1c4d752186c",
+   "date": "2026-08-25",
+   "event_date": "2026-08-23",
+   "driver": "Update on the unbranded Ox Alpha model covered this morning: as of August 23, 2026 no company has claimed it, and the early benchmark claim ",
+   "driver_urls": [
+    "https://siliconangle.com/2026/08/23/nobody-knows-who-built-ai-coding-model-ox-alpha-or-where-the-code-goes/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enterprise-adoption",
+   "impact_class": "minor",
+   "magnitude": 0.0027884,
+   "sources": 1,
+   "repeat_k": 0.125,
+   "spread": 1.0,
+   "requested": {
+    "D.D2": 0.0041825,
+    "D.D1": -0.0020913,
+    "P.P2": 0.0020913
+   },
+   "applied": {
+    "D.D2": 0.0041825,
+    "D.D1": -0.0020913,
+    "P.P2": 0.0020913
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/ai-displacement-vs-augmentation"
+   ],
+   "incident": "67067c814a190730",
+   "date": "2026-08-25",
+   "event_date": "2026-08-24",
+   "driver": "Thomson Reuters launched Thomson, its first proprietary large language model, on August 24, 2026, deploying it first in the Tabular Analysis",
+   "driver_urls": [
+    "https://siliconangle.com/2026/08/24/thomson-reuters-launches-proprietary-ai-model-for-legal-work/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0005456,
+   "sources": 1,
+   "repeat_k": 4.737,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0007275,
+    "C.C1": -0.0003638
+   },
+   "applied": {
+    "C.C4": 0.0007275,
+    "C.C1": -0.0003638
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "1b0efca51d7cbbd3",
+   "date": "2026-08-25",
+   "event_date": "2026-08-24",
+   "driver": "Alabama Attorney General Steve Marshall's investigation into OpenAI's security procedures became public on August 24, 2026. OpenAI faces a s",
+   "driver_urls": [
+    "https://news.bloomberglaw.com/tech-and-telecom-law/alabama-investigates-openai-following-rogue-ai-hacking-incident"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.00045,
+   "sources": 1,
+   "repeat_k": 17.715,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006,
+    "E.E3": -0.0003
+   },
+   "applied": {
+    "E.E1": 0.0006,
+    "E.E3": -0.0003
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "dc29775c928bbf62",
+   "date": "2026-08-25",
+   "event_date": "2026-08-25",
+   "driver": "Hugging Face has been approached about selling at a valuation of $13 billion or more, Business Insider reported over the weekend of August 2",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -8333,6 +8622,90 @@
    "text": "Abdul El-Sayed, the Democratic nominee for Senate in Michigan, posted a video to X on August 19, 2026 tying his Republic",
    "reports": 1,
    "fp": "69556389604ba63f"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Nvidia announced at Hot Chips 2026 on August 24, 2026 that its Groq 3 LPX inference accelerator had entered full product",
+   "reports": 1,
+   "fp": "806b7920e9519615"
+  },
+  {
+   "date": "2026-08-21",
+   "section": "Agentic AI & Coding",
+   "text": "Testers of Instinct, a private-access AI personal assistant operated by Spear Street Technology and led by former Sierra",
+   "reports": 1,
+   "fp": "9d872a5271057f27"
+  },
+  {
+   "date": "2026-08-23",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "President Trump defended data center expansion in an interview with Michael Cohen that aired in full on August 23, 2026 ",
+   "reports": 1,
+   "fp": "b61ab21567b52dfb"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Reported but unverified",
+   "text": "The Association for Competitive Technology's objection to \"undefined\" language on \"unbiased\" artificial intelligence in ",
+   "reports": 1,
+   "fp": "973a45520940acec"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Reported but unverified",
+   "text": "Taiwanese prosecutors' indictment of nine people, including employees of Nvidia and Super Micro, over the alleged illega",
+   "reports": 1,
+   "fp": "170fb8a62ea27041"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "OpenAI presented benchmark results for Jalape\u00f1o at the Hot Chips conference on August 25, 2026. Tested on SemiAnalysis's",
+   "reports": 1,
+   "fp": "db77a0352cc61a7d"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Cisco disclosed on August 25, 2026 that it is partnering with Supermicro to add high-density, liquid- and air-cooled com",
+   "reports": 1,
+   "fp": "60509d6070af1b17"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "AI Industry & Markets",
+   "text": "Update on the Stripe\u2013OpenRouter transaction reported on August 16 as a deal Stripe was nearing at more than $7 billion: ",
+   "reports": 1,
+   "fp": "04d8f8479a269686"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "National Security & Geopolitics",
+   "text": "Taiwanese research firm TeamT5 found that state-affiliated Chinese groups have more than doubled their attack volume sin",
+   "reports": 1,
+   "fp": "db1a930b45c4072a"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Rep. Suhas Subramanyam (D-VA) is seeking to amend the Frontier Risk Oversight, National Transparency, Independent Evalua",
+   "reports": 1,
+   "fp": "559e5bef445444cc"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "U.S. State AI Legislation",
+   "text": "Researchers at Stanford University's Institute for Human-Centered Artificial Intelligence called for extending privacy p",
+   "reports": 1,
+   "fp": "f18a38ff954f5f17"
+  },
+  {
+   "date": "2026-08-11",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Annenberg Public Policy Center of the University of Pennsylvania reported on August 11, 2026 that 61% of U.S. adults",
+   "reports": 1,
+   "fp": "5b5e6eb5e0da0b10"
   }
  ],
  "seen": [
@@ -8756,7 +9129,23 @@
   "050940c068f7348b",
   "40ee0ae55f2de028",
   "798e79bedf6c5bb6",
-  "69556389604ba63f"
+  "69556389604ba63f",
+  "806b7920e9519615",
+  "4beae1c4d752186c",
+  "9d872a5271057f27",
+  "67067c814a190730",
+  "1b0efca51d7cbbd3",
+  "b61ab21567b52dfb",
+  "973a45520940acec",
+  "170fb8a62ea27041",
+  "db77a0352cc61a7d",
+  "60509d6070af1b17",
+  "04d8f8479a269686",
+  "dc29775c928bbf62",
+  "db1a930b45c4072a",
+  "559e5bef445444cc",
+  "f18a38ff954f5f17",
+  "5b5e6eb5e0da0b10"
  ],
  "residue_r0": [
   {

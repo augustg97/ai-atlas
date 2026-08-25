@@ -1,6 +1,6 @@
-# Emit needs-review — 20260824-1049
+# Emit needs-review — 20260825-1048
 
-174 items. Unparseable values are reported here, never guessed.
+175 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -132,6 +132,7 @@
 - companies/openrouter: unparseable date 'unknown' (founded)
 - companies/sierra: unparseable date 'unknown' (founded)
 - companies/snowflake: dangling relationship target 'concepts/enterprise-ai'
+- companies/spear-street-technology: unparseable date 'unknown' (founded)
 - companies/sunday-robotics: unparseable date 'unknown' (founded)
 - models/astra: unparseable date 'unreleased' (release_date)
 - models/muse-spark: inline comment stripped from 'false  # every shipped version; Meta ann'
