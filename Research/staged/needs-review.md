@@ -1,4 +1,4 @@
-# Emit needs-review — 20260825-1048
+# Emit needs-review — 20260826-1049
 
 175 items. Unparseable values are reported here, never guessed.
 
@@ -121,6 +121,7 @@
 - entities/softbank: inline comment stripped from 'nonprofit  # placeholder — SoftBank is a'
 - entities/timothy-b-lee: dangling relationship target 'entities/kaity-lee'
 - companies/aleph-alpha: dangling relationship target 'industries/automotive'
+- companies/alice: unparseable date 'undisclosed' (founded)
 - companies/alphasense: unparseable date 'unknown' (founded)
 - companies/clickup: dangling relationship target 'industries/software'
 - companies/etched: unparseable date 'unknown' (founded)
@@ -133,7 +134,6 @@
 - companies/sierra: unparseable date 'unknown' (founded)
 - companies/snowflake: dangling relationship target 'concepts/enterprise-ai'
 - companies/spear-street-technology: unparseable date 'unknown' (founded)
-- companies/sunday-robotics: unparseable date 'unknown' (founded)
 - models/astra: unparseable date 'unreleased' (release_date)
 - models/muse-spark: inline comment stripped from 'false  # every shipped version; Meta ann'
 - legislation/create-ai-act: dangling relationship target 'entities/todd-young|Sen. Todd Young (R-IN)'

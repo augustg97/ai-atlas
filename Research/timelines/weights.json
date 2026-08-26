@@ -1,13 +1,13 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-25",
+ "date": "2026-08-26",
  "axes": {
   "T": {
-   "T1": 0.09950521245814488,
-   "T2": 0.33153429438684634,
-   "T3": 0.27542084299410585,
-   "T4": 0.17413339521112908,
-   "T5": 0.11940625494977385
+   "T1": 0.099264617764461,
+   "T2": 0.33176478510739577,
+   "T3": 0.2785695631271988,
+   "T4": 0.17128349268359133,
+   "T5": 0.11911754131735318
   },
   "K": {
    "K1": 0.575,
@@ -25,14 +25,14 @@
    "A7": 0.22970416287577616
   },
   "C": {
-   "C1": 0.3345412018437463,
-   "C2": 0.19486791337829912,
-   "C3": 0.13196720805148504,
-   "C4": 0.1502921163749291,
-   "C5": 0.05947312432153906,
-   "C6": 0.06442921801500065,
-   "C7": 0.05451703062807747,
-   "C8": 0.009912187386923177
+   "C1": 0.33380585239959976,
+   "C2": 0.1947606283904979,
+   "C3": 0.131894553194867,
+   "C4": 0.1513110920467718,
+   "C5": 0.05944038125313585,
+   "C6": 0.06439374635756386,
+   "C7": 0.054487016148707865,
+   "C8": 0.009906730208855978
   },
   "R": {
    "R1": 0.14,
@@ -43,31 +43,31 @@
    "R6": 0.11
   },
   "D": {
-   "D1": 0.23740558026636896,
-   "D2": 0.36342569794140583,
-   "D3": 0.24948045112014083,
-   "D4": 0.14968827067208448
+   "D1": 0.23581964172263314,
+   "D2": 0.36552112116447777,
+   "D3": 0.24916202319555567,
+   "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.23722536367306737,
-   "S2": 0.22158982729074836,
-   "S3": 0.25453749459789443,
-   "S4": 0.18780341290784508,
-   "S5": 0.09884390153044476
+   "S1": 0.23713961294024857,
+   "S2": 0.22223319941716094,
+   "S3": 0.2540834886731233,
+   "S4": 0.1877355269110302,
+   "S5": 0.09880817205843692
   },
   "P": {
-   "P1": 0.17962435692929865,
-   "P2": 0.2316069175802225,
-   "P3": 0.22952001163188165,
-   "P4": 0.21954088069136504,
-   "P5": 0.13970783316723231
+   "P1": 0.17939450256153378,
+   "P2": 0.2325901834867721,
+   "P3": 0.22922630882862655,
+   "P4": 0.21925994757520798,
+   "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.2273373224271577,
-   "E2": 0.1792583848729325,
-   "E3": 0.32451671539051113,
-   "E4": 0.18921718403253987,
-   "E5": 0.07967039327685889
+   "E1": 0.22786902652071606,
+   "E2": 0.17920465333178845,
+   "E3": 0.324119340149813,
+   "E4": 0.18916046740577666,
+   "E5": 0.07964651259190596
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -3348,6 +3348,179 @@
      "G6": 0.13166828727752367
     }
    }
+  },
+  {
+   "date": "2026-08-26",
+   "marginals": {
+    "T": {
+     "T1": 0.099264617764461,
+     "T2": 0.33176478510739577,
+     "T3": 0.2785695631271988,
+     "T4": 0.17128349268359133,
+     "T5": 0.11911754131735318
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.33380585239959976,
+     "C2": 0.1947606283904979,
+     "C3": 0.131894553194867,
+     "C4": 0.1513110920467718,
+     "C5": 0.05944038125313585,
+     "C6": 0.06439374635756386,
+     "C7": 0.054487016148707865,
+     "C8": 0.009906730208855978
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23711565668213025,
+     "D2": 0.3590867191144298,
+     "D3": 0.24980123499194593,
+     "D4": 0.15399638921149408
+    },
+    "S": {
+     "S1": 0.23713961294024857,
+     "S2": 0.22223319941716094,
+     "S3": 0.2540834886731233,
+     "S4": 0.1877355269110302,
+     "S5": 0.09880817205843692
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22786902652071603,
+     "E2": 0.17920465333178845,
+     "E3": 0.324119340149813,
+     "E4": 0.18916046740577663,
+     "E5": 0.07964651259190596
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1940210944596938,
+     "G2": 0.25890648961396245,
+     "G3": 0.15216516487703485,
+     "G4": 0.15216516487703485,
+     "G5": 0.1065225764555945,
+     "G6": 0.1362195097166796
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.099264617764461,
+     "T2": 0.33176478510739577,
+     "T3": 0.2785695631271988,
+     "T4": 0.17128349268359133,
+     "T5": 0.11911754131735318
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08859631475720241,
+     "A2": 0.22970416287577616,
+     "A3": 0.13240695896842627,
+     "A4": 0.16978133777774762,
+     "A5": 0.09987137516338092,
+     "A6": 0.04993568758169046,
+     "A7": 0.22970416287577616
+    },
+    "C": {
+     "C1": 0.33380585239959976,
+     "C2": 0.1947606283904979,
+     "C3": 0.131894553194867,
+     "C4": 0.1513110920467718,
+     "C5": 0.05944038125313585,
+     "C6": 0.06439374635756386,
+     "C7": 0.054487016148707865,
+     "C8": 0.009906730208855978
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23713961294024857,
+     "S2": 0.22223319941716094,
+     "S3": 0.2540834886731233,
+     "S4": 0.1877355269110302,
+     "S5": 0.09880817205843692
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22786902652071603,
+     "E2": 0.17920465333178845,
+     "E3": 0.324119340149813,
+     "E4": 0.18916046740577663,
+     "E5": 0.07964651259190596
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -6576,6 +6749,208 @@
     "https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0005428,
+   "sources": 1,
+   "repeat_k": 4.78,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0007237,
+    "S.S3": -0.0003619
+   },
+   "applied": {
+    "S.S2": 0.0007237,
+    "S.S3": -0.0003619
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "f5211a4ced754f1e",
+   "date": "2026-08-26",
+   "event_date": "2026-08-25",
+   "driver": "Chris Malone, who joined OpenAI as head of data centers in March 2025, left the company last week, in a departure reported on August 25, 202",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/openais-head-of-data-centers-has-left-company-6d24fd83"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.0010346,
+   "sources": 1,
+   "repeat_k": 2.125,
+   "spread": 1.0,
+   "requested": {
+    "T.T2": 0.0010346,
+    "T.T3": 0.0010346,
+    "T.T4": -0.0010346
+   },
+   "applied": {
+    "T.T2": 0.0010346,
+    "T.T3": 0.0010346,
+    "T.T4": -0.0010346
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "incident": "49efc3d09b1e4962",
+   "date": "2026-08-26",
+   "event_date": "2026-08-18",
+   "driver": "Skild AI released S1, a robotics foundation model specified by a single video demonstration rather than by language, in a post dated August ",
+   "driver_urls": [
+    "https://www.skild.ai/blogs/s1"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.00045,
+   "sources": 1,
+   "repeat_k": 16.951,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006,
+    "E.E3": -0.0003
+   },
+   "applied": {
+    "E.E1": 0.0006,
+    "E.E3": -0.0003
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "867edb860095de3d",
+   "date": "2026-08-26",
+   "event_date": "2026-08-25",
+   "driver": "Anthropic is likely to tell investors that its potential revenue opportunities are above $30 trillion, topping SpaceX's $28.5 trillion estim",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/anthropic-expected-to-tell-investors-it-sees-over-30-trillion-in-potential-revenue-a611efea"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enterprise-adoption",
+   "impact_class": "minor",
+   "magnitude": 0.0017084,
+   "sources": 1,
+   "repeat_k": 1.019,
+   "spread": 1.0,
+   "requested": {
+    "D.D2": 0.0025626,
+    "D.D1": -0.0012813,
+    "P.P2": 0.0012813
+   },
+   "applied": {
+    "D.D2": 0.0025626,
+    "D.D1": -0.0012813,
+    "P.P2": 0.0012813
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/ai-displacement-vs-augmentation"
+   ],
+   "incident": "726a169dcfae3571",
+   "date": "2026-08-26",
+   "event_date": "2026-08-25",
+   "driver": "Google expanded its Gemini Enterprise platform on August 25, 2026 with Gemini Enterprise for Legal, a plug-in combining integrations with le",
+   "driver_urls": [
+    "https://www.reuters.com/business/google-expands-gemini-ai-platform-law-firms-lawyers-2026-08-25/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003674,
+   "sources": 1,
+   "repeat_k": 5.196,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004899,
+    "C.C1": -0.0002449
+   },
+   "applied": {
+    "C.C4": 0.0004899,
+    "C.C1": -0.0002449
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "3c60c2121f1dde55",
+   "date": "2026-08-26",
+   "event_date": "2026-08-24",
+   "driver": "Update on Alabama Attorney General Steve Marshall's OpenAI investigation, recorded in the August 24 evening file as having become public tha",
+   "driver_urls": [
+    "https://www.theverge.com/ai-artificial-intelligence/984239/alabama-attorney-general-subpoena-openai-hugging-face-hack"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004592,
+   "sources": 2,
+   "repeat_k": 5.196,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0006123,
+    "C.C1": -0.0003062
+   },
+   "applied": {
+    "C.C4": 0.0006123,
+    "C.C1": -0.0003062
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "53f606a91f41109d",
+   "date": "2026-08-26",
+   "event_date": "2026-08-26",
+   "driver": "Meta Platforms and the states suing it reached a proposed settlement of the consolidated federal child-safety lawsuit on August 26, 2026, ac",
+   "driver_urls": [
+    "https://www.npr.org/2026/08/26/nx-s1-5944781/meta-settlement-child-safety-lawsuit",
+    "https://www.axios.com/2026/08/26/meta-lawsuit-settlement-states-facebook"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.002089,
+   "sources": 2,
+   "repeat_k": 1.062,
+   "spread": 1.0,
+   "requested": {
+    "T.T3": 0.0027853,
+    "T.T4": -0.0013927
+   },
+   "applied": {
+    "T.T3": 0.0027853,
+    "T.T4": -0.0013927
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "incident": "b0986d93320c3fc3",
+   "date": "2026-08-26",
+   "event_date": "2026-08-25",
+   "driver": "Figure AI came out of stealth on August 25, 2026 with Index, a crowdsourced platform for collecting physical-task video to train its Helix r",
+   "driver_urls": [
+    "https://www.figure.ai/news/introducing-index",
+    "https://glitchwire.com/news/figure-ai-announces-index-a-crowdsourced-robot-training-dataset-that-could-resha/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -8706,6 +9081,83 @@
    "text": "The Annenberg Public Policy Center of the University of Pennsylvania reported on August 11, 2026 that 61% of U.S. adults",
    "reports": 1,
    "fp": "5b5e6eb5e0da0b10"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update on OpenAI's Jalape\u00f1o benchmark presentation carried in this morning's file: in a blog post published August 25, 2",
+   "reports": 1,
+   "fp": "e674a10a6fe9986c"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Alice, an Israeli startup that works to protect AI models from misuse and rogue behavior, said on August 25, 2026 that i",
+   "reports": 1,
+   "fp": "12b8d3e6ee49be02"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "AI Standards & Safety Frameworks",
+   "text": "The Australian Recording Industry Association updated its Charts Code of Practice on August 24, 2026 to exclude recordin",
+   "reports": 1,
+   "fp": "1348eb175910156f"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "National Security & Geopolitics",
+   "text": "OpenAI banned a cluster of ChatGPT accounts originating in Russia that it said supported a covert influence campaign, in",
+   "reports": 1,
+   "fp": "18639e5cb722b192"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "Reported but unverified",
+   "text": "An Environmental Protection Agency plan to eliminate a federal rule requiring U.S. states to publicize and solicit publi",
+   "reports": 1,
+   "fp": "6e85e8990a3d3765"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Industry & Markets",
+   "text": "Google Cloud added a pay-as-you-go option to Gemini Enterprise on August 26, 2026, alongside its existing per-seat subsc",
+   "reports": 1,
+   "fp": "44b619016c421239"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Industry & Markets",
+   "text": "An anonymous former worker at Amazon's VGT3 warehouse in Las Vegas, Nevada described the facility's book-scanning operat",
+   "reports": 1,
+   "fp": "df189d1415eefcfd"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Bill Gates published a memo on August 26, 2026 arguing that AI is advancing faster than governments and society are prep",
+   "reports": 1,
+   "fp": "179c06edc21c9cb3"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Reported but unverified",
+   "text": "A report from Stanford University's Institute for Human-Centered AI became public on August 26, 2026 describing Senator ",
+   "reports": 1,
+   "fp": "c5c315ce3013b92f"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Reported but unverified",
+   "text": "An analysis by senior executives at Andreessen Horowitz became public on August 26, 2026 arguing that the compliance bur",
+   "reports": 1,
+   "fp": "10ba3b70ecaf237e"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Reported but unverified",
+   "text": "Information Technology Industry Council president and chief executive Jason Oxman will retire at the end of his current ",
+   "reports": 1,
+   "fp": "cf0498c9b1593034"
   }
  ],
  "seen": [
@@ -9145,7 +9597,25 @@
   "db1a930b45c4072a",
   "559e5bef445444cc",
   "f18a38ff954f5f17",
-  "5b5e6eb5e0da0b10"
+  "5b5e6eb5e0da0b10",
+  "e674a10a6fe9986c",
+  "f5211a4ced754f1e",
+  "49efc3d09b1e4962",
+  "12b8d3e6ee49be02",
+  "867edb860095de3d",
+  "726a169dcfae3571",
+  "3c60c2121f1dde55",
+  "1348eb175910156f",
+  "18639e5cb722b192",
+  "6e85e8990a3d3765",
+  "53f606a91f41109d",
+  "44b619016c421239",
+  "df189d1415eefcfd",
+  "179c06edc21c9cb3",
+  "b0986d93320c3fc3",
+  "c5c315ce3013b92f",
+  "10ba3b70ecaf237e",
+  "cf0498c9b1593034"
  ],
  "residue_r0": [
   {
