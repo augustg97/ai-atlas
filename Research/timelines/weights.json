@@ -1,6 +1,6 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-26",
+ "date": "2026-08-27",
  "axes": {
   "T": {
    "T1": 0.099264617764461,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08859631475720241,
-   "A2": 0.22970416287577616,
-   "A3": 0.13240695896842627,
-   "A4": 0.16978133777774762,
-   "A5": 0.09987137516338092,
-   "A6": 0.04993568758169046,
-   "A7": 0.22970416287577616
+   "A1": 0.09039530963597753,
+   "A2": 0.23338024231942892,
+   "A3": 0.13207691707737165,
+   "A4": 0.16651937211187431,
+   "A5": 0.09937583127772304,
+   "A6": 0.04968791563886152,
+   "A7": 0.22856441193876303
   },
   "C": {
-   "C1": 0.33380585239959976,
-   "C2": 0.1947606283904979,
-   "C3": 0.131894553194867,
-   "C4": 0.1513110920467718,
-   "C5": 0.05944038125313585,
-   "C6": 0.06439374635756386,
-   "C7": 0.054487016148707865,
-   "C8": 0.009906730208855978
+   "C1": 0.3331299372273285,
+   "C2": 0.19466200803241565,
+   "C3": 0.13182776614364075,
+   "C4": 0.15224772701507597,
+   "C5": 0.059410282604696635,
+   "C6": 0.06436113948842136,
+   "C7": 0.054459425720971906,
+   "C8": 0.00990171376744944
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.23713961294024857,
-   "S2": 0.22223319941716094,
-   "S3": 0.2540834886731233,
-   "S4": 0.1877355269110302,
-   "S5": 0.09880817205843692
+   "S1": 0.2369950905150252,
+   "S2": 0.22331741596770227,
+   "S3": 0.25331842581161695,
+   "S4": 0.18762111332439504,
+   "S5": 0.09874795438126054
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.22786902652071606,
-   "E2": 0.17920465333178845,
-   "E3": 0.324119340149813,
-   "E4": 0.18916046740577666,
-   "E5": 0.07964651259190596
+   "E1": 0.227869026520716,
+   "E2": 0.17920465333178842,
+   "E3": 0.3241193401498129,
+   "E4": 0.1891604674057766,
+   "E5": 0.07964651259190594
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -3521,6 +3521,179 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-08-27",
+   "marginals": {
+    "T": {
+     "T1": 0.099264617764461,
+     "T2": 0.33176478510739577,
+     "T3": 0.2785695631271988,
+     "T4": 0.17128349268359133,
+     "T5": 0.11911754131735318
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09039530963597753,
+     "A2": 0.23338024231942892,
+     "A3": 0.13207691707737165,
+     "A4": 0.16651937211187431,
+     "A5": 0.09937583127772304,
+     "A6": 0.04968791563886152,
+     "A7": 0.22856441193876303
+    },
+    "C": {
+     "C1": 0.3331299372273284,
+     "C2": 0.1946620080324156,
+     "C3": 0.13182776614364072,
+     "C4": 0.15224772701507594,
+     "C5": 0.05941028260469662,
+     "C6": 0.06436113948842134,
+     "C7": 0.05445942572097189,
+     "C8": 0.009901713767449439
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23711565668213025,
+     "D2": 0.3590867191144298,
+     "D3": 0.24980123499194593,
+     "D4": 0.15399638921149408
+    },
+    "S": {
+     "S1": 0.23699509051502518,
+     "S2": 0.22331741596770224,
+     "S3": 0.25331842581161695,
+     "S4": 0.18762111332439502,
+     "S5": 0.09874795438126052
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22786902652071603,
+     "E2": 0.17920465333178845,
+     "E3": 0.324119340149813,
+     "E4": 0.18916046740577663,
+     "E5": 0.07964651259190596
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19398315146805167,
+     "G2": 0.25872475831538827,
+     "G3": 0.15220033589231635,
+     "G4": 0.15220033589231635,
+     "G5": 0.10661393640824332,
+     "G6": 0.13627748202368398
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.099264617764461,
+     "T2": 0.33176478510739577,
+     "T3": 0.2785695631271988,
+     "T4": 0.17128349268359133,
+     "T5": 0.11911754131735318
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09039530963597753,
+     "A2": 0.23338024231942892,
+     "A3": 0.13207691707737165,
+     "A4": 0.16651937211187431,
+     "A5": 0.09937583127772304,
+     "A6": 0.04968791563886152,
+     "A7": 0.22856441193876303
+    },
+    "C": {
+     "C1": 0.3331299372273284,
+     "C2": 0.1946620080324156,
+     "C3": 0.13182776614364072,
+     "C4": 0.15224772701507594,
+     "C5": 0.05941028260469662,
+     "C6": 0.06436113948842134,
+     "C7": 0.05445942572097189,
+     "C8": 0.009901713767449439
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23699509051502518,
+     "S2": 0.22331741596770224,
+     "S3": 0.25331842581161695,
+     "S4": 0.18762111332439502,
+     "S5": 0.09874795438126052
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22786902652071603,
+     "E2": 0.17920465333178845,
+     "E3": 0.324119340149813,
+     "E4": 0.18916046740577663,
+     "E5": 0.07964651259190596
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -6951,6 +7124,183 @@
     "https://glitchwire.com/news/figure-ai-announces-index-a-crowdsourced-robot-training-dataset-that-could-resha/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-incident",
+   "impact_class": "minor",
+   "magnitude": 0.0032188,
+   "sources": 2,
+   "repeat_k": 0.263,
+   "spread": 1.0,
+   "requested": {
+    "A.A1": 0.0024141,
+    "A.A2": 0.0048282,
+    "A.A4": -0.0024141
+   },
+   "applied": {
+    "A.A1": 0.0024141,
+    "A.A2": 0.0048282,
+    "A.A4": -0.0024141
+   },
+   "cites": [
+    "sources/ai-2027",
+    "analysis/interpretability-and-safety"
+   ],
+   "incident": "38ca76a971c5d4ee",
+   "date": "2026-08-27",
+   "event_date": "2026-08-26",
+   "driver": "OpenAI released its technical incident report on the Hugging Face breach on August 26, 2026, more than a month after the incident became pub",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/26/openai-releases-its-official-report-on-the-hugging-face-breach/",
+    "https://openaiglobalaffairs.substack.com/p/on-the-hugging-face-incident"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002452,
+   "sources": 1,
+   "repeat_k": 5.977,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.000327,
+    "A.A1": -0.0001635
+   },
+   "applied": {
+    "A.A3": 0.000327,
+    "A.A1": -0.0001635
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "contested": [
+    "ev-safety-incident"
+   ],
+   "incident": "53d0a72b3e25b22e",
+   "date": "2026-08-27",
+   "event_date": "2026-08-26",
+   "driver": "METR and Redwood Research published a joint independent investigation of the incident on August 26, 2026, scoped by agreement with OpenAI to",
+   "driver_urls": [
+    "https://blog.redwoodresearch.org/p/brief-independent-investigation-of"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003661,
+   "sources": 1,
+   "repeat_k": 5.235,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004881,
+    "S.S3": -0.000244
+   },
+   "applied": {
+    "S.S2": 0.0004881,
+    "S.S3": -0.000244
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "7794a4bf792d6201",
+   "date": "2026-08-27",
+   "event_date": "2026-08-26",
+   "driver": "Amazon and Nvidia announced an expanded partnership on August 26, 2026 adding 2 million Nvidia GPUs \u2014 Blackwell Ultra, Rubin and Rubin Ultra",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003379,
+   "sources": 1,
+   "repeat_k": 6.517,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004505,
+    "C.C1": -0.0002253
+   },
+   "applied": {
+    "C.C4": 0.0004505,
+    "C.C1": -0.0002253
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "eb0ba07d78540b01",
+   "date": "2026-08-27",
+   "event_date": "2026-08-26",
+   "driver": "Update on the Meta settlement announced August 26, 2026 and covered in the 08:05 file, where four figures were reported and the discrepancy ",
+   "driver_urls": [
+    "https://techcrunch.com/2026/08/26/meta-settles-for-18-billion-in-lawsuit-brought-by-29-states-over-social-media-harms-to-children/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0005491,
+   "sources": 3,
+   "repeat_k": 5.235,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0007321,
+    "S.S3": -0.0003661
+   },
+   "applied": {
+    "S.S2": 0.0007321,
+    "S.S3": -0.0003661
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "4561edff5206d764",
+   "date": "2026-08-27",
+   "event_date": "2026-08-26",
+   "driver": "The Information Technology and Innovation Foundation released polling conducted with Public First at an August 26, 2026 webinar, \"Can the Un",
+   "driver_urls": [
+    "https://www2.itif.org/2026-public-first-itif-data-centers.pdf",
+    "https://insideaipolicy.com/ai-daily-news/tech-industry-grapples-poll-tying-public-opposition-data-centers-ai",
+    "https://www.axios.com/2026/08/27/meta-settlement-big-tech-ai-backlash-data-centers"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004224,
+   "sources": 2,
+   "repeat_k": 6.517,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0005631,
+    "C.C1": -0.0002816
+   },
+   "applied": {
+    "C.C4": 0.0005631,
+    "C.C1": -0.0002816
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "2c0145b109c1b13e",
+   "date": "2026-08-27",
+   "event_date": "2026-08-24",
+   "driver": "Alabama Attorney General Steve Marshall issued a subpoena to OpenAI on August 24, 2026, opening an investigation into whether the company's ",
+   "driver_urls": [
+    "https://www.alabamaag.gov/attorney-general-marshall-launches-investigation-into-openai-and-sam-altman-for-massive-artificial-intelligence-data-breach/",
+    "https://insideaipolicy.com/ai-daily-news/alabama-ag-asks-openai-details-hugging-face-security-incident-government-scrutiny"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -9158,6 +9508,76 @@
    "text": "Information Technology Industry Council president and chief executive Jason Oxman will retire at the end of his current ",
    "reports": 1,
    "fp": "cf0498c9b1593034"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Google is moving a team focused on the risks and societal impact of AI out of Google DeepMind, according to an internal ",
+   "reports": 1,
+   "fp": "420f7170cc0acfdc"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Anthropic signed a deal to rent about $45 billion in AI compute from Nscale, a British infrastructure company founded in",
+   "reports": 1,
+   "fp": "e55639c71e77cc88"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Industry & Markets",
+   "text": "Nvidia agreed to buy Hugging Face for $12.9 billion, The Information reported on August 26, 2026, citing a person with k",
+   "reports": 1,
+   "fp": "557bc6394cd48494"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Industry & Markets",
+   "text": "SoftBank is in talks to buy a majority stake in 1X Technologies, an OpenAI-backed humanoid robot developer, in a deal th",
+   "reports": 1,
+   "fp": "e4072a4363320fa5"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Frontier Models & Capabilities",
+   "text": "Z.ai confirmed on August 26, 2026 that it developed Ox Alpha, the open-weight model launched anonymously on OpenRouter o",
+   "reports": 1,
+   "fp": "3d4cf83de72ccf7b"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "National Security & Geopolitics",
+   "text": "OpenAI disclosed on August 26, 2026 that it had banned a cluster of ChatGPT accounts originating in Russia that generate",
+   "reports": 1,
+   "fp": "bc1bef78047e20b6"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Update on Nvidia's August 26, 2026 earnings, carried in the 22:04 file for its quarterly figures: on the same day's conf",
+   "reports": 1,
+   "fp": "1992b28aeaf5104e"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on OpenAI's Hugging Face technical report, released August 26, 2026 and carried in the 22:04 file: the report rec",
+   "reports": 1,
+   "fp": "26b7401be2cb1093"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "A letter from Senator Josh Hawley (R-Mo.), chair of the Senate Judiciary subcommittee on crime and counterterrorism, to ",
+   "reports": 1,
+   "fp": "b5ebc2f4090fe4ef"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on Z.ai's disclosure that it built the anonymous Ox Alpha model, carried in the 22:04 file: the company's August ",
+   "reports": 1,
+   "fp": "064eceb3d897d8d9"
   }
  ],
  "seen": [
@@ -9615,7 +10035,23 @@
   "b0986d93320c3fc3",
   "c5c315ce3013b92f",
   "10ba3b70ecaf237e",
-  "cf0498c9b1593034"
+  "cf0498c9b1593034",
+  "38ca76a971c5d4ee",
+  "53d0a72b3e25b22e",
+  "420f7170cc0acfdc",
+  "7794a4bf792d6201",
+  "e55639c71e77cc88",
+  "557bc6394cd48494",
+  "e4072a4363320fa5",
+  "3d4cf83de72ccf7b",
+  "eb0ba07d78540b01",
+  "bc1bef78047e20b6",
+  "4561edff5206d764",
+  "1992b28aeaf5104e",
+  "26b7401be2cb1093",
+  "2c0145b109c1b13e",
+  "b5ebc2f4090fe4ef",
+  "064eceb3d897d8d9"
  ],
  "residue_r0": [
   {
