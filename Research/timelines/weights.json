@@ -1,13 +1,13 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-27",
+ "date": "2026-08-28",
  "axes": {
   "T": {
-   "T1": 0.099264617764461,
-   "T2": 0.33176478510739577,
-   "T3": 0.2785695631271988,
-   "T4": 0.17128349268359133,
-   "T5": 0.11911754131735318
+   "T1": 0.09917728308083557,
+   "T2": 0.3323534865234002,
+   "T3": 0.2792058427240594,
+   "T4": 0.1702506479747021,
+   "T5": 0.11901273969700267
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09039530963597753,
-   "A2": 0.23338024231942892,
-   "A3": 0.13207691707737165,
-   "A4": 0.16651937211187431,
-   "A5": 0.09937583127772304,
-   "A6": 0.04968791563886152,
-   "A7": 0.22856441193876303
+   "A1": 0.09102897471489041,
+   "A2": 0.23514872093646083,
+   "A3": 0.13235864919783552,
+   "A4": 0.16486222624633737,
+   "A5": 0.09910563918538837,
+   "A6": 0.04955281959269418,
+   "A7": 0.22794297012639333
   },
   "C": {
-   "C1": 0.3331299372273285,
-   "C2": 0.19466200803241565,
-   "C3": 0.13182776614364075,
-   "C4": 0.15224772701507597,
-   "C5": 0.059410282604696635,
-   "C6": 0.06436113948842136,
-   "C7": 0.054459425720971906,
-   "C8": 0.00990171376744944
+   "C1": 0.3331299372273284,
+   "C2": 0.1946620080324156,
+   "C3": 0.13182776614364072,
+   "C4": 0.15224772701507594,
+   "C5": 0.05941028260469662,
+   "C6": 0.06436113948842134,
+   "C7": 0.05445942572097189,
+   "C8": 0.009901713767449439
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.2369950905150252,
-   "S2": 0.22331741596770227,
-   "S3": 0.25331842581161695,
-   "S4": 0.18762111332439504,
-   "S5": 0.09874795438126054
+   "S1": 0.23699509051502524,
+   "S2": 0.2233174159677023,
+   "S3": 0.253318425811617,
+   "S4": 0.18762111332439507,
+   "S5": 0.09874795438126055
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.227869026520716,
-   "E2": 0.17920465333178842,
-   "E3": 0.3241193401498129,
-   "E4": 0.1891604674057766,
-   "E5": 0.07964651259190594
+   "E1": 0.22862083711710593,
+   "E2": 0.17912866378069128,
+   "E3": 0.3235575034311659,
+   "E4": 0.18908025621295185,
+   "E5": 0.07961273945808502
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -3694,6 +3694,179 @@
      "G6": 0.13166828727752367
     }
    }
+  },
+  {
+   "date": "2026-08-28",
+   "marginals": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09102897471489041,
+     "A2": 0.23514872093646083,
+     "A3": 0.13235864919783552,
+     "A4": 0.16486222624633737,
+     "A5": 0.09910563918538837,
+     "A6": 0.04955281959269418,
+     "A7": 0.22794297012639333
+    },
+    "C": {
+     "C1": 0.3331299372273284,
+     "C2": 0.1946620080324156,
+     "C3": 0.13182776614364072,
+     "C4": 0.15224772701507594,
+     "C5": 0.05941028260469662,
+     "C6": 0.06436113948842134,
+     "C7": 0.05445942572097189,
+     "C8": 0.009901713767449439
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23705101947245732,
+     "D2": 0.3594135456361502,
+     "D3": 0.24977022358858308,
+     "D4": 0.1537652113028094
+    },
+    "S": {
+     "S1": 0.2369950905150252,
+     "S2": 0.22331741596770227,
+     "S3": 0.253318425811617,
+     "S4": 0.18762111332439504,
+     "S5": 0.09874795438126054
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22862083711710593,
+     "E2": 0.17912866378069128,
+     "E3": 0.3235575034311659,
+     "E4": 0.18908025621295185,
+     "E5": 0.07961273945808502
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1939831514680517,
+     "G2": 0.25872475831538827,
+     "G3": 0.15220033589231635,
+     "G4": 0.15220033589231635,
+     "G5": 0.10661393640824332,
+     "G6": 0.136277482023684
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09102897471489041,
+     "A2": 0.23514872093646083,
+     "A3": 0.13235864919783552,
+     "A4": 0.16486222624633737,
+     "A5": 0.09910563918538837,
+     "A6": 0.04955281959269418,
+     "A7": 0.22794297012639333
+    },
+    "C": {
+     "C1": 0.3331299372273284,
+     "C2": 0.1946620080324156,
+     "C3": 0.13182776614364072,
+     "C4": 0.15224772701507594,
+     "C5": 0.05941028260469662,
+     "C6": 0.06436113948842134,
+     "C7": 0.05445942572097189,
+     "C8": 0.009901713767449439
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.2369950905150252,
+     "S2": 0.22331741596770227,
+     "S3": 0.253318425811617,
+     "S4": 0.18762111332439504,
+     "S5": 0.09874795438126054
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22862083711710593,
+     "E2": 0.17912866378069128,
+     "E3": 0.3235575034311659,
+     "E4": 0.18908025621295185,
+     "E5": 0.07961273945808502
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -7301,6 +7474,150 @@
     "https://insideaipolicy.com/ai-daily-news/alabama-ag-asks-openai-details-hugging-face-security-incident-government-scrutiny"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004819,
+   "sources": 1,
+   "repeat_k": 6.319,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006426,
+    "A.A1": -0.0003213
+   },
+   "applied": {
+    "A.A3": 0.0006426,
+    "A.A1": -0.0003213
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "5e65a4d660906fb5",
+   "date": "2026-08-28",
+   "event_date": "2026-08-27",
+   "driver": "Google DeepMind published on August 27, 2026 what it describes as the first double-blind evaluation of a proprietary frontier-class model, t",
+   "driver_urls": [
+    "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-incident",
+   "impact_class": "minor",
+   "magnitude": 0.0016039,
+   "sources": 1,
+   "repeat_k": 1.144,
+   "spread": 1.0,
+   "requested": {
+    "A.A1": 0.0012029,
+    "A.A2": 0.0024059,
+    "A.A4": -0.0012029
+   },
+   "applied": {
+    "A.A1": 0.0012029,
+    "A.A2": 0.0024059,
+    "A.A4": -0.0012029
+   },
+   "cites": [
+    "sources/ai-2027",
+    "analysis/interpretability-and-safety"
+   ],
+   "incident": "dd73991b4cc9d9b6",
+   "date": "2026-08-28",
+   "event_date": "2026-08-28",
+   "driver": "Researchers who investigated the unauthorized access of Hugging Face by OpenAI models were sufficiently overwhelmed by the volume of data to",
+   "driver_urls": [
+    "https://insideaipolicy.com/ai-daily-news/metr-s-slop-vestigation-hugging-face-incident-amplifies-call-rules-incident-reporting"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.0008814,
+   "sources": 1,
+   "repeat_k": 2.564,
+   "spread": 1.0,
+   "requested": {
+    "T.T2": 0.0008814,
+    "T.T3": 0.0008814,
+    "T.T4": -0.0008814
+   },
+   "applied": {
+    "T.T2": 0.0008814,
+    "T.T3": 0.0008814,
+    "T.T4": -0.0008814
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "incident": "93b014832ef13cdc",
+   "date": "2026-08-28",
+   "event_date": "2026-08-28",
+   "driver": "Tencent Holdings launched a preview version of Hy4, its new flagship open-source model, on August 28, 2026. On Code Arena's WebDev benchmark",
+   "driver_urls": [
+    "https://www.theinformation.com/briefings/tencents-new-flagship-ai-model-shows-major-progress"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003183,
+   "sources": 1,
+   "repeat_k": 14.726,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004244,
+    "E.E3": -0.0002122
+   },
+   "applied": {
+    "E.E1": 0.0004244,
+    "E.E3": -0.0002122
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "c47c33c2dc8dd8c9",
+   "date": "2026-08-28",
+   "event_date": "2026-08-28",
+   "driver": "Andreessen Horowitz raised $1.1 billion for the Machine Age fund, its first dedicated hardware-infrastructure fund, in a disclosure publishe",
+   "driver_urls": [
+    "https://www.wsj.com/finance/investing/andreessen-horowitz-hardware-fund-ai-supply-chain-887774c5"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003183,
+   "sources": 1,
+   "repeat_k": 14.726,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004244,
+    "E.E3": -0.0002122
+   },
+   "applied": {
+    "E.E1": 0.0004244,
+    "E.E3": -0.0002122
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "46ab372c24e9393c",
+   "date": "2026-08-28",
+   "event_date": "2026-08-27",
+   "driver": "Kioxia Corporation and Sandisk Corporation announced on August 27, 2026 anticipated investments in Japan totaling over $31 billion, approxim",
+   "driver_urls": [
+    "https://www.kioxia.com/en-jp/about/news/2026/20260827-3.html"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -9578,6 +9895,83 @@
    "text": "Update on Z.ai's disclosure that it built the anonymous Ox Alpha model, carried in the 22:04 file: the company's August ",
    "reports": 1,
    "fp": "064eceb3d897d8d9"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "U.S. District Judge Rita F. Lin of the Northern District of California ruled on August 27, 2026 that the Pentagon's blac",
+   "reports": 1,
+   "fp": "b6b7e99c1bde3399"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "National Security & Geopolitics",
+   "text": "OpenAI, Anthropic, Amazon Web Services, Microsoft and more than 100 other companies published an open letter on August 2",
+   "reports": 1,
+   "fp": "b23ed212c7ff2488"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Nvidia paused some deals in a financing initiative that offered credit support to AI cloud providers in exchange for a s",
+   "reports": 1,
+   "fp": "e7f1da923adb2be4"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "International AI Regulation",
+   "text": "The European Commission made first use of its AI Act enforcement powers during the week of August 24, 2026, ordering inf",
+   "reports": 1,
+   "fp": "a5512ab2eef75569"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "AI Industry & Markets",
+   "text": "Epoch AI researchers Josh You and Lynette Bye published an analysis on August 27, 2026 putting OpenAI's revenue run rate",
+   "reports": 1,
+   "fp": "aab00b3b629a65f8"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "Reported but unverified",
+   "text": "Anthropic has been working on a plan to let existing shareholders sell some stock in its initial public offering while a",
+   "reports": 1,
+   "fp": "541b1cc53366b3ad"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "Reported but unverified",
+   "text": "Cognition, the maker of the Devin coding assistant, is generating around $900 million in annualized revenue, or $75 mill",
+   "reports": 1,
+   "fp": "938b00070c256e0b"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "A small group within the Department of Commerce has spent recent weeks working on a slimmed-down replacement for the Bid",
+   "reports": 1,
+   "fp": "7b4b79a5ed9a1b04"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "Agentic AI & Coding",
+   "text": "Anthropic opened a research preview of the Model Hardware Standard, a shared specification allowing AI agents to operate",
+   "reports": 1,
+   "fp": "2473106a3d292522"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "More than 15 politicians running for office across the United States have signed the AI Pact, a set of five promises cov",
+   "reports": 1,
+   "fp": "c5e28deacbb8c709"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "Reported but unverified",
+   "text": "Workday reported that subscription revenue grew 13.9% to about $2.5 billion in the July quarter while annual recurring r",
+   "reports": 1,
+   "fp": "ec27e183282ee067"
   }
  ],
  "seen": [
@@ -10051,7 +10445,23 @@
   "26b7401be2cb1093",
   "2c0145b109c1b13e",
   "b5ebc2f4090fe4ef",
-  "064eceb3d897d8d9"
+  "064eceb3d897d8d9",
+  "b6b7e99c1bde3399",
+  "b23ed212c7ff2488",
+  "e7f1da923adb2be4",
+  "a5512ab2eef75569",
+  "aab00b3b629a65f8",
+  "541b1cc53366b3ad",
+  "938b00070c256e0b",
+  "7b4b79a5ed9a1b04",
+  "5e65a4d660906fb5",
+  "dd73991b4cc9d9b6",
+  "2473106a3d292522",
+  "93b014832ef13cdc",
+  "c47c33c2dc8dd8c9",
+  "46ab372c24e9393c",
+  "c5e28deacbb8c709",
+  "ec27e183282ee067"
  ],
  "residue_r0": [
   {
