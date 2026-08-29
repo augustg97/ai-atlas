@@ -1,6 +1,6 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-28",
+ "date": "2026-08-29",
  "axes": {
   "T": {
    "T1": 0.09917728308083557,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09102897471489041,
-   "A2": 0.23514872093646083,
-   "A3": 0.13235864919783552,
-   "A4": 0.16486222624633737,
-   "A5": 0.09910563918538837,
-   "A6": 0.04955281959269418,
-   "A7": 0.22794297012639333
+   "A1": 0.09068285498809453,
+   "A2": 0.2350742086921531,
+   "A3": 0.13295085629805603,
+   "A4": 0.164809985883599,
+   "A5": 0.09907423529949926,
+   "A6": 0.04953711764974963,
+   "A7": 0.22787074118884842
   },
   "C": {
-   "C1": 0.3331299372273284,
-   "C2": 0.1946620080324156,
-   "C3": 0.13182776614364072,
-   "C4": 0.15224772701507594,
-   "C5": 0.05941028260469662,
-   "C6": 0.06436113948842134,
-   "C7": 0.05445942572097189,
-   "C8": 0.009901713767449439
+   "C1": 0.33253914038102167,
+   "C2": 0.19457579794570687,
+   "C3": 0.13176938349740824,
+   "C4": 0.15306643498095018,
+   "C5": 0.05938397153523571,
+   "C6": 0.06433263582983868,
+   "C7": 0.054435307240632724,
+   "C8": 0.009897328589205954
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.23699509051502524,
-   "S2": 0.2233174159677023,
-   "S3": 0.253318425811617,
-   "S4": 0.18762111332439507,
-   "S5": 0.09874795438126055
+   "S1": 0.23699509051502518,
+   "S2": 0.22331741596770224,
+   "S3": 0.25331842581161695,
+   "S4": 0.18762111332439502,
+   "S5": 0.09874795438126052
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.22862083711710593,
-   "E2": 0.17912866378069128,
-   "E3": 0.3235575034311659,
-   "E4": 0.18908025621295185,
-   "E5": 0.07961273945808502
+   "E1": 0.22915221557730248,
+   "E2": 0.17907496515510624,
+   "E3": 0.32316037153493204,
+   "E4": 0.18902357433038985,
+   "E5": 0.07958887340226944
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -3867,6 +3867,179 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-08-29",
+   "marginals": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09068285498809453,
+     "A2": 0.23507420869215306,
+     "A3": 0.13295085629805603,
+     "A4": 0.164809985883599,
+     "A5": 0.09907423529949924,
+     "A6": 0.04953711764974962,
+     "A7": 0.2278707411888484
+    },
+    "C": {
+     "C1": 0.33253914038102167,
+     "C2": 0.19457579794570687,
+     "C3": 0.13176938349740824,
+     "C4": 0.15306643498095018,
+     "C5": 0.05938397153523571,
+     "C6": 0.06433263582983868,
+     "C7": 0.054435307240632724,
+     "C8": 0.009897328589205954
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23707262169527024,
+     "D2": 0.3593043902886299,
+     "D3": 0.2497805984136773,
+     "D4": 0.1538423896024226
+    },
+    "S": {
+     "S1": 0.2369950905150252,
+     "S2": 0.22331741596770227,
+     "S3": 0.253318425811617,
+     "S4": 0.18762111332439504,
+     "S5": 0.09874795438126054
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22915221557730248,
+     "E2": 0.17907496515510624,
+     "E3": 0.32316037153493204,
+     "E4": 0.18902357433038985,
+     "E5": 0.07958887340226944
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1939264081761211,
+     "G2": 0.2584534699949654,
+     "G3": 0.15225280449018533,
+     "G4": 0.15225280449018533,
+     "G5": 0.10675047171028228,
+     "G6": 0.1363640411382606
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09068285498809453,
+     "A2": 0.23507420869215306,
+     "A3": 0.13295085629805603,
+     "A4": 0.164809985883599,
+     "A5": 0.09907423529949924,
+     "A6": 0.04953711764974962,
+     "A7": 0.2278707411888484
+    },
+    "C": {
+     "C1": 0.33253914038102167,
+     "C2": 0.19457579794570687,
+     "C3": 0.13176938349740824,
+     "C4": 0.15306643498095018,
+     "C5": 0.05938397153523571,
+     "C6": 0.06433263582983868,
+     "C7": 0.054435307240632724,
+     "C8": 0.009897328589205954
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.2369950905150252,
+     "S2": 0.22331741596770227,
+     "S3": 0.253318425811617,
+     "S4": 0.18762111332439504,
+     "S5": 0.09874795438126054
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22915221557730248,
+     "E2": 0.17907496515510624,
+     "E3": 0.32316037153493204,
+     "E4": 0.18902357433038985,
+     "E5": 0.07958887340226944
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -7618,6 +7791,118 @@
     "https://www.kioxia.com/en-jp/about/news/2026/20260827-3.html"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003324,
+   "sources": 1,
+   "repeat_k": 6.987,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004432,
+    "C.C1": -0.0002216
+   },
+   "applied": {
+    "C.C4": 0.0004432,
+    "C.C1": -0.0002216
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "690f402964422500",
+   "date": "2026-08-29",
+   "event_date": "2026-08-27",
+   "driver": "Update on the ruling against the Pentagon's designation of Anthropic as a supply-chain risk, carried in the August 27 file: Judge Rita Lin o",
+   "driver_urls": [
+    "https://www.nextgov.com/artificial-intelligence/2026/08/judge-rules-anthropic-supply-chain-risk-designation-was-illegal-and-baseless/415698/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004501,
+   "sources": 1,
+   "repeat_k": 15.149,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006001,
+    "E.E3": -0.0003
+   },
+   "applied": {
+    "E.E1": 0.0006001,
+    "E.E3": -0.0003
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "6ee47d21826eca8b",
+   "date": "2026-08-29",
+   "event_date": "2026-08-28",
+   "driver": "Update on Anthropic's initial public offering, whose shareholder-sale and lockup terms were carried in the August 27 file: Anthropic's banke",
+   "driver_urls": [
+    "https://www.nytimes.com/2026/08/21/technology/anthropic-ipo-100-billion.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003324,
+   "sources": 1,
+   "repeat_k": 6.987,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004432,
+    "C.C1": -0.0002216
+   },
+   "applied": {
+    "C.C4": 0.0004432,
+    "C.C1": -0.0002216
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "b21c8e69614441cd",
+   "date": "2026-08-29",
+   "event_date": "2026-08-28",
+   "driver": "ChangXin Memory Technologies sued the U.S. Department of Defense on August 28, 2026 in the U.S. District Court for the District of Columbia,",
+   "driver_urls": [
+    "https://www.reuters.com/world/cxmt-sues-pentagon-over-inclusion-list-companies-tied-chinas-military-2026-08-29/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004758,
+   "sources": 1,
+   "repeat_k": 6.629,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006343,
+    "A.A1": -0.0003172
+   },
+   "applied": {
+    "A.A3": 0.0006343,
+    "A.A1": -0.0003172
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "46365bf28a22a19e",
+   "date": "2026-08-29",
+   "event_date": "2026-08-26",
+   "driver": "Update on METR's investigation of the Hugging Face incident, carried at lede length in the August 28 morning file: METR published the report",
+   "driver_urls": [
+    "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -9972,6 +10257,76 @@
    "text": "Workday reported that subscription revenue grew 13.9% to about $2.5 billion in the July quarter while annual recurring r",
    "reports": 1,
    "fp": "ec27e183282ee067"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Trump administration internally circulated a draft executive order in recent weeks calling for the creation of a sel",
+   "reports": 1,
+   "fp": "fdad8306b5842e41"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Office of Personnel Management released a memo to agency heads on August 27, 2026 directing them to review AI used i",
+   "reports": 1,
+   "fp": "4ee9ec2d7249e77b"
+  },
+  {
+   "date": "2026-08-24",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Representative Seth Magaziner (D-R.I.) introduced the AI Advertising Disclosure Act, H.R. 10146, on August 24, 2026, req",
+   "reports": 1,
+   "fp": "46989c7d58b32522"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Industry & Markets",
+   "text": "Nvidia agreed to buy Hugging Face for $12.9 billion, according to a person with knowledge of the agreement, in an accoun",
+   "reports": 1,
+   "fp": "e61dcd562aa0ca97"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "U.S. State AI Legislation",
+   "text": "Adam Thierer, a free-market advocate and technology policy analyst, said Texas Attorney General and U.S. Senate candidat",
+   "reports": 1,
+   "fp": "159859dbc43f2226"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Information Technology and Innovation Foundation released polling associating public opposition to data centers with",
+   "reports": 1,
+   "fp": "8d20b1d58a2d6416"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "Reported but unverified",
+   "text": "A new group applying the climate movement's organizing playbook against technology companies and the government became p",
+   "reports": 1,
+   "fp": "3c1c2a5c359d217b"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI said on August 28, 2026 that it plans to stop providing AI models to Cursor, the coding-tool company owned by Spa",
+   "reports": 1,
+   "fp": "80819a3d7f64d5c4"
+  },
+  {
+   "date": "2026-08-29",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Representative Greg Casar (D-Texas), chair of the Congressional Progressive Caucus, defended the design of his AI token ",
+   "reports": 1,
+   "fp": "51c841cee2520833"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "Frontier Models & Capabilities",
+   "text": "Z.ai released the weights of GLM-5.3 on Hugging Face under a new license, in an account published August 28, 2026. GLM-5",
+   "reports": 1,
+   "fp": "6cb6f90671e1d603"
   }
  ],
  "seen": [
@@ -10461,7 +10816,21 @@
   "c47c33c2dc8dd8c9",
   "46ab372c24e9393c",
   "c5e28deacbb8c709",
-  "ec27e183282ee067"
+  "ec27e183282ee067",
+  "fdad8306b5842e41",
+  "4ee9ec2d7249e77b",
+  "46989c7d58b32522",
+  "690f402964422500",
+  "6ee47d21826eca8b",
+  "e61dcd562aa0ca97",
+  "159859dbc43f2226",
+  "8d20b1d58a2d6416",
+  "3c1c2a5c359d217b",
+  "80819a3d7f64d5c4",
+  "b21c8e69614441cd",
+  "46365bf28a22a19e",
+  "51c841cee2520833",
+  "6cb6f90671e1d603"
  ],
  "residue_r0": [
   {
