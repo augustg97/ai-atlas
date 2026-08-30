@@ -1,6 +1,6 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-29",
+ "date": "2026-08-30",
  "axes": {
   "T": {
    "T1": 0.09917728308083557,
@@ -16,13 +16,13 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09068285498809453,
-   "A2": 0.2350742086921531,
-   "A3": 0.13295085629805603,
-   "A4": 0.164809985883599,
-   "A5": 0.09907423529949926,
-   "A6": 0.04953711764974963,
-   "A7": 0.22787074118884842
+   "A1": 0.09068285498809454,
+   "A2": 0.23507420869215312,
+   "A3": 0.13295085629805606,
+   "A4": 0.16480998588359902,
+   "A5": 0.09907423529949927,
+   "A6": 0.049537117649749635,
+   "A7": 0.22787074118884845
   },
   "C": {
    "C1": 0.33253914038102167,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.23699509051502518,
-   "S2": 0.22331741596770224,
-   "S3": 0.25331842581161695,
-   "S4": 0.18762111332439502,
-   "S5": 0.09874795438126052
+   "S1": 0.23688091615212545,
+   "S2": 0.2241738124294801,
+   "S3": 0.2527141644012427,
+   "S4": 0.1875307252870994,
+   "S5": 0.09870038173005229
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -4040,6 +4040,179 @@
      "G6": 0.13166828727752367
     }
    }
+  },
+  {
+   "date": "2026-08-30",
+   "marginals": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09068285498809454,
+     "A2": 0.2350742086921531,
+     "A3": 0.13295085629805606,
+     "A4": 0.16480998588359902,
+     "A5": 0.09907423529949926,
+     "A6": 0.04953711764974963,
+     "A7": 0.22787074118884842
+    },
+    "C": {
+     "C1": 0.33253914038102167,
+     "C2": 0.19457579794570687,
+     "C3": 0.13176938349740824,
+     "C4": 0.15306643498095018,
+     "C5": 0.05938397153523571,
+     "C6": 0.06433263582983868,
+     "C7": 0.054435307240632724,
+     "C8": 0.009897328589205954
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23702936049839238,
+     "D2": 0.3595229149779574,
+     "D3": 0.24975981086693236,
+     "D4": 0.15368791365671786
+    },
+    "S": {
+     "S1": 0.23688091615212545,
+     "S2": 0.2241738124294801,
+     "S3": 0.2527141644012427,
+     "S4": 0.1875307252870994,
+     "S5": 0.09870038173005229
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22915221557730248,
+     "E2": 0.17907496515510624,
+     "E3": 0.32316037153493204,
+     "E4": 0.18902357433038985,
+     "E5": 0.07958887340226944
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1940210944596938,
+     "G2": 0.25890648961396245,
+     "G3": 0.15216516487703485,
+     "G4": 0.15216516487703485,
+     "G5": 0.1065225764555945,
+     "G6": 0.1362195097166796
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09068285498809454,
+     "A2": 0.2350742086921531,
+     "A3": 0.13295085629805606,
+     "A4": 0.16480998588359902,
+     "A5": 0.09907423529949926,
+     "A6": 0.04953711764974963,
+     "A7": 0.22787074118884842
+    },
+    "C": {
+     "C1": 0.33253914038102167,
+     "C2": 0.19457579794570687,
+     "C3": 0.13176938349740824,
+     "C4": 0.15306643498095018,
+     "C5": 0.05938397153523571,
+     "C6": 0.06433263582983868,
+     "C7": 0.054435307240632724,
+     "C8": 0.009897328589205954
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23688091615212545,
+     "S2": 0.2241738124294801,
+     "S3": 0.2527141644012427,
+     "S4": 0.1875307252870994,
+     "S5": 0.09870038173005229
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22915221557730248,
+     "E2": 0.17907496515510624,
+     "E3": 0.32316037153493204,
+     "E4": 0.18902357433038985,
+     "E5": 0.07958887340226944
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -7903,6 +8076,62 @@
     "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003616,
+   "sources": 1,
+   "repeat_k": 5.376,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004822,
+    "S.S3": -0.0002411
+   },
+   "applied": {
+    "S.S2": 0.0004822,
+    "S.S3": -0.0002411
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "de5d328e472bc3f5",
+   "date": "2026-08-30",
+   "event_date": "2026-08-29",
+   "driver": "SpaceX has taken steps to develop a foundry in Bastrop, Texas, about 30 miles from Austin, to make vanes and blades for large gas turbines, ",
+   "driver_urls": [
+    "https://www.theinformation.com/newsletters/ai-infrastructure/exclusive-spacex-lays-groundwork-turbine-blade-factory-solve-data-center-power-crunch"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003616,
+   "sources": 1,
+   "repeat_k": 5.376,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004822,
+    "S.S3": -0.0002411
+   },
+   "applied": {
+    "S.S2": 0.0004822,
+    "S.S3": -0.0002411
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "1495a2729a362f02",
+   "date": "2026-08-30",
+   "event_date": "2026-08-28",
+   "driver": "Meta has been testing robots that plug in cables, reset servers, and handle other technician tasks inside its data centers, in an account pu",
+   "driver_urls": [
+    "https://www.wired.com/story/inside-metas-experiments-with-data-center-robots/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -10327,6 +10556,69 @@
    "text": "Z.ai released the weights of GLM-5.3 on Hugging Face under a new license, in an account published August 28, 2026. GLM-5",
    "reports": 1,
    "fp": "6cb6f90671e1d603"
+  },
+  {
+   "date": "2026-08-26",
+   "section": "AI Industry & Markets",
+   "text": "Amazon signed a definitive agreement on August 26, 2026 to acquire DuckLabs, the Amsterdam company behind the open-sourc",
+   "reports": 1,
+   "fp": "10186ac15844148d"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "AI Adoption by Industry",
+   "text": "The Allen Institute for AI and the Paul G. Allen Research Center at Providence Swedish Cancer Institute announced on Aug",
+   "reports": 1,
+   "fp": "ff4ecbda9715474d"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Pew Research Center published a survey on August 25, 2026 finding that 34% of U.S. adults use AI chatbots for at lea",
+   "reports": 1,
+   "fp": "adec62233e1fd919"
+  },
+  {
+   "date": "2026-08-30",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Apple's Mac mini and Mac Studio have become its fastest-growing business on demand from AI labs and developers, in an ac",
+   "reports": 1,
+   "fp": "3dd9aee6943023d3"
+  },
+  {
+   "date": "2026-08-30",
+   "section": "AI Industry & Markets",
+   "text": "Salesforce is starting to let businesses choose how they pay for its Agentforce AI, including custom contracts priced on",
+   "reports": 1,
+   "fp": "428fbd5f5efe5d73"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "Agentic AI & Coding",
+   "text": "OpenAI is developing a proactive, highly persistent version of Codex, its flagship AI agent, in a report published Augus",
+   "reports": 1,
+   "fp": "f1ba32cb442f11f5"
+  },
+  {
+   "date": "2026-08-30",
+   "section": "AI Adoption by Industry",
+   "text": "Ezekiel Emanuel, Vinod Khosla, and co-authors argued in an article published in the Journal of the American Medical Asso",
+   "reports": 1,
+   "fp": "eda8b1d512f7e9ed"
+  },
+  {
+   "date": "2026-08-30",
+   "section": "International AI Regulation",
+   "text": "Oliver Patel published an analysis on August 30, 2026 of China's agentic AI governance framework, centred on the Impleme",
+   "reports": 1,
+   "fp": "e3808eeecc78302d"
+  },
+  {
+   "date": "2026-08-30",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Employers are adding screening steps to job interviews to establish that candidates are real and unassisted, asking them",
+   "reports": 1,
+   "fp": "a8462ce6a1523e76"
   }
  ],
  "seen": [
@@ -10830,7 +11122,18 @@
   "b21c8e69614441cd",
   "46365bf28a22a19e",
   "51c841cee2520833",
-  "6cb6f90671e1d603"
+  "6cb6f90671e1d603",
+  "de5d328e472bc3f5",
+  "10186ac15844148d",
+  "ff4ecbda9715474d",
+  "adec62233e1fd919",
+  "3dd9aee6943023d3",
+  "1495a2729a362f02",
+  "428fbd5f5efe5d73",
+  "f1ba32cb442f11f5",
+  "eda8b1d512f7e9ed",
+  "e3808eeecc78302d",
+  "a8462ce6a1523e76"
  ],
  "residue_r0": [
   {
