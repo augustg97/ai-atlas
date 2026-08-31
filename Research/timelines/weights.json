@@ -1,6 +1,6 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-30",
+ "date": "2026-08-31",
  "axes": {
   "T": {
    "T1": 0.09917728308083557,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09068285498809454,
-   "A2": 0.23507420869215312,
-   "A3": 0.13295085629805606,
-   "A4": 0.16480998588359902,
-   "A5": 0.09907423529949927,
-   "A6": 0.049537117649749635,
-   "A7": 0.22787074118884845
+   "A1": 0.09018584655923524,
+   "A2": 0.23496717824109375,
+   "A3": 0.1338013481419212,
+   "A4": 0.1647349470810594,
+   "A5": 0.09902912630965532,
+   "A6": 0.04951456315482766,
+   "A7": 0.2277669905122074
   },
   "C": {
-   "C1": 0.33253914038102167,
-   "C2": 0.19457579794570687,
-   "C3": 0.13176938349740824,
-   "C4": 0.15306643498095018,
-   "C5": 0.05938397153523571,
-   "C6": 0.06433263582983868,
-   "C7": 0.054435307240632724,
-   "C8": 0.009897328589205954
+   "C1": 0.33195452269855386,
+   "C2": 0.19449048896431378,
+   "C3": 0.13171161109198248,
+   "C4": 0.15387658155685408,
+   "C5": 0.05935793548051445,
+   "C6": 0.06430443010389066,
+   "C7": 0.05441144085713824,
+   "C8": 0.00989298924675241
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.23688091615212545,
-   "S2": 0.2241738124294801,
-   "S3": 0.2527141644012427,
-   "S4": 0.1875307252870994,
-   "S5": 0.09870038173005229
+   "S1": 0.23680599691987284,
+   "S2": 0.2247358605120115,
+   "S3": 0.2523175629566025,
+   "S4": 0.18747141422823277,
+   "S5": 0.09866916538328036
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.22915221557730248,
-   "E2": 0.17907496515510624,
-   "E3": 0.32316037153493204,
-   "E4": 0.18902357433038985,
-   "E5": 0.07958887340226944
+   "E1": 0.22968366133465473,
+   "E2": 0.1790212597443224,
+   "E3": 0.3227631893045394,
+   "E4": 0.18896688528567357,
+   "E5": 0.07956500433080996
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -4213,6 +4213,179 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-08-31",
+   "marginals": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09018584655923524,
+     "A2": 0.23496717824109373,
+     "A3": 0.1338013481419212,
+     "A4": 0.1647349470810594,
+     "A5": 0.09902912630965531,
+     "A6": 0.049514563154827655,
+     "A7": 0.22776699051220736
+    },
+    "C": {
+     "C1": 0.33195452269855386,
+     "C2": 0.19449048896431378,
+     "C3": 0.13171161109198248,
+     "C4": 0.15387658155685408,
+     "C5": 0.05935793548051445,
+     "C6": 0.06430443010389066,
+     "C7": 0.05441144085713824,
+     "C8": 0.00989298924675241
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23707262169527024,
+     "D2": 0.3593043902886299,
+     "D3": 0.2497805984136773,
+     "D4": 0.1538423896024226
+    },
+    "S": {
+     "S1": 0.23680599691987284,
+     "S2": 0.2247358605120115,
+     "S3": 0.2523175629566025,
+     "S4": 0.18747141422823277,
+     "S5": 0.09866916538328036
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22968366133465473,
+     "E2": 0.1790212597443224,
+     "E3": 0.3227631893045394,
+     "E4": 0.18896688528567357,
+     "E5": 0.07956500433080996
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19398315146805167,
+     "G2": 0.25872475831538827,
+     "G3": 0.15220033589231635,
+     "G4": 0.15220033589231635,
+     "G5": 0.10661393640824332,
+     "G6": 0.13627748202368398
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09018584655923524,
+     "A2": 0.23496717824109373,
+     "A3": 0.1338013481419212,
+     "A4": 0.1647349470810594,
+     "A5": 0.09902912630965531,
+     "A6": 0.049514563154827655,
+     "A7": 0.22776699051220736
+    },
+    "C": {
+     "C1": 0.33195452269855386,
+     "C2": 0.19449048896431378,
+     "C3": 0.13171161109198248,
+     "C4": 0.15387658155685408,
+     "C5": 0.05935793548051445,
+     "C6": 0.06430443010389066,
+     "C7": 0.05441144085713824,
+     "C8": 0.00989298924675241
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23680599691987284,
+     "S2": 0.2247358605120115,
+     "S3": 0.2523175629566025,
+     "S4": 0.18747141422823277,
+     "S5": 0.09866916538328036
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22968366133465473,
+     "E2": 0.1790212597443224,
+     "E3": 0.3227631893045394,
+     "E4": 0.18896688528567357,
+     "E5": 0.07956500433080996
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -8132,6 +8305,174 @@
     "https://www.wired.com/story/inside-metas-experiments-with-data-center-robots/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003291,
+   "sources": 1,
+   "repeat_k": 7.373,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004388,
+    "C.C1": -0.0002194
+   },
+   "applied": {
+    "C.C4": 0.0004388,
+    "C.C1": -0.0002194
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "55733e1950ea3361",
+   "date": "2026-08-31",
+   "event_date": "2026-08-28",
+   "driver": "Sony Music Publishing and Warner Chappell Music sued Anthropic, chief executive Dario Amodei and co-founder Benjamin Mann on August 28, 2026",
+   "driver_urls": [
+    "https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003418,
+   "sources": 1,
+   "repeat_k": 6.258,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004557,
+    "A.A1": -0.0002278
+   },
+   "applied": {
+    "A.A3": 0.0004557,
+    "A.A1": -0.0002278
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "75532007df6a9143",
+   "date": "2026-08-31",
+   "event_date": "2026-08-28",
+   "driver": "Update on the METR and Redwood Research investigation of the Hugging Face incident, carried in the August 29 morning file: investigator Ajey",
+   "driver_urls": [
+    "https://www.planned-obsolescence.org/p/the-hugging-face-attack-surprised"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003291,
+   "sources": 1,
+   "repeat_k": 7.373,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004388,
+    "C.C1": -0.0002194
+   },
+   "applied": {
+    "C.C4": 0.0004388,
+    "C.C1": -0.0002194
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "061d8c5b47e7671b",
+   "date": "2026-08-31",
+   "event_date": "2026-08-27",
+   "driver": "Texas Governor Greg Abbott ordered state agencies on the night of August 27, 2026 to pause funding for Flock Safety cameras, his spokesman c",
+   "driver_urls": [
+    "https://www.texastribune.org/2026/08/28/texas-greg-abbott-flock-cameras-order-state-money/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0004749,
+   "sources": 1,
+   "repeat_k": 6.68,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0006331,
+    "S.S3": -0.0003166
+   },
+   "applied": {
+    "S.S2": 0.0006331,
+    "S.S3": -0.0003166
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "22fe7368bf1289a8",
+   "date": "2026-08-31",
+   "event_date": "2026-08-30",
+   "driver": "SB Energy issued OpenAI warrants worth an estimated $5.5 billion to secure OpenAI as a data-center tenant ahead of the SoftBank-backed compa",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/the-5-5-billion-perk-softbanks-data-center-venture-offered-to-land-openai-a5c7fb5e"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003418,
+   "sources": 1,
+   "repeat_k": 6.258,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004557,
+    "A.A1": -0.0002278
+   },
+   "applied": {
+    "A.A3": 0.0004557,
+    "A.A1": -0.0002278
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "b510d71cdf07b4d4",
+   "date": "2026-08-31",
+   "event_date": "2026-08-31",
+   "driver": "Transluce, a San Francisco nonprofit that studies AI behavior, published an evaluation on August 31, 2026 finding that leading AI models are",
+   "driver_urls": [
+    "https://www.axios.com/2026/08/31/chatbots-suicide-risks-identification"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004503,
+   "sources": 1,
+   "repeat_k": 13.247,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006003,
+    "E.E3": -0.0003002
+   },
+   "applied": {
+    "E.E1": 0.0006003,
+    "E.E3": -0.0003002
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "ec5b1a847ca6439b",
+   "date": "2026-08-31",
+   "event_date": "2026-08-31",
+   "driver": "OpenAI said on August 31, 2026 that ChatGPT Ads has reached $1 billion in annualized revenue run rate, and opened direct purchasing through ",
+   "driver_urls": [
+    "https://www.reuters.com/business/media-telecom/openais-ad-business-hits-1-billion-annualized-revenue-run-rate-2026-08-31/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -10619,6 +10960,48 @@
    "text": "Employers are adding screening steps to job interviews to establish that candidates are real and unassisted, asking them",
    "reports": 1,
    "fp": "a8462ce6a1523e76"
+  },
+  {
+   "date": "2026-08-30",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "NPR and NewsGuard published an experiment on August 30, 2026 finding that AI chatbots failed to challenge false narrativ",
+   "reports": 1,
+   "fp": "6eb7ce8fde4da6a1"
+  },
+  {
+   "date": "2026-08-29",
+   "section": "Reported but unverified",
+   "text": "The California Legislature's passage of AB 1856, described in the reporting outlet's deck as excluding open-source opera",
+   "reports": 1,
+   "fp": "1c6db80c15d1fd36"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Defense Department made ChatGPT Mil available on GenAI.mil, its main portal for AI tools, with officials set to anno",
+   "reports": 1,
+   "fp": "7af9a4ddd6390afd"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "International AI Regulation",
+   "text": "The European Commission said on August 31, 2026 that ChatGPT, Reddit and Roblox must comply with the Digital Services Ac",
+   "reports": 1,
+   "fp": "a8931287efa27fa9"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "International AI Regulation",
+   "text": "Financial Stability Board Chair Andrew Bailey, who also serves as Bank of England governor, wrote to G20 finance ministe",
+   "reports": 1,
+   "fp": "dd2fbd54a8c2d288"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "The European Union awarded French state-owned Bull a \u20ac387.8 million ($449.4 million) contract on August 31, 2026 to buil",
+   "reports": 1,
+   "fp": "c556681ab5cf3272"
   }
  ],
  "seen": [
@@ -11133,7 +11516,19 @@
   "f1ba32cb442f11f5",
   "eda8b1d512f7e9ed",
   "e3808eeecc78302d",
-  "a8462ce6a1523e76"
+  "a8462ce6a1523e76",
+  "55733e1950ea3361",
+  "75532007df6a9143",
+  "6eb7ce8fde4da6a1",
+  "061d8c5b47e7671b",
+  "22fe7368bf1289a8",
+  "1c6db80c15d1fd36",
+  "7af9a4ddd6390afd",
+  "a8931287efa27fa9",
+  "dd2fbd54a8c2d288",
+  "b510d71cdf07b4d4",
+  "ec5b1a847ca6439b",
+  "c556681ab5cf3272"
  ],
  "residue_r0": [
   {
