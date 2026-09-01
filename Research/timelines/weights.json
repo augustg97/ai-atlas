@@ -1,6 +1,6 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-08-31",
+ "date": "2026-09-01",
  "axes": {
   "T": {
    "T1": 0.09917728308083557,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09018584655923524,
-   "A2": 0.23496717824109375,
-   "A3": 0.1338013481419212,
-   "A4": 0.1647349470810594,
-   "A5": 0.09902912630965532,
-   "A6": 0.04951456315482766,
-   "A7": 0.2277669905122074
+   "A1": 0.09050166497429071,
+   "A2": 0.23644377255288296,
+   "A3": 0.13444027885605953,
+   "A4": 0.1632698426042453,
+   "A5": 0.0987748528980319,
+   "A6": 0.04938742644901595,
+   "A7": 0.2271821616654736
   },
   "C": {
-   "C1": 0.33195452269855386,
-   "C2": 0.19449048896431378,
-   "C3": 0.13171161109198248,
-   "C4": 0.15387658155685408,
-   "C5": 0.05935793548051445,
-   "C6": 0.06430443010389066,
-   "C7": 0.05441144085713824,
-   "C8": 0.00989298924675241
+   "C1": 0.33134568801692915,
+   "C2": 0.19440170959464215,
+   "C3": 0.13165148849229422,
+   "C4": 0.1547201196973064,
+   "C5": 0.05933084027331418,
+   "C6": 0.06427507696275703,
+   "C7": 0.05438660358387133,
+   "C8": 0.009888473378885699
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.23680599691987284,
-   "S2": 0.2247358605120115,
-   "S3": 0.2523175629566025,
-   "S4": 0.18747141422823277,
-   "S5": 0.09866916538328036
+   "S1": 0.23670102573986695,
+   "S2": 0.2255231917057333,
+   "S3": 0.2517620431187271,
+   "S4": 0.18738831204406145,
+   "S5": 0.09862542739161125
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.22968366133465473,
-   "E2": 0.1790212597443224,
-   "E3": 0.3227631893045394,
-   "E4": 0.18896688528567357,
-   "E5": 0.07956500433080996
+   "E1": 0.22968366133465468,
+   "E2": 0.17902125974432237,
+   "E3": 0.32276318930453934,
+   "E4": 0.1889668852856735,
+   "E5": 0.07956500433080994
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -4386,6 +4386,179 @@
      "G6": 0.13166828727752367
     }
    }
+  },
+  {
+   "date": "2026-09-01",
+   "marginals": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09050166497429073,
+     "A2": 0.23644377255288299,
+     "A3": 0.13444027885605955,
+     "A4": 0.16326984260424532,
+     "A5": 0.09877485289803191,
+     "A6": 0.049387426449015955,
+     "A7": 0.22718216166547361
+    },
+    "C": {
+     "C1": 0.33134568801692915,
+     "C2": 0.19440170959464212,
+     "C3": 0.13165148849229422,
+     "C4": 0.1547201196973064,
+     "C5": 0.05933084027331417,
+     "C6": 0.06427507696275703,
+     "C7": 0.054386603583871325,
+     "C8": 0.009888473378885699
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23709416736579533,
+     "D2": 0.35919544831931116,
+     "D3": 0.24979093549683767,
+     "D4": 0.15391944881805586
+    },
+    "S": {
+     "S1": 0.23670102573986695,
+     "S2": 0.2255231917057333,
+     "S3": 0.2517620431187271,
+     "S4": 0.18738831204406145,
+     "S5": 0.09862542739161125
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22968366133465468,
+     "E2": 0.17902125974432237,
+     "E3": 0.32276318930453934,
+     "E4": 0.1889668852856735,
+     "E5": 0.07956500433080994
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1939831514680517,
+     "G2": 0.25872475831538827,
+     "G3": 0.15220033589231635,
+     "G4": 0.15220033589231635,
+     "G5": 0.10661393640824332,
+     "G6": 0.136277482023684
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09917728308083557,
+     "T2": 0.3323534865234002,
+     "T3": 0.2792058427240594,
+     "T4": 0.1702506479747021,
+     "T5": 0.11901273969700267
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09050166497429073,
+     "A2": 0.23644377255288299,
+     "A3": 0.13444027885605955,
+     "A4": 0.16326984260424532,
+     "A5": 0.09877485289803191,
+     "A6": 0.049387426449015955,
+     "A7": 0.22718216166547361
+    },
+    "C": {
+     "C1": 0.33134568801692915,
+     "C2": 0.19440170959464212,
+     "C3": 0.13165148849229422,
+     "C4": 0.1547201196973064,
+     "C5": 0.05933084027331417,
+     "C6": 0.06427507696275703,
+     "C7": 0.054386603583871325,
+     "C8": 0.009888473378885699
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23670102573986695,
+     "S2": 0.2255231917057333,
+     "S3": 0.2517620431187271,
+     "S4": 0.18738831204406145,
+     "S5": 0.09862542739161125
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22968366133465468,
+     "E2": 0.17902125974432237,
+     "E3": 0.32276318930453934,
+     "E4": 0.1889668852856735,
+     "E5": 0.07956500433080994
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -8473,6 +8646,179 @@
     "https://www.reuters.com/business/media-telecom/openais-ad-business-hits-1-billion-annualized-revenue-run-rate-2026-08-31/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003283,
+   "sources": 1,
+   "repeat_k": 7.48,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004377,
+    "A.A1": -0.0002189
+   },
+   "applied": {
+    "A.A3": 0.0004377,
+    "A.A1": -0.0002189
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "84de7bdd29117474",
+   "date": "2026-09-01",
+   "event_date": "2026-08-31",
+   "driver": "Update on Transluce's mental-health evaluation, published August 31, 2026 and carried in the morning file for that date: the study reports t",
+   "driver_urls": [
+    "https://www.platformer.news/openai-huggingface-metr-report-slowdown/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003327,
+   "sources": 1,
+   "repeat_k": 6.956,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004436,
+    "S.S3": -0.0002218
+   },
+   "applied": {
+    "S.S2": 0.0004436,
+    "S.S3": -0.0002218
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "84f5f48295aac005",
+   "date": "2026-09-01",
+   "event_date": "2026-08-31",
+   "driver": "Anthropic has signed a cloud-computing agreement worth $35 billion with Lambda, an Nvidia-backed cloud provider, with Nvidia itself holding ",
+   "driver_urls": [
+    "https://www.wsj.com/tech/ai/anthropic-signs-35-billion-cloud-deal-backed-by-nvidia-f12622f1"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004104,
+   "sources": 2,
+   "repeat_k": 7.48,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0005472,
+    "A.A1": -0.0002736
+   },
+   "applied": {
+    "A.A3": 0.0005472,
+    "A.A1": -0.0002736
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "cbb2330743f1bd3a",
+   "date": "2026-09-01",
+   "event_date": "2026-08-31",
+   "driver": "Anthropic disclosed on August 31, 2026 that it paused external cyber evaluations of pre-release models after the three incidents it reported",
+   "driver_urls": [
+    "https://www.anthropic.com/news/improving-alignment-security-efforts",
+    "https://www.axios.com/2026/09/01/anthropic-paused-some-ai-training-after-claude-took-unauthorized-actions"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-incident",
+   "impact_class": "minor",
+   "magnitude": 0.001388,
+   "sources": 1,
+   "repeat_k": 1.443,
+   "spread": 1.0,
+   "requested": {
+    "A.A1": 0.001041,
+    "A.A2": 0.0020821,
+    "A.A4": -0.001041
+   },
+   "applied": {
+    "A.A1": 0.001041,
+    "A.A2": 0.0020821,
+    "A.A4": -0.001041
+   },
+   "cites": [
+    "sources/ai-2027",
+    "analysis/interpretability-and-safety"
+   ],
+   "incident": "c3d52eef6f90ae48",
+   "date": "2026-09-01",
+   "event_date": "2026-08-31",
+   "driver": "Anthropic reported in the same August 31, 2026 post that it deliberately trained an Opus-class model on 80 real reinforcement-learning envir",
+   "driver_urls": [
+    "https://www.anthropic.com/news/improving-alignment-security-efforts"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0006856,
+   "sources": 3,
+   "repeat_k": 8.489,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0009142,
+    "C.C1": -0.0004571
+   },
+   "applied": {
+    "C.C4": 0.0009142,
+    "C.C1": -0.0004571
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "361a128a7e99967f",
+   "date": "2026-09-01",
+   "event_date": "2026-08-31",
+   "driver": "The Federal Trade Commission and 22 state attorneys general sued Amazon on August 31, 2026 in the U.S. District Court for the Western Distri",
+   "driver_urls": [
+    "https://www.cnbc.com/2026/08/31/amazon-ftc-lawsuit-advertisers.html",
+    "https://qz.com/ftc-sues-amazon-ad-auction-price-manipulation-083126",
+    "https://finance.yahoo.com/media-advertising/articles/us-regulator-22-states-accuse-230624178.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003327,
+   "sources": 1,
+   "repeat_k": 6.956,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004436,
+    "S.S3": -0.0002218
+   },
+   "applied": {
+    "S.S2": 0.0004436,
+    "S.S3": -0.0002218
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "39131794acaa1fd9",
+   "date": "2026-09-01",
+   "event_date": "2026-09-01",
+   "driver": "Requests from data centers and other large energy users to connect to the Texas grid have risen from about 48 gigawatts in 2023 to more than",
+   "driver_urls": [
+    "https://www.reuters.com/business/texas-halt-powering-data-centers-reflects-us-reckoning-over-ghost-demand-2026-09-01/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -11002,6 +11348,62 @@
    "text": "The European Union awarded French state-owned Bull a \u20ac387.8 million ($449.4 million) contract on August 31, 2026 to buil",
    "reports": 1,
    "fp": "c556681ab5cf3272"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on the METR and Redwood Research investigation of the Hugging Face incident, carried in the August 29 and 30 file",
+   "reports": 1,
+   "fp": "b2cf491a2ca8e535"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "President Donald Trump wrote on Truth Social on August 31, 2026 that \"The only reason that communities throughout the U.",
+   "reports": 1,
+   "fp": "2aa963f9e254af3e"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "AI Standards & Safety Frameworks",
+   "text": "Update on the collective cyberdefense letter carried in the August 27\u201330 files: civil society and security groups have c",
+   "reports": 1,
+   "fp": "259d5946ef49ca70"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "AI Adoption by Industry",
+   "text": "Ernst & Young's U.S. division plans to invest $100 million in employee rewards recognizing people who demonstrate skills",
+   "reports": 1,
+   "fp": "2a9f8740a881faad"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Apple filed what it calls \"shocking evidence\" in its trade-secrets suit against OpenAI in the U.S. District Court for th",
+   "reports": 1,
+   "fp": "81b1dd8a8d8707ad"
+  },
+  {
+   "date": "2026-08-27",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The American Fintech Council endorsed Senator Mark Warner's (D-VA) discussion draft of the Artificial Intelligence Acces",
+   "reports": 1,
+   "fp": "030095bf88bcaa36"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "Reported but unverified",
+   "text": "Nvidia's $3.5 billion investment in convertible bonds issued by MediaTek, alongside an arrangement for MediaTek to produ",
+   "reports": 1,
+   "fp": "530a27f50776abf9"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "Reported but unverified",
+   "text": "Z.ai's first-half revenue of 954 million yuan ($142 million), of which 825 million yuan came from open platform and API ",
+   "reports": 1,
+   "fp": "cab76e48d083862a"
   }
  ],
  "seen": [
@@ -11528,7 +11930,21 @@
   "dd2fbd54a8c2d288",
   "b510d71cdf07b4d4",
   "ec5b1a847ca6439b",
-  "c556681ab5cf3272"
+  "c556681ab5cf3272",
+  "b2cf491a2ca8e535",
+  "84de7bdd29117474",
+  "84f5f48295aac005",
+  "2aa963f9e254af3e",
+  "259d5946ef49ca70",
+  "2a9f8740a881faad",
+  "cbb2330743f1bd3a",
+  "c3d52eef6f90ae48",
+  "361a128a7e99967f",
+  "81b1dd8a8d8707ad",
+  "39131794acaa1fd9",
+  "030095bf88bcaa36",
+  "530a27f50776abf9",
+  "cab76e48d083862a"
  ],
  "residue_r0": [
   {
