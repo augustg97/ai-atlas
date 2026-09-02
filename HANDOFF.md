@@ -39,6 +39,28 @@ forecast surface and ratchets grounding.
 
 ## State right now
 
+- **2026-09-02 · registry r9 on the branch `claude/ai-futures-forecaster-review-t7fvqb`, held
+  for August's merge.** The first tranche of the forecaster's model programme (P4 of
+  `Research/plan-2026-09-02-chronicle.md` in `ai-futures-forecaster`): K wired into
+  `capability_path` (M1); `tracks()` rewritten as logistic dynamics against world ceilings with
+  the path's own events moving what follows them (M4, M2) — compute toward a supply-keyed share
+  of world generating capacity, revenue toward a diffusion-keyed share of a world output whose
+  growth the benefit position lifts and that tapers after the research crossing, employment as
+  the machine share of paid work less what re-employment absorbs, approval mean-reverting,
+  statutes saturating, copies following compute; the time horizon in hours emitted as `hz` (M5);
+  the drawn mainline the ensemble's medoid with the argmax beside it (M6); `ONSETS` in the
+  registry; track bands over the 2,000-line ensemble in `bands.json`; `engine.json` carrying
+  `k_gap`, `dynamics`, `effects`, `onsets`, `horizon_anchors`, `mainline_kind`. The changelog
+  entry states what changed and the evidence; `worldlines._selftest` covers each change (K gaps
+  by band and the clamp share, no track over its ceiling, a dip with a settlement, an event
+  removed changes only what follows it, the one-pass medoid equals brute force). Self-test and
+  emit pass; `audit_all.py` PASS. The staged emission on the branch is a local run of that
+  engine; `weights.json` was restored after it so the nightly's history is untouched.
+  **The forecaster's branch of the same name reads this emission and must merge after it.**
+  `climate_params` in the forecaster extracts the climate block of `tracks()` by shape, so
+  those four lines keep their `wl["S"]` / `wl["C"]` forms.
+
+
 - Live and verified; the nightly task `ai-atlas-nightly` (10:47 local) runs
   `build/nightly.sh`: trunk emit → witness (epoch + **statelaw**) → nightly_update →
   grounding → forecast_emit → gate → stamp → push → live verify. Its prompt (in

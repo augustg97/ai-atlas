@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r8-2026-08-20"
+REGISTRY_VERSION = "r9-2026-09-02"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -2381,7 +2381,66 @@ REGISTRY = {
 
   },
   "changelog": [
-    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+    {"version": REGISTRY_VERSION, "date": "2026-09-02",
+     "change": "r9 - the model programme's first tranche (P4 of the chronicle "
+               "plan, Research/plan-2026-09-02-chronicle.md in "
+               "ai-futures-forecaster): the sheet composes only what the "
+               "engine emits, and what it emitted froze. M1: K reaches the "
+               "capability path. The tempo knots carried a gap of T's own, so "
+               "the published mainline said K1, rungs inside one year, and "
+               "drew 1.6 years, and the chronicle lettered 'about three years "
+               "after' beside 'within twelve months'. The coding crossing now "
+               "sits K's gap before T's research crossing, which stays where T "
+               "puts it; gaps are the bands' midpoints, K4 six and a half years; a line "
+               "whose gap cannot fit is clamped and counted (under a tenth of "
+               "the ensemble). M4: every track was a compounding rate with a "
+               "hard cap - compute 60,000 GW, revenue $30T, employment -35%, "
+               "copies 50M - and by the 2040s every sampled path sat at its "
+               "caps, so the far decades read as frozen numbers and the "
+               "readout gate reported 76 frozen or ceiling findings a night. "
+               "Compute now grows logistically toward the share of world "
+               "generating capacity (9,500 GW in 2026, 2.5% a year) its "
+               "supply position can reach; revenue toward its diffusion "
+               "band's share of a world output ($115T, 3% at trend) whose "
+               "growth the benefit position lifts by up to 6 points, tapering "
+               "to trend forty years after the research crossing; the "
+               "machine share of paid work toward the band's own ceiling with "
+               "re-employment absorbing part of it over eight years, so "
+               "employment dips and settles; approval mean-reverts to the "
+               "level the public position and the labour market set; "
+               "statutes saturate; agent copies follow compute; the economy "
+               "position damps the growth excess of compute where the r8 "
+               "form multiplied the growth factor and shrank compute for "
+               "decades on demand-crisis lines. The constants "
+               "are modelled and named as such in worldlines.py; the "
+               "transformation era's variables (M3) take them over. M2: the "
+               "templates carry effects - a correction cuts compute growth "
+               "while it lasts, an incident shocks approval and speeds "
+               "statutes, a labour statute raises re-employment - so the "
+               "chronicle is causal; the library is still 38 and the growth to "
+               "about 120 cited templates is the next tranche. The registry "
+               "gains ONSETS, the rule that dates each position on a path, "
+               "moved from the forecaster's narrative tables so the engine "
+               "emits onsets per path. M5: a measured series under the ladder, "
+               "METR's 50% time horizon in hours anchored to the rungs, "
+               "emitted as hz and read as a measurement only up to the "
+               "research rung. M6: the drawn mainline is the medoid of the "
+               "2,000-line ensemble - the sampled path closest to all the "
+               "others, exact in one pass over the marginal counts - with the "
+               "joint argmax carried beside it and lettered; the argmax cell "
+               "was a point in a space of 121 million that may never have "
+               "been sampled. Self-tests cover each: K gaps by band and the "
+               "clamp share; no track over its ceiling, compute still moving "
+               "at 2100, a dip with a settlement, approval converged; an event "
+               "removed changes the tracks after it and nothing before it; "
+               "onsets name live positions and templates; the one-pass medoid "
+               "equals brute force; track bands ordered.",
+     "approved": "Practice under the standing rule of 2026-08-20, held on the "
+                 "branch claude/ai-futures-forecaster-review-t7fvqb for "
+                 "August's merge; the forecaster's client reads the new "
+                 "emission behind fallbacks and its port gate proves the two "
+                 "implementations agree."},
+    {"version": "r8-2026-08-20", "date": "2026-08-20",
      "change": "r8c - the claims register and the crisis board re-read against "
                "the live names, and a check so the next rebuild cannot re-key "
                "them quietly. Three of four claims and one crisis card were "
@@ -2419,7 +2478,7 @@ REGISTRY = {
                  "listed by a second session reading the live r8 registry, and "
                  "each was verified here against the position names and "
                  "capability_path before anything moved."},
-    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+    {"version": "r8-2026-08-20", "date": "2026-08-20",
      "change": "r8b - the argmax stops enumerating, and the test that would "
                "have caught it starts running. worldlines.mainline() was a full "
                "Cartesian product over every position of every axis, with a "
@@ -2482,7 +2541,7 @@ REGISTRY = {
                  "and was wrong. The correction is recorded because the wrong "
                  "cause was written into CLAUDE.md before the right one was "
                  "known."},
-    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+    {"version": "r8-2026-08-20", "date": "2026-08-20",
      "change": "r8a - the citations now resolve, and G is grounded. FOUR "
                "REGISTRY CITATIONS NAMED PAGES THAT DO NOT EXIST: "
                "analysis/metr-time-horizons (the page is sources/metr-long- "
@@ -2516,7 +2575,7 @@ REGISTRY = {
                  "evidence, and the self-test passes before anything is "
                  "emitted. Found while checking why the new axis reported zero "
                  "grounding on its first night."},
-    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+    {"version": "r8-2026-08-20", "date": "2026-08-20",
      "change": "r8 - an eleventh axis, G, benefit realisation, and the first "
                "that asks whether anyone is better off. The ten existing axes "
                "measure capability, control, money, computing, rules, consent, "
@@ -2560,7 +2619,7 @@ REGISTRY = {
                  "in Machines of Loving Grace).' He asked after reading a "
                  "passage that put AI being wrong beside the machines getting "
                  "better and found the pairing incoherent."},
-    {"version": REGISTRY_VERSION, "date": "2026-08-20",
+    {"version": "r8-2026-08-20", "date": "2026-08-20",
      "change": "r7 - a tenth axis, L, laboratory conduct, and the first that "
                "asks what an actor CHOOSES. Every existing axis is a condition "
                "the laboratories find themselves in: T how fast capability "
@@ -2595,7 +2654,7 @@ REGISTRY = {
                  "approach to AI safety and how they use their potential "
                  "largesse', and chose 'Add it - write r7' from a proposal that "
                  "named the objection above."},
-    {"version": REGISTRY_VERSION, "date": "2026-08-18",
+    {"version": "r8-2026-08-20", "date": "2026-08-18",
      "change": "r6 - the two edges r5 left open, closed on evidence. (1) THE "
                "PUBLIC-TO-REGULATION CHANNEL. r3 researched an edge from public "
                "response into policy and left it out because Gilens and Page "
@@ -2636,7 +2695,7 @@ REGISTRY = {
      "approved": "August (2026-08-18: 'please continue to completion with the "
                  "two remaining items') - arithmetic in Forecast Works "
                  "Research/findings/r5-gap-register.md"},
-    {"version": REGISTRY_VERSION, "date": "2026-08-17",
+    {"version": "r8-2026-08-20", "date": "2026-08-17",
      "change": "r5 - the position space and the edge structure rebuilt. 7 axes "
                "and 26 positions become 9 axes and 48 positions; 25 conditional "
                "edges become 144. Two axes are added: K, the months between the "
@@ -2681,7 +2740,7 @@ REGISTRY = {
                "sections now watched, most from both directions.",
      "approved": "August (2026-08-03: 'can we please fix all of the issues "
                  "flagged above') — morning-4 report §8"},
-    {"version": REGISTRY_VERSION, "date": "2026-08-17",
+    {"version": "r8-2026-08-20", "date": "2026-08-17",
      "change": "r4 — the T axis re-scored against its own measurement. The "
                "tempo priors rested on four scenario documents and quoted "
                "METR's task-completion horizon only as a 212-day doubling, "
@@ -2709,7 +2768,7 @@ REGISTRY = {
      "approved": "August (2026-08-17: 'let's apply the METR calibration "
                  "finding to the Atlas priors') — Forecast Works "
                  "Research/findings/source-register.md"},
-    {"version": REGISTRY_VERSION, "date": "2026-08-06",
+    {"version": "r8-2026-08-20", "date": "2026-08-06",
      "change": "evidence layer r2 — the novelty repair. (1) Novelty decays "
                "toward a FLOOR (0.15) instead of to zero, so a class that "
                "keeps firing stays audible; the cumulative bound the design "
@@ -3321,6 +3380,40 @@ EVIDENCE_RULES = [
 # ---------------------------------------------------------------------------
 # Engine
 # ---------------------------------------------------------------------------
+
+# WHEN A POSITION COMES INTO FORCE (r9). A position is a process with a date,
+# never an eternal state: the rule that dates it names a template the path
+# instantiates, a rung the capability path crosses, a track passing a level, or
+# a year its criterion states. A position with no rule is in force from the
+# record. Moved here from the forecaster's narrative tables so the engine emits
+# the onset per path (M2); worldlines._selftest checks every key is a live
+# position and every template named exists.
+ONSETS = {
+    "T1": {"milestone": 4}, "T2": {"milestone": 4}, "T3": {"milestone": 4},
+    "T4": {"milestone": 4},
+    "K1": {"milestone": 3}, "K2": {"milestone": 3}, "K3": {"milestone": 3},
+    "K4": {"milestone": 3},
+    "A1": {"template": "takeover-consolidation"},
+    "A2": {"template": "agent-incident"},
+    "A3": {"template": "agent-incident"},
+    "C2": {"template": "natsec-merge"},
+    "C3": {"template": "us-cn-deal"},
+    "C4": {"template": "gpu-arms-control"},
+    "C5": {"template": "moratorium-holds"},
+    "C8": {"template": "moratorium-holds"},
+    "R3": {"template": "preemption-fight"},
+    # the diffusion bands are dated by the machine share of paid work the
+    # tracks now carry (`work`): a tenth, a third, a half
+    "D2": {"track": "work", "at": 0.10, "dir": "above"},
+    "D3": {"track": "work", "at": 0.33, "dir": "above"},
+    "D4": {"track": "work", "at": 0.50, "dir": "above"},
+    "E3": {"template": "bubble-correction"},
+    "E4": {"template": "ghost-gdp"},
+    "E5": {"template": "displacement-spiral"},
+    "G1": {"year": 2036}, "G2": {"year": 2036}, "G3": {"year": 2036},
+    "G4": {"year": 2036}, "G5": {"year": 2036}, "G6": {"year": 2036},
+}
+
 
 def axis(reg, key):
     return next(a for a in reg["axes"] if a["key"] == key)
