@@ -1,13 +1,13 @@
 {
  "version": "r8-2026-08-20",
- "date": "2026-09-01",
+ "date": "2026-09-02",
  "axes": {
   "T": {
-   "T1": 0.09917728308083557,
-   "T2": 0.3323534865234002,
-   "T3": 0.2792058427240594,
-   "T4": 0.1702506479747021,
-   "T5": 0.11901273969700267
+   "T1": 0.0990375567659546,
+   "T2": 0.3318852489747682,
+   "T3": 0.28163818637377946,
+   "T4": 0.16859393976635223,
+   "T5": 0.11884506811914551
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09050166497429071,
-   "A2": 0.23644377255288296,
-   "A3": 0.13444027885605953,
-   "A4": 0.1632698426042453,
-   "A5": 0.0987748528980319,
-   "A6": 0.04938742644901595,
-   "A7": 0.2271821616654736
+   "A1": 0.08997347365984006,
+   "A2": 0.23632935247349368,
+   "A3": 0.13534353695006945,
+   "A4": 0.16319083291770986,
+   "A5": 0.09872705368391756,
+   "A6": 0.04936352684195878,
+   "A7": 0.22707222347301062
   },
   "C": {
-   "C1": 0.33134568801692915,
-   "C2": 0.19440170959464215,
-   "C3": 0.13165148849229422,
-   "C4": 0.1547201196973064,
-   "C5": 0.05933084027331418,
-   "C6": 0.06427507696275703,
-   "C7": 0.05438660358387133,
-   "C8": 0.009888473378885699
+   "C1": 0.3307010002305835,
+   "C2": 0.1943076422704803,
+   "C3": 0.13158778481772154,
+   "C4": 0.15561349055523793,
+   "C5": 0.05930213119767682,
+   "C6": 0.06424397546414988,
+   "C7": 0.054360286931203754,
+   "C8": 0.00988368853294614
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.23670102573986695,
-   "S2": 0.2255231917057333,
-   "S3": 0.2517620431187271,
-   "S4": 0.18738831204406145,
-   "S5": 0.09862542739161125
+   "S1": 0.23659862270715265,
+   "S2": 0.22629125139656794,
+   "S3": 0.25122012345846984,
+   "S4": 0.18730724297649595,
+   "S5": 0.09858275946131362
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.22968366133465468,
-   "E2": 0.17902125974432237,
-   "E3": 0.32276318930453934,
-   "E4": 0.1889668852856735,
-   "E5": 0.07956500433080994
+   "E1": 0.22968366133465473,
+   "E2": 0.1790212597443224,
+   "E3": 0.3227631893045394,
+   "E4": 0.18896688528567357,
+   "E5": 0.07956500433080996
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -4559,6 +4559,179 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-09-02",
+   "marginals": {
+    "T": {
+     "T1": 0.0990375567659546,
+     "T2": 0.3318852489747682,
+     "T3": 0.28163818637377946,
+     "T4": 0.16859393976635223,
+     "T5": 0.11884506811914551
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08997347365984007,
+     "A2": 0.2363293524734937,
+     "A3": 0.13534353695006948,
+     "A4": 0.1631908329177099,
+     "A5": 0.09872705368391757,
+     "A6": 0.049363526841958785,
+     "A7": 0.22707222347301065
+    },
+    "C": {
+     "C1": 0.3307010002305835,
+     "C2": 0.1943076422704803,
+     "C3": 0.13158778481772154,
+     "C4": 0.15561349055523793,
+     "C5": 0.05930213119767682,
+     "C6": 0.06424397546414988,
+     "C7": 0.054360286931203754,
+     "C8": 0.00988368853294614
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23709416736579533,
+     "D2": 0.35919544831931116,
+     "D3": 0.24979093549683767,
+     "D4": 0.15391944881805586
+    },
+    "S": {
+     "S1": 0.23659862270715265,
+     "S2": 0.22629125139656794,
+     "S3": 0.25122012345846984,
+     "S4": 0.18730724297649595,
+     "S5": 0.09858275946131362
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22968366133465473,
+     "E2": 0.1790212597443224,
+     "E3": 0.3227631893045394,
+     "E4": 0.18896688528567357,
+     "E5": 0.07956500433080996
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19398315146805167,
+     "G2": 0.25872475831538827,
+     "G3": 0.15220033589231635,
+     "G4": 0.15220033589231635,
+     "G5": 0.10661393640824332,
+     "G6": 0.13627748202368398
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.0990375567659546,
+     "T2": 0.3318852489747682,
+     "T3": 0.28163818637377946,
+     "T4": 0.16859393976635223,
+     "T5": 0.11884506811914551
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08997347365984007,
+     "A2": 0.2363293524734937,
+     "A3": 0.13534353695006948,
+     "A4": 0.1631908329177099,
+     "A5": 0.09872705368391757,
+     "A6": 0.049363526841958785,
+     "A7": 0.22707222347301065
+    },
+    "C": {
+     "C1": 0.3307010002305835,
+     "C2": 0.1943076422704803,
+     "C3": 0.13158778481772154,
+     "C4": 0.15561349055523793,
+     "C5": 0.05930213119767682,
+     "C6": 0.06424397546414988,
+     "C7": 0.054360286931203754,
+     "C8": 0.00988368853294614
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23659862270715265,
+     "S2": 0.22629125139656794,
+     "S3": 0.25122012345846984,
+     "S4": 0.18730724297649595,
+     "S5": 0.09858275946131362
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.22968366133465473,
+     "E2": 0.1790212597443224,
+     "E3": 0.3227631893045394,
+     "E4": 0.18896688528567357,
+     "E5": 0.07956500433080996
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -8819,6 +8992,205 @@
     "https://www.reuters.com/business/texas-halt-powering-data-centers-reflects-us-reckoning-over-ghost-demand-2026-09-01/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004036,
+   "sources": 2,
+   "repeat_k": 8.594,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0005381,
+    "C.C1": -0.0002691
+   },
+   "applied": {
+    "C.C4": 0.0005381,
+    "C.C1": -0.0002691
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "16a96ffdd049b31e",
+   "date": "2026-09-02",
+   "event_date": "2026-08-31",
+   "driver": "Jason Isbell, David Lowery, Guy Forsyth and Eduardo Calle sued Suno in federal court on August 31, 2026, seeking class-action status and all",
+   "driver_urls": [
+    "https://www.hollywoodreporter.com/music/music-industry-news/jason-isbell-files-class-action-lawsuit-against-suno-1236687285/",
+    "https://www.wsj.com/business/media/music-artists-sue-ai-song-generator-suno-over-alleged-copycats-75d3544d"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.0021223,
+   "sources": 2,
+   "repeat_k": 1.031,
+   "spread": 1.0,
+   "requested": {
+    "T.T3": 0.0028297,
+    "T.T4": -0.0014148
+   },
+   "applied": {
+    "T.T3": 0.0028297,
+    "T.T4": -0.0014148
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "incident": "09e2d5880bcd4107",
+   "date": "2026-09-02",
+   "event_date": "2026-09-01",
+   "driver": "On September 1, 2026, Anthropic released Claude Fable 5.1 (generally available) and Claude Mythos 5.1 (the same model with more permissive s",
+   "driver_urls": [
+    "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+    "https://www.axios.com/2026/09/02/openai-anthropic-fable-astra-ipo"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003229,
+   "sources": 1,
+   "repeat_k": 8.586,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004305,
+    "A.A1": -0.0002153
+   },
+   "applied": {
+    "A.A3": 0.0004305,
+    "A.A1": -0.0002153
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "96f5bf595c3ebec4",
+   "date": "2026-09-02",
+   "event_date": "2026-09-01",
+   "driver": "METR's Hjalmar Wijk and Ajeya Cotra and Redwood Research chief scientist Ryan Greenblatt published an independent analysis of the OpenAI\u2013Hug",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/01/openai-hugging-face-ai-agent-security"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004036,
+   "sources": 2,
+   "repeat_k": 8.586,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0005381,
+    "A.A1": -0.0002691
+   },
+   "applied": {
+    "A.A3": 0.0005381,
+    "A.A1": -0.0002691
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "7707600d8ca4120c",
+   "date": "2026-09-02",
+   "event_date": "2026-08-31",
+   "driver": "On August 31, 2026, Anthropic published a report on improving its alignment and security efforts, and it has resumed evaluating its models i",
+   "driver_urls": [
+    "https://insideaipolicy.com/ai-daily-news/anthropic-resumes-external-evaluations-and-reinforcement-learning-acknowledges",
+    "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003229,
+   "sources": 1,
+   "repeat_k": 8.594,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004305,
+    "C.C1": -0.0002152
+   },
+   "applied": {
+    "C.C4": 0.0004305,
+    "C.C1": -0.0002152
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "b224f37ba78c8ee6",
+   "date": "2026-09-02",
+   "event_date": "2026-09-01",
+   "driver": "On September 1, 2026, Edelson PC filed 30 new lawsuits in a California court against OpenAI over the February 10, 2026 school shooting in Tu",
+   "driver_urls": [
+    "https://techcrunch.com/2026/09/02/openai-faces-30-more-lawsuits-tied-to-tumbler-ridge-shooting"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003247,
+   "sources": 1,
+   "repeat_k": 8.112,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.000433,
+    "S.S3": -0.0002165
+   },
+   "applied": {
+    "S.S2": 0.000433,
+    "S.S3": -0.0002165
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "3df1ef81705d231c",
+   "date": "2026-09-02",
+   "event_date": "2026-09-01",
+   "driver": "On September 1, 2026, the U.S. Census Bureau released construction spending data showing data center construction put in place in July 2026 ",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/01/ai-data-center-constructon-spending"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003247,
+   "sources": 1,
+   "repeat_k": 8.112,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.000433,
+    "S.S3": -0.0002165
+   },
+   "applied": {
+    "S.S2": 0.000433,
+    "S.S3": -0.0002165
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "955259e6859a83e6",
+   "date": "2026-09-02",
+   "event_date": "2026-08-26",
+   "driver": "On August 26, 2026, the Information Technology and Innovation Foundation and Public First released a survey finding 26% of Americans would s",
+   "driver_urls": [
+    "https://www.route-fifty.com/artificial-intelligence/2026/09/data-centers-are-americans-least-favored-development-poll-finds/415751"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -11404,6 +11776,97 @@
    "text": "Z.ai's first-half revenue of 954 million yuan ($142 million), of which 825 million yuan came from open platform and API ",
    "reports": 1,
    "fp": "cab76e48d083862a"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "Frontier Models & Capabilities",
+   "text": "Anthropic released Claude Fable 5.1 and Claude Mythos 5.1 on September 1, 2026, describing them as the same model with d",
+   "reports": 1,
+   "fp": "72936592dab03660"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI said on September 1, 2026 that Astra meets the Critical cybersecurity capability threshold under its Preparedness",
+   "reports": 2,
+   "fp": "759b50a790be5235"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Astra employs a technique known as \"recurrent depth\" that improved the model's performance but can obscure its reasoning",
+   "reports": 1,
+   "fp": "45a536ebad4ccea5"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic announced on September 1, 2026 that it will replace the data-retention policy introduced in June 2026 with Cla",
+   "reports": 1,
+   "fp": "dbe64f68d0e4001c"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "SB Energy filed an S-1 with the Securities and Exchange Commission on September 1, 2026 for an initial public offering o",
+   "reports": 1,
+   "fp": "8f4f2260b87a0991"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "International AI Regulation",
+   "text": "White House science and technology adviser Michael Kratsios, co-hosting a two-day G20 innovation ministerial in Chapel H",
+   "reports": 2,
+   "fp": "e93e9bef75c3b84e"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Update on Apple's trade-secrets filing against OpenAI, covered this morning: OpenAI filed its response late on August 31",
+   "reports": 1,
+   "fp": "35ea731f58d17c51"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The House Energy and Commerce Subcommittee on Commerce, Manufacturing, and Trade, chaired by Rep. Gus Bilirakis (R-FL), ",
+   "reports": 2,
+   "fp": "3c9b103797d2adb9"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "Reported but unverified",
+   "text": "Glean's claim that Anthropic customers' bills are 80% higher than they need to be became public on September 1, 2026; no",
+   "reports": 1,
+   "fp": "0b03e524473a9c53"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "On September 2, 2026, Nvidia CEO Jensen Huang, appearing at the Chapel Hill G20 meeting alongside Commerce Secretary How",
+   "reports": 1,
+   "fp": "e3820dddc90b5569"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "A bipartisan group of House members plans to introduce the \"Doctor's Not AI Act,\" which would allow health insurers to u",
+   "reports": 1,
+   "fp": "ca53db337e1deaf4"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "On September 2, 2026, U.S. District Judge Leonie Brinkema in Alexandria, Virginia, declined to order Google to sell its ",
+   "reports": 1,
+   "fp": "1b6bec027de87935"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "On August 28, 2026, the Software & Information Industry Association filed an amicus brief, announced August 31, supporti",
+   "reports": 1,
+   "fp": "3d3a7d6f5ddbb0e8"
   }
  ],
  "seen": [
@@ -11944,7 +12407,30 @@
   "39131794acaa1fd9",
   "030095bf88bcaa36",
   "530a27f50776abf9",
-  "cab76e48d083862a"
+  "cab76e48d083862a",
+  "72936592dab03660",
+  "759b50a790be5235",
+  "45a536ebad4ccea5",
+  "dbe64f68d0e4001c",
+  "8f4f2260b87a0991",
+  "e93e9bef75c3b84e",
+  "35ea731f58d17c51",
+  "16a96ffdd049b31e",
+  "3c9b103797d2adb9",
+  "0b03e524473a9c53",
+  "09e2d5880bcd4107",
+  "a3ba715977cd7cf8",
+  "96f5bf595c3ebec4",
+  "7707600d8ca4120c",
+  "b5cadaf8cc26ceb0",
+  "e3820dddc90b5569",
+  "eefbd1fd7ea494e3",
+  "ca53db337e1deaf4",
+  "1b6bec027de87935",
+  "b224f37ba78c8ee6",
+  "3d3a7d6f5ddbb0e8",
+  "3df1ef81705d231c",
+  "955259e6859a83e6"
  ],
  "residue_r0": [
   {
