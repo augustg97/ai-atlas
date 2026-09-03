@@ -1,8 +1,8 @@
 {
- "wiki_models": 72,
+ "wiki_models": 74,
  "epoch_rows": 1041,
  "matched": 20,
- "unmatched_wiki": 52,
+ "unmatched_wiki": 54,
  "unmatched_wiki_slugs": [
   "alphagenome",
   "amazon-nova",
@@ -11,6 +11,8 @@
   "bard",
   "claude-1",
   "claude-3-5-haiku",
+  "claude-fable-5-1",
+  "claude-mythos-5-1",
   "claude-mythos-preview",
   "claude-opus-46",
   "claude-sonnet-46",
@@ -21,9 +23,7 @@
   "evo-2",
   "faraday",
   "gemini-robotics-2",
-  "gemma",
-  "gen-1-5",
-  "genie-3"
+  "gemma"
  ],
  "date_disagreements": [
   {

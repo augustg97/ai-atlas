@@ -1,13 +1,13 @@
 {
- "version": "r8-2026-08-20",
- "date": "2026-09-02",
+ "version": "r10-2026-09-03",
+ "date": "2026-09-03",
  "axes": {
   "T": {
-   "T1": 0.0990375567659546,
-   "T2": 0.3318852489747682,
-   "T3": 0.28163818637377946,
-   "T4": 0.16859393976635223,
-   "T5": 0.11884506811914551
+   "T1": 0.09894189553746932,
+   "T2": 0.33156467815628465,
+   "T3": 0.28330171688211,
+   "T4": 0.1674614347791728,
+   "T5": 0.11873027464496318
   },
   "K": {
    "K1": 0.575,
@@ -16,13 +16,13 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08997347365984006,
-   "A2": 0.23632935247349368,
-   "A3": 0.13534353695006945,
-   "A4": 0.16319083291770986,
-   "A5": 0.09872705368391756,
-   "A6": 0.04936352684195878,
-   "A7": 0.22707222347301062
+   "A1": 0.08997347365984007,
+   "A2": 0.2363293524734937,
+   "A3": 0.13534353695006948,
+   "A4": 0.1631908329177099,
+   "A5": 0.09872705368391757,
+   "A6": 0.049363526841958785,
+   "A7": 0.22707222347301065
   },
   "C": {
    "C1": 0.3307010002305835,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.22968366133465473,
-   "E2": 0.1790212597443224,
-   "E3": 0.3227631893045394,
-   "E4": 0.18896688528567357,
-   "E5": 0.07956500433080996
+   "E1": 0.23062566168610976,
+   "E2": 0.17892606058101856,
+   "E3": 0.322059186861344,
+   "E4": 0.18886639727996396,
+   "E5": 0.07952269359156382
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.19684996590959752,
+   "G2": 0.27327166716106044,
+   "G3": 0.14932877986943188,
+   "G4": 0.14932877986943188,
+   "G5": 0.09955251991295462,
+   "G6": 0.1316682872775237
   }
  },
  "history": [
@@ -4732,6 +4732,179 @@
      "G6": 0.13166828727752367
     }
    }
+  },
+  {
+   "date": "2026-09-03",
+   "marginals": {
+    "T": {
+     "T1": 0.09894189553746932,
+     "T2": 0.33156467815628465,
+     "T3": 0.28330171688211,
+     "T4": 0.1674614347791728,
+     "T5": 0.11873027464496318
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08997347365984007,
+     "A2": 0.2363293524734937,
+     "A3": 0.13534353695006948,
+     "A4": 0.1631908329177099,
+     "A5": 0.09872705368391757,
+     "A6": 0.049363526841958785,
+     "A7": 0.22707222347301065
+    },
+    "C": {
+     "C1": 0.3307010002305835,
+     "C2": 0.1943076422704803,
+     "C3": 0.13158778481772154,
+     "C4": 0.15561349055523793,
+     "C5": 0.05930213119767682,
+     "C6": 0.06424397546414988,
+     "C7": 0.054360286931203754,
+     "C8": 0.00988368853294614
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23728556595115716,
+     "D2": 0.3582244721010017,
+     "D3": 0.2498822960074727,
+     "D4": 0.15460766594036843
+    },
+    "S": {
+     "S1": 0.23659862270715265,
+     "S2": 0.22629125139656794,
+     "S3": 0.25122012345846984,
+     "S4": 0.18730724297649595,
+     "S5": 0.09858275946131362
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23062566168610973,
+     "E2": 0.17892606058101856,
+     "E3": 0.322059186861344,
+     "E4": 0.18886639727996393,
+     "E5": 0.07952269359156382
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1938886931065071,
+     "G2": 0.2582734777995466,
+     "G3": 0.15228759297825292,
+     "G4": 0.15228759297825292,
+     "G5": 0.10684116049492608,
+     "G6": 0.1364214826425145
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09894189553746932,
+     "T2": 0.33156467815628465,
+     "T3": 0.28330171688211,
+     "T4": 0.1674614347791728,
+     "T5": 0.11873027464496318
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08997347365984007,
+     "A2": 0.2363293524734937,
+     "A3": 0.13534353695006948,
+     "A4": 0.1631908329177099,
+     "A5": 0.09872705368391757,
+     "A6": 0.049363526841958785,
+     "A7": 0.22707222347301065
+    },
+    "C": {
+     "C1": 0.3307010002305835,
+     "C2": 0.1943076422704803,
+     "C3": 0.13158778481772154,
+     "C4": 0.15561349055523793,
+     "C5": 0.05930213119767682,
+     "C6": 0.06424397546414988,
+     "C7": 0.054360286931203754,
+     "C8": 0.00988368853294614
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23659862270715265,
+     "S2": 0.22629125139656794,
+     "S3": 0.25122012345846984,
+     "S4": 0.18730724297649595,
+     "S5": 0.09858275946131362
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23062566168610973,
+     "E2": 0.17892606058101856,
+     "E3": 0.322059186861344,
+     "E4": 0.18886639727996393,
+     "E5": 0.07952269359156382
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -9191,6 +9364,93 @@
     "https://www.route-fifty.com/artificial-intelligence/2026/09/data-centers-are-americans-least-favored-development-poll-finds/415751"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.0014531,
+   "sources": 2,
+   "repeat_k": 1.84,
+   "spread": 1.0,
+   "requested": {
+    "T.T3": 0.0019374,
+    "T.T4": -0.0009687
+   },
+   "applied": {
+    "T.T3": 0.0019374,
+    "T.T4": -0.0009687
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "incident": "a1672e7cb198f661",
+   "date": "2026-09-03",
+   "event_date": "2026-09-02",
+   "driver": "On September 2, 2026, Meta released Muse Spark 1.3 in Muse Code and the Meta Model API at the same price as Muse Spark 1.2, with a \"max reas",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/02/meta-debuts-muse-spark-13-as-personal-agent-work-continues",
+    "https://x.com/artificialanlys/status/2095247787277553929"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004791,
+   "sources": 3,
+   "repeat_k": 10.586,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0006387,
+    "E.E3": -0.0003194
+   },
+   "applied": {
+    "E.E1": 0.0006387,
+    "E.E3": -0.0003194
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "838a8d189e13f795",
+   "date": "2026-09-03",
+   "event_date": "2026-09-03",
+   "driver": "On September 3, 2026, Nvidia announced a definitive agreement to acquire Hugging Face for $12.93 billion, paying about $11.9 billion to the ",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/03/nvidia-hugging-face-13b",
+    "https://www.calcalistech.com/ctechnews/article/hjuxtkduze",
+    "https://variety.com/2026/digital/news/nvidia-acquires-hugging-face-12-9-billion-1236850349/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003194,
+   "sources": 1,
+   "repeat_k": 10.586,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004258,
+    "E.E3": -0.0002129
+   },
+   "applied": {
+    "E.E1": 0.0004258,
+    "E.E3": -0.0002129
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "e433f8a65e98bca2",
+   "date": "2026-09-03",
+   "event_date": "2026-09-03",
+   "driver": "Nscale is telling prospective investors it holds about $103 billion in total contracted revenue after signing a $45 billion computing deal w",
+   "driver_urls": [
+    "https://www.theinformation.com/briefings/exclusive-nscale-touts-100-billion-plus-contracted-revenue-anthropic-win"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -11867,6 +12127,118 @@
    "text": "On August 28, 2026, the Software & Information Industry Association filed an amicus brief, announced August 31, supporti",
    "reports": 1,
    "fp": "3d3a7d6f5ddbb0e8"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "Frontier Models & Capabilities",
+   "text": "On September 2, 2026, Google released Gemini 3.8 Flash at $0.75 per million input tokens and $3.75 per million output to",
+   "reports": 1,
+   "fp": "19bbde462c8810a8"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "On September 1, 2026, the United States filed a statement of interest in Manhattan federal court supporting OpenAI and M",
+   "reports": 1,
+   "fp": "ec0adaa486d7ee6d"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "On September 2, 2026, OpenAI told Representatives Greg Casar and Doris Matsui in a letter reviewed by Reuters that its e",
+   "reports": 1,
+   "fp": "9fcb7a980d471d9b"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "AI Adoption by Industry",
+   "text": "On September 2, 2026, New York City Mayor Zohran Kwame Mamdani and Schools Chancellor Samuels announced a one-year morat",
+   "reports": 1,
+   "fp": "c8412e07765cd5fa"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "AI Adoption by Industry",
+   "text": "On September 1, 2026, OpenAI integrated ChatGPT Health with Epic's electronic health record system, which Epic states ho",
+   "reports": 1,
+   "fp": "be54870976a8a2d1"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "On September 2, 2026, Broadcom reported fiscal third-quarter revenue of $29.59 billion against an LSEG consensus of $29.",
+   "reports": 1,
+   "fp": "66bbe837b80318f3"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "AI Industry & Markets",
+   "text": "On September 2, 2026, Microsoft said it will begin disclosing quarterly Azure revenue in dollars for the first time and ",
+   "reports": 1,
+   "fp": "00dd7a5606cca096"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic records the full value of Claude sales made through cloud partners as top-line revenue and books the partners'",
+   "reports": 1,
+   "fp": "2269f24b82c2e7fb"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "U.S. State AI Legislation",
+   "text": "Anthropic supports the artificial-intelligence language in the Massachusetts Senate's economic development bill, which w",
+   "reports": 1,
+   "fp": "ddf5dca64e1a2d8e"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "On September 3, 2026, Representatives Josh Gottheimer and Mike Lawler introduced the Stop Rogue AI Act, which would dire",
+   "reports": 1,
+   "fp": "555dd688e5236ff6"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "A bipartisan group of House members plans to introduce the Doctor's Not AI Act, which would permit health insurers to us",
+   "reports": 1,
+   "fp": "20e716d27bd2cf76"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "On September 2, 2026, Judge Leonie M. Brinkema of the Eastern District of Virginia entered a two-page order in United St",
+   "reports": 1,
+   "fp": "e28738ea6a9d6851"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "National Security & Geopolitics",
+   "text": "At a House Intelligence Committee hearing on September 3, 2026, Hudson Institute senior fellow David Feith urged members",
+   "reports": 1,
+   "fp": "48fb1695823b0bac"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "Reported but unverified",
+   "text": "Moonshot AI's confidential application for a Hong Kong initial public offering became public on September 2, 2026 throug",
+   "reports": 1,
+   "fp": "e6a61b4cf5d9ad2f"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Reported but unverified",
+   "text": "OpenAI said on September 3, 2026 that president Greg Brockman was expected to announce expanded access to the company's ",
+   "reports": 1,
+   "fp": "b543240dedde462d"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Reported but unverified",
+   "text": "Anthropic co-founder Tom Brown's call for countries to build more data centers, made at the G20 Innovation Ministerial i",
+   "reports": 1,
+   "fp": "928fec9210814307"
   }
  ],
  "seen": [
@@ -12430,7 +12802,26 @@
   "b224f37ba78c8ee6",
   "3d3a7d6f5ddbb0e8",
   "3df1ef81705d231c",
-  "955259e6859a83e6"
+  "955259e6859a83e6",
+  "19bbde462c8810a8",
+  "a1672e7cb198f661",
+  "ec0adaa486d7ee6d",
+  "9fcb7a980d471d9b",
+  "c8412e07765cd5fa",
+  "be54870976a8a2d1",
+  "66bbe837b80318f3",
+  "00dd7a5606cca096",
+  "838a8d189e13f795",
+  "2269f24b82c2e7fb",
+  "e433f8a65e98bca2",
+  "ddf5dca64e1a2d8e",
+  "555dd688e5236ff6",
+  "20e716d27bd2cf76",
+  "e28738ea6a9d6851",
+  "48fb1695823b0bac",
+  "e6a61b4cf5d9ad2f",
+  "b543240dedde462d",
+  "928fec9210814307"
  ],
  "residue_r0": [
   {
