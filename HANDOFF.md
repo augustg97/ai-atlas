@@ -39,6 +39,52 @@ forecast surface and ratchets grounding.
 
 ## State right now
 
+- **2026-09-03 · registry r10 on the same branch, beside r9: the template library reaches the
+  far decades of a plain path (M2, second tranche).** 38 templates become 59. Every template
+  past 2045 had required A2 or A3 (or A1, or T4), so the medoid drawn since r9 —
+  T3·K1·A4·C1·R4·D2·S3·P3·E3·L4·G2 — dated nothing after its research crossing in 2034 and the
+  forecaster's chronicle read forty empty years. Five far templates are re-keyed to the
+  variables their subjects depend on (cislunar industry to E1–E3, digital minds to A2–A5,
+  treated ageing to G1–G3, the post-work constitution to D2–D4, the politics of plenty to G1–G3
+  with D3–D4) and twenty-one are added, each cited to the wiki and dated by a base rate where
+  the record carries one — parity within the lead the controls bought, a national siting
+  statute, the off-grid majority, a sovereign compute majority, the millionth humanoid,
+  AI-designed molecules a majority of approvals, a released-weights incident and the verdict
+  closing later, a second capital cycle, an antitrust breakup, a 32-hour week, a national basic
+  income, graduate intake halving, the first orbital gigawatt, a surveillance programme under a
+  state-fused laboratory, a multilateral licensing body, the first fleet retired, the verified
+  limit lapsing at the thirty-year median, a late accord after parity, the 2022 controls folded
+  into a multilateral list as COCOM gave way to Wassenaar, the statutes consolidated. Effects
+  follow the r9 grammar. The self-test asserts an expected 0.6 events or more in every decade
+  from the 2040s to the 2070s on the plain composition (measured 3.4, 2.6, 1.1, 0.8), unique
+  ids, effect keys the tracks read, windows closing by 2100. Emitted locally: the medoid's
+  ledger carries 23 events, five in the 2040s, two each in the 2050s and 2060s, one each in
+  the 2070s and 2080s; `audit_all.py` PASS; `weights.json` restored. The changelog entry
+  states the change and the evidence. **Merge with r9, then re-emit: the two nightly emits on
+  `main` since the branch was cut will conflict on the staged files, which are regenerated and
+  never merged.**
+- **2026-09-02 · registry r9 on the branch `claude/ai-futures-forecaster-review-t7fvqb`, held
+  for August's merge.** The first tranche of the forecaster's model programme (P4 of
+  `Research/plan-2026-09-02-chronicle.md` in `ai-futures-forecaster`): K wired into
+  `capability_path` (M1); `tracks()` rewritten as logistic dynamics against world ceilings with
+  the path's own events moving what follows them (M4, M2) — compute toward a supply-keyed share
+  of world generating capacity, revenue toward a diffusion-keyed share of a world output whose
+  growth the benefit position lifts and that tapers after the research crossing, employment as
+  the machine share of paid work less what re-employment absorbs, approval mean-reverting,
+  statutes saturating, copies following compute; the time horizon in hours emitted as `hz` (M5);
+  the drawn mainline the ensemble's medoid with the argmax beside it (M6); `ONSETS` in the
+  registry; track bands over the 2,000-line ensemble in `bands.json`; `engine.json` carrying
+  `k_gap`, `dynamics`, `effects`, `onsets`, `horizon_anchors`, `mainline_kind`. The changelog
+  entry states what changed and the evidence; `worldlines._selftest` covers each change (K gaps
+  by band and the clamp share, no track over its ceiling, a dip with a settlement, an event
+  removed changes only what follows it, the one-pass medoid equals brute force). Self-test and
+  emit pass; `audit_all.py` PASS. The staged emission on the branch is a local run of that
+  engine; `weights.json` was restored after it so the nightly's history is untouched.
+  **The forecaster's branch of the same name reads this emission and must merge after it.**
+  `climate_params` in the forecaster extracts the climate block of `tracks()` by shape, so
+  those four lines keep their `wl["S"]` / `wl["C"]` forms.
+
+
 - Live and verified; the nightly task `ai-atlas-nightly` (10:47 local) runs
   `build/nightly.sh`: trunk emit → witness (epoch + **statelaw**) → nightly_update →
   grounding → forecast_emit → gate → stamp → push → live verify. Its prompt (in

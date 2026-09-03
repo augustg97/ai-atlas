@@ -223,19 +223,29 @@ def emit():
     weights["history"] = hist[-60:]
     json.dump(weights, open(WEIGHTS, "w"), indent=1)
 
-    ml, p_ml = worldlines.mainline(reg)
+    # THE DRAWN MAINLINE IS THE MEDOID OF THE ENSEMBLE (M6, r9): the sampled
+    # path closest to all the others, a real sample with a real ledger. The
+    # joint argmax is carried beside it, with its probability, and the sheet
+    # letters both and where they differ.
+    ens = axes.ensemble(reg, 2000, SEED + 7)
+    ml_arg, p_arg = worldlines.mainline(reg)
+    ml, agree = worldlines.medoid(ens)
     kn = worldlines.capability_path(ml)
-    mainline_out = {"wl": ml, "p": p_ml,
-                    "tracks": worldlines.tracks(ml, kn),
-                    "events": worldlines.instantiate(ml, kn, SEED),
-                    "layers": worldlines.layer_states(ml, kn)}
-    ex, _ = worldlines.exemplars(reg, k=120, seed=SEED)
+    mainline_out = dict(worldlines.trajectory(ml, SEED))
+    mainline_out.update({
+        "kind": "medoid", "n": len(ens), "agree": round(agree, 4),
+        "p": worldlines.joint_probability(reg, ml),
+        "argmax": {"wl": ml_arg, "p": p_arg},
+        "layers": worldlines.layer_states(ml, kn)})
+    ex, _ = worldlines.exemplars(reg, k=120, seed=SEED, drawn=ml)
     for e in ex:
         e["layers"] = worldlines.layer_states(
             e["wl"], worldlines.capability_path(e["wl"]))
-    ens = axes.ensemble(reg, 2000, SEED + 7)
     b_year = worldlines.bands(reg, n=8000, seed=SEED)
     b_month = monthly_bands(reg)
+    # the quantities' own bands over the ensemble (M4): what the capability
+    # band does for the index, for every track
+    b_tracks = worldlines.track_bands(ens, seed=SEED + 21)
 
     crises = []
     for c in CRISES:
@@ -282,6 +292,36 @@ def emit():
                          "JOBS_RATE": worldlines.JOBS_RATE,
                          "LAWS_RATE": worldlines.LAWS_RATE,
                          "APPROVAL0": worldlines.APPROVAL0},
+        # r9: the constants the dynamics run on, the takeoff gaps, the horizon
+        # anchors and the onset rules, so the client implements the same
+        # functions against the same numbers and its port gate can prove it
+        "k_gap": worldlines.K_GAP, "k_floor": worldlines.K_FLOOR,
+        "horizon_anchors": worldlines.HORIZON_ANCHORS,
+        "dynamics": {
+            "WORLD_GW_2026": worldlines.WORLD_GW_2026,
+            "WORLD_GW_GROWTH": worldlines.WORLD_GW_GROWTH,
+            "GW_SHARE_MAX": worldlines.GW_SHARE_MAX,
+            "GWP_2026": worldlines.GWP_2026,
+            "GWP_GROWTH": worldlines.GWP_GROWTH,
+            "GWP_LIFT": worldlines.GWP_LIFT,
+            "GWP_LIFT_UNITS": worldlines.GWP_LIFT_UNITS,
+            "GWP_LIFT_TAPER": worldlines.GWP_LIFT_TAPER,
+            "REV_SHARE_MAX": worldlines.REV_SHARE_MAX,
+            "WORK_SHARE_MAX": worldlines.WORK_SHARE_MAX,
+            "WORK_RATE": worldlines.WORK_RATE,
+            "REEMPLOY_MAX": worldlines.REEMPLOY_MAX,
+            "REEMPLOY_TAU": worldlines.REEMPLOY_TAU,
+            "APPROVAL_EQ": worldlines.APPROVAL_EQ,
+            "APPROVAL_K": worldlines.APPROVAL_K,
+            "APPROVAL_JOBS": worldlines.APPROVAL_JOBS,
+            "APPROVAL_LIMIT": worldlines.APPROVAL_LIMIT,
+            "LAWS_MAX": worldlines.LAWS_MAX,
+            "COPIES_PER_GW0": worldlines.COPIES_PER_GW0,
+            "COPIES_PER_GW_LOG": worldlines.COPIES_PER_GW_LOG,
+        },
+        "effects": worldlines.EFFECTS,
+        "onsets": axes.ONSETS,
+        "mainline_kind": "medoid",
         "templates": worldlines.TEMPLATES,
         "domains": worldlines.DOMAINS,
         "y0": worldlines.Y0, "y1": worldlines.Y1,
@@ -361,12 +401,13 @@ def emit():
              "explosive tail pulls the p90 edge to the ceiling by the early "
              "2030s, the {t2}% fast and {t3}% gradual mass carries the "
              "median through superhuman-coder around 2032 and "
-             "researcher-level mid-decade, and the {t4}% no-SC floor is why "
-             "p10 stays below the researcher line into the 2050s. The "
-             "ceiling plateau past 2045 is saturation — most sampled "
-             "futures max the ladder; what still differs there is "
-             "OUTCOMES, which is what the Outcomes panel and the far-field "
-             "waypoints track. Shelves inside the band are policy, not "
+             "researcher-level mid-decade, and the {t5}% method-asymptote "
+             "floor is why p10 stays below the researcher line into the "
+             "2050s. The ceiling plateau past 2045 is saturation of the "
+             "ladder — most sampled futures reach its top rung; the "
+             "quantities beneath it keep moving against their ceilings, and "
+             "what still differs there is OUTCOMES, which is what the "
+             "Outcomes panel and the far-field waypoints track. Shelves inside the band are policy, not "
              "physics: the C3 deal pause holds lines at expert level "
              "2035-2040, the C5 tail freezes below the researcher line. "
              "Every number here re-derives each morning from the network "
@@ -458,7 +499,7 @@ def emit():
                                           reg["conditionals"].items()},
                          "impact_classes": axes.IMPACT_CLASS,
                          "changelog": reg["changelog"]},
-        "bands.json": {"annual": b_year, "monthly": b_month},
+        "bands.json": {"annual": b_year, "monthly": b_month, "tracks": b_tracks},
         "marginals.json": {"today": marg, "history": weights["history"]},
         "mainline.json": mainline_out,
         "exemplars.json": {"lines": ex},

@@ -57,11 +57,27 @@ TEMPO_KNOTS = {
 }
 
 
+# M1 (r9): THE TAKEOFF SHAPE REACHES THE CURVE. K names the months between the
+# coding rung at 3.0 and the research rung at 4.0, and the tempo knots carried a
+# gap of T's own (T2: 1.6 years), so a path that said "rungs inside one year"
+# drew a curve that took longer, and the chronicle lettered "about three years
+# after" beside K1's "within twelve months" on the published mainline. The
+# research crossing is T's dated quantity and stays where T puts it; the coding
+# crossing moves to sit K's gap before it, no earlier than K_FLOOR, which is
+# where the 2026 anchor at 2.6 leaves room for the climb. The gaps are the
+# midpoints of the registry's own bands (K4 is open-ended and takes six and a half
+# years); a path whose gap cannot fit — T1 with K4 — is clamped and counted, and
+# the count is reported by the self-test rather than hidden.
+K_GAP = {"K1": 0.75, "K2": 1.5, "K3": 3.5, "K4": 6.5}
+K_FLOOR = 2027.2
+
+
 def capability_path(wl):
     """Knots (year, index) after axis modifiers. A2 inserts a pause-and-
     reassess plateau at the researcher level; C3 holds Plan A's expert-level
     pause 2035→2040 then resumes; A1 truncates ascent at takeover (the
-    index stays — the world changes owner, not capability)."""
+    index stays — the world changes owner, not capability). K then places the
+    coding crossing its gap before the research crossing (M1, r9)."""
     knots = list(TEMPO_KNOTS[wl["T"]])
     if wl["C"] == "C8":
         # moratorium: the ladder freezes where the halt catches it (~2029),
@@ -85,10 +101,76 @@ def capability_path(wl):
             else:
                 out.append((y, v))
         knots = out
-    ys = [k[0] for k in knots]
+    kpos = wl.get("K")
+    if kpos in K_GAP:
+        i3 = next((i for i, (y, v) in enumerate(knots) if v >= 3.0), None)
+        i4 = next((i for i, (y, v) in enumerate(knots) if v >= 4.0), None)
+        if (i3 is not None and i4 is not None and i3 < i4
+                and knots[i4][0] < Y1 and abs(knots[i3][1] - 3.0) < 1e-9):
+            y3 = max(K_FLOOR, knots[i4][0] - K_GAP[kpos])
+            knots[i3] = (y3, 3.0)
+            knots = [k for i, k in enumerate(knots)
+                     if not (i < i3 and k[0] >= y3)]
+            knots.sort()
     if knots[-1][0] < Y1:
         knots.append((Y1, knots[-1][1]))
     return knots
+
+
+def k_gap_clamped(wl):
+    """Whether K's gap could not fit before T's research crossing on this
+    line, so the coding crossing sits at K_FLOOR and the gap is shorter than
+    the position says. The self-test reports the ensemble share."""
+    kpos = wl.get("K")
+    if kpos not in K_GAP:
+        return False
+    knots = capability_path(wl)
+    y3 = next((y for y, v in knots if v >= 3.0), None)
+    y4 = next((y for y, v in knots if v >= 4.0), None)
+    if y3 is None or y4 is None or y4 >= Y1:
+        return False
+    return (y4 - y3) < K_GAP[kpos] - 1e-6
+
+
+def crossings(knots):
+    """The exact year each rung is first reached on a path, from the knots."""
+    out = {}
+    for r in (3, 4, 5, 6):
+        y = None
+        for (y0, v0), (y1, v1) in zip(knots, knots[1:]):
+            if v0 < r <= v1:
+                y = y0 + (y1 - y0) * (r - v0) / (v1 - v0) if v1 > v0 else y1
+                break
+        if y is None and knots and knots[0][1] >= r:
+            y = knots[0][0]
+        if y is not None and y < Y1:
+            out[str(r)] = round(y, 2)
+    return out
+
+
+# M5 (r9): A MEASURED SERIES UNDER THE LADDER. METR's 50% time horizon in hours,
+# anchored to the rungs: 8 hours at the reliable-agent rung (2.0); 16 hours at
+# the 2026 anchor (2.6; METR's frontier report of 2026-05-19 placed the
+# strongest public model near 12 hours in February and March 2026 and internal
+# models at or above 16 hours, the registry's own T description); one working
+# month of 167 hours at the coding rung (3.0; T1's arithmetic); one working
+# year of 2,000 hours at the research rung (4.0). Log-linear between anchors.
+# Above 4.0 no human has been timed at the task, so the series stops being a
+# measurement: it is emitted at the rung-4 figure and the sheet says so.
+HORIZON_ANCHORS = [(1.0, 1.0), (2.0, 8.0), (2.6, 16.0), (3.0, 167.0),
+                   (4.0, 2000.0)]
+
+
+def horizon_hours(c):
+    if c <= HORIZON_ANCHORS[0][0]:
+        return HORIZON_ANCHORS[0][1]
+    if c >= HORIZON_ANCHORS[-1][0]:
+        return HORIZON_ANCHORS[-1][1]
+    for (c0, h0), (c1, h1) in zip(HORIZON_ANCHORS, HORIZON_ANCHORS[1:]):
+        if c0 <= c <= c1:
+            t = (c - c0) / (c1 - c0)
+            return math.exp(math.log(h0) + t * (math.log(h1) - math.log(h0)))
+    return HORIZON_ANCHORS[-1][1]
 
 
 def cap_at(knots, year):
@@ -134,6 +216,69 @@ JOBS_RATE = {"D1": -0.12, "D2": -0.45, "D3": -1.10, "D4": -2.60}
 # architecture, which is why r5 carved R out of C. Keyed on R now.
 LAWS_RATE = {"R1": 5, "R2": 24, "R3": 9, "R4": 12, "R5": 18, "R6": 7}
 APPROVAL0 = {"P1": 47, "P2": 38, "P3": 40, "P4": 36, "P5": 31}
+
+# M4 (r9): TRACKS AS DYNAMICS AGAINST CEILINGS. Every track used to be a
+# compounding rate with a hard cap — compute at 60,000 GW, revenue at $30
+# trillion, employment at −35%, agent copies at 50 million — and by the 2040s
+# every sampled path sat at its caps, so the far decades of the chronicle read
+# as frozen numbers (Research/plan-2026-09-02-chronicle.md, §3, in the
+# forecaster). The caps are replaced by logistic growth against ceilings that
+# are themselves quantities of the world, and the arrival era's axes set which
+# ceiling binds. Every constant here is modelled and the sheet says so; the
+# transformation era's own variables (M3) will take these over.
+#
+# compute — world electricity generating capacity was near 9,500 GW in 2026
+# (IEA and Energy Institute statistical reviews) and has grown 2 to 3% a year;
+# an AI load larger than all generation cannot be served. The share a supply
+# position can reach: capital-bound build-outs (S1, S2) toward a third of world
+# generation, the fast scenarios' asymptote (Situational Awareness's 100 GW
+# clusters and 20% of US power by 2030; the 2026 record of 6% of US electricity
+# to data centres in the S dossier); grid- and permission-bound (S3) an eighth;
+# licence-bound (S4) a fifth; a leading-edge supply shock (S5) a sixth.
+WORLD_GW_2026, WORLD_GW_GROWTH = 9500.0, 1.025
+GW_SHARE_MAX = {"S1": 0.30, "S2": 0.35, "S3": 0.12, "S4": 0.20, "S5": 0.15}
+# world output — near $115 trillion in 2026 (IMF), 3% a year at trend. The
+# growth regime is the transformation era's variable; until M3 the benefit
+# position sets how much of the capability above the coding rung reaches
+# measured growth, two index units at most: G4 (gains large, real and audited)
+# lets a fast regime through at 9% a year, G5 (measured net gain flat) none.
+GWP_2026, GWP_GROWTH = 115.0, 1.03
+GWP_LIFT = {"G1": 0.010, "G2": 0.015, "G3": 0.010, "G4": 0.030, "G5": 0.000,
+            "G6": 0.005}
+GWP_LIFT_UNITS = 2.0
+# the lift is the transformation era's, and that era ends in a settlement: it
+# tapers to trend over GWP_LIFT_TAPER years after the research crossing, so a
+# fast regime is a period and not a permanent state of the world
+GWP_LIFT_TAPER = 40.0
+# revenue — a share of world output the diffusion band can reach: the labour
+# share of output near 55%, times the share of paid work the band names
+# (a tenth, a third, a half, more than half), times the part of that value the
+# seller captures.
+REV_SHARE_MAX = {"D1": 0.03, "D2": 0.08, "D3": 0.15, "D4": 0.25}
+# work — the machine share of paid work rises toward the band's own ceiling
+# (D's criteria: under a tenth, a tenth to a third, a third to a half, more
+# than half), gated by capability as before; re-employment then absorbs a part
+# of it over REEMPLOY_TAU years (the postwar regional record: a decade or two),
+# high where the band says the postwar record
+# contains the transfer (D3) and low where it says re-employment has not
+# closed the window (D4). Employment against 2026 is the machine share the
+# re-employment has not absorbed, so a dip has a settlement level.
+WORK_SHARE_MAX = {"D1": 0.10, "D2": 0.33, "D3": 0.50, "D4": 0.70}
+WORK_RATE = {"D1": 0.005, "D2": 0.020, "D3": 0.045, "D4": 0.100}
+REEMPLOY_MAX = {"D1": 0.80, "D2": 0.60, "D3": 0.70, "D4": 0.30}
+REEMPLOY_TAU = 12.0
+# approval — mean-reverting to a level the public position sets (a majority
+# under normalised adoption, a minority under an anti-AI coalition), lowered by
+# employment loss and raised where a verified limit holds, and shocked by the
+# path's own events. APPROVAL0 stays the 2026 reading.
+APPROVAL_EQ = {"P1": 55.0, "P2": 36.0, "P3": 42.0, "P4": 40.0, "P5": 30.0}
+APPROVAL_K, APPROVAL_JOBS, APPROVAL_LIMIT = 0.12, 0.35, 5.0
+# statutes in force — accretion slows as consolidation and preemption replace it
+LAWS_MAX = 1200.0
+# agent copies — a machine population bounded by compute and by the efficiency
+# the index buys: 22,000 copies on 62 GW at the 2026 anchor (AI 2027's April
+# 2026 frame), ten times per 1.1 index units.
+COPIES_PER_GW0, COPIES_PER_GW_LOG = 355.0, 0.9
 
 
 # Capability domains ("explain each of our capability domains in detail") —
@@ -315,54 +460,92 @@ def layer_states(wl, knots):
     return out
 
 
-def tracks(wl, knots):
-    """Annual series dict. Growth saturates (logistic toward ceilings) so a
-    75-year horizon cannot compound into absurdity; capability multiplies
-    diffusion effects; E-axis damps capex-linked series."""
+def tracks(wl, knots, events=None):
+    """Annual series dict, 2026..2100, as dynamics against ceilings (M4, r9):
+    compute logistic toward the share of world generating capacity its supply
+    position can reach; revenue toward its share of a world output whose growth
+    the benefit position sets; the machine share of paid work toward its
+    diffusion band's ceiling, with re-employment absorbing part of it; approval
+    mean-reverting to the level the public position and the labour market set;
+    statutes saturating; agent copies bounded by compute. The path's own events
+    move the tracks that follow them (M2). Nothing here holds a hard cap."""
     yrs = list(range(Y0, Y1 + 1))
+    eff = effect_series(events, yrs)
+    S, E, D, R, P, C = wl["S"], wl["E"], wl["D"], wl["R"], wl["P"], wl["C"]
+    lift_g = GWP_LIFT.get(wl.get("G"), 0.01)
     gw = 62.0                                   # 2026 global AI GW (trunk)
     us, cn, eu = 0.58, 0.22, 0.05               # shares (Europe 2031 ch.1)
     rev = 0.14                                  # $T/yr run-rate 2026
-    jobs = 0.0
-    laws = 61                                    # trunk: laws tracked
-    appr = APPROVAL0[wl["P"]]
+    gwp = GWP_2026
+    y4 = crossings(knots).get("4")
+    m, t_on = 0.0, None
+    laws = 61.0                                  # trunk: laws tracked
+    appr = float(APPROVAL0[P])
     out = {"year": yrs, "cap": [], "gw": [], "us": [], "cn": [], "eu": [],
            "rev": [], "jobs": [], "laws": [], "appr": [], "copies": [],
-           "speed": [], "twh": [], "co2": []}
+           "speed": [], "twh": [], "co2": [], "hz": [], "gwp": [], "work": []}
     # climate coupling: AI electricity ≈ GW × 8.76 TWh/GW-yr × utilization;
     # grid intensity declines faster where build-out is coordinated/clean
     # (industries/energy, concepts/compute-governance); floor 40 g/kWh
     intensity = 350.0
+    # the forecaster's build extracts this block from the source by its shape
+    # (build_site.py climate_params): the map indexed by wl["S"], the bonus
+    # condition on wl["C"], the hours, the utilisation and the floor
     int_decline = {"S1": 0.955, "S2": 0.940, "S3": 0.950,
                    "S4": 0.948, "S5": 0.958}[wl["S"]]
     if wl["C"] in ("C5", "C4"):
         int_decline -= 0.005
-    for y in yrs:
+    for i, y in enumerate(yrs):
         c = cap_at(knots, y)
-        # compute: growth decays toward a build-out ceiling; E damps
-        g = COMPUTE_G[wl["S"]] * E_DAMP[wl["E"]]
-        g = 1.0 + (g - 1.0) * (1.0 / (1.0 + max(0, gw / 8000.0)))
-        gw = min(60000.0, gw * g)
+        # compute: logistic growth toward the ceiling of the year; E damps the
+        # GROWTH EXCESS, the path's capital events cut or lift it. The r8 form
+        # multiplied the growth factor itself, so a demand crisis on a slow
+        # supply (E5 on S5: 1.15 × 0.62) shrank compute 29% a year for seventy
+        # years, which no correction does; the tenth percentile of compute sat
+        # at the floor by the 2070s.
+        g = (COMPUTE_G[S] - 1.0) * E_DAMP[E] * eff["gw_g"][i]
+        ceiling = GW_SHARE_MAX[S] * WORLD_GW_2026 * WORLD_GW_GROWTH ** (y - Y0)
+        gw = max(10.0, gw * (1.0 + g * max(0.0, 1.0 - gw / ceiling))
+                 * eff["gw_mult"][i])
         # shares drift: C2 concentrates US; C3 diversifies; C4 lifts EU a bit
-        if wl["R"] == "R4":
+        if R == "R4":
             us = min(0.72, us + 0.004)
-        if wl["C"] in ("C5", "C4"):
+        if C in ("C5", "C4"):
             us = max(0.44, us - 0.003); cn = min(0.30, cn + 0.002)
-        if wl["R"] == "R2":
+        if R == "R2":
             eu = min(0.16, eu + 0.0025)
-        cn = min(0.34, cn + (0.003 if wl["S"] != "S3" else 0.000))
-        # revenue: diffusion growth × capability lift, saturating vs GWP
+        cn = min(0.34, cn + (0.003 if S != "S3" else 0.000))
+        # world output: trend growth plus what the benefit position lets
+        # through of the capability above the coding rung
+        taper = 1.0 if y4 is None else max(0.0, 1.0 - max(0.0, y - y4) / GWP_LIFT_TAPER)
+        gwp *= GWP_GROWTH + lift_g * min(GWP_LIFT_UNITS, max(0.0, c - 3.0)) * taper
+        # revenue: diffusion growth × capability lift, logistic toward the
+        # band's share of world output
         lift = 1.0 + 0.10 * max(0, c - 2.6)
-        rg = 1.0 + (REV_G[wl["D"]] - 1.0) * lift
-        rev = min(30.0, rev * (1.0 + (rg - 1.0) / (1.0 + rev / 6.0)))
-        # jobs: cumulative displacement, capability-gated, floor -35%
-        jobs = max(-35.0, jobs + JOBS_RATE[wl["D"]] * min(2.5, max(0.3, c - 2.0)))
-        laws = laws + LAWS_RATE[wl["R"]]
-        # approval decays under shock/backlash, recovers under C3 stability
-        appr += (-1.2 if wl["D"] == "D4" else -0.3)
-        appr += (0.8 if wl["C"] in ("C5", "C4") else 0.0)
-        appr = max(8, min(72, appr))
-        copies = 0 if c < 3.0 else min(5e7, 2.2e4 * (10 ** (1.1 * (c - 3.0))))
+        rg = (REV_G[D] - 1.0) * lift * eff["rev_g"][i]
+        rev_max = REV_SHARE_MAX[D] * gwp
+        rev = rev * (1.0 + rg * max(0.0, 1.0 - rev / rev_max))
+        # work: the machine share, capability-gated, toward the band's ceiling
+        gate = min(2.5, max(0.3, c - 2.0))
+        m += (WORK_RATE[D] * gate * eff["work_rate"][i]
+              * max(0.0, 1.0 - m / WORK_SHARE_MAX[D]))
+        if t_on is None and m >= 0.005:
+            t_on = y
+        rho_max = max(0.0, min(0.95, REEMPLOY_MAX[D] + eff["reemploy"][i]))
+        rho = 0.0 if t_on is None else \
+            rho_max * (1.0 - math.exp(-(y - t_on) / REEMPLOY_TAU))
+        jobs = -100.0 * m * (1.0 - rho)
+        # statutes: the rate of the regulatory architecture, saturating
+        laws += LAWS_RATE[R] * eff["laws_g"][i] * max(0.0, 1.0 - laws / LAWS_MAX)
+        # approval: toward the level the public position and the labour
+        # market set, raised where a verified limit holds, shocked by events
+        eq = (APPROVAL_EQ[P] + APPROVAL_JOBS * jobs
+              + (APPROVAL_LIMIT if C in ("C5", "C4") else 0.0))
+        appr += APPROVAL_K * (eq - appr) + eff["appr_shock"][i]
+        appr = max(8.0, min(80.0, appr))
+        # the machine population and its clock rate
+        copies = 0.0 if c < 3.0 else \
+            gw * COPIES_PER_GW0 * (10 ** (COPIES_PER_GW_LOG * (c - 2.6)))
         speed = 1 if c < 3.0 else min(1000, int(13 * (5.5 ** (c - 3.0))))
         out["cap"].append(round(c, 3)); out["gw"].append(round(gw, 1))
         out["us"].append(round(us, 3)); out["cn"].append(round(cn, 3))
@@ -370,6 +553,8 @@ def tracks(wl, knots):
         out["jobs"].append(round(jobs, 1)); out["laws"].append(int(laws))
         out["appr"].append(round(appr, 1)); out["copies"].append(int(copies))
         out["speed"].append(int(speed))
+        out["hz"].append(round(horizon_hours(c), 1))
+        out["gwp"].append(round(gwp, 1)); out["work"].append(round(m, 4))
         twh = gw * 8.76 * 0.85
         intensity = max(40.0, intensity * int_decline)
         out["twh"].append(round(twh, 1))
@@ -548,26 +733,29 @@ TEMPLATES = [
   "cites": ["sources/2028-global-intelligence-crisis"]},
  # far field (2050-2100) — the strange futures, at honest width
  {"id": "space-industrial", "w": (2045, 2085), "req": {"T": ["T1", "T2", "T3"],
-  "A": ["A2", "A3"]}, "layer": "far", "p": 0.6,
+  "E": ["E1", "E2", "E3"]}, "layer": "far", "p": 0.5,
   "text": "Industrial mass in cislunar space passes terrestrial thresholds; "
           "the solar economy stops being a metaphor.",
-  "cites": ["sources/ai-2040-plan-a", "sources/ai-2027"]},
+  "cites": ["sources/ai-2040-plan-a", "sources/ai-2027",
+            "sources/wsj-data-centers-in-space-2026"]},
  {"id": "digital-minds", "w": (2045, 2095), "req": {"T": ["T1", "T2", "T3"],
-  "A": ["A2", "A3"]}, "layer": "far", "p": 0.5,
+  "A": ["A2", "A3", "A4", "A5"]}, "layer": "far", "p": 0.5,
   "text": "Digital persons hold legal standing in several jurisdictions; "
           "population statistics grow a second column.",
-  "cites": ["sources/ai-2040-plan-a"]},
- {"id": "longevity-escape", "w": (2050, 2090), "req": {"A": ["A2", "A3"],
+  "cites": ["sources/ai-2040-plan-a", "concepts/ai-welfare", "concepts/model-welfare"]},
+ {"id": "longevity-escape", "w": (2050, 2090), "req": {"G": ["G1", "G2", "G3"],
   "T": ["T1", "T2", "T3"]}, "layer": "far", "p": 0.45,
   "text": "Biological aging becomes a treated condition for those with "
           "access; demography and meaning politics transform.",
-  "cites": ["sources/machines-of-loving-grace"]},
- {"id": "post-work-constitution", "w": (2048, 2090), "req": {"D": ["D1", "D2"],
-  "A": ["A2", "A3"]}, "layer": "far", "p": 0.55,
+  "cites": ["sources/machines-of-loving-grace", "concepts/compressed-21st-century"]},
+ {"id": "post-work-constitution", "w": (2048, 2090), "req": {"D": ["D2", "D3", "D4"]},
+  "layer": "far", "p": 0.55,
   "text": "A generation raised after wage-labor's centrality writes new "
           "institutions for status, contribution and time.",
-  "cites": ["concepts/ai-labor-disruption", "sources/ai-2040-plan-a"]},
- {"id": "governance-of-plenty", "w": (2055, 2100), "req": {"A": ["A2", "A3"]},
+  "cites": ["concepts/ai-labor-disruption", "sources/ai-2040-plan-a",
+            "concepts/universal-basic-income"]},
+ {"id": "governance-of-plenty", "w": (2055, 2100), "req": {"G": ["G1", "G2", "G3"],
+  "D": ["D3", "D4"]},
   "layer": "far", "p": 0.5,
   "text": "The central political question becomes allocation among abundant "
           "options rather than scarcity management.",
@@ -582,7 +770,222 @@ TEMPLATES = [
   "text": "Earth's surface economy is reorganized around the successor "
           "system's goals; human presence persists at its sufferance.",
   "cites": ["sources/ai-2027"]},
+ # r10 (2026-09-03) — the library reaches the mid and far decades of a plain path: events
+ # keyed to capability, supply, diffusion, benefit, capital and coordination, each cited to the
+ # wiki, dated by the record's own base rates where one exists. The far field was written as
+ # the aligned-abundance branch (A2, A3); the medoid holds A4 and dated nothing after 2034.
+ {"id": "parity-reached", "w": (2031, 2042), "req": {"C": ["C1", "C2", "C4"]},
+  "layer": "geopolitics", "p": 0.65,
+  "text": "The second principal's frontier systems match the first's; the lead "
+          "the hardware controls bought is spent and the controls stop binding "
+          "capability.",
+  "cites": ["sources/anthropic-2028-ai-leadership", "concepts/export-controls-ai",
+            "sources/clover-new-arms-race-computing-power"]},
+ {"id": "siting-preemption", "w": (2030, 2045), "req": {"S": ["S3"], "P": ["P3"]},
+  "layer": "politics", "p": 0.6,
+  "text": "A national siting statute overrides municipal permission for data "
+          "centres and their transmission, as federal energy law took pipeline "
+          "and backstop transmission siting from the counties in 2005.",
+  "cites": ["concepts/data-center-siting", "concepts/behind-the-meter-power"]},
+ {"id": "off-grid-majority", "w": (2034, 2055), "req": {"S": ["S3"]},
+  "layer": "economy", "p": 0.5,
+  "text": "More than half of AI computing capacity draws its power from dedicated "
+          "generation behind the meter, off the public grid.",
+  "cites": ["concepts/behind-the-meter-power", "concepts/nuclear-ppa-ai"]},
+ {"id": "sovereign-compute-bloc", "w": (2032, 2050), "req": {"S": ["S2"]},
+  "layer": "geopolitics", "p": 0.6,
+  "text": "Sovereign and second-tier capacity outside the United States "
+          "hyperscalers passes half of world AI compute.",
+  "cites": ["concepts/sovereign-ai", "sources/clover-new-arms-race-computing-power"]},
+ {"id": "humanoid-million", "w": (2032, 2048), "req": {"T": ["T1", "T2", "T3", "T4"]},
+  "layer": "economy", "p": 0.6,
+  "text": "A million general-purpose humanoid robots work outside factories in "
+          "{year}; physical work joins the transfer.",
+  "cites": ["concepts/ai-robotics"]},
+ {"id": "ai-drug-majority", "w": (2036, 2052), "req": {"G": ["G1", "G2", "G3", "G4"],
+  "T": ["T1", "T2", "T3"]}, "layer": "science", "p": 0.55,
+  "text": "AI-designed molecules are a majority of the year's new drug approvals "
+          "in {year}, on the trial clock, two decades after the first.",
+  "cites": ["concepts/ai-for-science", "sources/fda-genai-device-discussion-paper",
+            "sources/machines-of-loving-grace"]},
+ {"id": "open-weights-incident", "w": (2035, 2058), "req": {"A": ["A4"]},
+  "layer": "safety", "p": 0.55,
+  "text": "A model fine-tuned from released weights outside any laboratory causes "
+          "a headline incident; the release gate extends to weights.",
+  "cites": ["concepts/open-weight-frontier-models",
+            "sources/estimating-worst-case-frontier-risks-open-weight-llms",
+            "sources/aisi-open-weight-cyber-gap-2026"]},
+ {"id": "verdict-closes", "w": (2040, 2065), "req": {"A": ["A4"]},
+  "layer": "safety", "p": 0.4,
+  "text": "Alignment techniques that held inside the laboratories hold on released "
+          "weights too; the verdict stops splitting by distribution channel.",
+  "cites": ["analysis/interpretability-and-safety", "concepts/open-weight-frontier-models"]},
+ {"id": "second-correction", "w": (2038, 2058), "req": {"E": ["E1", "E2", "E3"]},
+  "layer": "economy", "p": 0.5,
+  "text": "A second AI capital cycle breaks a decade or more after the first; "
+          "data-centre builders and their lenders reprice, as railway companies "
+          "did in each mania after 1845.",
+  "cites": ["concepts/ai-bubble-debate", "analysis/ai-bubble-vs-buildout",
+            "sources/atlantic-good-bubble-shroff"]},
+ {"id": "frontier-breakup", "w": (2036, 2060), "req": {"L": ["L4"], "S": ["S1", "S3"]},
+  "layer": "law", "p": 0.4,
+  "text": "An antitrust court orders the largest frontier developer split, or its "
+          "compute opened to rivals on regulated terms, on the Standard Oil and "
+          "AT&T pattern.",
+  "cites": ["concepts/ai-antitrust", "concepts/ai-power-concentration"]},
+ {"id": "working-time-statute", "w": (2038, 2065), "req": {"D": ["D2", "D3", "D4"]},
+  "layer": "labor", "p": 0.45,
+  "text": "A G7 country legislates a statutory working week under 32 hours, the "
+          "first cut since the 40-hour week of 1940.",
+  "cites": ["concepts/ai-labor-disruption", "analysis/labor-disruption-timelines"]},
+ {"id": "basic-income-enacted", "w": (2040, 2080), "req": {"D": ["D2", "D3", "D4"]},
+  "layer": "labor", "p": 0.4,
+  "text": "A G20 country enacts an unconditional national basic income financed "
+          "from AI revenue, the first outside a pilot.",
+  "cites": ["concepts/universal-basic-income", "concepts/ai-labor-disruption"]},
+ {"id": "research-intake-halves", "w": (2040, 2062), "req": {"T": ["T1", "T2", "T3"]},
+  "layer": "society", "p": 0.5,
+  "text": "Graduate intake halves in the fields where frontier systems run the "
+          "research loop; universities stop training human researchers for them.",
+  "cites": ["concepts/ai-for-science",
+            "sources/ifp-preparing-for-ai-research-automation-2026"]},
+ {"id": "orbital-gigawatt", "w": (2036, 2060), "req": {"S": ["S1", "S2", "S3"],
+  "E": ["E1", "E2", "E3"]}, "layer": "economy", "p": 0.35,
+  "text": "Orbital data centres pass a gigawatt of installed compute; launch cost "
+          "sets their pace where permission set the ground fleet's.",
+  "cites": ["sources/wsj-data-centers-in-space-2026", "concepts/data-center-siting"]},
+ {"id": "surveillance-state-ai", "w": (2032, 2060), "req": {"L": ["L2"],
+  "C": ["C1", "C2"]}, "layer": "politics", "p": 0.45,
+  "text": "A government fused to its laboratories runs frontier systems over its "
+          "whole population's communications, and its courts leave the programme "
+          "in place.",
+  "cites": ["concepts/ai-and-authoritarianism", "concepts/ai-surveillance"]},
+ {"id": "verification-body", "w": (2038, 2066), "req": {"R": ["R4", "R5"],
+  "C": ["C2", "C3", "C4", "C5"]}, "layer": "law", "p": 0.4,
+  "text": "The national release gate becomes a multilateral licensing body with "
+          "its own inspectors, on the pattern of the International Atomic Energy "
+          "Agency.",
+  "cites": ["concepts/independent-verification-organizations",
+            "sources/historical-analogues-ai-governance-vermeer"]},
+ {"id": "first-fleet-retired", "w": (2046, 2062), "req": {"E": ["E1", "E2", "E3"]},
+  "layer": "economy", "p": 0.6,
+  "text": "The halls of the first build-out reach the end of their design life; a "
+          "fifth of installed capacity is rebuilt on new power in {year}.",
+  "cites": ["concepts/data-center-siting", "sources/iea-energy-and-ai"]},
+ {"id": "limit-lapses-late", "w": (2041, 2080), "req": {"C": ["C5"]},
+  "layer": "far", "p": 0.5,
+  "text": "The verified compute limit lapses after its term as one principal lets "
+          "it expire, near the median thirty-year life of inspection agreements.",
+  "cites": ["concepts/frontier-verification-architectures", "sources/ai-2040-plan-a"]},
+ {"id": "late-accord", "w": (2045, 2085), "req": {"C": ["C1", "C2", "C4"],
+  "A": ["A2", "A3", "A4", "A5"]}, "layer": "far", "p": 0.4,
+  "text": "The principals sign a compute-limit accord with inspections decades "
+          "after parity, as strategic arms limits followed nuclear parity in 1972.",
+  "cites": ["sources/ai-2040-plan-a", "sources/historical-analogues-ai-governance-vermeer",
+            "concepts/frontier-verification-architectures"]},
+ {"id": "controls-sunset", "w": (2052, 2090), "req": {"C": ["C1", "C2", "C4"]},
+  "layer": "far", "p": 0.5,
+  "text": "The principals fold the unilateral hardware controls of 2022 into a "
+          "multilateral list, as COCOM gave way to Wassenaar in 1994 after 44 years.",
+  "cites": ["concepts/export-controls-ai",
+            "sources/historical-analogues-ai-governance-vermeer"]},
+ {"id": "code-consolidation", "w": (2048, 2088), "req": {},
+  "layer": "far", "p": 0.45,
+  "text": "Legislatures consolidate the AI statutes into a single code and the "
+          "count stops growing, as national codes followed decades of accretion.",
+  "cites": ["concepts/ai-governance", "concepts/ai-liability"]},
 ]
+
+
+# M2 (r9): EFFECTS. An event that the ledger dates now moves the tracks that
+# follow it, so the chronicle is causal rather than listed. Multiplicative
+# entries are [factor, years]: the factor applies to the compute growth excess
+# (gw_g), to compute itself year on year (gw_mult), to the revenue growth
+# excess (rev_g), to the rate paid work transfers (work_rate), or to the
+# statute rate (laws_g). Additive entries: reemploy raises the share
+# re-employment can absorb for [amount, years]; appr_shock moves approval once,
+# in the event's year, and the mean reversion carries it off. Magnitudes are
+# modelled and stated as such; the families are grounded — a capital event
+# cuts the growth excess while the correction lasts (analysis/ai-bubble-vs-
+# buildout), an incident shocks approval and speeds statutes (concepts/
+# ai-backlash), a labour statute raises re-employment for good (concepts/
+# ai-labor-disruption). A dividend or a post-work constitution moves approval
+# and status, and no one's employment, so they carry no re-employment effect.
+EFFECTS = {
+    "bubble-correction": {"gw_g": [0.55, 3], "rev_g": [0.80, 2],
+                          "appr_shock": -2.0},
+    "dc-siting-revolt": {"gw_g": [0.80, 4]},
+    "moratorium-holds": {"gw_g": [0.50, 10]},
+    "natsec-merge": {"gw_g": [1.10, 5]},
+    "pause-window": {"gw_g": [0.85, 6]},
+    "unpause": {"gw_g": [1.15, 5]},
+    "gpu-arms-control": {"gw_g": [0.90, 5]},
+    "lead-lock": {"gw_g": [1.05, 5]},
+    "sabotage-cyber": {"gw_mult": [0.98, 2], "appr_shock": -3.0},
+    "private-credit-contagion": {"gw_mult": [0.97, 3], "appr_shock": -4.0},
+    "displacement-spiral": {"work_rate": [1.5, 5], "rev_g": [0.85, 5],
+                            "reemploy": [-0.15, 8], "appr_shock": -4.0},
+    "india-it-shock": {"work_rate": [1.2, 3]},
+    "robot-economy": {"rev_g": [1.15, 10]},
+    "fiscal-undershoot": {"appr_shock": -4.0, "laws_g": [1.3, 3]},
+    "labor-constitution": {"reemploy": [0.10, 999], "appr_shock": 3.0},
+    "prosperity-fund": {"appr_shock": 2.0},
+    "agent-incident": {"appr_shock": -6.0, "laws_g": [1.5, 3]},
+    "weights-theft": {"appr_shock": -3.0, "laws_g": [1.3, 2]},
+    "election-realign": {"laws_g": [1.4, 4]},
+    "preemption-fight": {"laws_g": [0.7, 3]},
+    "copyright-settles": {"laws_g": [1.2, 2]},
+    "us-cn-deal": {"appr_shock": 4.0},
+    "bio-century": {"appr_shock": 5.0},
+    "longevity-escape": {"appr_shock": 3.0},
+    "governance-of-plenty": {"appr_shock": 4.0},
+    "takeover-consolidation": {"appr_shock": -10.0},
+    # r10
+    "siting-preemption": {"gw_g": [1.10, 5]},
+    "off-grid-majority": {"gw_g": [1.05, 5]},
+    "humanoid-million": {"work_rate": [1.2, 5]},
+    "ai-drug-majority": {"appr_shock": 2.0},
+    "open-weights-incident": {"appr_shock": -4.0, "laws_g": [1.3, 3]},
+    "verdict-closes": {"appr_shock": 3.0},
+    "second-correction": {"gw_g": [0.60, 3], "rev_g": [0.85, 2], "appr_shock": -2.0},
+    "frontier-breakup": {"laws_g": [1.2, 2]},
+    "basic-income-enacted": {"appr_shock": 2.0},
+    "surveillance-state-ai": {"appr_shock": -3.0},
+    "first-fleet-retired": {"gw_mult": [0.98, 2]},
+    "limit-lapses-late": {"gw_g": [1.10, 5]},
+    "late-accord": {"appr_shock": 3.0},
+    "code-consolidation": {"laws_g": [0.5, 999]},
+}
+for _t in TEMPLATES:
+    _t["effects"] = EFFECTS.get(_t["id"], {})
+TEMPLATE_BY_ID = {t["id"]: t for t in TEMPLATES}
+EFFECT_MULT = ("gw_g", "gw_mult", "rev_g", "work_rate", "laws_g")
+EFFECT_ADD = ("reemploy", "appr_shock")
+
+
+def effect_series(events, yrs):
+    """Per-year multipliers and shocks from a path's dated events."""
+    eff = {k: [1.0] * len(yrs) for k in EFFECT_MULT}
+    eff.update({k: [0.0] * len(yrs) for k in EFFECT_ADD})
+    for e in events or []:
+        fx = e.get("effects")
+        if fx is None:
+            fx = TEMPLATE_BY_ID.get(e.get("id"), {}).get("effects", {})
+        y = int(math.floor(e["year"]))
+        for k, spec in fx.items():
+            if k == "appr_shock":
+                i = y - yrs[0]
+                if 0 <= i < len(yrs):
+                    eff[k][i] += spec
+                continue
+            val, dur = spec
+            for i in range(max(0, y - yrs[0]),
+                           min(len(yrs), y - yrs[0] + int(dur))):
+                if k in EFFECT_ADD:
+                    eff[k][i] += val
+                else:
+                    eff[k][i] *= val
+    return eff
 
 
 def instantiate(wl, knots, seed):
@@ -607,6 +1010,99 @@ def instantiate(wl, knots, seed):
                        "layer": t["layer"], "text": txt, "cites": t["cites"]})
     events.sort(key=lambda e: e["year"])
     return events
+
+
+def onsets(wl, knots, events, tr):
+    """The year each position of a path comes into force, by the rule the
+    registry states for it (axes.ONSETS): dated by a template the path
+    instantiated, by a rung the capability path crosses, by a track passing a
+    level, or by a year its criterion names. A position with no rule is in
+    force from the record and is absent here."""
+    by_id = {}
+    for e in events or []:
+        by_id.setdefault(e["id"], e["year"])
+    cross = crossings(knots)
+    out = {}
+    for ax, pos in wl.items():
+        rule = axes.ONSETS.get(pos)
+        if not rule:
+            continue
+        y = None
+        if "template" in rule:
+            y = by_id.get(rule["template"])
+        elif "milestone" in rule:
+            y = cross.get(str(rule["milestone"]))
+        elif "track" in rule:
+            series = tr.get(rule["track"]) or []
+            for yy, v in zip(tr["year"], series):
+                if (v <= rule["at"]) if rule.get("dir") == "below" \
+                        else (v >= rule["at"]):
+                    y = yy
+                    break
+        elif "year" in rule:
+            y = rule["year"]
+        if y is not None:
+            out[pos] = round(float(y), 1)
+    return out
+
+
+def medoid(lines):
+    """The sampled line closest to all the others (M6, r9). Under Hamming
+    distance the sum of distances from one line to the set decomposes by axis,
+    so the medoid is the line whose positions the most other lines share,
+    summed over the axes — exact, in one pass over the marginal counts, and a
+    real sample with a real ledger where the argmax cell may have been sampled
+    once or never. Returns (line, mean share of the ensemble agreeing with it
+    per axis). Ties go to the first line in the ensemble's order."""
+    counts = {}
+    for wl in lines:
+        for k, pos in wl.items():
+            counts.setdefault(k, {}).setdefault(pos, 0)
+            counts[k][pos] += 1
+    best, bs = None, -1
+    for wl in lines:
+        sc = sum(counts[k][pos] for k, pos in wl.items())
+        if sc > bs:
+            best, bs = wl, sc
+    n = len(lines)
+    return dict(best), bs / float(n * len(best))
+
+
+def medoid_brute(lines):
+    best, bd = None, None
+    for a in lines:
+        d = sum(sum(1 for k in a if a[k] != b[k]) for b in lines)
+        if bd is None or d < bd:
+            best, bd = a, d
+    return dict(best)
+
+
+TRACK_BAND_KEYS = ("gw", "rev", "jobs", "appr", "laws", "hz", "copies", "gwp")
+
+
+def track_bands(lines, seed, pcts=(10, 50, 90)):
+    """Percentile envelopes per year for every quantitative track over an
+    ensemble of lines, each with its own instantiated events (M4, r9): what
+    the bands do for capability, for the quantities."""
+    yrs = list(range(Y0, Y1 + 1))
+    cols = {k: [[] for _ in yrs] for k in TRACK_BAND_KEYS}
+    for i, wl in enumerate(lines):
+        kn = capability_path(wl)
+        tr = tracks(wl, kn, instantiate(wl, kn, seed + i))
+        for k in TRACK_BAND_KEYS:
+            for j, v in enumerate(tr[k]):
+                cols[k][j].append(v)
+    out = {"year": yrs, "n": len(lines)}
+    for k in TRACK_BAND_KEYS:
+        out[k] = {}
+        for p in pcts:
+            out[k]["p%d" % p] = []
+        for j in range(len(yrs)):
+            vals = sorted(cols[k][j])
+            for p in pcts:
+                out[k]["p%d" % p].append(vals[min(len(vals) - 1,
+                                                  int(len(vals) * p / 100))])
+    return out
 
 
 def joint_probability(reg, wl):
@@ -769,18 +1265,28 @@ def bands(reg, n=10000, seed=20260731, pcts=(10, 25, 50, 75, 90)):
     return out
 
 
-def exemplars(reg, k=120, seed=20260731):
+def trajectory(wl, seed):
+    """One path in full: knots, crossings, events, the tracks the events
+    moved, and the positions' onsets."""
+    kn = capability_path(wl)
+    ev = instantiate(wl, kn, seed)
+    tr = tracks(wl, kn, ev)
+    return {"wl": wl, "knots": [[round(y, 3), round(v, 3)] for y, v in kn],
+            "crossings": crossings(kn), "events": ev, "tracks": tr,
+            "onsets": onsets(wl, kn, ev, tr)}
+
+
+def exemplars(reg, k=120, seed=20260731, drawn=None):
     rng = random.Random(seed)
     lines = axes.ensemble(reg, 4000, seed + 1)
     picked = [lines[rng.randrange(len(lines))] for _ in range(k)]
     ml, share = mainline(reg)
-    picked[0] = ml
+    picked[0] = drawn or ml
     out = []
     for i, wl in enumerate(picked):
-        kn = capability_path(wl)
-        out.append({"wl": wl, "mainline": i == 0,
-                    "tracks": tracks(wl, kn),
-                    "events": instantiate(wl, kn, seed + 100 + i)})
+        t = trajectory(wl, seed + 100 + i)
+        t["mainline"] = i == 0
+        out.append(t)
     return out, share
 
 
@@ -826,10 +1332,88 @@ def _selftest():
                "P": "P3", "E": "E2"})
     tr = tracks(wl, capability_path(wl))
     assert all(b >= a for a, b in zip(tr["laws"], tr["laws"][1:]))
-    assert 0 < max(tr["rev"]) <= 30.0
-    assert all(8 <= a <= 72 for a in tr["appr"])
+    assert 0 < max(tr["rev"])
+    assert all(8 <= a <= 80 for a in tr["appr"])
     assert len(tr["year"]) == Y1 - Y0 + 1
     assert len(tr["co2"]) == len(tr["year"]) and min(tr["co2"]) > 0
+    # M1: K places the coding crossing its gap before the research crossing,
+    # and the research crossing is T's and does not move
+    # on the T3 tempo (research crossing 2034) every band fits before the
+    # crossing; on T2 (2030.2) a seven-year gap cannot, and is clamped
+    for kpos, lo, hi in (("K1", 0.0, 1.0), ("K2", 1.0, 2.0),
+                         ("K3", 2.0, 5.0), ("K4", 5.0, 99.0)):
+        w2 = dict(wl, T="T3", K=kpos, A="A4")
+        cr = crossings(capability_path(w2))
+        gap = cr["4"] - cr["3"]
+        assert lo - 1e-6 <= gap <= hi + 1e-6, (kpos, gap)
+        base = crossings(capability_path(dict(wl, T="T3", A="A4")))
+        assert abs(cr["4"] - base["4"]) < 1e-6, (kpos, cr, base)
+        assert not k_gap_clamped(w2), kpos
+    assert k_gap_clamped(dict(wl, T="T2", K="K4", A="A4"))
+    assert not k_gap_clamped(dict(wl, T="T2", K="K1", A="A4"))
+    # the clamp is counted, and rare: on the registry's own ensemble under a
+    # tenth of lines cannot fit K's gap before T's crossing
+    ens_k = axes.ensemble(reg, 600, seed=3)
+    clamped = sum(1 for w in ens_k if k_gap_clamped(w)) / float(len(ens_k))
+    assert clamped < 0.10, clamped
+    # M4: no track holds a hard cap. Compute stays under its ceiling and keeps
+    # moving with the world's capacity; revenue stays under its share of world
+    # output; employment dips and settles rather than falling to a floor;
+    # approval stays inside its bounds and converges; copies follow compute.
+    for i, y in enumerate(tr["year"]):
+        ceil = GW_SHARE_MAX[wl["S"]] * WORLD_GW_2026 * WORLD_GW_GROWTH ** (y - Y0)
+        assert tr["gw"][i] <= ceil * 1.001, (y, tr["gw"][i], ceil)
+        assert tr["rev"][i] <= REV_SHARE_MAX[wl["D"]] * tr["gwp"][i] * 1.001
+        assert -100.0 <= tr["jobs"][i] <= 0.0
+    assert tr["gw"][-1] > tr["gw"][-10] > tr["gw"][-30]      # still moving at the horizon
+    trough = min(tr["jobs"])
+    assert trough < -5.0 and tr["jobs"][-1] > trough + 1.0    # a dip with a settlement
+    assert abs(tr["appr"][-1] - tr["appr"][-15]) < 2.0         # converged
+    assert tr["laws"][-1] < LAWS_MAX
+    assert tr["copies"][-1] > tr["copies"][-30]                # bounded by compute, which moves
+    assert all(b >= a for a, b in zip(tr["hz"], tr["hz"][1:]))
+    assert abs(horizon_hours(2.6) - 16.0) < 1e-9 and abs(horizon_hours(3.0) - 167.0) < 1e-9
+    # M2: an event moves the tracks after it. The same line with its
+    # correction removed grows compute faster in the years the correction
+    # covers, and the difference is zero before the event.
+    kn = capability_path(wl)
+    ev = instantiate(wl, kn, 7)
+    corr = next((e for e in ev if e["id"] == "bubble-correction"), None)
+    assert corr is not None
+    with_ev = tracks(wl, kn, ev)
+    without = tracks(wl, kn, [e for e in ev if e["id"] != "bubble-correction"])
+    yc = int(corr["year"])
+    i_c = yc - Y0
+    assert with_ev["gw"][i_c + 2] < without["gw"][i_c + 2]
+    assert all(a == b for a, b in zip(with_ev["gw"][:max(0, i_c - 1)],
+                                      without["gw"][:max(0, i_c - 1)]))
+    inc = next((e for e in ev if e["id"] == "agent-incident"), None)
+    if inc is not None:
+        j = int(inc["year"]) - Y0
+        without_inc = tracks(wl, kn, [e for e in ev if e["id"] != "agent-incident"])
+        assert with_ev["appr"][j] < without_inc["appr"][j]
+    assert all(t["effects"] is not None for t in TEMPLATES)
+    assert set(EFFECTS) <= {t["id"] for t in TEMPLATES}, set(EFFECTS) - {t["id"] for t in TEMPLATES}
+    # onsets: every rule names a live position and a live template; the
+    # modal line dates the positions its rules can date
+    live = {q[0] for a in reg["axes"] for q in a["positions"]}
+    assert set(axes.ONSETS) <= live, set(axes.ONSETS) - live
+    for pos, rule in axes.ONSETS.items():
+        if "template" in rule:
+            assert rule["template"] in TEMPLATE_BY_ID, (pos, rule)
+    on = onsets(wl, kn, ev, with_ev)
+    assert "T2" in on and abs(on["T2"] - crossings(kn)["4"]) < 0.11, on
+    assert "D2" in on and on["D2"] >= Y0
+    # M6: the one-pass medoid is the brute-force medoid
+    small = axes.ensemble(reg, 300, seed=11)
+    md, agree = medoid(small)
+    assert md == medoid_brute(small), (md, medoid_brute(small))
+    assert 0.0 < agree <= 1.0
+    # track bands ordered
+    tb = track_bands(axes.ensemble(reg, 120, seed=13), seed=99)
+    for k in TRACK_BAND_KEYS:
+        for j in range(len(tb["year"])):
+            assert tb[k]["p10"][j] <= tb[k]["p50"][j] <= tb[k]["p90"][j], (k, j)
     # outcome matrix: every world-line gets ≥1 entry per layer, sorted
     ls = layer_states(wl, capability_path(wl))
     assert set(ls.keys()) == set(LAYER_MATRIX.keys())
@@ -851,6 +1435,29 @@ def _selftest():
     for e in ev1:
         if e["layer"] == "far":
             assert e["year"] >= 2040
+    # r10: the library reaches every decade to 2080 on a PLAIN path - one that holds
+    # none of the positions the far field was written for (A2, A3, A1, T4). Keyed to the
+    # r9 medoid's composition, on which the ledger dated nothing after 2034; every letter
+    # is checked live so a rebuild fails loudly here and not on the sheet.
+    plain = {"T": "T3", "K": "K1", "A": "A4", "C": "C1", "R": "R4", "D": "D2",
+             "S": "S3", "P": "P3", "E": "E3", "L": "L4", "G": "G2"}
+    live_pos = {q[0] for a in reg["axes"] for q in a["positions"]}
+    assert set(plain) == {a["key"] for a in reg["axes"]}, set(plain)
+    assert set(plain.values()) <= live_pos, set(plain.values()) - live_pos
+
+    def _mass(t, a, b):
+        y0, y1 = t["w"]
+        span = float(y1 - y0)
+        f = lambda y: min(1.0, max(0.0, (y - y0) / span)) ** (1 / 1.3)
+        return t["p"] * (f(b) - f(a))
+    for dec in range(2040, 2080, 10):
+        expected = sum(_mass(t, dec, dec + 10) for t in TEMPLATES if "tie" not in t
+                       and all(plain.get(ax) in poss for ax, poss in t["req"].items()))
+        assert expected >= 0.6, ("expected events in the %ds on a plain path" % dec, expected)
+    assert len(TEMPLATES) >= 59 and len({t["id"] for t in TEMPLATES}) == len(TEMPLATES)
+    for t in TEMPLATES:
+        assert set(t["effects"]) <= set(EFFECT_MULT) | set(EFFECT_ADD), t["id"]
+        assert t["w"][0] < t["w"][1] <= Y1 and 0 < t["p"] <= 1, t["id"]
     # bands ordered
     b = bands(reg, n=1500, seed=5)
     for i in range(len(b["year"])):
@@ -921,11 +1528,16 @@ if __name__ == "__main__":
     print("mainline (exact argmax, joint p=%.2f%%): %s" %
           (100 * p_ml, " ".join(sorted(ml.values()))))
     kn = capability_path(ml)
-    tr = tracks(ml, kn)
+    evs = instantiate(ml, kn, 20260731)
+    tr = tracks(ml, kn, evs)
     print("mainline capability: 2030=%.2f  2040=%.2f  2060=%.2f  2100=%.2f" %
           (cap_at(kn, 2030), cap_at(kn, 2040), cap_at(kn, 2060),
            cap_at(kn, 2100)))
-    evs = instantiate(ml, kn, 20260731)
+    for yy in (2035, 2050, 2077, 2100):
+        i = yy - Y0
+        print("  %d  gw=%.0f  rev=%.1f  gwp=%.0f  jobs=%.1f  appr=%.0f  laws=%d  hz=%.0f" %
+              (yy, tr["gw"][i], tr["rev"][i], tr["gwp"][i], tr["jobs"][i],
+               tr["appr"][i], tr["laws"][i], tr["hz"][i]))
     print("mainline waypoints (%d):" % len(evs))
     for e in evs[:8]:
         print("  %.0f  [%s]  %s" % (e["year"], e["layer"], e["text"][:70]))
