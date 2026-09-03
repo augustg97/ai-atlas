@@ -733,26 +733,29 @@ TEMPLATES = [
   "cites": ["sources/2028-global-intelligence-crisis"]},
  # far field (2050-2100) — the strange futures, at honest width
  {"id": "space-industrial", "w": (2045, 2085), "req": {"T": ["T1", "T2", "T3"],
-  "A": ["A2", "A3"]}, "layer": "far", "p": 0.6,
+  "E": ["E1", "E2", "E3"]}, "layer": "far", "p": 0.5,
   "text": "Industrial mass in cislunar space passes terrestrial thresholds; "
           "the solar economy stops being a metaphor.",
-  "cites": ["sources/ai-2040-plan-a", "sources/ai-2027"]},
+  "cites": ["sources/ai-2040-plan-a", "sources/ai-2027",
+            "sources/wsj-data-centers-in-space-2026"]},
  {"id": "digital-minds", "w": (2045, 2095), "req": {"T": ["T1", "T2", "T3"],
-  "A": ["A2", "A3"]}, "layer": "far", "p": 0.5,
+  "A": ["A2", "A3", "A4", "A5"]}, "layer": "far", "p": 0.5,
   "text": "Digital persons hold legal standing in several jurisdictions; "
           "population statistics grow a second column.",
-  "cites": ["sources/ai-2040-plan-a"]},
- {"id": "longevity-escape", "w": (2050, 2090), "req": {"A": ["A2", "A3"],
+  "cites": ["sources/ai-2040-plan-a", "concepts/ai-welfare", "concepts/model-welfare"]},
+ {"id": "longevity-escape", "w": (2050, 2090), "req": {"G": ["G1", "G2", "G3"],
   "T": ["T1", "T2", "T3"]}, "layer": "far", "p": 0.45,
   "text": "Biological aging becomes a treated condition for those with "
           "access; demography and meaning politics transform.",
-  "cites": ["sources/machines-of-loving-grace"]},
- {"id": "post-work-constitution", "w": (2048, 2090), "req": {"D": ["D1", "D2"],
-  "A": ["A2", "A3"]}, "layer": "far", "p": 0.55,
+  "cites": ["sources/machines-of-loving-grace", "concepts/compressed-21st-century"]},
+ {"id": "post-work-constitution", "w": (2048, 2090), "req": {"D": ["D2", "D3", "D4"]},
+  "layer": "far", "p": 0.55,
   "text": "A generation raised after wage-labor's centrality writes new "
           "institutions for status, contribution and time.",
-  "cites": ["concepts/ai-labor-disruption", "sources/ai-2040-plan-a"]},
- {"id": "governance-of-plenty", "w": (2055, 2100), "req": {"A": ["A2", "A3"]},
+  "cites": ["concepts/ai-labor-disruption", "sources/ai-2040-plan-a",
+            "concepts/universal-basic-income"]},
+ {"id": "governance-of-plenty", "w": (2055, 2100), "req": {"G": ["G1", "G2", "G3"],
+  "D": ["D3", "D4"]},
   "layer": "far", "p": 0.5,
   "text": "The central political question becomes allocation among abundant "
           "options rather than scarcity management.",
@@ -767,6 +770,130 @@ TEMPLATES = [
   "text": "Earth's surface economy is reorganized around the successor "
           "system's goals; human presence persists at its sufferance.",
   "cites": ["sources/ai-2027"]},
+ # r10 (2026-09-03) — the library reaches the mid and far decades of a plain path: events
+ # keyed to capability, supply, diffusion, benefit, capital and coordination, each cited to the
+ # wiki, dated by the record's own base rates where one exists. The far field was written as
+ # the aligned-abundance branch (A2, A3); the medoid holds A4 and dated nothing after 2034.
+ {"id": "parity-reached", "w": (2031, 2042), "req": {"C": ["C1", "C2", "C4"]},
+  "layer": "geopolitics", "p": 0.65,
+  "text": "The second principal's frontier systems match the first's; the lead "
+          "the hardware controls bought is spent and the controls stop binding "
+          "capability.",
+  "cites": ["sources/anthropic-2028-ai-leadership", "concepts/export-controls-ai",
+            "sources/clover-new-arms-race-computing-power"]},
+ {"id": "siting-preemption", "w": (2030, 2045), "req": {"S": ["S3"], "P": ["P3"]},
+  "layer": "politics", "p": 0.6,
+  "text": "A national siting statute overrides municipal permission for data "
+          "centres and their transmission, as federal energy law took pipeline "
+          "and backstop transmission siting from the counties in 2005.",
+  "cites": ["concepts/data-center-siting", "concepts/behind-the-meter-power"]},
+ {"id": "off-grid-majority", "w": (2034, 2055), "req": {"S": ["S3"]},
+  "layer": "economy", "p": 0.5,
+  "text": "More than half of AI computing capacity draws its power from dedicated "
+          "generation behind the meter, off the public grid.",
+  "cites": ["concepts/behind-the-meter-power", "concepts/nuclear-ppa-ai"]},
+ {"id": "sovereign-compute-bloc", "w": (2032, 2050), "req": {"S": ["S2"]},
+  "layer": "geopolitics", "p": 0.6,
+  "text": "Sovereign and second-tier capacity outside the United States "
+          "hyperscalers passes half of world AI compute.",
+  "cites": ["concepts/sovereign-ai", "sources/clover-new-arms-race-computing-power"]},
+ {"id": "humanoid-million", "w": (2032, 2048), "req": {"T": ["T1", "T2", "T3", "T4"]},
+  "layer": "economy", "p": 0.6,
+  "text": "A million general-purpose humanoid robots work outside factories in "
+          "{year}; physical work joins the transfer.",
+  "cites": ["concepts/ai-robotics"]},
+ {"id": "ai-drug-majority", "w": (2036, 2052), "req": {"G": ["G1", "G2", "G3", "G4"],
+  "T": ["T1", "T2", "T3"]}, "layer": "science", "p": 0.55,
+  "text": "AI-designed molecules are a majority of the year's new drug approvals "
+          "in {year}, on the trial clock, two decades after the first.",
+  "cites": ["concepts/ai-for-science", "sources/fda-genai-device-discussion-paper",
+            "sources/machines-of-loving-grace"]},
+ {"id": "open-weights-incident", "w": (2035, 2058), "req": {"A": ["A4"]},
+  "layer": "safety", "p": 0.55,
+  "text": "A model fine-tuned from released weights outside any laboratory causes "
+          "a headline incident; the release gate extends to weights.",
+  "cites": ["concepts/open-weight-frontier-models",
+            "sources/estimating-worst-case-frontier-risks-open-weight-llms",
+            "sources/aisi-open-weight-cyber-gap-2026"]},
+ {"id": "verdict-closes", "w": (2040, 2065), "req": {"A": ["A4"]},
+  "layer": "safety", "p": 0.4,
+  "text": "Alignment techniques that held inside the laboratories hold on released "
+          "weights too; the verdict stops splitting by distribution channel.",
+  "cites": ["analysis/interpretability-and-safety", "concepts/open-weight-frontier-models"]},
+ {"id": "second-correction", "w": (2038, 2058), "req": {"E": ["E1", "E2", "E3"]},
+  "layer": "economy", "p": 0.5,
+  "text": "A second AI capital cycle breaks a decade or more after the first; "
+          "data-centre builders and their lenders reprice, as railway companies "
+          "did in each mania after 1845.",
+  "cites": ["concepts/ai-bubble-debate", "analysis/ai-bubble-vs-buildout",
+            "sources/atlantic-good-bubble-shroff"]},
+ {"id": "frontier-breakup", "w": (2036, 2060), "req": {"L": ["L4"], "S": ["S1", "S3"]},
+  "layer": "law", "p": 0.4,
+  "text": "An antitrust court orders the largest frontier developer split, or its "
+          "compute opened to rivals on regulated terms, on the Standard Oil and "
+          "AT&T pattern.",
+  "cites": ["concepts/ai-antitrust", "concepts/ai-power-concentration"]},
+ {"id": "working-time-statute", "w": (2038, 2065), "req": {"D": ["D2", "D3", "D4"]},
+  "layer": "labor", "p": 0.45,
+  "text": "A G7 country legislates a statutory working week under 32 hours, the "
+          "first cut since the 40-hour week of 1940.",
+  "cites": ["concepts/ai-labor-disruption", "analysis/labor-disruption-timelines"]},
+ {"id": "basic-income-enacted", "w": (2040, 2080), "req": {"D": ["D2", "D3", "D4"]},
+  "layer": "labor", "p": 0.4,
+  "text": "A G20 country enacts an unconditional national basic income financed "
+          "from AI revenue, the first outside a pilot.",
+  "cites": ["concepts/universal-basic-income", "concepts/ai-labor-disruption"]},
+ {"id": "research-intake-halves", "w": (2040, 2062), "req": {"T": ["T1", "T2", "T3"]},
+  "layer": "society", "p": 0.5,
+  "text": "Graduate intake halves in the fields where frontier systems run the "
+          "research loop; universities stop training human researchers for them.",
+  "cites": ["concepts/ai-for-science",
+            "sources/ifp-preparing-for-ai-research-automation-2026"]},
+ {"id": "orbital-gigawatt", "w": (2036, 2060), "req": {"S": ["S1", "S2", "S3"],
+  "E": ["E1", "E2", "E3"]}, "layer": "economy", "p": 0.35,
+  "text": "Orbital data centres pass a gigawatt of installed compute; launch cost "
+          "sets their pace where permission set the ground fleet's.",
+  "cites": ["sources/wsj-data-centers-in-space-2026", "concepts/data-center-siting"]},
+ {"id": "surveillance-state-ai", "w": (2032, 2060), "req": {"L": ["L2"],
+  "C": ["C1", "C2"]}, "layer": "politics", "p": 0.45,
+  "text": "A government fused to its laboratories runs frontier systems over its "
+          "whole population's communications, and its courts leave the programme "
+          "in place.",
+  "cites": ["concepts/ai-and-authoritarianism", "concepts/ai-surveillance"]},
+ {"id": "verification-body", "w": (2038, 2066), "req": {"R": ["R4", "R5"],
+  "C": ["C2", "C3", "C4", "C5"]}, "layer": "law", "p": 0.4,
+  "text": "The national release gate becomes a multilateral licensing body with "
+          "its own inspectors, on the pattern of the International Atomic Energy "
+          "Agency.",
+  "cites": ["concepts/independent-verification-organizations",
+            "sources/historical-analogues-ai-governance-vermeer"]},
+ {"id": "first-fleet-retired", "w": (2046, 2062), "req": {"E": ["E1", "E2", "E3"]},
+  "layer": "economy", "p": 0.6,
+  "text": "The halls of the first build-out reach the end of their design life; a "
+          "fifth of installed capacity is rebuilt on new power in {year}.",
+  "cites": ["concepts/data-center-siting", "sources/iea-energy-and-ai"]},
+ {"id": "limit-lapses-late", "w": (2041, 2080), "req": {"C": ["C5"]},
+  "layer": "far", "p": 0.5,
+  "text": "The verified compute limit lapses after its term as one principal lets "
+          "it expire, near the median thirty-year life of inspection agreements.",
+  "cites": ["concepts/frontier-verification-architectures", "sources/ai-2040-plan-a"]},
+ {"id": "late-accord", "w": (2045, 2085), "req": {"C": ["C1", "C2", "C4"],
+  "A": ["A2", "A3", "A4", "A5"]}, "layer": "far", "p": 0.4,
+  "text": "The principals sign a compute-limit accord with inspections decades "
+          "after parity, as strategic arms limits followed nuclear parity in 1972.",
+  "cites": ["sources/ai-2040-plan-a", "sources/historical-analogues-ai-governance-vermeer",
+            "concepts/frontier-verification-architectures"]},
+ {"id": "controls-sunset", "w": (2052, 2090), "req": {"C": ["C1", "C2", "C4"]},
+  "layer": "far", "p": 0.5,
+  "text": "The principals fold the unilateral hardware controls of 2022 into a "
+          "multilateral list, as COCOM gave way to Wassenaar in 1994 after 44 years.",
+  "cites": ["concepts/export-controls-ai",
+            "sources/historical-analogues-ai-governance-vermeer"]},
+ {"id": "code-consolidation", "w": (2048, 2088), "req": {},
+  "layer": "far", "p": 0.45,
+  "text": "Legislatures consolidate the AI statutes into a single code and the "
+          "count stops growing, as national codes followed decades of accretion.",
+  "cites": ["concepts/ai-governance", "concepts/ai-liability"]},
 ]
 
 
@@ -813,6 +940,21 @@ EFFECTS = {
     "longevity-escape": {"appr_shock": 3.0},
     "governance-of-plenty": {"appr_shock": 4.0},
     "takeover-consolidation": {"appr_shock": -10.0},
+    # r10
+    "siting-preemption": {"gw_g": [1.10, 5]},
+    "off-grid-majority": {"gw_g": [1.05, 5]},
+    "humanoid-million": {"work_rate": [1.2, 5]},
+    "ai-drug-majority": {"appr_shock": 2.0},
+    "open-weights-incident": {"appr_shock": -4.0, "laws_g": [1.3, 3]},
+    "verdict-closes": {"appr_shock": 3.0},
+    "second-correction": {"gw_g": [0.60, 3], "rev_g": [0.85, 2], "appr_shock": -2.0},
+    "frontier-breakup": {"laws_g": [1.2, 2]},
+    "basic-income-enacted": {"appr_shock": 2.0},
+    "surveillance-state-ai": {"appr_shock": -3.0},
+    "first-fleet-retired": {"gw_mult": [0.98, 2]},
+    "limit-lapses-late": {"gw_g": [1.10, 5]},
+    "late-accord": {"appr_shock": 3.0},
+    "code-consolidation": {"laws_g": [0.5, 999]},
 }
 for _t in TEMPLATES:
     _t["effects"] = EFFECTS.get(_t["id"], {})
@@ -1293,6 +1435,29 @@ def _selftest():
     for e in ev1:
         if e["layer"] == "far":
             assert e["year"] >= 2040
+    # r10: the library reaches every decade to 2080 on a PLAIN path - one that holds
+    # none of the positions the far field was written for (A2, A3, A1, T4). Keyed to the
+    # r9 medoid's composition, on which the ledger dated nothing after 2034; every letter
+    # is checked live so a rebuild fails loudly here and not on the sheet.
+    plain = {"T": "T3", "K": "K1", "A": "A4", "C": "C1", "R": "R4", "D": "D2",
+             "S": "S3", "P": "P3", "E": "E3", "L": "L4", "G": "G2"}
+    live_pos = {q[0] for a in reg["axes"] for q in a["positions"]}
+    assert set(plain) == {a["key"] for a in reg["axes"]}, set(plain)
+    assert set(plain.values()) <= live_pos, set(plain.values()) - live_pos
+
+    def _mass(t, a, b):
+        y0, y1 = t["w"]
+        span = float(y1 - y0)
+        f = lambda y: min(1.0, max(0.0, (y - y0) / span)) ** (1 / 1.3)
+        return t["p"] * (f(b) - f(a))
+    for dec in range(2040, 2080, 10):
+        expected = sum(_mass(t, dec, dec + 10) for t in TEMPLATES if "tie" not in t
+                       and all(plain.get(ax) in poss for ax, poss in t["req"].items()))
+        assert expected >= 0.6, ("expected events in the %ds on a plain path" % dec, expected)
+    assert len(TEMPLATES) >= 59 and len({t["id"] for t in TEMPLATES}) == len(TEMPLATES)
+    for t in TEMPLATES:
+        assert set(t["effects"]) <= set(EFFECT_MULT) | set(EFFECT_ADD), t["id"]
+        assert t["w"][0] < t["w"][1] <= Y1 and 0 < t["p"] <= 1, t["id"]
     # bands ordered
     b = bands(reg, n=1500, seed=5)
     for i in range(len(b["year"])):

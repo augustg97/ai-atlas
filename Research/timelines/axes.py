@@ -28,7 +28,7 @@ import os
 import random
 import re
 
-REGISTRY_VERSION = "r9-2026-09-02"
+REGISTRY_VERSION = "r10-2026-09-03"
 
 # The tiered impact methodology (decision of record 2026-07-31: deltas small
 # ON AVERAGE, not an iron rule — "very significant events should also have
@@ -2381,7 +2381,52 @@ REGISTRY = {
 
   },
   "changelog": [
-    {"version": REGISTRY_VERSION, "date": "2026-09-02",
+    {"version": "r10-2026-09-03", "date": "2026-09-03",
+     "change": "r10 - the template library reaches the mid and far decades of a "
+               "plain path (M2, second tranche): 38 templates become 59. The far "
+               "field had been written as the aligned-abundance branch - every "
+               "template past 2045 required A2 or A3, or A1, or T4 - so the "
+               "medoid drawn since r9 (T3 K1 A4 C1 R4 D2 S3 P3 E3 L4 G2) dated "
+               "nothing after its research crossing in 2034 and the chronicle "
+               "read forty empty years. Five far templates are re-keyed to the "
+               "variables their subjects depend on: cislunar industry to capital "
+               "surviving (E1-E3), legal standing for digital minds to a control "
+               "verdict short of loss (A2-A5), treated ageing to the benefit "
+               "position (G1-G3), the post-work constitution to work having "
+               "transferred (D2-D4), the politics of plenty to benefit realised "
+               "and diffusion broad (G1-G3 with D3-D4). Twenty-one templates are "
+               "added, each cited to the wiki and dated by a base rate where the "
+               "record carries one: parity between the principals within the "
+               "lead the controls bought; a national siting statute; the "
+               "off-grid majority; a sovereign compute majority; the millionth "
+               "working humanoid; AI-designed molecules a majority of approvals "
+               "on the trial clock; a released-weights incident and, later, the "
+               "verdict closing on released weights; a second capital cycle "
+               "breaking as railway manias recurred; an antitrust breakup on the "
+               "Standard Oil and AT&T pattern; a 32-hour week; a national basic "
+               "income; graduate intake halving in automated fields; the first "
+               "orbital gigawatt; a population-scale surveillance programme "
+               "under a state-fused laboratory; a multilateral licensing body on "
+               "the IAEA pattern; the first fleet retired at design life; the "
+               "verified limit lapsing near the thirty-year median of inspection "
+               "agreements; a late accord after parity as SALT followed nuclear "
+               "parity; the 2022 hardware controls folded into a multilateral "
+               "list as COCOM gave way to Wassenaar after 44 years; the statutes "
+               "consolidated into a code. Effects follow the r9 grammar: the "
+               "second correction cuts compute growth, an incident shocks "
+               "approval and speeds statutes, a siting statute and the off-grid "
+               "majority raise compute growth, the consolidated code halves the "
+               "statute rate for good. Self-test: on the plain composition every "
+               "decade from the 2040s to the 2070s carries an expected 0.6 "
+               "events or more under the windows' own draw distribution, every "
+               "id is unique, every effect key is one the tracks read, every "
+               "window closes by 2100.",
+     "approved": "Practice under the standing rule of 2026-08-20, held on the "
+                 "branch claude/ai-futures-forecaster-review-t7fvqb for "
+                 "August's merge, beside r9; the forecaster's authored tables "
+                 "carry a text for each new template and its coverage gate "
+                 "refuses a build without one."},
+    {"version": "r9-2026-09-02", "date": "2026-09-02",
      "change": "r9 - the model programme's first tranche (P4 of the chronicle "
                "plan, Research/plan-2026-09-02-chronicle.md in "
                "ai-futures-forecaster): the sheet composes only what the "
