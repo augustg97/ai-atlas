@@ -1,6 +1,6 @@
-# Emit needs-review — 20260903-1050
+# Emit needs-review — 20260904-1049
 
-175 items. Unparseable values are reported here, never guessed.
+173 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -134,7 +134,6 @@
 - companies/sierra: unparseable date 'unknown' (founded)
 - companies/snowflake: dangling relationship target 'concepts/enterprise-ai'
 - companies/spear-street-technology: unparseable date 'unknown' (founded)
-- models/astra: unparseable date 'unreleased' (release_date)
 - models/muse-spark: inline comment stripped from 'false  # every shipped version; Meta ann'
 - legislation/create-ai-act: dangling relationship target 'entities/todd-young|Sen. Todd Young (R-IN)'
 - legislation/ct-sb-4: dangling relationship target 'concepts/state-level-privacy-regulation'
@@ -149,7 +148,6 @@
 - litigation/acls-v-neh: unparseable date 'not specified in available reporting' (filed)
 - litigation/gema-v-suno: unparseable date 'unknown' (filed)
 - litigation/musk-v-altman: duplicate key 'status' (last wins)
-- litigation/netchoice-v-bonta: duplicate key 'status' (last wins)
 - concepts/ai-as-social-technology: dangling relationship target 'concepts/bounded-rationality'
 - concepts/ai-content-provenance: dangling relationship target 'legislation/california-ab-1008'
 - concepts/ai-grade-inflation: dangling relationship target 'entities/chelsea-schein'

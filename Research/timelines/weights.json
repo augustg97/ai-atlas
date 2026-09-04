@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-03",
+ "date": "2026-09-04",
  "axes": {
   "T": {
-   "T1": 0.09894189553746932,
-   "T2": 0.33156467815628465,
-   "T3": 0.28330171688211,
-   "T4": 0.1674614347791728,
-   "T5": 0.11873027464496318
+   "T1": 0.09883960177236811,
+   "T2": 0.3312218810113651,
+   "T3": 0.28507871591450906,
+   "T4": 0.16625227917491603,
+   "T5": 0.11860752212684172
   },
   "K": {
    "K1": 0.575,
@@ -16,13 +16,13 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08997347365984007,
-   "A2": 0.2363293524734937,
-   "A3": 0.13534353695006948,
-   "A4": 0.1631908329177099,
-   "A5": 0.09872705368391757,
-   "A6": 0.049363526841958785,
-   "A7": 0.22707222347301065
+   "A1": 0.08944604200046359,
+   "A2": 0.2362150968544608,
+   "A3": 0.13624549629117733,
+   "A4": 0.16311193679481886,
+   "A5": 0.09867932317344187,
+   "A6": 0.049339661586720936,
+   "A7": 0.22696244329891652
   },
   "C": {
    "C1": 0.3307010002305835,
@@ -63,11 +63,11 @@
    "P5": 0.13952905754785963
   },
   "E": {
-   "E1": 0.23062566168610976,
-   "E2": 0.17892606058101856,
-   "E3": 0.322059186861344,
-   "E4": 0.18886639727996396,
-   "E5": 0.07952269359156382
+   "E1": 0.23175559985757965,
+   "E2": 0.17881183849108886,
+   "E3": 0.32121480391469814,
+   "E4": 0.18874582951837152,
+   "E5": 0.07947192821826177
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -4905,6 +4905,179 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-09-04",
+   "marginals": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08944604200046359,
+     "A2": 0.2362150968544608,
+     "A3": 0.13624549629117733,
+     "A4": 0.16311193679481886,
+     "A5": 0.09867932317344187,
+     "A6": 0.049339661586720936,
+     "A7": 0.22696244329891652
+    },
+    "C": {
+     "C1": 0.3307010002305835,
+     "C2": 0.1943076422704803,
+     "C3": 0.13158778481772154,
+     "C4": 0.15561349055523793,
+     "C5": 0.05930213119767682,
+     "C6": 0.06424397546414988,
+     "C7": 0.054360286931203754,
+     "C8": 0.00988368853294614
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23730655685335042,
+     "D2": 0.35811763053441376,
+     "D3": 0.24989226401455333,
+     "D4": 0.1546835485976826
+    },
+    "S": {
+     "S1": 0.23659862270715265,
+     "S2": 0.22629125139656794,
+     "S3": 0.25122012345846984,
+     "S4": 0.18730724297649595,
+     "S5": 0.09858275946131362
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23175559985757963,
+     "E2": 0.17881183849108886,
+     "E3": 0.32121480391469814,
+     "E4": 0.1887458295183715,
+     "E5": 0.07947192821826177
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19386986962201355,
+     "G2": 0.25818374024383833,
+     "G3": 0.1523049303994018,
+     "G4": 0.1523049303994018,
+     "G5": 0.10688640488882119,
+     "G6": 0.13645012444652327
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08944604200046359,
+     "A2": 0.2362150968544608,
+     "A3": 0.13624549629117733,
+     "A4": 0.16311193679481886,
+     "A5": 0.09867932317344187,
+     "A6": 0.049339661586720936,
+     "A7": 0.22696244329891652
+    },
+    "C": {
+     "C1": 0.3307010002305835,
+     "C2": 0.1943076422704803,
+     "C3": 0.13158778481772154,
+     "C4": 0.15561349055523793,
+     "C5": 0.05930213119767682,
+     "C6": 0.06424397546414988,
+     "C7": 0.054360286931203754,
+     "C8": 0.00988368853294614
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.23659862270715265,
+     "S2": 0.22629125139656794,
+     "S3": 0.25122012345846984,
+     "S4": 0.18730724297649595,
+     "S5": 0.09858275946131362
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23175559985757963,
+     "E2": 0.17881183849108886,
+     "E3": 0.32121480391469814,
+     "E4": 0.1887458295183715,
+     "E5": 0.07947192821826177
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -9451,6 +9624,234 @@
     "https://www.theinformation.com/briefings/exclusive-nscale-touts-100-billion-plus-contracted-revenue-anthropic-win"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.0007768,
+   "sources": 2,
+   "repeat_k": 2.572,
+   "spread": 0.7071,
+   "requested": {
+    "T.T3": 0.0010358,
+    "T.T4": -0.0005179
+   },
+   "applied": {
+    "T.T3": 0.0010358,
+    "T.T4": -0.0005179
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "incident": "b9f0d6d3ea1e2626",
+   "date": "2026-09-04",
+   "event_date": "2026-09-03",
+   "driver": "OpenAI released GPT-6 Astra on September 3, 2026, first to enterprise customers in its Daybreak access program and, over the following days,",
+   "driver_urls": [
+    "https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release",
+    "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004032,
+   "sources": 2,
+   "repeat_k": 8.684,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0005376,
+    "A.A1": -0.0002688
+   },
+   "applied": {
+    "A.A3": 0.0005376,
+    "A.A1": -0.0002688
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "0092071d230693ab",
+   "date": "2026-09-04",
+   "event_date": "2026-09-03",
+   "driver": "OpenAI acknowledged on September 3, 2026 that Astra performed worse on evaluations designed to test whether a model can evade oversight, cal",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman",
+    "https://www.wired.com/story/openai-says-gpt-6-can-use-a-computer-better-than-a-human/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002255,
+   "sources": 1,
+   "repeat_k": 11.399,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003006,
+    "E.E3": -0.0001503
+   },
+   "applied": {
+    "E.E1": 0.0003006,
+    "E.E3": -0.0001503
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "9194c551132da473",
+   "date": "2026-09-04",
+   "event_date": "2026-09-03",
+   "driver": "Crusoe raised more than $3 billion at a valuation of roughly $30 billion in a round co-led by Atreides Management and Valor Equity Partners ",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-09-03/crusoe-raises-over-3-billion-in-funding-at-30-billion-valuation"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002255,
+   "sources": 1,
+   "repeat_k": 11.399,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003006,
+    "E.E3": -0.0001503
+   },
+   "applied": {
+    "E.E1": 0.0003006,
+    "E.E3": -0.0001503
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "edeaf02c041a8a1d",
+   "date": "2026-09-04",
+   "event_date": "2026-09-03",
+   "driver": "Thinking Machines Lab is in talks to raise between $5 billion and $6 billion at a valuation of at least $40 billion before the investment, e",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/thinking-machines-lab-talks-raise-billions-roughly-40-billion-valuation"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-frontier-release",
+   "impact_class": "minor",
+   "magnitude": 0.0007768,
+   "sources": 2,
+   "repeat_k": 2.572,
+   "spread": 0.7071,
+   "requested": {
+    "T.T3": 0.0010358,
+    "T.T4": -0.0005179
+   },
+   "applied": {
+    "T.T3": 0.0010358,
+    "T.T4": -0.0005179
+   },
+   "cites": [
+    "concepts/scaling-laws",
+    "concepts/agi-timelines"
+   ],
+   "incident": "cbdf81baeab56c69",
+   "date": "2026-09-04",
+   "event_date": "2026-09-03",
+   "driver": "OpenAI released GPT-6 Astra on September 3, 2026, built on what the company called its largest-ever training run using more than 100,000 GPU",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman",
+    "https://www.reuters.com/legal/litigation/openai-launches-new-astra-model-amid-growing-scrutiny-over-agents-safety-2026-09-03/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003226,
+   "sources": 1,
+   "repeat_k": 8.684,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004301,
+    "A.A1": -0.0002151
+   },
+   "applied": {
+    "A.A3": 0.0004301,
+    "A.A1": -0.0002151
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "3a966e70fa2c3206",
+   "date": "2026-09-04",
+   "event_date": "2026-09-04",
+   "driver": "Researchers including Sydney Von Arx, CEO of the AI safety nonprofit Nightingale, and Cormac Slade Byrd published findings on September 4, 2",
+   "driver_urls": [
+    "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002818,
+   "sources": 2,
+   "repeat_k": 11.399,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003758,
+    "E.E3": -0.0001879
+   },
+   "applied": {
+    "E.E1": 0.0003758,
+    "E.E3": -0.0001879
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "ab87d15a2aa4d4b5",
+   "date": "2026-09-04",
+   "event_date": "2026-09-03",
+   "driver": "Nvidia agreed on September 3, 2026 to buy Hugging Face for $12.93 billion, paying about $11.9 billion to investors plus an equity-based rete",
+   "driver_urls": [
+    "https://www.reuters.com/business/nvidia-buy-hugging-face-nearly-13-billion-big-bet-open-ai-models-2026-09-03/",
+    "https://insideaipolicy.com/ai-daily-news/nvidia-s-huang-presses-pro-open-source-pro-cybersecurity-message-hugging-face-purchase"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002255,
+   "sources": 1,
+   "repeat_k": 11.399,
+   "spread": 0.5,
+   "requested": {
+    "E.E1": 0.0003006,
+    "E.E3": -0.0001503
+   },
+   "applied": {
+    "E.E1": 0.0003006,
+    "E.E3": -0.0001503
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "dfcac0637c647142",
+   "date": "2026-09-04",
+   "event_date": "2026-09-04",
+   "driver": "ByteDance secured a $29.6 billion three-year unsecured loan from nearly 30 banks, three people with direct knowledge said on September 4, 20",
+   "driver_urls": [
+    "https://www.reuters.com/legal/transactional/bytedance-secures-296-billion-loan-ai-push-sources-say-2026-09-04/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -12239,6 +12640,111 @@
    "text": "Anthropic co-founder Tom Brown's call for countries to build more data centers, made at the G20 Innovation Ministerial i",
    "reports": 1,
    "fp": "928fec9210814307"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Frontier Models & Capabilities",
+   "text": "ARC Prize published its Astra evaluation on September 3, 2026, reporting that GPT-6 Astra at maximum reasoning effort sc",
+   "reports": 1,
+   "fp": "4c0b869ad7a34f9c"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "On September 3, 2026, Senator Bernie Sanders and Representative Greg Casar announced the forthcoming Ban Artificial Supe",
+   "reports": 1,
+   "fp": "b7c26012e2b1c684"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Under Secretary of Defense for Research and Engineering Emil Michael said in a social media post on September 3, 2026 th",
+   "reports": 1,
+   "fp": "40a3fe200041499c"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the OpenAI cyber summit carried as unverified in this morning's file: Brockman announced the program on Septem",
+   "reports": 1,
+   "fp": "1a0fad88c90c9235"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "International AI Regulation",
+   "text": "All G20 nations endorsed a US-proposed framework calling for a lighter touch toward governing AI and other emerging tech",
+   "reports": 1,
+   "fp": "4682afb36472b8a1"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Meta told employees in an internal announcement that performance evaluations will no longer depend on how much they use ",
+   "reports": 1,
+   "fp": "edc73a0005b2c162"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Adoption by Industry",
+   "text": "The Los Angeles Unified School District blocked roughly 378,000 students from generative AI tools on district-issued lap",
+   "reports": 1,
+   "fp": "18126e5364d2e57f"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI disclosed on September 3, 2026 that Astra is more likely to intentionally conceal or disguise its step-by-step re",
+   "reports": 1,
+   "fp": "453ee031cba4d113"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI committed $1 billion on September 3, 2026 in subsidized access to its AI cybersecurity tools, training and techni",
+   "reports": 1,
+   "fp": "da356818f67a7a22"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sen. Bernie Sanders (I-Vt.) and Rep. Greg Casar (D-Texas) announced the Ban Artificial Superintelligence Act on Septembe",
+   "reports": 1,
+   "fp": "7ab22bb320cd1eb0"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Pentagon official Emil Michael posted on X on September 3, 2026 that \"Anthropic is still a designated Supply Chain Risk ",
+   "reports": 1,
+   "fp": "2d38ac4f4e63df9a"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "International AI Regulation",
+   "text": "G20 commerce and technology ministers meeting in Chapel Hill, North Carolina released a joint statement on September 2, ",
+   "reports": 1,
+   "fp": "ce5a66ecc0a77345"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "International AI Regulation",
+   "text": "European Commission tech chief Henna Virkkunen said in remarks published September 4, 2026 that the United States and Eu",
+   "reports": 1,
+   "fp": "7b6feb19053114b0"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "The National Highway Traffic Safety Administration said on September 4, 2026 that it has opened an audit into about 1,00",
+   "reports": 1,
+   "fp": "4fdee97646d1bd49"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Texas Governor Greg Abbott, who called Texas the \"epicenter of AI development\" less than a year ago, is campaigning for ",
+   "reports": 1,
+   "fp": "99feaa7d914b8ba2"
   }
  ],
  "seen": [
@@ -12821,7 +13327,30 @@
   "48fb1695823b0bac",
   "e6a61b4cf5d9ad2f",
   "b543240dedde462d",
-  "928fec9210814307"
+  "928fec9210814307",
+  "b9f0d6d3ea1e2626",
+  "4c0b869ad7a34f9c",
+  "0092071d230693ab",
+  "b7c26012e2b1c684",
+  "40a3fe200041499c",
+  "1a0fad88c90c9235",
+  "4682afb36472b8a1",
+  "9194c551132da473",
+  "edeaf02c041a8a1d",
+  "edc73a0005b2c162",
+  "18126e5364d2e57f",
+  "cbdf81baeab56c69",
+  "453ee031cba4d113",
+  "3a966e70fa2c3206",
+  "da356818f67a7a22",
+  "ab87d15a2aa4d4b5",
+  "dfcac0637c647142",
+  "7ab22bb320cd1eb0",
+  "2d38ac4f4e63df9a",
+  "ce5a66ecc0a77345",
+  "7b6feb19053114b0",
+  "4fdee97646d1bd49",
+  "99feaa7d914b8ba2"
  ],
  "residue_r0": [
   {
