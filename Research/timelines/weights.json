@@ -1,6 +1,6 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-05",
+ "date": "2026-09-07",
  "axes": {
   "T": {
    "T1": 0.09883960177236811,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09022428684381459,
-   "A2": 0.23766478783096837,
-   "A3": 0.13598737933277727,
-   "A4": 0.16185251987912666,
-   "A5": 0.09849237529297711,
-   "A6": 0.049246187646488554,
-   "A7": 0.22653246317384756
+   "A1": 0.09046333509898095,
+   "A2": 0.23866029470753625,
+   "A3": 0.13636903341464832,
+   "A4": 0.16087488477765213,
+   "A5": 0.09832432947399528,
+   "A6": 0.04916216473699764,
+   "A7": 0.22614595779018937
   },
   "C": {
-   "C1": 0.33012283290822186,
-   "C2": 0.19422327397417077,
-   "C3": 0.131530649457061,
-   "C4": 0.15641469990901374,
-   "C5": 0.05927638223732605,
-   "C6": 0.06421608075710322,
-   "C7": 0.054336683717548885,
-   "C8": 0.009879397039554346
+   "C1": 0.32971554219609556,
+   "C2": 0.19416385651781032,
+   "C3": 0.13149041114542998,
+   "C4": 0.15697907083666873,
+   "C5": 0.059258248201261673,
+   "C6": 0.06419643555136681,
+   "C7": 0.05432006085115654,
+   "C8": 0.009876374700210284
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1494972139173334
   },
   "S": {
-   "S1": 0.2365255092323805,
-   "S2": 0.22683974369996282,
-   "S3": 0.25083309007853016,
-   "S4": 0.18724936147563465,
-   "S5": 0.09855229551349189
+   "S1": 0.23635006142836187,
+   "S2": 0.22815577961015512,
+   "S3": 0.2499045014022122,
+   "S4": 0.18711046529745323,
+   "S5": 0.09847919226181748
   },
   "P": {
    "P1": 0.17939450256153378,
@@ -5251,6 +5251,352 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-09-06",
+   "marginals": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09079820314421781,
+     "A2": 0.23873350191261408,
+     "A3": 0.1357970021603947,
+     "A4": 0.1609242319080419,
+     "A5": 0.09835448970387668,
+     "A6": 0.04917724485193834,
+     "A7": 0.22621532631891658
+    },
+    "C": {
+     "C1": 0.3301228329082219,
+     "C2": 0.19422327397417077,
+     "C3": 0.13153064945706103,
+     "C4": 0.15641469990901377,
+     "C5": 0.05927638223732606,
+     "C6": 0.06421608075710324,
+     "C7": 0.05433668371754889,
+     "C8": 0.009879397039554347
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23732749333562989,
+     "D2": 0.3580109957199591,
+     "D3": 0.2499021959325407,
+     "D4": 0.15475931501187035
+    },
+    "S": {
+     "S1": 0.2364526993140702,
+     "S2": 0.22738595727629063,
+     "S3": 0.25044766507180427,
+     "S4": 0.18719172029030567,
+     "S5": 0.09852195804752928
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23250587452372407,
+     "E2": 0.1787360041808217,
+     "E3": 0.3206541150242217,
+     "E4": 0.18866578219086724,
+     "E5": 0.07943822408036523
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1939264081761211,
+     "G2": 0.2584534699949654,
+     "G3": 0.15225280449018533,
+     "G4": 0.15225280449018533,
+     "G5": 0.10675047171028228,
+     "G6": 0.1363640411382606
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09079820314421781,
+     "A2": 0.23873350191261408,
+     "A3": 0.1357970021603947,
+     "A4": 0.1609242319080419,
+     "A5": 0.09835448970387668,
+     "A6": 0.04917724485193834,
+     "A7": 0.22621532631891658
+    },
+    "C": {
+     "C1": 0.3301228329082219,
+     "C2": 0.19422327397417077,
+     "C3": 0.13153064945706103,
+     "C4": 0.15641469990901377,
+     "C5": 0.05927638223732606,
+     "C6": 0.06421608075710324,
+     "C7": 0.05433668371754889,
+     "C8": 0.009879397039554347
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.2364526993140702,
+     "S2": 0.22738595727629063,
+     "S3": 0.25044766507180427,
+     "S4": 0.18719172029030567,
+     "S5": 0.09852195804752928
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23250587452372407,
+     "E2": 0.1787360041808217,
+     "E3": 0.3206541150242217,
+     "E4": 0.18866578219086724,
+     "E5": 0.07943822408036523
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "marginals": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09046333509898095,
+     "A2": 0.23866029470753625,
+     "A3": 0.13636903341464832,
+     "A4": 0.16087488477765213,
+     "A5": 0.09832432947399528,
+     "A6": 0.04916216473699764,
+     "A7": 0.22614595779018937
+    },
+    "C": {
+     "C1": 0.3297155421960956,
+     "C2": 0.19416385651781035,
+     "C3": 0.13149041114543,
+     "C4": 0.15697907083666876,
+     "C5": 0.05925824820126168,
+     "C6": 0.06419643555136682,
+     "C7": 0.054320060851156544,
+     "C8": 0.009876374700210286
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23734837558684885,
+     "D2": 0.3579045670687122,
+     "D3": 0.24991209190743244,
+     "D4": 0.1548349654370066
+    },
+    "S": {
+     "S1": 0.2363500614283619,
+     "S2": 0.22815577961015515,
+     "S3": 0.24990450140221224,
+     "S4": 0.18711046529745326,
+     "S5": 0.09847919226181749
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23250587452372407,
+     "E2": 0.1787360041808217,
+     "E3": 0.3206541150242217,
+     "E4": 0.18866578219086724,
+     "E5": 0.07943822408036523
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19392640817612114,
+     "G2": 0.2584534699949654,
+     "G3": 0.15225280449018533,
+     "G4": 0.15225280449018533,
+     "G5": 0.1067504717102823,
+     "G6": 0.1363640411382606
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09046333509898095,
+     "A2": 0.23866029470753625,
+     "A3": 0.13636903341464832,
+     "A4": 0.16087488477765213,
+     "A5": 0.09832432947399528,
+     "A6": 0.04916216473699764,
+     "A7": 0.22614595779018937
+    },
+    "C": {
+     "C1": 0.3297155421960956,
+     "C2": 0.19416385651781035,
+     "C3": 0.13149041114543,
+     "C4": 0.15697907083666876,
+     "C5": 0.05925824820126168,
+     "C6": 0.06419643555136682,
+     "C7": 0.054320060851156544,
+     "C8": 0.009876374700210286
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23581964172263314,
+     "D2": 0.36552112116447777,
+     "D3": 0.24916202319555567,
+     "D4": 0.1494972139173334
+    },
+    "S": {
+     "S1": 0.2363500614283619,
+     "S2": 0.22815577961015515,
+     "S3": 0.24990450140221224,
+     "S4": 0.18711046529745326,
+     "S5": 0.09847919226181749
+    },
+    "P": {
+     "P1": 0.17939450256153378,
+     "P2": 0.2325901834867721,
+     "P3": 0.22922630882862655,
+     "P4": 0.21925994757520798,
+     "P5": 0.13952905754785963
+    },
+    "E": {
+     "E1": 0.23250587452372407,
+     "E2": 0.1787360041808217,
+     "E3": 0.3206541150242217,
+     "E4": 0.18866578219086724,
+     "E5": 0.07943822408036523
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959752,
+     "G2": 0.27327166716106044,
+     "G3": 0.14932877986943188,
+     "G4": 0.14932877986943188,
+     "G5": 0.09955251991295462,
+     "G6": 0.1316682872775237
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -10195,6 +10541,176 @@
     "https://www.reuters.com/legal/litigation/musks-xai-loses-court-bid-block-minnesotas-ai-nudification-ban-2026-09-04/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0004622,
+   "sources": 1,
+   "repeat_k": 7.711,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0006162,
+    "S.S3": -0.0003081
+   },
+   "applied": {
+    "S.S2": 0.0006162,
+    "S.S3": -0.0003081
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "64a3a4475bbcc741",
+   "date": "2026-09-06",
+   "event_date": "2026-09-06",
+   "driver": "Anthropic has entered into agreements for at least 14.8 gigawatts of compute capacity since October 2025, in addition to between 1 and 2 gig",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/anthropic-clinched-517-billion-compute-deals-11-months"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-incident",
+   "impact_class": "minor",
+   "magnitude": 0.0009349,
+   "sources": 1,
+   "repeat_k": 2.395,
+   "spread": 1.0,
+   "requested": {
+    "A.A1": 0.0007012,
+    "A.A2": 0.0014024,
+    "A.A4": -0.0007012
+   },
+   "applied": {
+    "A.A1": 0.0007012,
+    "A.A2": 0.0014024,
+    "A.A4": -0.0007012
+   },
+   "cites": [
+    "sources/ai-2027",
+    "analysis/interpretability-and-safety"
+   ],
+   "incident": "2d073ec90bf26b71",
+   "date": "2026-09-06",
+   "event_date": "2026-09-05",
+   "driver": "AI safety researcher Ryan Greenblatt disputed OpenAI's description of GPT-6 Astra as its most-aligned model, in remarks quoted in the Septem",
+   "driver_urls": [
+    "https://www.exponentialview.co/p/ev-600"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004604,
+   "sources": 1,
+   "repeat_k": 7.938,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006139,
+    "A.A1": -0.0003069
+   },
+   "applied": {
+    "A.A3": 0.0006139,
+    "A.A1": -0.0003069
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "cfc7317aa5f269f3",
+   "date": "2026-09-07",
+   "event_date": "2026-09-06",
+   "driver": "Jakub Pachocki, chief scientist at OpenAI, published an essay titled \"An Alien Mind\" on September 6, 2026 stating that \"no lab has solved al",
+   "driver_urls": [
+    "https://openai.com/index/an-alien-mind/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003258,
+   "sources": 1,
+   "repeat_k": 7.889,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004344,
+    "S.S3": -0.0002172
+   },
+   "applied": {
+    "S.S2": 0.0004344,
+    "S.S3": -0.0002172
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "7d0d90cefb81099d",
+   "date": "2026-09-07",
+   "event_date": "2026-09-05",
+   "driver": "Swiss Re forecast, in a report published in September 2026 and reported on September 5, 2026, that global premiums for insuring data centers",
+   "driver_urls": [
+    "https://www.wsj.com/finance/the-next-big-opportunity-in-data-centers-insuring-them-f133f3cb"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004593,
+   "sources": 1,
+   "repeat_k": 8.098,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0006124,
+    "C.C1": -0.0003062
+   },
+   "applied": {
+    "C.C4": 0.0006124,
+    "C.C1": -0.0003062
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "93ba09faf6369c13",
+   "date": "2026-09-07",
+   "event_date": "2026-09-02",
+   "driver": "The Supreme Court of India set aside a \u20b9425.27-crore customs penalty order on September 2, 2026 in Vijay Ghanshyam Gadiya v. Union of India,",
+   "driver_urls": [
+    "https://www.sci.gov.in/view-pdf/?diary_no=219912026&type=j&order_date=2026-09-02&from=latest_judgements_order"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003258,
+   "sources": 1,
+   "repeat_k": 7.889,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004344,
+    "S.S3": -0.0002172
+   },
+   "applied": {
+    "S.S2": 0.0004344,
+    "S.S3": -0.0002172
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "b114d5dd7c25701a",
+   "date": "2026-09-07",
+   "event_date": "2026-09-04",
+   "driver": "DeepSeek is preparing a large order of Huawei AI chips for a data centre of roughly one gigawatt in Ulanqab, Inner Mongolia, which could beg",
+   "driver_urls": [
+    "https://thenextweb.com/news/deepseek-huawei-ai-chip-order-data-centre"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -13172,6 +13688,153 @@
    "text": "Anthropic is expected to begin marketing its initial public offering in mid-October 2026 at the earliest and to complete",
    "reports": 1,
    "fp": "c87be1eee9fff3bc"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI changed several evaluation figures in its GPT-6 Astra announcement page after first publishing it at about 2 p.m.",
+   "reports": 1,
+   "fp": "0d640570b070e116"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Microsoft moved for summary judgment on September 4, 2026 in the consolidated news-publisher and book-author copyright s",
+   "reports": 1,
+   "fp": "2b38863cc335bd5f"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Microsoft announced Project Zenith on September 4, 2026, a preconfigured Windows setup for developer-class machines with",
+   "reports": 1,
+   "fp": "45a3cff6d1523e4b"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Adoption by Industry",
+   "text": "The Allen Institute, the University of Washington and Fred Hutch Cancer Center launched AI BioDesign on September 3, 202",
+   "reports": 1,
+   "fp": "c2d62ad50b2c7fc8"
+  },
+  {
+   "date": "2026-09-05",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Update on the G20 innovation ministerial in Chapel Hill, North Carolina, carried in the September 2 and September 4 file",
+   "reports": 1,
+   "fp": "a2679d6a587cac75"
+  },
+  {
+   "date": "2026-09-06",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "As many as 75 percent of Americans now say they would oppose a data center being built in their area, up from 42 percent",
+   "reports": 1,
+   "fp": "4e0236e8a989089c"
+  },
+  {
+   "date": "2026-09-06",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Jessica M. Silbey and Woodrow Hartzog, both of Boston University School of Law, posted a revised version of their 70-pag",
+   "reports": 1,
+   "fp": "94cbbc309da6c481"
+  },
+  {
+   "date": "2026-09-06",
+   "section": "National Security & Geopolitics",
+   "text": "The Chinese AI-industry blog \u846cAI / FuneralAI argued, in an essay cross-posted to ChinaTalk on September 6, 2026, that op",
+   "reports": 1,
+   "fp": "3094206e41dd5113"
+  },
+  {
+   "date": "2026-09-06",
+   "section": "Agentic AI & Coding",
+   "text": "OpenAI stated on September 6, 2026 that it had reached the automated research intern goal announced the previous fall, d",
+   "reports": 1,
+   "fp": "bc7033145ffc1823"
+  },
+  {
+   "date": "2026-09-06",
+   "section": "Frontier Models & Capabilities",
+   "text": "Nvidia chief executive Jensen Huang declared the race to artificial general intelligence over on September 6, 2026, in r",
+   "reports": 1,
+   "fp": "3f88cb2743b86736"
+  },
+  {
+   "date": "2026-09-05",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Vice President JD Vance described the tendency of AI chatbots to flatter their users as \"kind of satanic\" in a conversat",
+   "reports": 1,
+   "fp": "791f6646a9fd25f6"
+  },
+  {
+   "date": "2026-09-06",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Update on the data-center backlash and the China-influence claim carried in this morning's file: in a column published S",
+   "reports": 1,
+   "fp": "c7dffcac09f71328"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "National Security & Geopolitics",
+   "text": "U.S. negotiators used the promise of access to Nvidia's AI chips to help secure the preliminary Armenia\u2013Azerbaijan peace",
+   "reports": 1,
+   "fp": "419af810d0026545"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "International AI Regulation",
+   "text": "The UK Financial Conduct Authority published a multi-firm review on September 2, 2026 examining how frontier AI models a",
+   "reports": 1,
+   "fp": "7f728787f8599f9e"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "AI Adoption by Industry",
+   "text": "Chinese banks, telecom operators and restaurants are marketing AI tokens directly to consumers, according to reporting p",
+   "reports": 1,
+   "fp": "15169171cf74e9f4"
+  },
+  {
+   "date": "2026-09-06",
+   "section": "Frontier Models & Capabilities",
+   "text": "Update on the ARC-AGI-3 harness figures carried on September 1: further reporting published September 6, 2026 sets out h",
+   "reports": 1,
+   "fp": "ff7c87f626d878d7"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "Frontier Models & Capabilities",
+   "text": "Robocurve published a robotic-manipulation comparison on September 4, 2026 giving GPT-6 Astra, Claude Fable 5.1 and Clau",
+   "reports": 1,
+   "fp": "6fbf8d0a4a899a5b"
+  },
+  {
+   "date": "2026-09-07",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Extropic's Z1T work, which became public on September 7, 2026, reports estimated energy figures for running transformer-",
+   "reports": 1,
+   "fp": "9120c2773502fedb"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "International AI Regulation",
+   "text": "Evan Solomon, Canada's Minister of Artificial Intelligence and Digital Innovation, launched Canada's Responsible Data Ce",
+   "reports": 1,
+   "fp": "251dce8be89d8c68"
+  },
+  {
+   "date": "2026-08-25",
+   "section": "International AI Regulation",
+   "text": "Karianne Tung, Norway's digital minister, said the government is looking to regulate camera-enabled wearable devices suc",
+   "reports": 1,
+   "fp": "81413e06af4e0535"
+  },
+  {
+   "date": "2026-09-01",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Brazil's Superior Electoral Court fixed a binding thesis on AI deepfakes on September 1, 2026 in Representa\u00e7\u00e3o 0601315-9",
+   "reports": 1,
+   "fp": "9584911dda172ca2"
   }
  ],
  "seen": [
@@ -13795,7 +14458,34 @@
   "3297137effd22e2d",
   "83ae895b212461dc",
   "d9cbca70b8a7d49f",
-  "c87be1eee9fff3bc"
+  "c87be1eee9fff3bc",
+  "0d640570b070e116",
+  "2b38863cc335bd5f",
+  "45a3cff6d1523e4b",
+  "c2d62ad50b2c7fc8",
+  "a2679d6a587cac75",
+  "4e0236e8a989089c",
+  "94cbbc309da6c481",
+  "64a3a4475bbcc741",
+  "2d073ec90bf26b71",
+  "3094206e41dd5113",
+  "cfc7317aa5f269f3",
+  "bc7033145ffc1823",
+  "3f88cb2743b86736",
+  "791f6646a9fd25f6",
+  "c7dffcac09f71328",
+  "7d0d90cefb81099d",
+  "419af810d0026545",
+  "7f728787f8599f9e",
+  "93ba09faf6369c13",
+  "15169171cf74e9f4",
+  "ff7c87f626d878d7",
+  "6fbf8d0a4a899a5b",
+  "b114d5dd7c25701a",
+  "9120c2773502fedb",
+  "251dce8be89d8c68",
+  "81413e06af4e0535",
+  "9584911dda172ca2"
  ],
  "residue_r0": [
   {
