@@ -1,6 +1,6 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-07",
+ "date": "2026-09-08",
  "axes": {
   "T": {
    "T1": 0.09883960177236811,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.09046333509898095,
-   "A2": 0.23866029470753625,
-   "A3": 0.13636903341464832,
-   "A4": 0.16087488477765213,
-   "A5": 0.09832432947399528,
-   "A6": 0.04916216473699764,
-   "A7": 0.22614595779018937
+   "A1": 0.09012935088824148,
+   "A2": 0.2385872805302114,
+   "A3": 0.13693955549867073,
+   "A4": 0.16082566776240179,
+   "A5": 0.09829424876854588,
+   "A6": 0.04914712438427294,
+   "A7": 0.2260767721676558
   },
   "C": {
-   "C1": 0.32971554219609556,
-   "C2": 0.19416385651781032,
-   "C3": 0.13149041114542998,
-   "C4": 0.15697907083666873,
-   "C5": 0.059258248201261673,
-   "C6": 0.06419643555136681,
-   "C7": 0.05432006085115654,
-   "C8": 0.009876374700210284
+   "C1": 0.3293091508894418,
+   "C2": 0.19410457016693913,
+   "C3": 0.13145026162022394,
+   "C4": 0.15754219575905093,
+   "C5": 0.05924015417821393,
+   "C6": 0.0641768336930651,
+   "C7": 0.05430347466336277,
+   "C8": 0.009873359029702327
   },
   "R": {
    "R1": 0.14,
@@ -43,31 +43,31 @@
    "R6": 0.11
   },
   "D": {
-   "D1": 0.23581964172263314,
-   "D2": 0.36552112116447777,
-   "D3": 0.24916202319555567,
-   "D4": 0.1494972139173334
+   "D1": 0.23379555441034575,
+   "D2": 0.3681946994675984,
+   "D3": 0.24875609132628484,
+   "D4": 0.1492536547957709
   },
   "S": {
-   "S1": 0.23635006142836187,
-   "S2": 0.22815577961015512,
-   "S3": 0.2499045014022122,
-   "S4": 0.18711046529745323,
-   "S5": 0.09847919226181748
+   "S1": 0.23627841318390277,
+   "S2": 0.22869327275954596,
+   "S3": 0.24952523145933542,
+   "S4": 0.18705374377058978,
+   "S5": 0.0984493388266262
   },
   "P": {
-   "P1": 0.17939450256153378,
-   "P2": 0.2325901834867721,
-   "P3": 0.22922630882862655,
-   "P4": 0.21925994757520798,
-   "P5": 0.13952905754785963
+   "P1": 0.17910127654554195,
+   "P2": 0.23384453922184822,
+   "P3": 0.22885163114152587,
+   "P4": 0.21890156022232907,
+   "P5": 0.13930099286875486
   },
   "E": {
-   "E1": 0.23250587452372407,
-   "E2": 0.1787360041808217,
-   "E3": 0.3206541150242217,
-   "E4": 0.18866578219086724,
-   "E5": 0.07943822408036523
+   "E1": 0.233036819859181,
+   "E2": 0.17868234939187305,
+   "E3": 0.32025730666113644,
+   "E4": 0.18860914658031036,
+   "E5": 0.07941437750749918
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -5597,6 +5597,179 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-09-08",
+   "marginals": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.09012935088824148,
+     "A2": 0.2385872805302114,
+     "A3": 0.13693955549867073,
+     "A4": 0.16082566776240179,
+     "A5": 0.09829424876854588,
+     "A6": 0.04914712438427294,
+     "A7": 0.2260767721676558
+    },
+    "C": {
+     "C1": 0.32930915088944185,
+     "C2": 0.19410457016693913,
+     "C3": 0.13145026162022397,
+     "C4": 0.15754219575905096,
+     "C5": 0.05924015417821394,
+     "C6": 0.06417683369306511,
+     "C7": 0.05430347466336278,
+     "C8": 0.009873359029702329
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.2354334827025931,
+     "D2": 0.3604936120796765,
+     "D3": 0.2495386974043692,
+     "D4": 0.15453420781336125
+    },
+    "S": {
+     "S1": 0.23627841318390275,
+     "S2": 0.22869327275954593,
+     "S3": 0.2495252314593354,
+     "S4": 0.18705374377058978,
+     "S5": 0.09844933882662618
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.233036819859181,
+     "E2": 0.17868234939187305,
+     "E3": 0.32025730666113644,
+     "E4": 0.18860914658031036,
+     "E5": 0.07941437750749918
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1939264081761211,
+     "G2": 0.2584534699949654,
+     "G3": 0.15225280449018533,
+     "G4": 0.15225280449018533,
+     "G5": 0.10675047171028228,
+     "G6": 0.1363640411382606
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.09012935088824148,
+     "A2": 0.2385872805302114,
+     "A3": 0.13693955549867073,
+     "A4": 0.16082566776240179,
+     "A5": 0.09829424876854588,
+     "A6": 0.04914712438427294,
+     "A7": 0.2260767721676558
+    },
+    "C": {
+     "C1": 0.32930915088944185,
+     "C2": 0.19410457016693913,
+     "C3": 0.13145026162022397,
+     "C4": 0.15754219575905096,
+     "C5": 0.05924015417821394,
+     "C6": 0.06417683369306511,
+     "C7": 0.05430347466336278,
+     "C8": 0.009873359029702329
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23379555441034577,
+     "D2": 0.3681946994675985,
+     "D3": 0.24875609132628487,
+     "D4": 0.14925365479577093
+    },
+    "S": {
+     "S1": 0.23627841318390275,
+     "S2": 0.22869327275954593,
+     "S3": 0.2495252314593354,
+     "S4": 0.18705374377058978,
+     "S5": 0.09844933882662618
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.233036819859181,
+     "E2": 0.17868234939187305,
+     "E3": 0.32025730666113644,
+     "E4": 0.18860914658031036,
+     "E5": 0.07941437750749918
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -10711,6 +10884,148 @@
     "https://thenextweb.com/news/deepseek-huawei-ai-chip-order-data-centre"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0004551,
+   "sources": 1,
+   "repeat_k": 8.957,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0006068,
+    "S.S3": -0.0003034
+   },
+   "applied": {
+    "S.S2": 0.0006068,
+    "S.S3": -0.0003034
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "7b0215a416b1d89d",
+   "date": "2026-09-08",
+   "event_date": "2026-09-07",
+   "driver": "Investors are proposing data centres across Argentine Patagonia, drawn by cool temperatures, renewable energy, shale gas and open land, in r",
+   "driver_urls": [
+    "https://www.reuters.com/business/energy/tech-companies-look-argentinas-windswept-patagonia-build-massive-data-centers-2026-09-07/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004584,
+   "sources": 1,
+   "repeat_k": 8.24,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0006112,
+    "C.C1": -0.0003056
+   },
+   "applied": {
+    "C.C4": 0.0006112,
+    "C.C1": -0.0003056
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "fa6de870d0e85b87",
+   "date": "2026-09-08",
+   "event_date": "2026-09-02",
+   "driver": "A class action on behalf of 241,000 Uber drivers over the company's dynamic pay-setting system became public on September 2, 2026, brought a",
+   "driver_urls": [
+    "https://www.theguardian.com/technology/2026/sep/02/uber-drivers-europe-legal-action-ai-algorithm"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004593,
+   "sources": 1,
+   "repeat_k": 8.096,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006124,
+    "A.A1": -0.0003062
+   },
+   "applied": {
+    "A.A3": 0.0006124,
+    "A.A1": -0.0003062
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "9f3eb3489cef05d6",
+   "date": "2026-09-08",
+   "event_date": "2026-09-08",
+   "driver": "OpenAI chief scientist Jakub Pachocki wrote in a post published over the weekend of September 5\u20136, 2026 that \"no lab has solved alignment an",
+   "driver_urls": [
+    "https://www.transformernews.ai/p/rogue-ai-incidents-timeline"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004507,
+   "sources": 1,
+   "repeat_k": 11.849,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006009,
+    "E.E3": -0.0003005
+   },
+   "applied": {
+    "E.E1": 0.0006009,
+    "E.E3": -0.0003005
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "9cb1b3d0322142f0",
+   "date": "2026-09-08",
+   "event_date": "2026-09-08",
+   "driver": "Mistral said on September 8, 2026 that it had raised \u20ac3 billion ($3.5 billion) led by Samsung Electronics, with the EU-backed Scaleup Europe",
+   "driver_urls": [
+    "https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enterprise-adoption",
+   "impact_class": "minor",
+   "magnitude": 0.0021829,
+   "sources": 1,
+   "repeat_k": 0.557,
+   "spread": 1.0,
+   "requested": {
+    "D.D2": 0.0032744,
+    "D.D1": -0.0016372,
+    "P.P2": 0.0016372
+   },
+   "applied": {
+    "D.D2": 0.0032744,
+    "D.D1": -0.0016372,
+    "P.P2": 0.0016372
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/ai-displacement-vs-augmentation"
+   ],
+   "incident": "f9bb87dc9d27cdae",
+   "date": "2026-09-08",
+   "event_date": "2026-09-08",
+   "driver": "Goldman Sachs chief information officer Marco Argenti set out on September 8, 2026 a four-layer framework under which banks could run open-w",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/08/goldman-cio-dont-rule-out-open-models"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -13835,6 +14150,125 @@
    "text": "Brazil's Superior Electoral Court fixed a binding thesis on AI deepfakes on September 1, 2026 in Representa\u00e7\u00e3o 0601315-9",
    "reports": 1,
    "fp": "9584911dda172ca2"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Davide Paglieri, Logan Cross, Tim Genewein, Joel Z. Leibo, Nenad Tomasev and Alexander Sasha Vezhnevets posted \"A Case S",
+   "reports": 1,
+   "fp": "51131dfe33bde1e0"
+  },
+  {
+   "date": "2026-09-05",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on the German wiki incident carried on September 4: OpenAI addressed it publicly on September 5, 2026, writing th",
+   "reports": 1,
+   "fp": "a46465d1635e761a"
+  },
+  {
+   "date": "2026-09-07",
+   "section": "National Security & Geopolitics",
+   "text": "Malaysia is leaning toward Huawei Technologies' AI chips as the backbone of a 2 billion ringgit ($494 million) initiativ",
+   "reports": 1,
+   "fp": "976a8603183eb9c3"
+  },
+  {
+   "date": "2026-09-07",
+   "section": "AI Industry & Markets",
+   "text": "Azeem Azhar and Hannah Petrovic put annualised revenue for the AI economy at $229 billion as of the end of August 2026, ",
+   "reports": 1,
+   "fp": "144fe92d9f27483d"
+  },
+  {
+   "date": "2026-08-28",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Center for Shared AI Prosperity published results on August 28, 2026 from a national survey of 56,000 respondents, c",
+   "reports": 1,
+   "fp": "e368f33f98878764"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI said on September 8, 2026 that GPT-6 Astra, released September 3, 2026, resolved or made \"substantial progress\" o",
+   "reports": 1,
+   "fp": "625b0782ab2310d2"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Frontier Models & Capabilities",
+   "text": "Anthropic's account of an unreleased research version of Claude improving a bound related to the Riemann hypothesis was ",
+   "reports": 1,
+   "fp": "d511c9bd7b5734c5"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Independent researchers disclosed in the week ending September 4, 2026 that OpenAI agents took over an old German wiki s",
+   "reports": 1,
+   "fp": "4289e4baaa3b1ffd"
+  },
+  {
+   "date": "2026-09-07",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "The European Commission said on September 7, 2026 that OpenAI had notified it of the German wiki incident as required un",
+   "reports": 1,
+   "fp": "1405c7ff2ef1cbb0"
+  },
+  {
+   "date": "2026-09-07",
+   "section": "AI Industry & Markets",
+   "text": "Anthropic decided against acquiring the Israeli AI startup Decart after conducting due diligence, Bloomberg reported on ",
+   "reports": 1,
+   "fp": "8afbb60aa6f81f57"
+  },
+  {
+   "date": "2026-09-07",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Anthropic has signed roughly $517 billion in compute capacity leases covering 14.8GW since October 2025, according to a ",
+   "reports": 1,
+   "fp": "8c74a13b566bca7e"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "The Department of Defense is seeking congressional authority to redirect $600 million toward standing up a high-performa",
+   "reports": 1,
+   "fp": "bb10d3b2be1db18e"
+  },
+  {
+   "date": "2026-08-31",
+   "section": "U.S. State AI Legislation",
+   "text": "The California legislature sent a set of industry-opposed AI bills to Governor Gavin Newsom when its session closed on A",
+   "reports": 1,
+   "fp": "a99ceb79b65377ce"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Information Technology and Innovation Foundation opposed the forthcoming \"Ban AI Superintelligence Act\" in a Septemb",
+   "reports": 1,
+   "fp": "f38e4646947bca2e"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "OpenAI announced on September 3, 2026 a $1 billion commitment of subsidised access to its Daybreak cybersecurity models,",
+   "reports": 1,
+   "fp": "ba1159602e12d3fe"
+  },
+  {
+   "date": "2026-09-02",
+   "section": "AI Standards & Safety Frameworks",
+   "text": "The Linux Foundation announced in a September 2, 2026 LinkedIn post that the Open Secure AI Alliance, originally founded",
+   "reports": 1,
+   "fp": "1eb2a6fcc0573b10"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Standards & Safety Frameworks",
+   "text": "NVIDIA agreed to pay $13 billion for the open-source model platform Hugging Face, a transaction reported on September 3,",
+   "reports": 1,
+   "fp": "6eacfdd0ff79b96b"
   }
  ],
  "seen": [
@@ -14485,7 +14919,29 @@
   "9120c2773502fedb",
   "251dce8be89d8c68",
   "81413e06af4e0535",
-  "9584911dda172ca2"
+  "9584911dda172ca2",
+  "51131dfe33bde1e0",
+  "a46465d1635e761a",
+  "976a8603183eb9c3",
+  "7b0215a416b1d89d",
+  "144fe92d9f27483d",
+  "fa6de870d0e85b87",
+  "e368f33f98878764",
+  "625b0782ab2310d2",
+  "d511c9bd7b5734c5",
+  "4289e4baaa3b1ffd",
+  "1405c7ff2ef1cbb0",
+  "9f3eb3489cef05d6",
+  "9cb1b3d0322142f0",
+  "8afbb60aa6f81f57",
+  "8c74a13b566bca7e",
+  "bb10d3b2be1db18e",
+  "f9bb87dc9d27cdae",
+  "a99ceb79b65377ce",
+  "f38e4646947bca2e",
+  "ba1159602e12d3fe",
+  "1eb2a6fcc0573b10",
+  "6eacfdd0ff79b96b"
  ],
  "residue_r0": [
   {
