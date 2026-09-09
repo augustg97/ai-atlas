@@ -1,6 +1,6 @@
-# Emit needs-review — 20260908-1049
+# Emit needs-review — 20260909-1049
 
-174 items. Unparseable values are reported here, never guessed.
+175 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -148,6 +148,7 @@
 - legislation/trump-dpa-determination-2026-10: dangling relationship target 'concepts/industrial-policy-ai'
 - litigation/acls-v-neh: unparseable date 'not specified in available reporting' (filed)
 - litigation/gema-v-suno: unparseable date 'unknown' (filed)
+- litigation/kahn-v-anthropic: dangling relationship target 'concepts/ai-consumer-protection'
 - litigation/musk-v-altman: duplicate key 'status' (last wins)
 - concepts/ai-as-social-technology: dangling relationship target 'concepts/bounded-rationality'
 - concepts/ai-content-provenance: dangling relationship target 'legislation/california-ab-1008'
