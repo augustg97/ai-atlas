@@ -1,6 +1,6 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-09",
+ "date": "2026-09-10",
  "axes": {
   "T": {
    "T1": 0.09883960177236811,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08979610627954075,
-   "A2": 0.23851442788521277,
-   "A3": 0.13750881467799841,
-   "A4": 0.16077655963201812,
-   "A5": 0.09826423461190253,
-   "A6": 0.04913211730595127,
-   "A7": 0.2260077396073761
+   "A1": 0.08979610627954077,
+   "A2": 0.2385144278852128,
+   "A3": 0.13750881467799844,
+   "A4": 0.16077655963201815,
+   "A5": 0.09826423461190255,
+   "A6": 0.049132117305951274,
+   "A7": 0.22600773960737613
   },
   "C": {
-   "C1": 0.32890352224915015,
-   "C2": 0.1940453949920021,
-   "C3": 0.13141018738487645,
-   "C4": 0.15810426410246076,
-   "C5": 0.05922209408574018,
-   "C6": 0.0641572685928852,
-   "C7": 0.05428691957859517,
-   "C8": 0.009870349014290037
+   "C1": 0.32642728990236486,
+   "C2": 0.19276432120200312,
+   "C3": 0.1240812931403368,
+   "C4": 0.17042856788220093,
+   "C5": 0.058831114065187665,
+   "C6": 0.06373370690395332,
+   "C7": 0.05392852122642202,
+   "C8": 0.009805185677531284
   },
   "R": {
    "R1": 0.14,
@@ -63,11 +63,11 @@
    "P5": 0.13930099286875486
   },
   "E": {
-   "E1": 0.23378761500350673,
-   "E2": 0.1786064625212747,
-   "E3": 0.31969622869330666,
-   "E4": 0.18852904377245652,
-   "E5": 0.07938065000945546
+   "E1": 0.23445047986454554,
+   "E2": 0.17853948795884278,
+   "E3": 0.3192008002383477,
+   "E4": 0.1884583484010006,
+   "E5": 0.0793508835372635
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959752,
-   "G2": 0.27327166716106044,
-   "G3": 0.14932877986943188,
-   "G4": 0.14932877986943188,
-   "G5": 0.09955251991295462,
-   "G6": 0.1316682872775237
+   "G1": 0.19684996590959747,
+   "G2": 0.2732716671610604,
+   "G3": 0.14932877986943185,
+   "G4": 0.14932877986943185,
+   "G5": 0.09955251991295459,
+   "G6": 0.13166828727752367
   }
  },
  "history": [
@@ -5943,6 +5943,179 @@
      "G6": 0.1316682872775237
     }
    }
+  },
+  {
+   "date": "2026-09-10",
+   "marginals": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08979610627954077,
+     "A2": 0.2385144278852128,
+     "A3": 0.13750881467799844,
+     "A4": 0.16077655963201815,
+     "A5": 0.09826423461190255,
+     "A6": 0.049132117305951274,
+     "A7": 0.22600773960737613
+    },
+    "C": {
+     "C1": 0.32642728990236486,
+     "C2": 0.19276432120200312,
+     "C3": 0.1240812931403368,
+     "C4": 0.17042856788220093,
+     "C5": 0.058831114065187665,
+     "C6": 0.06373370690395332,
+     "C7": 0.05392852122642202,
+     "C8": 0.009805185677531284
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23541069551600588,
+     "D2": 0.3606029483877556,
+     "D3": 0.2495281774361451,
+     "D4": 0.15445817866009348
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.23445047986454554,
+     "E2": 0.17853948795884278,
+     "E3": 0.3192008002383477,
+     "E4": 0.1884583484010006,
+     "E5": 0.0793508835372635
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19396421424034996,
+     "G2": 0.2586341548848426,
+     "G3": 0.15221786369681217,
+     "G4": 0.15221786369681217,
+     "G5": 0.10665951531583243,
+     "G6": 0.13630638816535057
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08979610627954077,
+     "A2": 0.2385144278852128,
+     "A3": 0.13750881467799844,
+     "A4": 0.16077655963201815,
+     "A5": 0.09826423461190255,
+     "A6": 0.049132117305951274,
+     "A7": 0.22600773960737613
+    },
+    "C": {
+     "C1": 0.32642728990236486,
+     "C2": 0.19276432120200312,
+     "C3": 0.1240812931403368,
+     "C4": 0.17042856788220093,
+     "C5": 0.058831114065187665,
+     "C6": 0.06373370690395332,
+     "C7": 0.05392852122642202,
+     "C8": 0.009805185677531284
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23379555441034577,
+     "D2": 0.3681946994675985,
+     "D3": 0.24875609132628487,
+     "D4": 0.14925365479577093
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.23445047986454554,
+     "E2": 0.17853948795884278,
+     "E3": 0.3192008002383477,
+     "E4": 0.1884583484010006,
+     "E5": 0.0793508835372635
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19684996590959747,
+     "G2": 0.2732716671610604,
+     "G3": 0.14932877986943185,
+     "G4": 0.14932877986943185,
+     "G5": 0.09955251991295459,
+     "G6": 0.13166828727752367
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -11339,6 +11512,91 @@
     "https://www.cnbc.com/2026/09/08/qualcomm-amazon-data-center-infrastructure-deal.html"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0005631,
+   "sources": 2,
+   "repeat_k": 12.352,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0007508,
+    "E.E3": -0.0003754
+   },
+   "applied": {
+    "E.E1": 0.0007508,
+    "E.E3": -0.0003754
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "aaf8e0fd10822168",
+   "date": "2026-09-10",
+   "event_date": "2026-09-09",
+   "driver": "Harvey announced on September 9, 2026 that it raised $550 million at a $15.5 billion valuation in a round co-led by new investors Diffusion ",
+   "driver_urls": [
+    "https://www.harvey.ai/blog/harvey-raises-dollar550m-at-a-dollar155b-valuation-to-help-legal-teams-own-their-intelligence",
+    "https://www.reuters.com/legal/government/legal-ai-startup-harvey-reaches-155-billion-valuation-new-funding-round-2026-09-09/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-state-law-enacted",
+   "impact_class": "notable",
+   "magnitude": 0.0096327,
+   "sources": 2,
+   "repeat_k": 0.064,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0128436,
+    "C.C3": -0.0064218
+   },
+   "applied": {
+    "C.C4": 0.0128436,
+    "C.C3": -0.0064218
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "740b12a34f437120",
+   "date": "2026-09-10",
+   "event_date": "2026-09-09",
+   "driver": "Newsom signed Senate Bill 813, authored by Sen. Jerry McNerney (D-Pleasanton), and Assembly Bill 1405, authored by Assemblymember Rebecca Ba",
+   "driver_urls": [
+    "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/",
+    "https://insideaipolicy.com/ai-daily-news/gov-newsom-signs-bills-set-framework-ai-system-compliance-verification"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004571,
+   "sources": 1,
+   "repeat_k": 8.486,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0006095,
+    "C.C1": -0.0003047
+   },
+   "applied": {
+    "C.C4": 0.0006095,
+    "C.C1": -0.0003047
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "f9e7c2a74007760e",
+   "date": "2026-09-10",
+   "event_date": "2026-09-09",
+   "driver": "The Justice Department's investigation into whether Nvidia structured its licensing deal with Groq to avoid antitrust scrutiny became public",
+   "driver_urls": [
+    "https://www.reuters.com/legal/litigation/us-doj-probes-nvidias-licensing-deal-with-ai-startup-groq-nyt-reports-2026-09-10/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
@@ -14687,6 +14945,104 @@
    "text": "The New York Times, OpenAI and Microsoft filed summary judgment briefing on September 4, 2026 in the copyright suit the ",
    "reports": 1,
    "fp": "420f12bb46cad363"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "House Democrats are laying groundwork for a select committee on artificial intelligence should the party retake the Hous",
+   "reports": 1,
+   "fp": "f28166047f4c51f6"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Cameron Stanley, the Defense Department's chief digital and artificial intelligence officer, said on September 8, 2026 a",
+   "reports": 1,
+   "fp": "3db68595de6932e5"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "AI Industry & Markets",
+   "text": "Andrew Tulloch announced his departure from Meta Platforms to colleagues on September 9, 2026 without saying where he wa",
+   "reports": 1,
+   "fp": "2c3b688d075bb562"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI's decision to stop accepting advertising in ChatGPT for image- and audio-generating products that compete with it",
+   "reports": 1,
+   "fp": "f74cf972b2e7b416"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on Jacob Coxon's September 8 resignation from Anthropic: Coxon said in an interview on September 9, 2026 that he ",
+   "reports": 1,
+   "fp": "616262970d3d0d81"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "International AI Regulation",
+   "text": "Alex Sobel MP introduced the Artificial Superintelligence Security Bill on the floor of the UK House of Commons on Septe",
+   "reports": 1,
+   "fp": "2ed2e83b511efeec"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Reps. Josh Gottheimer (D-NJ) and Mike Lawler (R-NY) introduced the Stop Rogue AI Act on September 9, 2026. The bill woul",
+   "reports": 1,
+   "fp": "8cbd552ea5cd6748"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Americans for Responsible Innovation and 27 other organizations wrote to President Trump on September 9, 2026, asking th",
+   "reports": 1,
+   "fp": "a2bb46989616d559"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Food and Drug Administration announced on September 8, 2026 the creation of a Deputy Commissioner for Technology and",
+   "reports": 1,
+   "fp": "91e166311e7de805"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Cameron Stanley, the Defense Department's chief digital and AI officer, said on September 9, 2026 at the National Defens",
+   "reports": 1,
+   "fp": "045954505e2b5cff"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "U.S. State AI Legislation",
+   "text": "Massachusetts Gov. Maura Healey signed Executive Order 658 on September 8, 2026, barring state agencies from permitting ",
+   "reports": 1,
+   "fp": "12c1e8c9d39be57e"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "National Security & Geopolitics",
+   "text": "CISA, the National Security Agency and the FBI released joint cybersecurity advisory AA26-251A on September 8, 2026, war",
+   "reports": 1,
+   "fp": "08b490eedcf2195a"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI announced on September 9, 2026 the appointment of Paul Christiano to the OpenAI Foundation Board and to the Found",
+   "reports": 1,
+   "fp": "634baad3666acb7e"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Agentic AI & Coding",
+   "text": "Cognition published on September 9, 2026 an account of factoring RSA-260, a computation that ran from August 18 to Septe",
+   "reports": 1,
+   "fp": "e7f3b6ed704ba6bf"
   }
  ],
  "seen": [
@@ -15379,7 +15735,24 @@
   "1c946c28c6fcd3f0",
   "e085ef2a67b832d4",
   "95987ff83a008f11",
-  "420f12bb46cad363"
+  "420f12bb46cad363",
+  "f28166047f4c51f6",
+  "3db68595de6932e5",
+  "2c3b688d075bb562",
+  "aaf8e0fd10822168",
+  "f74cf972b2e7b416",
+  "616262970d3d0d81",
+  "2ed2e83b511efeec",
+  "8cbd552ea5cd6748",
+  "a2bb46989616d559",
+  "91e166311e7de805",
+  "045954505e2b5cff",
+  "740b12a34f437120",
+  "12c1e8c9d39be57e",
+  "08b490eedcf2195a",
+  "634baad3666acb7e",
+  "e7f3b6ed704ba6bf",
+  "f9e7c2a74007760e"
  ],
  "residue_r0": [
   {
