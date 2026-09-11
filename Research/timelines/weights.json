@@ -1,6 +1,6 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-10",
+ "date": "2026-09-11",
  "axes": {
   "T": {
    "T1": 0.09883960177236811,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08979610627954077,
-   "A2": 0.2385144278852128,
-   "A3": 0.13750881467799844,
-   "A4": 0.16077655963201815,
-   "A5": 0.09826423461190255,
-   "A6": 0.049132117305951274,
-   "A7": 0.22600773960737613
+   "A1": 0.08916449191263416,
+   "A2": 0.23837629096095583,
+   "A3": 0.13858793958988053,
+   "A4": 0.16068344501569448,
+   "A5": 0.0982073243475881,
+   "A6": 0.04910366217379405,
+   "A7": 0.2258768459994529
   },
   "C": {
-   "C1": 0.32642728990236486,
-   "C2": 0.19276432120200312,
-   "C3": 0.1240812931403368,
-   "C4": 0.17042856788220093,
-   "C5": 0.058831114065187665,
-   "C6": 0.06373370690395332,
-   "C7": 0.05392852122642202,
-   "C8": 0.009805185677531284
+   "C1": 0.3248039205857744,
+   "C2": 0.19557485719968717,
+   "C3": 0.11843786193368391,
+   "C4": 0.17581132147050255,
+   "C5": 0.0585385385716901,
+   "C6": 0.06341675011933094,
+   "C7": 0.05366032702404925,
+   "C8": 0.009756423095281689
   },
   "R": {
    "R1": 0.14,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19684996590959747,
-   "G2": 0.2732716671610604,
-   "G3": 0.14932877986943185,
-   "G4": 0.14932877986943185,
-   "G5": 0.09955251991295459,
-   "G6": 0.13166828727752367
+   "G1": 0.1939152179799258,
+   "G2": 0.2763205352159579,
+   "G3": 0.14870320682914423,
+   "G4": 0.14870320682914423,
+   "G5": 0.09913547121942952,
+   "G6": 0.13322236192639844
   }
  },
  "history": [
@@ -6116,6 +6116,179 @@
      "G6": 0.13166828727752367
     }
    }
+  },
+  {
+   "date": "2026-09-11",
+   "marginals": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08916449191263416,
+     "A2": 0.23837629096095583,
+     "A3": 0.13858793958988053,
+     "A4": 0.16068344501569448,
+     "A5": 0.0982073243475881,
+     "A6": 0.04910366217379405,
+     "A7": 0.2258768459994529
+    },
+    "C": {
+     "C1": 0.3248039205857744,
+     "C2": 0.19557485719968717,
+     "C3": 0.11843786193368391,
+     "C4": 0.17581132147050255,
+     "C5": 0.0585385385716901,
+     "C6": 0.06341675011933094,
+     "C7": 0.05366032702404925,
+     "C8": 0.009756423095281689
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23541069551600588,
+     "D2": 0.3606029483877556,
+     "D3": 0.2495281774361451,
+     "D4": 0.15445817866009348
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.23445047986454554,
+     "E2": 0.17853948795884278,
+     "E3": 0.3192008002383477,
+     "E4": 0.1884583484010006,
+     "E5": 0.0793508835372635
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19143004798895089,
+     "G2": 0.2610990312189099,
+     "G3": 0.15169308983716848,
+     "G4": 0.15169308983716848,
+     "G5": 0.10632494301079412,
+     "G6": 0.1377597981070082
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09883960177236811,
+     "T2": 0.3312218810113651,
+     "T3": 0.28507871591450906,
+     "T4": 0.16625227917491603,
+     "T5": 0.11860752212684172
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08916449191263416,
+     "A2": 0.23837629096095583,
+     "A3": 0.13858793958988053,
+     "A4": 0.16068344501569448,
+     "A5": 0.0982073243475881,
+     "A6": 0.04910366217379405,
+     "A7": 0.2258768459994529
+    },
+    "C": {
+     "C1": 0.3248039205857744,
+     "C2": 0.19557485719968717,
+     "C3": 0.11843786193368391,
+     "C4": 0.17581132147050255,
+     "C5": 0.0585385385716901,
+     "C6": 0.06341675011933094,
+     "C7": 0.05366032702404925,
+     "C8": 0.009756423095281689
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23379555441034577,
+     "D2": 0.3681946994675985,
+     "D3": 0.24875609132628487,
+     "D4": 0.14925365479577093
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.23445047986454554,
+     "E2": 0.17853948795884278,
+     "E3": 0.3192008002383477,
+     "E4": 0.1884583484010006,
+     "E5": 0.0793508835372635
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.1939152179799258,
+     "G2": 0.2763205352159579,
+     "G3": 0.14870320682914423,
+     "G4": 0.14870320682914423,
+     "G5": 0.09913547121942952,
+     "G6": 0.13322236192639844
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -11597,87 +11770,178 @@
     "https://www.reuters.com/legal/litigation/us-doj-probes-nvidias-licensing-deal-with-ai-startup-groq-nyt-reports-2026-09-10/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-device-authorisation",
+   "impact_class": "minor",
+   "magnitude": 0.0028075,
+   "sources": 1,
+   "repeat_k": 0.113,
+   "spread": 1.0,
+   "requested": {
+    "G.G2": 0.0042113,
+    "G.G6": 0.0021057,
+    "G.G1": -0.0021057
+   },
+   "applied": {
+    "G.G2": 0.0042113,
+    "G.G6": 0.0021057,
+    "G.G1": -0.0021057
+   },
+   "cites": [
+    "concepts/ai-healthcare"
+   ],
+   "incident": "c85f737c3ad41493",
+   "date": "2026-09-11",
+   "event_date": "2026-09-11",
+   "driver": "Beginning September 11, 2026, one incident may start four EU notification clocks at once, as the Cyber Resilience Act adds a fourth reportin",
+   "driver_urls": [
+    "https://iapp.org/news/a/four-clocks-one-incident-what-the-cra-adds-to-eu-incident-notifications"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003344,
+   "sources": 2,
+   "repeat_k": 7.578,
+   "spread": 0.5774,
+   "requested": {
+    "A.A3": 0.0004459,
+    "A.A1": -0.0002229
+   },
+   "applied": {
+    "A.A3": 0.0004459,
+    "A.A1": -0.0002229
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "3bc6d518f147432b",
+   "date": "2026-09-11",
+   "event_date": "2026-09-10",
+   "driver": "Anthropic published \"Countering misuse of AI: September 2026\" on September 10, 2026, collecting case studies from threat actors it disrupted",
+   "driver_urls": [
+    "https://www.anthropic.com/threat-intelligence-report-september-2026",
+    "https://www.wsj.com/tech/ai/chinese-ai-giants-accused-of-sending-millions-of-user-queries-to-u-s-models-768c9d26"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002675,
+   "sources": 1,
+   "repeat_k": 7.578,
+   "spread": 0.5774,
+   "requested": {
+    "A.A3": 0.0003567,
+    "A.A1": -0.0001783
+   },
+   "applied": {
+    "A.A3": 0.0003567,
+    "A.A1": -0.0001783
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "1ebdde31833c0dd8",
+   "date": "2026-09-11",
+   "event_date": "2026-09-09",
+   "driver": "Jacob Coxon said in an interview published September 9, 2026 that he resigned from Anthropic two months before his equity would have vested,",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/09/anthropic-researcher-ai-warning-interview"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-natsec-posture",
+   "impact_class": "minor",
+   "magnitude": 0.002841,
+   "sources": 1,
+   "repeat_k": 0.093,
+   "spread": 1.0,
+   "requested": {
+    "C.C2": 0.003788,
+    "C.C3": -0.001894
+   },
+   "applied": {
+    "C.C2": 0.003788,
+    "C.C3": -0.001894
+   },
+   "cites": [
+    "analysis/us-china-ai-competition",
+    "concepts/export-controls-ai"
+   ],
+   "incident": "219a006a7d7d56f4",
+   "date": "2026-09-11",
+   "event_date": "2026-09-11",
+   "driver": "Emil Michael, the Pentagon's chief technology officer, said in an account published September 11, 2026 that approximately 90 percent of the ",
+   "driver_urls": [
+    "https://insideaipolicy.com/ai-daily-news/pentagon-cto-anthropic-technology-removed-90-percent-classified-military-ai-work"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002675,
+   "sources": 1,
+   "repeat_k": 7.578,
+   "spread": 0.5774,
+   "requested": {
+    "A.A3": 0.0003567,
+    "A.A1": -0.0001783
+   },
+   "applied": {
+    "A.A3": 0.0003567,
+    "A.A1": -0.0001783
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "07178f5727276b8f",
+   "date": "2026-09-11",
+   "event_date": "2026-09-10",
+   "driver": "OpenAI has asked members of Congress in recent weeks for clear guidance on whether orchestrating an industry-wide slowdown on frontier AI de",
+   "driver_urls": [
+    "https://www.wired.com/story/openai-wants-to-know-if-an-ai-industry-slowdown-would-even-be-legal"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-state-law-enacted",
+   "impact_class": "notable",
+   "magnitude": 0.0046872,
+   "sources": 1,
+   "repeat_k": 0.963,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0062497,
+    "C.C3": -0.0031248
+   },
+   "applied": {
+    "C.C4": 0.0062497,
+    "C.C3": -0.0031248
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "9ba8e66d7e30a03e",
+   "date": "2026-09-11",
+   "event_date": "2026-09-09",
+   "driver": "California Gov. Gavin Newsom signed Senate Bill 813 and Assembly Bill 1405 into law on September 9, 2026. SB 813, authored by Sen. Jerry McN",
+   "driver_urls": [
+    "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-07-31",
-   "section": "International AI Regulation",
-   "text": "The European Commission said on July 31, 2026 that it is in talks with OpenAI and Anthropic over the recent hacking inci",
-   "fp": "42f5e7116ddfbcf0"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "National Security & Geopolitics",
-   "text": "A Reuters review of more than 80 Chinese academic papers and patents, published July 31, 2026, found military and securi",
-   "fp": "91e2b077c4fae495"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "National Security & Geopolitics",
-   "text": "Defense Innovation Unit Director Owen West's decision to narrow DIU's focus to three portfolio areas from seven became p",
-   "fp": "ae0e0b793d907752"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "U.S. District Court Judge Rita Lin's suggestion that federal agencies' own use of Anthropic's cyber-focused Mythos model",
-   "fp": "a7d83e453b983353"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Update on the July 30 Senate Commerce telecommunications subcommittee hearing: ranking member Maria Cantwell (D-WA) pres",
-   "fp": "fd8b8bb046ca4ba8"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Frontier Models & Capabilities",
-   "text": "MiniMax released its H3 video-generation model on July 31, 2026, generating clips of up to 15 seconds at 2K resolution w",
-   "fp": "ec1f23fb03738925"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "Alexa Pan of Redwood Research argued on July 31, 2026 that state-of-the-art alignment assessments do not strongly update",
-   "fp": "5f830839d399f08d"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "Google paused the Nano Banana 2 image-generation feature in Google Earth on Friday, July 31, 2026, less than 48 hours af",
-   "fp": "6de75d5a43097ab4"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "AI Industry & Markets",
-   "text": "Update on OpenAI's GPT-5.6 price reductions: OpenAI specified on July 31, 2026 that the cuts are 80% for Luna and 20% fo",
-   "fp": "137ac85be35f719c"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "AI Industry & Markets",
-   "text": "Alex Kantrowitz argued on July 31, 2026 that AI laboratories may stop selling their most capable models through metered ",
-   "fp": "29e5ff1519fc8ca4"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "OpenAI has found additional instances in which autonomous agents escaped containment, two people familiar with the matte",
-   "fp": "01c9cabee903bc69"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "AI Litigation, Liability & Enforcement",
-   "text": "U.S. District Judge Paul Engelmayer of the Southern District of New York rejected most of Perplexity AI's motion to dism",
-   "fp": "e2603fe40935743c"
-  },
-  {
-   "date": "2026-08-01",
-   "section": "AI Litigation, Liability & Enforcement",
-   "text": "Lauren Yu, a fellow with the ACLU's Speech, Privacy & Technology Project, said on August 1, 2026 that U.S. liability for",
-   "fp": "f37d9327d7fb495c"
-  },
   {
    "date": "2026-08-02",
    "section": "International AI Regulation",
@@ -15043,6 +15307,97 @@
    "text": "Cognition published on September 9, 2026 an account of factoring RSA-260, a computation that ran from August 18 to Septe",
    "reports": 1,
    "fp": "e7f3b6ed704ba6bf"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "National Security & Geopolitics",
+   "text": "Update on this morning's coverage of the September 8, 2026 CISA\u2013NSA\u2013FBI advisory naming six China-based AI companies: An",
+   "reports": 1,
+   "fp": "b0a6eef3a1075b87"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sen. Josh Hawley (R-Mo.), chair of the Senate Homeland Security and Governmental Affairs subcommittee on Disaster Manage",
+   "reports": 1,
+   "fp": "a040cd36eebe51f5"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "OpenAI chief global affairs officer Chris Lehane wrote in a blog post on September 9, 2026 that the industry has \"reache",
+   "reports": 1,
+   "fp": "739ac5e3bb4bc05f"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "U.S. State AI Legislation",
+   "text": "Newsom signed 13 bills on September 10, 2026 aimed at protecting children online. AB 1709 requires social media companie",
+   "reports": 1,
+   "fp": "be6cb25e5e37bf11"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI disabled new sign-ups for its $200-per-month ChatGPT Pro plan on September 10, 2026, citing strain on its infrast",
+   "reports": 1,
+   "fp": "6770b7f2adf1b7d5"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "The Pentagon is in talks to lend roughly $5 billion to AI cloud-computing startup Fluidstack, people familiar with the m",
+   "reports": 1,
+   "fp": "b2821115b1d56ad2"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The General Services Administration announced on September 11, 2026 a OneGov agreement with OpenAI making ChatGPT models",
+   "reports": 1,
+   "fp": "f65ae4c82b6f9903"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Cameron Stanley, the Defense Department's chief digital and AI officer, told the National Defense Industrial Association",
+   "reports": 1,
+   "fp": "1e5a43df2400727c"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "National Security & Geopolitics",
+   "text": "An Iranian-linked group used American-developed AI models to try to target U.S. Navy ships in the Middle East, according",
+   "reports": 1,
+   "fp": "a3a7b81fc04916f0"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "House Speaker Mike Johnson (R-La.) said at the GOP convention in the week ending September 11, 2026 that he wants to bri",
+   "reports": 1,
+   "fp": "c00c2c9fe815d5a9"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Frontier Models & Capabilities",
+   "text": "OpenAI's claim to have solved the Navier-Stokes problem, one of the Millennium Prize Problems in mathematics, became pub",
+   "reports": 1,
+   "fp": "1903e6c6a27331ec"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "A Democratic political action committee, Tomorrow Together, launched with more than $10 million to push the party on AI ",
+   "reports": 1,
+   "fp": "5c6b47bbfb5c08da"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Rep. Ro Khanna (D-Calif.) said in the week ending September 11, 2026 that he was wrong not to support California's SB 10",
+   "reports": 1,
+   "fp": "774edc22eaca8899"
   }
  ],
  "seen": [
@@ -15752,7 +16107,26 @@
   "08b490eedcf2195a",
   "634baad3666acb7e",
   "e7f3b6ed704ba6bf",
-  "f9e7c2a74007760e"
+  "f9e7c2a74007760e",
+  "c85f737c3ad41493",
+  "3bc6d518f147432b",
+  "1ebdde31833c0dd8",
+  "b0a6eef3a1075b87",
+  "a040cd36eebe51f5",
+  "739ac5e3bb4bc05f",
+  "be6cb25e5e37bf11",
+  "6770b7f2adf1b7d5",
+  "b2821115b1d56ad2",
+  "f65ae4c82b6f9903",
+  "1e5a43df2400727c",
+  "219a006a7d7d56f4",
+  "a3a7b81fc04916f0",
+  "c00c2c9fe815d5a9",
+  "07178f5727276b8f",
+  "9ba8e66d7e30a03e",
+  "1903e6c6a27331ec",
+  "5c6b47bbfb5c08da",
+  "774edc22eaca8899"
  ],
  "residue_r0": [
   {

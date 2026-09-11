@@ -1,6 +1,6 @@
-# Emit needs-review — 20260910-1048
+# Emit needs-review — 20260911-1049
 
-174 items. Unparseable values are reported here, never guessed.
+175 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -65,7 +65,6 @@
 - sources/impact-of-ai-generated-text-dolezal-internet-archive: dangling relationship target 'entities/internet-archive'
 - sources/impact-of-ai-generated-text-dolezal-internet-archive: dangling relationship target 'sources/marc-watkins-pangram'
 - sources/impact-of-ai-generated-text-dolezal-internet-archive: dangling relationship target 'concepts/dead-internet-theory'
-- sources/inside-ai-policy-frontier-cyber-governance-2026-05-15: dangling relationship target 'entities/ro-khanna'
 - sources/inside-ai-policy-frontier-cyber-governance-2026-05-15: dangling relationship target 'entities/bob-latta'
 - sources/inside-ai-policy-frontier-cyber-governance-2026-05-15: dangling relationship target 'entities/doris-matsui'
 - sources/inside-ai-policy-frontier-cyber-governance-2026-05-15: dangling relationship target 'entities/norma-krayem'
@@ -125,6 +124,7 @@
 - companies/clickup: dangling relationship target 'industries/software'
 - companies/etched: unparseable date 'unknown' (founded)
 - companies/extropic: unparseable date 'unknown' (founded)
+- companies/fluidstack: unparseable date 'unknown' (founded)
 - companies/g42: unparseable date 'unknown' (founded)
 - companies/generalist-ai: unparseable date 'unknown' (founded)
 - companies/ibm: implausible year 1911 (founded)
@@ -134,6 +134,7 @@
 - companies/sierra: unparseable date 'unknown' (founded)
 - companies/snowflake: dangling relationship target 'concepts/enterprise-ai'
 - companies/spear-street-technology: unparseable date 'unknown' (founded)
+- companies/stepfun: unparseable date 'unknown' (founded)
 - models/muse-spark: inline comment stripped from 'false  # every shipped version; Meta ann'
 - legislation/create-ai-act: dangling relationship target 'entities/todd-young|Sen. Todd Young (R-IN)'
 - legislation/ct-sb-4: dangling relationship target 'concepts/state-level-privacy-regulation'

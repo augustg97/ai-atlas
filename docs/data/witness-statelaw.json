@@ -1,6 +1,6 @@
 {
- "observed_count": 8,
- "distinct_states": 7,
+ "observed_count": 9,
+ "distinct_states": 8,
  "laws": [
   {
    "key": "Idaho|y2026",
@@ -91,6 +91,16 @@
     "https://capitolnewsillinois.com/news/pritzker-signs-law-regulating-how-social-media-platforms-interact-with-children/"
    ],
    "text": "Illinois Gov. JB Pritzker signed House Bill 5511, the Children's Social Media Safety Act, on July 31, 2026. The law, effective in 2028, bars platforms from using a minor's viewing "
+  },
+  {
+   "key": "California|#813",
+   "state": "California",
+   "bill": "#813",
+   "first_seen": "2026-09-09",
+   "urls": [
+    "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/"
+   ],
+   "text": "California Gov. Gavin Newsom signed Senate Bill 813 and Assembly Bill 1405 into law on September 9, 2026. SB 813, authored by Sen. Jerry McNerney (D-Pleasanton), establishes a fram"
   }
  ],
  "series": [
@@ -165,6 +175,15 @@
    "count": 8,
    "state": "Illinois",
    "bill": "#5511"
+  },
+  {
+   "date": {
+    "iso": "2026-09-09",
+    "kind": "event"
+   },
+   "count": 9,
+   "state": "California",
+   "bill": "#813"
   }
  ],
  "bound": "lower",
@@ -172,7 +191,7 @@
  "claim": {
   "id": "cl-state-laws-2026",
   "threshold": 90,
-  "observed": 8,
+  "observed": 9,
   "resolves_claim": false,
   "can_refute": false,
   "why": "The wiki tracks policy-notable developments, not the full legislative output of fifty states, so this count is a lower bound on the claim's universe. It can confirm the claim if it alone passes the threshold; it can never refute it. Resolving the claim needs NCSL (or an equivalent named tracker) ingested as a witness.",
