@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-11",
+ "date": "2026-09-12",
  "axes": {
   "T": {
-   "T1": 0.09883960177236811,
-   "T2": 0.3312218810113651,
-   "T3": 0.28507871591450906,
-   "T4": 0.16625227917491603,
-   "T5": 0.11860752212684172
+   "T1": 0.09865177181048904,
+   "T2": 0.3324964333630065,
+   "T3": 0.28644458856931737,
+   "T4": 0.16402508008460026,
+   "T5": 0.11838212617258682
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08916449191263416,
-   "A2": 0.23837629096095583,
-   "A3": 0.13858793958988053,
-   "A4": 0.16068344501569448,
-   "A5": 0.0982073243475881,
-   "A6": 0.04910366217379405,
-   "A7": 0.2258768459994529
+   "A1": 0.08864076720523083,
+   "A2": 0.23826177014049543,
+   "A3": 0.13948266774224216,
+   "A4": 0.16060624941925566,
+   "A5": 0.09816014355073045,
+   "A6": 0.049080071775365226,
+   "A7": 0.2257683301666803
   },
   "C": {
-   "C1": 0.3248039205857744,
-   "C2": 0.19557485719968717,
-   "C3": 0.11843786193368391,
-   "C4": 0.17581132147050255,
-   "C5": 0.0585385385716901,
-   "C6": 0.06341675011933094,
-   "C7": 0.05366032702404925,
-   "C8": 0.009756423095281689
+   "C1": 0.32422743866405773,
+   "C2": 0.19548980966037208,
+   "C3": 0.11838635813169512,
+   "C4": 0.17660496548269783,
+   "C5": 0.058513082545634865,
+   "C6": 0.0633891727577711,
+   "C7": 0.053636992333498626,
+   "C8": 0.009752180424272483
   },
   "R": {
    "R1": 0.14,
@@ -63,11 +63,11 @@
    "P5": 0.13930099286875486
   },
   "E": {
-   "E1": 0.23445047986454554,
-   "E2": 0.17853948795884278,
-   "E3": 0.3192008002383477,
-   "E4": 0.1884583484010006,
-   "E5": 0.0793508835372635
+   "E1": 0.2352014831520686,
+   "E2": 0.1784635800790019,
+   "E3": 0.3186395666504267,
+   "E4": 0.1883782234167241,
+   "E5": 0.07931714670177867
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.1939152179799258,
-   "G2": 0.2763205352159579,
-   "G3": 0.14870320682914423,
-   "G4": 0.14870320682914423,
-   "G5": 0.09913547121942952,
-   "G6": 0.13322236192639844
+   "G1": 0.19391521797992575,
+   "G2": 0.27632053521595784,
+   "G3": 0.1487032068291442,
+   "G4": 0.1487032068291442,
+   "G5": 0.09913547121942949,
+   "G6": 0.1332223619263984
   }
  },
  "history": [
@@ -6289,6 +6289,179 @@
      "G6": 0.13322236192639844
     }
    }
+  },
+  {
+   "date": "2026-09-12",
+   "marginals": {
+    "T": {
+     "T1": 0.09865177181048902,
+     "T2": 0.3324964333630065,
+     "T3": 0.28644458856931737,
+     "T4": 0.16402508008460026,
+     "T5": 0.11838212617258681
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08864076720523083,
+     "A2": 0.23826177014049543,
+     "A3": 0.13948266774224216,
+     "A4": 0.16060624941925566,
+     "A5": 0.09816014355073045,
+     "A6": 0.049080071775365226,
+     "A7": 0.2257683301666803
+    },
+    "C": {
+     "C1": 0.3242274386640578,
+     "C2": 0.19548980966037213,
+     "C3": 0.11838635813169515,
+     "C4": 0.17660496548269786,
+     "C5": 0.05851308254563488,
+     "C6": 0.06338917275777112,
+     "C7": 0.05363699233349864,
+     "C8": 0.009752180424272484
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23543348270259304,
+     "D2": 0.3604936120796765,
+     "D3": 0.2495386974043692,
+     "D4": 0.15453420781336125
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.2352014831520686,
+     "E2": 0.1784635800790019,
+     "E3": 0.3186395666504267,
+     "E4": 0.1883782234167241,
+     "E5": 0.07931714670177867
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19146276362591322,
+     "G2": 0.26128601536627166,
+     "G3": 0.15165704385953768,
+     "G4": 0.15165704385953768,
+     "G5": 0.10623336890230332,
+     "G6": 0.13770376438643656
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09865177181048902,
+     "T2": 0.3324964333630065,
+     "T3": 0.28644458856931737,
+     "T4": 0.16402508008460026,
+     "T5": 0.11838212617258681
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08864076720523083,
+     "A2": 0.23826177014049543,
+     "A3": 0.13948266774224216,
+     "A4": 0.16060624941925566,
+     "A5": 0.09816014355073045,
+     "A6": 0.049080071775365226,
+     "A7": 0.2257683301666803
+    },
+    "C": {
+     "C1": 0.3242274386640578,
+     "C2": 0.19548980966037213,
+     "C3": 0.11838635813169515,
+     "C4": 0.17660496548269786,
+     "C5": 0.05851308254563488,
+     "C6": 0.06338917275777112,
+     "C7": 0.05363699233349864,
+     "C8": 0.009752180424272484
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23379555441034577,
+     "D2": 0.3681946994675985,
+     "D3": 0.24875609132628487,
+     "D4": 0.14925365479577093
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.2352014831520686,
+     "E2": 0.1784635800790019,
+     "E3": 0.3186395666504267,
+     "E4": 0.1883782234167241,
+     "E5": 0.07931714670177867
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19391521797992575,
+     "G2": 0.27632053521595784,
+     "G3": 0.1487032068291442,
+     "G4": 0.1487032068291442,
+     "G5": 0.09913547121942949,
+     "G6": 0.1332223619263984
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -11939,75 +12112,208 @@
     "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003191,
+   "sources": 1,
+   "repeat_k": 10.953,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004255,
+    "E.E3": -0.0002127
+   },
+   "applied": {
+    "E.E1": 0.0004255,
+    "E.E3": -0.0002127
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "4b04ef4c334dc717",
+   "date": "2026-09-12",
+   "event_date": "2026-09-11",
+   "driver": "Anthropic is in talks to bring Nvidia in as an anchor investor in its planned IPO, seeking to raise as much as $100 billion at a valuation o",
+   "driver_urls": [
+    "https://www.reuters.com/legal/transactional/nvidia-talks-invest-anthropics-mega-ipo-sources-say-2026-09-11/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.0019076,
+   "sources": 1,
+   "repeat_k": 0.807,
+   "spread": 1.0,
+   "requested": {
+    "T.T2": 0.0019076,
+    "T.T3": 0.0019076,
+    "T.T4": -0.0019076
+   },
+   "applied": {
+    "T.T2": 0.0019076,
+    "T.T3": 0.0019076,
+    "T.T4": -0.0019076
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "incident": "d9b9a4afa08990ca",
+   "date": "2026-09-12",
+   "event_date": "2026-09-11",
+   "driver": "Twenty-five Fields Medallists, among them Terence Tao, Peter Scholze, Maryna Viazovska and Pierre Deligne, published a declaration on Septem",
+   "driver_urls": [
+    "https://terrytao.wordpress.com/2026/09/11/a-severe-misalignment-of-ai-in-mathematics/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003264,
+   "sources": 1,
+   "repeat_k": 7.782,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004352,
+    "C.C1": -0.0002176
+   },
+   "applied": {
+    "C.C4": 0.0004352,
+    "C.C1": -0.0002176
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "549e489684bc0c3c",
+   "date": "2026-09-12",
+   "event_date": "2026-09-09",
+   "driver": "The New Mexico Supreme Court on September 9, 2026 fined Santa Fe attorney Stephen Aarons $5,000, held him in contempt, and said it will refe",
+   "driver_urls": [
+    "https://www.reuters.com/legal/government/chatgpt-invented-fake-police-testimony-murder-appeal-new-mexico-high-court-says-2026-09-11/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004007,
+   "sources": 2,
+   "repeat_k": 9.581,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0005343,
+    "A.A1": -0.0002671
+   },
+   "applied": {
+    "A.A3": 0.0005343,
+    "A.A1": -0.0002671
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "390f0812bd1bd593",
+   "date": "2026-09-12",
+   "event_date": "2026-09-12",
+   "driver": "Dario Amodei published \"We Must Pace the Frontier\" on September 12, 2026, writing that \"we must slow the pace at which we improve the capabi",
+   "driver_urls": [
+    "https://darioamodei.com/post/we-must-pace-the-frontier",
+    "https://www.axios.com/2026/09/12/anthropic-ai-amodei-pacing"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003206,
+   "sources": 1,
+   "repeat_k": 9.581,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004274,
+    "A.A1": -0.0002137
+   },
+   "applied": {
+    "A.A3": 0.0004274,
+    "A.A1": -0.0002137
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "ebec456db18739e3",
+   "date": "2026-09-12",
+   "event_date": "2026-09-11",
+   "driver": "Timnit Gebru argued in an interview published September 11, 2026 that AI companies are stoking fears of extinction in order to avoid discuss",
+   "driver_urls": [
+    "https://www.wired.com/story/one-of-ais-fiercest-critics-says-all-the-doom-talk-is-meant-to-distract-us/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0003264,
+   "sources": 1,
+   "repeat_k": 7.782,
+   "spread": 0.7071,
+   "requested": {
+    "C.C4": 0.0004352,
+    "C.C1": -0.0002176
+   },
+   "applied": {
+    "C.C4": 0.0004352,
+    "C.C1": -0.0002176
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "617e28a248ec0167",
+   "date": "2026-09-12",
+   "event_date": "2026-09-11",
+   "driver": "Parents and children in Illinois and California filed a proposed class action against Meta in federal court in Chicago in the week before Se",
+   "driver_urls": [
+    "https://www.wired.com/story/meta-sued-over-training-data-for-its-ai-and-face-recognition-systems/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0003191,
+   "sources": 1,
+   "repeat_k": 10.953,
+   "spread": 0.7071,
+   "requested": {
+    "E.E1": 0.0004255,
+    "E.E3": -0.0002127
+   },
+   "applied": {
+    "E.E1": 0.0004255,
+    "E.E3": -0.0002127
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "1706d271af5b657f",
+   "date": "2026-09-12",
+   "event_date": "2026-09-12",
+   "driver": "Moonshot AI told investors that its annual recurring revenue topped $1 billion in August 2026, up from $300 million in June, and is targetin",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-09-11/china-ai-star-moonshot-eyes-2-billion-annualized-sales-in-2026"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-08-02",
-   "section": "International AI Regulation",
-   "text": "The EU AI Act's transparency rules take effect on August 2, 2026, requiring synthetic text, images, video and audio desi",
-   "fp": "5c6bc11fa8b43d5c"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on the DeepSeek V4-Flash release: Artificial Analysis scored DeepSeek V4 Flash 0731 at 50 on its Intelligence Ind",
-   "fp": "12d8d9d718a3d590"
-  },
-  {
-   "date": "2026-08-01",
-   "section": "Frontier Models & Capabilities",
-   "text": "OpenAI is preparing to release a model family tentatively named \"Astra,\" with improved ability to complete long-running ",
-   "fp": "45488f686d37c3de"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "AI Industry & Markets",
-   "text": "Update on OpenAI's price cuts: OpenAI said on July 31, 2026 that it has more than one billion active users and two milli",
-   "fp": "f647de4655e207db"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Update on Kimi K3: Moonshot's computing-power agreement with Alibaba Group Holding for the use of around 20,000 Nvidia c",
-   "fp": "c14f796b4b79c404"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "The Federal Trade Commission cleared IonQ's $1.8 billion acquisition of SkyWater Technology on July 31, 2026 after Chair",
-   "fp": "588303d5c671600f"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "Snap said on July 31, 2026 that it has adjusted Snapchat's recommendation systems so that only videos created by real pe",
-   "fp": "6c759df2a1b35f8d"
-  },
-  {
-   "date": "2026-08-01",
-   "section": "AI Industry & Markets",
-   "text": "Update on Situational Awareness: Azeem Azhar wrote on August 1, 2026 that the fund peaked at $45 billion and ran the AGI",
-   "fp": "72a63558cea9406c"
-  },
-  {
-   "date": "2026-08-01",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on Kimi K3: Moonshot AI's technical paper and Hugging Face release describe a 2.8-trillion-parameter open-weight ",
-   "fp": "b32f7bb5307a3912"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Frontier Models & Capabilities",
-   "text": "Thinking Machines released Inkling-Small on July 31, 2026 under an Apache 2.0 licence, two weeks after its 975-billion-p",
-   "fp": "92db045f93511c37"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Frontier Models & Capabilities",
-   "text": "Google DeepMind introduced Gemini Robotics 2 on July 31, 2026, adding what the company called \"intelligent whole-body co",
-   "fp": "b27b673a6f8c2b3a"
-  },
   {
    "date": "2026-07-31",
    "section": "AI Safety, Alignment & Interpretability",
@@ -15398,6 +15704,83 @@
    "text": "Rep. Ro Khanna (D-Calif.) said in the week ending September 11, 2026 that he was wrong not to support California's SB 10",
    "reports": 1,
    "fp": "774edc22eaca8899"
+  },
+  {
+   "date": "2026-09-07",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on OpenAI's antitrust inquiry to Congress: at a company-wide meeting during the week of September 7, 2026, Sam Al",
+   "reports": 1,
+   "fp": "0cb7bbfad37c780d"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on Speaker Mike Johnson's stated interest in industry consensus: a letter drafted by Rep. Sam Liccardo (D-Calif.)",
+   "reports": 1,
+   "fp": "e8405f19e8cff5d6"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "President Donald Trump, asked by reporters on September 10, 2026 as he departed Dallas whether he has concerns about AI ",
+   "reports": 1,
+   "fp": "cb6fa192fa42a73d"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Update on the Cruz\u2013Thune\u2013Klobuchar frontier bill: in an account published September 11, 2026, Senate negotiators are deb",
+   "reports": 1,
+   "fp": "d7842109037c0063"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "National Security & Geopolitics",
+   "text": "Anthropic reported that a Russian freelance group it tracks as GTG-27005 used Claude to build an AI model small enough t",
+   "reports": 1,
+   "fp": "ffa90d38c9eb4e5e"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "National Security & Geopolitics",
+   "text": "Anthropic disclosed in the same September 10, 2026 report that it uncovered unidentified actors in northern Yemen, where",
+   "reports": 1,
+   "fp": "032bdf92ff626a87"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Rep. Suhas Subramanyam (D-Va.) introduced the National Data Center Plan on September 8, 2026, a package of four bills ad",
+   "reports": 1,
+   "fp": "460e4fdd70029b5f"
+  },
+  {
+   "date": "2026-09-08",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Rep. Josh Gottheimer (D-N.J.) introduced H.R. 10315 on September 8, 2026, which would have the Education Department esta",
+   "reports": 1,
+   "fp": "7892f41139d1af9f"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Rep. Haley Stevens (D-Mich.) introduced the Data Science and Literacy Act on September 10, 2026, co-sponsored by Reps. J",
+   "reports": 1,
+   "fp": "e404635e958533b3"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "In an account published September 11, 2026, Senate Commerce Chairman Ted Cruz (R-TX) and ranking member Maria Cantwell (",
+   "reports": 1,
+   "fp": "8d3c90fbd862d3fd"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "OpenAI research lead Dan Roberts said on X on September 10, 2026 that the company is no longer sponsoring Caltech's \"mat",
+   "reports": 1,
+   "fp": "2d81c0f8c93a0405"
   }
  ],
  "seen": [
@@ -16126,7 +16509,25 @@
   "9ba8e66d7e30a03e",
   "1903e6c6a27331ec",
   "5c6b47bbfb5c08da",
-  "774edc22eaca8899"
+  "774edc22eaca8899",
+  "0cb7bbfad37c780d",
+  "e8405f19e8cff5d6",
+  "cb6fa192fa42a73d",
+  "d7842109037c0063",
+  "ffa90d38c9eb4e5e",
+  "032bdf92ff626a87",
+  "4b04ef4c334dc717",
+  "d9b9a4afa08990ca",
+  "549e489684bc0c3c",
+  "460e4fdd70029b5f",
+  "7892f41139d1af9f",
+  "e404635e958533b3",
+  "8d3c90fbd862d3fd",
+  "390f0812bd1bd593",
+  "ebec456db18739e3",
+  "617e28a248ec0167",
+  "2d81c0f8c93a0405",
+  "1706d271af5b657f"
  ],
  "residue_r0": [
   {
