@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-12",
+ "date": "2026-09-13",
  "axes": {
   "T": {
-   "T1": 0.09865177181048904,
-   "T2": 0.3324964333630065,
-   "T3": 0.28644458856931737,
-   "T4": 0.16402508008460026,
-   "T5": 0.11838212617258682
+   "T1": 0.09852678732596463,
+   "T2": 0.3333437241976011,
+   "T3": 0.28735183491165683,
+   "T4": 0.16254550877361987,
+   "T5": 0.11823214479115754
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08864076720523083,
-   "A2": 0.23826177014049543,
-   "A3": 0.13948266774224216,
-   "A4": 0.16060624941925566,
-   "A5": 0.09816014355073045,
-   "A6": 0.049080071775365226,
-   "A7": 0.2257683301666803
+   "A1": 0.08831282083520565,
+   "A2": 0.23819007462886305,
+   "A3": 0.14004288001550408,
+   "A4": 0.16055792128328708,
+   "A5": 0.09813060611503682,
+   "A6": 0.04906530305751841,
+   "A7": 0.22570039406458492
   },
   "C": {
-   "C1": 0.32422743866405773,
-   "C2": 0.19548980966037208,
-   "C3": 0.11838635813169512,
-   "C4": 0.17660496548269783,
-   "C5": 0.058513082545634865,
-   "C6": 0.0633891727577711,
-   "C7": 0.053636992333498626,
-   "C8": 0.009752180424272483
+   "C1": 0.3242274386640578,
+   "C2": 0.19548980966037213,
+   "C3": 0.11838635813169515,
+   "C4": 0.17660496548269786,
+   "C5": 0.05851308254563488,
+   "C6": 0.06338917275777112,
+   "C7": 0.05363699233349864,
+   "C8": 0.009752180424272484
   },
   "R": {
    "R1": 0.14,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19391521797992575,
-   "G2": 0.27632053521595784,
-   "G3": 0.1487032068291442,
-   "G4": 0.1487032068291442,
-   "G5": 0.09913547121942949,
-   "G6": 0.1332223619263984
+   "G1": 0.1939152179799258,
+   "G2": 0.2763205352159579,
+   "G3": 0.14870320682914423,
+   "G4": 0.14870320682914423,
+   "G5": 0.09913547121942952,
+   "G6": 0.13322236192639844
   }
  },
  "history": [
@@ -6462,6 +6462,179 @@
      "G6": 0.1332223619263984
     }
    }
+  },
+  {
+   "date": "2026-09-13",
+   "marginals": {
+    "T": {
+     "T1": 0.09852678732596462,
+     "T2": 0.3333437241976011,
+     "T3": 0.28735183491165683,
+     "T4": 0.16254550877361987,
+     "T5": 0.11823214479115753
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08831282083520565,
+     "A2": 0.23819007462886305,
+     "A3": 0.14004288001550408,
+     "A4": 0.16055792128328708,
+     "A5": 0.09813060611503682,
+     "A6": 0.04906530305751841,
+     "A7": 0.22570039406458492
+    },
+    "C": {
+     "C1": 0.3242274386640578,
+     "C2": 0.19548980966037213,
+     "C3": 0.11838635813169515,
+     "C4": 0.17660496548269786,
+     "C5": 0.05851308254563488,
+     "C6": 0.06338917275777112,
+     "C7": 0.05363699233349864,
+     "C8": 0.009752180424272484
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.2354562121834034,
+     "D2": 0.36038448745641727,
+     "D3": 0.2495491798743388,
+     "D4": 0.1546101204858406
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.2352014831520686,
+     "E2": 0.1784635800790019,
+     "E3": 0.3186395666504267,
+     "E4": 0.1883782234167241,
+     "E5": 0.07931714670177867
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1914627636259132,
+     "G2": 0.2612860153662716,
+     "G3": 0.15165704385953765,
+     "G4": 0.15165704385953765,
+     "G5": 0.1062333689023033,
+     "G6": 0.13770376438643653
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09852678732596462,
+     "T2": 0.3333437241976011,
+     "T3": 0.28735183491165683,
+     "T4": 0.16254550877361987,
+     "T5": 0.11823214479115753
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08831282083520565,
+     "A2": 0.23819007462886305,
+     "A3": 0.14004288001550408,
+     "A4": 0.16055792128328708,
+     "A5": 0.09813060611503682,
+     "A6": 0.04906530305751841,
+     "A7": 0.22570039406458492
+    },
+    "C": {
+     "C1": 0.3242274386640578,
+     "C2": 0.19548980966037213,
+     "C3": 0.11838635813169515,
+     "C4": 0.17660496548269786,
+     "C5": 0.05851308254563488,
+     "C6": 0.06338917275777112,
+     "C7": 0.05363699233349864,
+     "C8": 0.009752180424272484
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23379555441034577,
+     "D2": 0.3681946994675985,
+     "D3": 0.24875609132628487,
+     "D4": 0.14925365479577093
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17910127654554195,
+     "P2": 0.23384453922184822,
+     "P3": 0.22885163114152587,
+     "P4": 0.21890156022232907,
+     "P5": 0.13930099286875486
+    },
+    "E": {
+     "E1": 0.2352014831520686,
+     "E2": 0.1784635800790019,
+     "E3": 0.3186395666504267,
+     "E4": 0.1883782234167241,
+     "E5": 0.07931714670177867
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.1939152179799258,
+     "G2": 0.2763205352159579,
+     "G3": 0.14870320682914423,
+     "G4": 0.14870320682914423,
+     "G5": 0.09913547121942952,
+     "G6": 0.13322236192639844
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -12311,93 +12484,67 @@
     "https://www.bloomberg.com/news/articles/2026-09-11/china-ai-star-moonshot-eyes-2-billion-annualized-sales-in-2026"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-benchmark-progress",
+   "impact_class": "minor",
+   "magnitude": 0.0012701,
+   "sources": 1,
+   "repeat_k": 1.637,
+   "spread": 1.0,
+   "requested": {
+    "T.T2": 0.0012701,
+    "T.T3": 0.0012701,
+    "T.T4": -0.0012701
+   },
+   "applied": {
+    "T.T2": 0.0012701,
+    "T.T3": 0.0012701,
+    "T.T4": -0.0012701
+   },
+   "cites": [
+    "concepts/agi-timelines",
+    "sources/ai-2027"
+   ],
+   "incident": "fec0100ddb59d572",
+   "date": "2026-09-13",
+   "event_date": "2026-09-12",
+   "driver": "Epoch AI published pre-release benchmark results for GPT-6 Astra on September 12, 2026, reporting that the model took the top position on th",
+   "driver_urls": [
+    "https://epochai.substack.com/p/the-epoch-brief-september-12-2026"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004518,
+   "sources": 1,
+   "repeat_k": 10.489,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006024,
+    "A.A1": -0.0003012
+   },
+   "applied": {
+    "A.A3": 0.0006024,
+    "A.A1": -0.0003012
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "d17b0b78f8d2a702",
+   "date": "2026-09-13",
+   "event_date": "2026-09-12",
+   "driver": "Update on Dario Amodei's September 12 essay: Gary Marcus, Nathan Hamiel of Kudelski Security, and Zack Korman of Embroidery published a join",
+   "driver_urls": [
+    "https://garymarcus.substack.com/p/could-rogue-agent-swarms-take-over"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-07-31",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "Update on the Anthropic containment incident: Anthropic's fuller account became public on July 31, 2026 and names the th",
-   "fp": "7e9140d4dc92be08"
-  },
-  {
-   "date": "2026-08-02",
-   "section": "Frontier Models & Capabilities",
-   "text": "In an open-model review published August 2, 2026, Florian Brand and Nathan Lambert catalogued releases including Tencent",
-   "fp": "102c118770169f9e"
-  },
-  {
-   "date": "2026-08-02",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on Kimi K3: the terms of its licence were set out in the same August 2, 2026 review. Moonshot AI released the mod",
-   "fp": "c843fd1d734f66a3"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on DeepSeek V4-Flash, covered on August 1 via its Artificial Analysis score: DeepSeek published DeepSeek-V4-Flash",
-   "fp": "540eed2fcd0cf62e"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Frontier Models & Capabilities",
-   "text": "MiniMax launched MiniMax H3 on July 31, 2026, a model that takes text, images, video and audio as one context and return",
-   "fp": "843a8fb11f790bfd"
-  },
-  {
-   "date": "2026-08-02",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Meituan's LongCat-2.0 became public on or before August 2, 2026: a 1.6-trillion-parameter mixture-of-experts model train",
-   "fp": "0910b44036dd0191"
-  },
-  {
-   "date": "2026-08-01",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on OpenAI's Astra, covered on August 1 as an unreleased model family previewed to policymakers in Washington: Ope",
-   "fp": "bf2de1cbff7b96f3"
-  },
-  {
-   "date": "2026-08-02",
-   "section": "Frontier Models & Capabilities",
-   "text": "Levent Alpoge, an Anthropic engineer, said on X in a post that became public on August 2, 2026 that he had obtained five",
-   "fp": "bef720c379683b83"
-  },
-  {
-   "date": "2026-08-02",
-   "section": "Frontier Models & Capabilities",
-   "text": "Gary Marcus argued on August 2, 2026 that the results are being read through a fallacy of composition \u2014 that competence ",
-   "fp": "681137bf777fbf7d"
-  },
-  {
-   "date": "2026-08-02",
-   "section": "AI Industry & Markets",
-   "text": "Matt Stoller argued on August 2, 2026 that the financial reporting of the largest AI spenders cannot be checked from pub",
-   "fp": "e2bb23e6a46a0052"
-  },
-  {
-   "date": "2026-08-02",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "Geoffrey Hinton told state legislators at the National Conference of State Legislatures' Legislative Summit in Chicago, ",
-   "fp": "d5ee7e5c353a8817"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "OpenAI argued on August 3, 2026 that the United States needs national AI standards enacted by Congress, and that action ",
-   "fp": "3c4820954dca1833"
-  },
-  {
-   "date": "2026-07-31",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "House Committee on Homeland Security Chairman Andrew Garbarino (R-NY) and House Select Committee on China Chairman John ",
-   "fp": "63b4c2cac99d1247"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on Alibaba's Qwen3.8-Max, previewed on July 19 and covered on July 20\u201321: Alibaba made the model generally availa",
-   "fp": "84fbba911dcc431b"
-  },
   {
    "date": "2026-08-03",
    "section": "AI Industry & Markets",
@@ -15781,6 +15928,104 @@
    "text": "OpenAI research lead Dan Roberts said on X on September 10, 2026 that the company is no longer sponsoring Caltech's \"mat",
    "reports": 1,
    "fp": "2d81c0f8c93a0405"
+  },
+  {
+   "date": "2026-09-12",
+   "section": "AI Industry & Markets",
+   "text": "Sam Altman said OpenAI will not pursue an initial public offering in 2026, in an interview with Fortune editor-in-chief ",
+   "reports": 1,
+   "fp": "75b93744a711e791"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI disabled new sign-ups for its $200-per-month Pro plan on September 10, 2026, citing infrastructure strain from de",
+   "reports": 1,
+   "fp": "fb88e81950bc03d2"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "International AI Regulation",
+   "text": "More than 70 cross-party MPs and peers wrote to UK Prime Minister Andy Burnham urging him to back the Artificial Superin",
+   "reports": 1,
+   "fp": "6bef7051e8c0ea20"
+  },
+  {
+   "date": "2026-09-12",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Epoch AI published a report by researcher Venkat Somala on September 12, 2026 analyzing Huawei's AI chip roadmap through",
+   "reports": 1,
+   "fp": "dbda31b38e54dd87"
+  },
+  {
+   "date": "2026-09-12",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Update on the mathematics community's dispute with OpenAI, which the 08:05 file covered through the Caltech open letter ",
+   "reports": 1,
+   "fp": "565e804c489f1087"
+  },
+  {
+   "date": "2026-09-04",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "A pilot between OpenAI and the Multi-State Information Sharing and Analysis Center became public on September 4, 2026, g",
+   "reports": 1,
+   "fp": "57ef1f836b4596ba"
+  },
+  {
+   "date": "2026-09-12",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on Dario Amodei's essay of September 12, 2026, which the September 12 files covered as a standalone argument: thr",
+   "reports": 1,
+   "fp": "2d1aceaf3e0c33c0"
+  },
+  {
+   "date": "2026-09-12",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "David Sacks, a former Trump administration official, posted late on September 12, 2026 that OpenAI and Anthropic should ",
+   "reports": 1,
+   "fp": "23b4e92f9c43d0db"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Jacob Coxon, one of the two Anthropic researchers who resigned and then issued public warnings about AI risk, called for",
+   "reports": 1,
+   "fp": "66868c2c3a753c4b"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Trump said on September 13, 2026 that negative forces were raising AI concerns that would not materialise, answering rep",
+   "reports": 1,
+   "fp": "b16fb58b461db3dc"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Barack Obama said at a private fundraising event on September 10, 2026 that AI \"is something that is moving very fast in",
+   "reports": 1,
+   "fp": "958a84e6b7e276d5"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "U.S. Border Patrol runs predictive policing units that analyse Americans' financial activity and other data and pass the",
+   "reports": 1,
+   "fp": "e9effee5290aa700"
+  },
+  {
+   "date": "2026-09-10",
+   "section": "Agentic AI & Coding",
+   "text": "OpenAI released its Agents API in public beta to all developers on September 10, 2026, exposing the harness behind Codex",
+   "reports": 1,
+   "fp": "e334a66876c10385"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "National Security & Geopolitics",
+   "text": "South Korea's expanded espionage law took effect on September 13, 2026, extending espionage offences beyond acts benefit",
+   "reports": 1,
+   "fp": "1be5c178d5823173"
   }
  ],
  "seen": [
@@ -16527,7 +16772,23 @@
   "ebec456db18739e3",
   "617e28a248ec0167",
   "2d81c0f8c93a0405",
-  "1706d271af5b657f"
+  "1706d271af5b657f",
+  "75b93744a711e791",
+  "fb88e81950bc03d2",
+  "fec0100ddb59d572",
+  "6bef7051e8c0ea20",
+  "d17b0b78f8d2a702",
+  "dbda31b38e54dd87",
+  "565e804c489f1087",
+  "57ef1f836b4596ba",
+  "2d1aceaf3e0c33c0",
+  "23b4e92f9c43d0db",
+  "66868c2c3a753c4b",
+  "b16fb58b461db3dc",
+  "958a84e6b7e276d5",
+  "e9effee5290aa700",
+  "e334a66876c10385",
+  "1be5c178d5823173"
  ],
  "residue_r0": [
   {
