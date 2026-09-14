@@ -1,8 +1,8 @@
 {
- "wiki_models": 74,
+ "wiki_models": 75,
  "epoch_rows": 1041,
  "matched": 20,
- "unmatched_wiki": 54,
+ "unmatched_wiki": 55,
  "unmatched_wiki_slugs": [
   "alphagenome",
   "amazon-nova",
@@ -18,12 +18,12 @@
   "claude-sonnet-46",
   "claude-sonnet-5",
   "deepseek-v4",
+  "deepseek-v4-1-flash",
   "doubao",
   "ernie-4",
   "evo-2",
   "faraday",
-  "gemini-robotics-2",
-  "gemma"
+  "gemini-robotics-2"
  ],
  "date_disagreements": [
   {

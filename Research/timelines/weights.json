@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-13",
+ "date": "2026-09-14",
  "axes": {
   "T": {
-   "T1": 0.09852678732596463,
-   "T2": 0.3333437241976011,
-   "T3": 0.28735183491165683,
-   "T4": 0.16254550877361987,
-   "T5": 0.11823214479115754
+   "T1": 0.09852678732596465,
+   "T2": 0.33334372419760117,
+   "T3": 0.2873518349116569,
+   "T4": 0.1625455087736199,
+   "T5": 0.11823214479115755
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08831282083520565,
-   "A2": 0.23819007462886305,
-   "A3": 0.14004288001550408,
-   "A4": 0.16055792128328708,
-   "A5": 0.09813060611503682,
-   "A6": 0.04906530305751841,
-   "A7": 0.22570039406458492
+   "A1": 0.08765718749622985,
+   "A2": 0.23804666097300414,
+   "A3": 0.14116311848186014,
+   "A4": 0.16046124975528905,
+   "A5": 0.09807152191937277,
+   "A6": 0.049035760959686384,
+   "A7": 0.22556450041455758
   },
   "C": {
-   "C1": 0.3242274386640578,
-   "C2": 0.19548980966037213,
-   "C3": 0.11838635813169515,
-   "C4": 0.17660496548269786,
-   "C5": 0.05851308254563488,
-   "C6": 0.06338917275777112,
-   "C7": 0.05363699233349864,
-   "C8": 0.009752180424272484
+   "C1": 0.323821520144495,
+   "C2": 0.19542994118101376,
+   "C3": 0.11835010247596338,
+   "C4": 0.17716375337668283,
+   "C5": 0.05849516299637212,
+   "C6": 0.06336975991273645,
+   "C7": 0.05362056608000777,
+   "C8": 0.00974919383272869
   },
   "R": {
    "R1": 0.14,
@@ -43,10 +43,10 @@
    "R6": 0.11
   },
   "D": {
-   "D1": 0.23379555441034577,
-   "D2": 0.3681946994675985,
-   "D3": 0.24875609132628487,
-   "D4": 0.14925365479577093
+   "D1": 0.23207823331036082,
+   "D2": 0.3704635159134701,
+   "D3": 0.24841140673510564,
+   "D4": 0.1490468440410634
   },
   "S": {
    "S1": 0.23620682021266845,
@@ -56,18 +56,18 @@
    "S5": 0.09841950842194523
   },
   "P": {
-   "P1": 0.17910127654554195,
-   "P2": 0.23384453922184822,
-   "P3": 0.22885163114152587,
-   "P4": 0.21890156022232907,
-   "P5": 0.13930099286875486
+   "P1": 0.17885241636590352,
+   "P2": 0.23490910776807924,
+   "P3": 0.22853364313421012,
+   "P4": 0.21859739778054876,
+   "P5": 0.1391074349512583
   },
   "E": {
-   "E1": 0.2352014831520686,
-   "E2": 0.1784635800790019,
-   "E3": 0.3186395666504267,
-   "E4": 0.1883782234167241,
-   "E5": 0.07931714670177867
+   "E1": 0.23573270418169617,
+   "E2": 0.17840989751025463,
+   "E3": 0.31824255204266744,
+   "E4": 0.18832155848304644,
+   "E5": 0.07929328778233544
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.1939152179799258,
-   "G2": 0.2763205352159579,
-   "G3": 0.14870320682914423,
-   "G4": 0.14870320682914423,
-   "G5": 0.09913547121942952,
-   "G6": 0.13322236192639844
+   "G1": 0.19391521797992575,
+   "G2": 0.27632053521595784,
+   "G3": 0.1487032068291442,
+   "G4": 0.1487032068291442,
+   "G5": 0.09913547121942949,
+   "G6": 0.1332223619263984
   }
  },
  "history": [
@@ -6635,6 +6635,179 @@
      "G6": 0.13322236192639844
     }
    }
+  },
+  {
+   "date": "2026-09-14",
+   "marginals": {
+    "T": {
+     "T1": 0.09852678732596463,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115754
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08765718749622986,
+     "A2": 0.23804666097300417,
+     "A3": 0.14116311848186017,
+     "A4": 0.16046124975528908,
+     "A5": 0.09807152191937278,
+     "A6": 0.04903576095968639,
+     "A7": 0.2255645004145576
+    },
+    "C": {
+     "C1": 0.323821520144495,
+     "C2": 0.19542994118101376,
+     "C3": 0.11835010247596338,
+     "C4": 0.17716375337668283,
+     "C5": 0.05849516299637212,
+     "C6": 0.06336975991273645,
+     "C7": 0.05362056608000777,
+     "C8": 0.00974919383272869
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23387442349627904,
+     "D2": 0.3623778142166354,
+     "D3": 0.24925232241005077,
+     "D4": 0.15449543987703482
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23573270418169617,
+     "E2": 0.17840989751025463,
+     "E3": 0.31824255204266744,
+     "E4": 0.18832155848304644,
+     "E5": 0.07929328778233544
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19146276362591322,
+     "G2": 0.26128601536627166,
+     "G3": 0.15165704385953768,
+     "G4": 0.15165704385953768,
+     "G5": 0.10623336890230332,
+     "G6": 0.13770376438643656
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09852678732596463,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115754
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08765718749622986,
+     "A2": 0.23804666097300417,
+     "A3": 0.14116311848186017,
+     "A4": 0.16046124975528908,
+     "A5": 0.09807152191937278,
+     "A6": 0.04903576095968639,
+     "A7": 0.2255645004145576
+    },
+    "C": {
+     "C1": 0.323821520144495,
+     "C2": 0.19542994118101376,
+     "C3": 0.11835010247596338,
+     "C4": 0.17716375337668283,
+     "C5": 0.05849516299637212,
+     "C6": 0.06336975991273645,
+     "C7": 0.05362056608000777,
+     "C8": 0.00974919383272869
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23207823331036082,
+     "D2": 0.3704635159134701,
+     "D3": 0.24841140673510564,
+     "D4": 0.1490468440410634
+    },
+    "S": {
+     "S1": 0.23620682021266845,
+     "S2": 0.22923035108580808,
+     "S3": 0.2491462542778823,
+     "S4": 0.18699706600169597,
+     "S5": 0.09841950842194523
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23573270418169617,
+     "E2": 0.17840989751025463,
+     "E3": 0.31824255204266744,
+     "E4": 0.18832155848304644,
+     "E5": 0.07929328778233544
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19391521797992575,
+     "G2": 0.27632053521595784,
+     "G3": 0.1487032068291442,
+     "G4": 0.1487032068291442,
+     "G5": 0.09913547121942949,
+     "G6": 0.1332223619263984
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -12542,117 +12715,207 @@
     "https://garymarcus.substack.com/p/could-rogue-agent-swarms-take-over"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002259,
+   "sources": 1,
+   "repeat_k": 10.406,
+   "spread": 0.5,
+   "requested": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "applied": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "807ed79fb50051d8",
+   "date": "2026-09-14",
+   "event_date": "2026-09-13",
+   "driver": "Anthropic, OpenAI and Google have been holding discussions about jointly creating a standards body for the AI industry, people familiar with",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/inside-ai-industrys-behind-scenes-push-police"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002259,
+   "sources": 1,
+   "repeat_k": 10.406,
+   "spread": 0.5,
+   "requested": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "applied": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "de955e0526da651d",
+   "date": "2026-09-14",
+   "event_date": "2026-09-11",
+   "driver": "Spencer Kitts, Thomas Larsen and Sydney Von Arx published a report on September 11, 2026 attributing a May 2026 attack on the RubyGems packa",
+   "driver_urls": [
+    "https://www.rubyhack.ai/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002259,
+   "sources": 1,
+   "repeat_k": 10.406,
+   "spread": 0.5,
+   "requested": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "applied": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "1f4acc8d433c9446",
+   "date": "2026-09-14",
+   "event_date": "2026-09-12",
+   "driver": "On September 12, 2026, Dario Amodei published \"We Must Pace the Frontier,\" proposing a three-step framework: embedded third-party evaluators",
+   "driver_urls": [
+    "https://darioamodei.com/post/we-must-pace-the-frontier"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002259,
+   "sources": 1,
+   "repeat_k": 10.406,
+   "spread": 0.5,
+   "requested": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "applied": {
+    "A.A3": 0.0003013,
+    "A.A1": -0.0001506
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "d5b92e8599fbc7f7",
+   "date": "2026-09-14",
+   "event_date": "2026-09-14",
+   "driver": "On September 14, 2026, Microsoft published a draft code of conduct for its in-house AI, which Microsoft AI CEO Mustafa Suleyman described to",
+   "driver_urls": [
+    "https://www.reuters.com/legal/litigation/microsoft-drafts-code-conduct-keep-its-ai-under-human-control-2026-09-14/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004516,
+   "sources": 1,
+   "repeat_k": 10.626,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006022,
+    "E.E3": -0.0003011
+   },
+   "applied": {
+    "E.E1": 0.0006022,
+    "E.E3": -0.0003011
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "bc653c4a0252cd92",
+   "date": "2026-09-14",
+   "event_date": "2026-09-14",
+   "driver": "Anthropic is in talks to bring Nvidia in as an anchor investor in an IPO seeking to raise as much as $100 billion at a valuation of around $",
+   "driver_urls": [
+    "https://www.reuters.com/legal/transactional/nvidia-talks-invest-anthropics-mega-ipo-sources-say-2026-09-11/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004598,
+   "sources": 1,
+   "repeat_k": 8.024,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0006131,
+    "C.C1": -0.0003065
+   },
+   "applied": {
+    "C.C4": 0.0006131,
+    "C.C1": -0.0003065
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "a73452fcdce18bca",
+   "date": "2026-09-14",
+   "event_date": "2026-09-09",
+   "driver": "In a September 9, 2026 order, the New Mexico Supreme Court held Santa Fe defense lawyer Stephen Aarons in direct contempt and fined him $5,0",
+   "driver_urls": [
+    "https://www.implicator.ai/new-mexico-lawyer-chatgpt-fake-witnesses/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enterprise-adoption",
+   "impact_class": "minor",
+   "magnitude": 0.0018552,
+   "sources": 1,
+   "repeat_k": 0.86,
+   "spread": 1.0,
+   "requested": {
+    "D.D2": 0.0027829,
+    "D.D1": -0.0013914,
+    "P.P2": 0.0013914
+   },
+   "applied": {
+    "D.D2": 0.0027829,
+    "D.D1": -0.0013914,
+    "P.P2": 0.0013914
+   },
+   "cites": [
+    "concepts/ai-diffusion",
+    "concepts/ai-displacement-vs-augmentation"
+   ],
+   "incident": "9711e27801b39b09",
+   "date": "2026-09-14",
+   "event_date": "2026-09-14",
+   "driver": "On September 14, 2026, 404 Media reported that OpenAI is hiring hundreds of contractors, working under the internal codename \"Project Lily,\"",
+   "driver_urls": [
+    "https://www.404media.co/inside-project-lily-the-humans-reading-your-chatgpt-chats/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-08-03",
-   "section": "AI Industry & Markets",
-   "text": "Update on Lilian Weng's departure from Thinking Machines Lab, covered on August 1: her return to OpenAI, to work on recu",
-   "fp": "d91ec2c56dc2333b"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "AI Industry & Markets",
-   "text": "Jasjeet Sekhon, chief strategy officer at Google DeepMind, said over the weekend of August 1\u20132, 2026 that recursive self",
-   "fp": "ee281e0b06657026"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The White House said on August 3, 2026 that it had met the deadline set by the June 2 executive order for a voluntary fr",
-   "fp": "978efd02dbcfc105"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Senate Majority Leader John Thune (R-South Dakota) and Sen. Amy Klobuchar (D-Minnesota) are developing frontier AI legis",
-   "fp": "7a9480a9c809e966"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "AI Industry & Markets",
-   "text": "Palantir reported second-quarter results after the close on August 3, 2026: revenue of $1.94 billion against an LSEG con",
-   "fp": "83f6dd11ab583724"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "AI Industry & Markets",
-   "text": "Amazon's market capitalization passed $3 trillion for the first time on August 3, 2026, with shares closing 4.58% higher",
-   "fp": "4f9e123863ad63a1"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "National Security & Geopolitics",
-   "text": "Hugging Face CEO Cl\u00e9ment Delangue said on August 3, 2026 that Chinese developers are \"clearly dominating on open models ",
-   "fp": "6074dd19dfa30341"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on OpenAI's ten Astra mathematics results, announced by Sebastien Bubeck on August 2 and covered as prior-cycle m",
-   "fp": "24140a740c79743c"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on Alibaba's Qwen3.8-Max, whose general availability was covered in the 08:12 file: in making the model widely av",
-   "fp": "59d26e990e230b73"
-  },
-  {
-   "date": "2026-08-04",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Update on the White House frontier-model evaluation framework, reported complete on August 3 and covered in the 22:14 fi",
-   "fp": "cc5b1dbf45be0ca1"
-  },
-  {
-   "date": "2026-08-04",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Update on the Senate frontier AI legislation split covered in the 22:14 file: Senate Commerce Committee ranking member M",
-   "fp": "2dacb0ef4366e004"
-  },
-  {
-   "date": "2026-08-04",
-   "section": "National Security & Geopolitics",
-   "text": "The Federal Communications Commission is drafting a measure to bar US imports of new models of Chinese optical transceiv",
-   "fp": "54d9577f3fe52b69"
-  },
-  {
-   "date": "2026-08-04",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Update on the frontier-model evaluation framework covered in the 08:11 file: under the framework administration official",
-   "fp": "b6b3dfd1c96c7d4a"
-  },
-  {
-   "date": "2026-08-04",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Sens. Kirsten Gillibrand (D-New York) and Mark Warner (D-Virginia), the Intelligence Committee's ranking member, sent se",
-   "fp": "9345f23b5f47d548"
-  },
-  {
-   "date": "2026-08-04",
-   "section": "AI Litigation, Liability & Enforcement",
-   "text": "Update on Apple's trade-secrets case covered in the 08:11 file: OpenAI published a post titled \"Apple is getting this wr",
-   "fp": "301aad2799b48df5"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "An Anthropic spokesperson confirmed on August 5, 2026 that the company is building an in-house silicon team to design cu",
-   "fp": "4da8ec1ec7b1b2d2"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Frontier Models & Capabilities",
-   "text": "ByteDance founder Zhang Yiming told employees during a meeting in July 2026 that the company will not resort to distilla",
-   "fp": "8aedc3ddb6a53038"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Agentic AI & Coding",
-   "text": "Meta Platforms is asking thousands of engineers to use its in-house AI coding agent, MetaCode, in their day-to-day work ",
-   "fp": "072650776cd2a581"
-  },
   {
    "date": "2026-08-05",
    "section": "AI Industry & Markets",
@@ -16026,6 +16289,132 @@
    "text": "South Korea's expanded espionage law took effect on September 13, 2026, extending espionage offences beyond acts benefit",
    "reports": 1,
    "fp": "1be5c178d5823173"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sens. Ted Cruz (R-Texas), John Thune (R-S.D.) and Amy Klobuchar (D-Minn.) may introduce a bipartisan frontier-AI bill as",
+   "reports": 1,
+   "fp": "a446c2a53bdb0689"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Satya Nadella said on September 13, 2026 that Microsoft welcomes the \"deliberate pacing needed to get alignment right,\" ",
+   "reports": 1,
+   "fp": "1fbd0b386f5f9b06"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on Amodei's September 12 essay, which the 08:05 file covered through the endorsements it drew: Amodei told CBS Ne",
+   "reports": 1,
+   "fp": "94ff238d92aaec86"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Johnson said on CNN's \"State of the Union\" on September 13, 2026 that Congress must \"resist Congress jumping in and impo",
+   "reports": 1,
+   "fp": "4954f75341736c24"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Bureau of Land Management asked its state directors to identify public land suitable for data centre development, gi",
+   "reports": 1,
+   "fp": "cd646328295cd50e"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "AI Industry & Markets",
+   "text": "Altman said in an interview with Fortune Editor-in-Chief Alyson Shontell on September 11, 2026, published the following ",
+   "reports": 1,
+   "fp": "cd6622cfa3cbff2c"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Twenty-five Fields medallists, among them Terence Tao, Peter Scholze, Maryna Viazovska and Pierre Deligne, published a d",
+   "reports": 1,
+   "fp": "1df45fd518edbff0"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "Frontier Models & Capabilities",
+   "text": "DeepSeek released DeepSeek-V4.1-Flash on September 9, 2026, a 552-billion-parameter mixture-of-experts model on a new ca",
+   "reports": 1,
+   "fp": "5277dad090925a29"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "International AI Regulation",
+   "text": "Xi said China will pioneer the establishment of a BRICS AI open-source community, support cooperation on developing and ",
+   "reports": 1,
+   "fp": "95ccc54514f03940"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "Reported but unverified",
+   "text": "Anthropic's six-year, $13.7 billion compute agreement with Rum Group became public on September 13, 2026; no article bod",
+   "reports": 1,
+   "fp": "35e3e614847e504b"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Sam Altman and Elon Musk both said they agreed with Amodei over the weekend of September 12\u201313, 2026, and Altman said Op",
+   "reports": 1,
+   "fp": "bc93216f55cee86a"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "On September 14, 2026, President Donald Trump wrote on Truth Social that the only guardrail AI needs is a strong and sma",
+   "reports": 1,
+   "fp": "9c3c0bbaab7ca1d6"
+  },
+  {
+   "date": "2026-09-11",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "J.B. Branch, director of federal AI governance and technology policy at Public Citizen, called Sen. Josh Hawley's (R-MO)",
+   "reports": 1,
+   "fp": "eca980749c2a74a7"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Pentagon chief technology officer Emil Michael said approximately 90 percent of Defense Department classified AI workloa",
+   "reports": 1,
+   "fp": "b0cd8c1421f14aaf"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "International AI Regulation",
+   "text": "Guo Jiakun, a spokesperson for China's Ministry of Foreign Affairs, told reporters at a September 14, 2026 daily briefin",
+   "reports": 1,
+   "fp": "dca6fb409ebdea43"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "International AI Regulation",
+   "text": "A spokesperson for Germany's digital affairs ministry said on September 14, 2026 that halting AI development is not a vi",
+   "reports": 1,
+   "fp": "4230e7870bdbed8d"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Industry & Markets",
+   "text": "AI-linked equities fell across Asia, Europe and U.S. futures on September 14, 2026. Nasdaq e-mini futures fell 1.9%; Nvi",
+   "reports": 1,
+   "fp": "af212c17a21b9af2"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Reported but unverified",
+   "text": "Palantir Technologies, Nvidia and Booz Allen Hamilton have begun demanding new guarantees or reducing use of Anthropic's",
+   "reports": 1,
+   "fp": "fbc63af7c9f30889"
   }
  ],
  "seen": [
@@ -16788,7 +17177,32 @@
   "958a84e6b7e276d5",
   "e9effee5290aa700",
   "e334a66876c10385",
-  "1be5c178d5823173"
+  "1be5c178d5823173",
+  "a446c2a53bdb0689",
+  "807ed79fb50051d8",
+  "1fbd0b386f5f9b06",
+  "94ff238d92aaec86",
+  "de955e0526da651d",
+  "4954f75341736c24",
+  "cd646328295cd50e",
+  "cd6622cfa3cbff2c",
+  "1df45fd518edbff0",
+  "5277dad090925a29",
+  "95ccc54514f03940",
+  "35e3e614847e504b",
+  "1f4acc8d433c9446",
+  "bc93216f55cee86a",
+  "d5b92e8599fbc7f7",
+  "9c3c0bbaab7ca1d6",
+  "eca980749c2a74a7",
+  "b0cd8c1421f14aaf",
+  "dca6fb409ebdea43",
+  "4230e7870bdbed8d",
+  "af212c17a21b9af2",
+  "bc653c4a0252cd92",
+  "a73452fcdce18bca",
+  "9711e27801b39b09",
+  "fbc63af7c9f30889"
  ],
  "residue_r0": [
   {
@@ -16909,6 +17323,15 @@
     "name": "monitoring: Labor, Society & Democratic Institutions residue",
     "cites": [],
     "origin": "auto: weekly schema review 2026-08-24 \u2014 12 unexplained events in 7 days; FOR AUGUST'S REVIEW"
+   }
+  },
+  {
+   "axis": "A",
+   "subaxis": {
+    "key": "A.watch-ai",
+    "name": "monitoring: AI Safety, Alignment & Interpretability residue",
+    "cites": [],
+    "origin": "auto: weekly schema review 2026-09-14 \u2014 15 unexplained events in 7 days; FOR AUGUST'S REVIEW"
    }
   }
  ]
