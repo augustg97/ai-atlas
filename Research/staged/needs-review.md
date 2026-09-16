@@ -1,6 +1,6 @@
-# Emit needs-review — 20260914-1049
+# Emit needs-review — 20260916-1050
 
-175 items. Unparseable values are reported here, never guessed.
+176 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -118,6 +118,7 @@
 - entities/owain-evans: dangling relationship target 'entities/jacob-hilton'
 - entities/sequoia-capital: inline comment stripped from 'nonprofit  # placeholder — Sequoia is a '
 - entities/softbank: inline comment stripped from 'nonprofit  # placeholder — SoftBank is a'
+- entities/state-bar-of-new-mexico: inline comment stripped from 'regulator  # closest value — administers'
 - entities/timothy-b-lee: dangling relationship target 'entities/kaity-lee'
 - companies/aleph-alpha: dangling relationship target 'industries/automotive'
 - companies/alice: unparseable date 'undisclosed' (founded)

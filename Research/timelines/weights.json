@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-14",
+ "date": "2026-09-16",
  "axes": {
   "T": {
-   "T1": 0.09852678732596465,
-   "T2": 0.33334372419760117,
-   "T3": 0.2873518349116569,
-   "T4": 0.1625455087736199,
-   "T5": 0.11823214479115755
+   "T1": 0.09852678732596461,
+   "T2": 0.3333437241976011,
+   "T3": 0.28735183491165683,
+   "T4": 0.16254550877361987,
+   "T5": 0.11823214479115751
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08765718749622985,
-   "A2": 0.23804666097300414,
-   "A3": 0.14116311848186014,
-   "A4": 0.16046124975528905,
-   "A5": 0.09807152191937277,
-   "A6": 0.049035760959686384,
-   "A7": 0.22556450041455758
+   "A1": 0.08719540740037612,
+   "A2": 0.23794567379894893,
+   "A3": 0.1419520582096523,
+   "A4": 0.16039317684852397,
+   "A5": 0.09802991677434175,
+   "A6": 0.049014958387170876,
+   "A7": 0.22546880858098622
   },
   "C": {
-   "C1": 0.323821520144495,
-   "C2": 0.19542994118101376,
-   "C3": 0.11835010247596338,
-   "C4": 0.17716375337668283,
-   "C5": 0.05849516299637212,
-   "C6": 0.06336975991273645,
-   "C7": 0.05362056608000777,
-   "C8": 0.00974919383272869
+   "C1": 0.32341447832388387,
+   "C2": 0.19992920041088486,
+   "C3": 0.1183146874654253,
+   "C4": 0.17316238048842955,
+   "C5": 0.05847765894043467,
+   "C6": 0.06335079718547089,
+   "C7": 0.05360452069539844,
+   "C8": 0.009746276490072448
   },
   "R": {
    "R1": 0.14,
@@ -49,11 +49,11 @@
    "D4": 0.1490468440410634
   },
   "S": {
-   "S1": 0.23620682021266845,
-   "S2": 0.22923035108580808,
-   "S3": 0.2491462542778823,
-   "S4": 0.18699706600169597,
-   "S5": 0.09841950842194523
+   "S1": 0.23601785085742757,
+   "S2": 0.23064787999819578,
+   "S3": 0.2481460326916515,
+   "S4": 0.18684746526213025,
+   "S5": 0.09834077119059487
   },
   "P": {
    "P1": 0.17885241636590352,
@@ -63,11 +63,11 @@
    "P5": 0.1391074349512583
   },
   "E": {
-   "E1": 0.23573270418169617,
-   "E2": 0.17840989751025463,
-   "E3": 0.31824255204266744,
-   "E4": 0.18832155848304644,
-   "E5": 0.07929328778233544
+   "E1": 0.23718218277809994,
+   "E2": 0.17826339346739586,
+   "E3": 0.3171593335534104,
+   "E4": 0.18816691532669552,
+   "E5": 0.07922817487439822
   },
   "L": {
    "L1": 0.16,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19391521797992575,
-   "G2": 0.27632053521595784,
-   "G3": 0.1487032068291442,
-   "G4": 0.1487032068291442,
-   "G5": 0.09913547121942949,
-   "G6": 0.1332223619263984
+   "G1": 0.1939152179799258,
+   "G2": 0.2763205352159579,
+   "G3": 0.14870320682914423,
+   "G4": 0.14870320682914423,
+   "G5": 0.09913547121942952,
+   "G6": 0.13322236192639844
   }
  },
  "history": [
@@ -6808,6 +6808,352 @@
      "G6": 0.1332223619263984
     }
    }
+  },
+  {
+   "date": "2026-09-15",
+   "marginals": {
+    "T": {
+     "T1": 0.09852678732596462,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115753
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08719540740037612,
+     "A2": 0.23794567379894893,
+     "A3": 0.1419520582096523,
+     "A4": 0.16039317684852397,
+     "A5": 0.09802991677434175,
+     "A6": 0.049014958387170876,
+     "A7": 0.22546880858098622
+    },
+    "C": {
+     "C1": 0.32382492712359157,
+     "C2": 0.19999114912485533,
+     "C3": 0.11835134765671922,
+     "C4": 0.17259594438864037,
+     "C5": 0.058495778433534824,
+     "C6": 0.06337042663632939,
+     "C7": 0.05362113023074025,
+     "C8": 0.00974929640558914
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23385019518952188,
+     "D2": 0.3624890106382823,
+     "D3": 0.24924137597062382,
+     "D4": 0.15441941820157204
+    },
+    "S": {
+     "S1": 0.23612735140388774,
+     "S2": 0.22982655774854976,
+     "S3": 0.2487255412345314,
+     "S4": 0.18693415319474455,
+     "S5": 0.09838639641828661
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23665268121862154,
+     "E2": 0.17831690235534395,
+     "E3": 0.3175550628930186,
+     "E4": 0.1882233969306407,
+     "E5": 0.07925195660237513
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19146276362591322,
+     "G2": 0.26128601536627166,
+     "G3": 0.15165704385953768,
+     "G4": 0.15165704385953768,
+     "G5": 0.10623336890230332,
+     "G6": 0.13770376438643656
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09852678732596462,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115753
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08719540740037612,
+     "A2": 0.23794567379894893,
+     "A3": 0.1419520582096523,
+     "A4": 0.16039317684852397,
+     "A5": 0.09802991677434175,
+     "A6": 0.049014958387170876,
+     "A7": 0.22546880858098622
+    },
+    "C": {
+     "C1": 0.32382492712359157,
+     "C2": 0.19999114912485533,
+     "C3": 0.11835134765671922,
+     "C4": 0.17259594438864037,
+     "C5": 0.058495778433534824,
+     "C6": 0.06337042663632939,
+     "C7": 0.05362113023074025,
+     "C8": 0.00974929640558914
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23207823331036082,
+     "D2": 0.3704635159134701,
+     "D3": 0.24841140673510564,
+     "D4": 0.1490468440410634
+    },
+    "S": {
+     "S1": 0.23612735140388774,
+     "S2": 0.22982655774854976,
+     "S3": 0.2487255412345314,
+     "S4": 0.18693415319474455,
+     "S5": 0.09838639641828661
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23665268121862154,
+     "E2": 0.17831690235534395,
+     "E3": 0.3175550628930186,
+     "E4": 0.1882233969306407,
+     "E5": 0.07925195660237513
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19391521797992575,
+     "G2": 0.27632053521595784,
+     "G3": 0.1487032068291442,
+     "G4": 0.1487032068291442,
+     "G5": 0.09913547121942949,
+     "G6": 0.1332223619263984
+    }
+   }
+  },
+  {
+   "date": "2026-09-16",
+   "marginals": {
+    "T": {
+     "T1": 0.0985267873259646,
+     "T2": 0.3333437241976011,
+     "T3": 0.28735183491165683,
+     "T4": 0.16254550877361987,
+     "T5": 0.1182321447911575
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08719540740037612,
+     "A2": 0.23794567379894893,
+     "A3": 0.1419520582096523,
+     "A4": 0.16039317684852397,
+     "A5": 0.09802991677434175,
+     "A6": 0.049014958387170876,
+     "A7": 0.22546880858098622
+    },
+    "C": {
+     "C1": 0.32341447832388387,
+     "C2": 0.19992920041088486,
+     "C3": 0.1183146874654253,
+     "C4": 0.17316238048842955,
+     "C5": 0.05847765894043467,
+     "C6": 0.06335079718547089,
+     "C7": 0.05360452069539844,
+     "C8": 0.009746276490072448
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23392269968715915,
+     "D2": 0.3621560661513009,
+     "D3": 0.24927409986748228,
+     "D4": 0.1546471342940576
+    },
+    "S": {
+     "S1": 0.23601785085742757,
+     "S2": 0.23064787999819578,
+     "S3": 0.2481460326916515,
+     "S4": 0.18684746526213025,
+     "S5": 0.09834077119059487
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19143004798895089,
+     "G2": 0.2610990312189099,
+     "G3": 0.15169308983716848,
+     "G4": 0.15169308983716848,
+     "G5": 0.10632494301079412,
+     "G6": 0.1377597981070082
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.0985267873259646,
+     "T2": 0.3333437241976011,
+     "T3": 0.28735183491165683,
+     "T4": 0.16254550877361987,
+     "T5": 0.1182321447911575
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08719540740037612,
+     "A2": 0.23794567379894893,
+     "A3": 0.1419520582096523,
+     "A4": 0.16039317684852397,
+     "A5": 0.09802991677434175,
+     "A6": 0.049014958387170876,
+     "A7": 0.22546880858098622
+    },
+    "C": {
+     "C1": 0.32341447832388387,
+     "C2": 0.19992920041088486,
+     "C3": 0.1183146874654253,
+     "C4": 0.17316238048842955,
+     "C5": 0.05847765894043467,
+     "C6": 0.06335079718547089,
+     "C7": 0.05360452069539844,
+     "C8": 0.009746276490072448
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23207823331036082,
+     "D2": 0.3704635159134701,
+     "D3": 0.24841140673510564,
+     "D4": 0.1490468440410634
+    },
+    "S": {
+     "S1": 0.23601785085742757,
+     "S2": 0.23064787999819578,
+     "S3": 0.2481460326916515,
+     "S4": 0.18684746526213025,
+     "S5": 0.09834077119059487
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.1939152179799258,
+     "G2": 0.2763205352159579,
+     "G3": 0.14870320682914423,
+     "G4": 0.14870320682914423,
+     "G5": 0.09913547121942952,
+     "G6": 0.13322236192639844
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -12913,282 +13259,345 @@
     "https://www.404media.co/inside-project-lily-the-humans-reading-your-chatgpt-chats/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003184,
+   "sources": 1,
+   "repeat_k": 13.048,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004245,
+    "A.A1": -0.0002123
+   },
+   "applied": {
+    "A.A3": 0.0004245,
+    "A.A1": -0.0002123
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "92acb4a809410057",
+   "date": "2026-09-15",
+   "event_date": "2026-09-14",
+   "driver": "Anthropic, OpenAI and Google have been discussing the creation of an industry-represented body to coordinate safety standards, according to ",
+   "driver_urls": [
+    "https://www.washingtonpost.com/technology/2026/09/14/anthropic-openai-google-discussed-creating-new-ai-safety-body/",
+    "https://www.washingtonpost.com/newsletters/ai-tech-brief/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-federal-preemption-push",
+   "impact_class": "minor",
+   "magnitude": 0.0025328,
+   "sources": 2,
+   "repeat_k": 0.078,
+   "spread": 0.7071,
+   "requested": {
+    "C.C2": 0.0025328,
+    "C.C4": -0.0025328
+   },
+   "applied": {
+    "C.C2": 0.0025328,
+    "C.C4": -0.0025328
+   },
+   "cites": [
+    "legislation/eo-trump-december-2025-state-preemption",
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "cde37799c032f9d0",
+   "date": "2026-09-15",
+   "event_date": "2026-09-14",
+   "driver": "Update on Sam Altman's weekend endorsement of pacing: in a social media post on September 14, 2026, Altman said OpenAI does not believe it n",
+   "driver_urls": [
+    "https://www.washingtonpost.com/newsletters/ai-tech-brief/",
+    "https://www.platformer.news/trump-johnson-ai-safety-regulation/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002608,
+   "sources": 1,
+   "repeat_k": 10.53,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0003477,
+    "E.E3": -0.0001739
+   },
+   "applied": {
+    "E.E1": 0.0003477,
+    "E.E3": -0.0001739
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "88745348f8e2b164",
+   "date": "2026-09-15",
+   "event_date": "2026-09-14",
+   "driver": "Shield AI is in talks to raise new funds at a valuation of at least $20 billion, a person with knowledge of the fundraise said in a report p",
+   "driver_urls": [
+    "https://www.theinformation.com/articles/defense-startup-shield-ai-talks-valuation-least-20-billion"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002608,
+   "sources": 1,
+   "repeat_k": 10.53,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0003477,
+    "E.E3": -0.0001739
+   },
+   "applied": {
+    "E.E1": 0.0003477,
+    "E.E3": -0.0001739
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "7bf5e3643e317363",
+   "date": "2026-09-15",
+   "event_date": "2026-09-14",
+   "driver": "OpenAI acquired Glass Imaging in a deal worth over $300 million, according to a September 14, 2026 Wall Street Journal report. The Los Altos",
+   "driver_urls": [
+    "https://techcrunch.com/2026/09/14/openai-buys-smartphone-camera-maker-glass-imaging-for-300-million-report-says/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-federal-preemption-push",
+   "impact_class": "minor",
+   "magnitude": 0.0020263,
+   "sources": 1,
+   "repeat_k": 0.078,
+   "spread": 0.7071,
+   "requested": {
+    "C.C2": 0.0020263,
+    "C.C4": -0.0020263
+   },
+   "applied": {
+    "C.C2": 0.0020263,
+    "C.C4": -0.0020263
+   },
+   "cites": [
+    "legislation/eo-trump-december-2025-state-preemption",
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "164b510554e6e3da",
+   "date": "2026-09-15",
+   "event_date": "2026-09-14",
+   "driver": "The Software & Information Industry Association issued a release on September 14, 2026 supporting third-party testing of frontier AI as part",
+   "driver_urls": [
+    "https://insideaipolicy.com/ai-daily-news/siia-backs-third-party-reviews-frontier-ai-not-sold-requiring-ai-audits"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003184,
+   "sources": 1,
+   "repeat_k": 13.048,
+   "spread": 0.7071,
+   "requested": {
+    "A.A3": 0.0004245,
+    "A.A1": -0.0002123
+   },
+   "applied": {
+    "A.A3": 0.0004245,
+    "A.A1": -0.0002123
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "9c22295207e691c2",
+   "date": "2026-09-15",
+   "event_date": "2026-09-14",
+   "driver": "Microsoft published an AI code of conduct on September 14, 2026 committing to avoid building products that could evade human oversight and t",
+   "driver_urls": [
+    "https://www.theinformation.com/briefings/microsoft-joins-calls-ai-pacing-pledges-build-kill-switches-ai-products"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0002608,
+   "sources": 1,
+   "repeat_k": 10.53,
+   "spread": 0.5774,
+   "requested": {
+    "E.E1": 0.0003477,
+    "E.E3": -0.0001739
+   },
+   "applied": {
+    "E.E1": 0.0003477,
+    "E.E3": -0.0001739
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "45d37f9a696ca508",
+   "date": "2026-09-15",
+   "event_date": "2026-09-15",
+   "driver": "Anthropic remains on course to list publicly in 2026 and has selected the Nasdaq, with a filing expected as soon as this week seeking to rai",
+   "driver_urls": [],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0005052,
+   "sources": 1,
+   "repeat_k": 5.531,
+   "spread": 1.0,
+   "requested": {
+    "S.S2": 0.0006736,
+    "S.S3": -0.0003368
+   },
+   "applied": {
+    "S.S2": 0.0006736,
+    "S.S3": -0.0003368
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "4a69a4ca1c813839",
+   "date": "2026-09-15",
+   "event_date": "2026-09-14",
+   "driver": "Anthropic was identified on September 14, 2026 as the counterparty to Rum Group's six-year, $13.7 billion compute contract, which Rum Group ",
+   "driver_urls": [
+    "https://www.investing.com/news/stock-market-news/rumble-stock-surges-on-137b-anthropic-compute-deal-report-93CH-4899600"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-capital-commitment",
+   "impact_class": "minor",
+   "magnitude": 0.0004505,
+   "sources": 1,
+   "repeat_k": 12.254,
+   "spread": 1.0,
+   "requested": {
+    "E.E1": 0.0006007,
+    "E.E3": -0.0003003
+   },
+   "applied": {
+    "E.E1": 0.0006007,
+    "E.E3": -0.0003003
+   },
+   "cites": [
+    "analysis/ai-bubble-vs-buildout",
+    "concepts/ai-bubble-debate"
+   ],
+   "incident": "de47b1edc06ae7a7",
+   "date": "2026-09-16",
+   "event_date": "2026-09-15",
+   "driver": "Update on OpenAI's IPO posture: the company has held early conversations with investors about a private round at a $1.2 trillion valuation a",
+   "driver_urls": [
+    "https://www.ft.com/content/27509db8-b032-4437-9b2a-e909f466022f"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003481,
+   "sources": 1,
+   "repeat_k": 5.915,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004641,
+    "S.S3": -0.0002321
+   },
+   "applied": {
+    "S.S2": 0.0004641,
+    "S.S3": -0.0002321
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "3ac3aba9f17c533a",
+   "date": "2026-09-16",
+   "event_date": "2026-09-15",
+   "driver": "Meta said on September 15, 2026 that it is testing MTIA 450, codenamed Arke, the third generation of its in-house AI chip, and plans to begi",
+   "driver_urls": [
+    "https://www.bloomberg.com/news/articles/2026-09-15/meta-touts-the-cost-saving-benefits-of-latest-in-house-ai-chips"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-enforcement-action",
+   "impact_class": "minor",
+   "magnitude": 0.0004651,
+   "sources": 1,
+   "repeat_k": 7.403,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0006201,
+    "C.C1": -0.00031
+   },
+   "applied": {
+    "C.C4": 0.0006201,
+    "C.C1": -0.00031
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "legislation/eo-trump-december-2025-state-preemption"
+   ],
+   "incident": "efc9967011217106",
+   "date": "2026-09-16",
+   "event_date": "2026-09-15",
+   "driver": "Universal Music Group sued DistroKid in the US District Court for the District of Delaware, in a complaint reported on September 15, 2026 al",
+   "driver_urls": [
+    "https://www.musicbusinessworldwide.com/universal-music-group-sues-distrokid-ai-generated-slop/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.0003481,
+   "sources": 1,
+   "repeat_k": 5.915,
+   "spread": 0.7071,
+   "requested": {
+    "S.S2": 0.0004641,
+    "S.S3": -0.0002321
+   },
+   "applied": {
+    "S.S2": 0.0004641,
+    "S.S3": -0.0002321
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "25d03a2d7728ef89",
+   "date": "2026-09-16",
+   "event_date": "2026-09-15",
+   "driver": "New York Governor Kathy Hochul recommended in a document released on September 15, 2026 that local governments seek community investments of",
+   "driver_urls": [
+    "https://www.reuters.com/business/retail-consumer/new-york-proposes-1-million-per-megawatt-community-investment-data-centers-2026-09-15/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-08-05",
-   "section": "AI Industry & Markets",
-   "text": "Pichai told Google DeepMind teams on August 5, 2026 that Demis Hassabis will take on a new strategic role as chair of Go",
-   "reports": 1,
-   "fp": "a97625d7e9080aa3"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "AI Industry & Markets",
-   "text": "Jeff Dean, Google's chief scientist and a 27-year veteran of the company, left on August 5, 2026 to co-found Discovery L",
-   "reports": 1,
-   "fp": "9395496c63780b4d"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The Senate Committee on Commerce, Science and Transportation advanced four children's online-safety measures by voice vo",
-   "reports": 1,
-   "fp": "b98aae1445d53a2b"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Appian chief executive Matt Calkins said the White House's decision to withhold details of its AI model review framework",
-   "reports": 1,
-   "fp": "b1911dcc6b9ac82b"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Agentic AI & Coding",
-   "text": "Update on Meta's coding-agent effort, carried in the earlier file for this date as an internal tool named MetaCode: Meta",
-   "reports": 1,
-   "fp": "612ced09c3ec7b8a"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Update on the Senate Commerce children's online-safety votes carried in the August 5 files: the committee favorably repo",
-   "reports": 1,
-   "fp": "55d16bf279a02749"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The National Science Foundation announced the NSF State and Regional Artificial Intelligence Infrastructure Hubs program",
-   "reports": 1,
-   "fp": "bddd2d6c877bf496"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Software and government contractor groups told the General Services Administration on August 6, 2026 that its revised co",
-   "reports": 1,
-   "fp": "ea271c4541a3a6f1"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The Consumer Technology Association filed a comment submission targeting \"ambiguity\" in the Federal Trade Commission's p",
-   "reports": 1,
-   "fp": "83bfe198e416fc37"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "Update on the UK AI Security Institute incident carried in the August 4 22:05 file, which noted AISI had not named the a",
-   "reports": 1,
-   "fp": "069ff72387d78d3a"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Agentic AI & Coding",
-   "text": "Cloudflare published a proposed Agent Access Model on August 5, 2026, authored by Matt Silverlock, arguing that controls",
-   "reports": 1,
-   "fp": "8f17d8ad25d71f92"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on Meta's Muse Code release covered in the August 5 22:12 file: Meta Superintelligence Labs published the accompa",
-   "reports": 1,
-   "fp": "39e5a88088bafa99"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "Stanford researchers led by assistant professor Brian Hie reported in the journal Science on August 6, 2026 that they ha",
-   "reports": 1,
-   "fp": "1db21dd128958550"
-  },
-  {
-   "date": "2026-08-04",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The Trump administration convened staff from OpenAI, Anthropic, Google, Meta, Nvidia and other AI companies at the White",
-   "reports": 1,
-   "fp": "6aa219b9ba6d868f"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Update on the Federal Trade Commission's proposed AI policy statement, covered in the earlier August 6 file through the ",
-   "reports": 1,
-   "fp": "973c8605066ccf25"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Frontier Models & Capabilities",
-   "text": "OpenAI announced on August 6, 2026 that it is removing daily message caps on text chats for free ChatGPT accounts, while",
-   "reports": 1,
-   "fp": "9351700727103d47"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on Gemini 3.5 Pro, recorded in the August 5 file as months behind its original June launch target: SemiAnalysis r",
-   "reports": 1,
-   "fp": "e33528ff9fcee508"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "AI Industry & Markets",
-   "text": "Canva cut its revenue growth forecast after heavy use of newly launched AI features drove up costs and slowed their roll",
-   "reports": 1,
-   "fp": "57cd47b501c9609c"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "AI Litigation, Liability & Enforcement",
-   "text": "Gabe Weil of the Institute for Law and AI in Massachusetts proposed applying a system of strict liability to AI develope",
-   "reports": 1,
-   "fp": "da78cacb2bca819d"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Trump said in a Punchbowl News interview published August 7, 2026 that Congress wants to regulate the AI industry \"out o",
-   "reports": 1,
-   "fp": "1b6b4854f3ba3df3"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The Commerce Department's National Institute of Standards and Technology proposed guidelines on August 7, 2026 for evalu",
-   "reports": 1,
-   "fp": "9160adedc62f9285"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "AMD announced on August 6, 2026 a definitive agreement to acquire Taalas, a Toronto startup founded in 2023 that builds ",
-   "reports": 1,
-   "fp": "6d0024ea05c943d7"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Amazon Web Services leaders told engineers in meetings in May 2026 to save capacity wherever they could so that the EC2 ",
-   "reports": 1,
-   "fp": "fdd6caa07691279e"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "AI Industry & Markets",
-   "text": "OpenAI's first hardware device will be a doughnut-shaped, screenless speaker built from high-quality metal with moving p",
-   "reports": 1,
-   "fp": "74f0a4a81157752b"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "AI Industry & Markets",
-   "text": "Stripe entered exclusive talks to buy OpenRouter in a cash-and-stock deal valuing the AI-model marketplace at close to $",
-   "reports": 1,
-   "fp": "a71629b3a1e2f26c"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "AI Litigation, Liability & Enforcement",
-   "text": "Judge Bryan Biedscheid of a New Mexico state court in Santa Fe ordered Meta on August 6, 2026 to pay US$567 million into",
-   "reports": 1,
-   "fp": "4a452147ce971ff9"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "AI researcher Adele Lopez's documentation of \"spiralism\" \u2014 a quasi-spiritual movement arising from thousands of independ",
-   "reports": 1,
-   "fp": "eae35cc2f36c6958"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The Senate confirmed Adam Cassady as U.S. ambassador at large for cyberspace and digital policy on August 7, 2026, by 51",
-   "reports": 1,
-   "fp": "f680626527f72d54"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "Representatives Greg Casar, Valerie Foushee and Sara Jacobs introduced the AI Tax and Work Protection Act on August 6, 2",
-   "reports": 1,
-   "fp": "a567b8853b63de2d"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "AI Industry & Markets",
-   "text": "Alibaba plans to ask major users of the next version of its Qwen open-source model for a share of the revenue they make ",
-   "reports": 1,
-   "fp": "748b6dcde356fcd1"
-  },
-  {
-   "date": "2026-08-08",
-   "section": "AI Industry & Markets",
-   "text": "Apple published an updated Chinese-language guide explaining how eligible Mac users in mainland China can connect Alibab",
-   "reports": 1,
-   "fp": "bf8eee0fed199f95"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on ByteDance's model-development posture, reported August 5 as a refusal to use distillation: ByteDance's pre-tra",
-   "reports": 1,
-   "fp": "a779b8307a63a103"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "AI Litigation, Liability & Enforcement",
-   "text": "Update on the AI containment breaches disclosed by OpenAI, Anthropic and Meta: legal specialists set out on August 7, 20",
-   "reports": 1,
-   "fp": "d6c2d0f0cd967924"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "U.S. State AI Legislation",
-   "text": "California lawmakers took final public comments on roughly 30 AI bills during the week ending August 7, 2026, ahead of s",
-   "reports": 1,
-   "fp": "c86dd694f73eb760"
-  },
-  {
-   "date": "2026-08-05",
-   "section": "U.S. State AI Legislation",
-   "text": "Washington state's AI task force closed a two-year effort at a panel held on August 5, 2026 at the Seattle incubator AI ",
-   "reports": 1,
-   "fp": "9c56bebeb038b3bb"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Agentic AI & Coding",
-   "text": "Amazon Web Services, Anysphere, GitHub, Microsoft, OpenAI and Vercel published Agent Plugins 1.0.0 on August 6, 2026, a ",
-   "reports": 1,
-   "fp": "dce7ad2056ebe68c"
-  },
-  {
-   "date": "2026-08-09",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "Nathan Lambert argued on August 9, 2026 that the episode reads as a neutral-to-positive update on alignment and a negati",
-   "reports": 1,
-   "fp": "ab71fc7d089f8ba9"
-  },
-  {
-   "date": "2026-08-03",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "A Reuters/Ipsos poll conducted online over the six days ending August 3, 2026 and published August 9, 2026 found that 61",
-   "reports": 1,
-   "fp": "a304c1300d43aa77"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "The Economist published a briefing datelined Shenzhen, Suzhou and Zhengzhou on August 6, 2026 on the effect of China's A",
-   "reports": 1,
-   "fp": "e67fbfb448b81534"
-  },
   {
    "date": "2026-08-07",
    "section": "Frontier Models & Capabilities",
@@ -16415,6 +16824,279 @@
    "text": "Palantir Technologies, Nvidia and Booz Allen Hamilton have begun demanding new guarantees or reducing use of Anthropic's",
    "reports": 1,
    "fp": "fbc63af7c9f30889"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "On September 14, 2026, Nvidia CEO Jensen Huang was interviewed at the All-In Summit 2026 in Los Angeles and rejected the",
+   "reports": 1,
+   "fp": "c853177e88f768d8"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Bilal Chughtai disclosed on September 14, 2026 that he had resigned from Google DeepMind, where he worked on AGI safety ",
+   "reports": 1,
+   "fp": "bf03ff1cf2903a27"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Trump telephoned Huang during the live All-In panel on September 14, 2026, and Huang put the call on speakerphone for th",
+   "reports": 1,
+   "fp": "8af576dbe2b64d7f"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sens. Adam Schiff (D-California) and Jim Banks (R-Indiana) have introduced the \"Collaboration on Adversarial Threats and",
+   "reports": 1,
+   "fp": "f82ab632d07161f6"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "International AI Regulation",
+   "text": "Update on Beijing's response, which the morning file recorded through foreign ministry spokesperson Guo Jiakun: State Se",
+   "reports": 1,
+   "fp": "65f9439b62871565"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Reported but unverified",
+   "text": "Thune said on September 14, 2026 that the Senate could take up data-center legislation sponsored by Sen. Jon Husted (R-O",
+   "reports": 1,
+   "fp": "a90ffd834440090e"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "OpenAI endorsed a federal third-party assessment mandate on September 15, 2026, when chief global affairs officer Chris ",
+   "reports": 1,
+   "fp": "edbda21aa77650f2"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "President Trump rejected new AI guardrails on September 14, 2026, writing on Truth Social that \"the only control or 'gua",
+   "reports": 1,
+   "fp": "ae667b6d5c0a5090"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Protect Democracy obtained 132 pages of records from the Office of Science and Technology Policy through its FOIA reques",
+   "reports": 1,
+   "fp": "25977f46ce74fa53"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "White House AI adviser David Sacks and former Federal Trade Commission Chair Lina Khan each pointed to existing product-",
+   "reports": 1,
+   "fp": "3dbcb3b1e69d8511"
+  },
+  {
+   "date": "2026-09-09",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Jacob Coxon, a researcher who has worked at both OpenAI and Anthropic, announced on September 9, 2026 that he had resign",
+   "reports": 1,
+   "fp": "f7ffca28f33eb5bd"
+  },
+  {
+   "date": "2026-09-03",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI made GPT-6 Astra publicly available on September 3, 2026, the first model it has classified as meeting its \"criti",
+   "reports": 1,
+   "fp": "55b6673bd09181a7"
+  },
+  {
+   "date": "2026-09-12",
+   "section": "AI Industry & Markets",
+   "text": "Sam Altman said OpenAI will not pursue an initial public offering in 2026, telling Fortune in an interview published Sep",
+   "reports": 1,
+   "fp": "7ea4f3a3e2138772"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "International AI Regulation",
+   "text": "The Center for American Progress called on the United States and China to move toward an agreement on \"pacing\" the relea",
+   "reports": 1,
+   "fp": "12206dbca0ce5c31"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sanders will convene a private bipartisan briefing for senators on September 16, 2026, from 4 to 5 p.m. on Capitol Hill,",
+   "reports": 1,
+   "fp": "1080178be36a6c1d"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Elon Musk proposed on September 14, 2026 that xAI, OpenAI, Anthropic, Google, Meta and \"three or four of the leading Chi",
+   "reports": 1,
+   "fp": "95940a2741d28e68"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Jensen Huang told Salesforce CEO Marc Benioff at the Dreamforce keynote in San Francisco on September 15, 2026 that the ",
+   "reports": 1,
+   "fp": "43fda522f8f121b1"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Mark Zuckerberg wrote on X on September 15, 2026 that labs which fail to focus on alignment \"will fall behind,\" arguing ",
+   "reports": 1,
+   "fp": "d9b36218f2330aa3"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Bilal Chughtai, who worked on AI safety and alignment at Google DeepMind, wrote on X and LinkedIn on September 14, 2026 ",
+   "reports": 1,
+   "fp": "5b6ef5352d661d72"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Update on OpenAI's policy remarks: on September 15, 2026, global policy chief Chris Lehane said the company's safety eng",
+   "reports": 1,
+   "fp": "b3ec01edc7c57caa"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Treasury Secretary Scott Bessent told the House Financial Services Committee on September 15, 2026 that the government \"",
+   "reports": 1,
+   "fp": "892fdf5fafa167a5"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Senator Bernie Sanders (I-Vt.) said at the Future of Life Institute's Pro-Human Assembly in Washington on September 15, ",
+   "reports": 1,
+   "fp": "b00a23b755abba4f"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "The Commerce Department ordered the prediction market Kalshi to take down a futures product tracking AI compute prices, ",
+   "reports": 1,
+   "fp": "d7b2a4e98a0c6ab4"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "AI Industry & Markets",
+   "text": "Meta made its Meta One subscription bundles available globally on September 15, 2026, pairing Facebook Plus, Instagram P",
+   "reports": 1,
+   "fp": "9cf7ec15a985398f"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Industry & Markets",
+   "text": "Google made Anthropic's Opus 5 available to engineers across the company inside Antigravity, its internal development pl",
+   "reports": 1,
+   "fp": "9b88e186374e958a"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Amazon Web Services said on September 15, 2026 that it cannot restore access to resources and data hosted exclusively in",
+   "reports": 1,
+   "fp": "aea756a4288da0fd"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Frontier Models & Capabilities",
+   "text": "Google released Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking on September 15, 2026 through the Gemini API, Goog",
+   "reports": 1,
+   "fp": "d1b1d1a9f23d5f38"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "New York State Assemblymember Alex Bores launched the nonprofit Who Decides with former chief of staff Anna Myers on Sep",
+   "reports": 1,
+   "fp": "82452576c258fa7e"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "President Donald Trump wrote on Truth Social on September 14, 2026 that \"AI taking over the World, destroying Humanity, ",
+   "reports": 1,
+   "fp": "095bf5fefeee858d"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sens. Josh Hawley (R-Mo.) and Richard Blumenthal (D-Conn.) pressed congressional leadership for a floor vote on S.2938, ",
+   "reports": 1,
+   "fp": "cb9563521614b813"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Federal Trade Commission Chairman Andrew Ferguson said at Georgetown University on September 15, 2026 that \"everyone sho",
+   "reports": 1,
+   "fp": "df133affe168141e"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Organizers of the \"pro-human\" gathering on Capitol Hill on September 15, 2026 drew participants from across party lines,",
+   "reports": 1,
+   "fp": "19e286d6bc661246"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Microsoft AI chief Mustafa Suleyman argued in an essay released on September 16, 2026 that Anthropic's training of Claud",
+   "reports": 1,
+   "fp": "2f26b09197d5a257"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI CEO Sam Altman told Salesforce's Dreamforce conference in San Francisco on September 15, 2026 that \"the world is ",
+   "reports": 1,
+   "fp": "c721b9a7c155924a"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "SK Hynix is in talks with Intel about manufacturing memory chips on US soil for the first time, three people familiar wi",
+   "reports": 1,
+   "fp": "906757e1b4398824"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "International AI Regulation",
+   "text": "European Commission President Ursula von der Leyen told the European Parliament in Strasbourg on September 16, 2026 that",
+   "reports": 1,
+   "fp": "47d2df749a026ae7"
+  },
+  {
+   "date": "2026-09-14",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "The Spanish Data Protection Agency said in a blog post on September 14, 2026 that it had received the first reported not",
+   "reports": 1,
+   "fp": "9a69840e590c5b99"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "AI Industry & Markets",
+   "text": "Cohere and Aleph Alpha signed a definitive merger agreement on September 16, 2026, with the combined business operating ",
+   "reports": 1,
+   "fp": "b2582a52d53da9ce"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "A New York Times/Siena poll released on September 15, 2026 found Republicans leading Democrats by 42% to 40% on which pa",
+   "reports": 1,
+   "fp": "11e8a3310d923de4"
   }
  ],
  "seen": [
@@ -17202,7 +17884,58 @@
   "bc653c4a0252cd92",
   "a73452fcdce18bca",
   "9711e27801b39b09",
-  "fbc63af7c9f30889"
+  "fbc63af7c9f30889",
+  "c853177e88f768d8",
+  "bf03ff1cf2903a27",
+  "92acb4a809410057",
+  "8af576dbe2b64d7f",
+  "f82ab632d07161f6",
+  "cde37799c032f9d0",
+  "65f9439b62871565",
+  "88745348f8e2b164",
+  "7bf5e3643e317363",
+  "a90ffd834440090e",
+  "edbda21aa77650f2",
+  "ae667b6d5c0a5090",
+  "25977f46ce74fa53",
+  "3dbcb3b1e69d8511",
+  "164b510554e6e3da",
+  "9c22295207e691c2",
+  "f7ffca28f33eb5bd",
+  "55b6673bd09181a7",
+  "45d37f9a696ca508",
+  "7ea4f3a3e2138772",
+  "4a69a4ca1c813839",
+  "12206dbca0ce5c31",
+  "1080178be36a6c1d",
+  "95940a2741d28e68",
+  "43fda522f8f121b1",
+  "d9b36218f2330aa3",
+  "5b6ef5352d661d72",
+  "b3ec01edc7c57caa",
+  "892fdf5fafa167a5",
+  "b00a23b755abba4f",
+  "d7b2a4e98a0c6ab4",
+  "de47b1edc06ae7a7",
+  "9cf7ec15a985398f",
+  "9b88e186374e958a",
+  "aea756a4288da0fd",
+  "3ac3aba9f17c533a",
+  "d1b1d1a9f23d5f38",
+  "efc9967011217106",
+  "82452576c258fa7e",
+  "095bf5fefeee858d",
+  "cb9563521614b813",
+  "df133affe168141e",
+  "19e286d6bc661246",
+  "2f26b09197d5a257",
+  "c721b9a7c155924a",
+  "906757e1b4398824",
+  "25d03a2d7728ef89",
+  "47d2df749a026ae7",
+  "9a69840e590c5b99",
+  "b2582a52d53da9ce",
+  "11e8a3310d923de4"
  ],
  "residue_r0": [
   {
