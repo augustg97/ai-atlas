@@ -1,6 +1,6 @@
-# Emit needs-review — 20260916-1050
+# Emit needs-review — 20260917-1051
 
-176 items. Unparseable values are reported here, never guessed.
+177 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -108,6 +108,7 @@
 - entities/deirdre-mulligan: dangling relationship target 'entities/uc-berkeley'
 - entities/dominion-energy: inline comment stripped from 'nonprofit  # placeholder — Dominion is a'
 - entities/dylan-hadfield-menell: dangling relationship target 'entities/mit'
+- entities/gallup: inline comment stripped from 'nonprofit  # placeholder — Gallup, Inc. '
 - entities/henry-farrell: dangling relationship target 'entities/snf-agora-institute'
 - entities/house-select-committee-on-china: inline comment stripped from 'coalition  # placeholder — a congression'
 - entities/human-line-project: dangling relationship target 'concepts/ai-companion-chatbots'
@@ -116,6 +117,7 @@
 - entities/nextera: inline comment stripped from 'nonprofit  # placeholder — NextEra is a '
 - entities/nita-farahany: dangling relationship target 'concepts/incriminating-thoughts-spectrum'
 - entities/owain-evans: dangling relationship target 'entities/jacob-hilton'
+- entities/revelio-labs: inline comment stripped from 'nonprofit  # placeholder — Revelio Labs '
 - entities/sequoia-capital: inline comment stripped from 'nonprofit  # placeholder — Sequoia is a '
 - entities/softbank: inline comment stripped from 'nonprofit  # placeholder — SoftBank is a'
 - entities/state-bar-of-new-mexico: inline comment stripped from 'regulator  # closest value — administers'
@@ -132,12 +134,11 @@
 - companies/lancium: unparseable date 'undisclosed' (founded)
 - companies/openevidence: unparseable date 'unknown' (founded)
 - companies/openrouter: unparseable date 'unknown' (founded)
-- companies/sierra: unparseable date 'unknown' (founded)
 - companies/snowflake: dangling relationship target 'concepts/enterprise-ai'
 - companies/spear-street-technology: unparseable date 'unknown' (founded)
 - companies/stepfun: unparseable date 'unknown' (founded)
+- companies/zerra-dc: unparseable date 'unknown' (founded)
 - models/muse-spark: inline comment stripped from 'false  # every shipped version; Meta ann'
-- legislation/create-ai-act: dangling relationship target 'entities/todd-young|Sen. Todd Young (R-IN)'
 - legislation/ct-sb-4: dangling relationship target 'concepts/state-level-privacy-regulation'
 - legislation/ct-sb-4: dangling relationship target 'entities/cppa'
 - legislation/ct-sb-5: dangling relationship target 'concepts/ai-companion-regulation'

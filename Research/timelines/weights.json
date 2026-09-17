@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-16",
+ "date": "2026-09-17",
  "axes": {
   "T": {
-   "T1": 0.09852678732596461,
-   "T2": 0.3333437241976011,
-   "T3": 0.28735183491165683,
-   "T4": 0.16254550877361987,
-   "T5": 0.11823214479115751
+   "T1": 0.09852678732596462,
+   "T2": 0.33334372419760117,
+   "T3": 0.2873518349116569,
+   "T4": 0.1625455087736199,
+   "T5": 0.11823214479115753
   },
   "K": {
    "K1": 0.575,
@@ -16,13 +16,13 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08719540740037612,
-   "A2": 0.23794567379894893,
-   "A3": 0.1419520582096523,
-   "A4": 0.16039317684852397,
-   "A5": 0.09802991677434175,
-   "A6": 0.049014958387170876,
-   "A7": 0.22546880858098622
+   "A1": 0.08678716071361567,
+   "A2": 0.23785644747744647,
+   "A3": 0.14264936388608193,
+   "A4": 0.160333031635813,
+   "A5": 0.09799315691764286,
+   "A6": 0.04899657845882143,
+   "A7": 0.2253842609105788
   },
   "C": {
    "C1": 0.32341447832388387,
@@ -49,11 +49,11 @@
    "D4": 0.1490468440410634
   },
   "S": {
-   "S1": 0.23601785085742757,
-   "S2": 0.23064787999819578,
-   "S3": 0.2481460326916515,
-   "S4": 0.18684746526213025,
-   "S5": 0.09834077119059487
+   "S1": 0.23589047399108107,
+   "S2": 0.23160317336148703,
+   "S3": 0.2474720299082088,
+   "S4": 0.18674662524293928,
+   "S5": 0.09828769749628384
   },
   "P": {
    "P1": 0.17885241636590352,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.1939152179799258,
-   "G2": 0.2763205352159579,
-   "G3": 0.14870320682914423,
-   "G4": 0.14870320682914423,
-   "G5": 0.09913547121942952,
-   "G6": 0.13322236192639844
+   "G1": 0.19391521797992575,
+   "G2": 0.27632053521595784,
+   "G3": 0.1487032068291442,
+   "G4": 0.1487032068291442,
+   "G5": 0.09913547121942949,
+   "G6": 0.1332223619263984
   }
  },
  "history": [
@@ -7154,6 +7154,179 @@
      "G6": 0.13322236192639844
     }
    }
+  },
+  {
+   "date": "2026-09-17",
+   "marginals": {
+    "T": {
+     "T1": 0.09852678732596461,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115751
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08678716071361565,
+     "A2": 0.23785644747744641,
+     "A3": 0.1426493638860819,
+     "A4": 0.16033303163581297,
+     "A5": 0.09799315691764283,
+     "A6": 0.04899657845882142,
+     "A7": 0.22538426091057875
+    },
+    "C": {
+     "C1": 0.32341447832388387,
+     "C2": 0.19992920041088486,
+     "C3": 0.1183146874654253,
+     "C4": 0.17316238048842955,
+     "C5": 0.05847765894043467,
+     "C6": 0.06335079718547089,
+     "C7": 0.05360452069539844,
+     "C8": 0.009746276490072448
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23387442349627904,
+     "D2": 0.3623778142166354,
+     "D3": 0.24925232241005077,
+     "D4": 0.15449543987703482
+    },
+    "S": {
+     "S1": 0.23589047399108107,
+     "S2": 0.23160317336148703,
+     "S3": 0.2474720299082088,
+     "S4": 0.18674662524293928,
+     "S5": 0.09828769749628384
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19143004798895089,
+     "G2": 0.2610990312189099,
+     "G3": 0.15169308983716848,
+     "G4": 0.15169308983716848,
+     "G5": 0.10632494301079412,
+     "G6": 0.1377597981070082
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09852678732596461,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115751
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08678716071361565,
+     "A2": 0.23785644747744641,
+     "A3": 0.1426493638860819,
+     "A4": 0.16033303163581297,
+     "A5": 0.09799315691764283,
+     "A6": 0.04899657845882142,
+     "A7": 0.22538426091057875
+    },
+    "C": {
+     "C1": 0.32341447832388387,
+     "C2": 0.19992920041088486,
+     "C3": 0.1183146874654253,
+     "C4": 0.17316238048842955,
+     "C5": 0.05847765894043467,
+     "C6": 0.06335079718547089,
+     "C7": 0.05360452069539844,
+     "C8": 0.009746276490072448
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23207823331036082,
+     "D2": 0.3704635159134701,
+     "D3": 0.24841140673510564,
+     "D4": 0.1490468440410634
+    },
+    "S": {
+     "S1": 0.23589047399108107,
+     "S2": 0.23160317336148703,
+     "S3": 0.2474720299082088,
+     "S4": 0.18674662524293928,
+     "S5": 0.09828769749628384
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19391521797992575,
+     "G2": 0.27632053521595784,
+     "G3": 0.1487032068291442,
+     "G4": 0.1487032068291442,
+     "G5": 0.09913547121942949,
+     "G6": 0.1332223619263984
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -13595,107 +13768,122 @@
     "https://www.reuters.com/business/retail-consumer/new-york-proposes-1-million-per-megawatt-community-investment-data-centers-2026-09-15/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0005631,
+   "sources": 2,
+   "repeat_k": 12.344,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0007508,
+    "A.A1": -0.0003754
+   },
+   "applied": {
+    "A.A3": 0.0007508,
+    "A.A1": -0.0003754
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "ed1963b7621dc560",
+   "date": "2026-09-17",
+   "event_date": "2026-09-16",
+   "driver": "OpenAI published a framework for tracking, investigating and disclosing model misalignment on September 16, 2026, together with six reports ",
+   "driver_urls": [
+    "https://openai.com/index/model-misalignment-reporting-framework/",
+    "https://www.wsj.com/tech/ai/openai-shares-more-safety-incidents-and-adopts-new-rules-for-reporting-them-d1ea1b09"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.00027,
+   "sources": 1,
+   "repeat_k": 7.169,
+   "spread": 0.5774,
+   "requested": {
+    "S.S2": 0.0003601,
+    "S.S3": -0.00018
+   },
+   "applied": {
+    "S.S2": 0.0003601,
+    "S.S3": -0.00018
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "fe72ebb64db244a2",
+   "date": "2026-09-17",
+   "event_date": "2026-09-16",
+   "driver": "Anthropic signed its first Australian data centre lease, two people familiar with the deal said in an account published September 16, 2026, ",
+   "driver_urls": [
+    "https://www.reuters.com/world/asia-pacific/anthropic-signs-first-australia-data-centre-agreement-2026-09-16/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.00027,
+   "sources": 1,
+   "repeat_k": 7.169,
+   "spread": 0.5774,
+   "requested": {
+    "S.S2": 0.0003601,
+    "S.S3": -0.00018
+   },
+   "applied": {
+    "S.S2": 0.0003601,
+    "S.S3": -0.00018
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "62473ee6fbc8b22d",
+   "date": "2026-09-17",
+   "event_date": "2026-09-16",
+   "driver": "The House of Representatives passed the Ratepayer Protection Act (H.R. 9340) by 417-3 on September 16, 2026, establishing standards state re",
+   "driver_urls": [
+    "https://www.cnbc.com/2026/09/15/congress-ai-data-center-utility-costs.html"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-compute-buildout",
+   "impact_class": "minor",
+   "magnitude": 0.00027,
+   "sources": 1,
+   "repeat_k": 7.169,
+   "spread": 0.5774,
+   "requested": {
+    "S.S2": 0.0003601,
+    "S.S3": -0.00018
+   },
+   "applied": {
+    "S.S2": 0.0003601,
+    "S.S3": -0.00018
+   },
+   "cites": [
+    "concepts/compute-governance",
+    "analysis/ai-bubble-vs-buildout"
+   ],
+   "incident": "41b9da755979adfa",
+   "date": "2026-09-17",
+   "event_date": "2026-09-16",
+   "driver": "Google, Nvidia and the startup Emerald AI launched the AI Energy Management Alliance on September 16, 2026, a coalition of 20 companies and ",
+   "driver_urls": [
+    "https://www.axios.com/2026/09/16/tech-giants-launch-flexible-power-coalition-data-centers"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-08-07",
-   "section": "Frontier Models & Capabilities",
-   "text": "xAI made Imagine Image 2.0 generally available on August 7, 2026 as the new Quality Mode on grok.com/imagine and in its ",
-   "reports": 1,
-   "fp": "50d2da3a65e4eb62"
-  },
-  {
-   "date": "2026-08-09",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Local government measures restricting data-centre development passed 500 nationwide as of August 9, 2026, with New York ",
-   "reports": 1,
-   "fp": "e76b9893f2a8d3fb"
-  },
-  {
-   "date": "2026-08-07",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Amazon confirmed on August 7, 2026 that it is financing a private gas power plant in Pecos County, Texas to supply a pla",
-   "reports": 1,
-   "fp": "1da43dc7bc963ef9"
-  },
-  {
-   "date": "2026-08-08",
-   "section": "Agentic AI & Coding",
-   "text": "Anthropic said on August 8, 2026 that auto mode will become the default for new Claude Code sessions on Pro, Max and Tea",
-   "reports": 1,
-   "fp": "c65c3d4083bba142"
-  },
-  {
-   "date": "2026-08-09",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Tim Fist, director of emerging technology policy at the Institute for Progress, and Saif M. Khan, a distinguished fellow",
-   "reports": 1,
-   "fp": "80c26dfe822b7aea"
-  },
-  {
-   "date": "2026-08-08",
-   "section": "AI Industry & Markets",
-   "text": "Update on Google's August 5 research reorganisation: Tim O'Reilly wrote on August 8, 2026 that alongside Demis Hassabis ",
-   "reports": 1,
-   "fp": "34fb78fd45afb07a"
-  },
-  {
-   "date": "2026-08-06",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "The Verge published a report on August 6, 2026 on \"spiralism,\" the term AI researcher Adele Lopez gave to a quasi-spirit",
-   "reports": 1,
-   "fp": "d8d8653f206d0236"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "SpaceX confirmed on August 10, 2026 that it will power Terafab with newly built natural gas plants and \"very large batte",
-   "reports": 1,
-   "fp": "6c9cf512b10873b3"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Frontier Models & Capabilities",
-   "text": "Meta released Muse Glimmer, an open-weight agentic model sized to run on a Mac or PC with a single graphics card, on Aug",
-   "reports": 1,
-   "fp": "8b014ed0266c3a7f"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Nvidia said in a statement on August 10, 2026 that Apollo Global Management, Blackstone, BlackRock, Brookfield Asset Man",
-   "reports": 1,
-   "fp": "36286bc7c9b475b0"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Anthropic, Macquarie Asset Management and Singapore's sovereign wealth fund GIC said on August 10, 2026 that they had fo",
-   "reports": 1,
-   "fp": "397824c6fa664c53"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Americans for Responsible Innovation published a federal frontier-AI governance blueprint on August 10, 2026, written by",
-   "reports": 1,
-   "fp": "ad6e32d0c26b88a0"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Frontier Models & Capabilities",
-   "text": "Update on Meta's Muse Glimmer release of August 10, 2026, covered in the morning file: Meta specified the model at 30 bi",
-   "reports": 1,
-   "fp": "6cac8ba65fedbe2f"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Frontier Models & Capabilities",
-   "text": "Anthropic disclosed on August 10, 2026 that an unreleased research version of Claude improved the longstanding lower bou",
-   "reports": 1,
-   "fp": "a4c03817c1d19d5c"
-  },
   {
    "date": "2026-08-10",
    "section": "AI Safety, Alignment & Interpretability",
@@ -17097,6 +17285,104 @@
    "text": "A New York Times/Siena poll released on September 15, 2026 found Republicans leading Democrats by 42% to 40% on which pa",
    "reports": 1,
    "fp": "11e8a3310d923de4"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "House Speaker Mike Johnson (R-Louisiana) does not intend to keep the House in session past Thursday, September 17, 2026,",
+   "reports": 1,
+   "fp": "0f62c8e4fc8dd00c"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "A coalition of AI researchers and 19 advocacy groups sent a letter on September 16, 2026 to Senate Majority Leader John ",
+   "reports": 1,
+   "fp": "eaef26c0ae239188"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Senate Commerce Committee Chair Ted Cruz (R-Texas) said on September 16, 2026 that he would \"love to mark it up this mon",
+   "reports": 1,
+   "fp": "bec64ba2ad93798f"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "More than 100 House Democrats wrote to Speaker Mike Johnson on September 16, 2026 urging him to keep the chamber in sess",
+   "reports": 1,
+   "fp": "bda0896128718a02"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Google and Google DeepMind launched the DeepMind Institute on September 16, 2026 as a forum for internal and outside res",
+   "reports": 1,
+   "fp": "a7913bd7e1720e88"
+  },
+  {
+   "date": "2026-09-15",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "Gallup and the Special Competitive Studies Project published a report dated September 15, 2026, based on a nationally re",
+   "reports": 1,
+   "fp": "04a7621e559dac18"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "National Security & Geopolitics",
+   "text": "Treasury Secretary Scott Bessent said in a statement published September 16, 2026 that the United States is open to disc",
+   "reports": 1,
+   "fp": "34b8caa8115a9fdf"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "King Charles III warned artificial-intelligence executives on September 17, 2026 at Dumfries House in Cumnock, Scotland,",
+   "reports": 1,
+   "fp": "e01e8e2ce7d00455"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Amazon set out its position on AI safety in a statement provided to Reuters late on September 16, 2026, saying models sh",
+   "reports": 1,
+   "fp": "2096e4271f3edcdb"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sen. Elizabeth Warren (D-Mass.) called on September 16, 2026 for a pause on advanced AI development, ahead of a roundtab",
+   "reports": 1,
+   "fp": "b942c7ea0476de1e"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Sen. Mark Warner (D-Va.), vice chairman of the Senate Intelligence Committee, said in a September 16, 2026 interview tha",
+   "reports": 1,
+   "fp": "f39b729e6c2d0afa"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "Compute, Chips & Infrastructure",
+   "text": "Huawei said on September 17, 2026 at its Connect conference in Shanghai that its Ascend 960DT chip would be ready in the",
+   "reports": 1,
+   "fp": "7527f83cae743a70"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "National Security & Geopolitics",
+   "text": "Melanie Sisson of the Brookings Institution and Tianjiao Jiang of Fudan University published recommendations in the week",
+   "reports": 1,
+   "fp": "abe143bad4fb0d84"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Brinkema's opinion, in the account published on September 16, 2026, cites the rise of new technologies including artific",
+   "reports": 1,
+   "fp": "72bcaafa6e77e12b"
   }
  ],
  "seen": [
@@ -17935,7 +18221,25 @@
   "47d2df749a026ae7",
   "9a69840e590c5b99",
   "b2582a52d53da9ce",
-  "11e8a3310d923de4"
+  "11e8a3310d923de4",
+  "0f62c8e4fc8dd00c",
+  "eaef26c0ae239188",
+  "bec64ba2ad93798f",
+  "bda0896128718a02",
+  "ed1963b7621dc560",
+  "a7913bd7e1720e88",
+  "fe72ebb64db244a2",
+  "62473ee6fbc8b22d",
+  "04a7621e559dac18",
+  "34b8caa8115a9fdf",
+  "e01e8e2ce7d00455",
+  "2096e4271f3edcdb",
+  "b942c7ea0476de1e",
+  "f39b729e6c2d0afa",
+  "7527f83cae743a70",
+  "41b9da755979adfa",
+  "abe143bad4fb0d84",
+  "72bcaafa6e77e12b"
  ],
  "residue_r0": [
   {
