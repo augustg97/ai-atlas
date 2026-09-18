@@ -1,5 +1,5 @@
 {
- "observed_count": 9,
+ "observed_count": 10,
  "distinct_states": 8,
  "laws": [
   {
@@ -101,6 +101,16 @@
     "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians-calls-on-the-federal-government-to-do-its-part/"
    ],
    "text": "California Gov. Gavin Newsom signed Senate Bill 813 and Assembly Bill 1405 into law on September 9, 2026. SB 813, authored by Sen. Jerry McNerney (D-Pleasanton), establishes a fram"
+  },
+  {
+   "key": "California|#1050",
+   "state": "California",
+   "bill": "#1050",
+   "first_seen": "2026-09-16",
+   "urls": [
+    "https://www.gov.ca.gov/2026/09/16/governor-newsom-signs-new-law-to-protect-workers-require-disclosures-on-ai-generated-advertising/"
+   ],
+   "text": "California Governor Gavin Newsom signed SB 1050, authored by Senator Angelique Ashby, on September 16, 2026 at the headquarters of the bill's sponsor SAG-AFTRA, requiring explicit "
   }
  ],
  "series": [
@@ -184,6 +194,15 @@
    "count": 9,
    "state": "California",
    "bill": "#813"
+  },
+  {
+   "date": {
+    "iso": "2026-09-16",
+    "kind": "event"
+   },
+   "count": 10,
+   "state": "California",
+   "bill": "#1050"
   }
  ],
  "bound": "lower",
@@ -191,7 +210,7 @@
  "claim": {
   "id": "cl-state-laws-2026",
   "threshold": 90,
-  "observed": 9,
+  "observed": 10,
   "resolves_claim": false,
   "can_refute": false,
   "why": "The wiki tracks policy-notable developments, not the full legislative output of fifty states, so this count is a lower bound on the claim's universe. It can confirm the claim if it alone passes the threshold; it can never refute it. Resolving the claim needs NCSL (or an equivalent named tracker) ingested as a witness.",

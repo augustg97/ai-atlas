@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-17",
+ "date": "2026-09-18",
  "axes": {
   "T": {
-   "T1": 0.09852678732596462,
-   "T2": 0.33334372419760117,
-   "T3": 0.2873518349116569,
-   "T4": 0.1625455087736199,
-   "T5": 0.11823214479115753
+   "T1": 0.0985267873259646,
+   "T2": 0.3333437241976011,
+   "T3": 0.28735183491165683,
+   "T4": 0.16254550877361987,
+   "T5": 0.1182321447911575
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08678716071361567,
-   "A2": 0.23785644747744647,
-   "A3": 0.14264936388608193,
-   "A4": 0.160333031635813,
-   "A5": 0.09799315691764286,
-   "A6": 0.04899657845882143,
-   "A7": 0.2253842609105788
+   "A1": 0.08646063291743211,
+   "A2": 0.23778506191223486,
+   "A3": 0.14320715347821936,
+   "A4": 0.16028491242690868,
+   "A5": 0.0979637471750539,
+   "A6": 0.04898187358752695,
+   "A7": 0.2253166185026242
   },
   "C": {
-   "C1": 0.32341447832388387,
-   "C2": 0.19992920041088486,
-   "C3": 0.1183146874654253,
-   "C4": 0.17316238048842955,
-   "C5": 0.05847765894043467,
-   "C6": 0.06335079718547089,
-   "C7": 0.05360452069539844,
-   "C8": 0.009746276490072448
+   "C1": 0.3217972266943594,
+   "C2": 0.19892944360707773,
+   "C3": 0.11266913349959959,
+   "C4": 0.18235094178140274,
+   "C5": 0.05818523823712438,
+   "C6": 0.0630340080902181,
+   "C7": 0.05333646838403069,
+   "C8": 0.009697539706187402
   },
   "R": {
    "R1": 0.14,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.19391521797992575,
-   "G2": 0.27632053521595784,
-   "G3": 0.1487032068291442,
-   "G4": 0.1487032068291442,
-   "G5": 0.09913547121942949,
-   "G6": 0.1332223619263984
+   "G1": 0.1939152179799258,
+   "G2": 0.2763205352159579,
+   "G3": 0.14870320682914423,
+   "G4": 0.14870320682914423,
+   "G5": 0.09913547121942952,
+   "G6": 0.13322236192639844
   }
  },
  "history": [
@@ -7327,6 +7327,179 @@
      "G6": 0.1332223619263984
     }
    }
+  },
+  {
+   "date": "2026-09-18",
+   "marginals": {
+    "T": {
+     "T1": 0.09852678732596461,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115751
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08646063291743211,
+     "A2": 0.23778506191223486,
+     "A3": 0.14320715347821936,
+     "A4": 0.16028491242690868,
+     "A5": 0.0979637471750539,
+     "A6": 0.04898187358752695,
+     "A7": 0.2253166185026242
+    },
+    "C": {
+     "C1": 0.3217972266943594,
+     "C2": 0.19892944360707773,
+     "C3": 0.11266913349959959,
+     "C4": 0.18235094178140274,
+     "C5": 0.05818523823712438,
+     "C6": 0.0630340080902181,
+     "C7": 0.05333646838403069,
+     "C8": 0.009697539706187402
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.2338015571316942,
+     "D2": 0.3627120513295597,
+     "D3": 0.24921936689605836,
+     "D4": 0.1542670246426878
+    },
+    "S": {
+     "S1": 0.23589047399108107,
+     "S2": 0.23160317336148703,
+     "S3": 0.2474720299082088,
+     "S4": 0.18674662524293928,
+     "S5": 0.09828769749628384
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.19141371675669136,
+     "G2": 0.2610058095647557,
+     "G3": 0.15171105403913096,
+     "G4": 0.15171105403913096,
+     "G5": 0.10637062901120714,
+     "G6": 0.13778773658908375
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09852678732596461,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115751
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08646063291743211,
+     "A2": 0.23778506191223486,
+     "A3": 0.14320715347821936,
+     "A4": 0.16028491242690868,
+     "A5": 0.0979637471750539,
+     "A6": 0.04898187358752695,
+     "A7": 0.2253166185026242
+    },
+    "C": {
+     "C1": 0.3217972266943594,
+     "C2": 0.19892944360707773,
+     "C3": 0.11266913349959959,
+     "C4": 0.18235094178140274,
+     "C5": 0.05818523823712438,
+     "C6": 0.0630340080902181,
+     "C7": 0.05333646838403069,
+     "C8": 0.009697539706187402
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23207823331036082,
+     "D2": 0.3704635159134701,
+     "D3": 0.24841140673510564,
+     "D4": 0.1490468440410634
+    },
+    "S": {
+     "S1": 0.23589047399108107,
+     "S2": 0.23160317336148703,
+     "S3": 0.2474720299082088,
+     "S4": 0.18674662524293928,
+     "S5": 0.09828769749628384
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.1939152179799258,
+     "G2": 0.2763205352159579,
+     "G3": 0.14870320682914423,
+     "G4": 0.14870320682914423,
+     "G5": 0.09913547121942952,
+     "G6": 0.13322236192639844
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -13881,121 +14054,93 @@
     "https://www.axios.com/2026/09/16/tech-giants-launch-flexible-power-coalition-data-centers"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0004506,
+   "sources": 1,
+   "repeat_k": 12.086,
+   "spread": 1.0,
+   "requested": {
+    "A.A3": 0.0006008,
+    "A.A1": -0.0003004
+   },
+   "applied": {
+    "A.A3": 0.0006008,
+    "A.A1": -0.0003004
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "778737959f8bac71",
+   "date": "2026-09-18",
+   "event_date": "2026-09-16",
+   "driver": "OpenAI published a framework for tracking, investigating, and disclosing model misalignment on September 16, 2026, together with six reports",
+   "driver_urls": [
+    "https://openai.com/index/model-misalignment-reporting-framework/"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-regulatory-implementation",
+   "impact_class": "minor",
+   "magnitude": 0.0029264,
+   "sources": 1,
+   "repeat_k": 0.042,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0039018,
+    "C.C3": -0.0019509
+   },
+   "applied": {
+    "C.C4": 0.0039018,
+    "C.C3": -0.0019509
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation",
+    "sources/europe-2031"
+   ],
+   "incident": "3e83b2d7804b5b62",
+   "date": "2026-09-18",
+   "event_date": "2026-09-17",
+   "driver": "The European Commission proposed the EU KIDS Act \u2014 \"EU Keeping Internet Digital Spaces Accountable and Trustworthy\" \u2014 in guidance published ",
+   "driver_urls": [
+    "https://digital-strategy.ec.europa.eu/en/faqs/kids-act-explained",
+    "https://digital-strategy.ec.europa.eu/en/policies/kids-act"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-state-law-enacted",
+   "impact_class": "notable",
+   "magnitude": 0.0046433,
+   "sources": 1,
+   "repeat_k": 0.982,
+   "spread": 1.0,
+   "requested": {
+    "C.C4": 0.0061911,
+    "C.C3": -0.0030956
+   },
+   "applied": {
+    "C.C4": 0.0061911,
+    "C.C3": -0.0030956
+   },
+   "cites": [
+    "analysis/eu-vs-us-ai-regulation"
+   ],
+   "incident": "9b8c437dcbdaf9b2",
+   "date": "2026-09-18",
+   "event_date": "2026-09-16",
+   "driver": "California Governor Gavin Newsom signed SB 1050, authored by Senator Angelique Ashby, on September 16, 2026 at the headquarters of the bill'",
+   "driver_urls": [
+    "https://www.gov.ca.gov/2026/09/16/governor-newsom-signs-new-law-to-protect-workers-require-disclosures-on-ai-generated-advertising/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-08-10",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "Update on OpenAI's August 7 disclosure that it could not rule out Critical cyber capability in Astra: on August 10, 2026",
-   "reports": 1,
-   "fp": "a6102613d6344011"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "U.S. State AI Legislation",
-   "text": "California Governor Gavin Newsom announced on August 10, 2026 an AI Cyber Defense Program directing state agencies to es",
-   "reports": 1,
-   "fp": "12668ce5bfb49dec"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Update on Nvidia's August 10, 2026 financing announcement: the arrangements with Apollo Global Management, BlackRock, Bl",
-   "reports": 1,
-   "fp": "8241a6a6e8a62fcd"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Update on Intel's $15 billion common stock offering, announced August 10, 2026 and dropped from the previous file for la",
-   "reports": 1,
-   "fp": "2f1d4972c1d0887d"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Update on Mark Zuckerberg's August 10, 2026 essay, previously covered through its proposal that labs share intermediate ",
-   "reports": 1,
-   "fp": "962d6effef7c1af0"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Representative John Moolenaar (R-MI), chair of the House select committee on China, has told the Commerce Department tha",
-   "reports": 1,
-   "fp": "9673915e2dc51899"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "AI Standards & Safety Frameworks",
-   "text": "Anthropic confirmed on August 11, 2026, through an updated support page, that it will watermark text and files generated",
-   "reports": 1,
-   "fp": "e27cf5f7d9c27004"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Reported but unverified",
-   "text": "Meta's stated plan to release an open-weight version of its flagship Muse Spark 1.2 model became public on August 11, 20",
-   "reports": 1,
-   "fp": "2b4d9f47912de08f"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Reported but unverified",
-   "text": "Caitlin Kalinowski's move from leading OpenAI's robotics effort to Anthropic as a member of technical staff became publi",
-   "reports": 1,
-   "fp": "ac39bfedf55f15a2"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Reported but unverified",
-   "text": "Nvidia's investment in a new in-house open-source model family it calls Nemotron 4 became public on August 11, 2026; no ",
-   "reports": 1,
-   "fp": "e1abb5cd823f1091"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Update on Nvidia's compute-financing alliance, covered this morning through the announcement and The Information's accou",
-   "reports": 1,
-   "fp": "6b72e0a71f77abf2"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "CoreWeave reported second-quarter results on August 11, 2026 showing revenue of $2.58 billion, up 112% year over year ag",
-   "reports": 1,
-   "fp": "e9bbf57f1939f82b"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "AI Industry & Markets",
-   "text": "Manus said on August 11, 2026 that it will \"soon return to operating as an independent company,\" which The Information r",
-   "reports": 1,
-   "fp": "e291eb91c9945f73"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "AI Safety, Alignment & Interpretability",
-   "text": "Researchers at the University of T\u00fcbingen, the Max Planck Institute, MATS Research and the security firm Snyk disclosed,",
-   "reports": 1,
-   "fp": "81ecb6d89c67c1b0"
-  },
-  {
-   "date": "2026-08-10",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Twenty-nine House Democrats led by Representatives Greg Casar and Doris Matsui wrote to OpenAI on August 10, 2026 asking",
-   "reports": 1,
-   "fp": "c0c8f9305462c479"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Labor, Society & Democratic Institutions",
-   "text": "Western Australia Police have been running the country's first live facial recognition trial by a police force since Jun",
-   "reports": 1,
-   "fp": "8d5d65e06222ad8a"
-  },
   {
    "date": "2026-08-10",
    "section": "Compute, Chips & Infrastructure",
@@ -17383,6 +17528,118 @@
    "text": "Brinkema's opinion, in the account published on September 16, 2026, cites the rise of new technologies including artific",
    "reports": 1,
    "fp": "72bcaafa6e77e12b"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Anthropic proposed three measurement tools on September 17, 2026 for tracking the pace of AI development inside frontier",
+   "reports": 1,
+   "fp": "3c067221e6c873cc"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "OpenAI learned of an intrusion in which independent security researchers used Anthropic's Claude to gain access to an Op",
+   "reports": 1,
+   "fp": "e5e24a57dde96c51"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Andrew Ng, who helped start Google Brain and Coursera Inc., said on September 17, 2026 that warnings about existential A",
+   "reports": 1,
+   "fp": "45b156a2e5e1e72d"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "President Donald Trump scrapped a planned executive order in May 2026 that would have subjected AI models to an extended",
+   "reports": 1,
+   "fp": "90508cecd271ee45"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Rep. Jay Obernolte (R-Calif.), chair of the House Task Force on AI, said on September 17, 2026 in Milpitas, California t",
+   "reports": 1,
+   "fp": "3ccb5f4c35334202"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "National Security & Geopolitics",
+   "text": "Rep. Ro Khanna (D-Calif.), the top Democrat on the House Select Committee on the Chinese Communist Party, sent letters o",
+   "reports": 1,
+   "fp": "679873fb8dc5f3ab"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "National Security & Geopolitics",
+   "text": "Update on Huawei's September 17, 2026 announcements, carried in the 08:08 file for the Ascend chip schedule and Eric Xu'",
+   "reports": 1,
+   "fp": "727fb26b24039d74"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "U.S. State AI Legislation",
+   "text": "Gov. Gavin Newsom said he plans to take further action on AI safety before leaving office at the end of January 2027, ra",
+   "reports": 1,
+   "fp": "b4147642bb47876d"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "Labor, Society & Democratic Institutions",
+   "text": "The Pew Research Center published a 37-country survey on September 17, 2026 finding that in 34 of the 37 countries, peop",
+   "reports": 1,
+   "fp": "afdd72ddd4b5eec5"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "AI Adoption by Industry",
+   "text": "OpenAI introduced Astra for Law on September 17, 2026, combining GPT-6 Astra with a legal search index covering U.S. cas",
+   "reports": 1,
+   "fp": "abf0a36baeb8b839"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "AI Safety, Alignment & Interpretability",
+   "text": "Anthropic reported on September 18, 2026 that Claude \"leads\" 26% of its AI research and development work as of August 20",
+   "reports": 1,
+   "fp": "49b84f7eeb8c9fc0"
+  },
+  {
+   "date": "2026-09-16",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Twenty organizations and five individual signatories wrote to Senate Majority Leader John Thune and Minority Leader Chuc",
+   "reports": 1,
+   "fp": "4ca0a204c153c775"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "A White House official said in remarks published September 18, 2026 that frontier developers should reach their own cons",
+   "reports": 1,
+   "fp": "2d91acd27c47f296"
+  },
+  {
+   "date": "2026-09-13",
+   "section": "Agentic AI & Coding",
+   "text": "Hacktron researchers Harsh Jaiswal, Mohan Pedhapati, and Rahul Maini published an account on September 13, 2026 of chain",
+   "reports": 1,
+   "fp": "635a9e645d6bfaaf"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "Reported but unverified",
+   "text": "A bipartisan group of 10 House lawmakers calling on House leadership to \"take immediate, urgent action\" on the rate of f",
+   "reports": 1,
+   "fp": "228afe93bb285057"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "Reported but unverified",
+   "text": "An AI Energy Management Alliance formed by Google, Nvidia, and Emerald AI with Anthropic and four utilities, described a",
+   "reports": 1,
+   "fp": "fe92179774349a98"
   }
  ],
  "seen": [
@@ -18239,7 +18496,26 @@
   "7527f83cae743a70",
   "41b9da755979adfa",
   "abe143bad4fb0d84",
-  "72bcaafa6e77e12b"
+  "72bcaafa6e77e12b",
+  "3c067221e6c873cc",
+  "e5e24a57dde96c51",
+  "45b156a2e5e1e72d",
+  "90508cecd271ee45",
+  "3ccb5f4c35334202",
+  "679873fb8dc5f3ab",
+  "727fb26b24039d74",
+  "b4147642bb47876d",
+  "afdd72ddd4b5eec5",
+  "abf0a36baeb8b839",
+  "778737959f8bac71",
+  "49b84f7eeb8c9fc0",
+  "4ca0a204c153c775",
+  "2d91acd27c47f296",
+  "3e83b2d7804b5b62",
+  "9b8c437dcbdaf9b2",
+  "635a9e645d6bfaaf",
+  "228afe93bb285057",
+  "fe92179774349a98"
  ],
  "residue_r0": [
   {
