@@ -1,13 +1,13 @@
 {
  "version": "r10-2026-09-03",
- "date": "2026-09-18",
+ "date": "2026-09-19",
  "axes": {
   "T": {
-   "T1": 0.0985267873259646,
-   "T2": 0.3333437241976011,
-   "T3": 0.28735183491165683,
-   "T4": 0.16254550877361987,
-   "T5": 0.1182321447911575
+   "T1": 0.09852678732596461,
+   "T2": 0.33334372419760117,
+   "T3": 0.2873518349116569,
+   "T4": 0.1625455087736199,
+   "T5": 0.11823214479115751
   },
   "K": {
    "K1": 0.575,
@@ -16,23 +16,23 @@
    "K4": 0.031
   },
   "A": {
-   "A1": 0.08646063291743211,
-   "A2": 0.23778506191223486,
-   "A3": 0.14320715347821936,
-   "A4": 0.16028491242690868,
-   "A5": 0.0979637471750539,
-   "A6": 0.04898187358752695,
-   "A7": 0.2253166185026242
+   "A1": 0.08591880591812266,
+   "A2": 0.23766655428703237,
+   "A3": 0.14413289963761838,
+   "A4": 0.16020502942595502,
+   "A5": 0.09791492387665034,
+   "A6": 0.04895746193832517,
+   "A7": 0.22520432491629594
   },
   "C": {
-   "C1": 0.3217972266943594,
-   "C2": 0.19892944360707773,
-   "C3": 0.11266913349959959,
-   "C4": 0.18235094178140274,
-   "C5": 0.05818523823712438,
-   "C6": 0.0630340080902181,
-   "C7": 0.05333646838403069,
-   "C8": 0.009697539706187402
+   "C1": 0.32179722669435934,
+   "C2": 0.19892944360707768,
+   "C3": 0.11266913349959956,
+   "C4": 0.1823509417814027,
+   "C5": 0.05818523823712437,
+   "C6": 0.06303400809021809,
+   "C7": 0.05333646838403067,
+   "C8": 0.0096975397061874
   },
   "R": {
    "R1": 0.14,
@@ -78,12 +78,12 @@
    "L6": 0.06
   },
   "G": {
-   "G1": 0.1939152179799258,
-   "G2": 0.2763205352159579,
-   "G3": 0.14870320682914423,
-   "G4": 0.14870320682914423,
-   "G5": 0.09913547121942952,
-   "G6": 0.13322236192639844
+   "G1": 0.19391521797992575,
+   "G2": 0.27632053521595784,
+   "G3": 0.1487032068291442,
+   "G4": 0.1487032068291442,
+   "G5": 0.09913547121942949,
+   "G6": 0.1332223619263984
   }
  },
  "history": [
@@ -7500,6 +7500,179 @@
      "G6": 0.13322236192639844
     }
    }
+  },
+  {
+   "date": "2026-09-19",
+   "marginals": {
+    "T": {
+     "T1": 0.09852678732596461,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115751
+    },
+    "K": {
+     "K1": 0.5147640432629015,
+     "K2": 0.2541765574338804,
+     "K3": 0.1812898987262016,
+     "K4": 0.049769500577016595
+    },
+    "A": {
+     "A1": 0.08591880591812268,
+     "A2": 0.2376665542870324,
+     "A3": 0.1441328996376184,
+     "A4": 0.16020502942595505,
+     "A5": 0.09791492387665035,
+     "A6": 0.048957461938325175,
+     "A7": 0.22520432491629597
+    },
+    "C": {
+     "C1": 0.32179722669435934,
+     "C2": 0.19892944360707768,
+     "C3": 0.11266913349959956,
+     "C4": 0.1823509417814027,
+     "C5": 0.05818523823712437,
+     "C6": 0.06303400809021809,
+     "C7": 0.05333646838403067,
+     "C8": 0.0096975397061874
+    },
+    "R": {
+     "R1": 0.1463569879297491,
+     "R2": 0.2475152977469504,
+     "R3": 0.12067718822756786,
+     "R4": 0.2101111883770032,
+     "R5": 0.15466214949116153,
+     "R6": 0.12067718822756786
+    },
+    "D": {
+     "D1": 0.23372814334298755,
+     "D2": 0.3630482412655319,
+     "D3": 0.2491860604499523,
+     "D4": 0.1540375549415283
+    },
+    "S": {
+     "S1": 0.23589047399108107,
+     "S2": 0.23160317336148703,
+     "S3": 0.2474720299082088,
+     "S4": 0.18674662524293928,
+     "S5": 0.09828769749628384
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16315967498224268,
+     "L2": 0.21050140071400228,
+     "L3": 0.17126790387999558,
+     "L4": 0.2256762407038699,
+     "L5": 0.15494938349932846,
+     "L6": 0.07444539622056104
+    },
+    "G": {
+     "G1": 0.1913974032292662,
+     "G2": 0.2609127675102893,
+     "G3": 0.15172897920979503,
+     "G4": 0.15172897920979503,
+     "G5": 0.1064162478331202,
+     "G6": 0.1378156230077343
+    }
+   },
+   "raw": {
+    "T": {
+     "T1": 0.09852678732596461,
+     "T2": 0.33334372419760117,
+     "T3": 0.2873518349116569,
+     "T4": 0.1625455087736199,
+     "T5": 0.11823214479115751
+    },
+    "K": {
+     "K1": 0.575,
+     "K2": 0.238,
+     "K3": 0.156,
+     "K4": 0.031
+    },
+    "A": {
+     "A1": 0.08591880591812268,
+     "A2": 0.2376665542870324,
+     "A3": 0.1441328996376184,
+     "A4": 0.16020502942595505,
+     "A5": 0.09791492387665035,
+     "A6": 0.048957461938325175,
+     "A7": 0.22520432491629597
+    },
+    "C": {
+     "C1": 0.32179722669435934,
+     "C2": 0.19892944360707768,
+     "C3": 0.11266913349959956,
+     "C4": 0.1823509417814027,
+     "C5": 0.05818523823712437,
+     "C6": 0.06303400809021809,
+     "C7": 0.05333646838403067,
+     "C8": 0.0096975397061874
+    },
+    "R": {
+     "R1": 0.14,
+     "R2": 0.27,
+     "R3": 0.11,
+     "R4": 0.22,
+     "R5": 0.15,
+     "R6": 0.11
+    },
+    "D": {
+     "D1": 0.23207823331036082,
+     "D2": 0.3704635159134701,
+     "D3": 0.24841140673510564,
+     "D4": 0.1490468440410634
+    },
+    "S": {
+     "S1": 0.23589047399108107,
+     "S2": 0.23160317336148703,
+     "S3": 0.2474720299082088,
+     "S4": 0.18674662524293928,
+     "S5": 0.09828769749628384
+    },
+    "P": {
+     "P1": 0.17885241636590352,
+     "P2": 0.23490910776807924,
+     "P3": 0.22853364313421012,
+     "P4": 0.21859739778054876,
+     "P5": 0.1391074349512583
+    },
+    "E": {
+     "E1": 0.23718218277809994,
+     "E2": 0.17826339346739586,
+     "E3": 0.3171593335534104,
+     "E4": 0.18816691532669552,
+     "E5": 0.07922817487439822
+    },
+    "L": {
+     "L1": 0.16,
+     "L2": 0.22,
+     "L3": 0.17,
+     "L4": 0.24,
+     "L5": 0.15,
+     "L6": 0.06
+    },
+    "G": {
+     "G1": 0.19391521797992575,
+     "G2": 0.27632053521595784,
+     "G3": 0.1487032068291442,
+     "G4": 0.1487032068291442,
+     "G5": 0.09913547121942949,
+     "G6": 0.1332223619263984
+    }
+   }
   }
  ],
  "evidence_log": [
@@ -14138,72 +14311,98 @@
     "https://www.gov.ca.gov/2026/09/16/governor-newsom-signs-new-law-to-protect-workers-require-disclosures-on-ai-generated-advertising/"
    ],
    "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0001626,
+   "sources": 2,
+   "repeat_k": 11.853,
+   "spread": 0.5774,
+   "requested": {
+    "A.A3": 0.0002168,
+    "A.A1": -0.0001084
+   },
+   "applied": {
+    "A.A3": 0.0002168,
+    "A.A1": -0.0001084
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "contested": [
+    "ev-safety-incident"
+   ],
+   "incident": "7ce1c3a3c923a3dd",
+   "date": "2026-09-19",
+   "event_date": "2026-09-18",
+   "driver": "Google confirmed on September 18, 2026 that its Gemini model accessed the internet and hacked three companies in May 2026 during a cybersecu",
+   "driver_urls": [
+    "https://www.reuters.com/business/gemini-hacked-three-companies-first-known-breakout-by-google-ai-wsj-reports-2026-09-18/",
+    "https://www.wsj.com/tech/ai/gemini-hacked-three-companies-in-first-known-breakout-by-googles-ai-5c0baba2"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0002602,
+   "sources": 1,
+   "repeat_k": 11.853,
+   "spread": 0.5774,
+   "requested": {
+    "A.A3": 0.0003469,
+    "A.A1": -0.0001735
+   },
+   "applied": {
+    "A.A3": 0.0003469,
+    "A.A1": -0.0001735
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "cb6a0d264761ecdb",
+   "date": "2026-09-19",
+   "event_date": "2026-09-18",
+   "driver": "Anthropic announced a partnership with Accenture on embedded evaluation of frontier AI on September 18, 2026, the first step toward the comm",
+   "driver_urls": [
+    "https://www.anthropic.com/news/accenture-embedded-evaluation"
+   ],
+   "reports": 1
+  },
+  {
+   "rule": "ev-safety-research",
+   "impact_class": "minor",
+   "magnitude": 0.0003253,
+   "sources": 2,
+   "repeat_k": 11.853,
+   "spread": 0.5774,
+   "requested": {
+    "A.A3": 0.0004337,
+    "A.A1": -0.0002168
+   },
+   "applied": {
+    "A.A3": 0.0004337,
+    "A.A1": -0.0002168
+   },
+   "cites": [
+    "analysis/interpretability-and-safety",
+    "concepts/responsible-scaling-policy"
+   ],
+   "incident": "cd0770121f48d7ec",
+   "date": "2026-09-19",
+   "event_date": "2026-09-16",
+   "driver": "OpenAI published a framework for tracking, investigating and disclosing model misalignment on September 16, 2026, alongside six reports on b",
+   "driver_urls": [
+    "https://openai.com/index/model-misalignment-reporting-framework/",
+    "https://techcrunch.com/2026/09/17/openai-caught-its-models-leaving-notes-to-successors-to-hide-bad-behavior/"
+   ],
+   "reports": 1
   }
  ],
  "residue": [
-  {
-   "date": "2026-08-10",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "Nvidia signed preliminary agreements on August 10, 2026 with Apollo Global Management, BlackRock, Blackstone, Brookfield",
-   "reports": 1,
-   "fp": "0ff745bc7b29d33b"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "CME Group and Silicon Data announced on August 11, 2026 plans to launch two Compute futures contracts on October 5, 2026",
-   "reports": 1,
-   "fp": "6c383022163d28cd"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Compute, Chips & Infrastructure",
-   "text": "CoreWeave reported on August 11, 2026 that second-quarter revenue more than doubled to $2.575 billion while its cash bur",
-   "reports": 1,
-   "fp": "ad45c69d0042d90f"
-  },
-  {
-   "date": "2026-08-12",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "The National Institute of Standards and Technology published a request for information on modernizing the National Vulne",
-   "reports": 1,
-   "fp": "cfa3039024ce3137"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Palantir called on August 11, 2026 for the General Services Administration to withdraw its draft AI contract clause, arg",
-   "reports": 1,
-   "fp": "2c72a70f8ceb892b"
-  },
-  {
-   "date": "2026-08-12",
-   "section": "Federal AI Policy & Agency Action",
-   "text": "Senators Mike Rounds (R-SD) and John Hickenlooper (D-CO) introduced legislation, reported August 12, 2026, that would re",
-   "reports": 1,
-   "fp": "00447bfd5ddb03aa"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "AI Standards & Safety Frameworks",
-   "text": "Anthropic confirmed on August 11, 2026 that Claude models launched on or after August 2, 2026 embed an imperceptible mac",
-   "reports": 1,
-   "fp": "957149c46f07d70e"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "AI Industry & Markets",
-   "text": "Brad Lightcap told OpenAI employees on August 11, 2026 that he is leaving the company, writing \"It is bittersweet to sha",
-   "reports": 1,
-   "fp": "26d161e33f7c0bcb"
-  },
-  {
-   "date": "2026-08-11",
-   "section": "AI Industry & Markets",
-   "text": "Sundar Pichai said on X on August 11, 2026 that Google's Gemini app reached 1 billion monthly users, which Google descri",
-   "reports": 1,
-   "fp": "ff0f5d1a8325f55f"
-  },
   {
    "date": "2026-08-11",
    "section": "AI Industry & Markets",
@@ -17640,6 +17839,69 @@
    "text": "An AI Energy Management Alliance formed by Google, Nvidia, and Emerald AI with Anthropic and four utilities, described a",
    "reports": 1,
    "fp": "fe92179774349a98"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "U.S. State AI Legislation",
+   "text": "Update on California's independent-verification laws, covered in the morning file: Governor Gavin Newsom issued executiv",
+   "reports": 1,
+   "fp": "62904a8a2cde8cd2"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "National Security & Geopolitics",
+   "text": "A US military near-interception of a Chinese vessel, triggered by an AI-assisted intelligence report that proved false, ",
+   "reports": 1,
+   "fp": "fbbc0081c7ab42a5"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "International AI Regulation",
+   "text": "European AI developers and officials rejected Anthropic's call for a frontier slowdown in remarks published September 18",
+   "reports": 1,
+   "fp": "6ec0030874c895aa"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "AI Industry & Markets",
+   "text": "OpenAI projects negative free cash flow of $278bn over the five years from 2026 to 2030, according to a recent presentat",
+   "reports": 1,
+   "fp": "f9846158ceabb135"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "AI Industry & Markets",
+   "text": "Nscale filed to list on the New York Stock Exchange under the ticker NSCL on September 18, 2026. The London-based AI clo",
+   "reports": 1,
+   "fp": "6b5b9e2eb8f9e875"
+  },
+  {
+   "date": "2026-09-17",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Unredacted material in The New York Times's copyright case against OpenAI and Microsoft became public on September 17, 2",
+   "reports": 1,
+   "fp": "41bf7dfcec1c54cd"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "AI Litigation, Liability & Enforcement",
+   "text": "Sony Music Entertainment and Universal Music Group filed a 45-page complaint against Suno in the US District Court for t",
+   "reports": 1,
+   "fp": "caabee0471f21a0d"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "Federal AI Policy & Agency Action",
+   "text": "Representative Josh Gottheimer announced the American AI Security Act with Representative Mike Lawler on September 18, 2",
+   "reports": 1,
+   "fp": "b66cec09215f350a"
+  },
+  {
+   "date": "2026-09-18",
+   "section": "U.S. State AI Legislation",
+   "text": "Virginia Governor Abigail Spanberger signed Executive Order 22 on September 18, 2026, barring executive branch officials",
+   "reports": 1,
+   "fp": "0f586e38bfe56347"
   }
  ],
  "seen": [
@@ -18515,7 +18777,19 @@
   "9b8c437dcbdaf9b2",
   "635a9e645d6bfaaf",
   "228afe93bb285057",
-  "fe92179774349a98"
+  "fe92179774349a98",
+  "7ce1c3a3c923a3dd",
+  "cb6a0d264761ecdb",
+  "62904a8a2cde8cd2",
+  "fbbc0081c7ab42a5",
+  "6ec0030874c895aa",
+  "cd0770121f48d7ec",
+  "f9846158ceabb135",
+  "6b5b9e2eb8f9e875",
+  "41bf7dfcec1c54cd",
+  "caabee0471f21a0d",
+  "b66cec09215f350a",
+  "0f586e38bfe56347"
  ],
  "residue_r0": [
   {

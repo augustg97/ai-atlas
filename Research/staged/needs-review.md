@@ -1,6 +1,6 @@
-# Emit needs-review — 20260918-1051
+# Emit needs-review — 20260919-1051
 
-176 items. Unparseable values are reported here, never guessed.
+178 items. Unparseable values are reported here, never guessed.
 
 - sources/abstraction-fallacy-lerchner: dangling relationship target 'entities/alexander-lerchner'
 - sources/acceptable-use-policies-foundation-models-klyman: dangling relationship target 'concepts/foundation-model-governance'
@@ -111,6 +111,7 @@
 - entities/henry-farrell: dangling relationship target 'entities/snf-agora-institute'
 - entities/house-select-committee-on-china: inline comment stripped from 'coalition  # placeholder — a congression'
 - entities/human-line-project: dangling relationship target 'concepts/ai-companion-chatbots'
+- entities/joint-committee-on-human-rights: inline comment stripped from 'coalition  # placeholder — a joint selec'
 - entities/knight-first-amendment-institute: dangling relationship target 'entities/columbia-university'
 - entities/marc-andreessen: dangling relationship target 'entities/peter-thiel'
 - entities/nextera: inline comment stripped from 'nonprofit  # placeholder — NextEra is a '
@@ -129,6 +130,7 @@
 - companies/fluidstack: unparseable date 'unknown' (founded)
 - companies/g42: unparseable date 'unknown' (founded)
 - companies/generalist-ai: unparseable date 'unknown' (founded)
+- companies/hacktron: unparseable date 'unknown' (founded)
 - companies/ibm: implausible year 1911 (founded)
 - companies/lancium: unparseable date 'undisclosed' (founded)
 - companies/openevidence: unparseable date 'unknown' (founded)
